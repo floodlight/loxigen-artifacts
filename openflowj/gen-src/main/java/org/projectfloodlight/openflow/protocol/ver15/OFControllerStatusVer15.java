@@ -58,8 +58,8 @@ class OFControllerStatusVer15 implements OFControllerStatus {
 
     // Accessors for OF message fields
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_15;
+    public OFControllerStatusEntry getEntry() {
+        return entry;
     }
 
     @Override
@@ -68,13 +68,13 @@ class OFControllerStatusVer15 implements OFControllerStatus {
     }
 
     @Override
-    public long getXid() {
-        return xid;
+    public OFVersion getVersion() {
+        return OFVersion.OF_15;
     }
 
     @Override
-    public OFControllerStatusEntry getEntry() {
-        return entry;
+    public long getXid() {
+        return xid;
     }
 
 
@@ -97,13 +97,24 @@ class OFControllerStatusVer15 implements OFControllerStatus {
         }
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_15;
+    public OFControllerStatusEntry getEntry() {
+        return entry;
     }
 
     @Override
+    public OFControllerStatus.Builder setEntry(OFControllerStatusEntry entry) {
+        this.entry = entry;
+        this.entrySet = true;
+        return this;
+    }
+    @Override
     public OFType getType() {
         return OFType.CONTROLLER_STATUS;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_15;
     }
 
     @Override
@@ -115,17 +126,6 @@ class OFControllerStatusVer15 implements OFControllerStatus {
     public OFControllerStatus.Builder setXid(long xid) {
         this.xid = xid;
         this.xidSet = true;
-        return this;
-    }
-    @Override
-    public OFControllerStatusEntry getEntry() {
-        return entry;
-    }
-
-    @Override
-    public OFControllerStatus.Builder setEntry(OFControllerStatusEntry entry) {
-        this.entry = entry;
-        this.entrySet = true;
         return this;
     }
 
@@ -154,13 +154,24 @@ class OFControllerStatusVer15 implements OFControllerStatus {
         private OFControllerStatusEntry entry;
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_15;
+    public OFControllerStatusEntry getEntry() {
+        return entry;
     }
 
     @Override
+    public OFControllerStatus.Builder setEntry(OFControllerStatusEntry entry) {
+        this.entry = entry;
+        this.entrySet = true;
+        return this;
+    }
+    @Override
     public OFType getType() {
         return OFType.CONTROLLER_STATUS;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_15;
     }
 
     @Override
@@ -172,17 +183,6 @@ class OFControllerStatusVer15 implements OFControllerStatus {
     public OFControllerStatus.Builder setXid(long xid) {
         this.xid = xid;
         this.xidSet = true;
-        return this;
-    }
-    @Override
-    public OFControllerStatusEntry getEntry() {
-        return entry;
-    }
-
-    @Override
-    public OFControllerStatus.Builder setEntry(OFControllerStatusEntry entry) {
-        this.entry = entry;
-        this.entrySet = true;
         return this;
     }
 //

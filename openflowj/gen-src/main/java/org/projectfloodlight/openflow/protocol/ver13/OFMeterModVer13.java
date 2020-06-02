@@ -76,18 +76,8 @@ class OFMeterModVer13 implements OFMeterMod {
 
     // Accessors for OF message fields
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_13;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.METER_MOD;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
+    public List<OFMeterBand> getBands()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property bands not supported in version 1.3");
     }
 
     @Override
@@ -111,8 +101,18 @@ class OFMeterModVer13 implements OFMeterMod {
     }
 
     @Override
-    public List<OFMeterBand> getBands()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property bands not supported in version 1.3");
+    public OFType getType() {
+        return OFType.METER_MOD;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_13;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
     }
 
 
@@ -141,25 +141,13 @@ class OFMeterModVer13 implements OFMeterMod {
         }
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_13;
+    public List<OFMeterBand> getBands()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property bands not supported in version 1.3");
     }
 
     @Override
-    public OFType getType() {
-        return OFType.METER_MOD;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFMeterMod.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
-        return this;
+    public OFMeterMod.Builder setBands(List<OFMeterBand> bands) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property bands not supported in version 1.3");
     }
     @Override
     public OFMeterModCommand getCommand() {
@@ -206,13 +194,25 @@ class OFMeterModVer13 implements OFMeterMod {
         return this;
     }
     @Override
-    public List<OFMeterBand> getBands()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property bands not supported in version 1.3");
+    public OFType getType() {
+        return OFType.METER_MOD;
     }
 
     @Override
-    public OFMeterMod.Builder setBands(List<OFMeterBand> bands) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property bands not supported in version 1.3");
+    public OFVersion getVersion() {
+        return OFVersion.OF_13;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFMeterMod.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
+        return this;
     }
 
 
@@ -256,25 +256,13 @@ class OFMeterModVer13 implements OFMeterMod {
         private List<OFMeterBand> meters;
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_13;
+    public List<OFMeterBand> getBands()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property bands not supported in version 1.3");
     }
 
     @Override
-    public OFType getType() {
-        return OFType.METER_MOD;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFMeterMod.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
-        return this;
+    public OFMeterMod.Builder setBands(List<OFMeterBand> bands) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property bands not supported in version 1.3");
     }
     @Override
     public OFMeterModCommand getCommand() {
@@ -321,13 +309,25 @@ class OFMeterModVer13 implements OFMeterMod {
         return this;
     }
     @Override
-    public List<OFMeterBand> getBands()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property bands not supported in version 1.3");
+    public OFType getType() {
+        return OFType.METER_MOD;
     }
 
     @Override
-    public OFMeterMod.Builder setBands(List<OFMeterBand> bands) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property bands not supported in version 1.3");
+    public OFVersion getVersion() {
+        return OFVersion.OF_13;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFMeterMod.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
+        return this;
     }
 //
         @Override

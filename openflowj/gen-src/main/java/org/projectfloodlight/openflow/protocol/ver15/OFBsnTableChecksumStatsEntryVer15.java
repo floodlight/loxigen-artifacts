@@ -64,13 +64,13 @@ class OFBsnTableChecksumStatsEntryVer15 implements OFBsnTableChecksumStatsEntry 
 
     // Accessors for OF message fields
     @Override
-    public TableId getTableId() {
-        return tableId;
+    public U64 getChecksum() {
+        return checksum;
     }
 
     @Override
-    public U64 getChecksum() {
-        return checksum;
+    public TableId getTableId() {
+        return tableId;
     }
 
     @Override
@@ -98,17 +98,6 @@ class OFBsnTableChecksumStatsEntryVer15 implements OFBsnTableChecksumStatsEntry 
         }
 
     @Override
-    public TableId getTableId() {
-        return tableId;
-    }
-
-    @Override
-    public OFBsnTableChecksumStatsEntry.Builder setTableId(TableId tableId) {
-        this.tableId = tableId;
-        this.tableIdSet = true;
-        return this;
-    }
-    @Override
     public U64 getChecksum() {
         return checksum;
     }
@@ -117,6 +106,17 @@ class OFBsnTableChecksumStatsEntryVer15 implements OFBsnTableChecksumStatsEntry 
     public OFBsnTableChecksumStatsEntry.Builder setChecksum(U64 checksum) {
         this.checksum = checksum;
         this.checksumSet = true;
+        return this;
+    }
+    @Override
+    public TableId getTableId() {
+        return tableId;
+    }
+
+    @Override
+    public OFBsnTableChecksumStatsEntry.Builder setTableId(TableId tableId) {
+        this.tableId = tableId;
+        this.tableIdSet = true;
         return this;
     }
     @Override
@@ -152,17 +152,6 @@ class OFBsnTableChecksumStatsEntryVer15 implements OFBsnTableChecksumStatsEntry 
         private U64 checksum;
 
     @Override
-    public TableId getTableId() {
-        return tableId;
-    }
-
-    @Override
-    public OFBsnTableChecksumStatsEntry.Builder setTableId(TableId tableId) {
-        this.tableId = tableId;
-        this.tableIdSet = true;
-        return this;
-    }
-    @Override
     public U64 getChecksum() {
         return checksum;
     }
@@ -171,6 +160,17 @@ class OFBsnTableChecksumStatsEntryVer15 implements OFBsnTableChecksumStatsEntry 
     public OFBsnTableChecksumStatsEntry.Builder setChecksum(U64 checksum) {
         this.checksum = checksum;
         this.checksumSet = true;
+        return this;
+    }
+    @Override
+    public TableId getTableId() {
+        return tableId;
+    }
+
+    @Override
+    public OFBsnTableChecksumStatsEntry.Builder setTableId(TableId tableId) {
+        this.tableId = tableId;
+        this.tableIdSet = true;
         return this;
     }
     @Override

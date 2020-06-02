@@ -62,12 +62,12 @@ abstract class OFGroupModVer15 {
                case (short) 0x2:
                    // discriminator value OFGroupModCommand.DELETE=2 for class OFGroupDeleteVer15
                    return OFGroupDeleteVer15.READER.readFrom(bb);
-               case (short) 0x1:
-                   // discriminator value OFGroupModCommand.MODIFY=1 for class OFGroupModifyVer15
-                   return OFGroupModifyVer15.READER.readFrom(bb);
                case (short) 0x3:
                    // discriminator value OFGroupModCommand.INSERT_BUCKET=3 for class OFGroupInsertBucketVer15
                    return OFGroupInsertBucketVer15.READER.readFrom(bb);
+               case (short) 0x1:
+                   // discriminator value OFGroupModCommand.MODIFY=1 for class OFGroupModifyVer15
+                   return OFGroupModifyVer15.READER.readFrom(bb);
                case (short) 0x5:
                    // discriminator value OFGroupModCommand.REMOVE_BUCKET=5 for class OFGroupRemoveBucketVer15
                    return OFGroupRemoveBucketVer15.READER.readFrom(bb);

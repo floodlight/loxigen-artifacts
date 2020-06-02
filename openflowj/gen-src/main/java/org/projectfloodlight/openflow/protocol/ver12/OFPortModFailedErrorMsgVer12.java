@@ -64,18 +64,13 @@ class OFPortModFailedErrorMsgVer12 implements OFPortModFailedErrorMsg {
 
     // Accessors for OF message fields
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_12;
+    public OFPortModFailedCode getCode() {
+        return code;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.ERROR;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
+    public OFErrorCauseData getData() {
+        return data;
     }
 
     @Override
@@ -84,13 +79,18 @@ class OFPortModFailedErrorMsgVer12 implements OFPortModFailedErrorMsg {
     }
 
     @Override
-    public OFPortModFailedCode getCode() {
-        return code;
+    public OFType getType() {
+        return OFType.ERROR;
     }
 
     @Override
-    public OFErrorCauseData getData() {
-        return data;
+    public OFVersion getVersion() {
+        return OFVersion.OF_12;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
     }
 
 
@@ -115,32 +115,6 @@ class OFPortModFailedErrorMsgVer12 implements OFPortModFailedErrorMsg {
         }
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_12;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.ERROR;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFPortModFailedErrorMsg.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
-        return this;
-    }
-    @Override
-    public OFErrorType getErrType() {
-        return OFErrorType.PORT_MOD_FAILED;
-    }
-
-    @Override
     public OFPortModFailedCode getCode() {
         return code;
     }
@@ -160,6 +134,32 @@ class OFPortModFailedErrorMsgVer12 implements OFPortModFailedErrorMsg {
     public OFPortModFailedErrorMsg.Builder setData(OFErrorCauseData data) {
         this.data = data;
         this.dataSet = true;
+        return this;
+    }
+    @Override
+    public OFErrorType getErrType() {
+        return OFErrorType.PORT_MOD_FAILED;
+    }
+
+    @Override
+    public OFType getType() {
+        return OFType.ERROR;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_12;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFPortModFailedErrorMsg.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 
@@ -194,32 +194,6 @@ class OFPortModFailedErrorMsgVer12 implements OFPortModFailedErrorMsg {
         private OFErrorCauseData data;
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_12;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.ERROR;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFPortModFailedErrorMsg.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
-        return this;
-    }
-    @Override
-    public OFErrorType getErrType() {
-        return OFErrorType.PORT_MOD_FAILED;
-    }
-
-    @Override
     public OFPortModFailedCode getCode() {
         return code;
     }
@@ -239,6 +213,32 @@ class OFPortModFailedErrorMsgVer12 implements OFPortModFailedErrorMsg {
     public OFPortModFailedErrorMsg.Builder setData(OFErrorCauseData data) {
         this.data = data;
         this.dataSet = true;
+        return this;
+    }
+    @Override
+    public OFErrorType getErrType() {
+        return OFErrorType.PORT_MOD_FAILED;
+    }
+
+    @Override
+    public OFType getType() {
+        return OFType.ERROR;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_12;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFPortModFailedErrorMsg.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 //

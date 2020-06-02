@@ -92,28 +92,33 @@ class OFPacketInVer11 implements OFPacketIn {
 
     // Accessors for OF message fields
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_11;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.PACKET_IN;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
     public OFBufferId getBufferId() {
         return bufferId;
     }
 
     @Override
-    public int getTotalLen() {
-        return totalLen;
+    public U64 getCookie()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property cookie not supported in version 1.1");
+    }
+
+    @Override
+    public byte[] getData() {
+        return data;
+    }
+
+    @Override
+    public OFPort getInPhyPort() {
+        return inPhyPort;
+    }
+
+    @Override
+    public OFPort getInPort() {
+        return inPort;
+    }
+
+    @Override
+    public Match getMatch()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property match not supported in version 1.1");
     }
 
     @Override
@@ -127,28 +132,23 @@ class OFPacketInVer11 implements OFPacketIn {
     }
 
     @Override
-    public U64 getCookie()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property cookie not supported in version 1.1");
+    public int getTotalLen() {
+        return totalLen;
     }
 
     @Override
-    public Match getMatch()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property match not supported in version 1.1");
+    public OFType getType() {
+        return OFType.PACKET_IN;
     }
 
     @Override
-    public byte[] getData() {
-        return data;
+    public OFVersion getVersion() {
+        return OFVersion.OF_11;
     }
 
     @Override
-    public OFPort getInPort() {
-        return inPort;
-    }
-
-    @Override
-    public OFPort getInPhyPort() {
-        return inPhyPort;
+    public long getXid() {
+        return xid;
     }
 
 
@@ -183,27 +183,6 @@ class OFPacketInVer11 implements OFPacketIn {
         }
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_11;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.PACKET_IN;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFPacketIn.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
-        return this;
-    }
-    @Override
     public OFBufferId getBufferId() {
         return bufferId;
     }
@@ -215,15 +194,55 @@ class OFPacketInVer11 implements OFPacketIn {
         return this;
     }
     @Override
-    public int getTotalLen() {
-        return totalLen;
+    public U64 getCookie()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property cookie not supported in version 1.1");
     }
 
     @Override
-    public OFPacketIn.Builder setTotalLen(int totalLen) {
-        this.totalLen = totalLen;
-        this.totalLenSet = true;
+    public OFPacketIn.Builder setCookie(U64 cookie) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property cookie not supported in version 1.1");
+    }
+    @Override
+    public byte[] getData() {
+        return data;
+    }
+
+    @Override
+    public OFPacketIn.Builder setData(byte[] data) {
+        this.data = data;
+        this.dataSet = true;
         return this;
+    }
+    @Override
+    public OFPort getInPhyPort() {
+        return inPhyPort;
+    }
+
+    @Override
+    public OFPacketIn.Builder setInPhyPort(OFPort inPhyPort) {
+        this.inPhyPort = inPhyPort;
+        this.inPhyPortSet = true;
+        return this;
+    }
+    @Override
+    public OFPort getInPort() {
+        return inPort;
+    }
+
+    @Override
+    public OFPacketIn.Builder setInPort(OFPort inPort) {
+        this.inPort = inPort;
+        this.inPortSet = true;
+        return this;
+    }
+    @Override
+    public Match getMatch()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property match not supported in version 1.1");
+    }
+
+    @Override
+    public OFPacketIn.Builder setMatch(Match match) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property match not supported in version 1.1");
     }
     @Override
     public OFPacketInReason getReason() {
@@ -248,54 +267,35 @@ class OFPacketInVer11 implements OFPacketIn {
         return this;
     }
     @Override
-    public U64 getCookie()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property cookie not supported in version 1.1");
+    public int getTotalLen() {
+        return totalLen;
     }
 
     @Override
-    public OFPacketIn.Builder setCookie(U64 cookie) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property cookie not supported in version 1.1");
-    }
-    @Override
-    public Match getMatch()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property match not supported in version 1.1");
-    }
-
-    @Override
-    public OFPacketIn.Builder setMatch(Match match) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property match not supported in version 1.1");
-    }
-    @Override
-    public byte[] getData() {
-        return data;
-    }
-
-    @Override
-    public OFPacketIn.Builder setData(byte[] data) {
-        this.data = data;
-        this.dataSet = true;
+    public OFPacketIn.Builder setTotalLen(int totalLen) {
+        this.totalLen = totalLen;
+        this.totalLenSet = true;
         return this;
     }
     @Override
-    public OFPort getInPort() {
-        return inPort;
+    public OFType getType() {
+        return OFType.PACKET_IN;
     }
 
     @Override
-    public OFPacketIn.Builder setInPort(OFPort inPort) {
-        this.inPort = inPort;
-        this.inPortSet = true;
-        return this;
-    }
-    @Override
-    public OFPort getInPhyPort() {
-        return inPhyPort;
+    public OFVersion getVersion() {
+        return OFVersion.OF_11;
     }
 
     @Override
-    public OFPacketIn.Builder setInPhyPort(OFPort inPhyPort) {
-        this.inPhyPort = inPhyPort;
-        this.inPhyPortSet = true;
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFPacketIn.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 
@@ -358,27 +358,6 @@ class OFPacketInVer11 implements OFPacketIn {
         private byte[] data;
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_11;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.PACKET_IN;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFPacketIn.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
-        return this;
-    }
-    @Override
     public OFBufferId getBufferId() {
         return bufferId;
     }
@@ -390,15 +369,55 @@ class OFPacketInVer11 implements OFPacketIn {
         return this;
     }
     @Override
-    public int getTotalLen() {
-        return totalLen;
+    public U64 getCookie()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property cookie not supported in version 1.1");
     }
 
     @Override
-    public OFPacketIn.Builder setTotalLen(int totalLen) {
-        this.totalLen = totalLen;
-        this.totalLenSet = true;
+    public OFPacketIn.Builder setCookie(U64 cookie) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property cookie not supported in version 1.1");
+    }
+    @Override
+    public byte[] getData() {
+        return data;
+    }
+
+    @Override
+    public OFPacketIn.Builder setData(byte[] data) {
+        this.data = data;
+        this.dataSet = true;
         return this;
+    }
+    @Override
+    public OFPort getInPhyPort() {
+        return inPhyPort;
+    }
+
+    @Override
+    public OFPacketIn.Builder setInPhyPort(OFPort inPhyPort) {
+        this.inPhyPort = inPhyPort;
+        this.inPhyPortSet = true;
+        return this;
+    }
+    @Override
+    public OFPort getInPort() {
+        return inPort;
+    }
+
+    @Override
+    public OFPacketIn.Builder setInPort(OFPort inPort) {
+        this.inPort = inPort;
+        this.inPortSet = true;
+        return this;
+    }
+    @Override
+    public Match getMatch()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property match not supported in version 1.1");
+    }
+
+    @Override
+    public OFPacketIn.Builder setMatch(Match match) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property match not supported in version 1.1");
     }
     @Override
     public OFPacketInReason getReason() {
@@ -423,54 +442,35 @@ class OFPacketInVer11 implements OFPacketIn {
         return this;
     }
     @Override
-    public U64 getCookie()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property cookie not supported in version 1.1");
+    public int getTotalLen() {
+        return totalLen;
     }
 
     @Override
-    public OFPacketIn.Builder setCookie(U64 cookie) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property cookie not supported in version 1.1");
-    }
-    @Override
-    public Match getMatch()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property match not supported in version 1.1");
-    }
-
-    @Override
-    public OFPacketIn.Builder setMatch(Match match) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property match not supported in version 1.1");
-    }
-    @Override
-    public byte[] getData() {
-        return data;
-    }
-
-    @Override
-    public OFPacketIn.Builder setData(byte[] data) {
-        this.data = data;
-        this.dataSet = true;
+    public OFPacketIn.Builder setTotalLen(int totalLen) {
+        this.totalLen = totalLen;
+        this.totalLenSet = true;
         return this;
     }
     @Override
-    public OFPort getInPort() {
-        return inPort;
+    public OFType getType() {
+        return OFType.PACKET_IN;
     }
 
     @Override
-    public OFPacketIn.Builder setInPort(OFPort inPort) {
-        this.inPort = inPort;
-        this.inPortSet = true;
-        return this;
-    }
-    @Override
-    public OFPort getInPhyPort() {
-        return inPhyPort;
+    public OFVersion getVersion() {
+        return OFVersion.OF_11;
     }
 
     @Override
-    public OFPacketIn.Builder setInPhyPort(OFPort inPhyPort) {
-        this.inPhyPort = inPhyPort;
-        this.inPhyPortSet = true;
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFPacketIn.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 //

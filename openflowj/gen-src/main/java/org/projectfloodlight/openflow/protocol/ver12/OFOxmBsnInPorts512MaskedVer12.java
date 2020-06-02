@@ -64,6 +64,11 @@ class OFOxmBsnInPorts512MaskedVer12 implements OFOxmBsnInPorts512Masked {
 
     // Accessors for OF message fields
     @Override
+    public OFBitMask512 getMask() {
+        return mask;
+    }
+
+    @Override
     public long getTypeLen() {
         return 0x32780L;
     }
@@ -71,21 +76,6 @@ class OFOxmBsnInPorts512MaskedVer12 implements OFOxmBsnInPorts512Masked {
     @Override
     public OFBitMask512 getValue() {
         return value;
-    }
-
-    @Override
-    public OFBitMask512 getMask() {
-        return mask;
-    }
-
-    @Override
-    public MatchField<OFBitMask512> getMatchField() {
-        return MatchField.BSN_IN_PORTS_512;
-    }
-
-    @Override
-    public boolean isMasked() {
-        return true;
     }
 
     public OFOxm<OFBitMask512> getCanonical() {
@@ -96,6 +86,16 @@ class OFOxmBsnInPorts512MaskedVer12 implements OFOxmBsnInPorts512Masked {
         } else {
             return this;
         }
+    }
+
+    @Override
+    public boolean isMasked() {
+        return true;
+    }
+
+    @Override
+    public MatchField<OFBitMask512> getMatchField() {
+        return MatchField.BSN_IN_PORTS_512;
     }
 
     @Override
@@ -123,6 +123,17 @@ class OFOxmBsnInPorts512MaskedVer12 implements OFOxmBsnInPorts512Masked {
         }
 
     @Override
+    public OFBitMask512 getMask() {
+        return mask;
+    }
+
+    @Override
+    public OFOxmBsnInPorts512Masked.Builder setMask(OFBitMask512 mask) {
+        this.mask = mask;
+        this.maskSet = true;
+        return this;
+    }
+    @Override
     public long getTypeLen() {
         return 0x32780L;
     }
@@ -139,19 +150,8 @@ class OFOxmBsnInPorts512MaskedVer12 implements OFOxmBsnInPorts512Masked {
         return this;
     }
     @Override
-    public OFBitMask512 getMask() {
-        return mask;
-    }
-
-    @Override
-    public OFOxmBsnInPorts512Masked.Builder setMask(OFBitMask512 mask) {
-        this.mask = mask;
-        this.maskSet = true;
-        return this;
-    }
-    @Override
-    public MatchField<OFBitMask512> getMatchField() {
-        return MatchField.BSN_IN_PORTS_512;
+    public OFOxm<OFBitMask512> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.2");
     }
 
     @Override
@@ -160,8 +160,8 @@ class OFOxmBsnInPorts512MaskedVer12 implements OFOxmBsnInPorts512Masked {
     }
 
     @Override
-    public OFOxm<OFBitMask512> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.2");
+    public MatchField<OFBitMask512> getMatchField() {
+        return MatchField.BSN_IN_PORTS_512;
     }
 
     @Override
@@ -197,6 +197,17 @@ class OFOxmBsnInPorts512MaskedVer12 implements OFOxmBsnInPorts512Masked {
         private OFBitMask512 mask;
 
     @Override
+    public OFBitMask512 getMask() {
+        return mask;
+    }
+
+    @Override
+    public OFOxmBsnInPorts512Masked.Builder setMask(OFBitMask512 mask) {
+        this.mask = mask;
+        this.maskSet = true;
+        return this;
+    }
+    @Override
     public long getTypeLen() {
         return 0x32780L;
     }
@@ -213,19 +224,8 @@ class OFOxmBsnInPorts512MaskedVer12 implements OFOxmBsnInPorts512Masked {
         return this;
     }
     @Override
-    public OFBitMask512 getMask() {
-        return mask;
-    }
-
-    @Override
-    public OFOxmBsnInPorts512Masked.Builder setMask(OFBitMask512 mask) {
-        this.mask = mask;
-        this.maskSet = true;
-        return this;
-    }
-    @Override
-    public MatchField<OFBitMask512> getMatchField() {
-        return MatchField.BSN_IN_PORTS_512;
+    public OFOxm<OFBitMask512> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.2");
     }
 
     @Override
@@ -234,8 +234,8 @@ class OFOxmBsnInPorts512MaskedVer12 implements OFOxmBsnInPorts512Masked {
     }
 
     @Override
-    public OFOxm<OFBitMask512> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.2");
+    public MatchField<OFBitMask512> getMatchField() {
+        return MatchField.BSN_IN_PORTS_512;
     }
 
     @Override

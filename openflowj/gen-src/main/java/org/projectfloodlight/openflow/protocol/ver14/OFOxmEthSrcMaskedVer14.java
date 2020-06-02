@@ -64,6 +64,11 @@ class OFOxmEthSrcMaskedVer14 implements OFOxmEthSrcMasked {
 
     // Accessors for OF message fields
     @Override
+    public MacAddress getMask() {
+        return mask;
+    }
+
+    @Override
     public long getTypeLen() {
         return 0x8000090cL;
     }
@@ -71,21 +76,6 @@ class OFOxmEthSrcMaskedVer14 implements OFOxmEthSrcMasked {
     @Override
     public MacAddress getValue() {
         return value;
-    }
-
-    @Override
-    public MacAddress getMask() {
-        return mask;
-    }
-
-    @Override
-    public MatchField<MacAddress> getMatchField() {
-        return MatchField.ETH_SRC;
-    }
-
-    @Override
-    public boolean isMasked() {
-        return true;
     }
 
     public OFOxm<MacAddress> getCanonical() {
@@ -96,6 +86,16 @@ class OFOxmEthSrcMaskedVer14 implements OFOxmEthSrcMasked {
         } else {
             return this;
         }
+    }
+
+    @Override
+    public boolean isMasked() {
+        return true;
+    }
+
+    @Override
+    public MatchField<MacAddress> getMatchField() {
+        return MatchField.ETH_SRC;
     }
 
     @Override
@@ -123,6 +123,17 @@ class OFOxmEthSrcMaskedVer14 implements OFOxmEthSrcMasked {
         }
 
     @Override
+    public MacAddress getMask() {
+        return mask;
+    }
+
+    @Override
+    public OFOxmEthSrcMasked.Builder setMask(MacAddress mask) {
+        this.mask = mask;
+        this.maskSet = true;
+        return this;
+    }
+    @Override
     public long getTypeLen() {
         return 0x8000090cL;
     }
@@ -139,19 +150,8 @@ class OFOxmEthSrcMaskedVer14 implements OFOxmEthSrcMasked {
         return this;
     }
     @Override
-    public MacAddress getMask() {
-        return mask;
-    }
-
-    @Override
-    public OFOxmEthSrcMasked.Builder setMask(MacAddress mask) {
-        this.mask = mask;
-        this.maskSet = true;
-        return this;
-    }
-    @Override
-    public MatchField<MacAddress> getMatchField() {
-        return MatchField.ETH_SRC;
+    public OFOxm<MacAddress> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.4");
     }
 
     @Override
@@ -160,8 +160,8 @@ class OFOxmEthSrcMaskedVer14 implements OFOxmEthSrcMasked {
     }
 
     @Override
-    public OFOxm<MacAddress> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.4");
+    public MatchField<MacAddress> getMatchField() {
+        return MatchField.ETH_SRC;
     }
 
     @Override
@@ -197,6 +197,17 @@ class OFOxmEthSrcMaskedVer14 implements OFOxmEthSrcMasked {
         private MacAddress mask;
 
     @Override
+    public MacAddress getMask() {
+        return mask;
+    }
+
+    @Override
+    public OFOxmEthSrcMasked.Builder setMask(MacAddress mask) {
+        this.mask = mask;
+        this.maskSet = true;
+        return this;
+    }
+    @Override
     public long getTypeLen() {
         return 0x8000090cL;
     }
@@ -213,19 +224,8 @@ class OFOxmEthSrcMaskedVer14 implements OFOxmEthSrcMasked {
         return this;
     }
     @Override
-    public MacAddress getMask() {
-        return mask;
-    }
-
-    @Override
-    public OFOxmEthSrcMasked.Builder setMask(MacAddress mask) {
-        this.mask = mask;
-        this.maskSet = true;
-        return this;
-    }
-    @Override
-    public MatchField<MacAddress> getMatchField() {
-        return MatchField.ETH_SRC;
+    public OFOxm<MacAddress> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.4");
     }
 
     @Override
@@ -234,8 +234,8 @@ class OFOxmEthSrcMaskedVer14 implements OFOxmEthSrcMasked {
     }
 
     @Override
-    public OFOxm<MacAddress> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.4");
+    public MatchField<MacAddress> getMatchField() {
+        return MatchField.ETH_SRC;
     }
 
     @Override

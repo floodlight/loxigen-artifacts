@@ -55,13 +55,13 @@ class OFAsyncConfigPropRoleStatusMasterVer14 implements OFAsyncConfigPropRoleSta
 
     // Accessors for OF message fields
     @Override
-    public int getType() {
-        return 0x7;
+    public long getMask() {
+        return mask;
     }
 
     @Override
-    public long getMask() {
-        return mask;
+    public int getType() {
+        return 0x7;
     }
 
     @Override
@@ -87,11 +87,6 @@ class OFAsyncConfigPropRoleStatusMasterVer14 implements OFAsyncConfigPropRoleSta
         }
 
     @Override
-    public int getType() {
-        return 0x7;
-    }
-
-    @Override
     public long getMask() {
         return mask;
     }
@@ -102,6 +97,11 @@ class OFAsyncConfigPropRoleStatusMasterVer14 implements OFAsyncConfigPropRoleSta
         this.maskSet = true;
         return this;
     }
+    @Override
+    public int getType() {
+        return 0x7;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_14;
@@ -127,11 +127,6 @@ class OFAsyncConfigPropRoleStatusMasterVer14 implements OFAsyncConfigPropRoleSta
         private long mask;
 
     @Override
-    public int getType() {
-        return 0x7;
-    }
-
-    @Override
     public long getMask() {
         return mask;
     }
@@ -142,6 +137,11 @@ class OFAsyncConfigPropRoleStatusMasterVer14 implements OFAsyncConfigPropRoleSta
         this.maskSet = true;
         return this;
     }
+    @Override
+    public int getType() {
+        return 0x7;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_14;

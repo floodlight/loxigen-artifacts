@@ -64,6 +64,11 @@ class OFOxmBsnVrfMaskedVer15 implements OFOxmBsnVrfMasked {
 
     // Accessors for OF message fields
     @Override
+    public VRF getMask() {
+        return mask;
+    }
+
+    @Override
     public long getTypeLen() {
         return 0x30508L;
     }
@@ -71,21 +76,6 @@ class OFOxmBsnVrfMaskedVer15 implements OFOxmBsnVrfMasked {
     @Override
     public VRF getValue() {
         return value;
-    }
-
-    @Override
-    public VRF getMask() {
-        return mask;
-    }
-
-    @Override
-    public MatchField<VRF> getMatchField() {
-        return MatchField.BSN_VRF;
-    }
-
-    @Override
-    public boolean isMasked() {
-        return true;
     }
 
     public OFOxm<VRF> getCanonical() {
@@ -96,6 +86,16 @@ class OFOxmBsnVrfMaskedVer15 implements OFOxmBsnVrfMasked {
         } else {
             return this;
         }
+    }
+
+    @Override
+    public boolean isMasked() {
+        return true;
+    }
+
+    @Override
+    public MatchField<VRF> getMatchField() {
+        return MatchField.BSN_VRF;
     }
 
     @Override
@@ -123,6 +123,17 @@ class OFOxmBsnVrfMaskedVer15 implements OFOxmBsnVrfMasked {
         }
 
     @Override
+    public VRF getMask() {
+        return mask;
+    }
+
+    @Override
+    public OFOxmBsnVrfMasked.Builder setMask(VRF mask) {
+        this.mask = mask;
+        this.maskSet = true;
+        return this;
+    }
+    @Override
     public long getTypeLen() {
         return 0x30508L;
     }
@@ -139,19 +150,8 @@ class OFOxmBsnVrfMaskedVer15 implements OFOxmBsnVrfMasked {
         return this;
     }
     @Override
-    public VRF getMask() {
-        return mask;
-    }
-
-    @Override
-    public OFOxmBsnVrfMasked.Builder setMask(VRF mask) {
-        this.mask = mask;
-        this.maskSet = true;
-        return this;
-    }
-    @Override
-    public MatchField<VRF> getMatchField() {
-        return MatchField.BSN_VRF;
+    public OFOxm<VRF> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.5");
     }
 
     @Override
@@ -160,8 +160,8 @@ class OFOxmBsnVrfMaskedVer15 implements OFOxmBsnVrfMasked {
     }
 
     @Override
-    public OFOxm<VRF> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.5");
+    public MatchField<VRF> getMatchField() {
+        return MatchField.BSN_VRF;
     }
 
     @Override
@@ -197,6 +197,17 @@ class OFOxmBsnVrfMaskedVer15 implements OFOxmBsnVrfMasked {
         private VRF mask;
 
     @Override
+    public VRF getMask() {
+        return mask;
+    }
+
+    @Override
+    public OFOxmBsnVrfMasked.Builder setMask(VRF mask) {
+        this.mask = mask;
+        this.maskSet = true;
+        return this;
+    }
+    @Override
     public long getTypeLen() {
         return 0x30508L;
     }
@@ -213,19 +224,8 @@ class OFOxmBsnVrfMaskedVer15 implements OFOxmBsnVrfMasked {
         return this;
     }
     @Override
-    public VRF getMask() {
-        return mask;
-    }
-
-    @Override
-    public OFOxmBsnVrfMasked.Builder setMask(VRF mask) {
-        this.mask = mask;
-        this.maskSet = true;
-        return this;
-    }
-    @Override
-    public MatchField<VRF> getMatchField() {
-        return MatchField.BSN_VRF;
+    public OFOxm<VRF> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.5");
     }
 
     @Override
@@ -234,8 +234,8 @@ class OFOxmBsnVrfMaskedVer15 implements OFOxmBsnVrfMasked {
     }
 
     @Override
-    public OFOxm<VRF> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.5");
+    public MatchField<VRF> getMatchField() {
+        return MatchField.BSN_VRF;
     }
 
     @Override

@@ -28,9 +28,9 @@ import org.projectfloodlight.openflow.exceptions.*;
 import io.netty.buffer.ByteBuf;
 
 public interface OFActionOutput extends OFObject, OFAction {
-    OFActionType getType();
-    OFPort getPort();
     int getMaxLen();
+    OFPort getPort();
+    OFActionType getType();
     OFVersion getVersion();
 
     void writeTo(ByteBuf channelBuffer);
@@ -38,11 +38,11 @@ public interface OFActionOutput extends OFObject, OFAction {
     Builder createBuilder();
     public interface Builder extends OFAction.Builder {
         OFActionOutput build();
-        OFActionType getType();
-        OFPort getPort();
-        Builder setPort(OFPort port);
         int getMaxLen();
         Builder setMaxLen(int maxLen);
+        OFPort getPort();
+        Builder setPort(OFPort port);
+        OFActionType getType();
         OFVersion getVersion();
     }
 }

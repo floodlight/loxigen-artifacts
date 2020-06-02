@@ -72,28 +72,8 @@ class OFBsnDebugCounterStatsReplyVer13 implements OFBsnDebugCounterStatsReply {
 
     // Accessors for OF message fields
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_13;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.STATS_REPLY;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFStatsType getStatsType() {
-        return OFStatsType.EXPERIMENTER;
-    }
-
-    @Override
-    public Set<OFStatsReplyFlags> getFlags() {
-        return flags;
+    public List<OFBsnDebugCounterStatsEntry> getEntries() {
+        return entries;
     }
 
     @Override
@@ -102,13 +82,33 @@ class OFBsnDebugCounterStatsReplyVer13 implements OFBsnDebugCounterStatsReply {
     }
 
     @Override
+    public Set<OFStatsReplyFlags> getFlags() {
+        return flags;
+    }
+
+    @Override
+    public OFStatsType getStatsType() {
+        return OFStatsType.EXPERIMENTER;
+    }
+
+    @Override
     public long getSubtype() {
         return 0xcL;
     }
 
     @Override
-    public List<OFBsnDebugCounterStatsEntry> getEntries() {
-        return entries;
+    public OFType getType() {
+        return OFType.STATS_REPLY;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_13;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
     }
 
 
@@ -133,29 +133,19 @@ class OFBsnDebugCounterStatsReplyVer13 implements OFBsnDebugCounterStatsReply {
         }
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_13;
+    public List<OFBsnDebugCounterStatsEntry> getEntries() {
+        return entries;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.STATS_REPLY;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFBsnDebugCounterStatsReply.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
+    public OFBsnDebugCounterStatsReply.Builder setEntries(List<OFBsnDebugCounterStatsEntry> entries) {
+        this.entries = entries;
+        this.entriesSet = true;
         return this;
     }
     @Override
-    public OFStatsType getStatsType() {
-        return OFStatsType.EXPERIMENTER;
+    public long getExperimenter() {
+        return 0x5c16c7L;
     }
 
     @Override
@@ -170,8 +160,8 @@ class OFBsnDebugCounterStatsReplyVer13 implements OFBsnDebugCounterStatsReply {
         return this;
     }
     @Override
-    public long getExperimenter() {
-        return 0x5c16c7L;
+    public OFStatsType getStatsType() {
+        return OFStatsType.EXPERIMENTER;
     }
 
     @Override
@@ -180,14 +170,24 @@ class OFBsnDebugCounterStatsReplyVer13 implements OFBsnDebugCounterStatsReply {
     }
 
     @Override
-    public List<OFBsnDebugCounterStatsEntry> getEntries() {
-        return entries;
+    public OFType getType() {
+        return OFType.STATS_REPLY;
     }
 
     @Override
-    public OFBsnDebugCounterStatsReply.Builder setEntries(List<OFBsnDebugCounterStatsEntry> entries) {
-        this.entries = entries;
-        this.entriesSet = true;
+    public OFVersion getVersion() {
+        return OFVersion.OF_13;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFBsnDebugCounterStatsReply.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 
@@ -222,29 +222,19 @@ class OFBsnDebugCounterStatsReplyVer13 implements OFBsnDebugCounterStatsReply {
         private List<OFBsnDebugCounterStatsEntry> entries;
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_13;
+    public List<OFBsnDebugCounterStatsEntry> getEntries() {
+        return entries;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.STATS_REPLY;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFBsnDebugCounterStatsReply.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
+    public OFBsnDebugCounterStatsReply.Builder setEntries(List<OFBsnDebugCounterStatsEntry> entries) {
+        this.entries = entries;
+        this.entriesSet = true;
         return this;
     }
     @Override
-    public OFStatsType getStatsType() {
-        return OFStatsType.EXPERIMENTER;
+    public long getExperimenter() {
+        return 0x5c16c7L;
     }
 
     @Override
@@ -259,8 +249,8 @@ class OFBsnDebugCounterStatsReplyVer13 implements OFBsnDebugCounterStatsReply {
         return this;
     }
     @Override
-    public long getExperimenter() {
-        return 0x5c16c7L;
+    public OFStatsType getStatsType() {
+        return OFStatsType.EXPERIMENTER;
     }
 
     @Override
@@ -269,14 +259,24 @@ class OFBsnDebugCounterStatsReplyVer13 implements OFBsnDebugCounterStatsReply {
     }
 
     @Override
-    public List<OFBsnDebugCounterStatsEntry> getEntries() {
-        return entries;
+    public OFType getType() {
+        return OFType.STATS_REPLY;
     }
 
     @Override
-    public OFBsnDebugCounterStatsReply.Builder setEntries(List<OFBsnDebugCounterStatsEntry> entries) {
-        this.entries = entries;
-        this.entriesSet = true;
+    public OFVersion getVersion() {
+        return OFVersion.OF_13;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFBsnDebugCounterStatsReply.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 //

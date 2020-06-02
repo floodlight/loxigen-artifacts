@@ -65,18 +65,8 @@ class OFRoleRequestVer15 implements OFRoleRequest {
 
     // Accessors for OF message fields
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_15;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.ROLE_REQUEST;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
+    public U64 getGenerationId() {
+        return generationId;
     }
 
     @Override
@@ -85,13 +75,23 @@ class OFRoleRequestVer15 implements OFRoleRequest {
     }
 
     @Override
-    public U64 getGenerationId() {
-        return generationId;
+    public int getShortId() {
+        return shortId;
     }
 
     @Override
-    public int getShortId() {
-        return shortId;
+    public OFType getType() {
+        return OFType.ROLE_REQUEST;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_15;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
     }
 
 
@@ -118,24 +118,14 @@ class OFRoleRequestVer15 implements OFRoleRequest {
         }
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_15;
+    public U64 getGenerationId() {
+        return generationId;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.ROLE_REQUEST;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFRoleRequest.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
+    public OFRoleRequest.Builder setGenerationId(U64 generationId) {
+        this.generationId = generationId;
+        this.generationIdSet = true;
         return this;
     }
     @Override
@@ -150,17 +140,6 @@ class OFRoleRequestVer15 implements OFRoleRequest {
         return this;
     }
     @Override
-    public U64 getGenerationId() {
-        return generationId;
-    }
-
-    @Override
-    public OFRoleRequest.Builder setGenerationId(U64 generationId) {
-        this.generationId = generationId;
-        this.generationIdSet = true;
-        return this;
-    }
-    @Override
     public int getShortId() {
         return shortId;
     }
@@ -169,6 +148,27 @@ class OFRoleRequestVer15 implements OFRoleRequest {
     public OFRoleRequest.Builder setShortId(int shortId) {
         this.shortId = shortId;
         this.shortIdSet = true;
+        return this;
+    }
+    @Override
+    public OFType getType() {
+        return OFType.ROLE_REQUEST;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_15;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFRoleRequest.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 
@@ -207,24 +207,14 @@ class OFRoleRequestVer15 implements OFRoleRequest {
         private U64 generationId;
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_15;
+    public U64 getGenerationId() {
+        return generationId;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.ROLE_REQUEST;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFRoleRequest.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
+    public OFRoleRequest.Builder setGenerationId(U64 generationId) {
+        this.generationId = generationId;
+        this.generationIdSet = true;
         return this;
     }
     @Override
@@ -239,17 +229,6 @@ class OFRoleRequestVer15 implements OFRoleRequest {
         return this;
     }
     @Override
-    public U64 getGenerationId() {
-        return generationId;
-    }
-
-    @Override
-    public OFRoleRequest.Builder setGenerationId(U64 generationId) {
-        this.generationId = generationId;
-        this.generationIdSet = true;
-        return this;
-    }
-    @Override
     public int getShortId() {
         return shortId;
     }
@@ -258,6 +237,27 @@ class OFRoleRequestVer15 implements OFRoleRequest {
     public OFRoleRequest.Builder setShortId(int shortId) {
         this.shortId = shortId;
         this.shortIdSet = true;
+        return this;
+    }
+    @Override
+    public OFType getType() {
+        return OFType.ROLE_REQUEST;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_15;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFRoleRequest.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 //

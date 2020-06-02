@@ -70,6 +70,10 @@ public class OFActionIdsVer12 implements OFActionIds {
         throw new UnsupportedOperationException("OFActionIdGroup not supported in version 1.2");
     }
 
+    public OFActionIdMeter meter() {
+        throw new UnsupportedOperationException("OFActionIdMeter not supported in version 1.2");
+    }
+
     public OFActionIdNiciraDecTtl niciraDecTtl() {
         throw new UnsupportedOperationException("OFActionIdNiciraDecTtl not supported in version 1.2");
     }
@@ -116,10 +120,6 @@ public class OFActionIdsVer12 implements OFActionIds {
 
     public OFActionIdSetQueue setQueue() {
         throw new UnsupportedOperationException("OFActionIdSetQueue not supported in version 1.2");
-    }
-
-    public OFActionIdMeter meter() {
-        throw new UnsupportedOperationException("OFActionIdMeter not supported in version 1.2");
     }
 
     public OFMessageReader<OFActionId> getReader() {

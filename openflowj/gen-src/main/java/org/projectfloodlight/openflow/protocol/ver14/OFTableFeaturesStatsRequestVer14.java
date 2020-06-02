@@ -72,23 +72,8 @@ class OFTableFeaturesStatsRequestVer14 implements OFTableFeaturesStatsRequest {
 
     // Accessors for OF message fields
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_14;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.STATS_REQUEST;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFStatsType getStatsType() {
-        return OFStatsType.TABLE_FEATURES;
+    public List<OFTableFeatures> getEntries() {
+        return entries;
     }
 
     @Override
@@ -97,8 +82,23 @@ class OFTableFeaturesStatsRequestVer14 implements OFTableFeaturesStatsRequest {
     }
 
     @Override
-    public List<OFTableFeatures> getEntries() {
-        return entries;
+    public OFStatsType getStatsType() {
+        return OFStatsType.TABLE_FEATURES;
+    }
+
+    @Override
+    public OFType getType() {
+        return OFType.STATS_REQUEST;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_14;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
     }
 
 
@@ -123,31 +123,16 @@ class OFTableFeaturesStatsRequestVer14 implements OFTableFeaturesStatsRequest {
         }
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_14;
+    public List<OFTableFeatures> getEntries() {
+        return entries;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.STATS_REQUEST;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFTableFeaturesStatsRequest.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
+    public OFTableFeaturesStatsRequest.Builder setEntries(List<OFTableFeatures> entries) {
+        this.entries = entries;
+        this.entriesSet = true;
         return this;
     }
-    @Override
-    public OFStatsType getStatsType() {
-        return OFStatsType.TABLE_FEATURES;
-    }
-
     @Override
     public Set<OFStatsRequestFlags> getFlags() {
         return flags;
@@ -160,14 +145,29 @@ class OFTableFeaturesStatsRequestVer14 implements OFTableFeaturesStatsRequest {
         return this;
     }
     @Override
-    public List<OFTableFeatures> getEntries() {
-        return entries;
+    public OFStatsType getStatsType() {
+        return OFStatsType.TABLE_FEATURES;
     }
 
     @Override
-    public OFTableFeaturesStatsRequest.Builder setEntries(List<OFTableFeatures> entries) {
-        this.entries = entries;
-        this.entriesSet = true;
+    public OFType getType() {
+        return OFType.STATS_REQUEST;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_14;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFTableFeaturesStatsRequest.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 
@@ -202,31 +202,16 @@ class OFTableFeaturesStatsRequestVer14 implements OFTableFeaturesStatsRequest {
         private List<OFTableFeatures> entries;
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_14;
+    public List<OFTableFeatures> getEntries() {
+        return entries;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.STATS_REQUEST;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFTableFeaturesStatsRequest.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
+    public OFTableFeaturesStatsRequest.Builder setEntries(List<OFTableFeatures> entries) {
+        this.entries = entries;
+        this.entriesSet = true;
         return this;
     }
-    @Override
-    public OFStatsType getStatsType() {
-        return OFStatsType.TABLE_FEATURES;
-    }
-
     @Override
     public Set<OFStatsRequestFlags> getFlags() {
         return flags;
@@ -239,14 +224,29 @@ class OFTableFeaturesStatsRequestVer14 implements OFTableFeaturesStatsRequest {
         return this;
     }
     @Override
-    public List<OFTableFeatures> getEntries() {
-        return entries;
+    public OFStatsType getStatsType() {
+        return OFStatsType.TABLE_FEATURES;
     }
 
     @Override
-    public OFTableFeaturesStatsRequest.Builder setEntries(List<OFTableFeatures> entries) {
-        this.entries = entries;
-        this.entriesSet = true;
+    public OFType getType() {
+        return OFType.STATS_REQUEST;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_14;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFTableFeaturesStatsRequest.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 //

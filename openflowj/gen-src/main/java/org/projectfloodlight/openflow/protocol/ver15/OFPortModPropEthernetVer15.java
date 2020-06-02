@@ -59,13 +59,13 @@ class OFPortModPropEthernetVer15 implements OFPortModPropEthernet {
 
     // Accessors for OF message fields
     @Override
-    public int getType() {
-        return 0x0;
+    public Set<OFPortFeatures> getAdvertise() {
+        return advertise;
     }
 
     @Override
-    public Set<OFPortFeatures> getAdvertise() {
-        return advertise;
+    public int getType() {
+        return 0x0;
     }
 
     @Override
@@ -91,11 +91,6 @@ class OFPortModPropEthernetVer15 implements OFPortModPropEthernet {
         }
 
     @Override
-    public int getType() {
-        return 0x0;
-    }
-
-    @Override
     public Set<OFPortFeatures> getAdvertise() {
         return advertise;
     }
@@ -106,6 +101,11 @@ class OFPortModPropEthernetVer15 implements OFPortModPropEthernet {
         this.advertiseSet = true;
         return this;
     }
+    @Override
+    public int getType() {
+        return 0x0;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_15;
@@ -133,11 +133,6 @@ class OFPortModPropEthernetVer15 implements OFPortModPropEthernet {
         private Set<OFPortFeatures> advertise;
 
     @Override
-    public int getType() {
-        return 0x0;
-    }
-
-    @Override
     public Set<OFPortFeatures> getAdvertise() {
         return advertise;
     }
@@ -148,6 +143,11 @@ class OFPortModPropEthernetVer15 implements OFPortModPropEthernet {
         this.advertiseSet = true;
         return this;
     }
+    @Override
+    public int getType() {
+        return 0x0;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_15;

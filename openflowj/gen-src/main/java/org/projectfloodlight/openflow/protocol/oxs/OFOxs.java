@@ -29,8 +29,8 @@ import io.netty.buffer.ByteBuf;
 
 public interface OFOxs<T extends OFValueType<T>> extends OFObject {
     long getTypeLen();
-    T getValue();
     StatField<T> getStatField();
+    T getValue();
     OFVersion getVersion();
 
     void writeTo(ByteBuf channelBuffer);
@@ -39,8 +39,8 @@ public interface OFOxs<T extends OFValueType<T>> extends OFObject {
     public interface Builder<T extends OFValueType<T>>  {
         OFOxs<T> build();
         long getTypeLen();
-        T getValue();
         StatField<T> getStatField();
+        T getValue();
         OFVersion getVersion();
     }
 }

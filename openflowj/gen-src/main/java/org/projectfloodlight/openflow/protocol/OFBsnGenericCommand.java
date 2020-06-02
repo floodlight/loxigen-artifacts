@@ -29,28 +29,28 @@ import java.util.List;
 import io.netty.buffer.ByteBuf;
 
 public interface OFBsnGenericCommand extends OFObject, OFBsnHeader {
-    OFVersion getVersion();
-    OFType getType();
-    long getXid();
     long getExperimenter();
-    long getSubtype();
     String getName();
+    long getSubtype();
     List<OFBsnTlv> getTlvs();
+    OFType getType();
+    OFVersion getVersion();
+    long getXid();
 
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();
     public interface Builder extends OFBsnHeader.Builder {
         OFBsnGenericCommand build();
-        OFVersion getVersion();
-        OFType getType();
-        long getXid();
-        Builder setXid(long xid);
         long getExperimenter();
-        long getSubtype();
         String getName();
         Builder setName(String name);
+        long getSubtype();
         List<OFBsnTlv> getTlvs();
         Builder setTlvs(List<OFBsnTlv> tlvs);
+        OFType getType();
+        OFVersion getVersion();
+        long getXid();
+        Builder setXid(long xid);
     }
 }

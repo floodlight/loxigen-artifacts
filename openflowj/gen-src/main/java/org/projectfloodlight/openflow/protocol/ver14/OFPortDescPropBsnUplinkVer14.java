@@ -52,8 +52,8 @@ class OFPortDescPropBsnUplinkVer14 implements OFPortDescPropBsnUplink {
 
     // Accessors for OF message fields
     @Override
-    public int getType() {
-        return 0xffff;
+    public long getExpType() {
+        return 0x0L;
     }
 
     @Override
@@ -62,8 +62,8 @@ class OFPortDescPropBsnUplinkVer14 implements OFPortDescPropBsnUplink {
     }
 
     @Override
-    public long getExpType() {
-        return 0x0L;
+    public int getType() {
+        return 0xffff;
     }
 
     @Override

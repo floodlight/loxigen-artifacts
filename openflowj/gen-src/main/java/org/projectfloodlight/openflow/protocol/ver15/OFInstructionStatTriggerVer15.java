@@ -68,11 +68,6 @@ class OFInstructionStatTriggerVer15 implements OFInstructionStatTrigger {
 
     // Accessors for OF message fields
     @Override
-    public OFInstructionType getType() {
-        return OFInstructionType.STAT_TRIGGER;
-    }
-
-    @Override
     public Set<OFStatTriggerFlags> getFlags() {
         return flags;
     }
@@ -80,6 +75,11 @@ class OFInstructionStatTriggerVer15 implements OFInstructionStatTrigger {
     @Override
     public OFOxsList getThresholds() {
         return thresholds;
+    }
+
+    @Override
+    public OFInstructionType getType() {
+        return OFInstructionType.STAT_TRIGGER;
     }
 
     @Override
@@ -107,11 +107,6 @@ class OFInstructionStatTriggerVer15 implements OFInstructionStatTrigger {
         }
 
     @Override
-    public OFInstructionType getType() {
-        return OFInstructionType.STAT_TRIGGER;
-    }
-
-    @Override
     public Set<OFStatTriggerFlags> getFlags() {
         return flags;
     }
@@ -133,6 +128,11 @@ class OFInstructionStatTriggerVer15 implements OFInstructionStatTrigger {
         this.thresholdsSet = true;
         return this;
     }
+    @Override
+    public OFInstructionType getType() {
+        return OFInstructionType.STAT_TRIGGER;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_15;
@@ -166,11 +166,6 @@ class OFInstructionStatTriggerVer15 implements OFInstructionStatTrigger {
         private OFOxsList thresholds;
 
     @Override
-    public OFInstructionType getType() {
-        return OFInstructionType.STAT_TRIGGER;
-    }
-
-    @Override
     public Set<OFStatTriggerFlags> getFlags() {
         return flags;
     }
@@ -192,6 +187,11 @@ class OFInstructionStatTriggerVer15 implements OFInstructionStatTrigger {
         this.thresholdsSet = true;
         return this;
     }
+    @Override
+    public OFInstructionType getType() {
+        return OFInstructionType.STAT_TRIGGER;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_15;

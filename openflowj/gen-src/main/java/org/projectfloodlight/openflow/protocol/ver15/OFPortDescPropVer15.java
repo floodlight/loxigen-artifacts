@@ -44,12 +44,12 @@ abstract class OFPortDescPropVer15 {
             short type = bb.readShort();
             bb.readerIndex(start);
             switch(type) {
-               case (short) 0xffff:
-                   // discriminator value 0xffff=0xffff for class OFPortDescPropExperimenterVer15
-                   return OFPortDescPropExperimenterVer15.READER.readFrom(bb);
                case (short) 0x0:
                    // discriminator value 0x0=0x0 for class OFPortDescPropEthernetVer15
                    return OFPortDescPropEthernetVer15.READER.readFrom(bb);
+               case (short) 0xffff:
+                   // discriminator value 0xffff=0xffff for class OFPortDescPropExperimenterVer15
+                   return OFPortDescPropExperimenterVer15.READER.readFrom(bb);
                case (short) 0x1:
                    // discriminator value 0x1=0x1 for class OFPortDescPropOpticalVer15
                    return OFPortDescPropOpticalVer15.READER.readFrom(bb);

@@ -55,13 +55,13 @@ class OFQueuePropMinRateVer11 implements OFQueuePropMinRate {
 
     // Accessors for OF message fields
     @Override
-    public int getType() {
-        return 0x1;
+    public int getRate() {
+        return rate;
     }
 
     @Override
-    public int getRate() {
-        return rate;
+    public int getType() {
+        return 0x1;
     }
 
     @Override
@@ -87,11 +87,6 @@ class OFQueuePropMinRateVer11 implements OFQueuePropMinRate {
         }
 
     @Override
-    public int getType() {
-        return 0x1;
-    }
-
-    @Override
     public int getRate() {
         return rate;
     }
@@ -102,6 +97,11 @@ class OFQueuePropMinRateVer11 implements OFQueuePropMinRate {
         this.rateSet = true;
         return this;
     }
+    @Override
+    public int getType() {
+        return 0x1;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_11;
@@ -127,11 +127,6 @@ class OFQueuePropMinRateVer11 implements OFQueuePropMinRate {
         private int rate;
 
     @Override
-    public int getType() {
-        return 0x1;
-    }
-
-    @Override
     public int getRate() {
         return rate;
     }
@@ -142,6 +137,11 @@ class OFQueuePropMinRateVer11 implements OFQueuePropMinRate {
         this.rateSet = true;
         return this;
     }
+    @Override
+    public int getType() {
+        return 0x1;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_11;

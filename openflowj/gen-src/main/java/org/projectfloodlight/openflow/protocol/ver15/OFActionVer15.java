@@ -45,12 +45,6 @@ abstract class OFActionVer15 {
             short type = bb.readShort();
             bb.readerIndex(start);
             switch(type) {
-               case (short) 0xffff:
-                   // discriminator value OFActionType.EXPERIMENTER=65535 for class OFActionExperimenterVer15
-                   return OFActionExperimenterVer15.READER.readFrom(bb);
-               case (short) 0x0:
-                   // discriminator value OFActionType.OUTPUT=0 for class OFActionOutputVer15
-                   return OFActionOutputVer15.READER.readFrom(bb);
                case (short) 0xc:
                    // discriminator value OFActionType.COPY_TTL_IN=12 for class OFActionCopyTtlInVer15
                    return OFActionCopyTtlInVer15.READER.readFrom(bb);
@@ -63,21 +57,39 @@ abstract class OFActionVer15 {
                case (short) 0x18:
                    // discriminator value OFActionType.DEC_NW_TTL=24 for class OFActionDecNwTtlVer15
                    return OFActionDecNwTtlVer15.READER.readFrom(bb);
+               case (short) 0xffff:
+                   // discriminator value OFActionType.EXPERIMENTER=65535 for class OFActionExperimenterVer15
+                   return OFActionExperimenterVer15.READER.readFrom(bb);
                case (short) 0x16:
                    // discriminator value OFActionType.GROUP=22 for class OFActionGroupVer15
                    return OFActionGroupVer15.READER.readFrom(bb);
+               case (short) 0x1d:
+                   // discriminator value OFActionType.METER=29 for class OFActionMeterVer15
+                   return OFActionMeterVer15.READER.readFrom(bb);
+               case (short) 0x0:
+                   // discriminator value OFActionType.OUTPUT=0 for class OFActionOutputVer15
+                   return OFActionOutputVer15.READER.readFrom(bb);
                case (short) 0x14:
                    // discriminator value OFActionType.POP_MPLS=20 for class OFActionPopMplsVer15
                    return OFActionPopMplsVer15.READER.readFrom(bb);
+               case (short) 0x1b:
+                   // discriminator value OFActionType.POP_PBB=27 for class OFActionPopPbbVer15
+                   return OFActionPopPbbVer15.READER.readFrom(bb);
                case (short) 0x12:
                    // discriminator value OFActionType.POP_VLAN=18 for class OFActionPopVlanVer15
                    return OFActionPopVlanVer15.READER.readFrom(bb);
                case (short) 0x13:
                    // discriminator value OFActionType.PUSH_MPLS=19 for class OFActionPushMplsVer15
                    return OFActionPushMplsVer15.READER.readFrom(bb);
+               case (short) 0x1a:
+                   // discriminator value OFActionType.PUSH_PBB=26 for class OFActionPushPbbVer15
+                   return OFActionPushPbbVer15.READER.readFrom(bb);
                case (short) 0x11:
                    // discriminator value OFActionType.PUSH_VLAN=17 for class OFActionPushVlanVer15
                    return OFActionPushVlanVer15.READER.readFrom(bb);
+               case (short) 0x19:
+                   // discriminator value OFActionType.SET_FIELD=25 for class OFActionSetFieldVer15
+                   return OFActionSetFieldVer15.READER.readFrom(bb);
                case (short) 0xf:
                    // discriminator value OFActionType.SET_MPLS_TTL=15 for class OFActionSetMplsTtlVer15
                    return OFActionSetMplsTtlVer15.READER.readFrom(bb);
@@ -87,18 +99,6 @@ abstract class OFActionVer15 {
                case (short) 0x15:
                    // discriminator value OFActionType.SET_QUEUE=21 for class OFActionSetQueueVer15
                    return OFActionSetQueueVer15.READER.readFrom(bb);
-               case (short) 0x19:
-                   // discriminator value OFActionType.SET_FIELD=25 for class OFActionSetFieldVer15
-                   return OFActionSetFieldVer15.READER.readFrom(bb);
-               case (short) 0x1b:
-                   // discriminator value OFActionType.POP_PBB=27 for class OFActionPopPbbVer15
-                   return OFActionPopPbbVer15.READER.readFrom(bb);
-               case (short) 0x1a:
-                   // discriminator value OFActionType.PUSH_PBB=26 for class OFActionPushPbbVer15
-                   return OFActionPushPbbVer15.READER.readFrom(bb);
-               case (short) 0x1d:
-                   // discriminator value OFActionType.METER=29 for class OFActionMeterVer15
-                   return OFActionMeterVer15.READER.readFrom(bb);
                default:
                    throw new OFParseError("Unknown value for discriminator type of class OFActionVer15: " + type);
             }

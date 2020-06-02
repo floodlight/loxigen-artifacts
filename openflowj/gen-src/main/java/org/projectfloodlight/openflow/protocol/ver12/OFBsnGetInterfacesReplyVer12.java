@@ -65,23 +65,13 @@ class OFBsnGetInterfacesReplyVer12 implements OFBsnGetInterfacesReply {
 
     // Accessors for OF message fields
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_12;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.EXPERIMENTER;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
     public long getExperimenter() {
         return 0x5c16c7L;
+    }
+
+    @Override
+    public List<OFBsnInterface> getInterfaces() {
+        return interfaces;
     }
 
     @Override
@@ -90,8 +80,18 @@ class OFBsnGetInterfacesReplyVer12 implements OFBsnGetInterfacesReply {
     }
 
     @Override
-    public List<OFBsnInterface> getInterfaces() {
-        return interfaces;
+    public OFType getType() {
+        return OFType.EXPERIMENTER;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_12;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
     }
 
 
@@ -114,34 +114,8 @@ class OFBsnGetInterfacesReplyVer12 implements OFBsnGetInterfacesReply {
         }
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_12;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.EXPERIMENTER;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFBsnGetInterfacesReply.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
-        return this;
-    }
-    @Override
     public long getExperimenter() {
         return 0x5c16c7L;
-    }
-
-    @Override
-    public long getSubtype() {
-        return 0xaL;
     }
 
     @Override
@@ -153,6 +127,32 @@ class OFBsnGetInterfacesReplyVer12 implements OFBsnGetInterfacesReply {
     public OFBsnGetInterfacesReply.Builder setInterfaces(List<OFBsnInterface> interfaces) {
         this.interfaces = interfaces;
         this.interfacesSet = true;
+        return this;
+    }
+    @Override
+    public long getSubtype() {
+        return 0xaL;
+    }
+
+    @Override
+    public OFType getType() {
+        return OFType.EXPERIMENTER;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_12;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFBsnGetInterfacesReply.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 
@@ -181,34 +181,8 @@ class OFBsnGetInterfacesReplyVer12 implements OFBsnGetInterfacesReply {
         private List<OFBsnInterface> interfaces;
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_12;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.EXPERIMENTER;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFBsnGetInterfacesReply.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
-        return this;
-    }
-    @Override
     public long getExperimenter() {
         return 0x5c16c7L;
-    }
-
-    @Override
-    public long getSubtype() {
-        return 0xaL;
     }
 
     @Override
@@ -220,6 +194,32 @@ class OFBsnGetInterfacesReplyVer12 implements OFBsnGetInterfacesReply {
     public OFBsnGetInterfacesReply.Builder setInterfaces(List<OFBsnInterface> interfaces) {
         this.interfaces = interfaces;
         this.interfacesSet = true;
+        return this;
+    }
+    @Override
+    public long getSubtype() {
+        return 0xaL;
+    }
+
+    @Override
+    public OFType getType() {
+        return OFType.EXPERIMENTER;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_12;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFBsnGetInterfacesReply.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 //

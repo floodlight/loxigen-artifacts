@@ -117,16 +117,16 @@ public class OFInstructionIdsVer15 implements OFInstructionIds {
         throw new UnsupportedOperationException("OFInstructionIdMeter not supported in version 1.5");
     }
 
+    public OFInstructionIdStatTrigger statTrigger() {
+        return OFInstructionIdStatTriggerVer15.INSTANCE;
+    }
+
     public OFInstructionIdWriteActions writeActions() {
         return OFInstructionIdWriteActionsVer15.INSTANCE;
     }
 
     public OFInstructionIdWriteMetadata writeMetadata() {
         return OFInstructionIdWriteMetadataVer15.INSTANCE;
-    }
-
-    public OFInstructionIdStatTrigger statTrigger() {
-        return OFInstructionIdStatTriggerVer15.INSTANCE;
     }
 
     public OFMessageReader<OFInstructionId> getReader() {

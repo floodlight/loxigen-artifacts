@@ -89,18 +89,8 @@ class OFGroupStatsEntryVer13 implements OFGroupStatsEntry {
 
     // Accessors for OF message fields
     @Override
-    public OFGroup getGroup() {
-        return group;
-    }
-
-    @Override
-    public long getRefCount() {
-        return refCount;
-    }
-
-    @Override
-    public U64 getPacketCount() {
-        return packetCount;
+    public List<OFBucketCounter> getBucketStats() {
+        return bucketStats;
     }
 
     @Override
@@ -109,8 +99,8 @@ class OFGroupStatsEntryVer13 implements OFGroupStatsEntry {
     }
 
     @Override
-    public List<OFBucketCounter> getBucketStats() {
-        return bucketStats;
+    public long getDurationNsec() {
+        return durationNsec;
     }
 
     @Override
@@ -119,8 +109,18 @@ class OFGroupStatsEntryVer13 implements OFGroupStatsEntry {
     }
 
     @Override
-    public long getDurationNsec() {
-        return durationNsec;
+    public OFGroup getGroup() {
+        return group;
+    }
+
+    @Override
+    public U64 getPacketCount() {
+        return packetCount;
+    }
+
+    @Override
+    public long getRefCount() {
+        return refCount;
     }
 
     @Override
@@ -158,36 +158,14 @@ class OFGroupStatsEntryVer13 implements OFGroupStatsEntry {
         }
 
     @Override
-    public OFGroup getGroup() {
-        return group;
+    public List<OFBucketCounter> getBucketStats() {
+        return bucketStats;
     }
 
     @Override
-    public OFGroupStatsEntry.Builder setGroup(OFGroup group) {
-        this.group = group;
-        this.groupSet = true;
-        return this;
-    }
-    @Override
-    public long getRefCount() {
-        return refCount;
-    }
-
-    @Override
-    public OFGroupStatsEntry.Builder setRefCount(long refCount) {
-        this.refCount = refCount;
-        this.refCountSet = true;
-        return this;
-    }
-    @Override
-    public U64 getPacketCount() {
-        return packetCount;
-    }
-
-    @Override
-    public OFGroupStatsEntry.Builder setPacketCount(U64 packetCount) {
-        this.packetCount = packetCount;
-        this.packetCountSet = true;
+    public OFGroupStatsEntry.Builder setBucketStats(List<OFBucketCounter> bucketStats) {
+        this.bucketStats = bucketStats;
+        this.bucketStatsSet = true;
         return this;
     }
     @Override
@@ -202,14 +180,14 @@ class OFGroupStatsEntryVer13 implements OFGroupStatsEntry {
         return this;
     }
     @Override
-    public List<OFBucketCounter> getBucketStats() {
-        return bucketStats;
+    public long getDurationNsec() {
+        return durationNsec;
     }
 
     @Override
-    public OFGroupStatsEntry.Builder setBucketStats(List<OFBucketCounter> bucketStats) {
-        this.bucketStats = bucketStats;
-        this.bucketStatsSet = true;
+    public OFGroupStatsEntry.Builder setDurationNsec(long durationNsec) {
+        this.durationNsec = durationNsec;
+        this.durationNsecSet = true;
         return this;
     }
     @Override
@@ -224,14 +202,36 @@ class OFGroupStatsEntryVer13 implements OFGroupStatsEntry {
         return this;
     }
     @Override
-    public long getDurationNsec() {
-        return durationNsec;
+    public OFGroup getGroup() {
+        return group;
     }
 
     @Override
-    public OFGroupStatsEntry.Builder setDurationNsec(long durationNsec) {
-        this.durationNsec = durationNsec;
-        this.durationNsecSet = true;
+    public OFGroupStatsEntry.Builder setGroup(OFGroup group) {
+        this.group = group;
+        this.groupSet = true;
+        return this;
+    }
+    @Override
+    public U64 getPacketCount() {
+        return packetCount;
+    }
+
+    @Override
+    public OFGroupStatsEntry.Builder setPacketCount(U64 packetCount) {
+        this.packetCount = packetCount;
+        this.packetCountSet = true;
+        return this;
+    }
+    @Override
+    public long getRefCount() {
+        return refCount;
+    }
+
+    @Override
+    public OFGroupStatsEntry.Builder setRefCount(long refCount) {
+        this.refCount = refCount;
+        this.refCountSet = true;
         return this;
     }
     @Override
@@ -291,36 +291,14 @@ class OFGroupStatsEntryVer13 implements OFGroupStatsEntry {
         private List<OFBucketCounter> bucketStats;
 
     @Override
-    public OFGroup getGroup() {
-        return group;
+    public List<OFBucketCounter> getBucketStats() {
+        return bucketStats;
     }
 
     @Override
-    public OFGroupStatsEntry.Builder setGroup(OFGroup group) {
-        this.group = group;
-        this.groupSet = true;
-        return this;
-    }
-    @Override
-    public long getRefCount() {
-        return refCount;
-    }
-
-    @Override
-    public OFGroupStatsEntry.Builder setRefCount(long refCount) {
-        this.refCount = refCount;
-        this.refCountSet = true;
-        return this;
-    }
-    @Override
-    public U64 getPacketCount() {
-        return packetCount;
-    }
-
-    @Override
-    public OFGroupStatsEntry.Builder setPacketCount(U64 packetCount) {
-        this.packetCount = packetCount;
-        this.packetCountSet = true;
+    public OFGroupStatsEntry.Builder setBucketStats(List<OFBucketCounter> bucketStats) {
+        this.bucketStats = bucketStats;
+        this.bucketStatsSet = true;
         return this;
     }
     @Override
@@ -335,14 +313,14 @@ class OFGroupStatsEntryVer13 implements OFGroupStatsEntry {
         return this;
     }
     @Override
-    public List<OFBucketCounter> getBucketStats() {
-        return bucketStats;
+    public long getDurationNsec() {
+        return durationNsec;
     }
 
     @Override
-    public OFGroupStatsEntry.Builder setBucketStats(List<OFBucketCounter> bucketStats) {
-        this.bucketStats = bucketStats;
-        this.bucketStatsSet = true;
+    public OFGroupStatsEntry.Builder setDurationNsec(long durationNsec) {
+        this.durationNsec = durationNsec;
+        this.durationNsecSet = true;
         return this;
     }
     @Override
@@ -357,14 +335,36 @@ class OFGroupStatsEntryVer13 implements OFGroupStatsEntry {
         return this;
     }
     @Override
-    public long getDurationNsec() {
-        return durationNsec;
+    public OFGroup getGroup() {
+        return group;
     }
 
     @Override
-    public OFGroupStatsEntry.Builder setDurationNsec(long durationNsec) {
-        this.durationNsec = durationNsec;
-        this.durationNsecSet = true;
+    public OFGroupStatsEntry.Builder setGroup(OFGroup group) {
+        this.group = group;
+        this.groupSet = true;
+        return this;
+    }
+    @Override
+    public U64 getPacketCount() {
+        return packetCount;
+    }
+
+    @Override
+    public OFGroupStatsEntry.Builder setPacketCount(U64 packetCount) {
+        this.packetCount = packetCount;
+        this.packetCountSet = true;
+        return this;
+    }
+    @Override
+    public long getRefCount() {
+        return refCount;
+    }
+
+    @Override
+    public OFGroupStatsEntry.Builder setRefCount(long refCount) {
+        this.refCount = refCount;
+        this.refCountSet = true;
         return this;
     }
     @Override

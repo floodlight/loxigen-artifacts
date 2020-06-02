@@ -61,13 +61,8 @@ class OFPortDescPropBsnDriverInfoJsonVer15 implements OFPortDescPropBsnDriverInf
 
     // Accessors for OF message fields
     @Override
-    public int getType() {
-        return 0xffff;
-    }
-
-    @Override
-    public long getExperimenter() {
-        return 0x5c16c7L;
+    public byte[] getDriverInfoJson() {
+        return driverInfoJson;
     }
 
     @Override
@@ -76,8 +71,13 @@ class OFPortDescPropBsnDriverInfoJsonVer15 implements OFPortDescPropBsnDriverInf
     }
 
     @Override
-    public byte[] getDriverInfoJson() {
-        return driverInfoJson;
+    public long getExperimenter() {
+        return 0x5c16c7L;
+    }
+
+    @Override
+    public int getType() {
+        return 0xffff;
     }
 
     @Override
@@ -103,25 +103,6 @@ class OFPortDescPropBsnDriverInfoJsonVer15 implements OFPortDescPropBsnDriverInf
         }
 
     @Override
-    public int getType() {
-        return 0xffff;
-    }
-
-    @Override
-    public long getExperimenter() {
-        return 0x5c16c7L;
-    }
-
-    @Override
-    public long getExpType() {
-        return 0x7L;
-    }
-
-    @Override
-    public OFPortDescPropBsnDriverInfoJson.Builder setExpType(long expType) {
-            throw new UnsupportedOperationException("Property expType is not writeable");
-    }
-    @Override
     public byte[] getDriverInfoJson() {
         return driverInfoJson;
     }
@@ -132,6 +113,25 @@ class OFPortDescPropBsnDriverInfoJsonVer15 implements OFPortDescPropBsnDriverInf
         this.driverInfoJsonSet = true;
         return this;
     }
+    @Override
+    public long getExpType() {
+        return 0x7L;
+    }
+
+    @Override
+    public OFPortDescPropBsnDriverInfoJson.Builder setExpType(long expType) {
+            throw new UnsupportedOperationException("Property expType is not writeable");
+    }
+    @Override
+    public long getExperimenter() {
+        return 0x5c16c7L;
+    }
+
+    @Override
+    public int getType() {
+        return 0xffff;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_15;
@@ -159,25 +159,6 @@ class OFPortDescPropBsnDriverInfoJsonVer15 implements OFPortDescPropBsnDriverInf
         private byte[] driverInfoJson;
 
     @Override
-    public int getType() {
-        return 0xffff;
-    }
-
-    @Override
-    public long getExperimenter() {
-        return 0x5c16c7L;
-    }
-
-    @Override
-    public long getExpType() {
-        return 0x7L;
-    }
-
-    @Override
-    public OFPortDescPropBsnDriverInfoJson.Builder setExpType(long expType) {
-            throw new UnsupportedOperationException("Property expType is not writeable");
-    }
-    @Override
     public byte[] getDriverInfoJson() {
         return driverInfoJson;
     }
@@ -188,6 +169,25 @@ class OFPortDescPropBsnDriverInfoJsonVer15 implements OFPortDescPropBsnDriverInf
         this.driverInfoJsonSet = true;
         return this;
     }
+    @Override
+    public long getExpType() {
+        return 0x7L;
+    }
+
+    @Override
+    public OFPortDescPropBsnDriverInfoJson.Builder setExpType(long expType) {
+            throw new UnsupportedOperationException("Property expType is not writeable");
+    }
+    @Override
+    public long getExperimenter() {
+        return 0x5c16c7L;
+    }
+
+    @Override
+    public int getType() {
+        return 0xffff;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_15;

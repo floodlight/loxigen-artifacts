@@ -29,9 +29,9 @@ import java.util.List;
 import io.netty.buffer.ByteBuf;
 
 public interface OFBsnTlvReference extends OFObject, OFBsnTlv {
-    int getType();
-    int getTableId();
     List<OFBsnTlv> getKey();
+    int getTableId();
+    int getType();
     OFVersion getVersion();
 
     void writeTo(ByteBuf channelBuffer);
@@ -39,11 +39,11 @@ public interface OFBsnTlvReference extends OFObject, OFBsnTlv {
     Builder createBuilder();
     public interface Builder extends OFBsnTlv.Builder {
         OFBsnTlvReference build();
-        int getType();
-        int getTableId();
-        Builder setTableId(int tableId);
         List<OFBsnTlv> getKey();
         Builder setKey(List<OFBsnTlv> key);
+        int getTableId();
+        Builder setTableId(int tableId);
+        int getType();
         OFVersion getVersion();
     }
 }

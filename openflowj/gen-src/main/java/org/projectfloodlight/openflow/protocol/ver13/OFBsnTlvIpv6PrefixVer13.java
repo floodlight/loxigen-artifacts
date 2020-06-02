@@ -61,6 +61,11 @@ class OFBsnTlvIpv6PrefixVer13 implements OFBsnTlvIpv6Prefix {
 
     // Accessors for OF message fields
     @Override
+    public short getPrefixLength() {
+        return prefixLength;
+    }
+
+    @Override
     public int getType() {
         return 0x7a;
     }
@@ -68,11 +73,6 @@ class OFBsnTlvIpv6PrefixVer13 implements OFBsnTlvIpv6Prefix {
     @Override
     public IPv6Address getValue() {
         return value;
-    }
-
-    @Override
-    public short getPrefixLength() {
-        return prefixLength;
     }
 
     @Override
@@ -100,6 +100,17 @@ class OFBsnTlvIpv6PrefixVer13 implements OFBsnTlvIpv6Prefix {
         }
 
     @Override
+    public short getPrefixLength() {
+        return prefixLength;
+    }
+
+    @Override
+    public OFBsnTlvIpv6Prefix.Builder setPrefixLength(short prefixLength) {
+        this.prefixLength = prefixLength;
+        this.prefixLengthSet = true;
+        return this;
+    }
+    @Override
     public int getType() {
         return 0x7a;
     }
@@ -113,17 +124,6 @@ class OFBsnTlvIpv6PrefixVer13 implements OFBsnTlvIpv6Prefix {
     public OFBsnTlvIpv6Prefix.Builder setValue(IPv6Address value) {
         this.value = value;
         this.valueSet = true;
-        return this;
-    }
-    @Override
-    public short getPrefixLength() {
-        return prefixLength;
-    }
-
-    @Override
-    public OFBsnTlvIpv6Prefix.Builder setPrefixLength(short prefixLength) {
-        this.prefixLength = prefixLength;
-        this.prefixLengthSet = true;
         return this;
     }
     @Override
@@ -157,6 +157,17 @@ class OFBsnTlvIpv6PrefixVer13 implements OFBsnTlvIpv6Prefix {
         private short prefixLength;
 
     @Override
+    public short getPrefixLength() {
+        return prefixLength;
+    }
+
+    @Override
+    public OFBsnTlvIpv6Prefix.Builder setPrefixLength(short prefixLength) {
+        this.prefixLength = prefixLength;
+        this.prefixLengthSet = true;
+        return this;
+    }
+    @Override
     public int getType() {
         return 0x7a;
     }
@@ -170,17 +181,6 @@ class OFBsnTlvIpv6PrefixVer13 implements OFBsnTlvIpv6Prefix {
     public OFBsnTlvIpv6Prefix.Builder setValue(IPv6Address value) {
         this.value = value;
         this.valueSet = true;
-        return this;
-    }
-    @Override
-    public short getPrefixLength() {
-        return prefixLength;
-    }
-
-    @Override
-    public OFBsnTlvIpv6Prefix.Builder setPrefixLength(short prefixLength) {
-        this.prefixLength = prefixLength;
-        this.prefixLengthSet = true;
         return this;
     }
     @Override

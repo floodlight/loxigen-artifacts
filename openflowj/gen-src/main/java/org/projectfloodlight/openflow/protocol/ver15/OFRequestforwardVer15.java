@@ -58,18 +58,8 @@ class OFRequestforwardVer15 implements OFRequestforward {
 
     // Accessors for OF message fields
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_15;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.REQUESTFORWARD;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
+    public byte[] getData()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property data not supported in version 1.5");
     }
 
     @Override
@@ -83,8 +73,18 @@ class OFRequestforwardVer15 implements OFRequestforward {
     }
 
     @Override
-    public byte[] getData()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property data not supported in version 1.5");
+    public OFType getType() {
+        return OFType.REQUESTFORWARD;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_15;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
     }
 
 
@@ -107,25 +107,13 @@ class OFRequestforwardVer15 implements OFRequestforward {
         }
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_15;
+    public byte[] getData()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property data not supported in version 1.5");
     }
 
     @Override
-    public OFType getType() {
-        return OFType.REQUESTFORWARD;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFRequestforward.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
-        return this;
+    public OFRequestforward.Builder setData(byte[] data) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property data not supported in version 1.5");
     }
     @Override
     public OFMessage getRequest() {
@@ -148,13 +136,25 @@ class OFRequestforwardVer15 implements OFRequestforward {
             throw new UnsupportedOperationException("Property role not supported in version 1.5");
     }
     @Override
-    public byte[] getData()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property data not supported in version 1.5");
+    public OFType getType() {
+        return OFType.REQUESTFORWARD;
     }
 
     @Override
-    public OFRequestforward.Builder setData(byte[] data) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property data not supported in version 1.5");
+    public OFVersion getVersion() {
+        return OFVersion.OF_15;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFRequestforward.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
+        return this;
     }
 
 
@@ -182,25 +182,13 @@ class OFRequestforwardVer15 implements OFRequestforward {
         private OFMessage request;
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_15;
+    public byte[] getData()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property data not supported in version 1.5");
     }
 
     @Override
-    public OFType getType() {
-        return OFType.REQUESTFORWARD;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFRequestforward.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
-        return this;
+    public OFRequestforward.Builder setData(byte[] data) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property data not supported in version 1.5");
     }
     @Override
     public OFMessage getRequest() {
@@ -223,13 +211,25 @@ class OFRequestforwardVer15 implements OFRequestforward {
             throw new UnsupportedOperationException("Property role not supported in version 1.5");
     }
     @Override
-    public byte[] getData()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property data not supported in version 1.5");
+    public OFType getType() {
+        return OFType.REQUESTFORWARD;
     }
 
     @Override
-    public OFRequestforward.Builder setData(byte[] data) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property data not supported in version 1.5");
+    public OFVersion getVersion() {
+        return OFVersion.OF_15;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFRequestforward.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
+        return this;
     }
 //
         @Override

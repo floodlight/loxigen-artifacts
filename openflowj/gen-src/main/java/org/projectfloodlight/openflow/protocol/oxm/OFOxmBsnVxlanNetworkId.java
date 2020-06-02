@@ -30,10 +30,10 @@ import io.netty.buffer.ByteBuf;
 public interface OFOxmBsnVxlanNetworkId extends OFObject, OFOxm<VxlanNI> {
     long getTypeLen();
     VxlanNI getValue();
-    MatchField<VxlanNI> getMatchField();
-    boolean isMasked();
     OFOxm<VxlanNI> getCanonical();
     VxlanNI getMask();
+    boolean isMasked();
+    MatchField<VxlanNI> getMatchField();
     OFVersion getVersion();
 
     void writeTo(ByteBuf channelBuffer);
@@ -44,10 +44,10 @@ public interface OFOxmBsnVxlanNetworkId extends OFObject, OFOxm<VxlanNI> {
         long getTypeLen();
         VxlanNI getValue();
         Builder setValue(VxlanNI value);
-        MatchField<VxlanNI> getMatchField();
-        boolean isMasked();
         OFOxm<VxlanNI> getCanonical();
         VxlanNI getMask();
+        boolean isMasked();
+        MatchField<VxlanNI> getMatchField();
         OFVersion getVersion();
     }
 }

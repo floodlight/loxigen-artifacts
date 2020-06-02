@@ -28,10 +28,10 @@ import org.projectfloodlight.openflow.exceptions.*;
 import io.netty.buffer.ByteBuf;
 
 public interface OFActionBsnChecksum extends OFObject, OFActionBsn {
-    OFActionType getType();
+    U128 getChecksum();
     long getExperimenter();
     long getSubtype();
-    U128 getChecksum();
+    OFActionType getType();
     OFVersion getVersion();
 
     void writeTo(ByteBuf channelBuffer);
@@ -39,11 +39,11 @@ public interface OFActionBsnChecksum extends OFObject, OFActionBsn {
     Builder createBuilder();
     public interface Builder extends OFActionBsn.Builder {
         OFActionBsnChecksum build();
-        OFActionType getType();
-        long getExperimenter();
-        long getSubtype();
         U128 getChecksum();
         Builder setChecksum(U128 checksum);
+        long getExperimenter();
+        long getSubtype();
+        OFActionType getType();
         OFVersion getVersion();
     }
 }

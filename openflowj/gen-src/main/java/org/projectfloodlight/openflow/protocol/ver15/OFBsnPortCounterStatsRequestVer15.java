@@ -68,23 +68,8 @@ class OFBsnPortCounterStatsRequestVer15 implements OFBsnPortCounterStatsRequest 
 
     // Accessors for OF message fields
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_15;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.STATS_REQUEST;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFStatsType getStatsType() {
-        return OFStatsType.EXPERIMENTER;
+    public long getExperimenter() {
+        return 0x5c16c7L;
     }
 
     @Override
@@ -93,8 +78,13 @@ class OFBsnPortCounterStatsRequestVer15 implements OFBsnPortCounterStatsRequest 
     }
 
     @Override
-    public long getExperimenter() {
-        return 0x5c16c7L;
+    public OFPort getPortNo() {
+        return portNo;
+    }
+
+    @Override
+    public OFStatsType getStatsType() {
+        return OFStatsType.EXPERIMENTER;
     }
 
     @Override
@@ -103,8 +93,18 @@ class OFBsnPortCounterStatsRequestVer15 implements OFBsnPortCounterStatsRequest 
     }
 
     @Override
-    public OFPort getPortNo() {
-        return portNo;
+    public OFType getType() {
+        return OFType.STATS_REQUEST;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_15;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
     }
 
 
@@ -129,29 +129,8 @@ class OFBsnPortCounterStatsRequestVer15 implements OFBsnPortCounterStatsRequest 
         }
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_15;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.STATS_REQUEST;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFBsnPortCounterStatsRequest.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
-        return this;
-    }
-    @Override
-    public OFStatsType getStatsType() {
-        return OFStatsType.EXPERIMENTER;
+    public long getExperimenter() {
+        return 0x5c16c7L;
     }
 
     @Override
@@ -166,16 +145,6 @@ class OFBsnPortCounterStatsRequestVer15 implements OFBsnPortCounterStatsRequest 
         return this;
     }
     @Override
-    public long getExperimenter() {
-        return 0x5c16c7L;
-    }
-
-    @Override
-    public long getSubtype() {
-        return 0x8L;
-    }
-
-    @Override
     public OFPort getPortNo() {
         return portNo;
     }
@@ -184,6 +153,37 @@ class OFBsnPortCounterStatsRequestVer15 implements OFBsnPortCounterStatsRequest 
     public OFBsnPortCounterStatsRequest.Builder setPortNo(OFPort portNo) {
         this.portNo = portNo;
         this.portNoSet = true;
+        return this;
+    }
+    @Override
+    public OFStatsType getStatsType() {
+        return OFStatsType.EXPERIMENTER;
+    }
+
+    @Override
+    public long getSubtype() {
+        return 0x8L;
+    }
+
+    @Override
+    public OFType getType() {
+        return OFType.STATS_REQUEST;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_15;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFBsnPortCounterStatsRequest.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 
@@ -218,29 +218,8 @@ class OFBsnPortCounterStatsRequestVer15 implements OFBsnPortCounterStatsRequest 
         private OFPort portNo;
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_15;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.STATS_REQUEST;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFBsnPortCounterStatsRequest.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
-        return this;
-    }
-    @Override
-    public OFStatsType getStatsType() {
-        return OFStatsType.EXPERIMENTER;
+    public long getExperimenter() {
+        return 0x5c16c7L;
     }
 
     @Override
@@ -255,16 +234,6 @@ class OFBsnPortCounterStatsRequestVer15 implements OFBsnPortCounterStatsRequest 
         return this;
     }
     @Override
-    public long getExperimenter() {
-        return 0x5c16c7L;
-    }
-
-    @Override
-    public long getSubtype() {
-        return 0x8L;
-    }
-
-    @Override
     public OFPort getPortNo() {
         return portNo;
     }
@@ -273,6 +242,37 @@ class OFBsnPortCounterStatsRequestVer15 implements OFBsnPortCounterStatsRequest 
     public OFBsnPortCounterStatsRequest.Builder setPortNo(OFPort portNo) {
         this.portNo = portNo;
         this.portNoSet = true;
+        return this;
+    }
+    @Override
+    public OFStatsType getStatsType() {
+        return OFStatsType.EXPERIMENTER;
+    }
+
+    @Override
+    public long getSubtype() {
+        return 0x8L;
+    }
+
+    @Override
+    public OFType getType() {
+        return OFType.STATS_REQUEST;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_15;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFBsnPortCounterStatsRequest.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 //

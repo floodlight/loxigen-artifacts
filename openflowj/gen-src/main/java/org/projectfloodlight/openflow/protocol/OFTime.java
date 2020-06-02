@@ -28,8 +28,8 @@ import org.projectfloodlight.openflow.exceptions.*;
 import io.netty.buffer.ByteBuf;
 
 public interface OFTime extends OFObject {
-    U64 getSeconds();
     long getNanoseconds();
+    U64 getSeconds();
     OFVersion getVersion();
 
     void writeTo(ByteBuf channelBuffer);
@@ -37,10 +37,10 @@ public interface OFTime extends OFObject {
     Builder createBuilder();
     public interface Builder  {
         OFTime build();
-        U64 getSeconds();
-        Builder setSeconds(U64 seconds);
         long getNanoseconds();
         Builder setNanoseconds(long nanoseconds);
+        U64 getSeconds();
+        Builder setSeconds(U64 seconds);
         OFVersion getVersion();
     }
 }

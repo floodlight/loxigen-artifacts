@@ -28,12 +28,12 @@ import org.projectfloodlight.openflow.exceptions.*;
 import io.netty.buffer.ByteBuf;
 
 public interface OFMeterFeatures extends OFObject {
-    long getMaxMeter();
     long getBandTypes();
     long getCapabilities();
+    long getFeatures() throws UnsupportedOperationException;
     short getMaxBands();
     short getMaxColor();
-    long getFeatures() throws UnsupportedOperationException;
+    long getMaxMeter();
     OFVersion getVersion();
 
     void writeTo(ByteBuf channelBuffer);
@@ -41,18 +41,18 @@ public interface OFMeterFeatures extends OFObject {
     Builder createBuilder();
     public interface Builder  {
         OFMeterFeatures build();
-        long getMaxMeter();
-        Builder setMaxMeter(long maxMeter);
         long getBandTypes();
         Builder setBandTypes(long bandTypes);
         long getCapabilities();
         Builder setCapabilities(long capabilities);
+        long getFeatures() throws UnsupportedOperationException;
+        Builder setFeatures(long features) throws UnsupportedOperationException;
         short getMaxBands();
         Builder setMaxBands(short maxBands);
         short getMaxColor();
         Builder setMaxColor(short maxColor);
-        long getFeatures() throws UnsupportedOperationException;
-        Builder setFeatures(long features) throws UnsupportedOperationException;
+        long getMaxMeter();
+        Builder setMaxMeter(long maxMeter);
         OFVersion getVersion();
     }
 }

@@ -29,11 +29,11 @@ import io.netty.buffer.ByteBuf;
 
 public interface OFOxm<T extends OFValueType<T>> extends OFObject {
     long getTypeLen();
-    T getValue();
-    T getMask();
-    MatchField<T> getMatchField();
-    boolean isMasked();
     OFOxm<T> getCanonical();
+    T getMask();
+    boolean isMasked();
+    MatchField<T> getMatchField();
+    T getValue();
     OFVersion getVersion();
 
     void writeTo(ByteBuf channelBuffer);
@@ -42,11 +42,11 @@ public interface OFOxm<T extends OFValueType<T>> extends OFObject {
     public interface Builder<T extends OFValueType<T>>  {
         OFOxm<T> build();
         long getTypeLen();
-        T getValue();
-        T getMask();
-        MatchField<T> getMatchField();
-        boolean isMasked();
         OFOxm<T> getCanonical();
+        T getMask();
+        boolean isMasked();
+        MatchField<T> getMatchField();
+        T getValue();
         OFVersion getVersion();
     }
 }

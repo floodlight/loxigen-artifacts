@@ -25,31 +25,31 @@ import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
-import java.util.Set;
 import java.util.List;
+import java.util.Set;
 import io.netty.buffer.ByteBuf;
 
 public interface OFFlowMonitorRequest extends OFObject, OFStatsRequest<OFFlowMonitorReply>, OFRequest<OFFlowMonitorReply> {
-    OFVersion getVersion();
-    OFType getType();
-    long getXid();
-    OFStatsType getStatsType();
-    Set<OFStatsRequestFlags> getFlags();
     List<OFFlowMonitorEntry> getEntries();
+    Set<OFStatsRequestFlags> getFlags();
+    OFStatsType getStatsType();
+    OFType getType();
+    OFVersion getVersion();
+    long getXid();
 
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();
     public interface Builder extends OFStatsRequest.Builder<OFFlowMonitorReply> {
         OFFlowMonitorRequest build();
-        OFVersion getVersion();
-        OFType getType();
-        long getXid();
-        Builder setXid(long xid);
-        OFStatsType getStatsType();
-        Set<OFStatsRequestFlags> getFlags();
-        Builder setFlags(Set<OFStatsRequestFlags> flags);
         List<OFFlowMonitorEntry> getEntries();
         Builder setEntries(List<OFFlowMonitorEntry> entries);
+        Set<OFStatsRequestFlags> getFlags();
+        Builder setFlags(Set<OFStatsRequestFlags> flags);
+        OFStatsType getStatsType();
+        OFType getType();
+        OFVersion getVersion();
+        long getXid();
+        Builder setXid(long xid);
     }
 }

@@ -29,9 +29,9 @@ import java.util.List;
 import io.netty.buffer.ByteBuf;
 
 public interface OFGroupDescStatsEntry extends OFObject {
-    OFGroupType getGroupType();
-    OFGroup getGroup();
     List<OFBucket> getBuckets();
+    OFGroup getGroup();
+    OFGroupType getGroupType();
     List<OFGroupProp> getProperties() throws UnsupportedOperationException;
     OFVersion getVersion();
 
@@ -40,12 +40,12 @@ public interface OFGroupDescStatsEntry extends OFObject {
     Builder createBuilder();
     public interface Builder  {
         OFGroupDescStatsEntry build();
-        OFGroupType getGroupType();
-        Builder setGroupType(OFGroupType groupType);
-        OFGroup getGroup();
-        Builder setGroup(OFGroup group);
         List<OFBucket> getBuckets();
         Builder setBuckets(List<OFBucket> buckets);
+        OFGroup getGroup();
+        Builder setGroup(OFGroup group);
+        OFGroupType getGroupType();
+        Builder setGroupType(OFGroupType groupType);
         List<OFGroupProp> getProperties() throws UnsupportedOperationException;
         Builder setProperties(List<OFGroupProp> properties) throws UnsupportedOperationException;
         OFVersion getVersion();

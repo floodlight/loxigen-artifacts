@@ -29,33 +29,33 @@ import java.util.List;
 import io.netty.buffer.ByteBuf;
 
 public interface OFPacketOut extends OFObject, OFMessage {
-    OFVersion getVersion();
-    OFType getType();
-    long getXid();
-    OFBufferId getBufferId();
-    OFPort getInPort() throws UnsupportedOperationException;
     List<OFAction> getActions();
+    OFBufferId getBufferId();
     byte[] getData();
+    OFPort getInPort() throws UnsupportedOperationException;
     Match getMatch() throws UnsupportedOperationException;
+    OFType getType();
+    OFVersion getVersion();
+    long getXid();
 
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();
     public interface Builder extends OFMessage.Builder {
         OFPacketOut build();
-        OFVersion getVersion();
-        OFType getType();
-        long getXid();
-        Builder setXid(long xid);
-        OFBufferId getBufferId();
-        Builder setBufferId(OFBufferId bufferId);
-        OFPort getInPort() throws UnsupportedOperationException;
-        Builder setInPort(OFPort inPort) throws UnsupportedOperationException;
         List<OFAction> getActions();
         Builder setActions(List<OFAction> actions);
+        OFBufferId getBufferId();
+        Builder setBufferId(OFBufferId bufferId);
         byte[] getData();
         Builder setData(byte[] data);
+        OFPort getInPort() throws UnsupportedOperationException;
+        Builder setInPort(OFPort inPort) throws UnsupportedOperationException;
         Match getMatch() throws UnsupportedOperationException;
         Builder setMatch(Match match) throws UnsupportedOperationException;
+        OFType getType();
+        OFVersion getVersion();
+        long getXid();
+        Builder setXid(long xid);
     }
 }

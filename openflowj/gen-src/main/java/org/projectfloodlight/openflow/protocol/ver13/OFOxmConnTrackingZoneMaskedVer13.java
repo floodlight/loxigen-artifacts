@@ -64,6 +64,11 @@ class OFOxmConnTrackingZoneMaskedVer13 implements OFOxmConnTrackingZoneMasked {
 
     // Accessors for OF message fields
     @Override
+    public U16 getMask() {
+        return mask;
+    }
+
+    @Override
     public long getTypeLen() {
         return 0x1d504L;
     }
@@ -71,21 +76,6 @@ class OFOxmConnTrackingZoneMaskedVer13 implements OFOxmConnTrackingZoneMasked {
     @Override
     public U16 getValue() {
         return value;
-    }
-
-    @Override
-    public U16 getMask() {
-        return mask;
-    }
-
-    @Override
-    public MatchField<U16> getMatchField() {
-        return MatchField.CONN_TRACKING_ZONE;
-    }
-
-    @Override
-    public boolean isMasked() {
-        return true;
     }
 
     public OFOxm<U16> getCanonical() {
@@ -96,6 +86,16 @@ class OFOxmConnTrackingZoneMaskedVer13 implements OFOxmConnTrackingZoneMasked {
         } else {
             return this;
         }
+    }
+
+    @Override
+    public boolean isMasked() {
+        return true;
+    }
+
+    @Override
+    public MatchField<U16> getMatchField() {
+        return MatchField.CONN_TRACKING_ZONE;
     }
 
     @Override
@@ -123,6 +123,17 @@ class OFOxmConnTrackingZoneMaskedVer13 implements OFOxmConnTrackingZoneMasked {
         }
 
     @Override
+    public U16 getMask() {
+        return mask;
+    }
+
+    @Override
+    public OFOxmConnTrackingZoneMasked.Builder setMask(U16 mask) {
+        this.mask = mask;
+        this.maskSet = true;
+        return this;
+    }
+    @Override
     public long getTypeLen() {
         return 0x1d504L;
     }
@@ -139,19 +150,8 @@ class OFOxmConnTrackingZoneMaskedVer13 implements OFOxmConnTrackingZoneMasked {
         return this;
     }
     @Override
-    public U16 getMask() {
-        return mask;
-    }
-
-    @Override
-    public OFOxmConnTrackingZoneMasked.Builder setMask(U16 mask) {
-        this.mask = mask;
-        this.maskSet = true;
-        return this;
-    }
-    @Override
-    public MatchField<U16> getMatchField() {
-        return MatchField.CONN_TRACKING_ZONE;
+    public OFOxm<U16> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.3");
     }
 
     @Override
@@ -160,8 +160,8 @@ class OFOxmConnTrackingZoneMaskedVer13 implements OFOxmConnTrackingZoneMasked {
     }
 
     @Override
-    public OFOxm<U16> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.3");
+    public MatchField<U16> getMatchField() {
+        return MatchField.CONN_TRACKING_ZONE;
     }
 
     @Override
@@ -197,6 +197,17 @@ class OFOxmConnTrackingZoneMaskedVer13 implements OFOxmConnTrackingZoneMasked {
         private U16 mask;
 
     @Override
+    public U16 getMask() {
+        return mask;
+    }
+
+    @Override
+    public OFOxmConnTrackingZoneMasked.Builder setMask(U16 mask) {
+        this.mask = mask;
+        this.maskSet = true;
+        return this;
+    }
+    @Override
     public long getTypeLen() {
         return 0x1d504L;
     }
@@ -213,19 +224,8 @@ class OFOxmConnTrackingZoneMaskedVer13 implements OFOxmConnTrackingZoneMasked {
         return this;
     }
     @Override
-    public U16 getMask() {
-        return mask;
-    }
-
-    @Override
-    public OFOxmConnTrackingZoneMasked.Builder setMask(U16 mask) {
-        this.mask = mask;
-        this.maskSet = true;
-        return this;
-    }
-    @Override
-    public MatchField<U16> getMatchField() {
-        return MatchField.CONN_TRACKING_ZONE;
+    public OFOxm<U16> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.3");
     }
 
     @Override
@@ -234,8 +234,8 @@ class OFOxmConnTrackingZoneMaskedVer13 implements OFOxmConnTrackingZoneMasked {
     }
 
     @Override
-    public OFOxm<U16> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.3");
+    public MatchField<U16> getMatchField() {
+        return MatchField.CONN_TRACKING_ZONE;
     }
 
     @Override

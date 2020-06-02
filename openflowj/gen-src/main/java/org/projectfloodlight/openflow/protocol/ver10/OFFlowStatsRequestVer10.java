@@ -80,46 +80,6 @@ class OFFlowStatsRequestVer10 implements OFFlowStatsRequest {
 
     // Accessors for OF message fields
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_10;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.STATS_REQUEST;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFStatsType getStatsType() {
-        return OFStatsType.FLOW;
-    }
-
-    @Override
-    public Set<OFStatsRequestFlags> getFlags() {
-        return flags;
-    }
-
-    @Override
-    public TableId getTableId() {
-        return tableId;
-    }
-
-    @Override
-    public OFPort getOutPort() {
-        return outPort;
-    }
-
-    @Override
-    public OFGroup getOutGroup()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property outGroup not supported in version 1.0");
-    }
-
-    @Override
     public U64 getCookie()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property cookie not supported in version 1.0");
     }
@@ -130,8 +90,48 @@ class OFFlowStatsRequestVer10 implements OFFlowStatsRequest {
     }
 
     @Override
+    public Set<OFStatsRequestFlags> getFlags() {
+        return flags;
+    }
+
+    @Override
     public Match getMatch() {
         return match;
+    }
+
+    @Override
+    public OFGroup getOutGroup()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property outGroup not supported in version 1.0");
+    }
+
+    @Override
+    public OFPort getOutPort() {
+        return outPort;
+    }
+
+    @Override
+    public OFStatsType getStatsType() {
+        return OFStatsType.FLOW;
+    }
+
+    @Override
+    public TableId getTableId() {
+        return tableId;
+    }
+
+    @Override
+    public OFType getType() {
+        return OFType.STATS_REQUEST;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_10;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
     }
 
 
@@ -160,74 +160,6 @@ class OFFlowStatsRequestVer10 implements OFFlowStatsRequest {
         }
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_10;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.STATS_REQUEST;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFFlowStatsRequest.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
-        return this;
-    }
-    @Override
-    public OFStatsType getStatsType() {
-        return OFStatsType.FLOW;
-    }
-
-    @Override
-    public Set<OFStatsRequestFlags> getFlags() {
-        return flags;
-    }
-
-    @Override
-    public OFFlowStatsRequest.Builder setFlags(Set<OFStatsRequestFlags> flags) {
-        this.flags = flags;
-        this.flagsSet = true;
-        return this;
-    }
-    @Override
-    public TableId getTableId() {
-        return tableId;
-    }
-
-    @Override
-    public OFFlowStatsRequest.Builder setTableId(TableId tableId) {
-        this.tableId = tableId;
-        this.tableIdSet = true;
-        return this;
-    }
-    @Override
-    public OFPort getOutPort() {
-        return outPort;
-    }
-
-    @Override
-    public OFFlowStatsRequest.Builder setOutPort(OFPort outPort) {
-        this.outPort = outPort;
-        this.outPortSet = true;
-        return this;
-    }
-    @Override
-    public OFGroup getOutGroup()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property outGroup not supported in version 1.0");
-    }
-
-    @Override
-    public OFFlowStatsRequest.Builder setOutGroup(OFGroup outGroup) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property outGroup not supported in version 1.0");
-    }
-    @Override
     public U64 getCookie()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property cookie not supported in version 1.0");
     }
@@ -246,6 +178,17 @@ class OFFlowStatsRequestVer10 implements OFFlowStatsRequest {
             throw new UnsupportedOperationException("Property cookieMask not supported in version 1.0");
     }
     @Override
+    public Set<OFStatsRequestFlags> getFlags() {
+        return flags;
+    }
+
+    @Override
+    public OFFlowStatsRequest.Builder setFlags(Set<OFStatsRequestFlags> flags) {
+        this.flags = flags;
+        this.flagsSet = true;
+        return this;
+    }
+    @Override
     public Match getMatch() {
         return match;
     }
@@ -254,6 +197,63 @@ class OFFlowStatsRequestVer10 implements OFFlowStatsRequest {
     public OFFlowStatsRequest.Builder setMatch(Match match) {
         this.match = match;
         this.matchSet = true;
+        return this;
+    }
+    @Override
+    public OFGroup getOutGroup()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property outGroup not supported in version 1.0");
+    }
+
+    @Override
+    public OFFlowStatsRequest.Builder setOutGroup(OFGroup outGroup) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property outGroup not supported in version 1.0");
+    }
+    @Override
+    public OFPort getOutPort() {
+        return outPort;
+    }
+
+    @Override
+    public OFFlowStatsRequest.Builder setOutPort(OFPort outPort) {
+        this.outPort = outPort;
+        this.outPortSet = true;
+        return this;
+    }
+    @Override
+    public OFStatsType getStatsType() {
+        return OFStatsType.FLOW;
+    }
+
+    @Override
+    public TableId getTableId() {
+        return tableId;
+    }
+
+    @Override
+    public OFFlowStatsRequest.Builder setTableId(TableId tableId) {
+        this.tableId = tableId;
+        this.tableIdSet = true;
+        return this;
+    }
+    @Override
+    public OFType getType() {
+        return OFType.STATS_REQUEST;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_10;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFFlowStatsRequest.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 
@@ -300,74 +300,6 @@ class OFFlowStatsRequestVer10 implements OFFlowStatsRequest {
         private OFPort outPort;
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_10;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.STATS_REQUEST;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFFlowStatsRequest.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
-        return this;
-    }
-    @Override
-    public OFStatsType getStatsType() {
-        return OFStatsType.FLOW;
-    }
-
-    @Override
-    public Set<OFStatsRequestFlags> getFlags() {
-        return flags;
-    }
-
-    @Override
-    public OFFlowStatsRequest.Builder setFlags(Set<OFStatsRequestFlags> flags) {
-        this.flags = flags;
-        this.flagsSet = true;
-        return this;
-    }
-    @Override
-    public TableId getTableId() {
-        return tableId;
-    }
-
-    @Override
-    public OFFlowStatsRequest.Builder setTableId(TableId tableId) {
-        this.tableId = tableId;
-        this.tableIdSet = true;
-        return this;
-    }
-    @Override
-    public OFPort getOutPort() {
-        return outPort;
-    }
-
-    @Override
-    public OFFlowStatsRequest.Builder setOutPort(OFPort outPort) {
-        this.outPort = outPort;
-        this.outPortSet = true;
-        return this;
-    }
-    @Override
-    public OFGroup getOutGroup()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property outGroup not supported in version 1.0");
-    }
-
-    @Override
-    public OFFlowStatsRequest.Builder setOutGroup(OFGroup outGroup) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property outGroup not supported in version 1.0");
-    }
-    @Override
     public U64 getCookie()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property cookie not supported in version 1.0");
     }
@@ -386,6 +318,17 @@ class OFFlowStatsRequestVer10 implements OFFlowStatsRequest {
             throw new UnsupportedOperationException("Property cookieMask not supported in version 1.0");
     }
     @Override
+    public Set<OFStatsRequestFlags> getFlags() {
+        return flags;
+    }
+
+    @Override
+    public OFFlowStatsRequest.Builder setFlags(Set<OFStatsRequestFlags> flags) {
+        this.flags = flags;
+        this.flagsSet = true;
+        return this;
+    }
+    @Override
     public Match getMatch() {
         return match;
     }
@@ -394,6 +337,63 @@ class OFFlowStatsRequestVer10 implements OFFlowStatsRequest {
     public OFFlowStatsRequest.Builder setMatch(Match match) {
         this.match = match;
         this.matchSet = true;
+        return this;
+    }
+    @Override
+    public OFGroup getOutGroup()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property outGroup not supported in version 1.0");
+    }
+
+    @Override
+    public OFFlowStatsRequest.Builder setOutGroup(OFGroup outGroup) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property outGroup not supported in version 1.0");
+    }
+    @Override
+    public OFPort getOutPort() {
+        return outPort;
+    }
+
+    @Override
+    public OFFlowStatsRequest.Builder setOutPort(OFPort outPort) {
+        this.outPort = outPort;
+        this.outPortSet = true;
+        return this;
+    }
+    @Override
+    public OFStatsType getStatsType() {
+        return OFStatsType.FLOW;
+    }
+
+    @Override
+    public TableId getTableId() {
+        return tableId;
+    }
+
+    @Override
+    public OFFlowStatsRequest.Builder setTableId(TableId tableId) {
+        this.tableId = tableId;
+        this.tableIdSet = true;
+        return this;
+    }
+    @Override
+    public OFType getType() {
+        return OFType.STATS_REQUEST;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_10;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFFlowStatsRequest.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 //

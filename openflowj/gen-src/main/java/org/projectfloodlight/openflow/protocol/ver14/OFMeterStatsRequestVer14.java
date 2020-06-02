@@ -65,18 +65,13 @@ class OFMeterStatsRequestVer14 implements OFMeterStatsRequest {
 
     // Accessors for OF message fields
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_14;
+    public Set<OFStatsRequestFlags> getFlags() {
+        return flags;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.STATS_REQUEST;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
+    public long getMeterId() {
+        return meterId;
     }
 
     @Override
@@ -85,13 +80,18 @@ class OFMeterStatsRequestVer14 implements OFMeterStatsRequest {
     }
 
     @Override
-    public Set<OFStatsRequestFlags> getFlags() {
-        return flags;
+    public OFType getType() {
+        return OFType.STATS_REQUEST;
     }
 
     @Override
-    public long getMeterId() {
-        return meterId;
+    public OFVersion getVersion() {
+        return OFVersion.OF_14;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
     }
 
 
@@ -116,32 +116,6 @@ class OFMeterStatsRequestVer14 implements OFMeterStatsRequest {
         }
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_14;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.STATS_REQUEST;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFMeterStatsRequest.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
-        return this;
-    }
-    @Override
-    public OFStatsType getStatsType() {
-        return OFStatsType.METER;
-    }
-
-    @Override
     public Set<OFStatsRequestFlags> getFlags() {
         return flags;
     }
@@ -161,6 +135,32 @@ class OFMeterStatsRequestVer14 implements OFMeterStatsRequest {
     public OFMeterStatsRequest.Builder setMeterId(long meterId) {
         this.meterId = meterId;
         this.meterIdSet = true;
+        return this;
+    }
+    @Override
+    public OFStatsType getStatsType() {
+        return OFStatsType.METER;
+    }
+
+    @Override
+    public OFType getType() {
+        return OFType.STATS_REQUEST;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_14;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFMeterStatsRequest.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 
@@ -193,32 +193,6 @@ class OFMeterStatsRequestVer14 implements OFMeterStatsRequest {
         private long meterId;
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_14;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.STATS_REQUEST;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFMeterStatsRequest.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
-        return this;
-    }
-    @Override
-    public OFStatsType getStatsType() {
-        return OFStatsType.METER;
-    }
-
-    @Override
     public Set<OFStatsRequestFlags> getFlags() {
         return flags;
     }
@@ -238,6 +212,32 @@ class OFMeterStatsRequestVer14 implements OFMeterStatsRequest {
     public OFMeterStatsRequest.Builder setMeterId(long meterId) {
         this.meterId = meterId;
         this.meterIdSet = true;
+        return this;
+    }
+    @Override
+    public OFStatsType getStatsType() {
+        return OFStatsType.METER;
+    }
+
+    @Override
+    public OFType getType() {
+        return OFType.STATS_REQUEST;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_14;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFMeterStatsRequest.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 //

@@ -64,6 +64,11 @@ class OFOxmIpv6FlabelMaskedVer13 implements OFOxmIpv6FlabelMasked {
 
     // Accessors for OF message fields
     @Override
+    public IPv6FlowLabel getMask() {
+        return mask;
+    }
+
+    @Override
     public long getTypeLen() {
         return 0x80003908L;
     }
@@ -71,21 +76,6 @@ class OFOxmIpv6FlabelMaskedVer13 implements OFOxmIpv6FlabelMasked {
     @Override
     public IPv6FlowLabel getValue() {
         return value;
-    }
-
-    @Override
-    public IPv6FlowLabel getMask() {
-        return mask;
-    }
-
-    @Override
-    public MatchField<IPv6FlowLabel> getMatchField() {
-        return MatchField.IPV6_FLABEL;
-    }
-
-    @Override
-    public boolean isMasked() {
-        return true;
     }
 
     public OFOxm<IPv6FlowLabel> getCanonical() {
@@ -96,6 +86,16 @@ class OFOxmIpv6FlabelMaskedVer13 implements OFOxmIpv6FlabelMasked {
         } else {
             return this;
         }
+    }
+
+    @Override
+    public boolean isMasked() {
+        return true;
+    }
+
+    @Override
+    public MatchField<IPv6FlowLabel> getMatchField() {
+        return MatchField.IPV6_FLABEL;
     }
 
     @Override
@@ -123,6 +123,17 @@ class OFOxmIpv6FlabelMaskedVer13 implements OFOxmIpv6FlabelMasked {
         }
 
     @Override
+    public IPv6FlowLabel getMask() {
+        return mask;
+    }
+
+    @Override
+    public OFOxmIpv6FlabelMasked.Builder setMask(IPv6FlowLabel mask) {
+        this.mask = mask;
+        this.maskSet = true;
+        return this;
+    }
+    @Override
     public long getTypeLen() {
         return 0x80003908L;
     }
@@ -139,19 +150,8 @@ class OFOxmIpv6FlabelMaskedVer13 implements OFOxmIpv6FlabelMasked {
         return this;
     }
     @Override
-    public IPv6FlowLabel getMask() {
-        return mask;
-    }
-
-    @Override
-    public OFOxmIpv6FlabelMasked.Builder setMask(IPv6FlowLabel mask) {
-        this.mask = mask;
-        this.maskSet = true;
-        return this;
-    }
-    @Override
-    public MatchField<IPv6FlowLabel> getMatchField() {
-        return MatchField.IPV6_FLABEL;
+    public OFOxm<IPv6FlowLabel> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.3");
     }
 
     @Override
@@ -160,8 +160,8 @@ class OFOxmIpv6FlabelMaskedVer13 implements OFOxmIpv6FlabelMasked {
     }
 
     @Override
-    public OFOxm<IPv6FlowLabel> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.3");
+    public MatchField<IPv6FlowLabel> getMatchField() {
+        return MatchField.IPV6_FLABEL;
     }
 
     @Override
@@ -197,6 +197,17 @@ class OFOxmIpv6FlabelMaskedVer13 implements OFOxmIpv6FlabelMasked {
         private IPv6FlowLabel mask;
 
     @Override
+    public IPv6FlowLabel getMask() {
+        return mask;
+    }
+
+    @Override
+    public OFOxmIpv6FlabelMasked.Builder setMask(IPv6FlowLabel mask) {
+        this.mask = mask;
+        this.maskSet = true;
+        return this;
+    }
+    @Override
     public long getTypeLen() {
         return 0x80003908L;
     }
@@ -213,19 +224,8 @@ class OFOxmIpv6FlabelMaskedVer13 implements OFOxmIpv6FlabelMasked {
         return this;
     }
     @Override
-    public IPv6FlowLabel getMask() {
-        return mask;
-    }
-
-    @Override
-    public OFOxmIpv6FlabelMasked.Builder setMask(IPv6FlowLabel mask) {
-        this.mask = mask;
-        this.maskSet = true;
-        return this;
-    }
-    @Override
-    public MatchField<IPv6FlowLabel> getMatchField() {
-        return MatchField.IPV6_FLABEL;
+    public OFOxm<IPv6FlowLabel> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.3");
     }
 
     @Override
@@ -234,8 +234,8 @@ class OFOxmIpv6FlabelMaskedVer13 implements OFOxmIpv6FlabelMasked {
     }
 
     @Override
-    public OFOxm<IPv6FlowLabel> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.3");
+    public MatchField<IPv6FlowLabel> getMatchField() {
+        return MatchField.IPV6_FLABEL;
     }
 
     @Override

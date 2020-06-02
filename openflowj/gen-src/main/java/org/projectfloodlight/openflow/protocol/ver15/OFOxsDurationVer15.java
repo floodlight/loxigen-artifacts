@@ -67,16 +67,6 @@ class OFOxsDurationVer15 implements OFOxsDuration {
         return value;
     }
 
-    @Override
-    public StatField<U64> getStatField() {
-        return StatField.DURATION;
-    }
-
-    @Override
-    public boolean isMasked() {
-        return false;
-    }
-
     public OFOxs<U64> getCanonical() {
         // exact match OXM is always canonical
         return this;
@@ -85,6 +75,16 @@ class OFOxsDurationVer15 implements OFOxsDuration {
     @Override
     public U64 getMask()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property mask not supported in version 1.5");
+    }
+
+    @Override
+    public boolean isMasked() {
+        return false;
+    }
+
+    @Override
+    public StatField<U64> getStatField() {
+        return StatField.DURATION;
     }
 
     @Override
@@ -126,8 +126,13 @@ class OFOxsDurationVer15 implements OFOxsDuration {
         return this;
     }
     @Override
-    public StatField<U64> getStatField() {
-        return StatField.DURATION;
+    public OFOxs<U64> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.5");
+    }
+
+    @Override
+    public U64 getMask()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property mask not supported in version 1.5");
     }
 
     @Override
@@ -136,13 +141,8 @@ class OFOxsDurationVer15 implements OFOxsDuration {
     }
 
     @Override
-    public OFOxs<U64> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.5");
-    }
-
-    @Override
-    public U64 getMask()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property mask not supported in version 1.5");
+    public StatField<U64> getStatField() {
+        return StatField.DURATION;
     }
 
     @Override
@@ -188,8 +188,13 @@ class OFOxsDurationVer15 implements OFOxsDuration {
         return this;
     }
     @Override
-    public StatField<U64> getStatField() {
-        return StatField.DURATION;
+    public OFOxs<U64> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.5");
+    }
+
+    @Override
+    public U64 getMask()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property mask not supported in version 1.5");
     }
 
     @Override
@@ -198,13 +203,8 @@ class OFOxsDurationVer15 implements OFOxsDuration {
     }
 
     @Override
-    public OFOxs<U64> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.5");
-    }
-
-    @Override
-    public U64 getMask()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property mask not supported in version 1.5");
+    public StatField<U64> getStatField() {
+        return StatField.DURATION;
     }
 
     @Override

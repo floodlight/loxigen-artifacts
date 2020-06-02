@@ -62,8 +62,8 @@ class OFBsnGentableStatsEntryVer14 implements OFBsnGentableStatsEntry {
 
     // Accessors for OF message fields
     @Override
-    public GenTableId getTableId() {
-        return tableId;
+    public U128 getChecksum() {
+        return checksum;
     }
 
     @Override
@@ -72,8 +72,8 @@ class OFBsnGentableStatsEntryVer14 implements OFBsnGentableStatsEntry {
     }
 
     @Override
-    public U128 getChecksum() {
-        return checksum;
+    public GenTableId getTableId() {
+        return tableId;
     }
 
     @Override
@@ -103,14 +103,14 @@ class OFBsnGentableStatsEntryVer14 implements OFBsnGentableStatsEntry {
         }
 
     @Override
-    public GenTableId getTableId() {
-        return tableId;
+    public U128 getChecksum() {
+        return checksum;
     }
 
     @Override
-    public OFBsnGentableStatsEntry.Builder setTableId(GenTableId tableId) {
-        this.tableId = tableId;
-        this.tableIdSet = true;
+    public OFBsnGentableStatsEntry.Builder setChecksum(U128 checksum) {
+        this.checksum = checksum;
+        this.checksumSet = true;
         return this;
     }
     @Override
@@ -125,14 +125,14 @@ class OFBsnGentableStatsEntryVer14 implements OFBsnGentableStatsEntry {
         return this;
     }
     @Override
-    public U128 getChecksum() {
-        return checksum;
+    public GenTableId getTableId() {
+        return tableId;
     }
 
     @Override
-    public OFBsnGentableStatsEntry.Builder setChecksum(U128 checksum) {
-        this.checksum = checksum;
-        this.checksumSet = true;
+    public OFBsnGentableStatsEntry.Builder setTableId(GenTableId tableId) {
+        this.tableId = tableId;
+        this.tableIdSet = true;
         return this;
     }
     @Override
@@ -172,14 +172,14 @@ class OFBsnGentableStatsEntryVer14 implements OFBsnGentableStatsEntry {
         private U128 checksum;
 
     @Override
-    public GenTableId getTableId() {
-        return tableId;
+    public U128 getChecksum() {
+        return checksum;
     }
 
     @Override
-    public OFBsnGentableStatsEntry.Builder setTableId(GenTableId tableId) {
-        this.tableId = tableId;
-        this.tableIdSet = true;
+    public OFBsnGentableStatsEntry.Builder setChecksum(U128 checksum) {
+        this.checksum = checksum;
+        this.checksumSet = true;
         return this;
     }
     @Override
@@ -194,14 +194,14 @@ class OFBsnGentableStatsEntryVer14 implements OFBsnGentableStatsEntry {
         return this;
     }
     @Override
-    public U128 getChecksum() {
-        return checksum;
+    public GenTableId getTableId() {
+        return tableId;
     }
 
     @Override
-    public OFBsnGentableStatsEntry.Builder setChecksum(U128 checksum) {
-        this.checksum = checksum;
-        this.checksumSet = true;
+    public OFBsnGentableStatsEntry.Builder setTableId(GenTableId tableId) {
+        this.tableId = tableId;
+        this.tableIdSet = true;
         return this;
     }
     @Override

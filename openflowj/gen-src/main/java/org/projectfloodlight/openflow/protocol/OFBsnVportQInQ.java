@@ -28,13 +28,13 @@ import org.projectfloodlight.openflow.exceptions.*;
 import io.netty.buffer.ByteBuf;
 
 public interface OFBsnVportQInQ extends OFObject, OFBsnVport {
-    int getType();
-    long getPortNo();
-    int getIngressTpid();
-    int getIngressVlanId();
     int getEgressTpid();
     int getEgressVlanId();
     String getIfName();
+    int getIngressTpid();
+    int getIngressVlanId();
+    long getPortNo();
+    int getType();
     OFVersion getVersion();
 
     void writeTo(ByteBuf channelBuffer);
@@ -42,19 +42,19 @@ public interface OFBsnVportQInQ extends OFObject, OFBsnVport {
     Builder createBuilder();
     public interface Builder extends OFBsnVport.Builder {
         OFBsnVportQInQ build();
-        int getType();
-        long getPortNo();
-        Builder setPortNo(long portNo);
-        int getIngressTpid();
-        Builder setIngressTpid(int ingressTpid);
-        int getIngressVlanId();
-        Builder setIngressVlanId(int ingressVlanId);
         int getEgressTpid();
         Builder setEgressTpid(int egressTpid);
         int getEgressVlanId();
         Builder setEgressVlanId(int egressVlanId);
         String getIfName();
         Builder setIfName(String ifName);
+        int getIngressTpid();
+        Builder setIngressTpid(int ingressTpid);
+        int getIngressVlanId();
+        Builder setIngressVlanId(int ingressVlanId);
+        long getPortNo();
+        Builder setPortNo(long portNo);
+        int getType();
         OFVersion getVersion();
     }
 }

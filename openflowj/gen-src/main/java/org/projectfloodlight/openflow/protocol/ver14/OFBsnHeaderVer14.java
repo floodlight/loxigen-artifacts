@@ -61,6 +61,9 @@ abstract class OFBsnHeaderVer14 {
             int subtype = bb.readInt();
             bb.readerIndex(start);
             switch(subtype) {
+               case 0x3c:
+                   // discriminator value 0x3cL=0x3cL for class OFBsnArpIdleVer14
+                   return OFBsnArpIdleVer14.READER.readFrom(bb);
                case 0x16:
                    // discriminator value 0x16L=0x16L for class OFBsnBwClearDataReplyVer14
                    return OFBsnBwClearDataReplyVer14.READER.readFrom(bb);
@@ -79,57 +82,6 @@ abstract class OFBsnHeaderVer14 {
                case 0x12:
                    // discriminator value 0x12L=0x12L for class OFBsnBwEnableSetRequestVer14
                    return OFBsnBwEnableSetRequestVer14.READER.readFrom(bb);
-               case 0xa:
-                   // discriminator value 0xaL=0xaL for class OFBsnGetInterfacesReplyVer14
-                   return OFBsnGetInterfacesReplyVer14.READER.readFrom(bb);
-               case 0x9:
-                   // discriminator value 0x9L=0x9L for class OFBsnGetInterfacesRequestVer14
-                   return OFBsnGetInterfacesRequestVer14.READER.readFrom(bb);
-               case 0x5:
-                   // discriminator value 0x5L=0x5L for class OFBsnGetMirroringReplyVer14
-                   return OFBsnGetMirroringReplyVer14.READER.readFrom(bb);
-               case 0x4:
-                   // discriminator value 0x4L=0x4L for class OFBsnGetMirroringRequestVer14
-                   return OFBsnGetMirroringRequestVer14.READER.readFrom(bb);
-               case 0x22:
-                   // discriminator value 0x22L=0x22L for class OFBsnPduRxReplyVer14
-                   return OFBsnPduRxReplyVer14.READER.readFrom(bb);
-               case 0x21:
-                   // discriminator value 0x21L=0x21L for class OFBsnPduRxRequestVer14
-                   return OFBsnPduRxRequestVer14.READER.readFrom(bb);
-               case 0x23:
-                   // discriminator value 0x23L=0x23L for class OFBsnPduRxTimeoutVer14
-                   return OFBsnPduRxTimeoutVer14.READER.readFrom(bb);
-               case 0x20:
-                   // discriminator value 0x20L=0x20L for class OFBsnPduTxReplyVer14
-                   return OFBsnPduTxReplyVer14.READER.readFrom(bb);
-               case 0x1f:
-                   // discriminator value 0x1fL=0x1fL for class OFBsnPduTxRequestVer14
-                   return OFBsnPduTxRequestVer14.READER.readFrom(bb);
-               case 0x3:
-                   // discriminator value 0x3L=0x3L for class OFBsnSetMirroringVer14
-                   return OFBsnSetMirroringVer14.READER.readFrom(bb);
-               case 0x19:
-                   // discriminator value 0x19L=0x19L for class OFBsnSetPktinSuppressionReplyVer14
-                   return OFBsnSetPktinSuppressionReplyVer14.READER.readFrom(bb);
-               case 0xb:
-                   // discriminator value 0xbL=0xbL for class OFBsnSetPktinSuppressionRequestVer14
-                   return OFBsnSetPktinSuppressionRequestVer14.READER.readFrom(bb);
-               case 0x10:
-                   // discriminator value 0x10L=0x10L for class OFBsnVirtualPortCreateReplyVer14
-                   return OFBsnVirtualPortCreateReplyVer14.READER.readFrom(bb);
-               case 0xf:
-                   // discriminator value 0xfL=0xfL for class OFBsnVirtualPortCreateRequestVer14
-                   return OFBsnVirtualPortCreateRequestVer14.READER.readFrom(bb);
-               case 0x1a:
-                   // discriminator value 0x1aL=0x1aL for class OFBsnVirtualPortRemoveReplyVer14
-                   return OFBsnVirtualPortRemoveReplyVer14.READER.readFrom(bb);
-               case 0x11:
-                   // discriminator value 0x11L=0x11L for class OFBsnVirtualPortRemoveRequestVer14
-                   return OFBsnVirtualPortRemoveRequestVer14.READER.readFrom(bb);
-               case 0x3c:
-                   // discriminator value 0x3cL=0x3cL for class OFBsnArpIdleVer14
-                   return OFBsnArpIdleVer14.READER.readFrom(bb);
                case 0x39:
                    // discriminator value 0x39L=0x39L for class OFBsnControllerConnectionsReplyVer14
                    return OFBsnControllerConnectionsReplyVer14.READER.readFrom(bb);
@@ -151,6 +103,12 @@ abstract class OFBsnHeaderVer14 {
                case 0x24:
                    // discriminator value 0x24L=0x24L for class OFBsnFlowIdleEnableSetRequestVer14
                    return OFBsnFlowIdleEnableSetRequestVer14.READER.readFrom(bb);
+               case 0x44:
+                   // discriminator value 0x44L=0x44L for class OFBsnGenericAsyncVer14
+                   return OFBsnGenericAsyncVer14.READER.readFrom(bb);
+               case 0x47:
+                   // discriminator value 0x47L=0x47L for class OFBsnGenericCommandVer14
+                   return OFBsnGenericCommandVer14.READER.readFrom(bb);
                case 0x31:
                    // discriminator value 0x31L=0x31L for class OFBsnGentableClearReplyVer14
                    return OFBsnGentableClearReplyVer14.READER.readFrom(bb);
@@ -166,6 +124,18 @@ abstract class OFBsnHeaderVer14 {
                case 0x32:
                    // discriminator value 0x32L=0x32L for class OFBsnGentableSetBucketsSizeVer14
                    return OFBsnGentableSetBucketsSizeVer14.READER.readFrom(bb);
+               case 0xa:
+                   // discriminator value 0xaL=0xaL for class OFBsnGetInterfacesReplyVer14
+                   return OFBsnGetInterfacesReplyVer14.READER.readFrom(bb);
+               case 0x9:
+                   // discriminator value 0x9L=0x9L for class OFBsnGetInterfacesRequestVer14
+                   return OFBsnGetInterfacesRequestVer14.READER.readFrom(bb);
+               case 0x5:
+                   // discriminator value 0x5L=0x5L for class OFBsnGetMirroringReplyVer14
+                   return OFBsnGetMirroringReplyVer14.READER.readFrom(bb);
+               case 0x4:
+                   // discriminator value 0x4L=0x4L for class OFBsnGetMirroringRequestVer14
+                   return OFBsnGetMirroringRequestVer14.READER.readFrom(bb);
                case 0x34:
                    // discriminator value 0x34L=0x34L for class OFBsnGetSwitchPipelineReplyVer14
                    return OFBsnGetSwitchPipelineReplyVer14.READER.readFrom(bb);
@@ -190,6 +160,21 @@ abstract class OFBsnHeaderVer14 {
                case 0x40:
                    // discriminator value 0x40L=0x40L for class OFBsnLuaUploadVer14
                    return OFBsnLuaUploadVer14.READER.readFrom(bb);
+               case 0x22:
+                   // discriminator value 0x22L=0x22L for class OFBsnPduRxReplyVer14
+                   return OFBsnPduRxReplyVer14.READER.readFrom(bb);
+               case 0x21:
+                   // discriminator value 0x21L=0x21L for class OFBsnPduRxRequestVer14
+                   return OFBsnPduRxRequestVer14.READER.readFrom(bb);
+               case 0x23:
+                   // discriminator value 0x23L=0x23L for class OFBsnPduRxTimeoutVer14
+                   return OFBsnPduRxTimeoutVer14.READER.readFrom(bb);
+               case 0x20:
+                   // discriminator value 0x20L=0x20L for class OFBsnPduTxReplyVer14
+                   return OFBsnPduTxReplyVer14.READER.readFrom(bb);
+               case 0x1f:
+                   // discriminator value 0x1fL=0x1fL for class OFBsnPduTxRequestVer14
+                   return OFBsnPduTxRequestVer14.READER.readFrom(bb);
                case 0x3b:
                    // discriminator value 0x3bL=0x3bL for class OFBsnSetAuxCxnsReplyVer14
                    return OFBsnSetAuxCxnsReplyVer14.READER.readFrom(bb);
@@ -202,6 +187,15 @@ abstract class OFBsnHeaderVer14 {
                case 0x29:
                    // discriminator value 0x29L=0x29L for class OFBsnSetLacpRequestVer14
                    return OFBsnSetLacpRequestVer14.READER.readFrom(bb);
+               case 0x3:
+                   // discriminator value 0x3L=0x3L for class OFBsnSetMirroringVer14
+                   return OFBsnSetMirroringVer14.READER.readFrom(bb);
+               case 0x19:
+                   // discriminator value 0x19L=0x19L for class OFBsnSetPktinSuppressionReplyVer14
+                   return OFBsnSetPktinSuppressionReplyVer14.READER.readFrom(bb);
+               case 0xb:
+                   // discriminator value 0xbL=0xbL for class OFBsnSetPktinSuppressionRequestVer14
+                   return OFBsnSetPktinSuppressionRequestVer14.READER.readFrom(bb);
                case 0x36:
                    // discriminator value 0x36L=0x36L for class OFBsnSetSwitchPipelineReplyVer14
                    return OFBsnSetSwitchPipelineReplyVer14.READER.readFrom(bb);
@@ -211,24 +205,30 @@ abstract class OFBsnHeaderVer14 {
                case 0x3d:
                    // discriminator value 0x3dL=0x3dL for class OFBsnTableSetBucketsSizeVer14
                    return OFBsnTableSetBucketsSizeVer14.READER.readFrom(bb);
+               case 0x45:
+                   // discriminator value 0x45L=0x45L for class OFBsnTakeoverVer14
+                   return OFBsnTakeoverVer14.READER.readFrom(bb);
                case 0x2d:
                    // discriminator value 0x2dL=0x2dL for class OFBsnTimeReplyVer14
                    return OFBsnTimeReplyVer14.READER.readFrom(bb);
                case 0x2c:
                    // discriminator value 0x2cL=0x2cL for class OFBsnTimeRequestVer14
                    return OFBsnTimeRequestVer14.READER.readFrom(bb);
+               case 0x10:
+                   // discriminator value 0x10L=0x10L for class OFBsnVirtualPortCreateReplyVer14
+                   return OFBsnVirtualPortCreateReplyVer14.READER.readFrom(bb);
+               case 0xf:
+                   // discriminator value 0xfL=0xfL for class OFBsnVirtualPortCreateRequestVer14
+                   return OFBsnVirtualPortCreateRequestVer14.READER.readFrom(bb);
+               case 0x1a:
+                   // discriminator value 0x1aL=0x1aL for class OFBsnVirtualPortRemoveReplyVer14
+                   return OFBsnVirtualPortRemoveReplyVer14.READER.readFrom(bb);
+               case 0x11:
+                   // discriminator value 0x11L=0x11L for class OFBsnVirtualPortRemoveRequestVer14
+                   return OFBsnVirtualPortRemoveRequestVer14.READER.readFrom(bb);
                case 0x46:
                    // discriminator value 0x46L=0x46L for class OFBsnVlanCounterClearVer14
                    return OFBsnVlanCounterClearVer14.READER.readFrom(bb);
-               case 0x44:
-                   // discriminator value 0x44L=0x44L for class OFBsnGenericAsyncVer14
-                   return OFBsnGenericAsyncVer14.READER.readFrom(bb);
-               case 0x47:
-                   // discriminator value 0x47L=0x47L for class OFBsnGenericCommandVer14
-                   return OFBsnGenericCommandVer14.READER.readFrom(bb);
-               case 0x45:
-                   // discriminator value 0x45L=0x45L for class OFBsnTakeoverVer14
-                   return OFBsnTakeoverVer14.READER.readFrom(bb);
                default:
                    throw new OFParseError("Unknown value for discriminator subtype of class OFBsnHeaderVer14: " + subtype);
             }

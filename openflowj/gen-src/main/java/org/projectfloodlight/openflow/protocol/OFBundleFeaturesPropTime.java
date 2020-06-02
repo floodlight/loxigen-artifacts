@@ -28,11 +28,11 @@ import org.projectfloodlight.openflow.exceptions.*;
 import io.netty.buffer.ByteBuf;
 
 public interface OFBundleFeaturesPropTime extends OFObject, OFBundleFeaturesProp {
-    int getType();
     OFTime getSchedAccuracy();
     OFTime getSchedMaxFuture();
     OFTime getSchedMaxPast();
     OFTime getTimestamp();
+    int getType();
     OFVersion getVersion();
 
     void writeTo(ByteBuf channelBuffer);
@@ -40,7 +40,6 @@ public interface OFBundleFeaturesPropTime extends OFObject, OFBundleFeaturesProp
     Builder createBuilder();
     public interface Builder extends OFBundleFeaturesProp.Builder {
         OFBundleFeaturesPropTime build();
-        int getType();
         OFTime getSchedAccuracy();
         Builder setSchedAccuracy(OFTime schedAccuracy);
         OFTime getSchedMaxFuture();
@@ -49,6 +48,7 @@ public interface OFBundleFeaturesPropTime extends OFObject, OFBundleFeaturesProp
         Builder setSchedMaxPast(OFTime schedMaxPast);
         OFTime getTimestamp();
         Builder setTimestamp(OFTime timestamp);
+        int getType();
         OFVersion getVersion();
     }
 }

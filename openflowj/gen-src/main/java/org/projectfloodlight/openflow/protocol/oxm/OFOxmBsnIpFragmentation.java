@@ -30,10 +30,10 @@ import io.netty.buffer.ByteBuf;
 public interface OFOxmBsnIpFragmentation extends OFObject, OFOxm<OFBooleanValue> {
     long getTypeLen();
     OFBooleanValue getValue();
-    MatchField<OFBooleanValue> getMatchField();
-    boolean isMasked();
     OFOxm<OFBooleanValue> getCanonical();
     OFBooleanValue getMask();
+    boolean isMasked();
+    MatchField<OFBooleanValue> getMatchField();
     OFVersion getVersion();
 
     void writeTo(ByteBuf channelBuffer);
@@ -44,10 +44,10 @@ public interface OFOxmBsnIpFragmentation extends OFObject, OFOxm<OFBooleanValue>
         long getTypeLen();
         OFBooleanValue getValue();
         Builder setValue(OFBooleanValue value);
-        MatchField<OFBooleanValue> getMatchField();
-        boolean isMasked();
         OFOxm<OFBooleanValue> getCanonical();
         OFBooleanValue getMask();
+        boolean isMasked();
+        MatchField<OFBooleanValue> getMatchField();
         OFVersion getVersion();
     }
 }

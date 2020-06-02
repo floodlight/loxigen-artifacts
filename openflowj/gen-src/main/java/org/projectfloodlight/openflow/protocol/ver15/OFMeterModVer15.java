@@ -76,18 +76,8 @@ class OFMeterModVer15 implements OFMeterMod {
 
     // Accessors for OF message fields
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_15;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.METER_MOD;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
+    public List<OFMeterBand> getBands() {
+        return bands;
     }
 
     @Override
@@ -111,8 +101,18 @@ class OFMeterModVer15 implements OFMeterMod {
     }
 
     @Override
-    public List<OFMeterBand> getBands() {
-        return bands;
+    public OFType getType() {
+        return OFType.METER_MOD;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_15;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
     }
 
 
@@ -141,24 +141,14 @@ class OFMeterModVer15 implements OFMeterMod {
         }
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_15;
+    public List<OFMeterBand> getBands() {
+        return bands;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.METER_MOD;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFMeterMod.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
+    public OFMeterMod.Builder setBands(List<OFMeterBand> bands) {
+        this.bands = bands;
+        this.bandsSet = true;
         return this;
     }
     @Override
@@ -204,14 +194,24 @@ class OFMeterModVer15 implements OFMeterMod {
             throw new UnsupportedOperationException("Property meters not supported in version 1.5");
     }
     @Override
-    public List<OFMeterBand> getBands() {
-        return bands;
+    public OFType getType() {
+        return OFType.METER_MOD;
     }
 
     @Override
-    public OFMeterMod.Builder setBands(List<OFMeterBand> bands) {
-        this.bands = bands;
-        this.bandsSet = true;
+    public OFVersion getVersion() {
+        return OFVersion.OF_15;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFMeterMod.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 
@@ -256,24 +256,14 @@ class OFMeterModVer15 implements OFMeterMod {
         private List<OFMeterBand> bands;
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_15;
+    public List<OFMeterBand> getBands() {
+        return bands;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.METER_MOD;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFMeterMod.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
+    public OFMeterMod.Builder setBands(List<OFMeterBand> bands) {
+        this.bands = bands;
+        this.bandsSet = true;
         return this;
     }
     @Override
@@ -319,14 +309,24 @@ class OFMeterModVer15 implements OFMeterMod {
             throw new UnsupportedOperationException("Property meters not supported in version 1.5");
     }
     @Override
-    public List<OFMeterBand> getBands() {
-        return bands;
+    public OFType getType() {
+        return OFType.METER_MOD;
     }
 
     @Override
-    public OFMeterMod.Builder setBands(List<OFMeterBand> bands) {
-        this.bands = bands;
-        this.bandsSet = true;
+    public OFVersion getVersion() {
+        return OFVersion.OF_15;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFMeterMod.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 //

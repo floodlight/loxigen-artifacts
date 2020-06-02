@@ -29,8 +29,8 @@ import java.util.Set;
 import io.netty.buffer.ByteBuf;
 
 public interface OFBsnTlvLagOptions extends OFObject, OFBsnTlv {
-    int getType();
     Set<OFBsnLagFlag> getFlags();
+    int getType();
     OFVersion getVersion();
 
     void writeTo(ByteBuf channelBuffer);
@@ -38,9 +38,9 @@ public interface OFBsnTlvLagOptions extends OFObject, OFBsnTlv {
     Builder createBuilder();
     public interface Builder extends OFBsnTlv.Builder {
         OFBsnTlvLagOptions build();
-        int getType();
         Set<OFBsnLagFlag> getFlags();
         Builder setFlags(Set<OFBsnLagFlag> flags);
+        int getType();
         OFVersion getVersion();
     }
 }

@@ -77,23 +77,13 @@ class OFRoleStatusVer14 implements OFRoleStatus {
 
     // Accessors for OF message fields
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_14;
+    public U64 getGenerationId() {
+        return generationId;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.ROLE_STATUS;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFControllerRole getRole() {
-        return role;
+    public List<OFRoleProp> getProperties() {
+        return properties;
     }
 
     @Override
@@ -102,13 +92,23 @@ class OFRoleStatusVer14 implements OFRoleStatus {
     }
 
     @Override
-    public U64 getGenerationId() {
-        return generationId;
+    public OFControllerRole getRole() {
+        return role;
     }
 
     @Override
-    public List<OFRoleProp> getProperties() {
-        return properties;
+    public OFType getType() {
+        return OFType.ROLE_STATUS;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_14;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
     }
 
 
@@ -137,49 +137,6 @@ class OFRoleStatusVer14 implements OFRoleStatus {
         }
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_14;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.ROLE_STATUS;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFRoleStatus.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
-        return this;
-    }
-    @Override
-    public OFControllerRole getRole() {
-        return role;
-    }
-
-    @Override
-    public OFRoleStatus.Builder setRole(OFControllerRole role) {
-        this.role = role;
-        this.roleSet = true;
-        return this;
-    }
-    @Override
-    public OFControllerRoleReason getReason() {
-        return reason;
-    }
-
-    @Override
-    public OFRoleStatus.Builder setReason(OFControllerRoleReason reason) {
-        this.reason = reason;
-        this.reasonSet = true;
-        return this;
-    }
-    @Override
     public U64 getGenerationId() {
         return generationId;
     }
@@ -199,6 +156,49 @@ class OFRoleStatusVer14 implements OFRoleStatus {
     public OFRoleStatus.Builder setProperties(List<OFRoleProp> properties) {
         this.properties = properties;
         this.propertiesSet = true;
+        return this;
+    }
+    @Override
+    public OFControllerRoleReason getReason() {
+        return reason;
+    }
+
+    @Override
+    public OFRoleStatus.Builder setReason(OFControllerRoleReason reason) {
+        this.reason = reason;
+        this.reasonSet = true;
+        return this;
+    }
+    @Override
+    public OFControllerRole getRole() {
+        return role;
+    }
+
+    @Override
+    public OFRoleStatus.Builder setRole(OFControllerRole role) {
+        this.role = role;
+        this.roleSet = true;
+        return this;
+    }
+    @Override
+    public OFType getType() {
+        return OFType.ROLE_STATUS;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_14;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFRoleStatus.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 
@@ -245,49 +245,6 @@ class OFRoleStatusVer14 implements OFRoleStatus {
         private List<OFRoleProp> properties;
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_14;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.ROLE_STATUS;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFRoleStatus.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
-        return this;
-    }
-    @Override
-    public OFControllerRole getRole() {
-        return role;
-    }
-
-    @Override
-    public OFRoleStatus.Builder setRole(OFControllerRole role) {
-        this.role = role;
-        this.roleSet = true;
-        return this;
-    }
-    @Override
-    public OFControllerRoleReason getReason() {
-        return reason;
-    }
-
-    @Override
-    public OFRoleStatus.Builder setReason(OFControllerRoleReason reason) {
-        this.reason = reason;
-        this.reasonSet = true;
-        return this;
-    }
-    @Override
     public U64 getGenerationId() {
         return generationId;
     }
@@ -307,6 +264,49 @@ class OFRoleStatusVer14 implements OFRoleStatus {
     public OFRoleStatus.Builder setProperties(List<OFRoleProp> properties) {
         this.properties = properties;
         this.propertiesSet = true;
+        return this;
+    }
+    @Override
+    public OFControllerRoleReason getReason() {
+        return reason;
+    }
+
+    @Override
+    public OFRoleStatus.Builder setReason(OFControllerRoleReason reason) {
+        this.reason = reason;
+        this.reasonSet = true;
+        return this;
+    }
+    @Override
+    public OFControllerRole getRole() {
+        return role;
+    }
+
+    @Override
+    public OFRoleStatus.Builder setRole(OFControllerRole role) {
+        this.role = role;
+        this.roleSet = true;
+        return this;
+    }
+    @Override
+    public OFType getType() {
+        return OFType.ROLE_STATUS;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_14;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFRoleStatus.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 //

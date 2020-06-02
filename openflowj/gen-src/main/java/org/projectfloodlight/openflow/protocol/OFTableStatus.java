@@ -28,27 +28,27 @@ import org.projectfloodlight.openflow.exceptions.*;
 import io.netty.buffer.ByteBuf;
 
 public interface OFTableStatus extends OFObject, OFMessage {
-    OFVersion getVersion();
-    OFType getType();
-    long getXid();
     OFTableReason getReason();
-    OFTableDesc getTable();
     long getRole() throws UnsupportedOperationException;
+    OFTableDesc getTable();
+    OFType getType();
+    OFVersion getVersion();
+    long getXid();
 
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();
     public interface Builder extends OFMessage.Builder {
         OFTableStatus build();
-        OFVersion getVersion();
-        OFType getType();
-        long getXid();
-        Builder setXid(long xid);
         OFTableReason getReason();
         Builder setReason(OFTableReason reason);
-        OFTableDesc getTable();
-        Builder setTable(OFTableDesc table);
         long getRole() throws UnsupportedOperationException;
         Builder setRole(long role) throws UnsupportedOperationException;
+        OFTableDesc getTable();
+        Builder setTable(OFTableDesc table);
+        OFType getType();
+        OFVersion getVersion();
+        long getXid();
+        Builder setXid(long xid);
     }
 }

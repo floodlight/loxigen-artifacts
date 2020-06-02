@@ -29,30 +29,30 @@ import java.util.Set;
 import io.netty.buffer.ByteBuf;
 
 public interface OFBsnVlanCounterStatsRequest extends OFObject, OFBsnStatsRequest<OFBsnVlanCounterStatsReply>, OFRequest<OFBsnVlanCounterStatsReply> {
-    OFVersion getVersion();
-    OFType getType();
-    long getXid();
-    OFStatsType getStatsType();
-    Set<OFStatsRequestFlags> getFlags();
     long getExperimenter();
+    Set<OFStatsRequestFlags> getFlags();
+    OFStatsType getStatsType();
     long getSubtype();
+    OFType getType();
+    OFVersion getVersion();
     int getVlanVid();
+    long getXid();
 
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();
     public interface Builder extends OFBsnStatsRequest.Builder<OFBsnVlanCounterStatsReply> {
         OFBsnVlanCounterStatsRequest build();
-        OFVersion getVersion();
-        OFType getType();
-        long getXid();
-        Builder setXid(long xid);
-        OFStatsType getStatsType();
+        long getExperimenter();
         Set<OFStatsRequestFlags> getFlags();
         Builder setFlags(Set<OFStatsRequestFlags> flags);
-        long getExperimenter();
+        OFStatsType getStatsType();
         long getSubtype();
+        OFType getType();
+        OFVersion getVersion();
         int getVlanVid();
         Builder setVlanVid(int vlanVid);
+        long getXid();
+        Builder setXid(long xid);
     }
 }

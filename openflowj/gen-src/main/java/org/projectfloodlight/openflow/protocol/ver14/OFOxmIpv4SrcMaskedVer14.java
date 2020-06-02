@@ -64,6 +64,11 @@ class OFOxmIpv4SrcMaskedVer14 implements OFOxmIpv4SrcMasked {
 
     // Accessors for OF message fields
     @Override
+    public IPv4Address getMask() {
+        return mask;
+    }
+
+    @Override
     public long getTypeLen() {
         return 0x80001708L;
     }
@@ -71,21 +76,6 @@ class OFOxmIpv4SrcMaskedVer14 implements OFOxmIpv4SrcMasked {
     @Override
     public IPv4Address getValue() {
         return value;
-    }
-
-    @Override
-    public IPv4Address getMask() {
-        return mask;
-    }
-
-    @Override
-    public MatchField<IPv4Address> getMatchField() {
-        return MatchField.IPV4_SRC;
-    }
-
-    @Override
-    public boolean isMasked() {
-        return true;
     }
 
     public OFOxm<IPv4Address> getCanonical() {
@@ -96,6 +86,16 @@ class OFOxmIpv4SrcMaskedVer14 implements OFOxmIpv4SrcMasked {
         } else {
             return this;
         }
+    }
+
+    @Override
+    public boolean isMasked() {
+        return true;
+    }
+
+    @Override
+    public MatchField<IPv4Address> getMatchField() {
+        return MatchField.IPV4_SRC;
     }
 
     @Override
@@ -123,6 +123,17 @@ class OFOxmIpv4SrcMaskedVer14 implements OFOxmIpv4SrcMasked {
         }
 
     @Override
+    public IPv4Address getMask() {
+        return mask;
+    }
+
+    @Override
+    public OFOxmIpv4SrcMasked.Builder setMask(IPv4Address mask) {
+        this.mask = mask;
+        this.maskSet = true;
+        return this;
+    }
+    @Override
     public long getTypeLen() {
         return 0x80001708L;
     }
@@ -139,19 +150,8 @@ class OFOxmIpv4SrcMaskedVer14 implements OFOxmIpv4SrcMasked {
         return this;
     }
     @Override
-    public IPv4Address getMask() {
-        return mask;
-    }
-
-    @Override
-    public OFOxmIpv4SrcMasked.Builder setMask(IPv4Address mask) {
-        this.mask = mask;
-        this.maskSet = true;
-        return this;
-    }
-    @Override
-    public MatchField<IPv4Address> getMatchField() {
-        return MatchField.IPV4_SRC;
+    public OFOxm<IPv4Address> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.4");
     }
 
     @Override
@@ -160,8 +160,8 @@ class OFOxmIpv4SrcMaskedVer14 implements OFOxmIpv4SrcMasked {
     }
 
     @Override
-    public OFOxm<IPv4Address> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.4");
+    public MatchField<IPv4Address> getMatchField() {
+        return MatchField.IPV4_SRC;
     }
 
     @Override
@@ -197,6 +197,17 @@ class OFOxmIpv4SrcMaskedVer14 implements OFOxmIpv4SrcMasked {
         private IPv4Address mask;
 
     @Override
+    public IPv4Address getMask() {
+        return mask;
+    }
+
+    @Override
+    public OFOxmIpv4SrcMasked.Builder setMask(IPv4Address mask) {
+        this.mask = mask;
+        this.maskSet = true;
+        return this;
+    }
+    @Override
     public long getTypeLen() {
         return 0x80001708L;
     }
@@ -213,19 +224,8 @@ class OFOxmIpv4SrcMaskedVer14 implements OFOxmIpv4SrcMasked {
         return this;
     }
     @Override
-    public IPv4Address getMask() {
-        return mask;
-    }
-
-    @Override
-    public OFOxmIpv4SrcMasked.Builder setMask(IPv4Address mask) {
-        this.mask = mask;
-        this.maskSet = true;
-        return this;
-    }
-    @Override
-    public MatchField<IPv4Address> getMatchField() {
-        return MatchField.IPV4_SRC;
+    public OFOxm<IPv4Address> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.4");
     }
 
     @Override
@@ -234,8 +234,8 @@ class OFOxmIpv4SrcMaskedVer14 implements OFOxmIpv4SrcMasked {
     }
 
     @Override
-    public OFOxm<IPv4Address> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.4");
+    public MatchField<IPv4Address> getMatchField() {
+        return MatchField.IPV4_SRC;
     }
 
     @Override

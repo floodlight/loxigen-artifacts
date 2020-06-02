@@ -85,8 +85,8 @@ class OFPortStatsPropOpticalVer14 implements OFPortStatsPropOptical {
 
     // Accessors for OF message fields
     @Override
-    public int getType() {
-        return 0x1;
+    public int getBiasCurrent() {
+        return biasCurrent;
     }
 
     @Override
@@ -95,28 +95,8 @@ class OFPortStatsPropOpticalVer14 implements OFPortStatsPropOptical {
     }
 
     @Override
-    public long getTxFreqLmda() {
-        return txFreqLmda;
-    }
-
-    @Override
-    public long getTxOffset() {
-        return txOffset;
-    }
-
-    @Override
-    public long getTxGridSpan() {
-        return txGridSpan;
-    }
-
-    @Override
     public long getRxFreqLmda() {
         return rxFreqLmda;
-    }
-
-    @Override
-    public long getRxOffset() {
-        return rxOffset;
     }
 
     @Override
@@ -125,8 +105,8 @@ class OFPortStatsPropOpticalVer14 implements OFPortStatsPropOptical {
     }
 
     @Override
-    public int getTxPwr() {
-        return txPwr;
+    public long getRxOffset() {
+        return rxOffset;
     }
 
     @Override
@@ -135,13 +115,33 @@ class OFPortStatsPropOpticalVer14 implements OFPortStatsPropOptical {
     }
 
     @Override
-    public int getBiasCurrent() {
-        return biasCurrent;
+    public int getTemperature() {
+        return temperature;
     }
 
     @Override
-    public int getTemperature() {
-        return temperature;
+    public long getTxFreqLmda() {
+        return txFreqLmda;
+    }
+
+    @Override
+    public long getTxGridSpan() {
+        return txGridSpan;
+    }
+
+    @Override
+    public long getTxOffset() {
+        return txOffset;
+    }
+
+    @Override
+    public int getTxPwr() {
+        return txPwr;
+    }
+
+    @Override
+    public int getType() {
+        return 0x1;
     }
 
     @Override
@@ -187,10 +187,16 @@ class OFPortStatsPropOpticalVer14 implements OFPortStatsPropOptical {
         }
 
     @Override
-    public int getType() {
-        return 0x1;
+    public int getBiasCurrent() {
+        return biasCurrent;
     }
 
+    @Override
+    public OFPortStatsPropOptical.Builder setBiasCurrent(int biasCurrent) {
+        this.biasCurrent = biasCurrent;
+        this.biasCurrentSet = true;
+        return this;
+    }
     @Override
     public long getFlags() {
         return flags;
@@ -200,39 +206,6 @@ class OFPortStatsPropOpticalVer14 implements OFPortStatsPropOptical {
     public OFPortStatsPropOptical.Builder setFlags(long flags) {
         this.flags = flags;
         this.flagsSet = true;
-        return this;
-    }
-    @Override
-    public long getTxFreqLmda() {
-        return txFreqLmda;
-    }
-
-    @Override
-    public OFPortStatsPropOptical.Builder setTxFreqLmda(long txFreqLmda) {
-        this.txFreqLmda = txFreqLmda;
-        this.txFreqLmdaSet = true;
-        return this;
-    }
-    @Override
-    public long getTxOffset() {
-        return txOffset;
-    }
-
-    @Override
-    public OFPortStatsPropOptical.Builder setTxOffset(long txOffset) {
-        this.txOffset = txOffset;
-        this.txOffsetSet = true;
-        return this;
-    }
-    @Override
-    public long getTxGridSpan() {
-        return txGridSpan;
-    }
-
-    @Override
-    public OFPortStatsPropOptical.Builder setTxGridSpan(long txGridSpan) {
-        this.txGridSpan = txGridSpan;
-        this.txGridSpanSet = true;
         return this;
     }
     @Override
@@ -247,17 +220,6 @@ class OFPortStatsPropOpticalVer14 implements OFPortStatsPropOptical {
         return this;
     }
     @Override
-    public long getRxOffset() {
-        return rxOffset;
-    }
-
-    @Override
-    public OFPortStatsPropOptical.Builder setRxOffset(long rxOffset) {
-        this.rxOffset = rxOffset;
-        this.rxOffsetSet = true;
-        return this;
-    }
-    @Override
     public long getRxGridSpan() {
         return rxGridSpan;
     }
@@ -269,14 +231,14 @@ class OFPortStatsPropOpticalVer14 implements OFPortStatsPropOptical {
         return this;
     }
     @Override
-    public int getTxPwr() {
-        return txPwr;
+    public long getRxOffset() {
+        return rxOffset;
     }
 
     @Override
-    public OFPortStatsPropOptical.Builder setTxPwr(int txPwr) {
-        this.txPwr = txPwr;
-        this.txPwrSet = true;
+    public OFPortStatsPropOptical.Builder setRxOffset(long rxOffset) {
+        this.rxOffset = rxOffset;
+        this.rxOffsetSet = true;
         return this;
     }
     @Override
@@ -291,17 +253,6 @@ class OFPortStatsPropOpticalVer14 implements OFPortStatsPropOptical {
         return this;
     }
     @Override
-    public int getBiasCurrent() {
-        return biasCurrent;
-    }
-
-    @Override
-    public OFPortStatsPropOptical.Builder setBiasCurrent(int biasCurrent) {
-        this.biasCurrent = biasCurrent;
-        this.biasCurrentSet = true;
-        return this;
-    }
-    @Override
     public int getTemperature() {
         return temperature;
     }
@@ -312,6 +263,55 @@ class OFPortStatsPropOpticalVer14 implements OFPortStatsPropOptical {
         this.temperatureSet = true;
         return this;
     }
+    @Override
+    public long getTxFreqLmda() {
+        return txFreqLmda;
+    }
+
+    @Override
+    public OFPortStatsPropOptical.Builder setTxFreqLmda(long txFreqLmda) {
+        this.txFreqLmda = txFreqLmda;
+        this.txFreqLmdaSet = true;
+        return this;
+    }
+    @Override
+    public long getTxGridSpan() {
+        return txGridSpan;
+    }
+
+    @Override
+    public OFPortStatsPropOptical.Builder setTxGridSpan(long txGridSpan) {
+        this.txGridSpan = txGridSpan;
+        this.txGridSpanSet = true;
+        return this;
+    }
+    @Override
+    public long getTxOffset() {
+        return txOffset;
+    }
+
+    @Override
+    public OFPortStatsPropOptical.Builder setTxOffset(long txOffset) {
+        this.txOffset = txOffset;
+        this.txOffsetSet = true;
+        return this;
+    }
+    @Override
+    public int getTxPwr() {
+        return txPwr;
+    }
+
+    @Override
+    public OFPortStatsPropOptical.Builder setTxPwr(int txPwr) {
+        this.txPwr = txPwr;
+        this.txPwrSet = true;
+        return this;
+    }
+    @Override
+    public int getType() {
+        return 0x1;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_14;
@@ -377,10 +377,16 @@ class OFPortStatsPropOpticalVer14 implements OFPortStatsPropOptical {
         private int temperature;
 
     @Override
-    public int getType() {
-        return 0x1;
+    public int getBiasCurrent() {
+        return biasCurrent;
     }
 
+    @Override
+    public OFPortStatsPropOptical.Builder setBiasCurrent(int biasCurrent) {
+        this.biasCurrent = biasCurrent;
+        this.biasCurrentSet = true;
+        return this;
+    }
     @Override
     public long getFlags() {
         return flags;
@@ -390,39 +396,6 @@ class OFPortStatsPropOpticalVer14 implements OFPortStatsPropOptical {
     public OFPortStatsPropOptical.Builder setFlags(long flags) {
         this.flags = flags;
         this.flagsSet = true;
-        return this;
-    }
-    @Override
-    public long getTxFreqLmda() {
-        return txFreqLmda;
-    }
-
-    @Override
-    public OFPortStatsPropOptical.Builder setTxFreqLmda(long txFreqLmda) {
-        this.txFreqLmda = txFreqLmda;
-        this.txFreqLmdaSet = true;
-        return this;
-    }
-    @Override
-    public long getTxOffset() {
-        return txOffset;
-    }
-
-    @Override
-    public OFPortStatsPropOptical.Builder setTxOffset(long txOffset) {
-        this.txOffset = txOffset;
-        this.txOffsetSet = true;
-        return this;
-    }
-    @Override
-    public long getTxGridSpan() {
-        return txGridSpan;
-    }
-
-    @Override
-    public OFPortStatsPropOptical.Builder setTxGridSpan(long txGridSpan) {
-        this.txGridSpan = txGridSpan;
-        this.txGridSpanSet = true;
         return this;
     }
     @Override
@@ -437,17 +410,6 @@ class OFPortStatsPropOpticalVer14 implements OFPortStatsPropOptical {
         return this;
     }
     @Override
-    public long getRxOffset() {
-        return rxOffset;
-    }
-
-    @Override
-    public OFPortStatsPropOptical.Builder setRxOffset(long rxOffset) {
-        this.rxOffset = rxOffset;
-        this.rxOffsetSet = true;
-        return this;
-    }
-    @Override
     public long getRxGridSpan() {
         return rxGridSpan;
     }
@@ -459,14 +421,14 @@ class OFPortStatsPropOpticalVer14 implements OFPortStatsPropOptical {
         return this;
     }
     @Override
-    public int getTxPwr() {
-        return txPwr;
+    public long getRxOffset() {
+        return rxOffset;
     }
 
     @Override
-    public OFPortStatsPropOptical.Builder setTxPwr(int txPwr) {
-        this.txPwr = txPwr;
-        this.txPwrSet = true;
+    public OFPortStatsPropOptical.Builder setRxOffset(long rxOffset) {
+        this.rxOffset = rxOffset;
+        this.rxOffsetSet = true;
         return this;
     }
     @Override
@@ -481,17 +443,6 @@ class OFPortStatsPropOpticalVer14 implements OFPortStatsPropOptical {
         return this;
     }
     @Override
-    public int getBiasCurrent() {
-        return biasCurrent;
-    }
-
-    @Override
-    public OFPortStatsPropOptical.Builder setBiasCurrent(int biasCurrent) {
-        this.biasCurrent = biasCurrent;
-        this.biasCurrentSet = true;
-        return this;
-    }
-    @Override
     public int getTemperature() {
         return temperature;
     }
@@ -502,6 +453,55 @@ class OFPortStatsPropOpticalVer14 implements OFPortStatsPropOptical {
         this.temperatureSet = true;
         return this;
     }
+    @Override
+    public long getTxFreqLmda() {
+        return txFreqLmda;
+    }
+
+    @Override
+    public OFPortStatsPropOptical.Builder setTxFreqLmda(long txFreqLmda) {
+        this.txFreqLmda = txFreqLmda;
+        this.txFreqLmdaSet = true;
+        return this;
+    }
+    @Override
+    public long getTxGridSpan() {
+        return txGridSpan;
+    }
+
+    @Override
+    public OFPortStatsPropOptical.Builder setTxGridSpan(long txGridSpan) {
+        this.txGridSpan = txGridSpan;
+        this.txGridSpanSet = true;
+        return this;
+    }
+    @Override
+    public long getTxOffset() {
+        return txOffset;
+    }
+
+    @Override
+    public OFPortStatsPropOptical.Builder setTxOffset(long txOffset) {
+        this.txOffset = txOffset;
+        this.txOffsetSet = true;
+        return this;
+    }
+    @Override
+    public int getTxPwr() {
+        return txPwr;
+    }
+
+    @Override
+    public OFPortStatsPropOptical.Builder setTxPwr(int txPwr) {
+        this.txPwr = txPwr;
+        this.txPwrSet = true;
+        return this;
+    }
+    @Override
+    public int getType() {
+        return 0x1;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_14;

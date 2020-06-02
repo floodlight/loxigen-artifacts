@@ -80,8 +80,23 @@ class OFQueueStatsEntryVer11 implements OFQueueStatsEntry {
 
     // Accessors for OF message fields
     @Override
+    public long getDurationNsec()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property durationNsec not supported in version 1.1");
+    }
+
+    @Override
+    public long getDurationSec()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property durationSec not supported in version 1.1");
+    }
+
+    @Override
     public OFPort getPortNo() {
         return portNo;
+    }
+
+    @Override
+    public List<OFQueueStatsProp> getProperties()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property properties not supported in version 1.1");
     }
 
     @Override
@@ -95,28 +110,13 @@ class OFQueueStatsEntryVer11 implements OFQueueStatsEntry {
     }
 
     @Override
-    public U64 getTxPackets() {
-        return txPackets;
-    }
-
-    @Override
     public U64 getTxErrors() {
         return txErrors;
     }
 
     @Override
-    public long getDurationSec()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property durationSec not supported in version 1.1");
-    }
-
-    @Override
-    public long getDurationNsec()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property durationNsec not supported in version 1.1");
-    }
-
-    @Override
-    public List<OFQueueStatsProp> getProperties()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property properties not supported in version 1.1");
+    public U64 getTxPackets() {
+        return txPackets;
     }
 
     @Override
@@ -150,6 +150,24 @@ class OFQueueStatsEntryVer11 implements OFQueueStatsEntry {
         }
 
     @Override
+    public long getDurationNsec()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property durationNsec not supported in version 1.1");
+    }
+
+    @Override
+    public OFQueueStatsEntry.Builder setDurationNsec(long durationNsec) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property durationNsec not supported in version 1.1");
+    }
+    @Override
+    public long getDurationSec()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property durationSec not supported in version 1.1");
+    }
+
+    @Override
+    public OFQueueStatsEntry.Builder setDurationSec(long durationSec) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property durationSec not supported in version 1.1");
+    }
+    @Override
     public OFPort getPortNo() {
         return portNo;
     }
@@ -159,6 +177,15 @@ class OFQueueStatsEntryVer11 implements OFQueueStatsEntry {
         this.portNo = portNo;
         this.portNoSet = true;
         return this;
+    }
+    @Override
+    public List<OFQueueStatsProp> getProperties()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property properties not supported in version 1.1");
+    }
+
+    @Override
+    public OFQueueStatsEntry.Builder setProperties(List<OFQueueStatsProp> properties) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property properties not supported in version 1.1");
     }
     @Override
     public long getQueueId() {
@@ -183,17 +210,6 @@ class OFQueueStatsEntryVer11 implements OFQueueStatsEntry {
         return this;
     }
     @Override
-    public U64 getTxPackets() {
-        return txPackets;
-    }
-
-    @Override
-    public OFQueueStatsEntry.Builder setTxPackets(U64 txPackets) {
-        this.txPackets = txPackets;
-        this.txPacketsSet = true;
-        return this;
-    }
-    @Override
     public U64 getTxErrors() {
         return txErrors;
     }
@@ -205,31 +221,15 @@ class OFQueueStatsEntryVer11 implements OFQueueStatsEntry {
         return this;
     }
     @Override
-    public long getDurationSec()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property durationSec not supported in version 1.1");
+    public U64 getTxPackets() {
+        return txPackets;
     }
 
     @Override
-    public OFQueueStatsEntry.Builder setDurationSec(long durationSec) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property durationSec not supported in version 1.1");
-    }
-    @Override
-    public long getDurationNsec()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property durationNsec not supported in version 1.1");
-    }
-
-    @Override
-    public OFQueueStatsEntry.Builder setDurationNsec(long durationNsec) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property durationNsec not supported in version 1.1");
-    }
-    @Override
-    public List<OFQueueStatsProp> getProperties()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property properties not supported in version 1.1");
-    }
-
-    @Override
-    public OFQueueStatsEntry.Builder setProperties(List<OFQueueStatsProp> properties) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property properties not supported in version 1.1");
+    public OFQueueStatsEntry.Builder setTxPackets(U64 txPackets) {
+        this.txPackets = txPackets;
+        this.txPacketsSet = true;
+        return this;
     }
     @Override
     public OFVersion getVersion() {
@@ -280,6 +280,24 @@ class OFQueueStatsEntryVer11 implements OFQueueStatsEntry {
         private U64 txErrors;
 
     @Override
+    public long getDurationNsec()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property durationNsec not supported in version 1.1");
+    }
+
+    @Override
+    public OFQueueStatsEntry.Builder setDurationNsec(long durationNsec) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property durationNsec not supported in version 1.1");
+    }
+    @Override
+    public long getDurationSec()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property durationSec not supported in version 1.1");
+    }
+
+    @Override
+    public OFQueueStatsEntry.Builder setDurationSec(long durationSec) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property durationSec not supported in version 1.1");
+    }
+    @Override
     public OFPort getPortNo() {
         return portNo;
     }
@@ -289,6 +307,15 @@ class OFQueueStatsEntryVer11 implements OFQueueStatsEntry {
         this.portNo = portNo;
         this.portNoSet = true;
         return this;
+    }
+    @Override
+    public List<OFQueueStatsProp> getProperties()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property properties not supported in version 1.1");
+    }
+
+    @Override
+    public OFQueueStatsEntry.Builder setProperties(List<OFQueueStatsProp> properties) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property properties not supported in version 1.1");
     }
     @Override
     public long getQueueId() {
@@ -313,17 +340,6 @@ class OFQueueStatsEntryVer11 implements OFQueueStatsEntry {
         return this;
     }
     @Override
-    public U64 getTxPackets() {
-        return txPackets;
-    }
-
-    @Override
-    public OFQueueStatsEntry.Builder setTxPackets(U64 txPackets) {
-        this.txPackets = txPackets;
-        this.txPacketsSet = true;
-        return this;
-    }
-    @Override
     public U64 getTxErrors() {
         return txErrors;
     }
@@ -335,31 +351,15 @@ class OFQueueStatsEntryVer11 implements OFQueueStatsEntry {
         return this;
     }
     @Override
-    public long getDurationSec()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property durationSec not supported in version 1.1");
+    public U64 getTxPackets() {
+        return txPackets;
     }
 
     @Override
-    public OFQueueStatsEntry.Builder setDurationSec(long durationSec) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property durationSec not supported in version 1.1");
-    }
-    @Override
-    public long getDurationNsec()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property durationNsec not supported in version 1.1");
-    }
-
-    @Override
-    public OFQueueStatsEntry.Builder setDurationNsec(long durationNsec) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property durationNsec not supported in version 1.1");
-    }
-    @Override
-    public List<OFQueueStatsProp> getProperties()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property properties not supported in version 1.1");
-    }
-
-    @Override
-    public OFQueueStatsEntry.Builder setProperties(List<OFQueueStatsProp> properties) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property properties not supported in version 1.1");
+    public OFQueueStatsEntry.Builder setTxPackets(U64 txPackets) {
+        this.txPackets = txPackets;
+        this.txPacketsSet = true;
+        return this;
     }
     @Override
     public OFVersion getVersion() {

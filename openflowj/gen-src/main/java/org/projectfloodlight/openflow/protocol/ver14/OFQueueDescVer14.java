@@ -73,13 +73,13 @@ class OFQueueDescVer14 implements OFQueueDesc {
     }
 
     @Override
-    public long getQueueId() {
-        return queueId;
+    public List<OFQueueDescProp> getProperties() {
+        return properties;
     }
 
     @Override
-    public List<OFQueueDescProp> getProperties() {
-        return properties;
+    public long getQueueId() {
+        return queueId;
     }
 
     @Override
@@ -120,17 +120,6 @@ class OFQueueDescVer14 implements OFQueueDesc {
         return this;
     }
     @Override
-    public long getQueueId() {
-        return queueId;
-    }
-
-    @Override
-    public OFQueueDesc.Builder setQueueId(long queueId) {
-        this.queueId = queueId;
-        this.queueIdSet = true;
-        return this;
-    }
-    @Override
     public List<OFQueueDescProp> getProperties() {
         return properties;
     }
@@ -139,6 +128,17 @@ class OFQueueDescVer14 implements OFQueueDesc {
     public OFQueueDesc.Builder setProperties(List<OFQueueDescProp> properties) {
         this.properties = properties;
         this.propertiesSet = true;
+        return this;
+    }
+    @Override
+    public long getQueueId() {
+        return queueId;
+    }
+
+    @Override
+    public OFQueueDesc.Builder setQueueId(long queueId) {
+        this.queueId = queueId;
+        this.queueIdSet = true;
         return this;
     }
     @Override
@@ -187,17 +187,6 @@ class OFQueueDescVer14 implements OFQueueDesc {
         return this;
     }
     @Override
-    public long getQueueId() {
-        return queueId;
-    }
-
-    @Override
-    public OFQueueDesc.Builder setQueueId(long queueId) {
-        this.queueId = queueId;
-        this.queueIdSet = true;
-        return this;
-    }
-    @Override
     public List<OFQueueDescProp> getProperties() {
         return properties;
     }
@@ -206,6 +195,17 @@ class OFQueueDescVer14 implements OFQueueDesc {
     public OFQueueDesc.Builder setProperties(List<OFQueueDescProp> properties) {
         this.properties = properties;
         this.propertiesSet = true;
+        return this;
+    }
+    @Override
+    public long getQueueId() {
+        return queueId;
+    }
+
+    @Override
+    public OFQueueDesc.Builder setQueueId(long queueId) {
+        this.queueId = queueId;
+        this.queueIdSet = true;
         return this;
     }
     @Override

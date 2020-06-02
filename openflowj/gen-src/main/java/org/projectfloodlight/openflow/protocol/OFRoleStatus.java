@@ -29,30 +29,30 @@ import java.util.List;
 import io.netty.buffer.ByteBuf;
 
 public interface OFRoleStatus extends OFObject, OFMessage {
-    OFVersion getVersion();
-    OFType getType();
-    long getXid();
-    OFControllerRole getRole();
-    OFControllerRoleReason getReason();
     U64 getGenerationId();
     List<OFRoleProp> getProperties();
+    OFControllerRoleReason getReason();
+    OFControllerRole getRole();
+    OFType getType();
+    OFVersion getVersion();
+    long getXid();
 
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();
     public interface Builder extends OFMessage.Builder {
         OFRoleStatus build();
-        OFVersion getVersion();
-        OFType getType();
-        long getXid();
-        Builder setXid(long xid);
-        OFControllerRole getRole();
-        Builder setRole(OFControllerRole role);
-        OFControllerRoleReason getReason();
-        Builder setReason(OFControllerRoleReason reason);
         U64 getGenerationId();
         Builder setGenerationId(U64 generationId);
         List<OFRoleProp> getProperties();
         Builder setProperties(List<OFRoleProp> properties);
+        OFControllerRoleReason getReason();
+        Builder setReason(OFControllerRoleReason reason);
+        OFControllerRole getRole();
+        Builder setRole(OFControllerRole role);
+        OFType getType();
+        OFVersion getVersion();
+        long getXid();
+        Builder setXid(long xid);
     }
 }

@@ -64,8 +64,8 @@ class OFEchoReplyVer14 implements OFEchoReply {
 
     // Accessors for OF message fields
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_14;
+    public byte[] getData() {
+        return data;
     }
 
     @Override
@@ -74,13 +74,13 @@ class OFEchoReplyVer14 implements OFEchoReply {
     }
 
     @Override
-    public long getXid() {
-        return xid;
+    public OFVersion getVersion() {
+        return OFVersion.OF_14;
     }
 
     @Override
-    public byte[] getData() {
-        return data;
+    public long getXid() {
+        return xid;
     }
 
 
@@ -103,13 +103,24 @@ class OFEchoReplyVer14 implements OFEchoReply {
         }
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_14;
+    public byte[] getData() {
+        return data;
     }
 
     @Override
+    public OFEchoReply.Builder setData(byte[] data) {
+        this.data = data;
+        this.dataSet = true;
+        return this;
+    }
+    @Override
     public OFType getType() {
         return OFType.ECHO_REPLY;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_14;
     }
 
     @Override
@@ -121,17 +132,6 @@ class OFEchoReplyVer14 implements OFEchoReply {
     public OFEchoReply.Builder setXid(long xid) {
         this.xid = xid;
         this.xidSet = true;
-        return this;
-    }
-    @Override
-    public byte[] getData() {
-        return data;
-    }
-
-    @Override
-    public OFEchoReply.Builder setData(byte[] data) {
-        this.data = data;
-        this.dataSet = true;
         return this;
     }
 
@@ -160,13 +160,24 @@ class OFEchoReplyVer14 implements OFEchoReply {
         private byte[] data;
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_14;
+    public byte[] getData() {
+        return data;
     }
 
     @Override
+    public OFEchoReply.Builder setData(byte[] data) {
+        this.data = data;
+        this.dataSet = true;
+        return this;
+    }
+    @Override
     public OFType getType() {
         return OFType.ECHO_REPLY;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_14;
     }
 
     @Override
@@ -178,17 +189,6 @@ class OFEchoReplyVer14 implements OFEchoReply {
     public OFEchoReply.Builder setXid(long xid) {
         this.xid = xid;
         this.xidSet = true;
-        return this;
-    }
-    @Override
-    public byte[] getData() {
-        return data;
-    }
-
-    @Override
-    public OFEchoReply.Builder setData(byte[] data) {
-        this.data = data;
-        this.dataSet = true;
         return this;
     }
 //

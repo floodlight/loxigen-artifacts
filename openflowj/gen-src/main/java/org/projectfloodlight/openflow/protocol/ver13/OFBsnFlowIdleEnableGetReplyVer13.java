@@ -58,18 +58,8 @@ class OFBsnFlowIdleEnableGetReplyVer13 implements OFBsnFlowIdleEnableGetReply {
 
     // Accessors for OF message fields
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_13;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.EXPERIMENTER;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
+    public long getEnabled() {
+        return enabled;
     }
 
     @Override
@@ -83,8 +73,18 @@ class OFBsnFlowIdleEnableGetReplyVer13 implements OFBsnFlowIdleEnableGetReply {
     }
 
     @Override
-    public long getEnabled() {
-        return enabled;
+    public OFType getType() {
+        return OFType.EXPERIMENTER;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_13;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
     }
 
 
@@ -107,24 +107,14 @@ class OFBsnFlowIdleEnableGetReplyVer13 implements OFBsnFlowIdleEnableGetReply {
         }
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_13;
+    public long getEnabled() {
+        return enabled;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.EXPERIMENTER;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFBsnFlowIdleEnableGetReply.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
+    public OFBsnFlowIdleEnableGetReply.Builder setEnabled(long enabled) {
+        this.enabled = enabled;
+        this.enabledSet = true;
         return this;
     }
     @Override
@@ -138,14 +128,24 @@ class OFBsnFlowIdleEnableGetReplyVer13 implements OFBsnFlowIdleEnableGetReply {
     }
 
     @Override
-    public long getEnabled() {
-        return enabled;
+    public OFType getType() {
+        return OFType.EXPERIMENTER;
     }
 
     @Override
-    public OFBsnFlowIdleEnableGetReply.Builder setEnabled(long enabled) {
-        this.enabled = enabled;
-        this.enabledSet = true;
+    public OFVersion getVersion() {
+        return OFVersion.OF_13;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFBsnFlowIdleEnableGetReply.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 
@@ -172,24 +172,14 @@ class OFBsnFlowIdleEnableGetReplyVer13 implements OFBsnFlowIdleEnableGetReply {
         private long enabled;
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_13;
+    public long getEnabled() {
+        return enabled;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.EXPERIMENTER;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFBsnFlowIdleEnableGetReply.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
+    public OFBsnFlowIdleEnableGetReply.Builder setEnabled(long enabled) {
+        this.enabled = enabled;
+        this.enabledSet = true;
         return this;
     }
     @Override
@@ -203,14 +193,24 @@ class OFBsnFlowIdleEnableGetReplyVer13 implements OFBsnFlowIdleEnableGetReply {
     }
 
     @Override
-    public long getEnabled() {
-        return enabled;
+    public OFType getType() {
+        return OFType.EXPERIMENTER;
     }
 
     @Override
-    public OFBsnFlowIdleEnableGetReply.Builder setEnabled(long enabled) {
-        this.enabled = enabled;
-        this.enabledSet = true;
+    public OFVersion getVersion() {
+        return OFVersion.OF_13;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFBsnFlowIdleEnableGetReply.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 //

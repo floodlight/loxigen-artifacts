@@ -77,18 +77,8 @@ class OFBsnLuaUploadVer14 implements OFBsnLuaUpload {
 
     // Accessors for OF message fields
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_14;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.EXPERIMENTER;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
+    public byte[] getData() {
+        return data;
     }
 
     @Override
@@ -97,8 +87,8 @@ class OFBsnLuaUploadVer14 implements OFBsnLuaUpload {
     }
 
     @Override
-    public long getSubtype() {
-        return 0x40L;
+    public String getFilename() {
+        return filename;
     }
 
     @Override
@@ -107,13 +97,23 @@ class OFBsnLuaUploadVer14 implements OFBsnLuaUpload {
     }
 
     @Override
-    public String getFilename() {
-        return filename;
+    public long getSubtype() {
+        return 0x40L;
     }
 
     @Override
-    public byte[] getData() {
-        return data;
+    public OFType getType() {
+        return OFType.EXPERIMENTER;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_14;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
     }
 
 
@@ -140,24 +140,14 @@ class OFBsnLuaUploadVer14 implements OFBsnLuaUpload {
         }
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_14;
+    public byte[] getData() {
+        return data;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.EXPERIMENTER;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFBsnLuaUpload.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
+    public OFBsnLuaUpload.Builder setData(byte[] data) {
+        this.data = data;
+        this.dataSet = true;
         return this;
     }
     @Override
@@ -165,22 +155,6 @@ class OFBsnLuaUploadVer14 implements OFBsnLuaUpload {
         return 0x5c16c7L;
     }
 
-    @Override
-    public long getSubtype() {
-        return 0x40L;
-    }
-
-    @Override
-    public Set<OFBsnLuaUploadFlags> getFlags() {
-        return flags;
-    }
-
-    @Override
-    public OFBsnLuaUpload.Builder setFlags(Set<OFBsnLuaUploadFlags> flags) {
-        this.flags = flags;
-        this.flagsSet = true;
-        return this;
-    }
     @Override
     public String getFilename() {
         return filename;
@@ -193,14 +167,40 @@ class OFBsnLuaUploadVer14 implements OFBsnLuaUpload {
         return this;
     }
     @Override
-    public byte[] getData() {
-        return data;
+    public Set<OFBsnLuaUploadFlags> getFlags() {
+        return flags;
     }
 
     @Override
-    public OFBsnLuaUpload.Builder setData(byte[] data) {
-        this.data = data;
-        this.dataSet = true;
+    public OFBsnLuaUpload.Builder setFlags(Set<OFBsnLuaUploadFlags> flags) {
+        this.flags = flags;
+        this.flagsSet = true;
+        return this;
+    }
+    @Override
+    public long getSubtype() {
+        return 0x40L;
+    }
+
+    @Override
+    public OFType getType() {
+        return OFType.EXPERIMENTER;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_14;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFBsnLuaUpload.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 
@@ -241,24 +241,14 @@ class OFBsnLuaUploadVer14 implements OFBsnLuaUpload {
         private byte[] data;
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_14;
+    public byte[] getData() {
+        return data;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.EXPERIMENTER;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFBsnLuaUpload.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
+    public OFBsnLuaUpload.Builder setData(byte[] data) {
+        this.data = data;
+        this.dataSet = true;
         return this;
     }
     @Override
@@ -266,22 +256,6 @@ class OFBsnLuaUploadVer14 implements OFBsnLuaUpload {
         return 0x5c16c7L;
     }
 
-    @Override
-    public long getSubtype() {
-        return 0x40L;
-    }
-
-    @Override
-    public Set<OFBsnLuaUploadFlags> getFlags() {
-        return flags;
-    }
-
-    @Override
-    public OFBsnLuaUpload.Builder setFlags(Set<OFBsnLuaUploadFlags> flags) {
-        this.flags = flags;
-        this.flagsSet = true;
-        return this;
-    }
     @Override
     public String getFilename() {
         return filename;
@@ -294,14 +268,40 @@ class OFBsnLuaUploadVer14 implements OFBsnLuaUpload {
         return this;
     }
     @Override
-    public byte[] getData() {
-        return data;
+    public Set<OFBsnLuaUploadFlags> getFlags() {
+        return flags;
     }
 
     @Override
-    public OFBsnLuaUpload.Builder setData(byte[] data) {
-        this.data = data;
-        this.dataSet = true;
+    public OFBsnLuaUpload.Builder setFlags(Set<OFBsnLuaUploadFlags> flags) {
+        this.flags = flags;
+        this.flagsSet = true;
+        return this;
+    }
+    @Override
+    public long getSubtype() {
+        return 0x40L;
+    }
+
+    @Override
+    public OFType getType() {
+        return OFType.EXPERIMENTER;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_14;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFBsnLuaUpload.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 //

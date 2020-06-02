@@ -29,24 +29,24 @@ import java.util.List;
 import io.netty.buffer.ByteBuf;
 
 public interface OFQueueGetConfigReply extends OFObject, OFMessage {
-    OFVersion getVersion();
-    OFType getType();
-    long getXid();
     OFPort getPort();
     List<OFPacketQueue> getQueues();
+    OFType getType();
+    OFVersion getVersion();
+    long getXid();
 
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();
     public interface Builder extends OFMessage.Builder {
         OFQueueGetConfigReply build();
-        OFVersion getVersion();
-        OFType getType();
-        long getXid();
-        Builder setXid(long xid);
         OFPort getPort();
         Builder setPort(OFPort port);
         List<OFPacketQueue> getQueues();
         Builder setQueues(List<OFPacketQueue> queues);
+        OFType getType();
+        OFVersion getVersion();
+        long getXid();
+        Builder setXid(long xid);
     }
 }

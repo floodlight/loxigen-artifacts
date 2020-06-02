@@ -69,8 +69,8 @@ class OFGroupDescStatsEntryVer12 implements OFGroupDescStatsEntry {
 
     // Accessors for OF message fields
     @Override
-    public OFGroupType getGroupType() {
-        return groupType;
+    public List<OFBucket> getBuckets() {
+        return buckets;
     }
 
     @Override
@@ -79,8 +79,8 @@ class OFGroupDescStatsEntryVer12 implements OFGroupDescStatsEntry {
     }
 
     @Override
-    public List<OFBucket> getBuckets() {
-        return buckets;
+    public OFGroupType getGroupType() {
+        return groupType;
     }
 
     @Override
@@ -115,14 +115,14 @@ class OFGroupDescStatsEntryVer12 implements OFGroupDescStatsEntry {
         }
 
     @Override
-    public OFGroupType getGroupType() {
-        return groupType;
+    public List<OFBucket> getBuckets() {
+        return buckets;
     }
 
     @Override
-    public OFGroupDescStatsEntry.Builder setGroupType(OFGroupType groupType) {
-        this.groupType = groupType;
-        this.groupTypeSet = true;
+    public OFGroupDescStatsEntry.Builder setBuckets(List<OFBucket> buckets) {
+        this.buckets = buckets;
+        this.bucketsSet = true;
         return this;
     }
     @Override
@@ -137,14 +137,14 @@ class OFGroupDescStatsEntryVer12 implements OFGroupDescStatsEntry {
         return this;
     }
     @Override
-    public List<OFBucket> getBuckets() {
-        return buckets;
+    public OFGroupType getGroupType() {
+        return groupType;
     }
 
     @Override
-    public OFGroupDescStatsEntry.Builder setBuckets(List<OFBucket> buckets) {
-        this.buckets = buckets;
-        this.bucketsSet = true;
+    public OFGroupDescStatsEntry.Builder setGroupType(OFGroupType groupType) {
+        this.groupType = groupType;
+        this.groupTypeSet = true;
         return this;
     }
     @Override
@@ -195,14 +195,14 @@ class OFGroupDescStatsEntryVer12 implements OFGroupDescStatsEntry {
         private List<OFBucket> buckets;
 
     @Override
-    public OFGroupType getGroupType() {
-        return groupType;
+    public List<OFBucket> getBuckets() {
+        return buckets;
     }
 
     @Override
-    public OFGroupDescStatsEntry.Builder setGroupType(OFGroupType groupType) {
-        this.groupType = groupType;
-        this.groupTypeSet = true;
+    public OFGroupDescStatsEntry.Builder setBuckets(List<OFBucket> buckets) {
+        this.buckets = buckets;
+        this.bucketsSet = true;
         return this;
     }
     @Override
@@ -217,14 +217,14 @@ class OFGroupDescStatsEntryVer12 implements OFGroupDescStatsEntry {
         return this;
     }
     @Override
-    public List<OFBucket> getBuckets() {
-        return buckets;
+    public OFGroupType getGroupType() {
+        return groupType;
     }
 
     @Override
-    public OFGroupDescStatsEntry.Builder setBuckets(List<OFBucket> buckets) {
-        this.buckets = buckets;
-        this.bucketsSet = true;
+    public OFGroupDescStatsEntry.Builder setGroupType(OFGroupType groupType) {
+        this.groupType = groupType;
+        this.groupTypeSet = true;
         return this;
     }
     @Override

@@ -84,18 +84,8 @@ class OFPacketOutVer10 implements OFPacketOut {
 
     // Accessors for OF message fields
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_10;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.PACKET_OUT;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
+    public List<OFAction> getActions() {
+        return actions;
     }
 
     @Override
@@ -104,23 +94,33 @@ class OFPacketOutVer10 implements OFPacketOut {
     }
 
     @Override
-    public OFPort getInPort() {
-        return inPort;
-    }
-
-    @Override
-    public List<OFAction> getActions() {
-        return actions;
-    }
-
-    @Override
     public byte[] getData() {
         return data;
     }
 
     @Override
+    public OFPort getInPort() {
+        return inPort;
+    }
+
+    @Override
     public Match getMatch()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property match not supported in version 1.0");
+    }
+
+    @Override
+    public OFType getType() {
+        return OFType.PACKET_OUT;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_10;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
     }
 
 
@@ -149,24 +149,14 @@ class OFPacketOutVer10 implements OFPacketOut {
         }
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_10;
+    public List<OFAction> getActions() {
+        return actions;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.PACKET_OUT;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFPacketOut.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
+    public OFPacketOut.Builder setActions(List<OFAction> actions) {
+        this.actions = actions;
+        this.actionsSet = true;
         return this;
     }
     @Override
@@ -181,28 +171,6 @@ class OFPacketOutVer10 implements OFPacketOut {
         return this;
     }
     @Override
-    public OFPort getInPort() {
-        return inPort;
-    }
-
-    @Override
-    public OFPacketOut.Builder setInPort(OFPort inPort) {
-        this.inPort = inPort;
-        this.inPortSet = true;
-        return this;
-    }
-    @Override
-    public List<OFAction> getActions() {
-        return actions;
-    }
-
-    @Override
-    public OFPacketOut.Builder setActions(List<OFAction> actions) {
-        this.actions = actions;
-        this.actionsSet = true;
-        return this;
-    }
-    @Override
     public byte[] getData() {
         return data;
     }
@@ -214,6 +182,17 @@ class OFPacketOutVer10 implements OFPacketOut {
         return this;
     }
     @Override
+    public OFPort getInPort() {
+        return inPort;
+    }
+
+    @Override
+    public OFPacketOut.Builder setInPort(OFPort inPort) {
+        this.inPort = inPort;
+        this.inPortSet = true;
+        return this;
+    }
+    @Override
     public Match getMatch()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property match not supported in version 1.0");
     }
@@ -221,6 +200,27 @@ class OFPacketOutVer10 implements OFPacketOut {
     @Override
     public OFPacketOut.Builder setMatch(Match match) throws UnsupportedOperationException {
             throw new UnsupportedOperationException("Property match not supported in version 1.0");
+    }
+    @Override
+    public OFType getType() {
+        return OFType.PACKET_OUT;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_10;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFPacketOut.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
+        return this;
     }
 
 
@@ -266,24 +266,14 @@ class OFPacketOutVer10 implements OFPacketOut {
         private byte[] data;
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_10;
+    public List<OFAction> getActions() {
+        return actions;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.PACKET_OUT;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFPacketOut.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
+    public OFPacketOut.Builder setActions(List<OFAction> actions) {
+        this.actions = actions;
+        this.actionsSet = true;
         return this;
     }
     @Override
@@ -298,28 +288,6 @@ class OFPacketOutVer10 implements OFPacketOut {
         return this;
     }
     @Override
-    public OFPort getInPort() {
-        return inPort;
-    }
-
-    @Override
-    public OFPacketOut.Builder setInPort(OFPort inPort) {
-        this.inPort = inPort;
-        this.inPortSet = true;
-        return this;
-    }
-    @Override
-    public List<OFAction> getActions() {
-        return actions;
-    }
-
-    @Override
-    public OFPacketOut.Builder setActions(List<OFAction> actions) {
-        this.actions = actions;
-        this.actionsSet = true;
-        return this;
-    }
-    @Override
     public byte[] getData() {
         return data;
     }
@@ -331,6 +299,17 @@ class OFPacketOutVer10 implements OFPacketOut {
         return this;
     }
     @Override
+    public OFPort getInPort() {
+        return inPort;
+    }
+
+    @Override
+    public OFPacketOut.Builder setInPort(OFPort inPort) {
+        this.inPort = inPort;
+        this.inPortSet = true;
+        return this;
+    }
+    @Override
     public Match getMatch()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property match not supported in version 1.0");
     }
@@ -338,6 +317,27 @@ class OFPacketOutVer10 implements OFPacketOut {
     @Override
     public OFPacketOut.Builder setMatch(Match match) throws UnsupportedOperationException {
             throw new UnsupportedOperationException("Property match not supported in version 1.0");
+    }
+    @Override
+    public OFType getType() {
+        return OFType.PACKET_OUT;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_10;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFPacketOut.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
+        return this;
     }
 //
         @Override

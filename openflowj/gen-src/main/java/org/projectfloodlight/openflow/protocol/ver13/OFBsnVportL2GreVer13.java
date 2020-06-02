@@ -113,38 +113,8 @@ class OFBsnVportL2GreVer13 implements OFBsnVportL2Gre {
 
     // Accessors for OF message fields
     @Override
-    public int getType() {
-        return 0x1;
-    }
-
-    @Override
-    public Set<OFBsnVportL2GreFlags> getFlags() {
-        return flags;
-    }
-
-    @Override
-    public OFPort getPortNo() {
-        return portNo;
-    }
-
-    @Override
-    public OFPort getLoopbackPortNo() {
-        return loopbackPortNo;
-    }
-
-    @Override
-    public MacAddress getLocalMac() {
-        return localMac;
-    }
-
-    @Override
-    public MacAddress getNhMac() {
-        return nhMac;
-    }
-
-    @Override
-    public IPv4Address getSrcIp() {
-        return srcIp;
+    public short getDscp() {
+        return dscp;
     }
 
     @Override
@@ -153,18 +123,33 @@ class OFBsnVportL2GreVer13 implements OFBsnVportL2Gre {
     }
 
     @Override
-    public short getDscp() {
-        return dscp;
+    public Set<OFBsnVportL2GreFlags> getFlags() {
+        return flags;
     }
 
     @Override
-    public short getTtl() {
-        return ttl;
+    public String getIfName() {
+        return ifName;
     }
 
     @Override
-    public long getVpn() {
-        return vpn;
+    public MacAddress getLocalMac() {
+        return localMac;
+    }
+
+    @Override
+    public OFPort getLoopbackPortNo() {
+        return loopbackPortNo;
+    }
+
+    @Override
+    public MacAddress getNhMac() {
+        return nhMac;
+    }
+
+    @Override
+    public OFPort getPortNo() {
+        return portNo;
     }
 
     @Override
@@ -173,8 +158,23 @@ class OFBsnVportL2GreVer13 implements OFBsnVportL2Gre {
     }
 
     @Override
-    public String getIfName() {
-        return ifName;
+    public IPv4Address getSrcIp() {
+        return srcIp;
+    }
+
+    @Override
+    public short getTtl() {
+        return ttl;
+    }
+
+    @Override
+    public int getType() {
+        return 0x1;
+    }
+
+    @Override
+    public long getVpn() {
+        return vpn;
     }
 
     @Override
@@ -222,74 +222,14 @@ class OFBsnVportL2GreVer13 implements OFBsnVportL2Gre {
         }
 
     @Override
-    public int getType() {
-        return 0x1;
+    public short getDscp() {
+        return dscp;
     }
 
     @Override
-    public Set<OFBsnVportL2GreFlags> getFlags() {
-        return flags;
-    }
-
-    @Override
-    public OFBsnVportL2Gre.Builder setFlags(Set<OFBsnVportL2GreFlags> flags) {
-        this.flags = flags;
-        this.flagsSet = true;
-        return this;
-    }
-    @Override
-    public OFPort getPortNo() {
-        return portNo;
-    }
-
-    @Override
-    public OFBsnVportL2Gre.Builder setPortNo(OFPort portNo) {
-        this.portNo = portNo;
-        this.portNoSet = true;
-        return this;
-    }
-    @Override
-    public OFPort getLoopbackPortNo() {
-        return loopbackPortNo;
-    }
-
-    @Override
-    public OFBsnVportL2Gre.Builder setLoopbackPortNo(OFPort loopbackPortNo) {
-        this.loopbackPortNo = loopbackPortNo;
-        this.loopbackPortNoSet = true;
-        return this;
-    }
-    @Override
-    public MacAddress getLocalMac() {
-        return localMac;
-    }
-
-    @Override
-    public OFBsnVportL2Gre.Builder setLocalMac(MacAddress localMac) {
-        this.localMac = localMac;
-        this.localMacSet = true;
-        return this;
-    }
-    @Override
-    public MacAddress getNhMac() {
-        return nhMac;
-    }
-
-    @Override
-    public OFBsnVportL2Gre.Builder setNhMac(MacAddress nhMac) {
-        this.nhMac = nhMac;
-        this.nhMacSet = true;
-        return this;
-    }
-    @Override
-    public IPv4Address getSrcIp() {
-        return srcIp;
-    }
-
-    @Override
-    public OFBsnVportL2Gre.Builder setSrcIp(IPv4Address srcIp) {
-        this.srcIp = srcIp;
-        this.srcIpSet = true;
+    public OFBsnVportL2Gre.Builder setDscp(short dscp) {
+        this.dscp = dscp;
+        this.dscpSet = true;
         return this;
     }
     @Override
@@ -304,36 +244,69 @@ class OFBsnVportL2GreVer13 implements OFBsnVportL2Gre {
         return this;
     }
     @Override
-    public short getDscp() {
-        return dscp;
+    public Set<OFBsnVportL2GreFlags> getFlags() {
+        return flags;
     }
 
     @Override
-    public OFBsnVportL2Gre.Builder setDscp(short dscp) {
-        this.dscp = dscp;
-        this.dscpSet = true;
+    public OFBsnVportL2Gre.Builder setFlags(Set<OFBsnVportL2GreFlags> flags) {
+        this.flags = flags;
+        this.flagsSet = true;
         return this;
     }
     @Override
-    public short getTtl() {
-        return ttl;
+    public String getIfName() {
+        return ifName;
     }
 
     @Override
-    public OFBsnVportL2Gre.Builder setTtl(short ttl) {
-        this.ttl = ttl;
-        this.ttlSet = true;
+    public OFBsnVportL2Gre.Builder setIfName(String ifName) {
+        this.ifName = ifName;
+        this.ifNameSet = true;
         return this;
     }
     @Override
-    public long getVpn() {
-        return vpn;
+    public MacAddress getLocalMac() {
+        return localMac;
     }
 
     @Override
-    public OFBsnVportL2Gre.Builder setVpn(long vpn) {
-        this.vpn = vpn;
-        this.vpnSet = true;
+    public OFBsnVportL2Gre.Builder setLocalMac(MacAddress localMac) {
+        this.localMac = localMac;
+        this.localMacSet = true;
+        return this;
+    }
+    @Override
+    public OFPort getLoopbackPortNo() {
+        return loopbackPortNo;
+    }
+
+    @Override
+    public OFBsnVportL2Gre.Builder setLoopbackPortNo(OFPort loopbackPortNo) {
+        this.loopbackPortNo = loopbackPortNo;
+        this.loopbackPortNoSet = true;
+        return this;
+    }
+    @Override
+    public MacAddress getNhMac() {
+        return nhMac;
+    }
+
+    @Override
+    public OFBsnVportL2Gre.Builder setNhMac(MacAddress nhMac) {
+        this.nhMac = nhMac;
+        this.nhMacSet = true;
+        return this;
+    }
+    @Override
+    public OFPort getPortNo() {
+        return portNo;
+    }
+
+    @Override
+    public OFBsnVportL2Gre.Builder setPortNo(OFPort portNo) {
+        this.portNo = portNo;
+        this.portNoSet = true;
         return this;
     }
     @Override
@@ -348,14 +321,41 @@ class OFBsnVportL2GreVer13 implements OFBsnVportL2Gre {
         return this;
     }
     @Override
-    public String getIfName() {
-        return ifName;
+    public IPv4Address getSrcIp() {
+        return srcIp;
     }
 
     @Override
-    public OFBsnVportL2Gre.Builder setIfName(String ifName) {
-        this.ifName = ifName;
-        this.ifNameSet = true;
+    public OFBsnVportL2Gre.Builder setSrcIp(IPv4Address srcIp) {
+        this.srcIp = srcIp;
+        this.srcIpSet = true;
+        return this;
+    }
+    @Override
+    public short getTtl() {
+        return ttl;
+    }
+
+    @Override
+    public OFBsnVportL2Gre.Builder setTtl(short ttl) {
+        this.ttl = ttl;
+        this.ttlSet = true;
+        return this;
+    }
+    @Override
+    public int getType() {
+        return 0x1;
+    }
+
+    @Override
+    public long getVpn() {
+        return vpn;
+    }
+
+    @Override
+    public OFBsnVportL2Gre.Builder setVpn(long vpn) {
+        this.vpn = vpn;
+        this.vpnSet = true;
         return this;
     }
     @Override
@@ -443,74 +443,14 @@ class OFBsnVportL2GreVer13 implements OFBsnVportL2Gre {
         private String ifName;
 
     @Override
-    public int getType() {
-        return 0x1;
+    public short getDscp() {
+        return dscp;
     }
 
     @Override
-    public Set<OFBsnVportL2GreFlags> getFlags() {
-        return flags;
-    }
-
-    @Override
-    public OFBsnVportL2Gre.Builder setFlags(Set<OFBsnVportL2GreFlags> flags) {
-        this.flags = flags;
-        this.flagsSet = true;
-        return this;
-    }
-    @Override
-    public OFPort getPortNo() {
-        return portNo;
-    }
-
-    @Override
-    public OFBsnVportL2Gre.Builder setPortNo(OFPort portNo) {
-        this.portNo = portNo;
-        this.portNoSet = true;
-        return this;
-    }
-    @Override
-    public OFPort getLoopbackPortNo() {
-        return loopbackPortNo;
-    }
-
-    @Override
-    public OFBsnVportL2Gre.Builder setLoopbackPortNo(OFPort loopbackPortNo) {
-        this.loopbackPortNo = loopbackPortNo;
-        this.loopbackPortNoSet = true;
-        return this;
-    }
-    @Override
-    public MacAddress getLocalMac() {
-        return localMac;
-    }
-
-    @Override
-    public OFBsnVportL2Gre.Builder setLocalMac(MacAddress localMac) {
-        this.localMac = localMac;
-        this.localMacSet = true;
-        return this;
-    }
-    @Override
-    public MacAddress getNhMac() {
-        return nhMac;
-    }
-
-    @Override
-    public OFBsnVportL2Gre.Builder setNhMac(MacAddress nhMac) {
-        this.nhMac = nhMac;
-        this.nhMacSet = true;
-        return this;
-    }
-    @Override
-    public IPv4Address getSrcIp() {
-        return srcIp;
-    }
-
-    @Override
-    public OFBsnVportL2Gre.Builder setSrcIp(IPv4Address srcIp) {
-        this.srcIp = srcIp;
-        this.srcIpSet = true;
+    public OFBsnVportL2Gre.Builder setDscp(short dscp) {
+        this.dscp = dscp;
+        this.dscpSet = true;
         return this;
     }
     @Override
@@ -525,36 +465,69 @@ class OFBsnVportL2GreVer13 implements OFBsnVportL2Gre {
         return this;
     }
     @Override
-    public short getDscp() {
-        return dscp;
+    public Set<OFBsnVportL2GreFlags> getFlags() {
+        return flags;
     }
 
     @Override
-    public OFBsnVportL2Gre.Builder setDscp(short dscp) {
-        this.dscp = dscp;
-        this.dscpSet = true;
+    public OFBsnVportL2Gre.Builder setFlags(Set<OFBsnVportL2GreFlags> flags) {
+        this.flags = flags;
+        this.flagsSet = true;
         return this;
     }
     @Override
-    public short getTtl() {
-        return ttl;
+    public String getIfName() {
+        return ifName;
     }
 
     @Override
-    public OFBsnVportL2Gre.Builder setTtl(short ttl) {
-        this.ttl = ttl;
-        this.ttlSet = true;
+    public OFBsnVportL2Gre.Builder setIfName(String ifName) {
+        this.ifName = ifName;
+        this.ifNameSet = true;
         return this;
     }
     @Override
-    public long getVpn() {
-        return vpn;
+    public MacAddress getLocalMac() {
+        return localMac;
     }
 
     @Override
-    public OFBsnVportL2Gre.Builder setVpn(long vpn) {
-        this.vpn = vpn;
-        this.vpnSet = true;
+    public OFBsnVportL2Gre.Builder setLocalMac(MacAddress localMac) {
+        this.localMac = localMac;
+        this.localMacSet = true;
+        return this;
+    }
+    @Override
+    public OFPort getLoopbackPortNo() {
+        return loopbackPortNo;
+    }
+
+    @Override
+    public OFBsnVportL2Gre.Builder setLoopbackPortNo(OFPort loopbackPortNo) {
+        this.loopbackPortNo = loopbackPortNo;
+        this.loopbackPortNoSet = true;
+        return this;
+    }
+    @Override
+    public MacAddress getNhMac() {
+        return nhMac;
+    }
+
+    @Override
+    public OFBsnVportL2Gre.Builder setNhMac(MacAddress nhMac) {
+        this.nhMac = nhMac;
+        this.nhMacSet = true;
+        return this;
+    }
+    @Override
+    public OFPort getPortNo() {
+        return portNo;
+    }
+
+    @Override
+    public OFBsnVportL2Gre.Builder setPortNo(OFPort portNo) {
+        this.portNo = portNo;
+        this.portNoSet = true;
         return this;
     }
     @Override
@@ -569,14 +542,41 @@ class OFBsnVportL2GreVer13 implements OFBsnVportL2Gre {
         return this;
     }
     @Override
-    public String getIfName() {
-        return ifName;
+    public IPv4Address getSrcIp() {
+        return srcIp;
     }
 
     @Override
-    public OFBsnVportL2Gre.Builder setIfName(String ifName) {
-        this.ifName = ifName;
-        this.ifNameSet = true;
+    public OFBsnVportL2Gre.Builder setSrcIp(IPv4Address srcIp) {
+        this.srcIp = srcIp;
+        this.srcIpSet = true;
+        return this;
+    }
+    @Override
+    public short getTtl() {
+        return ttl;
+    }
+
+    @Override
+    public OFBsnVportL2Gre.Builder setTtl(short ttl) {
+        this.ttl = ttl;
+        this.ttlSet = true;
+        return this;
+    }
+    @Override
+    public int getType() {
+        return 0x1;
+    }
+
+    @Override
+    public long getVpn() {
+        return vpn;
+    }
+
+    @Override
+    public OFBsnVportL2Gre.Builder setVpn(long vpn) {
+        this.vpn = vpn;
+        this.vpnSet = true;
         return this;
     }
     @Override

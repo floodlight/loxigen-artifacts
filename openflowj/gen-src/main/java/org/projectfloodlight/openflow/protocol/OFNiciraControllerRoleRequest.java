@@ -28,25 +28,25 @@ import org.projectfloodlight.openflow.exceptions.*;
 import io.netty.buffer.ByteBuf;
 
 public interface OFNiciraControllerRoleRequest extends OFObject, OFNiciraHeader, OFRequest<OFNiciraControllerRoleReply> {
-    OFVersion getVersion();
-    OFType getType();
-    long getXid();
     long getExperimenter();
-    long getSubtype();
     OFNiciraControllerRole getRole();
+    long getSubtype();
+    OFType getType();
+    OFVersion getVersion();
+    long getXid();
 
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();
     public interface Builder extends OFNiciraHeader.Builder {
         OFNiciraControllerRoleRequest build();
-        OFVersion getVersion();
-        OFType getType();
-        long getXid();
-        Builder setXid(long xid);
         long getExperimenter();
-        long getSubtype();
         OFNiciraControllerRole getRole();
         Builder setRole(OFNiciraControllerRole role);
+        long getSubtype();
+        OFType getType();
+        OFVersion getVersion();
+        long getXid();
+        Builder setXid(long xid);
     }
 }

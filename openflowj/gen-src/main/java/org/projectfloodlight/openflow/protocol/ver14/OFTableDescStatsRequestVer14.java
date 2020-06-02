@@ -62,18 +62,8 @@ class OFTableDescStatsRequestVer14 implements OFTableDescStatsRequest {
 
     // Accessors for OF message fields
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_14;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.STATS_REQUEST;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
+    public Set<OFStatsRequestFlags> getFlags() {
+        return flags;
     }
 
     @Override
@@ -82,8 +72,18 @@ class OFTableDescStatsRequestVer14 implements OFTableDescStatsRequest {
     }
 
     @Override
-    public Set<OFStatsRequestFlags> getFlags() {
-        return flags;
+    public OFType getType() {
+        return OFType.STATS_REQUEST;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_14;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
     }
 
 
@@ -106,13 +106,29 @@ class OFTableDescStatsRequestVer14 implements OFTableDescStatsRequest {
         }
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_14;
+    public Set<OFStatsRequestFlags> getFlags() {
+        return flags;
+    }
+
+    @Override
+    public OFTableDescStatsRequest.Builder setFlags(Set<OFStatsRequestFlags> flags) {
+        this.flags = flags;
+        this.flagsSet = true;
+        return this;
+    }
+    @Override
+    public OFStatsType getStatsType() {
+        return OFStatsType.TABLE_DESC;
     }
 
     @Override
     public OFType getType() {
         return OFType.STATS_REQUEST;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_14;
     }
 
     @Override
@@ -124,22 +140,6 @@ class OFTableDescStatsRequestVer14 implements OFTableDescStatsRequest {
     public OFTableDescStatsRequest.Builder setXid(long xid) {
         this.xid = xid;
         this.xidSet = true;
-        return this;
-    }
-    @Override
-    public OFStatsType getStatsType() {
-        return OFStatsType.TABLE_DESC;
-    }
-
-    @Override
-    public Set<OFStatsRequestFlags> getFlags() {
-        return flags;
-    }
-
-    @Override
-    public OFTableDescStatsRequest.Builder setFlags(Set<OFStatsRequestFlags> flags) {
-        this.flags = flags;
-        this.flagsSet = true;
         return this;
     }
 
@@ -168,13 +168,29 @@ class OFTableDescStatsRequestVer14 implements OFTableDescStatsRequest {
         private Set<OFStatsRequestFlags> flags;
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_14;
+    public Set<OFStatsRequestFlags> getFlags() {
+        return flags;
+    }
+
+    @Override
+    public OFTableDescStatsRequest.Builder setFlags(Set<OFStatsRequestFlags> flags) {
+        this.flags = flags;
+        this.flagsSet = true;
+        return this;
+    }
+    @Override
+    public OFStatsType getStatsType() {
+        return OFStatsType.TABLE_DESC;
     }
 
     @Override
     public OFType getType() {
         return OFType.STATS_REQUEST;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_14;
     }
 
     @Override
@@ -186,22 +202,6 @@ class OFTableDescStatsRequestVer14 implements OFTableDescStatsRequest {
     public OFTableDescStatsRequest.Builder setXid(long xid) {
         this.xid = xid;
         this.xidSet = true;
-        return this;
-    }
-    @Override
-    public OFStatsType getStatsType() {
-        return OFStatsType.TABLE_DESC;
-    }
-
-    @Override
-    public Set<OFStatsRequestFlags> getFlags() {
-        return flags;
-    }
-
-    @Override
-    public OFTableDescStatsRequest.Builder setFlags(Set<OFStatsRequestFlags> flags) {
-        this.flags = flags;
-        this.flagsSet = true;
         return this;
     }
 //

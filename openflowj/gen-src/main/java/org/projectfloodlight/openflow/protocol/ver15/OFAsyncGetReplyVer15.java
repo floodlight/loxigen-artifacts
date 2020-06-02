@@ -65,18 +65,13 @@ class OFAsyncGetReplyVer15 implements OFAsyncGetReply {
 
     // Accessors for OF message fields
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_15;
+    public long getFlowRemovedMaskEqualMaster()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property flowRemovedMaskEqualMaster not supported in version 1.5");
     }
 
     @Override
-    public OFType getType() {
-        return OFType.GET_ASYNC_REPLY;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
+    public long getFlowRemovedMaskSlave()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property flowRemovedMaskSlave not supported in version 1.5");
     }
 
     @Override
@@ -100,18 +95,23 @@ class OFAsyncGetReplyVer15 implements OFAsyncGetReply {
     }
 
     @Override
-    public long getFlowRemovedMaskEqualMaster()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property flowRemovedMaskEqualMaster not supported in version 1.5");
-    }
-
-    @Override
-    public long getFlowRemovedMaskSlave()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property flowRemovedMaskSlave not supported in version 1.5");
-    }
-
-    @Override
     public List<OFAsyncConfigProp> getProperties() {
         return properties;
+    }
+
+    @Override
+    public OFType getType() {
+        return OFType.GET_ASYNC_REPLY;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_15;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
     }
 
 
@@ -134,25 +134,22 @@ class OFAsyncGetReplyVer15 implements OFAsyncGetReply {
         }
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_15;
+    public long getFlowRemovedMaskEqualMaster()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property flowRemovedMaskEqualMaster not supported in version 1.5");
     }
 
     @Override
-    public OFType getType() {
-        return OFType.GET_ASYNC_REPLY;
+    public OFAsyncGetReply.Builder setFlowRemovedMaskEqualMaster(long flowRemovedMaskEqualMaster) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property flowRemovedMaskEqualMaster not supported in version 1.5");
+    }
+    @Override
+    public long getFlowRemovedMaskSlave()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property flowRemovedMaskSlave not supported in version 1.5");
     }
 
     @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFAsyncGetReply.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
-        return this;
+    public OFAsyncGetReply.Builder setFlowRemovedMaskSlave(long flowRemovedMaskSlave) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property flowRemovedMaskSlave not supported in version 1.5");
     }
     @Override
     public long getPacketInMaskEqualMaster()throws UnsupportedOperationException {
@@ -191,24 +188,6 @@ class OFAsyncGetReplyVer15 implements OFAsyncGetReply {
             throw new UnsupportedOperationException("Property portStatusMaskSlave not supported in version 1.5");
     }
     @Override
-    public long getFlowRemovedMaskEqualMaster()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property flowRemovedMaskEqualMaster not supported in version 1.5");
-    }
-
-    @Override
-    public OFAsyncGetReply.Builder setFlowRemovedMaskEqualMaster(long flowRemovedMaskEqualMaster) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property flowRemovedMaskEqualMaster not supported in version 1.5");
-    }
-    @Override
-    public long getFlowRemovedMaskSlave()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property flowRemovedMaskSlave not supported in version 1.5");
-    }
-
-    @Override
-    public OFAsyncGetReply.Builder setFlowRemovedMaskSlave(long flowRemovedMaskSlave) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property flowRemovedMaskSlave not supported in version 1.5");
-    }
-    @Override
     public List<OFAsyncConfigProp> getProperties() {
         return properties;
     }
@@ -217,6 +196,27 @@ class OFAsyncGetReplyVer15 implements OFAsyncGetReply {
     public OFAsyncGetReply.Builder setProperties(List<OFAsyncConfigProp> properties) {
         this.properties = properties;
         this.propertiesSet = true;
+        return this;
+    }
+    @Override
+    public OFType getType() {
+        return OFType.GET_ASYNC_REPLY;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_15;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFAsyncGetReply.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 
@@ -245,25 +245,22 @@ class OFAsyncGetReplyVer15 implements OFAsyncGetReply {
         private List<OFAsyncConfigProp> properties;
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_15;
+    public long getFlowRemovedMaskEqualMaster()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property flowRemovedMaskEqualMaster not supported in version 1.5");
     }
 
     @Override
-    public OFType getType() {
-        return OFType.GET_ASYNC_REPLY;
+    public OFAsyncGetReply.Builder setFlowRemovedMaskEqualMaster(long flowRemovedMaskEqualMaster) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property flowRemovedMaskEqualMaster not supported in version 1.5");
+    }
+    @Override
+    public long getFlowRemovedMaskSlave()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property flowRemovedMaskSlave not supported in version 1.5");
     }
 
     @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFAsyncGetReply.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
-        return this;
+    public OFAsyncGetReply.Builder setFlowRemovedMaskSlave(long flowRemovedMaskSlave) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property flowRemovedMaskSlave not supported in version 1.5");
     }
     @Override
     public long getPacketInMaskEqualMaster()throws UnsupportedOperationException {
@@ -302,24 +299,6 @@ class OFAsyncGetReplyVer15 implements OFAsyncGetReply {
             throw new UnsupportedOperationException("Property portStatusMaskSlave not supported in version 1.5");
     }
     @Override
-    public long getFlowRemovedMaskEqualMaster()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property flowRemovedMaskEqualMaster not supported in version 1.5");
-    }
-
-    @Override
-    public OFAsyncGetReply.Builder setFlowRemovedMaskEqualMaster(long flowRemovedMaskEqualMaster) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property flowRemovedMaskEqualMaster not supported in version 1.5");
-    }
-    @Override
-    public long getFlowRemovedMaskSlave()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property flowRemovedMaskSlave not supported in version 1.5");
-    }
-
-    @Override
-    public OFAsyncGetReply.Builder setFlowRemovedMaskSlave(long flowRemovedMaskSlave) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property flowRemovedMaskSlave not supported in version 1.5");
-    }
-    @Override
     public List<OFAsyncConfigProp> getProperties() {
         return properties;
     }
@@ -328,6 +307,27 @@ class OFAsyncGetReplyVer15 implements OFAsyncGetReply {
     public OFAsyncGetReply.Builder setProperties(List<OFAsyncConfigProp> properties) {
         this.properties = properties;
         this.propertiesSet = true;
+        return this;
+    }
+    @Override
+    public OFType getType() {
+        return OFType.GET_ASYNC_REPLY;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_15;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFAsyncGetReply.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 //

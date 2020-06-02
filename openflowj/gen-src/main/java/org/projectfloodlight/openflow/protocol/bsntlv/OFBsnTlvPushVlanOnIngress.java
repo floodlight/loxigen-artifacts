@@ -29,8 +29,8 @@ import java.util.Set;
 import io.netty.buffer.ByteBuf;
 
 public interface OFBsnTlvPushVlanOnIngress extends OFObject, OFBsnTlv {
-    int getType();
     Set<OFBsnPushVlan> getFlags();
+    int getType();
     OFVersion getVersion();
 
     void writeTo(ByteBuf channelBuffer);
@@ -38,9 +38,9 @@ public interface OFBsnTlvPushVlanOnIngress extends OFObject, OFBsnTlv {
     Builder createBuilder();
     public interface Builder extends OFBsnTlv.Builder {
         OFBsnTlvPushVlanOnIngress build();
-        int getType();
         Set<OFBsnPushVlan> getFlags();
         Builder setFlags(Set<OFBsnPushVlan> flags);
+        int getType();
         OFVersion getVersion();
     }
 }

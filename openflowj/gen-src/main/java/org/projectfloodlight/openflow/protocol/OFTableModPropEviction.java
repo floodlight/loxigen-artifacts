@@ -29,8 +29,8 @@ import java.util.Set;
 import io.netty.buffer.ByteBuf;
 
 public interface OFTableModPropEviction extends OFObject, OFTableModProp {
-    int getType();
     Set<OFTableModPropEvictionFlag> getFlags();
+    int getType();
     OFVersion getVersion();
 
     void writeTo(ByteBuf channelBuffer);
@@ -38,9 +38,9 @@ public interface OFTableModPropEviction extends OFObject, OFTableModProp {
     Builder createBuilder();
     public interface Builder extends OFTableModProp.Builder {
         OFTableModPropEviction build();
-        int getType();
         Set<OFTableModPropEvictionFlag> getFlags();
         Builder setFlags(Set<OFTableModPropEvictionFlag> flags);
+        int getType();
         OFVersion getVersion();
     }
 }

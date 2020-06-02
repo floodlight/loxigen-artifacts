@@ -67,16 +67,6 @@ class OFOxmMplsLabelVer12 implements OFOxmMplsLabel {
         return value;
     }
 
-    @Override
-    public MatchField<U32> getMatchField() {
-        return MatchField.MPLS_LABEL;
-    }
-
-    @Override
-    public boolean isMasked() {
-        return false;
-    }
-
     public OFOxm<U32> getCanonical() {
         // exact match OXM is always canonical
         return this;
@@ -85,6 +75,16 @@ class OFOxmMplsLabelVer12 implements OFOxmMplsLabel {
     @Override
     public U32 getMask()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property mask not supported in version 1.2");
+    }
+
+    @Override
+    public boolean isMasked() {
+        return false;
+    }
+
+    @Override
+    public MatchField<U32> getMatchField() {
+        return MatchField.MPLS_LABEL;
     }
 
     @Override
@@ -126,8 +126,13 @@ class OFOxmMplsLabelVer12 implements OFOxmMplsLabel {
         return this;
     }
     @Override
-    public MatchField<U32> getMatchField() {
-        return MatchField.MPLS_LABEL;
+    public OFOxm<U32> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.2");
+    }
+
+    @Override
+    public U32 getMask()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property mask not supported in version 1.2");
     }
 
     @Override
@@ -136,13 +141,8 @@ class OFOxmMplsLabelVer12 implements OFOxmMplsLabel {
     }
 
     @Override
-    public OFOxm<U32> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.2");
-    }
-
-    @Override
-    public U32 getMask()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property mask not supported in version 1.2");
+    public MatchField<U32> getMatchField() {
+        return MatchField.MPLS_LABEL;
     }
 
     @Override
@@ -188,8 +188,13 @@ class OFOxmMplsLabelVer12 implements OFOxmMplsLabel {
         return this;
     }
     @Override
-    public MatchField<U32> getMatchField() {
-        return MatchField.MPLS_LABEL;
+    public OFOxm<U32> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.2");
+    }
+
+    @Override
+    public U32 getMask()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property mask not supported in version 1.2");
     }
 
     @Override
@@ -198,13 +203,8 @@ class OFOxmMplsLabelVer12 implements OFOxmMplsLabel {
     }
 
     @Override
-    public OFOxm<U32> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.2");
-    }
-
-    @Override
-    public U32 getMask()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property mask not supported in version 1.2");
+    public MatchField<U32> getMatchField() {
+        return MatchField.MPLS_LABEL;
     }
 
     @Override

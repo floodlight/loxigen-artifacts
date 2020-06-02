@@ -61,28 +61,8 @@ class OFBsnSetAuxCxnsReplyVer15 implements OFBsnSetAuxCxnsReply {
 
     // Accessors for OF message fields
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_15;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.EXPERIMENTER;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
     public long getExperimenter() {
         return 0x5c16c7L;
-    }
-
-    @Override
-    public long getSubtype() {
-        return 0x3bL;
     }
 
     @Override
@@ -93,6 +73,26 @@ class OFBsnSetAuxCxnsReplyVer15 implements OFBsnSetAuxCxnsReply {
     @Override
     public long getStatus() {
         return status;
+    }
+
+    @Override
+    public long getSubtype() {
+        return 0x3bL;
+    }
+
+    @Override
+    public OFType getType() {
+        return OFType.EXPERIMENTER;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_15;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
     }
 
 
@@ -117,34 +117,8 @@ class OFBsnSetAuxCxnsReplyVer15 implements OFBsnSetAuxCxnsReply {
         }
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_15;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.EXPERIMENTER;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFBsnSetAuxCxnsReply.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
-        return this;
-    }
-    @Override
     public long getExperimenter() {
         return 0x5c16c7L;
-    }
-
-    @Override
-    public long getSubtype() {
-        return 0x3bL;
     }
 
     @Override
@@ -167,6 +141,32 @@ class OFBsnSetAuxCxnsReplyVer15 implements OFBsnSetAuxCxnsReply {
     public OFBsnSetAuxCxnsReply.Builder setStatus(long status) {
         this.status = status;
         this.statusSet = true;
+        return this;
+    }
+    @Override
+    public long getSubtype() {
+        return 0x3bL;
+    }
+
+    @Override
+    public OFType getType() {
+        return OFType.EXPERIMENTER;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_15;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFBsnSetAuxCxnsReply.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 
@@ -197,34 +197,8 @@ class OFBsnSetAuxCxnsReplyVer15 implements OFBsnSetAuxCxnsReply {
         private long status;
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_15;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.EXPERIMENTER;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFBsnSetAuxCxnsReply.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
-        return this;
-    }
-    @Override
     public long getExperimenter() {
         return 0x5c16c7L;
-    }
-
-    @Override
-    public long getSubtype() {
-        return 0x3bL;
     }
 
     @Override
@@ -247,6 +221,32 @@ class OFBsnSetAuxCxnsReplyVer15 implements OFBsnSetAuxCxnsReply {
     public OFBsnSetAuxCxnsReply.Builder setStatus(long status) {
         this.status = status;
         this.statusSet = true;
+        return this;
+    }
+    @Override
+    public long getSubtype() {
+        return 0x3bL;
+    }
+
+    @Override
+    public OFType getType() {
+        return OFType.EXPERIMENTER;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_15;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFBsnSetAuxCxnsReply.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 //

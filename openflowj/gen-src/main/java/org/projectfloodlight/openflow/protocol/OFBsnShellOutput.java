@@ -28,25 +28,25 @@ import org.projectfloodlight.openflow.exceptions.*;
 import io.netty.buffer.ByteBuf;
 
 public interface OFBsnShellOutput extends OFObject, OFBsnHeader {
-    OFVersion getVersion();
-    OFType getType();
-    long getXid();
+    byte[] getData();
     long getExperimenter();
     long getSubtype();
-    byte[] getData();
+    OFType getType();
+    OFVersion getVersion();
+    long getXid();
 
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();
     public interface Builder extends OFBsnHeader.Builder {
         OFBsnShellOutput build();
-        OFVersion getVersion();
-        OFType getType();
-        long getXid();
-        Builder setXid(long xid);
-        long getExperimenter();
-        long getSubtype();
         byte[] getData();
         Builder setData(byte[] data);
+        long getExperimenter();
+        long getSubtype();
+        OFType getType();
+        OFVersion getVersion();
+        long getXid();
+        Builder setXid(long xid);
     }
 }

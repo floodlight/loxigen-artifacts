@@ -29,21 +29,21 @@ import java.util.List;
 import io.netty.buffer.ByteBuf;
 
 public interface OFHello extends OFObject, OFMessage {
-    OFVersion getVersion();
-    OFType getType();
-    long getXid();
     List<OFHelloElem> getElements() throws UnsupportedOperationException;
+    OFType getType();
+    OFVersion getVersion();
+    long getXid();
 
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();
     public interface Builder extends OFMessage.Builder {
         OFHello build();
-        OFVersion getVersion();
-        OFType getType();
-        long getXid();
-        Builder setXid(long xid);
         List<OFHelloElem> getElements() throws UnsupportedOperationException;
         Builder setElements(List<OFHelloElem> elements) throws UnsupportedOperationException;
+        OFType getType();
+        OFVersion getVersion();
+        long getXid();
+        Builder setXid(long xid);
     }
 }

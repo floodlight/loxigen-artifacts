@@ -62,13 +62,13 @@ class OFTableFeaturePropNextTablesMissVer13 implements OFTableFeaturePropNextTab
 
     // Accessors for OF message fields
     @Override
-    public int getType() {
-        return 0x3;
+    public List<U8> getNextTableIds() {
+        return nextTableIds;
     }
 
     @Override
-    public List<U8> getNextTableIds() {
-        return nextTableIds;
+    public int getType() {
+        return 0x3;
     }
 
     @Override
@@ -94,11 +94,6 @@ class OFTableFeaturePropNextTablesMissVer13 implements OFTableFeaturePropNextTab
         }
 
     @Override
-    public int getType() {
-        return 0x3;
-    }
-
-    @Override
     public List<U8> getNextTableIds() {
         return nextTableIds;
     }
@@ -109,6 +104,11 @@ class OFTableFeaturePropNextTablesMissVer13 implements OFTableFeaturePropNextTab
         this.nextTableIdsSet = true;
         return this;
     }
+    @Override
+    public int getType() {
+        return 0x3;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_13;
@@ -136,11 +136,6 @@ class OFTableFeaturePropNextTablesMissVer13 implements OFTableFeaturePropNextTab
         private List<U8> nextTableIds;
 
     @Override
-    public int getType() {
-        return 0x3;
-    }
-
-    @Override
     public List<U8> getNextTableIds() {
         return nextTableIds;
     }
@@ -151,6 +146,11 @@ class OFTableFeaturePropNextTablesMissVer13 implements OFTableFeaturePropNextTab
         this.nextTableIdsSet = true;
         return this;
     }
+    @Override
+    public int getType() {
+        return 0x3;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_13;

@@ -30,10 +30,10 @@ import io.netty.buffer.ByteBuf;
 public interface OFOxsByteCount extends OFObject, OFOxs<U64> {
     long getTypeLen();
     U64 getValue();
-    StatField<U64> getStatField();
-    boolean isMasked();
     OFOxs<U64> getCanonical();
     U64 getMask();
+    boolean isMasked();
+    StatField<U64> getStatField();
     OFVersion getVersion();
 
     void writeTo(ByteBuf channelBuffer);
@@ -44,10 +44,10 @@ public interface OFOxsByteCount extends OFObject, OFOxs<U64> {
         long getTypeLen();
         U64 getValue();
         Builder setValue(U64 value);
-        StatField<U64> getStatField();
-        boolean isMasked();
         OFOxs<U64> getCanonical();
         U64 getMask();
+        boolean isMasked();
+        StatField<U64> getStatField();
         OFVersion getVersion();
     }
 }

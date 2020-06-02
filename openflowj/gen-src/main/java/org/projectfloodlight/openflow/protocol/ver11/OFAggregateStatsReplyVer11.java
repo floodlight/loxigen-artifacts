@@ -77,23 +77,8 @@ class OFAggregateStatsReplyVer11 implements OFAggregateStatsReply {
 
     // Accessors for OF message fields
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_11;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.STATS_REPLY;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFStatsType getStatsType() {
-        return OFStatsType.AGGREGATE;
+    public U64 getByteCount() {
+        return byteCount;
     }
 
     @Override
@@ -102,23 +87,38 @@ class OFAggregateStatsReplyVer11 implements OFAggregateStatsReply {
     }
 
     @Override
-    public U64 getPacketCount() {
-        return packetCount;
-    }
-
-    @Override
-    public U64 getByteCount() {
-        return byteCount;
-    }
-
-    @Override
     public long getFlowCount() {
         return flowCount;
     }
 
     @Override
+    public U64 getPacketCount() {
+        return packetCount;
+    }
+
+    @Override
     public Stat getStats()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property stats not supported in version 1.1");
+    }
+
+    @Override
+    public OFStatsType getStatsType() {
+        return OFStatsType.AGGREGATE;
+    }
+
+    @Override
+    public OFType getType() {
+        return OFType.STATS_REPLY;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_11;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
     }
 
 
@@ -147,31 +147,16 @@ class OFAggregateStatsReplyVer11 implements OFAggregateStatsReply {
         }
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_11;
+    public U64 getByteCount() {
+        return byteCount;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.STATS_REPLY;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFAggregateStatsReply.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
+    public OFAggregateStatsReply.Builder setByteCount(U64 byteCount) {
+        this.byteCount = byteCount;
+        this.byteCountSet = true;
         return this;
     }
-    @Override
-    public OFStatsType getStatsType() {
-        return OFStatsType.AGGREGATE;
-    }
-
     @Override
     public Set<OFStatsReplyFlags> getFlags() {
         return flags;
@@ -181,28 +166,6 @@ class OFAggregateStatsReplyVer11 implements OFAggregateStatsReply {
     public OFAggregateStatsReply.Builder setFlags(Set<OFStatsReplyFlags> flags) {
         this.flags = flags;
         this.flagsSet = true;
-        return this;
-    }
-    @Override
-    public U64 getPacketCount() {
-        return packetCount;
-    }
-
-    @Override
-    public OFAggregateStatsReply.Builder setPacketCount(U64 packetCount) {
-        this.packetCount = packetCount;
-        this.packetCountSet = true;
-        return this;
-    }
-    @Override
-    public U64 getByteCount() {
-        return byteCount;
-    }
-
-    @Override
-    public OFAggregateStatsReply.Builder setByteCount(U64 byteCount) {
-        this.byteCount = byteCount;
-        this.byteCountSet = true;
         return this;
     }
     @Override
@@ -217,6 +180,17 @@ class OFAggregateStatsReplyVer11 implements OFAggregateStatsReply {
         return this;
     }
     @Override
+    public U64 getPacketCount() {
+        return packetCount;
+    }
+
+    @Override
+    public OFAggregateStatsReply.Builder setPacketCount(U64 packetCount) {
+        this.packetCount = packetCount;
+        this.packetCountSet = true;
+        return this;
+    }
+    @Override
     public Stat getStats()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property stats not supported in version 1.1");
     }
@@ -224,6 +198,32 @@ class OFAggregateStatsReplyVer11 implements OFAggregateStatsReply {
     @Override
     public OFAggregateStatsReply.Builder setStats(Stat stats) throws UnsupportedOperationException {
             throw new UnsupportedOperationException("Property stats not supported in version 1.1");
+    }
+    @Override
+    public OFStatsType getStatsType() {
+        return OFStatsType.AGGREGATE;
+    }
+
+    @Override
+    public OFType getType() {
+        return OFType.STATS_REPLY;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_11;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFAggregateStatsReply.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
+        return this;
     }
 
 
@@ -267,31 +267,16 @@ class OFAggregateStatsReplyVer11 implements OFAggregateStatsReply {
         private long flowCount;
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_11;
+    public U64 getByteCount() {
+        return byteCount;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.STATS_REPLY;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFAggregateStatsReply.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
+    public OFAggregateStatsReply.Builder setByteCount(U64 byteCount) {
+        this.byteCount = byteCount;
+        this.byteCountSet = true;
         return this;
     }
-    @Override
-    public OFStatsType getStatsType() {
-        return OFStatsType.AGGREGATE;
-    }
-
     @Override
     public Set<OFStatsReplyFlags> getFlags() {
         return flags;
@@ -301,28 +286,6 @@ class OFAggregateStatsReplyVer11 implements OFAggregateStatsReply {
     public OFAggregateStatsReply.Builder setFlags(Set<OFStatsReplyFlags> flags) {
         this.flags = flags;
         this.flagsSet = true;
-        return this;
-    }
-    @Override
-    public U64 getPacketCount() {
-        return packetCount;
-    }
-
-    @Override
-    public OFAggregateStatsReply.Builder setPacketCount(U64 packetCount) {
-        this.packetCount = packetCount;
-        this.packetCountSet = true;
-        return this;
-    }
-    @Override
-    public U64 getByteCount() {
-        return byteCount;
-    }
-
-    @Override
-    public OFAggregateStatsReply.Builder setByteCount(U64 byteCount) {
-        this.byteCount = byteCount;
-        this.byteCountSet = true;
         return this;
     }
     @Override
@@ -337,6 +300,17 @@ class OFAggregateStatsReplyVer11 implements OFAggregateStatsReply {
         return this;
     }
     @Override
+    public U64 getPacketCount() {
+        return packetCount;
+    }
+
+    @Override
+    public OFAggregateStatsReply.Builder setPacketCount(U64 packetCount) {
+        this.packetCount = packetCount;
+        this.packetCountSet = true;
+        return this;
+    }
+    @Override
     public Stat getStats()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property stats not supported in version 1.1");
     }
@@ -344,6 +318,32 @@ class OFAggregateStatsReplyVer11 implements OFAggregateStatsReply {
     @Override
     public OFAggregateStatsReply.Builder setStats(Stat stats) throws UnsupportedOperationException {
             throw new UnsupportedOperationException("Property stats not supported in version 1.1");
+    }
+    @Override
+    public OFStatsType getStatsType() {
+        return OFStatsType.AGGREGATE;
+    }
+
+    @Override
+    public OFType getType() {
+        return OFType.STATS_REPLY;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_11;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFAggregateStatsReply.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
+        return this;
     }
 //
         @Override

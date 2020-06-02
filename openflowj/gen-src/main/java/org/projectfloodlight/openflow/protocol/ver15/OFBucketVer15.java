@@ -69,21 +69,6 @@ class OFBucketVer15 implements OFBucket {
 
     // Accessors for OF message fields
     @Override
-    public int getWeight()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property weight not supported in version 1.5");
-    }
-
-    @Override
-    public OFPort getWatchPort()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property watchPort not supported in version 1.5");
-    }
-
-    @Override
-    public OFGroup getWatchGroup()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property watchGroup not supported in version 1.5");
-    }
-
-    @Override
     public List<OFAction> getActions() {
         return actions;
     }
@@ -96,6 +81,21 @@ class OFBucketVer15 implements OFBucket {
     @Override
     public List<OFGroupBucketProp> getProperties() {
         return properties;
+    }
+
+    @Override
+    public OFGroup getWatchGroup()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property watchGroup not supported in version 1.5");
+    }
+
+    @Override
+    public OFPort getWatchPort()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property watchPort not supported in version 1.5");
+    }
+
+    @Override
+    public int getWeight()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property weight not supported in version 1.5");
     }
 
     @Override
@@ -124,33 +124,6 @@ class OFBucketVer15 implements OFBucket {
             this.parentMessage = parentMessage;
         }
 
-    @Override
-    public int getWeight()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property weight not supported in version 1.5");
-    }
-
-    @Override
-    public OFBucket.Builder setWeight(int weight) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property weight not supported in version 1.5");
-    }
-    @Override
-    public OFPort getWatchPort()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property watchPort not supported in version 1.5");
-    }
-
-    @Override
-    public OFBucket.Builder setWatchPort(OFPort watchPort) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property watchPort not supported in version 1.5");
-    }
-    @Override
-    public OFGroup getWatchGroup()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property watchGroup not supported in version 1.5");
-    }
-
-    @Override
-    public OFBucket.Builder setWatchGroup(OFGroup watchGroup) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property watchGroup not supported in version 1.5");
-    }
     @Override
     public List<OFAction> getActions() {
         return actions;
@@ -183,6 +156,33 @@ class OFBucketVer15 implements OFBucket {
         this.properties = properties;
         this.propertiesSet = true;
         return this;
+    }
+    @Override
+    public OFGroup getWatchGroup()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property watchGroup not supported in version 1.5");
+    }
+
+    @Override
+    public OFBucket.Builder setWatchGroup(OFGroup watchGroup) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property watchGroup not supported in version 1.5");
+    }
+    @Override
+    public OFPort getWatchPort()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property watchPort not supported in version 1.5");
+    }
+
+    @Override
+    public OFBucket.Builder setWatchPort(OFPort watchPort) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property watchPort not supported in version 1.5");
+    }
+    @Override
+    public int getWeight()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property weight not supported in version 1.5");
+    }
+
+    @Override
+    public OFBucket.Builder setWeight(int weight) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property weight not supported in version 1.5");
     }
     @Override
     public OFVersion getVersion() {
@@ -223,33 +223,6 @@ class OFBucketVer15 implements OFBucket {
         private List<OFGroupBucketProp> properties;
 
     @Override
-    public int getWeight()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property weight not supported in version 1.5");
-    }
-
-    @Override
-    public OFBucket.Builder setWeight(int weight) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property weight not supported in version 1.5");
-    }
-    @Override
-    public OFPort getWatchPort()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property watchPort not supported in version 1.5");
-    }
-
-    @Override
-    public OFBucket.Builder setWatchPort(OFPort watchPort) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property watchPort not supported in version 1.5");
-    }
-    @Override
-    public OFGroup getWatchGroup()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property watchGroup not supported in version 1.5");
-    }
-
-    @Override
-    public OFBucket.Builder setWatchGroup(OFGroup watchGroup) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property watchGroup not supported in version 1.5");
-    }
-    @Override
     public List<OFAction> getActions() {
         return actions;
     }
@@ -281,6 +254,33 @@ class OFBucketVer15 implements OFBucket {
         this.properties = properties;
         this.propertiesSet = true;
         return this;
+    }
+    @Override
+    public OFGroup getWatchGroup()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property watchGroup not supported in version 1.5");
+    }
+
+    @Override
+    public OFBucket.Builder setWatchGroup(OFGroup watchGroup) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property watchGroup not supported in version 1.5");
+    }
+    @Override
+    public OFPort getWatchPort()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property watchPort not supported in version 1.5");
+    }
+
+    @Override
+    public OFBucket.Builder setWatchPort(OFPort watchPort) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property watchPort not supported in version 1.5");
+    }
+    @Override
+    public int getWeight()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property weight not supported in version 1.5");
+    }
+
+    @Override
+    public OFBucket.Builder setWeight(int weight) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property weight not supported in version 1.5");
     }
     @Override
     public OFVersion getVersion() {

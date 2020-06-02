@@ -73,13 +73,18 @@ class OFBsnVportQInQVer11 implements OFBsnVportQInQ {
 
     // Accessors for OF message fields
     @Override
-    public int getType() {
-        return 0x0;
+    public int getEgressTpid() {
+        return egressTpid;
     }
 
     @Override
-    public long getPortNo() {
-        return portNo;
+    public int getEgressVlanId() {
+        return egressVlanId;
+    }
+
+    @Override
+    public String getIfName() {
+        return ifName;
     }
 
     @Override
@@ -93,18 +98,13 @@ class OFBsnVportQInQVer11 implements OFBsnVportQInQ {
     }
 
     @Override
-    public int getEgressTpid() {
-        return egressTpid;
+    public long getPortNo() {
+        return portNo;
     }
 
     @Override
-    public int getEgressVlanId() {
-        return egressVlanId;
-    }
-
-    @Override
-    public String getIfName() {
-        return ifName;
+    public int getType() {
+        return 0x0;
     }
 
     @Override
@@ -140,44 +140,6 @@ class OFBsnVportQInQVer11 implements OFBsnVportQInQ {
         }
 
     @Override
-    public int getType() {
-        return 0x0;
-    }
-
-    @Override
-    public long getPortNo() {
-        return portNo;
-    }
-
-    @Override
-    public OFBsnVportQInQ.Builder setPortNo(long portNo) {
-        this.portNo = portNo;
-        this.portNoSet = true;
-        return this;
-    }
-    @Override
-    public int getIngressTpid() {
-        return ingressTpid;
-    }
-
-    @Override
-    public OFBsnVportQInQ.Builder setIngressTpid(int ingressTpid) {
-        this.ingressTpid = ingressTpid;
-        this.ingressTpidSet = true;
-        return this;
-    }
-    @Override
-    public int getIngressVlanId() {
-        return ingressVlanId;
-    }
-
-    @Override
-    public OFBsnVportQInQ.Builder setIngressVlanId(int ingressVlanId) {
-        this.ingressVlanId = ingressVlanId;
-        this.ingressVlanIdSet = true;
-        return this;
-    }
-    @Override
     public int getEgressTpid() {
         return egressTpid;
     }
@@ -210,6 +172,44 @@ class OFBsnVportQInQVer11 implements OFBsnVportQInQ {
         this.ifNameSet = true;
         return this;
     }
+    @Override
+    public int getIngressTpid() {
+        return ingressTpid;
+    }
+
+    @Override
+    public OFBsnVportQInQ.Builder setIngressTpid(int ingressTpid) {
+        this.ingressTpid = ingressTpid;
+        this.ingressTpidSet = true;
+        return this;
+    }
+    @Override
+    public int getIngressVlanId() {
+        return ingressVlanId;
+    }
+
+    @Override
+    public OFBsnVportQInQ.Builder setIngressVlanId(int ingressVlanId) {
+        this.ingressVlanId = ingressVlanId;
+        this.ingressVlanIdSet = true;
+        return this;
+    }
+    @Override
+    public long getPortNo() {
+        return portNo;
+    }
+
+    @Override
+    public OFBsnVportQInQ.Builder setPortNo(long portNo) {
+        this.portNo = portNo;
+        this.portNoSet = true;
+        return this;
+    }
+    @Override
+    public int getType() {
+        return 0x0;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_11;
@@ -257,44 +257,6 @@ class OFBsnVportQInQVer11 implements OFBsnVportQInQ {
         private String ifName;
 
     @Override
-    public int getType() {
-        return 0x0;
-    }
-
-    @Override
-    public long getPortNo() {
-        return portNo;
-    }
-
-    @Override
-    public OFBsnVportQInQ.Builder setPortNo(long portNo) {
-        this.portNo = portNo;
-        this.portNoSet = true;
-        return this;
-    }
-    @Override
-    public int getIngressTpid() {
-        return ingressTpid;
-    }
-
-    @Override
-    public OFBsnVportQInQ.Builder setIngressTpid(int ingressTpid) {
-        this.ingressTpid = ingressTpid;
-        this.ingressTpidSet = true;
-        return this;
-    }
-    @Override
-    public int getIngressVlanId() {
-        return ingressVlanId;
-    }
-
-    @Override
-    public OFBsnVportQInQ.Builder setIngressVlanId(int ingressVlanId) {
-        this.ingressVlanId = ingressVlanId;
-        this.ingressVlanIdSet = true;
-        return this;
-    }
-    @Override
     public int getEgressTpid() {
         return egressTpid;
     }
@@ -327,6 +289,44 @@ class OFBsnVportQInQVer11 implements OFBsnVportQInQ {
         this.ifNameSet = true;
         return this;
     }
+    @Override
+    public int getIngressTpid() {
+        return ingressTpid;
+    }
+
+    @Override
+    public OFBsnVportQInQ.Builder setIngressTpid(int ingressTpid) {
+        this.ingressTpid = ingressTpid;
+        this.ingressTpidSet = true;
+        return this;
+    }
+    @Override
+    public int getIngressVlanId() {
+        return ingressVlanId;
+    }
+
+    @Override
+    public OFBsnVportQInQ.Builder setIngressVlanId(int ingressVlanId) {
+        this.ingressVlanId = ingressVlanId;
+        this.ingressVlanIdSet = true;
+        return this;
+    }
+    @Override
+    public long getPortNo() {
+        return portNo;
+    }
+
+    @Override
+    public OFBsnVportQInQ.Builder setPortNo(long portNo) {
+        this.portNo = portNo;
+        this.portNoSet = true;
+        return this;
+    }
+    @Override
+    public int getType() {
+        return 0x0;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_11;

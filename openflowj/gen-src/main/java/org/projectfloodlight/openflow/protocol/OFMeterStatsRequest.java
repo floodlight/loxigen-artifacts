@@ -29,26 +29,26 @@ import java.util.Set;
 import io.netty.buffer.ByteBuf;
 
 public interface OFMeterStatsRequest extends OFObject, OFStatsRequest<OFMeterStatsReply>, OFRequest<OFMeterStatsReply> {
-    OFVersion getVersion();
-    OFType getType();
-    long getXid();
-    OFStatsType getStatsType();
     Set<OFStatsRequestFlags> getFlags();
     long getMeterId();
+    OFStatsType getStatsType();
+    OFType getType();
+    OFVersion getVersion();
+    long getXid();
 
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();
     public interface Builder extends OFStatsRequest.Builder<OFMeterStatsReply> {
         OFMeterStatsRequest build();
-        OFVersion getVersion();
-        OFType getType();
-        long getXid();
-        Builder setXid(long xid);
-        OFStatsType getStatsType();
         Set<OFStatsRequestFlags> getFlags();
         Builder setFlags(Set<OFStatsRequestFlags> flags);
         long getMeterId();
         Builder setMeterId(long meterId);
+        OFStatsType getStatsType();
+        OFType getType();
+        OFVersion getVersion();
+        long getXid();
+        Builder setXid(long xid);
     }
 }

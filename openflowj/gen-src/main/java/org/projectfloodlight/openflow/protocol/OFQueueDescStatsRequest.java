@@ -29,29 +29,29 @@ import java.util.Set;
 import io.netty.buffer.ByteBuf;
 
 public interface OFQueueDescStatsRequest extends OFObject, OFStatsRequest<OFQueueDescStatsReply>, OFRequest<OFQueueDescStatsReply> {
-    OFVersion getVersion();
-    OFType getType();
-    long getXid();
-    OFStatsType getStatsType();
     Set<OFStatsRequestFlags> getFlags();
     OFPort getPortNo();
     long getQueueId();
+    OFStatsType getStatsType();
+    OFType getType();
+    OFVersion getVersion();
+    long getXid();
 
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();
     public interface Builder extends OFStatsRequest.Builder<OFQueueDescStatsReply> {
         OFQueueDescStatsRequest build();
-        OFVersion getVersion();
-        OFType getType();
-        long getXid();
-        Builder setXid(long xid);
-        OFStatsType getStatsType();
         Set<OFStatsRequestFlags> getFlags();
         Builder setFlags(Set<OFStatsRequestFlags> flags);
         OFPort getPortNo();
         Builder setPortNo(OFPort portNo);
         long getQueueId();
         Builder setQueueId(long queueId);
+        OFStatsType getStatsType();
+        OFType getType();
+        OFVersion getVersion();
+        long getXid();
+        Builder setXid(long xid);
     }
 }

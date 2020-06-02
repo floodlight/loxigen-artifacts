@@ -29,8 +29,8 @@ import java.util.List;
 import io.netty.buffer.ByteBuf;
 
 public interface OFTableFeaturePropNextTables extends OFObject, OFTableFeatureProp {
-    int getType();
     List<U8> getNextTableIds();
+    int getType();
     OFVersion getVersion();
 
     void writeTo(ByteBuf channelBuffer);
@@ -38,9 +38,9 @@ public interface OFTableFeaturePropNextTables extends OFObject, OFTableFeaturePr
     Builder createBuilder();
     public interface Builder extends OFTableFeatureProp.Builder {
         OFTableFeaturePropNextTables build();
-        int getType();
         List<U8> getNextTableIds();
         Builder setNextTableIds(List<U8> nextTableIds);
+        int getType();
         OFVersion getVersion();
     }
 }

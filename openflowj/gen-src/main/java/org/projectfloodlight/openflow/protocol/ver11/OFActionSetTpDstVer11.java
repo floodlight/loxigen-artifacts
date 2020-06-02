@@ -58,13 +58,13 @@ class OFActionSetTpDstVer11 implements OFActionSetTpDst {
 
     // Accessors for OF message fields
     @Override
-    public OFActionType getType() {
-        return OFActionType.SET_TP_DST;
+    public TransportPort getTpPort() {
+        return tpPort;
     }
 
     @Override
-    public TransportPort getTpPort() {
-        return tpPort;
+    public OFActionType getType() {
+        return OFActionType.SET_TP_DST;
     }
 
     @Override
@@ -90,11 +90,6 @@ class OFActionSetTpDstVer11 implements OFActionSetTpDst {
         }
 
     @Override
-    public OFActionType getType() {
-        return OFActionType.SET_TP_DST;
-    }
-
-    @Override
     public TransportPort getTpPort() {
         return tpPort;
     }
@@ -105,6 +100,11 @@ class OFActionSetTpDstVer11 implements OFActionSetTpDst {
         this.tpPortSet = true;
         return this;
     }
+    @Override
+    public OFActionType getType() {
+        return OFActionType.SET_TP_DST;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_11;
@@ -132,11 +132,6 @@ class OFActionSetTpDstVer11 implements OFActionSetTpDst {
         private TransportPort tpPort;
 
     @Override
-    public OFActionType getType() {
-        return OFActionType.SET_TP_DST;
-    }
-
-    @Override
     public TransportPort getTpPort() {
         return tpPort;
     }
@@ -147,6 +142,11 @@ class OFActionSetTpDstVer11 implements OFActionSetTpDst {
         this.tpPortSet = true;
         return this;
     }
+    @Override
+    public OFActionType getType() {
+        return OFActionType.SET_TP_DST;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_11;

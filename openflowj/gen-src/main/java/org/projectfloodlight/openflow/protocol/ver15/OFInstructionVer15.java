@@ -56,15 +56,15 @@ abstract class OFInstructionVer15 {
                case (short) 0x1:
                    // discriminator value OFInstructionType.GOTO_TABLE=1 for class OFInstructionGotoTableVer15
                    return OFInstructionGotoTableVer15.READER.readFrom(bb);
+               case (short) 0x7:
+                   // discriminator value OFInstructionType.STAT_TRIGGER=7 for class OFInstructionStatTriggerVer15
+                   return OFInstructionStatTriggerVer15.READER.readFrom(bb);
                case (short) 0x3:
                    // discriminator value OFInstructionType.WRITE_ACTIONS=3 for class OFInstructionWriteActionsVer15
                    return OFInstructionWriteActionsVer15.READER.readFrom(bb);
                case (short) 0x2:
                    // discriminator value OFInstructionType.WRITE_METADATA=2 for class OFInstructionWriteMetadataVer15
                    return OFInstructionWriteMetadataVer15.READER.readFrom(bb);
-               case (short) 0x7:
-                   // discriminator value OFInstructionType.STAT_TRIGGER=7 for class OFInstructionStatTriggerVer15
-                   return OFInstructionStatTriggerVer15.READER.readFrom(bb);
                default:
                    throw new OFParseError("Unknown value for discriminator type of class OFInstructionVer15: " + type);
             }

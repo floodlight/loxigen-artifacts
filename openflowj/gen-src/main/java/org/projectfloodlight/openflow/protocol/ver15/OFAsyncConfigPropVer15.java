@@ -44,6 +44,12 @@ abstract class OFAsyncConfigPropVer15 {
             short type = bb.readShort();
             bb.readerIndex(start);
             switch(type) {
+               case (short) 0xf:
+                   // discriminator value 0xf=0xf for class OFAsyncConfigPropContStatusMasterVer15
+                   return OFAsyncConfigPropContStatusMasterVer15.READER.readFrom(bb);
+               case (short) 0xe:
+                   // discriminator value 0xe=0xe for class OFAsyncConfigPropContStatusSlaveVer15
+                   return OFAsyncConfigPropContStatusSlaveVer15.READER.readFrom(bb);
                case (short) 0xffff:
                    // discriminator value 0xffff=0xffff for class OFAsyncConfigPropExperimenterMasterVer15
                    return OFAsyncConfigPropExperimenterMasterVer15.READER.readFrom(bb);
@@ -56,6 +62,12 @@ abstract class OFAsyncConfigPropVer15 {
                case (short) 0x4:
                    // discriminator value 0x4=0x4 for class OFAsyncConfigPropFlowRemovedSlaveVer15
                    return OFAsyncConfigPropFlowRemovedSlaveVer15.READER.readFrom(bb);
+               case (short) 0xd:
+                   // discriminator value 0xd=0xd for class OFAsyncConfigPropFlowStatsMasterVer15
+                   return OFAsyncConfigPropFlowStatsMasterVer15.READER.readFrom(bb);
+               case (short) 0xc:
+                   // discriminator value 0xc=0xc for class OFAsyncConfigPropFlowStatsSlaveVer15
+                   return OFAsyncConfigPropFlowStatsSlaveVer15.READER.readFrom(bb);
                case (short) 0x1:
                    // discriminator value 0x1=0x1 for class OFAsyncConfigPropPacketInMasterVer15
                    return OFAsyncConfigPropPacketInMasterVer15.READER.readFrom(bb);
@@ -86,18 +98,6 @@ abstract class OFAsyncConfigPropVer15 {
                case (short) 0x8:
                    // discriminator value 0x8=0x8 for class OFAsyncConfigPropTableStatusSlaveVer15
                    return OFAsyncConfigPropTableStatusSlaveVer15.READER.readFrom(bb);
-               case (short) 0xf:
-                   // discriminator value 0xf=0xf for class OFAsyncConfigPropContStatusMasterVer15
-                   return OFAsyncConfigPropContStatusMasterVer15.READER.readFrom(bb);
-               case (short) 0xe:
-                   // discriminator value 0xe=0xe for class OFAsyncConfigPropContStatusSlaveVer15
-                   return OFAsyncConfigPropContStatusSlaveVer15.READER.readFrom(bb);
-               case (short) 0xd:
-                   // discriminator value 0xd=0xd for class OFAsyncConfigPropFlowStatsMasterVer15
-                   return OFAsyncConfigPropFlowStatsMasterVer15.READER.readFrom(bb);
-               case (short) 0xc:
-                   // discriminator value 0xc=0xc for class OFAsyncConfigPropFlowStatsSlaveVer15
-                   return OFAsyncConfigPropFlowStatsSlaveVer15.READER.readFrom(bb);
                default:
                    throw new OFParseError("Unknown value for discriminator type of class OFAsyncConfigPropVer15: " + type);
             }

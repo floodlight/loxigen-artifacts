@@ -30,10 +30,10 @@ import io.netty.buffer.ByteBuf;
 public interface OFOxmArpOp extends OFObject, OFOxm<ArpOpcode> {
     long getTypeLen();
     ArpOpcode getValue();
-    MatchField<ArpOpcode> getMatchField();
-    boolean isMasked();
     OFOxm<ArpOpcode> getCanonical();
     ArpOpcode getMask();
+    boolean isMasked();
+    MatchField<ArpOpcode> getMatchField();
     OFVersion getVersion();
 
     void writeTo(ByteBuf channelBuffer);
@@ -44,10 +44,10 @@ public interface OFOxmArpOp extends OFObject, OFOxm<ArpOpcode> {
         long getTypeLen();
         ArpOpcode getValue();
         Builder setValue(ArpOpcode value);
-        MatchField<ArpOpcode> getMatchField();
-        boolean isMasked();
         OFOxm<ArpOpcode> getCanonical();
         ArpOpcode getMask();
+        boolean isMasked();
+        MatchField<ArpOpcode> getMatchField();
         OFVersion getVersion();
     }
 }

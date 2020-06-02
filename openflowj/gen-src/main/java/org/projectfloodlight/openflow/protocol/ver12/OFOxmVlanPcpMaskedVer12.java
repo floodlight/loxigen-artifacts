@@ -64,6 +64,11 @@ class OFOxmVlanPcpMaskedVer12 implements OFOxmVlanPcpMasked {
 
     // Accessors for OF message fields
     @Override
+    public VlanPcp getMask() {
+        return mask;
+    }
+
+    @Override
     public long getTypeLen() {
         return 0x80000f02L;
     }
@@ -71,21 +76,6 @@ class OFOxmVlanPcpMaskedVer12 implements OFOxmVlanPcpMasked {
     @Override
     public VlanPcp getValue() {
         return value;
-    }
-
-    @Override
-    public VlanPcp getMask() {
-        return mask;
-    }
-
-    @Override
-    public MatchField<VlanPcp> getMatchField() {
-        return MatchField.VLAN_PCP;
-    }
-
-    @Override
-    public boolean isMasked() {
-        return true;
     }
 
     public OFOxm<VlanPcp> getCanonical() {
@@ -96,6 +86,16 @@ class OFOxmVlanPcpMaskedVer12 implements OFOxmVlanPcpMasked {
         } else {
             return this;
         }
+    }
+
+    @Override
+    public boolean isMasked() {
+        return true;
+    }
+
+    @Override
+    public MatchField<VlanPcp> getMatchField() {
+        return MatchField.VLAN_PCP;
     }
 
     @Override
@@ -123,6 +123,17 @@ class OFOxmVlanPcpMaskedVer12 implements OFOxmVlanPcpMasked {
         }
 
     @Override
+    public VlanPcp getMask() {
+        return mask;
+    }
+
+    @Override
+    public OFOxmVlanPcpMasked.Builder setMask(VlanPcp mask) {
+        this.mask = mask;
+        this.maskSet = true;
+        return this;
+    }
+    @Override
     public long getTypeLen() {
         return 0x80000f02L;
     }
@@ -139,19 +150,8 @@ class OFOxmVlanPcpMaskedVer12 implements OFOxmVlanPcpMasked {
         return this;
     }
     @Override
-    public VlanPcp getMask() {
-        return mask;
-    }
-
-    @Override
-    public OFOxmVlanPcpMasked.Builder setMask(VlanPcp mask) {
-        this.mask = mask;
-        this.maskSet = true;
-        return this;
-    }
-    @Override
-    public MatchField<VlanPcp> getMatchField() {
-        return MatchField.VLAN_PCP;
+    public OFOxm<VlanPcp> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.2");
     }
 
     @Override
@@ -160,8 +160,8 @@ class OFOxmVlanPcpMaskedVer12 implements OFOxmVlanPcpMasked {
     }
 
     @Override
-    public OFOxm<VlanPcp> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.2");
+    public MatchField<VlanPcp> getMatchField() {
+        return MatchField.VLAN_PCP;
     }
 
     @Override
@@ -197,6 +197,17 @@ class OFOxmVlanPcpMaskedVer12 implements OFOxmVlanPcpMasked {
         private VlanPcp mask;
 
     @Override
+    public VlanPcp getMask() {
+        return mask;
+    }
+
+    @Override
+    public OFOxmVlanPcpMasked.Builder setMask(VlanPcp mask) {
+        this.mask = mask;
+        this.maskSet = true;
+        return this;
+    }
+    @Override
     public long getTypeLen() {
         return 0x80000f02L;
     }
@@ -213,19 +224,8 @@ class OFOxmVlanPcpMaskedVer12 implements OFOxmVlanPcpMasked {
         return this;
     }
     @Override
-    public VlanPcp getMask() {
-        return mask;
-    }
-
-    @Override
-    public OFOxmVlanPcpMasked.Builder setMask(VlanPcp mask) {
-        this.mask = mask;
-        this.maskSet = true;
-        return this;
-    }
-    @Override
-    public MatchField<VlanPcp> getMatchField() {
-        return MatchField.VLAN_PCP;
+    public OFOxm<VlanPcp> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.2");
     }
 
     @Override
@@ -234,8 +234,8 @@ class OFOxmVlanPcpMaskedVer12 implements OFOxmVlanPcpMasked {
     }
 
     @Override
-    public OFOxm<VlanPcp> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.2");
+    public MatchField<VlanPcp> getMatchField() {
+        return MatchField.VLAN_PCP;
     }
 
     @Override

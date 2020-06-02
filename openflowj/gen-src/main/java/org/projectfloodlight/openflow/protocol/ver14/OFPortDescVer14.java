@@ -94,18 +94,8 @@ class OFPortDescVer14 implements OFPortDesc {
 
     // Accessors for OF message fields
     @Override
-    public OFPort getPortNo() {
-        return portNo;
-    }
-
-    @Override
-    public MacAddress getHwAddr() {
-        return hwAddr;
-    }
-
-    @Override
-    public String getName() {
-        return name;
+    public Set<OFPortFeatures> getAdvertised()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property advertised not supported in version 1.4");
     }
 
     @Override
@@ -114,28 +104,8 @@ class OFPortDescVer14 implements OFPortDesc {
     }
 
     @Override
-    public Set<OFPortState> getState() {
-        return state;
-    }
-
-    @Override
     public Set<OFPortFeatures> getCurr()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property curr not supported in version 1.4");
-    }
-
-    @Override
-    public Set<OFPortFeatures> getAdvertised()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property advertised not supported in version 1.4");
-    }
-
-    @Override
-    public Set<OFPortFeatures> getSupported()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property supported not supported in version 1.4");
-    }
-
-    @Override
-    public Set<OFPortFeatures> getPeer()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property peer not supported in version 1.4");
     }
 
     @Override
@@ -144,13 +114,43 @@ class OFPortDescVer14 implements OFPortDesc {
     }
 
     @Override
+    public MacAddress getHwAddr() {
+        return hwAddr;
+    }
+
+    @Override
     public long getMaxSpeed()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property maxSpeed not supported in version 1.4");
     }
 
     @Override
+    public String getName() {
+        return name;
+    }
+
+    @Override
+    public Set<OFPortFeatures> getPeer()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property peer not supported in version 1.4");
+    }
+
+    @Override
+    public OFPort getPortNo() {
+        return portNo;
+    }
+
+    @Override
     public List<OFPortDescProp> getProperties() {
         return properties;
+    }
+
+    @Override
+    public Set<OFPortState> getState() {
+        return state;
+    }
+
+    @Override
+    public Set<OFPortFeatures> getSupported()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property supported not supported in version 1.4");
     }
 
     @Override
@@ -218,15 +218,42 @@ class OFPortDescVer14 implements OFPortDesc {
         }
 
     @Override
-    public OFPort getPortNo() {
-        return portNo;
+    public Set<OFPortFeatures> getAdvertised()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property advertised not supported in version 1.4");
     }
 
     @Override
-    public OFPortDesc.Builder setPortNo(OFPort portNo) {
-        this.portNo = portNo;
-        this.portNoSet = true;
+    public OFPortDesc.Builder setAdvertised(Set<OFPortFeatures> advertised) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property advertised not supported in version 1.4");
+    }
+    @Override
+    public Set<OFPortConfig> getConfig() {
+        return config;
+    }
+
+    @Override
+    public OFPortDesc.Builder setConfig(Set<OFPortConfig> config) {
+        this.config = config;
+        this.configSet = true;
         return this;
+    }
+    @Override
+    public Set<OFPortFeatures> getCurr()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property curr not supported in version 1.4");
+    }
+
+    @Override
+    public OFPortDesc.Builder setCurr(Set<OFPortFeatures> curr) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property curr not supported in version 1.4");
+    }
+    @Override
+    public long getCurrSpeed()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property currSpeed not supported in version 1.4");
+    }
+
+    @Override
+    public OFPortDesc.Builder setCurrSpeed(long currSpeed) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property currSpeed not supported in version 1.4");
     }
     @Override
     public MacAddress getHwAddr() {
@@ -240,6 +267,15 @@ class OFPortDescVer14 implements OFPortDesc {
         return this;
     }
     @Override
+    public long getMaxSpeed()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property maxSpeed not supported in version 1.4");
+    }
+
+    @Override
+    public OFPortDesc.Builder setMaxSpeed(long maxSpeed) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property maxSpeed not supported in version 1.4");
+    }
+    @Override
     public String getName() {
         return name;
     }
@@ -251,14 +287,34 @@ class OFPortDescVer14 implements OFPortDesc {
         return this;
     }
     @Override
-    public Set<OFPortConfig> getConfig() {
-        return config;
+    public Set<OFPortFeatures> getPeer()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property peer not supported in version 1.4");
     }
 
     @Override
-    public OFPortDesc.Builder setConfig(Set<OFPortConfig> config) {
-        this.config = config;
-        this.configSet = true;
+    public OFPortDesc.Builder setPeer(Set<OFPortFeatures> peer) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property peer not supported in version 1.4");
+    }
+    @Override
+    public OFPort getPortNo() {
+        return portNo;
+    }
+
+    @Override
+    public OFPortDesc.Builder setPortNo(OFPort portNo) {
+        this.portNo = portNo;
+        this.portNoSet = true;
+        return this;
+    }
+    @Override
+    public List<OFPortDescProp> getProperties() {
+        return properties;
+    }
+
+    @Override
+    public OFPortDesc.Builder setProperties(List<OFPortDescProp> properties) {
+        this.properties = properties;
+        this.propertiesSet = true;
         return this;
     }
     @Override
@@ -273,24 +329,6 @@ class OFPortDescVer14 implements OFPortDesc {
         return this;
     }
     @Override
-    public Set<OFPortFeatures> getCurr()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property curr not supported in version 1.4");
-    }
-
-    @Override
-    public OFPortDesc.Builder setCurr(Set<OFPortFeatures> curr) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property curr not supported in version 1.4");
-    }
-    @Override
-    public Set<OFPortFeatures> getAdvertised()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property advertised not supported in version 1.4");
-    }
-
-    @Override
-    public OFPortDesc.Builder setAdvertised(Set<OFPortFeatures> advertised) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property advertised not supported in version 1.4");
-    }
-    @Override
     public Set<OFPortFeatures> getSupported()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property supported not supported in version 1.4");
     }
@@ -298,44 +336,6 @@ class OFPortDescVer14 implements OFPortDesc {
     @Override
     public OFPortDesc.Builder setSupported(Set<OFPortFeatures> supported) throws UnsupportedOperationException {
             throw new UnsupportedOperationException("Property supported not supported in version 1.4");
-    }
-    @Override
-    public Set<OFPortFeatures> getPeer()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property peer not supported in version 1.4");
-    }
-
-    @Override
-    public OFPortDesc.Builder setPeer(Set<OFPortFeatures> peer) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property peer not supported in version 1.4");
-    }
-    @Override
-    public long getCurrSpeed()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property currSpeed not supported in version 1.4");
-    }
-
-    @Override
-    public OFPortDesc.Builder setCurrSpeed(long currSpeed) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property currSpeed not supported in version 1.4");
-    }
-    @Override
-    public long getMaxSpeed()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property maxSpeed not supported in version 1.4");
-    }
-
-    @Override
-    public OFPortDesc.Builder setMaxSpeed(long maxSpeed) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property maxSpeed not supported in version 1.4");
-    }
-    @Override
-    public List<OFPortDescProp> getProperties() {
-        return properties;
-    }
-
-    @Override
-    public OFPortDesc.Builder setProperties(List<OFPortDescProp> properties) {
-        this.properties = properties;
-        this.propertiesSet = true;
-        return this;
     }
     @Override
     public OFVersion getVersion() {
@@ -394,15 +394,42 @@ class OFPortDescVer14 implements OFPortDesc {
         private List<OFPortDescProp> properties;
 
     @Override
-    public OFPort getPortNo() {
-        return portNo;
+    public Set<OFPortFeatures> getAdvertised()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property advertised not supported in version 1.4");
     }
 
     @Override
-    public OFPortDesc.Builder setPortNo(OFPort portNo) {
-        this.portNo = portNo;
-        this.portNoSet = true;
+    public OFPortDesc.Builder setAdvertised(Set<OFPortFeatures> advertised) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property advertised not supported in version 1.4");
+    }
+    @Override
+    public Set<OFPortConfig> getConfig() {
+        return config;
+    }
+
+    @Override
+    public OFPortDesc.Builder setConfig(Set<OFPortConfig> config) {
+        this.config = config;
+        this.configSet = true;
         return this;
+    }
+    @Override
+    public Set<OFPortFeatures> getCurr()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property curr not supported in version 1.4");
+    }
+
+    @Override
+    public OFPortDesc.Builder setCurr(Set<OFPortFeatures> curr) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property curr not supported in version 1.4");
+    }
+    @Override
+    public long getCurrSpeed()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property currSpeed not supported in version 1.4");
+    }
+
+    @Override
+    public OFPortDesc.Builder setCurrSpeed(long currSpeed) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property currSpeed not supported in version 1.4");
     }
     @Override
     public MacAddress getHwAddr() {
@@ -416,6 +443,15 @@ class OFPortDescVer14 implements OFPortDesc {
         return this;
     }
     @Override
+    public long getMaxSpeed()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property maxSpeed not supported in version 1.4");
+    }
+
+    @Override
+    public OFPortDesc.Builder setMaxSpeed(long maxSpeed) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property maxSpeed not supported in version 1.4");
+    }
+    @Override
     public String getName() {
         return name;
     }
@@ -427,14 +463,34 @@ class OFPortDescVer14 implements OFPortDesc {
         return this;
     }
     @Override
-    public Set<OFPortConfig> getConfig() {
-        return config;
+    public Set<OFPortFeatures> getPeer()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property peer not supported in version 1.4");
     }
 
     @Override
-    public OFPortDesc.Builder setConfig(Set<OFPortConfig> config) {
-        this.config = config;
-        this.configSet = true;
+    public OFPortDesc.Builder setPeer(Set<OFPortFeatures> peer) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property peer not supported in version 1.4");
+    }
+    @Override
+    public OFPort getPortNo() {
+        return portNo;
+    }
+
+    @Override
+    public OFPortDesc.Builder setPortNo(OFPort portNo) {
+        this.portNo = portNo;
+        this.portNoSet = true;
+        return this;
+    }
+    @Override
+    public List<OFPortDescProp> getProperties() {
+        return properties;
+    }
+
+    @Override
+    public OFPortDesc.Builder setProperties(List<OFPortDescProp> properties) {
+        this.properties = properties;
+        this.propertiesSet = true;
         return this;
     }
     @Override
@@ -449,24 +505,6 @@ class OFPortDescVer14 implements OFPortDesc {
         return this;
     }
     @Override
-    public Set<OFPortFeatures> getCurr()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property curr not supported in version 1.4");
-    }
-
-    @Override
-    public OFPortDesc.Builder setCurr(Set<OFPortFeatures> curr) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property curr not supported in version 1.4");
-    }
-    @Override
-    public Set<OFPortFeatures> getAdvertised()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property advertised not supported in version 1.4");
-    }
-
-    @Override
-    public OFPortDesc.Builder setAdvertised(Set<OFPortFeatures> advertised) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property advertised not supported in version 1.4");
-    }
-    @Override
     public Set<OFPortFeatures> getSupported()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property supported not supported in version 1.4");
     }
@@ -474,44 +512,6 @@ class OFPortDescVer14 implements OFPortDesc {
     @Override
     public OFPortDesc.Builder setSupported(Set<OFPortFeatures> supported) throws UnsupportedOperationException {
             throw new UnsupportedOperationException("Property supported not supported in version 1.4");
-    }
-    @Override
-    public Set<OFPortFeatures> getPeer()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property peer not supported in version 1.4");
-    }
-
-    @Override
-    public OFPortDesc.Builder setPeer(Set<OFPortFeatures> peer) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property peer not supported in version 1.4");
-    }
-    @Override
-    public long getCurrSpeed()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property currSpeed not supported in version 1.4");
-    }
-
-    @Override
-    public OFPortDesc.Builder setCurrSpeed(long currSpeed) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property currSpeed not supported in version 1.4");
-    }
-    @Override
-    public long getMaxSpeed()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property maxSpeed not supported in version 1.4");
-    }
-
-    @Override
-    public OFPortDesc.Builder setMaxSpeed(long maxSpeed) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property maxSpeed not supported in version 1.4");
-    }
-    @Override
-    public List<OFPortDescProp> getProperties() {
-        return properties;
-    }
-
-    @Override
-    public OFPortDesc.Builder setProperties(List<OFPortDescProp> properties) {
-        this.properties = properties;
-        this.propertiesSet = true;
-        return this;
     }
     @Override
     public OFVersion getVersion() {

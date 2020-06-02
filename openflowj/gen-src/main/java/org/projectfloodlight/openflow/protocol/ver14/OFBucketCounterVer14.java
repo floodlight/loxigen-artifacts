@@ -64,13 +64,13 @@ class OFBucketCounterVer14 implements OFBucketCounter {
 
     // Accessors for OF message fields
     @Override
-    public U64 getPacketCount() {
-        return packetCount;
+    public U64 getByteCount() {
+        return byteCount;
     }
 
     @Override
-    public U64 getByteCount() {
-        return byteCount;
+    public U64 getPacketCount() {
+        return packetCount;
     }
 
     @Override
@@ -98,17 +98,6 @@ class OFBucketCounterVer14 implements OFBucketCounter {
         }
 
     @Override
-    public U64 getPacketCount() {
-        return packetCount;
-    }
-
-    @Override
-    public OFBucketCounter.Builder setPacketCount(U64 packetCount) {
-        this.packetCount = packetCount;
-        this.packetCountSet = true;
-        return this;
-    }
-    @Override
     public U64 getByteCount() {
         return byteCount;
     }
@@ -117,6 +106,17 @@ class OFBucketCounterVer14 implements OFBucketCounter {
     public OFBucketCounter.Builder setByteCount(U64 byteCount) {
         this.byteCount = byteCount;
         this.byteCountSet = true;
+        return this;
+    }
+    @Override
+    public U64 getPacketCount() {
+        return packetCount;
+    }
+
+    @Override
+    public OFBucketCounter.Builder setPacketCount(U64 packetCount) {
+        this.packetCount = packetCount;
+        this.packetCountSet = true;
         return this;
     }
     @Override
@@ -152,17 +152,6 @@ class OFBucketCounterVer14 implements OFBucketCounter {
         private U64 byteCount;
 
     @Override
-    public U64 getPacketCount() {
-        return packetCount;
-    }
-
-    @Override
-    public OFBucketCounter.Builder setPacketCount(U64 packetCount) {
-        this.packetCount = packetCount;
-        this.packetCountSet = true;
-        return this;
-    }
-    @Override
     public U64 getByteCount() {
         return byteCount;
     }
@@ -171,6 +160,17 @@ class OFBucketCounterVer14 implements OFBucketCounter {
     public OFBucketCounter.Builder setByteCount(U64 byteCount) {
         this.byteCount = byteCount;
         this.byteCountSet = true;
+        return this;
+    }
+    @Override
+    public U64 getPacketCount() {
+        return packetCount;
+    }
+
+    @Override
+    public OFBucketCounter.Builder setPacketCount(U64 packetCount) {
+        this.packetCount = packetCount;
+        this.packetCountSet = true;
         return this;
     }
     @Override

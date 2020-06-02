@@ -74,18 +74,13 @@ class OFAsyncSetVer13 implements OFAsyncSet {
 
     // Accessors for OF message fields
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_13;
+    public long getFlowRemovedMaskEqualMaster() {
+        return flowRemovedMaskEqualMaster;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.SET_ASYNC;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
+    public long getFlowRemovedMaskSlave() {
+        return flowRemovedMaskSlave;
     }
 
     @Override
@@ -109,18 +104,23 @@ class OFAsyncSetVer13 implements OFAsyncSet {
     }
 
     @Override
-    public long getFlowRemovedMaskEqualMaster() {
-        return flowRemovedMaskEqualMaster;
-    }
-
-    @Override
-    public long getFlowRemovedMaskSlave() {
-        return flowRemovedMaskSlave;
-    }
-
-    @Override
     public List<OFAsyncConfigProp> getProperties()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property properties not supported in version 1.3");
+    }
+
+    @Override
+    public OFType getType() {
+        return OFType.SET_ASYNC;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_13;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
     }
 
 
@@ -153,24 +153,25 @@ class OFAsyncSetVer13 implements OFAsyncSet {
         }
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_13;
+    public long getFlowRemovedMaskEqualMaster() {
+        return flowRemovedMaskEqualMaster;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.SET_ASYNC;
+    public OFAsyncSet.Builder setFlowRemovedMaskEqualMaster(long flowRemovedMaskEqualMaster) {
+        this.flowRemovedMaskEqualMaster = flowRemovedMaskEqualMaster;
+        this.flowRemovedMaskEqualMasterSet = true;
+        return this;
+    }
+    @Override
+    public long getFlowRemovedMaskSlave() {
+        return flowRemovedMaskSlave;
     }
 
     @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFAsyncSet.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
+    public OFAsyncSet.Builder setFlowRemovedMaskSlave(long flowRemovedMaskSlave) {
+        this.flowRemovedMaskSlave = flowRemovedMaskSlave;
+        this.flowRemovedMaskSlaveSet = true;
         return this;
     }
     @Override
@@ -218,28 +219,6 @@ class OFAsyncSetVer13 implements OFAsyncSet {
         return this;
     }
     @Override
-    public long getFlowRemovedMaskEqualMaster() {
-        return flowRemovedMaskEqualMaster;
-    }
-
-    @Override
-    public OFAsyncSet.Builder setFlowRemovedMaskEqualMaster(long flowRemovedMaskEqualMaster) {
-        this.flowRemovedMaskEqualMaster = flowRemovedMaskEqualMaster;
-        this.flowRemovedMaskEqualMasterSet = true;
-        return this;
-    }
-    @Override
-    public long getFlowRemovedMaskSlave() {
-        return flowRemovedMaskSlave;
-    }
-
-    @Override
-    public OFAsyncSet.Builder setFlowRemovedMaskSlave(long flowRemovedMaskSlave) {
-        this.flowRemovedMaskSlave = flowRemovedMaskSlave;
-        this.flowRemovedMaskSlaveSet = true;
-        return this;
-    }
-    @Override
     public List<OFAsyncConfigProp> getProperties()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property properties not supported in version 1.3");
     }
@@ -247,6 +226,27 @@ class OFAsyncSetVer13 implements OFAsyncSet {
     @Override
     public OFAsyncSet.Builder setProperties(List<OFAsyncConfigProp> properties) throws UnsupportedOperationException {
             throw new UnsupportedOperationException("Property properties not supported in version 1.3");
+    }
+    @Override
+    public OFType getType() {
+        return OFType.SET_ASYNC;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_13;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFAsyncSet.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
+        return this;
     }
 
 
@@ -292,24 +292,25 @@ class OFAsyncSetVer13 implements OFAsyncSet {
         private long flowRemovedMaskSlave;
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_13;
+    public long getFlowRemovedMaskEqualMaster() {
+        return flowRemovedMaskEqualMaster;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.SET_ASYNC;
+    public OFAsyncSet.Builder setFlowRemovedMaskEqualMaster(long flowRemovedMaskEqualMaster) {
+        this.flowRemovedMaskEqualMaster = flowRemovedMaskEqualMaster;
+        this.flowRemovedMaskEqualMasterSet = true;
+        return this;
+    }
+    @Override
+    public long getFlowRemovedMaskSlave() {
+        return flowRemovedMaskSlave;
     }
 
     @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFAsyncSet.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
+    public OFAsyncSet.Builder setFlowRemovedMaskSlave(long flowRemovedMaskSlave) {
+        this.flowRemovedMaskSlave = flowRemovedMaskSlave;
+        this.flowRemovedMaskSlaveSet = true;
         return this;
     }
     @Override
@@ -357,28 +358,6 @@ class OFAsyncSetVer13 implements OFAsyncSet {
         return this;
     }
     @Override
-    public long getFlowRemovedMaskEqualMaster() {
-        return flowRemovedMaskEqualMaster;
-    }
-
-    @Override
-    public OFAsyncSet.Builder setFlowRemovedMaskEqualMaster(long flowRemovedMaskEqualMaster) {
-        this.flowRemovedMaskEqualMaster = flowRemovedMaskEqualMaster;
-        this.flowRemovedMaskEqualMasterSet = true;
-        return this;
-    }
-    @Override
-    public long getFlowRemovedMaskSlave() {
-        return flowRemovedMaskSlave;
-    }
-
-    @Override
-    public OFAsyncSet.Builder setFlowRemovedMaskSlave(long flowRemovedMaskSlave) {
-        this.flowRemovedMaskSlave = flowRemovedMaskSlave;
-        this.flowRemovedMaskSlaveSet = true;
-        return this;
-    }
-    @Override
     public List<OFAsyncConfigProp> getProperties()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property properties not supported in version 1.3");
     }
@@ -386,6 +365,27 @@ class OFAsyncSetVer13 implements OFAsyncSet {
     @Override
     public OFAsyncSet.Builder setProperties(List<OFAsyncConfigProp> properties) throws UnsupportedOperationException {
             throw new UnsupportedOperationException("Property properties not supported in version 1.3");
+    }
+    @Override
+    public OFType getType() {
+        return OFType.SET_ASYNC;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_13;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFAsyncSet.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
+        return this;
     }
 //
         @Override

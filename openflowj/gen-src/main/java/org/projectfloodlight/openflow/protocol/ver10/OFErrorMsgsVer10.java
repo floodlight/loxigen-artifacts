@@ -34,28 +34,12 @@ public class OFErrorMsgsVer10 implements OFErrorMsgs {
 
 
 
+    public OFAsyncConfigFailedErrorMsg.Builder buildAsyncConfigFailedErrorMsg() {
+        throw new UnsupportedOperationException("OFAsyncConfigFailedErrorMsg not supported in version 1.0");
+    }
+
     public OFBadActionErrorMsg.Builder buildBadActionErrorMsg() {
         return new OFBadActionErrorMsgVer10.Builder().setXid(nextXid());
-    }
-
-    public OFBadRequestErrorMsg.Builder buildBadRequestErrorMsg() {
-        return new OFBadRequestErrorMsgVer10.Builder().setXid(nextXid());
-    }
-
-    public OFFlowModFailedErrorMsg.Builder buildFlowModFailedErrorMsg() {
-        return new OFFlowModFailedErrorMsgVer10.Builder().setXid(nextXid());
-    }
-
-    public OFHelloFailedErrorMsg.Builder buildHelloFailedErrorMsg() {
-        return new OFHelloFailedErrorMsgVer10.Builder().setXid(nextXid());
-    }
-
-    public OFPortModFailedErrorMsg.Builder buildPortModFailedErrorMsg() {
-        return new OFPortModFailedErrorMsgVer10.Builder().setXid(nextXid());
-    }
-
-    public OFQueueOpFailedErrorMsg.Builder buildQueueOpFailedErrorMsg() {
-        return new OFQueueOpFailedErrorMsgVer10.Builder().setXid(nextXid());
     }
 
     public OFBadInstructionErrorMsg.Builder buildBadInstructionErrorMsg() {
@@ -66,20 +50,12 @@ public class OFErrorMsgsVer10 implements OFErrorMsgs {
         throw new UnsupportedOperationException("OFBadMatchErrorMsg not supported in version 1.0");
     }
 
-    public OFGroupModFailedErrorMsg.Builder buildGroupModFailedErrorMsg() {
-        throw new UnsupportedOperationException("OFGroupModFailedErrorMsg not supported in version 1.0");
+    public OFBadPropertyErrorMsg.Builder buildBadPropertyErrorMsg() {
+        throw new UnsupportedOperationException("OFBadPropertyErrorMsg not supported in version 1.0");
     }
 
-    public OFSwitchConfigFailedErrorMsg.Builder buildSwitchConfigFailedErrorMsg() {
-        throw new UnsupportedOperationException("OFSwitchConfigFailedErrorMsg not supported in version 1.0");
-    }
-
-    public OFTableModFailedErrorMsg.Builder buildTableModFailedErrorMsg() {
-        throw new UnsupportedOperationException("OFTableModFailedErrorMsg not supported in version 1.0");
-    }
-
-    public OFRoleRequestFailedErrorMsg.Builder buildRoleRequestFailedErrorMsg() {
-        throw new UnsupportedOperationException("OFRoleRequestFailedErrorMsg not supported in version 1.0");
+    public OFBadRequestErrorMsg.Builder buildBadRequestErrorMsg() {
+        return new OFBadRequestErrorMsgVer10.Builder().setXid(nextXid());
     }
 
     public OFBsnError.Builder buildBsnError() {
@@ -90,28 +66,52 @@ public class OFErrorMsgsVer10 implements OFErrorMsgs {
         throw new UnsupportedOperationException("OFBsnGentableError not supported in version 1.0");
     }
 
+    public OFBundleFailedErrorMsg.Builder buildBundleFailedErrorMsg() {
+        throw new UnsupportedOperationException("OFBundleFailedErrorMsg not supported in version 1.0");
+    }
+
+    public OFFlowModFailedErrorMsg.Builder buildFlowModFailedErrorMsg() {
+        return new OFFlowModFailedErrorMsgVer10.Builder().setXid(nextXid());
+    }
+
+    public OFFlowMonitorFailedErrorMsg.Builder buildFlowMonitorFailedErrorMsg() {
+        throw new UnsupportedOperationException("OFFlowMonitorFailedErrorMsg not supported in version 1.0");
+    }
+
+    public OFGroupModFailedErrorMsg.Builder buildGroupModFailedErrorMsg() {
+        throw new UnsupportedOperationException("OFGroupModFailedErrorMsg not supported in version 1.0");
+    }
+
+    public OFHelloFailedErrorMsg.Builder buildHelloFailedErrorMsg() {
+        return new OFHelloFailedErrorMsgVer10.Builder().setXid(nextXid());
+    }
+
     public OFMeterModFailedErrorMsg.Builder buildMeterModFailedErrorMsg() {
         throw new UnsupportedOperationException("OFMeterModFailedErrorMsg not supported in version 1.0");
+    }
+
+    public OFPortModFailedErrorMsg.Builder buildPortModFailedErrorMsg() {
+        return new OFPortModFailedErrorMsgVer10.Builder().setXid(nextXid());
+    }
+
+    public OFQueueOpFailedErrorMsg.Builder buildQueueOpFailedErrorMsg() {
+        return new OFQueueOpFailedErrorMsgVer10.Builder().setXid(nextXid());
+    }
+
+    public OFRoleRequestFailedErrorMsg.Builder buildRoleRequestFailedErrorMsg() {
+        throw new UnsupportedOperationException("OFRoleRequestFailedErrorMsg not supported in version 1.0");
+    }
+
+    public OFSwitchConfigFailedErrorMsg.Builder buildSwitchConfigFailedErrorMsg() {
+        throw new UnsupportedOperationException("OFSwitchConfigFailedErrorMsg not supported in version 1.0");
     }
 
     public OFTableFeaturesFailedErrorMsg.Builder buildTableFeaturesFailedErrorMsg() {
         throw new UnsupportedOperationException("OFTableFeaturesFailedErrorMsg not supported in version 1.0");
     }
 
-    public OFAsyncConfigFailedErrorMsg.Builder buildAsyncConfigFailedErrorMsg() {
-        throw new UnsupportedOperationException("OFAsyncConfigFailedErrorMsg not supported in version 1.0");
-    }
-
-    public OFBadPropertyErrorMsg.Builder buildBadPropertyErrorMsg() {
-        throw new UnsupportedOperationException("OFBadPropertyErrorMsg not supported in version 1.0");
-    }
-
-    public OFBundleFailedErrorMsg.Builder buildBundleFailedErrorMsg() {
-        throw new UnsupportedOperationException("OFBundleFailedErrorMsg not supported in version 1.0");
-    }
-
-    public OFFlowMonitorFailedErrorMsg.Builder buildFlowMonitorFailedErrorMsg() {
-        throw new UnsupportedOperationException("OFFlowMonitorFailedErrorMsg not supported in version 1.0");
+    public OFTableModFailedErrorMsg.Builder buildTableModFailedErrorMsg() {
+        throw new UnsupportedOperationException("OFTableModFailedErrorMsg not supported in version 1.0");
     }
 
     public OFMessageReader<OFErrorMsg> getReader() {

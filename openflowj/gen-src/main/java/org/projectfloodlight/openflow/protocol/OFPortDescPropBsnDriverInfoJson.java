@@ -28,10 +28,10 @@ import org.projectfloodlight.openflow.exceptions.*;
 import io.netty.buffer.ByteBuf;
 
 public interface OFPortDescPropBsnDriverInfoJson extends OFObject, OFPortDescPropBsn {
-    int getType();
-    long getExperimenter();
-    long getExpType();
     byte[] getDriverInfoJson();
+    long getExpType();
+    long getExperimenter();
+    int getType();
     OFVersion getVersion();
 
     void writeTo(ByteBuf channelBuffer);
@@ -39,12 +39,12 @@ public interface OFPortDescPropBsnDriverInfoJson extends OFObject, OFPortDescPro
     Builder createBuilder();
     public interface Builder extends OFPortDescPropBsn.Builder {
         OFPortDescPropBsnDriverInfoJson build();
-        int getType();
-        long getExperimenter();
-        long getExpType();
-        Builder setExpType(long expType);
         byte[] getDriverInfoJson();
         Builder setDriverInfoJson(byte[] driverInfoJson);
+        long getExpType();
+        Builder setExpType(long expType);
+        long getExperimenter();
+        int getType();
         OFVersion getVersion();
     }
 }

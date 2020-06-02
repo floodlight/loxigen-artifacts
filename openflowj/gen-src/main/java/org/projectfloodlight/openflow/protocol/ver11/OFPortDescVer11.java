@@ -115,18 +115,8 @@ class OFPortDescVer11 implements OFPortDesc {
 
     // Accessors for OF message fields
     @Override
-    public OFPort getPortNo() {
-        return portNo;
-    }
-
-    @Override
-    public MacAddress getHwAddr() {
-        return hwAddr;
-    }
-
-    @Override
-    public String getName() {
-        return name;
+    public Set<OFPortFeatures> getAdvertised() {
+        return advertised;
     }
 
     @Override
@@ -135,28 +125,8 @@ class OFPortDescVer11 implements OFPortDesc {
     }
 
     @Override
-    public Set<OFPortState> getState() {
-        return state;
-    }
-
-    @Override
     public Set<OFPortFeatures> getCurr() {
         return curr;
-    }
-
-    @Override
-    public Set<OFPortFeatures> getAdvertised() {
-        return advertised;
-    }
-
-    @Override
-    public Set<OFPortFeatures> getSupported() {
-        return supported;
-    }
-
-    @Override
-    public Set<OFPortFeatures> getPeer() {
-        return peer;
     }
 
     @Override
@@ -165,13 +135,43 @@ class OFPortDescVer11 implements OFPortDesc {
     }
 
     @Override
+    public MacAddress getHwAddr() {
+        return hwAddr;
+    }
+
+    @Override
     public long getMaxSpeed() {
         return maxSpeed;
     }
 
     @Override
+    public String getName() {
+        return name;
+    }
+
+    @Override
+    public Set<OFPortFeatures> getPeer() {
+        return peer;
+    }
+
+    @Override
+    public OFPort getPortNo() {
+        return portNo;
+    }
+
+    @Override
     public List<OFPortDescProp> getProperties()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property properties not supported in version 1.1");
+    }
+
+    @Override
+    public Set<OFPortState> getState() {
+        return state;
+    }
+
+    @Override
+    public Set<OFPortFeatures> getSupported() {
+        return supported;
     }
 
     @Override
@@ -244,36 +244,14 @@ class OFPortDescVer11 implements OFPortDesc {
         }
 
     @Override
-    public OFPort getPortNo() {
-        return portNo;
+    public Set<OFPortFeatures> getAdvertised() {
+        return advertised;
     }
 
     @Override
-    public OFPortDesc.Builder setPortNo(OFPort portNo) {
-        this.portNo = portNo;
-        this.portNoSet = true;
-        return this;
-    }
-    @Override
-    public MacAddress getHwAddr() {
-        return hwAddr;
-    }
-
-    @Override
-    public OFPortDesc.Builder setHwAddr(MacAddress hwAddr) {
-        this.hwAddr = hwAddr;
-        this.hwAddrSet = true;
-        return this;
-    }
-    @Override
-    public String getName() {
-        return name;
-    }
-
-    @Override
-    public OFPortDesc.Builder setName(String name) {
-        this.name = name;
-        this.nameSet = true;
+    public OFPortDesc.Builder setAdvertised(Set<OFPortFeatures> advertised) {
+        this.advertised = advertised;
+        this.advertisedSet = true;
         return this;
     }
     @Override
@@ -288,17 +266,6 @@ class OFPortDescVer11 implements OFPortDesc {
         return this;
     }
     @Override
-    public Set<OFPortState> getState() {
-        return state;
-    }
-
-    @Override
-    public OFPortDesc.Builder setState(Set<OFPortState> state) {
-        this.state = state;
-        this.stateSet = true;
-        return this;
-    }
-    @Override
     public Set<OFPortFeatures> getCurr() {
         return curr;
     }
@@ -307,39 +274,6 @@ class OFPortDescVer11 implements OFPortDesc {
     public OFPortDesc.Builder setCurr(Set<OFPortFeatures> curr) {
         this.curr = curr;
         this.currSet = true;
-        return this;
-    }
-    @Override
-    public Set<OFPortFeatures> getAdvertised() {
-        return advertised;
-    }
-
-    @Override
-    public OFPortDesc.Builder setAdvertised(Set<OFPortFeatures> advertised) {
-        this.advertised = advertised;
-        this.advertisedSet = true;
-        return this;
-    }
-    @Override
-    public Set<OFPortFeatures> getSupported() {
-        return supported;
-    }
-
-    @Override
-    public OFPortDesc.Builder setSupported(Set<OFPortFeatures> supported) {
-        this.supported = supported;
-        this.supportedSet = true;
-        return this;
-    }
-    @Override
-    public Set<OFPortFeatures> getPeer() {
-        return peer;
-    }
-
-    @Override
-    public OFPortDesc.Builder setPeer(Set<OFPortFeatures> peer) {
-        this.peer = peer;
-        this.peerSet = true;
         return this;
     }
     @Override
@@ -354,6 +288,17 @@ class OFPortDescVer11 implements OFPortDesc {
         return this;
     }
     @Override
+    public MacAddress getHwAddr() {
+        return hwAddr;
+    }
+
+    @Override
+    public OFPortDesc.Builder setHwAddr(MacAddress hwAddr) {
+        this.hwAddr = hwAddr;
+        this.hwAddrSet = true;
+        return this;
+    }
+    @Override
     public long getMaxSpeed() {
         return maxSpeed;
     }
@@ -365,6 +310,39 @@ class OFPortDescVer11 implements OFPortDesc {
         return this;
     }
     @Override
+    public String getName() {
+        return name;
+    }
+
+    @Override
+    public OFPortDesc.Builder setName(String name) {
+        this.name = name;
+        this.nameSet = true;
+        return this;
+    }
+    @Override
+    public Set<OFPortFeatures> getPeer() {
+        return peer;
+    }
+
+    @Override
+    public OFPortDesc.Builder setPeer(Set<OFPortFeatures> peer) {
+        this.peer = peer;
+        this.peerSet = true;
+        return this;
+    }
+    @Override
+    public OFPort getPortNo() {
+        return portNo;
+    }
+
+    @Override
+    public OFPortDesc.Builder setPortNo(OFPort portNo) {
+        this.portNo = portNo;
+        this.portNoSet = true;
+        return this;
+    }
+    @Override
     public List<OFPortDescProp> getProperties()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property properties not supported in version 1.1");
     }
@@ -372,6 +350,28 @@ class OFPortDescVer11 implements OFPortDesc {
     @Override
     public OFPortDesc.Builder setProperties(List<OFPortDescProp> properties) throws UnsupportedOperationException {
             throw new UnsupportedOperationException("Property properties not supported in version 1.1");
+    }
+    @Override
+    public Set<OFPortState> getState() {
+        return state;
+    }
+
+    @Override
+    public OFPortDesc.Builder setState(Set<OFPortState> state) {
+        this.state = state;
+        this.stateSet = true;
+        return this;
+    }
+    @Override
+    public Set<OFPortFeatures> getSupported() {
+        return supported;
+    }
+
+    @Override
+    public OFPortDesc.Builder setSupported(Set<OFPortFeatures> supported) {
+        this.supported = supported;
+        this.supportedSet = true;
+        return this;
     }
     @Override
     public OFVersion getVersion() {
@@ -456,36 +456,14 @@ class OFPortDescVer11 implements OFPortDesc {
         private long maxSpeed;
 
     @Override
-    public OFPort getPortNo() {
-        return portNo;
+    public Set<OFPortFeatures> getAdvertised() {
+        return advertised;
     }
 
     @Override
-    public OFPortDesc.Builder setPortNo(OFPort portNo) {
-        this.portNo = portNo;
-        this.portNoSet = true;
-        return this;
-    }
-    @Override
-    public MacAddress getHwAddr() {
-        return hwAddr;
-    }
-
-    @Override
-    public OFPortDesc.Builder setHwAddr(MacAddress hwAddr) {
-        this.hwAddr = hwAddr;
-        this.hwAddrSet = true;
-        return this;
-    }
-    @Override
-    public String getName() {
-        return name;
-    }
-
-    @Override
-    public OFPortDesc.Builder setName(String name) {
-        this.name = name;
-        this.nameSet = true;
+    public OFPortDesc.Builder setAdvertised(Set<OFPortFeatures> advertised) {
+        this.advertised = advertised;
+        this.advertisedSet = true;
         return this;
     }
     @Override
@@ -500,17 +478,6 @@ class OFPortDescVer11 implements OFPortDesc {
         return this;
     }
     @Override
-    public Set<OFPortState> getState() {
-        return state;
-    }
-
-    @Override
-    public OFPortDesc.Builder setState(Set<OFPortState> state) {
-        this.state = state;
-        this.stateSet = true;
-        return this;
-    }
-    @Override
     public Set<OFPortFeatures> getCurr() {
         return curr;
     }
@@ -519,39 +486,6 @@ class OFPortDescVer11 implements OFPortDesc {
     public OFPortDesc.Builder setCurr(Set<OFPortFeatures> curr) {
         this.curr = curr;
         this.currSet = true;
-        return this;
-    }
-    @Override
-    public Set<OFPortFeatures> getAdvertised() {
-        return advertised;
-    }
-
-    @Override
-    public OFPortDesc.Builder setAdvertised(Set<OFPortFeatures> advertised) {
-        this.advertised = advertised;
-        this.advertisedSet = true;
-        return this;
-    }
-    @Override
-    public Set<OFPortFeatures> getSupported() {
-        return supported;
-    }
-
-    @Override
-    public OFPortDesc.Builder setSupported(Set<OFPortFeatures> supported) {
-        this.supported = supported;
-        this.supportedSet = true;
-        return this;
-    }
-    @Override
-    public Set<OFPortFeatures> getPeer() {
-        return peer;
-    }
-
-    @Override
-    public OFPortDesc.Builder setPeer(Set<OFPortFeatures> peer) {
-        this.peer = peer;
-        this.peerSet = true;
         return this;
     }
     @Override
@@ -566,6 +500,17 @@ class OFPortDescVer11 implements OFPortDesc {
         return this;
     }
     @Override
+    public MacAddress getHwAddr() {
+        return hwAddr;
+    }
+
+    @Override
+    public OFPortDesc.Builder setHwAddr(MacAddress hwAddr) {
+        this.hwAddr = hwAddr;
+        this.hwAddrSet = true;
+        return this;
+    }
+    @Override
     public long getMaxSpeed() {
         return maxSpeed;
     }
@@ -577,6 +522,39 @@ class OFPortDescVer11 implements OFPortDesc {
         return this;
     }
     @Override
+    public String getName() {
+        return name;
+    }
+
+    @Override
+    public OFPortDesc.Builder setName(String name) {
+        this.name = name;
+        this.nameSet = true;
+        return this;
+    }
+    @Override
+    public Set<OFPortFeatures> getPeer() {
+        return peer;
+    }
+
+    @Override
+    public OFPortDesc.Builder setPeer(Set<OFPortFeatures> peer) {
+        this.peer = peer;
+        this.peerSet = true;
+        return this;
+    }
+    @Override
+    public OFPort getPortNo() {
+        return portNo;
+    }
+
+    @Override
+    public OFPortDesc.Builder setPortNo(OFPort portNo) {
+        this.portNo = portNo;
+        this.portNoSet = true;
+        return this;
+    }
+    @Override
     public List<OFPortDescProp> getProperties()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property properties not supported in version 1.1");
     }
@@ -584,6 +562,28 @@ class OFPortDescVer11 implements OFPortDesc {
     @Override
     public OFPortDesc.Builder setProperties(List<OFPortDescProp> properties) throws UnsupportedOperationException {
             throw new UnsupportedOperationException("Property properties not supported in version 1.1");
+    }
+    @Override
+    public Set<OFPortState> getState() {
+        return state;
+    }
+
+    @Override
+    public OFPortDesc.Builder setState(Set<OFPortState> state) {
+        this.state = state;
+        this.stateSet = true;
+        return this;
+    }
+    @Override
+    public Set<OFPortFeatures> getSupported() {
+        return supported;
+    }
+
+    @Override
+    public OFPortDesc.Builder setSupported(Set<OFPortFeatures> supported) {
+        this.supported = supported;
+        this.supportedSet = true;
+        return this;
     }
     @Override
     public OFVersion getVersion() {

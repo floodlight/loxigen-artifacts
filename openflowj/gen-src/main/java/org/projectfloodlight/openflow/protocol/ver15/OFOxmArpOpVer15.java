@@ -67,16 +67,6 @@ class OFOxmArpOpVer15 implements OFOxmArpOp {
         return value;
     }
 
-    @Override
-    public MatchField<ArpOpcode> getMatchField() {
-        return MatchField.ARP_OP;
-    }
-
-    @Override
-    public boolean isMasked() {
-        return false;
-    }
-
     public OFOxm<ArpOpcode> getCanonical() {
         // exact match OXM is always canonical
         return this;
@@ -85,6 +75,16 @@ class OFOxmArpOpVer15 implements OFOxmArpOp {
     @Override
     public ArpOpcode getMask()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property mask not supported in version 1.5");
+    }
+
+    @Override
+    public boolean isMasked() {
+        return false;
+    }
+
+    @Override
+    public MatchField<ArpOpcode> getMatchField() {
+        return MatchField.ARP_OP;
     }
 
     @Override
@@ -126,8 +126,13 @@ class OFOxmArpOpVer15 implements OFOxmArpOp {
         return this;
     }
     @Override
-    public MatchField<ArpOpcode> getMatchField() {
-        return MatchField.ARP_OP;
+    public OFOxm<ArpOpcode> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.5");
+    }
+
+    @Override
+    public ArpOpcode getMask()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property mask not supported in version 1.5");
     }
 
     @Override
@@ -136,13 +141,8 @@ class OFOxmArpOpVer15 implements OFOxmArpOp {
     }
 
     @Override
-    public OFOxm<ArpOpcode> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.5");
-    }
-
-    @Override
-    public ArpOpcode getMask()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property mask not supported in version 1.5");
+    public MatchField<ArpOpcode> getMatchField() {
+        return MatchField.ARP_OP;
     }
 
     @Override
@@ -188,8 +188,13 @@ class OFOxmArpOpVer15 implements OFOxmArpOp {
         return this;
     }
     @Override
-    public MatchField<ArpOpcode> getMatchField() {
-        return MatchField.ARP_OP;
+    public OFOxm<ArpOpcode> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.5");
+    }
+
+    @Override
+    public ArpOpcode getMask()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property mask not supported in version 1.5");
     }
 
     @Override
@@ -198,13 +203,8 @@ class OFOxmArpOpVer15 implements OFOxmArpOp {
     }
 
     @Override
-    public OFOxm<ArpOpcode> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.5");
-    }
-
-    @Override
-    public ArpOpcode getMask()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property mask not supported in version 1.5");
+    public MatchField<ArpOpcode> getMatchField() {
+        return MatchField.ARP_OP;
     }
 
     @Override

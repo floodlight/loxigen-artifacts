@@ -64,6 +64,11 @@ class OFOxmTcpFlagsMaskedVer15 implements OFOxmTcpFlagsMasked {
 
     // Accessors for OF message fields
     @Override
+    public U16 getMask() {
+        return mask;
+    }
+
+    @Override
     public long getTypeLen() {
         return 0x80005504L;
     }
@@ -71,21 +76,6 @@ class OFOxmTcpFlagsMaskedVer15 implements OFOxmTcpFlagsMasked {
     @Override
     public U16 getValue() {
         return value;
-    }
-
-    @Override
-    public U16 getMask() {
-        return mask;
-    }
-
-    @Override
-    public MatchField<U16> getMatchField() {
-        return MatchField.TCP_FLAGS;
-    }
-
-    @Override
-    public boolean isMasked() {
-        return true;
     }
 
     public OFOxm<U16> getCanonical() {
@@ -96,6 +86,16 @@ class OFOxmTcpFlagsMaskedVer15 implements OFOxmTcpFlagsMasked {
         } else {
             return this;
         }
+    }
+
+    @Override
+    public boolean isMasked() {
+        return true;
+    }
+
+    @Override
+    public MatchField<U16> getMatchField() {
+        return MatchField.TCP_FLAGS;
     }
 
     @Override
@@ -123,6 +123,17 @@ class OFOxmTcpFlagsMaskedVer15 implements OFOxmTcpFlagsMasked {
         }
 
     @Override
+    public U16 getMask() {
+        return mask;
+    }
+
+    @Override
+    public OFOxmTcpFlagsMasked.Builder setMask(U16 mask) {
+        this.mask = mask;
+        this.maskSet = true;
+        return this;
+    }
+    @Override
     public long getTypeLen() {
         return 0x80005504L;
     }
@@ -139,19 +150,8 @@ class OFOxmTcpFlagsMaskedVer15 implements OFOxmTcpFlagsMasked {
         return this;
     }
     @Override
-    public U16 getMask() {
-        return mask;
-    }
-
-    @Override
-    public OFOxmTcpFlagsMasked.Builder setMask(U16 mask) {
-        this.mask = mask;
-        this.maskSet = true;
-        return this;
-    }
-    @Override
-    public MatchField<U16> getMatchField() {
-        return MatchField.TCP_FLAGS;
+    public OFOxm<U16> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.5");
     }
 
     @Override
@@ -160,8 +160,8 @@ class OFOxmTcpFlagsMaskedVer15 implements OFOxmTcpFlagsMasked {
     }
 
     @Override
-    public OFOxm<U16> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.5");
+    public MatchField<U16> getMatchField() {
+        return MatchField.TCP_FLAGS;
     }
 
     @Override
@@ -197,6 +197,17 @@ class OFOxmTcpFlagsMaskedVer15 implements OFOxmTcpFlagsMasked {
         private U16 mask;
 
     @Override
+    public U16 getMask() {
+        return mask;
+    }
+
+    @Override
+    public OFOxmTcpFlagsMasked.Builder setMask(U16 mask) {
+        this.mask = mask;
+        this.maskSet = true;
+        return this;
+    }
+    @Override
     public long getTypeLen() {
         return 0x80005504L;
     }
@@ -213,19 +224,8 @@ class OFOxmTcpFlagsMaskedVer15 implements OFOxmTcpFlagsMasked {
         return this;
     }
     @Override
-    public U16 getMask() {
-        return mask;
-    }
-
-    @Override
-    public OFOxmTcpFlagsMasked.Builder setMask(U16 mask) {
-        this.mask = mask;
-        this.maskSet = true;
-        return this;
-    }
-    @Override
-    public MatchField<U16> getMatchField() {
-        return MatchField.TCP_FLAGS;
+    public OFOxm<U16> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.5");
     }
 
     @Override
@@ -234,8 +234,8 @@ class OFOxmTcpFlagsMaskedVer15 implements OFOxmTcpFlagsMasked {
     }
 
     @Override
-    public OFOxm<U16> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.5");
+    public MatchField<U16> getMatchField() {
+        return MatchField.TCP_FLAGS;
     }
 
     @Override

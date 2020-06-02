@@ -67,16 +67,6 @@ class OFOxmBsnInPorts512Ver14 implements OFOxmBsnInPorts512 {
         return value;
     }
 
-    @Override
-    public MatchField<OFBitMask512> getMatchField() {
-        return MatchField.BSN_IN_PORTS_512;
-    }
-
-    @Override
-    public boolean isMasked() {
-        return false;
-    }
-
     public OFOxm<OFBitMask512> getCanonical() {
         // exact match OXM is always canonical
         return this;
@@ -85,6 +75,16 @@ class OFOxmBsnInPorts512Ver14 implements OFOxmBsnInPorts512 {
     @Override
     public OFBitMask512 getMask()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property mask not supported in version 1.4");
+    }
+
+    @Override
+    public boolean isMasked() {
+        return false;
+    }
+
+    @Override
+    public MatchField<OFBitMask512> getMatchField() {
+        return MatchField.BSN_IN_PORTS_512;
     }
 
     @Override
@@ -126,8 +126,13 @@ class OFOxmBsnInPorts512Ver14 implements OFOxmBsnInPorts512 {
         return this;
     }
     @Override
-    public MatchField<OFBitMask512> getMatchField() {
-        return MatchField.BSN_IN_PORTS_512;
+    public OFOxm<OFBitMask512> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.4");
+    }
+
+    @Override
+    public OFBitMask512 getMask()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property mask not supported in version 1.4");
     }
 
     @Override
@@ -136,13 +141,8 @@ class OFOxmBsnInPorts512Ver14 implements OFOxmBsnInPorts512 {
     }
 
     @Override
-    public OFOxm<OFBitMask512> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.4");
-    }
-
-    @Override
-    public OFBitMask512 getMask()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property mask not supported in version 1.4");
+    public MatchField<OFBitMask512> getMatchField() {
+        return MatchField.BSN_IN_PORTS_512;
     }
 
     @Override
@@ -188,8 +188,13 @@ class OFOxmBsnInPorts512Ver14 implements OFOxmBsnInPorts512 {
         return this;
     }
     @Override
-    public MatchField<OFBitMask512> getMatchField() {
-        return MatchField.BSN_IN_PORTS_512;
+    public OFOxm<OFBitMask512> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.4");
+    }
+
+    @Override
+    public OFBitMask512 getMask()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property mask not supported in version 1.4");
     }
 
     @Override
@@ -198,13 +203,8 @@ class OFOxmBsnInPorts512Ver14 implements OFOxmBsnInPorts512 {
     }
 
     @Override
-    public OFOxm<OFBitMask512> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.4");
-    }
-
-    @Override
-    public OFBitMask512 getMask()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property mask not supported in version 1.4");
+    public MatchField<OFBitMask512> getMatchField() {
+        return MatchField.BSN_IN_PORTS_512;
     }
 
     @Override

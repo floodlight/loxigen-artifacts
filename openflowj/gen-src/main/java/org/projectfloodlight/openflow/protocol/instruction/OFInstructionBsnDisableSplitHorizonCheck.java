@@ -28,9 +28,9 @@ import org.projectfloodlight.openflow.exceptions.*;
 import io.netty.buffer.ByteBuf;
 
 public interface OFInstructionBsnDisableSplitHorizonCheck extends OFObject, OFInstructionBsn {
-    OFInstructionType getType();
     long getExperimenter();
     long getSubtype();
+    OFInstructionType getType();
     OFVersion getVersion();
 
     void writeTo(ByteBuf channelBuffer);
@@ -38,9 +38,9 @@ public interface OFInstructionBsnDisableSplitHorizonCheck extends OFObject, OFIn
     Builder createBuilder();
     public interface Builder extends OFInstructionBsn.Builder {
         OFInstructionBsnDisableSplitHorizonCheck build();
-        OFInstructionType getType();
         long getExperimenter();
         long getSubtype();
+        OFInstructionType getType();
         OFVersion getVersion();
     }
 }

@@ -28,12 +28,12 @@ import org.projectfloodlight.openflow.exceptions.*;
 import io.netty.buffer.ByteBuf;
 
 public interface OFOxmIpv6FlabelMasked extends OFObject, OFOxm<IPv6FlowLabel> {
+    IPv6FlowLabel getMask();
     long getTypeLen();
     IPv6FlowLabel getValue();
-    IPv6FlowLabel getMask();
-    MatchField<IPv6FlowLabel> getMatchField();
-    boolean isMasked();
     OFOxm<IPv6FlowLabel> getCanonical();
+    boolean isMasked();
+    MatchField<IPv6FlowLabel> getMatchField();
     OFVersion getVersion();
 
     void writeTo(ByteBuf channelBuffer);
@@ -41,14 +41,14 @@ public interface OFOxmIpv6FlabelMasked extends OFObject, OFOxm<IPv6FlowLabel> {
     Builder createBuilder();
     public interface Builder extends OFOxm.Builder<IPv6FlowLabel> {
         OFOxmIpv6FlabelMasked build();
+        IPv6FlowLabel getMask();
+        Builder setMask(IPv6FlowLabel mask);
         long getTypeLen();
         IPv6FlowLabel getValue();
         Builder setValue(IPv6FlowLabel value);
-        IPv6FlowLabel getMask();
-        Builder setMask(IPv6FlowLabel mask);
-        MatchField<IPv6FlowLabel> getMatchField();
-        boolean isMasked();
         OFOxm<IPv6FlowLabel> getCanonical();
+        boolean isMasked();
+        MatchField<IPv6FlowLabel> getMatchField();
         OFVersion getVersion();
     }
 }

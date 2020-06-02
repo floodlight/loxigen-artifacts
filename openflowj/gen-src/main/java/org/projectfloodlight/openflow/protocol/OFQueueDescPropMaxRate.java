@@ -28,8 +28,8 @@ import org.projectfloodlight.openflow.exceptions.*;
 import io.netty.buffer.ByteBuf;
 
 public interface OFQueueDescPropMaxRate extends OFObject, OFQueueDescProp {
-    int getType();
     int getRate();
+    int getType();
     OFVersion getVersion();
 
     void writeTo(ByteBuf channelBuffer);
@@ -37,9 +37,9 @@ public interface OFQueueDescPropMaxRate extends OFObject, OFQueueDescProp {
     Builder createBuilder();
     public interface Builder extends OFQueueDescProp.Builder {
         OFQueueDescPropMaxRate build();
-        int getType();
         int getRate();
         Builder setRate(int rate);
+        int getType();
         OFVersion getVersion();
     }
 }

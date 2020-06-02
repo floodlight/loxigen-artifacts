@@ -59,8 +59,8 @@ class OFBsnTlvHashGtpPortMatchVer13 implements OFBsnTlvHashGtpPortMatch {
 
     // Accessors for OF message fields
     @Override
-    public int getType() {
-        return 0x69;
+    public int getDstPort() {
+        return dstPort;
     }
 
     @Override
@@ -74,8 +74,8 @@ class OFBsnTlvHashGtpPortMatchVer13 implements OFBsnTlvHashGtpPortMatch {
     }
 
     @Override
-    public int getDstPort() {
-        return dstPort;
+    public int getType() {
+        return 0x69;
     }
 
     @Override
@@ -105,10 +105,16 @@ class OFBsnTlvHashGtpPortMatchVer13 implements OFBsnTlvHashGtpPortMatch {
         }
 
     @Override
-    public int getType() {
-        return 0x69;
+    public int getDstPort() {
+        return dstPort;
     }
 
+    @Override
+    public OFBsnTlvHashGtpPortMatch.Builder setDstPort(int dstPort) {
+        this.dstPort = dstPort;
+        this.dstPortSet = true;
+        return this;
+    }
     @Override
     public OFBsnHashGtpPortMatch getMatch() {
         return match;
@@ -132,16 +138,10 @@ class OFBsnTlvHashGtpPortMatchVer13 implements OFBsnTlvHashGtpPortMatch {
         return this;
     }
     @Override
-    public int getDstPort() {
-        return dstPort;
+    public int getType() {
+        return 0x69;
     }
 
-    @Override
-    public OFBsnTlvHashGtpPortMatch.Builder setDstPort(int dstPort) {
-        this.dstPort = dstPort;
-        this.dstPortSet = true;
-        return this;
-    }
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_13;
@@ -177,10 +177,16 @@ class OFBsnTlvHashGtpPortMatchVer13 implements OFBsnTlvHashGtpPortMatch {
         private int dstPort;
 
     @Override
-    public int getType() {
-        return 0x69;
+    public int getDstPort() {
+        return dstPort;
     }
 
+    @Override
+    public OFBsnTlvHashGtpPortMatch.Builder setDstPort(int dstPort) {
+        this.dstPort = dstPort;
+        this.dstPortSet = true;
+        return this;
+    }
     @Override
     public OFBsnHashGtpPortMatch getMatch() {
         return match;
@@ -204,16 +210,10 @@ class OFBsnTlvHashGtpPortMatchVer13 implements OFBsnTlvHashGtpPortMatch {
         return this;
     }
     @Override
-    public int getDstPort() {
-        return dstPort;
+    public int getType() {
+        return 0x69;
     }
 
-    @Override
-    public OFBsnTlvHashGtpPortMatch.Builder setDstPort(int dstPort) {
-        this.dstPort = dstPort;
-        this.dstPortSet = true;
-        return this;
-    }
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_13;

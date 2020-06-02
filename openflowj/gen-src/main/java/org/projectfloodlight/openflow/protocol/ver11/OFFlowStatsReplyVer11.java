@@ -72,23 +72,8 @@ class OFFlowStatsReplyVer11 implements OFFlowStatsReply {
 
     // Accessors for OF message fields
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_11;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.STATS_REPLY;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFStatsType getStatsType() {
-        return OFStatsType.FLOW;
+    public List<OFFlowStatsEntry> getEntries() {
+        return entries;
     }
 
     @Override
@@ -97,8 +82,23 @@ class OFFlowStatsReplyVer11 implements OFFlowStatsReply {
     }
 
     @Override
-    public List<OFFlowStatsEntry> getEntries() {
-        return entries;
+    public OFStatsType getStatsType() {
+        return OFStatsType.FLOW;
+    }
+
+    @Override
+    public OFType getType() {
+        return OFType.STATS_REPLY;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_11;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
     }
 
 
@@ -123,31 +123,16 @@ class OFFlowStatsReplyVer11 implements OFFlowStatsReply {
         }
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_11;
+    public List<OFFlowStatsEntry> getEntries() {
+        return entries;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.STATS_REPLY;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFFlowStatsReply.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
+    public OFFlowStatsReply.Builder setEntries(List<OFFlowStatsEntry> entries) {
+        this.entries = entries;
+        this.entriesSet = true;
         return this;
     }
-    @Override
-    public OFStatsType getStatsType() {
-        return OFStatsType.FLOW;
-    }
-
     @Override
     public Set<OFStatsReplyFlags> getFlags() {
         return flags;
@@ -160,14 +145,29 @@ class OFFlowStatsReplyVer11 implements OFFlowStatsReply {
         return this;
     }
     @Override
-    public List<OFFlowStatsEntry> getEntries() {
-        return entries;
+    public OFStatsType getStatsType() {
+        return OFStatsType.FLOW;
     }
 
     @Override
-    public OFFlowStatsReply.Builder setEntries(List<OFFlowStatsEntry> entries) {
-        this.entries = entries;
-        this.entriesSet = true;
+    public OFType getType() {
+        return OFType.STATS_REPLY;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_11;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFFlowStatsReply.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 
@@ -202,31 +202,16 @@ class OFFlowStatsReplyVer11 implements OFFlowStatsReply {
         private List<OFFlowStatsEntry> entries;
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_11;
+    public List<OFFlowStatsEntry> getEntries() {
+        return entries;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.STATS_REPLY;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFFlowStatsReply.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
+    public OFFlowStatsReply.Builder setEntries(List<OFFlowStatsEntry> entries) {
+        this.entries = entries;
+        this.entriesSet = true;
         return this;
     }
-    @Override
-    public OFStatsType getStatsType() {
-        return OFStatsType.FLOW;
-    }
-
     @Override
     public Set<OFStatsReplyFlags> getFlags() {
         return flags;
@@ -239,14 +224,29 @@ class OFFlowStatsReplyVer11 implements OFFlowStatsReply {
         return this;
     }
     @Override
-    public List<OFFlowStatsEntry> getEntries() {
-        return entries;
+    public OFStatsType getStatsType() {
+        return OFStatsType.FLOW;
     }
 
     @Override
-    public OFFlowStatsReply.Builder setEntries(List<OFFlowStatsEntry> entries) {
-        this.entries = entries;
-        this.entriesSet = true;
+    public OFType getType() {
+        return OFType.STATS_REPLY;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_11;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFFlowStatsReply.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 //

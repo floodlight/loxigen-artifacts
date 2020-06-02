@@ -29,9 +29,9 @@ import java.util.List;
 import io.netty.buffer.ByteBuf;
 
 public interface OFPacketQueue extends OFObject {
-    long getQueueId();
     OFPort getPort() throws UnsupportedOperationException;
     List<OFQueueProp> getProperties();
+    long getQueueId();
     OFVersion getVersion();
 
     void writeTo(ByteBuf channelBuffer);
@@ -39,12 +39,12 @@ public interface OFPacketQueue extends OFObject {
     Builder createBuilder();
     public interface Builder  {
         OFPacketQueue build();
-        long getQueueId();
-        Builder setQueueId(long queueId);
         OFPort getPort() throws UnsupportedOperationException;
         Builder setPort(OFPort port) throws UnsupportedOperationException;
         List<OFQueueProp> getProperties();
         Builder setProperties(List<OFQueueProp> properties);
+        long getQueueId();
+        Builder setQueueId(long queueId);
         OFVersion getVersion();
     }
 }

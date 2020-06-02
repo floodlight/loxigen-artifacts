@@ -97,23 +97,8 @@ class OFBsnLacpStatsEntryVer13 implements OFBsnLacpStatsEntry {
 
     // Accessors for OF message fields
     @Override
-    public OFPort getPortNo() {
-        return portNo;
-    }
-
-    @Override
-    public int getActorSysPriority() {
-        return actorSysPriority;
-    }
-
-    @Override
-    public MacAddress getActorSysMac() {
-        return actorSysMac;
-    }
-
-    @Override
-    public int getActorPortPriority() {
-        return actorPortPriority;
+    public int getActorKey() {
+        return actorKey;
     }
 
     @Override
@@ -122,8 +107,18 @@ class OFBsnLacpStatsEntryVer13 implements OFBsnLacpStatsEntry {
     }
 
     @Override
-    public int getActorKey() {
-        return actorKey;
+    public int getActorPortPriority() {
+        return actorPortPriority;
+    }
+
+    @Override
+    public MacAddress getActorSysMac() {
+        return actorSysMac;
+    }
+
+    @Override
+    public int getActorSysPriority() {
+        return actorSysPriority;
     }
 
     @Override
@@ -132,18 +127,8 @@ class OFBsnLacpStatsEntryVer13 implements OFBsnLacpStatsEntry {
     }
 
     @Override
-    public int getPartnerSysPriority() {
-        return partnerSysPriority;
-    }
-
-    @Override
-    public MacAddress getPartnerSysMac() {
-        return partnerSysMac;
-    }
-
-    @Override
-    public int getPartnerPortPriority() {
-        return partnerPortPriority;
+    public int getPartnerKey() {
+        return partnerKey;
     }
 
     @Override
@@ -152,8 +137,23 @@ class OFBsnLacpStatsEntryVer13 implements OFBsnLacpStatsEntry {
     }
 
     @Override
-    public int getPartnerKey() {
-        return partnerKey;
+    public int getPartnerPortPriority() {
+        return partnerPortPriority;
+    }
+
+    @Override
+    public MacAddress getPartnerSysMac() {
+        return partnerSysMac;
+    }
+
+    @Override
+    public int getPartnerSysPriority() {
+        return partnerSysPriority;
+    }
+
+    @Override
+    public OFPort getPortNo() {
+        return portNo;
     }
 
     @Override
@@ -201,47 +201,14 @@ class OFBsnLacpStatsEntryVer13 implements OFBsnLacpStatsEntry {
         }
 
     @Override
-    public OFPort getPortNo() {
-        return portNo;
+    public int getActorKey() {
+        return actorKey;
     }
 
     @Override
-    public OFBsnLacpStatsEntry.Builder setPortNo(OFPort portNo) {
-        this.portNo = portNo;
-        this.portNoSet = true;
-        return this;
-    }
-    @Override
-    public int getActorSysPriority() {
-        return actorSysPriority;
-    }
-
-    @Override
-    public OFBsnLacpStatsEntry.Builder setActorSysPriority(int actorSysPriority) {
-        this.actorSysPriority = actorSysPriority;
-        this.actorSysPrioritySet = true;
-        return this;
-    }
-    @Override
-    public MacAddress getActorSysMac() {
-        return actorSysMac;
-    }
-
-    @Override
-    public OFBsnLacpStatsEntry.Builder setActorSysMac(MacAddress actorSysMac) {
-        this.actorSysMac = actorSysMac;
-        this.actorSysMacSet = true;
-        return this;
-    }
-    @Override
-    public int getActorPortPriority() {
-        return actorPortPriority;
-    }
-
-    @Override
-    public OFBsnLacpStatsEntry.Builder setActorPortPriority(int actorPortPriority) {
-        this.actorPortPriority = actorPortPriority;
-        this.actorPortPrioritySet = true;
+    public OFBsnLacpStatsEntry.Builder setActorKey(int actorKey) {
+        this.actorKey = actorKey;
+        this.actorKeySet = true;
         return this;
     }
     @Override
@@ -256,14 +223,36 @@ class OFBsnLacpStatsEntryVer13 implements OFBsnLacpStatsEntry {
         return this;
     }
     @Override
-    public int getActorKey() {
-        return actorKey;
+    public int getActorPortPriority() {
+        return actorPortPriority;
     }
 
     @Override
-    public OFBsnLacpStatsEntry.Builder setActorKey(int actorKey) {
-        this.actorKey = actorKey;
-        this.actorKeySet = true;
+    public OFBsnLacpStatsEntry.Builder setActorPortPriority(int actorPortPriority) {
+        this.actorPortPriority = actorPortPriority;
+        this.actorPortPrioritySet = true;
+        return this;
+    }
+    @Override
+    public MacAddress getActorSysMac() {
+        return actorSysMac;
+    }
+
+    @Override
+    public OFBsnLacpStatsEntry.Builder setActorSysMac(MacAddress actorSysMac) {
+        this.actorSysMac = actorSysMac;
+        this.actorSysMacSet = true;
+        return this;
+    }
+    @Override
+    public int getActorSysPriority() {
+        return actorSysPriority;
+    }
+
+    @Override
+    public OFBsnLacpStatsEntry.Builder setActorSysPriority(int actorSysPriority) {
+        this.actorSysPriority = actorSysPriority;
+        this.actorSysPrioritySet = true;
         return this;
     }
     @Override
@@ -278,36 +267,14 @@ class OFBsnLacpStatsEntryVer13 implements OFBsnLacpStatsEntry {
         return this;
     }
     @Override
-    public int getPartnerSysPriority() {
-        return partnerSysPriority;
+    public int getPartnerKey() {
+        return partnerKey;
     }
 
     @Override
-    public OFBsnLacpStatsEntry.Builder setPartnerSysPriority(int partnerSysPriority) {
-        this.partnerSysPriority = partnerSysPriority;
-        this.partnerSysPrioritySet = true;
-        return this;
-    }
-    @Override
-    public MacAddress getPartnerSysMac() {
-        return partnerSysMac;
-    }
-
-    @Override
-    public OFBsnLacpStatsEntry.Builder setPartnerSysMac(MacAddress partnerSysMac) {
-        this.partnerSysMac = partnerSysMac;
-        this.partnerSysMacSet = true;
-        return this;
-    }
-    @Override
-    public int getPartnerPortPriority() {
-        return partnerPortPriority;
-    }
-
-    @Override
-    public OFBsnLacpStatsEntry.Builder setPartnerPortPriority(int partnerPortPriority) {
-        this.partnerPortPriority = partnerPortPriority;
-        this.partnerPortPrioritySet = true;
+    public OFBsnLacpStatsEntry.Builder setPartnerKey(int partnerKey) {
+        this.partnerKey = partnerKey;
+        this.partnerKeySet = true;
         return this;
     }
     @Override
@@ -322,14 +289,47 @@ class OFBsnLacpStatsEntryVer13 implements OFBsnLacpStatsEntry {
         return this;
     }
     @Override
-    public int getPartnerKey() {
-        return partnerKey;
+    public int getPartnerPortPriority() {
+        return partnerPortPriority;
     }
 
     @Override
-    public OFBsnLacpStatsEntry.Builder setPartnerKey(int partnerKey) {
-        this.partnerKey = partnerKey;
-        this.partnerKeySet = true;
+    public OFBsnLacpStatsEntry.Builder setPartnerPortPriority(int partnerPortPriority) {
+        this.partnerPortPriority = partnerPortPriority;
+        this.partnerPortPrioritySet = true;
+        return this;
+    }
+    @Override
+    public MacAddress getPartnerSysMac() {
+        return partnerSysMac;
+    }
+
+    @Override
+    public OFBsnLacpStatsEntry.Builder setPartnerSysMac(MacAddress partnerSysMac) {
+        this.partnerSysMac = partnerSysMac;
+        this.partnerSysMacSet = true;
+        return this;
+    }
+    @Override
+    public int getPartnerSysPriority() {
+        return partnerSysPriority;
+    }
+
+    @Override
+    public OFBsnLacpStatsEntry.Builder setPartnerSysPriority(int partnerSysPriority) {
+        this.partnerSysPriority = partnerSysPriority;
+        this.partnerSysPrioritySet = true;
+        return this;
+    }
+    @Override
+    public OFPort getPortNo() {
+        return portNo;
+    }
+
+    @Override
+    public OFBsnLacpStatsEntry.Builder setPortNo(OFPort portNo) {
+        this.portNo = portNo;
+        this.portNoSet = true;
         return this;
     }
     @Override
@@ -407,47 +407,14 @@ class OFBsnLacpStatsEntryVer13 implements OFBsnLacpStatsEntry {
         private int partnerKey;
 
     @Override
-    public OFPort getPortNo() {
-        return portNo;
+    public int getActorKey() {
+        return actorKey;
     }
 
     @Override
-    public OFBsnLacpStatsEntry.Builder setPortNo(OFPort portNo) {
-        this.portNo = portNo;
-        this.portNoSet = true;
-        return this;
-    }
-    @Override
-    public int getActorSysPriority() {
-        return actorSysPriority;
-    }
-
-    @Override
-    public OFBsnLacpStatsEntry.Builder setActorSysPriority(int actorSysPriority) {
-        this.actorSysPriority = actorSysPriority;
-        this.actorSysPrioritySet = true;
-        return this;
-    }
-    @Override
-    public MacAddress getActorSysMac() {
-        return actorSysMac;
-    }
-
-    @Override
-    public OFBsnLacpStatsEntry.Builder setActorSysMac(MacAddress actorSysMac) {
-        this.actorSysMac = actorSysMac;
-        this.actorSysMacSet = true;
-        return this;
-    }
-    @Override
-    public int getActorPortPriority() {
-        return actorPortPriority;
-    }
-
-    @Override
-    public OFBsnLacpStatsEntry.Builder setActorPortPriority(int actorPortPriority) {
-        this.actorPortPriority = actorPortPriority;
-        this.actorPortPrioritySet = true;
+    public OFBsnLacpStatsEntry.Builder setActorKey(int actorKey) {
+        this.actorKey = actorKey;
+        this.actorKeySet = true;
         return this;
     }
     @Override
@@ -462,14 +429,36 @@ class OFBsnLacpStatsEntryVer13 implements OFBsnLacpStatsEntry {
         return this;
     }
     @Override
-    public int getActorKey() {
-        return actorKey;
+    public int getActorPortPriority() {
+        return actorPortPriority;
     }
 
     @Override
-    public OFBsnLacpStatsEntry.Builder setActorKey(int actorKey) {
-        this.actorKey = actorKey;
-        this.actorKeySet = true;
+    public OFBsnLacpStatsEntry.Builder setActorPortPriority(int actorPortPriority) {
+        this.actorPortPriority = actorPortPriority;
+        this.actorPortPrioritySet = true;
+        return this;
+    }
+    @Override
+    public MacAddress getActorSysMac() {
+        return actorSysMac;
+    }
+
+    @Override
+    public OFBsnLacpStatsEntry.Builder setActorSysMac(MacAddress actorSysMac) {
+        this.actorSysMac = actorSysMac;
+        this.actorSysMacSet = true;
+        return this;
+    }
+    @Override
+    public int getActorSysPriority() {
+        return actorSysPriority;
+    }
+
+    @Override
+    public OFBsnLacpStatsEntry.Builder setActorSysPriority(int actorSysPriority) {
+        this.actorSysPriority = actorSysPriority;
+        this.actorSysPrioritySet = true;
         return this;
     }
     @Override
@@ -484,36 +473,14 @@ class OFBsnLacpStatsEntryVer13 implements OFBsnLacpStatsEntry {
         return this;
     }
     @Override
-    public int getPartnerSysPriority() {
-        return partnerSysPriority;
+    public int getPartnerKey() {
+        return partnerKey;
     }
 
     @Override
-    public OFBsnLacpStatsEntry.Builder setPartnerSysPriority(int partnerSysPriority) {
-        this.partnerSysPriority = partnerSysPriority;
-        this.partnerSysPrioritySet = true;
-        return this;
-    }
-    @Override
-    public MacAddress getPartnerSysMac() {
-        return partnerSysMac;
-    }
-
-    @Override
-    public OFBsnLacpStatsEntry.Builder setPartnerSysMac(MacAddress partnerSysMac) {
-        this.partnerSysMac = partnerSysMac;
-        this.partnerSysMacSet = true;
-        return this;
-    }
-    @Override
-    public int getPartnerPortPriority() {
-        return partnerPortPriority;
-    }
-
-    @Override
-    public OFBsnLacpStatsEntry.Builder setPartnerPortPriority(int partnerPortPriority) {
-        this.partnerPortPriority = partnerPortPriority;
-        this.partnerPortPrioritySet = true;
+    public OFBsnLacpStatsEntry.Builder setPartnerKey(int partnerKey) {
+        this.partnerKey = partnerKey;
+        this.partnerKeySet = true;
         return this;
     }
     @Override
@@ -528,14 +495,47 @@ class OFBsnLacpStatsEntryVer13 implements OFBsnLacpStatsEntry {
         return this;
     }
     @Override
-    public int getPartnerKey() {
-        return partnerKey;
+    public int getPartnerPortPriority() {
+        return partnerPortPriority;
     }
 
     @Override
-    public OFBsnLacpStatsEntry.Builder setPartnerKey(int partnerKey) {
-        this.partnerKey = partnerKey;
-        this.partnerKeySet = true;
+    public OFBsnLacpStatsEntry.Builder setPartnerPortPriority(int partnerPortPriority) {
+        this.partnerPortPriority = partnerPortPriority;
+        this.partnerPortPrioritySet = true;
+        return this;
+    }
+    @Override
+    public MacAddress getPartnerSysMac() {
+        return partnerSysMac;
+    }
+
+    @Override
+    public OFBsnLacpStatsEntry.Builder setPartnerSysMac(MacAddress partnerSysMac) {
+        this.partnerSysMac = partnerSysMac;
+        this.partnerSysMacSet = true;
+        return this;
+    }
+    @Override
+    public int getPartnerSysPriority() {
+        return partnerSysPriority;
+    }
+
+    @Override
+    public OFBsnLacpStatsEntry.Builder setPartnerSysPriority(int partnerSysPriority) {
+        this.partnerSysPriority = partnerSysPriority;
+        this.partnerSysPrioritySet = true;
+        return this;
+    }
+    @Override
+    public OFPort getPortNo() {
+        return portNo;
+    }
+
+    @Override
+    public OFBsnLacpStatsEntry.Builder setPortNo(OFPort portNo) {
+        this.portNo = portNo;
+        this.portNoSet = true;
         return this;
     }
     @Override

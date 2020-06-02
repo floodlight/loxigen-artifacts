@@ -72,23 +72,8 @@ class OFPortDescStatsReplyVer14 implements OFPortDescStatsReply {
 
     // Accessors for OF message fields
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_14;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.STATS_REPLY;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFStatsType getStatsType() {
-        return OFStatsType.PORT_DESC;
+    public List<OFPortDesc> getEntries() {
+        return entries;
     }
 
     @Override
@@ -97,8 +82,23 @@ class OFPortDescStatsReplyVer14 implements OFPortDescStatsReply {
     }
 
     @Override
-    public List<OFPortDesc> getEntries() {
-        return entries;
+    public OFStatsType getStatsType() {
+        return OFStatsType.PORT_DESC;
+    }
+
+    @Override
+    public OFType getType() {
+        return OFType.STATS_REPLY;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_14;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
     }
 
 
@@ -123,31 +123,16 @@ class OFPortDescStatsReplyVer14 implements OFPortDescStatsReply {
         }
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_14;
+    public List<OFPortDesc> getEntries() {
+        return entries;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.STATS_REPLY;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFPortDescStatsReply.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
+    public OFPortDescStatsReply.Builder setEntries(List<OFPortDesc> entries) {
+        this.entries = entries;
+        this.entriesSet = true;
         return this;
     }
-    @Override
-    public OFStatsType getStatsType() {
-        return OFStatsType.PORT_DESC;
-    }
-
     @Override
     public Set<OFStatsReplyFlags> getFlags() {
         return flags;
@@ -160,14 +145,29 @@ class OFPortDescStatsReplyVer14 implements OFPortDescStatsReply {
         return this;
     }
     @Override
-    public List<OFPortDesc> getEntries() {
-        return entries;
+    public OFStatsType getStatsType() {
+        return OFStatsType.PORT_DESC;
     }
 
     @Override
-    public OFPortDescStatsReply.Builder setEntries(List<OFPortDesc> entries) {
-        this.entries = entries;
-        this.entriesSet = true;
+    public OFType getType() {
+        return OFType.STATS_REPLY;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_14;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFPortDescStatsReply.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 
@@ -202,31 +202,16 @@ class OFPortDescStatsReplyVer14 implements OFPortDescStatsReply {
         private List<OFPortDesc> entries;
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_14;
+    public List<OFPortDesc> getEntries() {
+        return entries;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.STATS_REPLY;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFPortDescStatsReply.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
+    public OFPortDescStatsReply.Builder setEntries(List<OFPortDesc> entries) {
+        this.entries = entries;
+        this.entriesSet = true;
         return this;
     }
-    @Override
-    public OFStatsType getStatsType() {
-        return OFStatsType.PORT_DESC;
-    }
-
     @Override
     public Set<OFStatsReplyFlags> getFlags() {
         return flags;
@@ -239,14 +224,29 @@ class OFPortDescStatsReplyVer14 implements OFPortDescStatsReply {
         return this;
     }
     @Override
-    public List<OFPortDesc> getEntries() {
-        return entries;
+    public OFStatsType getStatsType() {
+        return OFStatsType.PORT_DESC;
     }
 
     @Override
-    public OFPortDescStatsReply.Builder setEntries(List<OFPortDesc> entries) {
-        this.entries = entries;
-        this.entriesSet = true;
+    public OFType getType() {
+        return OFType.STATS_REPLY;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_14;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFPortDescStatsReply.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 //

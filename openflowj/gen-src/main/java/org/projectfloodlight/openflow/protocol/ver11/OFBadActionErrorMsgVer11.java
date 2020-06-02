@@ -64,18 +64,13 @@ class OFBadActionErrorMsgVer11 implements OFBadActionErrorMsg {
 
     // Accessors for OF message fields
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_11;
+    public OFBadActionCode getCode() {
+        return code;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.ERROR;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
+    public OFErrorCauseData getData() {
+        return data;
     }
 
     @Override
@@ -84,13 +79,18 @@ class OFBadActionErrorMsgVer11 implements OFBadActionErrorMsg {
     }
 
     @Override
-    public OFBadActionCode getCode() {
-        return code;
+    public OFType getType() {
+        return OFType.ERROR;
     }
 
     @Override
-    public OFErrorCauseData getData() {
-        return data;
+    public OFVersion getVersion() {
+        return OFVersion.OF_11;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
     }
 
 
@@ -115,32 +115,6 @@ class OFBadActionErrorMsgVer11 implements OFBadActionErrorMsg {
         }
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_11;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.ERROR;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFBadActionErrorMsg.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
-        return this;
-    }
-    @Override
-    public OFErrorType getErrType() {
-        return OFErrorType.BAD_ACTION;
-    }
-
-    @Override
     public OFBadActionCode getCode() {
         return code;
     }
@@ -160,6 +134,32 @@ class OFBadActionErrorMsgVer11 implements OFBadActionErrorMsg {
     public OFBadActionErrorMsg.Builder setData(OFErrorCauseData data) {
         this.data = data;
         this.dataSet = true;
+        return this;
+    }
+    @Override
+    public OFErrorType getErrType() {
+        return OFErrorType.BAD_ACTION;
+    }
+
+    @Override
+    public OFType getType() {
+        return OFType.ERROR;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_11;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFBadActionErrorMsg.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 
@@ -194,32 +194,6 @@ class OFBadActionErrorMsgVer11 implements OFBadActionErrorMsg {
         private OFErrorCauseData data;
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_11;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.ERROR;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFBadActionErrorMsg.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
-        return this;
-    }
-    @Override
-    public OFErrorType getErrType() {
-        return OFErrorType.BAD_ACTION;
-    }
-
-    @Override
     public OFBadActionCode getCode() {
         return code;
     }
@@ -239,6 +213,32 @@ class OFBadActionErrorMsgVer11 implements OFBadActionErrorMsg {
     public OFBadActionErrorMsg.Builder setData(OFErrorCauseData data) {
         this.data = data;
         this.dataSet = true;
+        return this;
+    }
+    @Override
+    public OFErrorType getErrType() {
+        return OFErrorType.BAD_ACTION;
+    }
+
+    @Override
+    public OFType getType() {
+        return OFType.ERROR;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_11;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFBadActionErrorMsg.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 //

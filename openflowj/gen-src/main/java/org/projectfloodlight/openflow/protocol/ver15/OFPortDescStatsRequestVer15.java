@@ -68,18 +68,13 @@ class OFPortDescStatsRequestVer15 implements OFPortDescStatsRequest {
 
     // Accessors for OF message fields
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_15;
+    public Set<OFStatsRequestFlags> getFlags() {
+        return flags;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.STATS_REQUEST;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
+    public OFPort getPortNo() {
+        return portNo;
     }
 
     @Override
@@ -88,13 +83,18 @@ class OFPortDescStatsRequestVer15 implements OFPortDescStatsRequest {
     }
 
     @Override
-    public Set<OFStatsRequestFlags> getFlags() {
-        return flags;
+    public OFType getType() {
+        return OFType.STATS_REQUEST;
     }
 
     @Override
-    public OFPort getPortNo() {
-        return portNo;
+    public OFVersion getVersion() {
+        return OFVersion.OF_15;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
     }
 
 
@@ -119,32 +119,6 @@ class OFPortDescStatsRequestVer15 implements OFPortDescStatsRequest {
         }
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_15;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.STATS_REQUEST;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFPortDescStatsRequest.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
-        return this;
-    }
-    @Override
-    public OFStatsType getStatsType() {
-        return OFStatsType.PORT_DESC;
-    }
-
-    @Override
     public Set<OFStatsRequestFlags> getFlags() {
         return flags;
     }
@@ -164,6 +138,32 @@ class OFPortDescStatsRequestVer15 implements OFPortDescStatsRequest {
     public OFPortDescStatsRequest.Builder setPortNo(OFPort portNo) {
         this.portNo = portNo;
         this.portNoSet = true;
+        return this;
+    }
+    @Override
+    public OFStatsType getStatsType() {
+        return OFStatsType.PORT_DESC;
+    }
+
+    @Override
+    public OFType getType() {
+        return OFType.STATS_REQUEST;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_15;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFPortDescStatsRequest.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 
@@ -198,32 +198,6 @@ class OFPortDescStatsRequestVer15 implements OFPortDescStatsRequest {
         private OFPort portNo;
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_15;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.STATS_REQUEST;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFPortDescStatsRequest.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
-        return this;
-    }
-    @Override
-    public OFStatsType getStatsType() {
-        return OFStatsType.PORT_DESC;
-    }
-
-    @Override
     public Set<OFStatsRequestFlags> getFlags() {
         return flags;
     }
@@ -243,6 +217,32 @@ class OFPortDescStatsRequestVer15 implements OFPortDescStatsRequest {
     public OFPortDescStatsRequest.Builder setPortNo(OFPort portNo) {
         this.portNo = portNo;
         this.portNoSet = true;
+        return this;
+    }
+    @Override
+    public OFStatsType getStatsType() {
+        return OFStatsType.PORT_DESC;
+    }
+
+    @Override
+    public OFType getType() {
+        return OFType.STATS_REQUEST;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_15;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFPortDescStatsRequest.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 //

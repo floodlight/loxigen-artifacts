@@ -28,31 +28,31 @@ import org.projectfloodlight.openflow.exceptions.*;
 import io.netty.buffer.ByteBuf;
 
 public interface OFBsnError extends OFObject, OFBsnBaseError {
-    OFVersion getVersion();
-    OFType getType();
-    long getXid();
-    OFErrorType getErrType();
-    int getSubtype();
-    long getExperimenter();
-    String getErrMsg();
     OFErrorCauseData getData();
+    String getErrMsg();
+    OFErrorType getErrType();
+    long getExperimenter();
+    int getSubtype();
+    OFType getType();
+    OFVersion getVersion();
+    long getXid();
 
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();
     public interface Builder extends OFBsnBaseError.Builder {
         OFBsnError build();
-        OFVersion getVersion();
-        OFType getType();
-        long getXid();
-        Builder setXid(long xid);
-        OFErrorType getErrType();
-        int getSubtype();
-        Builder setSubtype(int subtype);
-        long getExperimenter();
-        String getErrMsg();
-        Builder setErrMsg(String errMsg);
         OFErrorCauseData getData();
         Builder setData(OFErrorCauseData data);
+        String getErrMsg();
+        Builder setErrMsg(String errMsg);
+        OFErrorType getErrType();
+        long getExperimenter();
+        int getSubtype();
+        Builder setSubtype(int subtype);
+        OFType getType();
+        OFVersion getVersion();
+        long getXid();
+        Builder setXid(long xid);
     }
 }

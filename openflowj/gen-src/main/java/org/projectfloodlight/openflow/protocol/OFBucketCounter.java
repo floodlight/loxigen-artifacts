@@ -28,8 +28,8 @@ import org.projectfloodlight.openflow.exceptions.*;
 import io.netty.buffer.ByteBuf;
 
 public interface OFBucketCounter extends OFObject {
-    U64 getPacketCount();
     U64 getByteCount();
+    U64 getPacketCount();
     OFVersion getVersion();
 
     void writeTo(ByteBuf channelBuffer);
@@ -37,10 +37,10 @@ public interface OFBucketCounter extends OFObject {
     Builder createBuilder();
     public interface Builder  {
         OFBucketCounter build();
-        U64 getPacketCount();
-        Builder setPacketCount(U64 packetCount);
         U64 getByteCount();
         Builder setByteCount(U64 byteCount);
+        U64 getPacketCount();
+        Builder setPacketCount(U64 packetCount);
         OFVersion getVersion();
     }
 }

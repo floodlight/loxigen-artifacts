@@ -29,34 +29,34 @@ import java.util.List;
 import io.netty.buffer.ByteBuf;
 
 public interface OFBsnGentableEntryAdd extends OFObject, OFBsnHeader {
-    OFVersion getVersion();
-    OFType getType();
-    long getXid();
+    U128 getChecksum();
     long getExperimenter();
+    List<OFBsnTlv> getKey();
     long getSubtype();
     GenTableId getTableId();
-    U128 getChecksum();
-    List<OFBsnTlv> getKey();
+    OFType getType();
     List<OFBsnTlv> getValue();
+    OFVersion getVersion();
+    long getXid();
 
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();
     public interface Builder extends OFBsnHeader.Builder {
         OFBsnGentableEntryAdd build();
-        OFVersion getVersion();
-        OFType getType();
-        long getXid();
-        Builder setXid(long xid);
+        U128 getChecksum();
+        Builder setChecksum(U128 checksum);
         long getExperimenter();
+        List<OFBsnTlv> getKey();
+        Builder setKey(List<OFBsnTlv> key);
         long getSubtype();
         GenTableId getTableId();
         Builder setTableId(GenTableId tableId);
-        U128 getChecksum();
-        Builder setChecksum(U128 checksum);
-        List<OFBsnTlv> getKey();
-        Builder setKey(List<OFBsnTlv> key);
+        OFType getType();
         List<OFBsnTlv> getValue();
         Builder setValue(List<OFBsnTlv> value);
+        OFVersion getVersion();
+        long getXid();
+        Builder setXid(long xid);
     }
 }

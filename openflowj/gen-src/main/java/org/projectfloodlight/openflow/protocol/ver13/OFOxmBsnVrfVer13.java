@@ -67,16 +67,6 @@ class OFOxmBsnVrfVer13 implements OFOxmBsnVrf {
         return value;
     }
 
-    @Override
-    public MatchField<VRF> getMatchField() {
-        return MatchField.BSN_VRF;
-    }
-
-    @Override
-    public boolean isMasked() {
-        return false;
-    }
-
     public OFOxm<VRF> getCanonical() {
         // exact match OXM is always canonical
         return this;
@@ -85,6 +75,16 @@ class OFOxmBsnVrfVer13 implements OFOxmBsnVrf {
     @Override
     public VRF getMask()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property mask not supported in version 1.3");
+    }
+
+    @Override
+    public boolean isMasked() {
+        return false;
+    }
+
+    @Override
+    public MatchField<VRF> getMatchField() {
+        return MatchField.BSN_VRF;
     }
 
     @Override
@@ -126,8 +126,13 @@ class OFOxmBsnVrfVer13 implements OFOxmBsnVrf {
         return this;
     }
     @Override
-    public MatchField<VRF> getMatchField() {
-        return MatchField.BSN_VRF;
+    public OFOxm<VRF> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.3");
+    }
+
+    @Override
+    public VRF getMask()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property mask not supported in version 1.3");
     }
 
     @Override
@@ -136,13 +141,8 @@ class OFOxmBsnVrfVer13 implements OFOxmBsnVrf {
     }
 
     @Override
-    public OFOxm<VRF> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.3");
-    }
-
-    @Override
-    public VRF getMask()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property mask not supported in version 1.3");
+    public MatchField<VRF> getMatchField() {
+        return MatchField.BSN_VRF;
     }
 
     @Override
@@ -188,8 +188,13 @@ class OFOxmBsnVrfVer13 implements OFOxmBsnVrf {
         return this;
     }
     @Override
-    public MatchField<VRF> getMatchField() {
-        return MatchField.BSN_VRF;
+    public OFOxm<VRF> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.3");
+    }
+
+    @Override
+    public VRF getMask()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property mask not supported in version 1.3");
     }
 
     @Override
@@ -198,13 +203,8 @@ class OFOxmBsnVrfVer13 implements OFOxmBsnVrf {
     }
 
     @Override
-    public OFOxm<VRF> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.3");
-    }
-
-    @Override
-    public VRF getMask()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property mask not supported in version 1.3");
+    public MatchField<VRF> getMatchField() {
+        return MatchField.BSN_VRF;
     }
 
     @Override

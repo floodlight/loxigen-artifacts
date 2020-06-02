@@ -79,33 +79,8 @@ class OFPortDescPropOpticalVer14 implements OFPortDescPropOptical {
 
     // Accessors for OF message fields
     @Override
-    public int getType() {
-        return 0x1;
-    }
-
-    @Override
-    public long getSupported() {
-        return supported;
-    }
-
-    @Override
-    public long getTxMinFreqLmda() {
-        return txMinFreqLmda;
-    }
-
-    @Override
-    public long getTxMaxFreqLmda() {
-        return txMaxFreqLmda;
-    }
-
-    @Override
-    public long getTxGridFreqLmda() {
-        return txGridFreqLmda;
-    }
-
-    @Override
-    public long getRxMinFreqLmda() {
-        return rxMinFreqLmda;
+    public long getRxGridFreqLmda() {
+        return rxGridFreqLmda;
     }
 
     @Override
@@ -114,8 +89,33 @@ class OFPortDescPropOpticalVer14 implements OFPortDescPropOptical {
     }
 
     @Override
-    public long getRxGridFreqLmda() {
-        return rxGridFreqLmda;
+    public long getRxMinFreqLmda() {
+        return rxMinFreqLmda;
+    }
+
+    @Override
+    public long getSupported() {
+        return supported;
+    }
+
+    @Override
+    public long getTxGridFreqLmda() {
+        return txGridFreqLmda;
+    }
+
+    @Override
+    public long getTxMaxFreqLmda() {
+        return txMaxFreqLmda;
+    }
+
+    @Override
+    public long getTxMinFreqLmda() {
+        return txMinFreqLmda;
+    }
+
+    @Override
+    public long getTxPwrMax() {
+        return txPwrMax;
     }
 
     @Override
@@ -124,8 +124,8 @@ class OFPortDescPropOpticalVer14 implements OFPortDescPropOptical {
     }
 
     @Override
-    public long getTxPwrMax() {
-        return txPwrMax;
+    public int getType() {
+        return 0x1;
     }
 
     @Override
@@ -167,63 +167,14 @@ class OFPortDescPropOpticalVer14 implements OFPortDescPropOptical {
         }
 
     @Override
-    public int getType() {
-        return 0x1;
+    public long getRxGridFreqLmda() {
+        return rxGridFreqLmda;
     }
 
     @Override
-    public long getSupported() {
-        return supported;
-    }
-
-    @Override
-    public OFPortDescPropOptical.Builder setSupported(long supported) {
-        this.supported = supported;
-        this.supportedSet = true;
-        return this;
-    }
-    @Override
-    public long getTxMinFreqLmda() {
-        return txMinFreqLmda;
-    }
-
-    @Override
-    public OFPortDescPropOptical.Builder setTxMinFreqLmda(long txMinFreqLmda) {
-        this.txMinFreqLmda = txMinFreqLmda;
-        this.txMinFreqLmdaSet = true;
-        return this;
-    }
-    @Override
-    public long getTxMaxFreqLmda() {
-        return txMaxFreqLmda;
-    }
-
-    @Override
-    public OFPortDescPropOptical.Builder setTxMaxFreqLmda(long txMaxFreqLmda) {
-        this.txMaxFreqLmda = txMaxFreqLmda;
-        this.txMaxFreqLmdaSet = true;
-        return this;
-    }
-    @Override
-    public long getTxGridFreqLmda() {
-        return txGridFreqLmda;
-    }
-
-    @Override
-    public OFPortDescPropOptical.Builder setTxGridFreqLmda(long txGridFreqLmda) {
-        this.txGridFreqLmda = txGridFreqLmda;
-        this.txGridFreqLmdaSet = true;
-        return this;
-    }
-    @Override
-    public long getRxMinFreqLmda() {
-        return rxMinFreqLmda;
-    }
-
-    @Override
-    public OFPortDescPropOptical.Builder setRxMinFreqLmda(long rxMinFreqLmda) {
-        this.rxMinFreqLmda = rxMinFreqLmda;
-        this.rxMinFreqLmdaSet = true;
+    public OFPortDescPropOptical.Builder setRxGridFreqLmda(long rxGridFreqLmda) {
+        this.rxGridFreqLmda = rxGridFreqLmda;
+        this.rxGridFreqLmdaSet = true;
         return this;
     }
     @Override
@@ -238,14 +189,69 @@ class OFPortDescPropOpticalVer14 implements OFPortDescPropOptical {
         return this;
     }
     @Override
-    public long getRxGridFreqLmda() {
-        return rxGridFreqLmda;
+    public long getRxMinFreqLmda() {
+        return rxMinFreqLmda;
     }
 
     @Override
-    public OFPortDescPropOptical.Builder setRxGridFreqLmda(long rxGridFreqLmda) {
-        this.rxGridFreqLmda = rxGridFreqLmda;
-        this.rxGridFreqLmdaSet = true;
+    public OFPortDescPropOptical.Builder setRxMinFreqLmda(long rxMinFreqLmda) {
+        this.rxMinFreqLmda = rxMinFreqLmda;
+        this.rxMinFreqLmdaSet = true;
+        return this;
+    }
+    @Override
+    public long getSupported() {
+        return supported;
+    }
+
+    @Override
+    public OFPortDescPropOptical.Builder setSupported(long supported) {
+        this.supported = supported;
+        this.supportedSet = true;
+        return this;
+    }
+    @Override
+    public long getTxGridFreqLmda() {
+        return txGridFreqLmda;
+    }
+
+    @Override
+    public OFPortDescPropOptical.Builder setTxGridFreqLmda(long txGridFreqLmda) {
+        this.txGridFreqLmda = txGridFreqLmda;
+        this.txGridFreqLmdaSet = true;
+        return this;
+    }
+    @Override
+    public long getTxMaxFreqLmda() {
+        return txMaxFreqLmda;
+    }
+
+    @Override
+    public OFPortDescPropOptical.Builder setTxMaxFreqLmda(long txMaxFreqLmda) {
+        this.txMaxFreqLmda = txMaxFreqLmda;
+        this.txMaxFreqLmdaSet = true;
+        return this;
+    }
+    @Override
+    public long getTxMinFreqLmda() {
+        return txMinFreqLmda;
+    }
+
+    @Override
+    public OFPortDescPropOptical.Builder setTxMinFreqLmda(long txMinFreqLmda) {
+        this.txMinFreqLmda = txMinFreqLmda;
+        this.txMinFreqLmdaSet = true;
+        return this;
+    }
+    @Override
+    public long getTxPwrMax() {
+        return txPwrMax;
+    }
+
+    @Override
+    public OFPortDescPropOptical.Builder setTxPwrMax(long txPwrMax) {
+        this.txPwrMax = txPwrMax;
+        this.txPwrMaxSet = true;
         return this;
     }
     @Override
@@ -260,16 +266,10 @@ class OFPortDescPropOpticalVer14 implements OFPortDescPropOptical {
         return this;
     }
     @Override
-    public long getTxPwrMax() {
-        return txPwrMax;
+    public int getType() {
+        return 0x1;
     }
 
-    @Override
-    public OFPortDescPropOptical.Builder setTxPwrMax(long txPwrMax) {
-        this.txPwrMax = txPwrMax;
-        this.txPwrMaxSet = true;
-        return this;
-    }
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_14;
@@ -327,63 +327,14 @@ class OFPortDescPropOpticalVer14 implements OFPortDescPropOptical {
         private long txPwrMax;
 
     @Override
-    public int getType() {
-        return 0x1;
+    public long getRxGridFreqLmda() {
+        return rxGridFreqLmda;
     }
 
     @Override
-    public long getSupported() {
-        return supported;
-    }
-
-    @Override
-    public OFPortDescPropOptical.Builder setSupported(long supported) {
-        this.supported = supported;
-        this.supportedSet = true;
-        return this;
-    }
-    @Override
-    public long getTxMinFreqLmda() {
-        return txMinFreqLmda;
-    }
-
-    @Override
-    public OFPortDescPropOptical.Builder setTxMinFreqLmda(long txMinFreqLmda) {
-        this.txMinFreqLmda = txMinFreqLmda;
-        this.txMinFreqLmdaSet = true;
-        return this;
-    }
-    @Override
-    public long getTxMaxFreqLmda() {
-        return txMaxFreqLmda;
-    }
-
-    @Override
-    public OFPortDescPropOptical.Builder setTxMaxFreqLmda(long txMaxFreqLmda) {
-        this.txMaxFreqLmda = txMaxFreqLmda;
-        this.txMaxFreqLmdaSet = true;
-        return this;
-    }
-    @Override
-    public long getTxGridFreqLmda() {
-        return txGridFreqLmda;
-    }
-
-    @Override
-    public OFPortDescPropOptical.Builder setTxGridFreqLmda(long txGridFreqLmda) {
-        this.txGridFreqLmda = txGridFreqLmda;
-        this.txGridFreqLmdaSet = true;
-        return this;
-    }
-    @Override
-    public long getRxMinFreqLmda() {
-        return rxMinFreqLmda;
-    }
-
-    @Override
-    public OFPortDescPropOptical.Builder setRxMinFreqLmda(long rxMinFreqLmda) {
-        this.rxMinFreqLmda = rxMinFreqLmda;
-        this.rxMinFreqLmdaSet = true;
+    public OFPortDescPropOptical.Builder setRxGridFreqLmda(long rxGridFreqLmda) {
+        this.rxGridFreqLmda = rxGridFreqLmda;
+        this.rxGridFreqLmdaSet = true;
         return this;
     }
     @Override
@@ -398,14 +349,69 @@ class OFPortDescPropOpticalVer14 implements OFPortDescPropOptical {
         return this;
     }
     @Override
-    public long getRxGridFreqLmda() {
-        return rxGridFreqLmda;
+    public long getRxMinFreqLmda() {
+        return rxMinFreqLmda;
     }
 
     @Override
-    public OFPortDescPropOptical.Builder setRxGridFreqLmda(long rxGridFreqLmda) {
-        this.rxGridFreqLmda = rxGridFreqLmda;
-        this.rxGridFreqLmdaSet = true;
+    public OFPortDescPropOptical.Builder setRxMinFreqLmda(long rxMinFreqLmda) {
+        this.rxMinFreqLmda = rxMinFreqLmda;
+        this.rxMinFreqLmdaSet = true;
+        return this;
+    }
+    @Override
+    public long getSupported() {
+        return supported;
+    }
+
+    @Override
+    public OFPortDescPropOptical.Builder setSupported(long supported) {
+        this.supported = supported;
+        this.supportedSet = true;
+        return this;
+    }
+    @Override
+    public long getTxGridFreqLmda() {
+        return txGridFreqLmda;
+    }
+
+    @Override
+    public OFPortDescPropOptical.Builder setTxGridFreqLmda(long txGridFreqLmda) {
+        this.txGridFreqLmda = txGridFreqLmda;
+        this.txGridFreqLmdaSet = true;
+        return this;
+    }
+    @Override
+    public long getTxMaxFreqLmda() {
+        return txMaxFreqLmda;
+    }
+
+    @Override
+    public OFPortDescPropOptical.Builder setTxMaxFreqLmda(long txMaxFreqLmda) {
+        this.txMaxFreqLmda = txMaxFreqLmda;
+        this.txMaxFreqLmdaSet = true;
+        return this;
+    }
+    @Override
+    public long getTxMinFreqLmda() {
+        return txMinFreqLmda;
+    }
+
+    @Override
+    public OFPortDescPropOptical.Builder setTxMinFreqLmda(long txMinFreqLmda) {
+        this.txMinFreqLmda = txMinFreqLmda;
+        this.txMinFreqLmdaSet = true;
+        return this;
+    }
+    @Override
+    public long getTxPwrMax() {
+        return txPwrMax;
+    }
+
+    @Override
+    public OFPortDescPropOptical.Builder setTxPwrMax(long txPwrMax) {
+        this.txPwrMax = txPwrMax;
+        this.txPwrMaxSet = true;
         return this;
     }
     @Override
@@ -420,16 +426,10 @@ class OFPortDescPropOpticalVer14 implements OFPortDescPropOptical {
         return this;
     }
     @Override
-    public long getTxPwrMax() {
-        return txPwrMax;
+    public int getType() {
+        return 0x1;
     }
 
-    @Override
-    public OFPortDescPropOptical.Builder setTxPwrMax(long txPwrMax) {
-        this.txPwrMax = txPwrMax;
-        this.txPwrMaxSet = true;
-        return this;
-    }
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_14;

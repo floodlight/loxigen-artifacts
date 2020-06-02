@@ -53,11 +53,6 @@ class OFActionIdBsnSetTunnelDstVer14 implements OFActionIdBsnSetTunnelDst {
 
     // Accessors for OF message fields
     @Override
-    public OFActionType getType() {
-        return OFActionType.EXPERIMENTER;
-    }
-
-    @Override
     public long getExperimenter() {
         return 0x5c16c7L;
     }
@@ -65,6 +60,11 @@ class OFActionIdBsnSetTunnelDstVer14 implements OFActionIdBsnSetTunnelDst {
     @Override
     public long getSubtype() {
         return 0x2L;
+    }
+
+    @Override
+    public OFActionType getType() {
+        return OFActionType.EXPERIMENTER;
     }
 
     @Override

@@ -28,28 +28,28 @@ import org.projectfloodlight.openflow.exceptions.*;
 import io.netty.buffer.ByteBuf;
 
 public interface OFBsnGetIpMaskReply extends OFObject, OFBsnHeader {
-    OFVersion getVersion();
-    OFType getType();
-    long getXid();
     long getExperimenter();
-    long getSubtype();
     short getIndex();
     long getMask();
+    long getSubtype();
+    OFType getType();
+    OFVersion getVersion();
+    long getXid();
 
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();
     public interface Builder extends OFBsnHeader.Builder {
         OFBsnGetIpMaskReply build();
-        OFVersion getVersion();
-        OFType getType();
-        long getXid();
-        Builder setXid(long xid);
         long getExperimenter();
-        long getSubtype();
         short getIndex();
         Builder setIndex(short index);
         long getMask();
         Builder setMask(long mask);
+        long getSubtype();
+        OFType getType();
+        OFVersion getVersion();
+        long getXid();
+        Builder setXid(long xid);
     }
 }

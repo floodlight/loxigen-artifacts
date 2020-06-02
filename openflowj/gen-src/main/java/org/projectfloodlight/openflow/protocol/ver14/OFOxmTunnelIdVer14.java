@@ -67,16 +67,6 @@ class OFOxmTunnelIdVer14 implements OFOxmTunnelId {
         return value;
     }
 
-    @Override
-    public MatchField<U64> getMatchField() {
-        return MatchField.TUNNEL_ID;
-    }
-
-    @Override
-    public boolean isMasked() {
-        return false;
-    }
-
     public OFOxm<U64> getCanonical() {
         // exact match OXM is always canonical
         return this;
@@ -85,6 +75,16 @@ class OFOxmTunnelIdVer14 implements OFOxmTunnelId {
     @Override
     public U64 getMask()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property mask not supported in version 1.4");
+    }
+
+    @Override
+    public boolean isMasked() {
+        return false;
+    }
+
+    @Override
+    public MatchField<U64> getMatchField() {
+        return MatchField.TUNNEL_ID;
     }
 
     @Override
@@ -126,8 +126,13 @@ class OFOxmTunnelIdVer14 implements OFOxmTunnelId {
         return this;
     }
     @Override
-    public MatchField<U64> getMatchField() {
-        return MatchField.TUNNEL_ID;
+    public OFOxm<U64> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.4");
+    }
+
+    @Override
+    public U64 getMask()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property mask not supported in version 1.4");
     }
 
     @Override
@@ -136,13 +141,8 @@ class OFOxmTunnelIdVer14 implements OFOxmTunnelId {
     }
 
     @Override
-    public OFOxm<U64> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.4");
-    }
-
-    @Override
-    public U64 getMask()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property mask not supported in version 1.4");
+    public MatchField<U64> getMatchField() {
+        return MatchField.TUNNEL_ID;
     }
 
     @Override
@@ -188,8 +188,13 @@ class OFOxmTunnelIdVer14 implements OFOxmTunnelId {
         return this;
     }
     @Override
-    public MatchField<U64> getMatchField() {
-        return MatchField.TUNNEL_ID;
+    public OFOxm<U64> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.4");
+    }
+
+    @Override
+    public U64 getMask()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property mask not supported in version 1.4");
     }
 
     @Override
@@ -198,13 +203,8 @@ class OFOxmTunnelIdVer14 implements OFOxmTunnelId {
     }
 
     @Override
-    public OFOxm<U64> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.4");
-    }
-
-    @Override
-    public U64 getMask()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property mask not supported in version 1.4");
+    public MatchField<U64> getMatchField() {
+        return MatchField.TUNNEL_ID;
     }
 
     @Override

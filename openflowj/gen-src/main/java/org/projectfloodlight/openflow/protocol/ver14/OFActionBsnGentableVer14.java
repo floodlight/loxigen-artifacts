@@ -65,13 +65,13 @@ class OFActionBsnGentableVer14 implements OFActionBsnGentable {
 
     // Accessors for OF message fields
     @Override
-    public OFActionType getType() {
-        return OFActionType.EXPERIMENTER;
+    public long getExperimenter() {
+        return 0x5c16c7L;
     }
 
     @Override
-    public long getExperimenter() {
-        return 0x5c16c7L;
+    public List<OFBsnTlv> getKey() {
+        return key;
     }
 
     @Override
@@ -85,8 +85,8 @@ class OFActionBsnGentableVer14 implements OFActionBsnGentable {
     }
 
     @Override
-    public List<OFBsnTlv> getKey() {
-        return key;
+    public OFActionType getType() {
+        return OFActionType.EXPERIMENTER;
     }
 
     @Override
@@ -114,15 +114,21 @@ class OFActionBsnGentableVer14 implements OFActionBsnGentable {
         }
 
     @Override
-    public OFActionType getType() {
-        return OFActionType.EXPERIMENTER;
-    }
-
-    @Override
     public long getExperimenter() {
         return 0x5c16c7L;
     }
 
+    @Override
+    public List<OFBsnTlv> getKey() {
+        return key;
+    }
+
+    @Override
+    public OFActionBsnGentable.Builder setKey(List<OFBsnTlv> key) {
+        this.key = key;
+        this.keySet = true;
+        return this;
+    }
     @Override
     public long getSubtype() {
         return 0x5L;
@@ -140,16 +146,10 @@ class OFActionBsnGentableVer14 implements OFActionBsnGentable {
         return this;
     }
     @Override
-    public List<OFBsnTlv> getKey() {
-        return key;
+    public OFActionType getType() {
+        return OFActionType.EXPERIMENTER;
     }
 
-    @Override
-    public OFActionBsnGentable.Builder setKey(List<OFBsnTlv> key) {
-        this.key = key;
-        this.keySet = true;
-        return this;
-    }
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_14;
@@ -181,15 +181,21 @@ class OFActionBsnGentableVer14 implements OFActionBsnGentable {
         private List<OFBsnTlv> key;
 
     @Override
-    public OFActionType getType() {
-        return OFActionType.EXPERIMENTER;
-    }
-
-    @Override
     public long getExperimenter() {
         return 0x5c16c7L;
     }
 
+    @Override
+    public List<OFBsnTlv> getKey() {
+        return key;
+    }
+
+    @Override
+    public OFActionBsnGentable.Builder setKey(List<OFBsnTlv> key) {
+        this.key = key;
+        this.keySet = true;
+        return this;
+    }
     @Override
     public long getSubtype() {
         return 0x5L;
@@ -207,16 +213,10 @@ class OFActionBsnGentableVer14 implements OFActionBsnGentable {
         return this;
     }
     @Override
-    public List<OFBsnTlv> getKey() {
-        return key;
+    public OFActionType getType() {
+        return OFActionType.EXPERIMENTER;
     }
 
-    @Override
-    public OFActionBsnGentable.Builder setKey(List<OFBsnTlv> key) {
-        this.key = key;
-        this.keySet = true;
-        return this;
-    }
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_14;

@@ -78,23 +78,8 @@ class OFBsnGenericStatsRequestVer15 implements OFBsnGenericStatsRequest {
 
     // Accessors for OF message fields
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_15;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.STATS_REQUEST;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFStatsType getStatsType() {
-        return OFStatsType.EXPERIMENTER;
+    public long getExperimenter() {
+        return 0x5c16c7L;
     }
 
     @Override
@@ -103,8 +88,13 @@ class OFBsnGenericStatsRequestVer15 implements OFBsnGenericStatsRequest {
     }
 
     @Override
-    public long getExperimenter() {
-        return 0x5c16c7L;
+    public String getName() {
+        return name;
+    }
+
+    @Override
+    public OFStatsType getStatsType() {
+        return OFStatsType.EXPERIMENTER;
     }
 
     @Override
@@ -113,13 +103,23 @@ class OFBsnGenericStatsRequestVer15 implements OFBsnGenericStatsRequest {
     }
 
     @Override
-    public String getName() {
-        return name;
+    public List<OFBsnTlv> getTlvs() {
+        return tlvs;
     }
 
     @Override
-    public List<OFBsnTlv> getTlvs() {
-        return tlvs;
+    public OFType getType() {
+        return OFType.STATS_REQUEST;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_15;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
     }
 
 
@@ -146,29 +146,8 @@ class OFBsnGenericStatsRequestVer15 implements OFBsnGenericStatsRequest {
         }
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_15;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.STATS_REQUEST;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFBsnGenericStatsRequest.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
-        return this;
-    }
-    @Override
-    public OFStatsType getStatsType() {
-        return OFStatsType.EXPERIMENTER;
+    public long getExperimenter() {
+        return 0x5c16c7L;
     }
 
     @Override
@@ -183,16 +162,6 @@ class OFBsnGenericStatsRequestVer15 implements OFBsnGenericStatsRequest {
         return this;
     }
     @Override
-    public long getExperimenter() {
-        return 0x5c16c7L;
-    }
-
-    @Override
-    public long getSubtype() {
-        return 0x10L;
-    }
-
-    @Override
     public String getName() {
         return name;
     }
@@ -204,6 +173,16 @@ class OFBsnGenericStatsRequestVer15 implements OFBsnGenericStatsRequest {
         return this;
     }
     @Override
+    public OFStatsType getStatsType() {
+        return OFStatsType.EXPERIMENTER;
+    }
+
+    @Override
+    public long getSubtype() {
+        return 0x10L;
+    }
+
+    @Override
     public List<OFBsnTlv> getTlvs() {
         return tlvs;
     }
@@ -212,6 +191,27 @@ class OFBsnGenericStatsRequestVer15 implements OFBsnGenericStatsRequest {
     public OFBsnGenericStatsRequest.Builder setTlvs(List<OFBsnTlv> tlvs) {
         this.tlvs = tlvs;
         this.tlvsSet = true;
+        return this;
+    }
+    @Override
+    public OFType getType() {
+        return OFType.STATS_REQUEST;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_15;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFBsnGenericStatsRequest.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 
@@ -252,29 +252,8 @@ class OFBsnGenericStatsRequestVer15 implements OFBsnGenericStatsRequest {
         private List<OFBsnTlv> tlvs;
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_15;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.STATS_REQUEST;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFBsnGenericStatsRequest.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
-        return this;
-    }
-    @Override
-    public OFStatsType getStatsType() {
-        return OFStatsType.EXPERIMENTER;
+    public long getExperimenter() {
+        return 0x5c16c7L;
     }
 
     @Override
@@ -289,16 +268,6 @@ class OFBsnGenericStatsRequestVer15 implements OFBsnGenericStatsRequest {
         return this;
     }
     @Override
-    public long getExperimenter() {
-        return 0x5c16c7L;
-    }
-
-    @Override
-    public long getSubtype() {
-        return 0x10L;
-    }
-
-    @Override
     public String getName() {
         return name;
     }
@@ -310,6 +279,16 @@ class OFBsnGenericStatsRequestVer15 implements OFBsnGenericStatsRequest {
         return this;
     }
     @Override
+    public OFStatsType getStatsType() {
+        return OFStatsType.EXPERIMENTER;
+    }
+
+    @Override
+    public long getSubtype() {
+        return 0x10L;
+    }
+
+    @Override
     public List<OFBsnTlv> getTlvs() {
         return tlvs;
     }
@@ -318,6 +297,27 @@ class OFBsnGenericStatsRequestVer15 implements OFBsnGenericStatsRequest {
     public OFBsnGenericStatsRequest.Builder setTlvs(List<OFBsnTlv> tlvs) {
         this.tlvs = tlvs;
         this.tlvsSet = true;
+        return this;
+    }
+    @Override
+    public OFType getType() {
+        return OFType.STATS_REQUEST;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_15;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFBsnGenericStatsRequest.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 //

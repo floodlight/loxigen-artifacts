@@ -30,10 +30,10 @@ import io.netty.buffer.ByteBuf;
 public interface OFOxmIpv6Flabel extends OFObject, OFOxm<IPv6FlowLabel> {
     long getTypeLen();
     IPv6FlowLabel getValue();
-    MatchField<IPv6FlowLabel> getMatchField();
-    boolean isMasked();
     OFOxm<IPv6FlowLabel> getCanonical();
     IPv6FlowLabel getMask();
+    boolean isMasked();
+    MatchField<IPv6FlowLabel> getMatchField();
     OFVersion getVersion();
 
     void writeTo(ByteBuf channelBuffer);
@@ -44,10 +44,10 @@ public interface OFOxmIpv6Flabel extends OFObject, OFOxm<IPv6FlowLabel> {
         long getTypeLen();
         IPv6FlowLabel getValue();
         Builder setValue(IPv6FlowLabel value);
-        MatchField<IPv6FlowLabel> getMatchField();
-        boolean isMasked();
         OFOxm<IPv6FlowLabel> getCanonical();
         IPv6FlowLabel getMask();
+        boolean isMasked();
+        MatchField<IPv6FlowLabel> getMatchField();
         OFVersion getVersion();
     }
 }

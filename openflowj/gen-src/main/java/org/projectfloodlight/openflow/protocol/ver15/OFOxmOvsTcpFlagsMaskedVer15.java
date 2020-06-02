@@ -64,18 +64,8 @@ class OFOxmOvsTcpFlagsMaskedVer15 implements OFOxmOvsTcpFlagsMasked {
 
     // Accessors for OF message fields
     @Override
-    public long getTypeLen() {
-        return 0xffff5508L;
-    }
-
-    @Override
     public long getExperimenterId() {
         return 0x4f4e4600L;
-    }
-
-    @Override
-    public U16 getValue() {
-        return value;
     }
 
     @Override
@@ -84,13 +74,13 @@ class OFOxmOvsTcpFlagsMaskedVer15 implements OFOxmOvsTcpFlagsMasked {
     }
 
     @Override
-    public MatchField<U16> getMatchField() {
-        return MatchField.OVS_TCP_FLAGS;
+    public long getTypeLen() {
+        return 0xffff5508L;
     }
 
     @Override
-    public boolean isMasked() {
-        return true;
+    public U16 getValue() {
+        return value;
     }
 
     public OFOxm<U16> getCanonical() {
@@ -101,6 +91,16 @@ class OFOxmOvsTcpFlagsMaskedVer15 implements OFOxmOvsTcpFlagsMasked {
         } else {
             return this;
         }
+    }
+
+    @Override
+    public boolean isMasked() {
+        return true;
+    }
+
+    @Override
+    public MatchField<U16> getMatchField() {
+        return MatchField.OVS_TCP_FLAGS;
     }
 
     @Override
@@ -128,13 +128,24 @@ class OFOxmOvsTcpFlagsMaskedVer15 implements OFOxmOvsTcpFlagsMasked {
         }
 
     @Override
-    public long getTypeLen() {
-        return 0xffff5508L;
+    public long getExperimenterId() {
+        return 0x4f4e4600L;
     }
 
     @Override
-    public long getExperimenterId() {
-        return 0x4f4e4600L;
+    public U16 getMask() {
+        return mask;
+    }
+
+    @Override
+    public OFOxmOvsTcpFlagsMasked.Builder setMask(U16 mask) {
+        this.mask = mask;
+        this.maskSet = true;
+        return this;
+    }
+    @Override
+    public long getTypeLen() {
+        return 0xffff5508L;
     }
 
     @Override
@@ -149,19 +160,8 @@ class OFOxmOvsTcpFlagsMaskedVer15 implements OFOxmOvsTcpFlagsMasked {
         return this;
     }
     @Override
-    public U16 getMask() {
-        return mask;
-    }
-
-    @Override
-    public OFOxmOvsTcpFlagsMasked.Builder setMask(U16 mask) {
-        this.mask = mask;
-        this.maskSet = true;
-        return this;
-    }
-    @Override
-    public MatchField<U16> getMatchField() {
-        return MatchField.OVS_TCP_FLAGS;
+    public OFOxm<U16> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.5");
     }
 
     @Override
@@ -170,8 +170,8 @@ class OFOxmOvsTcpFlagsMaskedVer15 implements OFOxmOvsTcpFlagsMasked {
     }
 
     @Override
-    public OFOxm<U16> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.5");
+    public MatchField<U16> getMatchField() {
+        return MatchField.OVS_TCP_FLAGS;
     }
 
     @Override
@@ -207,13 +207,24 @@ class OFOxmOvsTcpFlagsMaskedVer15 implements OFOxmOvsTcpFlagsMasked {
         private U16 mask;
 
     @Override
-    public long getTypeLen() {
-        return 0xffff5508L;
+    public long getExperimenterId() {
+        return 0x4f4e4600L;
     }
 
     @Override
-    public long getExperimenterId() {
-        return 0x4f4e4600L;
+    public U16 getMask() {
+        return mask;
+    }
+
+    @Override
+    public OFOxmOvsTcpFlagsMasked.Builder setMask(U16 mask) {
+        this.mask = mask;
+        this.maskSet = true;
+        return this;
+    }
+    @Override
+    public long getTypeLen() {
+        return 0xffff5508L;
     }
 
     @Override
@@ -228,19 +239,8 @@ class OFOxmOvsTcpFlagsMaskedVer15 implements OFOxmOvsTcpFlagsMasked {
         return this;
     }
     @Override
-    public U16 getMask() {
-        return mask;
-    }
-
-    @Override
-    public OFOxmOvsTcpFlagsMasked.Builder setMask(U16 mask) {
-        this.mask = mask;
-        this.maskSet = true;
-        return this;
-    }
-    @Override
-    public MatchField<U16> getMatchField() {
-        return MatchField.OVS_TCP_FLAGS;
+    public OFOxm<U16> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.5");
     }
 
     @Override
@@ -249,8 +249,8 @@ class OFOxmOvsTcpFlagsMaskedVer15 implements OFOxmOvsTcpFlagsMasked {
     }
 
     @Override
-    public OFOxm<U16> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.5");
+    public MatchField<U16> getMatchField() {
+        return MatchField.OVS_TCP_FLAGS;
     }
 
     @Override

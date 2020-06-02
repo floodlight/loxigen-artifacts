@@ -62,13 +62,13 @@ class OFTableFeaturePropApplySetfieldVer13 implements OFTableFeaturePropApplySet
 
     // Accessors for OF message fields
     @Override
-    public int getType() {
-        return 0xe;
+    public List<U32> getOxmIds() {
+        return oxmIds;
     }
 
     @Override
-    public List<U32> getOxmIds() {
-        return oxmIds;
+    public int getType() {
+        return 0xe;
     }
 
     @Override
@@ -94,11 +94,6 @@ class OFTableFeaturePropApplySetfieldVer13 implements OFTableFeaturePropApplySet
         }
 
     @Override
-    public int getType() {
-        return 0xe;
-    }
-
-    @Override
     public List<U32> getOxmIds() {
         return oxmIds;
     }
@@ -109,6 +104,11 @@ class OFTableFeaturePropApplySetfieldVer13 implements OFTableFeaturePropApplySet
         this.oxmIdsSet = true;
         return this;
     }
+    @Override
+    public int getType() {
+        return 0xe;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_13;
@@ -136,11 +136,6 @@ class OFTableFeaturePropApplySetfieldVer13 implements OFTableFeaturePropApplySet
         private List<U32> oxmIds;
 
     @Override
-    public int getType() {
-        return 0xe;
-    }
-
-    @Override
     public List<U32> getOxmIds() {
         return oxmIds;
     }
@@ -151,6 +146,11 @@ class OFTableFeaturePropApplySetfieldVer13 implements OFTableFeaturePropApplySet
         this.oxmIdsSet = true;
         return this;
     }
+    @Override
+    public int getType() {
+        return 0xe;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_13;

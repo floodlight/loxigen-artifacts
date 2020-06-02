@@ -67,18 +67,8 @@ class OFRequestforwardVer14 implements OFRequestforward {
 
     // Accessors for OF message fields
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_14;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.REQUESTFORWARD;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
+    public byte[] getData() {
+        return data;
     }
 
     @Override
@@ -92,8 +82,18 @@ class OFRequestforwardVer14 implements OFRequestforward {
     }
 
     @Override
-    public byte[] getData() {
-        return data;
+    public OFType getType() {
+        return OFType.REQUESTFORWARD;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_14;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
     }
 
 
@@ -118,24 +118,14 @@ class OFRequestforwardVer14 implements OFRequestforward {
         }
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_14;
+    public byte[] getData() {
+        return data;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.REQUESTFORWARD;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFRequestforward.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
+    public OFRequestforward.Builder setData(byte[] data) {
+        this.data = data;
+        this.dataSet = true;
         return this;
     }
     @Override
@@ -159,14 +149,24 @@ class OFRequestforwardVer14 implements OFRequestforward {
         return this;
     }
     @Override
-    public byte[] getData() {
-        return data;
+    public OFType getType() {
+        return OFType.REQUESTFORWARD;
     }
 
     @Override
-    public OFRequestforward.Builder setData(byte[] data) {
-        this.data = data;
-        this.dataSet = true;
+    public OFVersion getVersion() {
+        return OFVersion.OF_14;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFRequestforward.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 
@@ -199,24 +199,14 @@ class OFRequestforwardVer14 implements OFRequestforward {
         private byte[] data;
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_14;
+    public byte[] getData() {
+        return data;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.REQUESTFORWARD;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFRequestforward.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
+    public OFRequestforward.Builder setData(byte[] data) {
+        this.data = data;
+        this.dataSet = true;
         return this;
     }
     @Override
@@ -240,14 +230,24 @@ class OFRequestforwardVer14 implements OFRequestforward {
         return this;
     }
     @Override
-    public byte[] getData() {
-        return data;
+    public OFType getType() {
+        return OFType.REQUESTFORWARD;
     }
 
     @Override
-    public OFRequestforward.Builder setData(byte[] data) {
-        this.data = data;
-        this.dataSet = true;
+    public OFVersion getVersion() {
+        return OFVersion.OF_14;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFRequestforward.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 //

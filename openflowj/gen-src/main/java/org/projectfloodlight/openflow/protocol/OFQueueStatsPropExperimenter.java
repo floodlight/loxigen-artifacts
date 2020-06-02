@@ -28,9 +28,9 @@ import org.projectfloodlight.openflow.exceptions.*;
 import io.netty.buffer.ByteBuf;
 
 public interface OFQueueStatsPropExperimenter extends OFObject, OFQueueStatsProp {
-    int getType();
-    long getExperimenter();
     long getExpType();
+    long getExperimenter();
+    int getType();
     OFVersion getVersion();
 
     void writeTo(ByteBuf channelBuffer);
@@ -38,10 +38,10 @@ public interface OFQueueStatsPropExperimenter extends OFObject, OFQueueStatsProp
     Builder createBuilder();
     public interface Builder extends OFQueueStatsProp.Builder {
         OFQueueStatsPropExperimenter build();
-        int getType();
-        long getExperimenter();
         long getExpType();
         Builder setExpType(long expType);
+        long getExperimenter();
+        int getType();
         OFVersion getVersion();
     }
 }

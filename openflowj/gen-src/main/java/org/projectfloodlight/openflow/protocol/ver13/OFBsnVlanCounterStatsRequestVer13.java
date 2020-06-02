@@ -65,23 +65,8 @@ class OFBsnVlanCounterStatsRequestVer13 implements OFBsnVlanCounterStatsRequest 
 
     // Accessors for OF message fields
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_13;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.STATS_REQUEST;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFStatsType getStatsType() {
-        return OFStatsType.EXPERIMENTER;
+    public long getExperimenter() {
+        return 0x5c16c7L;
     }
 
     @Override
@@ -90,8 +75,8 @@ class OFBsnVlanCounterStatsRequestVer13 implements OFBsnVlanCounterStatsRequest 
     }
 
     @Override
-    public long getExperimenter() {
-        return 0x5c16c7L;
+    public OFStatsType getStatsType() {
+        return OFStatsType.EXPERIMENTER;
     }
 
     @Override
@@ -100,8 +85,23 @@ class OFBsnVlanCounterStatsRequestVer13 implements OFBsnVlanCounterStatsRequest 
     }
 
     @Override
+    public OFType getType() {
+        return OFType.STATS_REQUEST;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_13;
+    }
+
+    @Override
     public int getVlanVid() {
         return vlanVid;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
     }
 
 
@@ -126,29 +126,8 @@ class OFBsnVlanCounterStatsRequestVer13 implements OFBsnVlanCounterStatsRequest 
         }
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_13;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.STATS_REQUEST;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFBsnVlanCounterStatsRequest.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
-        return this;
-    }
-    @Override
-    public OFStatsType getStatsType() {
-        return OFStatsType.EXPERIMENTER;
+    public long getExperimenter() {
+        return 0x5c16c7L;
     }
 
     @Override
@@ -163,13 +142,23 @@ class OFBsnVlanCounterStatsRequestVer13 implements OFBsnVlanCounterStatsRequest 
         return this;
     }
     @Override
-    public long getExperimenter() {
-        return 0x5c16c7L;
+    public OFStatsType getStatsType() {
+        return OFStatsType.EXPERIMENTER;
     }
 
     @Override
     public long getSubtype() {
         return 0x9L;
+    }
+
+    @Override
+    public OFType getType() {
+        return OFType.STATS_REQUEST;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_13;
     }
 
     @Override
@@ -181,6 +170,17 @@ class OFBsnVlanCounterStatsRequestVer13 implements OFBsnVlanCounterStatsRequest 
     public OFBsnVlanCounterStatsRequest.Builder setVlanVid(int vlanVid) {
         this.vlanVid = vlanVid;
         this.vlanVidSet = true;
+        return this;
+    }
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFBsnVlanCounterStatsRequest.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 
@@ -213,29 +213,8 @@ class OFBsnVlanCounterStatsRequestVer13 implements OFBsnVlanCounterStatsRequest 
         private int vlanVid;
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_13;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.STATS_REQUEST;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFBsnVlanCounterStatsRequest.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
-        return this;
-    }
-    @Override
-    public OFStatsType getStatsType() {
-        return OFStatsType.EXPERIMENTER;
+    public long getExperimenter() {
+        return 0x5c16c7L;
     }
 
     @Override
@@ -250,13 +229,23 @@ class OFBsnVlanCounterStatsRequestVer13 implements OFBsnVlanCounterStatsRequest 
         return this;
     }
     @Override
-    public long getExperimenter() {
-        return 0x5c16c7L;
+    public OFStatsType getStatsType() {
+        return OFStatsType.EXPERIMENTER;
     }
 
     @Override
     public long getSubtype() {
         return 0x9L;
+    }
+
+    @Override
+    public OFType getType() {
+        return OFType.STATS_REQUEST;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_13;
     }
 
     @Override
@@ -268,6 +257,17 @@ class OFBsnVlanCounterStatsRequestVer13 implements OFBsnVlanCounterStatsRequest 
     public OFBsnVlanCounterStatsRequest.Builder setVlanVid(int vlanVid) {
         this.vlanVid = vlanVid;
         this.vlanVidSet = true;
+        return this;
+    }
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFBsnVlanCounterStatsRequest.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 //

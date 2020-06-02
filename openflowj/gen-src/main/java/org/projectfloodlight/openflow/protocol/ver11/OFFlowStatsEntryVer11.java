@@ -107,48 +107,8 @@ class OFFlowStatsEntryVer11 implements OFFlowStatsEntry {
 
     // Accessors for OF message fields
     @Override
-    public TableId getTableId() {
-        return tableId;
-    }
-
-    @Override
-    public long getDurationSec() {
-        return durationSec;
-    }
-
-    @Override
-    public long getDurationNsec() {
-        return durationNsec;
-    }
-
-    @Override
-    public int getPriority() {
-        return priority;
-    }
-
-    @Override
-    public int getIdleTimeout() {
-        return idleTimeout;
-    }
-
-    @Override
-    public int getHardTimeout() {
-        return hardTimeout;
-    }
-
-    @Override
-    public Set<OFFlowModFlags> getFlags()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property flags not supported in version 1.1");
-    }
-
-    @Override
-    public U64 getCookie() {
-        return cookie;
-    }
-
-    @Override
-    public U64 getPacketCount() {
-        return packetCount;
+    public List<OFAction> getActions()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property actions not supported in version 1.1");
     }
 
     @Override
@@ -157,18 +117,33 @@ class OFFlowStatsEntryVer11 implements OFFlowStatsEntry {
     }
 
     @Override
-    public Match getMatch() {
-        return match;
+    public U64 getCookie() {
+        return cookie;
     }
 
     @Override
-    public List<OFInstruction> getInstructions() {
-        return instructions;
+    public long getDurationNsec() {
+        return durationNsec;
     }
 
     @Override
-    public List<OFAction> getActions()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property actions not supported in version 1.1");
+    public long getDurationSec() {
+        return durationSec;
+    }
+
+    @Override
+    public Set<OFFlowModFlags> getFlags()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property flags not supported in version 1.1");
+    }
+
+    @Override
+    public int getHardTimeout() {
+        return hardTimeout;
+    }
+
+    @Override
+    public int getIdleTimeout() {
+        return idleTimeout;
     }
 
     @Override
@@ -177,8 +152,33 @@ class OFFlowStatsEntryVer11 implements OFFlowStatsEntry {
     }
 
     @Override
+    public List<OFInstruction> getInstructions() {
+        return instructions;
+    }
+
+    @Override
+    public Match getMatch() {
+        return match;
+    }
+
+    @Override
+    public U64 getPacketCount() {
+        return packetCount;
+    }
+
+    @Override
+    public int getPriority() {
+        return priority;
+    }
+
+    @Override
     public Stat getStats()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property stats not supported in version 1.1");
+    }
+
+    @Override
+    public TableId getTableId() {
+        return tableId;
     }
 
     @Override
@@ -224,25 +224,34 @@ class OFFlowStatsEntryVer11 implements OFFlowStatsEntry {
         }
 
     @Override
-    public TableId getTableId() {
-        return tableId;
+    public List<OFAction> getActions()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property actions not supported in version 1.1");
     }
 
     @Override
-    public OFFlowStatsEntry.Builder setTableId(TableId tableId) {
-        this.tableId = tableId;
-        this.tableIdSet = true;
+    public OFFlowStatsEntry.Builder setActions(List<OFAction> actions) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property actions not supported in version 1.1");
+    }
+    @Override
+    public U64 getByteCount() {
+        return byteCount;
+    }
+
+    @Override
+    public OFFlowStatsEntry.Builder setByteCount(U64 byteCount) {
+        this.byteCount = byteCount;
+        this.byteCountSet = true;
         return this;
     }
     @Override
-    public long getDurationSec() {
-        return durationSec;
+    public U64 getCookie() {
+        return cookie;
     }
 
     @Override
-    public OFFlowStatsEntry.Builder setDurationSec(long durationSec) {
-        this.durationSec = durationSec;
-        this.durationSecSet = true;
+    public OFFlowStatsEntry.Builder setCookie(U64 cookie) {
+        this.cookie = cookie;
+        this.cookieSet = true;
         return this;
     }
     @Override
@@ -257,14 +266,34 @@ class OFFlowStatsEntryVer11 implements OFFlowStatsEntry {
         return this;
     }
     @Override
-    public int getPriority() {
-        return priority;
+    public long getDurationSec() {
+        return durationSec;
     }
 
     @Override
-    public OFFlowStatsEntry.Builder setPriority(int priority) {
-        this.priority = priority;
-        this.prioritySet = true;
+    public OFFlowStatsEntry.Builder setDurationSec(long durationSec) {
+        this.durationSec = durationSec;
+        this.durationSecSet = true;
+        return this;
+    }
+    @Override
+    public Set<OFFlowModFlags> getFlags()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property flags not supported in version 1.1");
+    }
+
+    @Override
+    public OFFlowStatsEntry.Builder setFlags(Set<OFFlowModFlags> flags) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property flags not supported in version 1.1");
+    }
+    @Override
+    public int getHardTimeout() {
+        return hardTimeout;
+    }
+
+    @Override
+    public OFFlowStatsEntry.Builder setHardTimeout(int hardTimeout) {
+        this.hardTimeout = hardTimeout;
+        this.hardTimeoutSet = true;
         return this;
     }
     @Override
@@ -279,56 +308,23 @@ class OFFlowStatsEntryVer11 implements OFFlowStatsEntry {
         return this;
     }
     @Override
-    public int getHardTimeout() {
-        return hardTimeout;
+    public int getImportance()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property importance not supported in version 1.1");
     }
 
     @Override
-    public OFFlowStatsEntry.Builder setHardTimeout(int hardTimeout) {
-        this.hardTimeout = hardTimeout;
-        this.hardTimeoutSet = true;
-        return this;
+    public OFFlowStatsEntry.Builder setImportance(int importance) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property importance not supported in version 1.1");
     }
     @Override
-    public Set<OFFlowModFlags> getFlags()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property flags not supported in version 1.1");
+    public List<OFInstruction> getInstructions() {
+        return instructions;
     }
 
     @Override
-    public OFFlowStatsEntry.Builder setFlags(Set<OFFlowModFlags> flags) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property flags not supported in version 1.1");
-    }
-    @Override
-    public U64 getCookie() {
-        return cookie;
-    }
-
-    @Override
-    public OFFlowStatsEntry.Builder setCookie(U64 cookie) {
-        this.cookie = cookie;
-        this.cookieSet = true;
-        return this;
-    }
-    @Override
-    public U64 getPacketCount() {
-        return packetCount;
-    }
-
-    @Override
-    public OFFlowStatsEntry.Builder setPacketCount(U64 packetCount) {
-        this.packetCount = packetCount;
-        this.packetCountSet = true;
-        return this;
-    }
-    @Override
-    public U64 getByteCount() {
-        return byteCount;
-    }
-
-    @Override
-    public OFFlowStatsEntry.Builder setByteCount(U64 byteCount) {
-        this.byteCount = byteCount;
-        this.byteCountSet = true;
+    public OFFlowStatsEntry.Builder setInstructions(List<OFInstruction> instructions) {
+        this.instructions = instructions;
+        this.instructionsSet = true;
         return this;
     }
     @Override
@@ -343,33 +339,26 @@ class OFFlowStatsEntryVer11 implements OFFlowStatsEntry {
         return this;
     }
     @Override
-    public List<OFInstruction> getInstructions() {
-        return instructions;
+    public U64 getPacketCount() {
+        return packetCount;
     }
 
     @Override
-    public OFFlowStatsEntry.Builder setInstructions(List<OFInstruction> instructions) {
-        this.instructions = instructions;
-        this.instructionsSet = true;
+    public OFFlowStatsEntry.Builder setPacketCount(U64 packetCount) {
+        this.packetCount = packetCount;
+        this.packetCountSet = true;
         return this;
     }
     @Override
-    public List<OFAction> getActions()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property actions not supported in version 1.1");
+    public int getPriority() {
+        return priority;
     }
 
     @Override
-    public OFFlowStatsEntry.Builder setActions(List<OFAction> actions) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property actions not supported in version 1.1");
-    }
-    @Override
-    public int getImportance()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property importance not supported in version 1.1");
-    }
-
-    @Override
-    public OFFlowStatsEntry.Builder setImportance(int importance) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property importance not supported in version 1.1");
+    public OFFlowStatsEntry.Builder setPriority(int priority) {
+        this.priority = priority;
+        this.prioritySet = true;
+        return this;
     }
     @Override
     public Stat getStats()throws UnsupportedOperationException {
@@ -379,6 +368,17 @@ class OFFlowStatsEntryVer11 implements OFFlowStatsEntry {
     @Override
     public OFFlowStatsEntry.Builder setStats(Stat stats) throws UnsupportedOperationException {
             throw new UnsupportedOperationException("Property stats not supported in version 1.1");
+    }
+    @Override
+    public TableId getTableId() {
+        return tableId;
+    }
+
+    @Override
+    public OFFlowStatsEntry.Builder setTableId(TableId tableId) {
+        this.tableId = tableId;
+        this.tableIdSet = true;
+        return this;
     }
     @Override
     public OFVersion getVersion() {
@@ -457,25 +457,34 @@ class OFFlowStatsEntryVer11 implements OFFlowStatsEntry {
         private List<OFInstruction> instructions;
 
     @Override
-    public TableId getTableId() {
-        return tableId;
+    public List<OFAction> getActions()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property actions not supported in version 1.1");
     }
 
     @Override
-    public OFFlowStatsEntry.Builder setTableId(TableId tableId) {
-        this.tableId = tableId;
-        this.tableIdSet = true;
+    public OFFlowStatsEntry.Builder setActions(List<OFAction> actions) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property actions not supported in version 1.1");
+    }
+    @Override
+    public U64 getByteCount() {
+        return byteCount;
+    }
+
+    @Override
+    public OFFlowStatsEntry.Builder setByteCount(U64 byteCount) {
+        this.byteCount = byteCount;
+        this.byteCountSet = true;
         return this;
     }
     @Override
-    public long getDurationSec() {
-        return durationSec;
+    public U64 getCookie() {
+        return cookie;
     }
 
     @Override
-    public OFFlowStatsEntry.Builder setDurationSec(long durationSec) {
-        this.durationSec = durationSec;
-        this.durationSecSet = true;
+    public OFFlowStatsEntry.Builder setCookie(U64 cookie) {
+        this.cookie = cookie;
+        this.cookieSet = true;
         return this;
     }
     @Override
@@ -490,14 +499,34 @@ class OFFlowStatsEntryVer11 implements OFFlowStatsEntry {
         return this;
     }
     @Override
-    public int getPriority() {
-        return priority;
+    public long getDurationSec() {
+        return durationSec;
     }
 
     @Override
-    public OFFlowStatsEntry.Builder setPriority(int priority) {
-        this.priority = priority;
-        this.prioritySet = true;
+    public OFFlowStatsEntry.Builder setDurationSec(long durationSec) {
+        this.durationSec = durationSec;
+        this.durationSecSet = true;
+        return this;
+    }
+    @Override
+    public Set<OFFlowModFlags> getFlags()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property flags not supported in version 1.1");
+    }
+
+    @Override
+    public OFFlowStatsEntry.Builder setFlags(Set<OFFlowModFlags> flags) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property flags not supported in version 1.1");
+    }
+    @Override
+    public int getHardTimeout() {
+        return hardTimeout;
+    }
+
+    @Override
+    public OFFlowStatsEntry.Builder setHardTimeout(int hardTimeout) {
+        this.hardTimeout = hardTimeout;
+        this.hardTimeoutSet = true;
         return this;
     }
     @Override
@@ -512,56 +541,23 @@ class OFFlowStatsEntryVer11 implements OFFlowStatsEntry {
         return this;
     }
     @Override
-    public int getHardTimeout() {
-        return hardTimeout;
+    public int getImportance()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property importance not supported in version 1.1");
     }
 
     @Override
-    public OFFlowStatsEntry.Builder setHardTimeout(int hardTimeout) {
-        this.hardTimeout = hardTimeout;
-        this.hardTimeoutSet = true;
-        return this;
+    public OFFlowStatsEntry.Builder setImportance(int importance) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property importance not supported in version 1.1");
     }
     @Override
-    public Set<OFFlowModFlags> getFlags()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property flags not supported in version 1.1");
+    public List<OFInstruction> getInstructions() {
+        return instructions;
     }
 
     @Override
-    public OFFlowStatsEntry.Builder setFlags(Set<OFFlowModFlags> flags) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property flags not supported in version 1.1");
-    }
-    @Override
-    public U64 getCookie() {
-        return cookie;
-    }
-
-    @Override
-    public OFFlowStatsEntry.Builder setCookie(U64 cookie) {
-        this.cookie = cookie;
-        this.cookieSet = true;
-        return this;
-    }
-    @Override
-    public U64 getPacketCount() {
-        return packetCount;
-    }
-
-    @Override
-    public OFFlowStatsEntry.Builder setPacketCount(U64 packetCount) {
-        this.packetCount = packetCount;
-        this.packetCountSet = true;
-        return this;
-    }
-    @Override
-    public U64 getByteCount() {
-        return byteCount;
-    }
-
-    @Override
-    public OFFlowStatsEntry.Builder setByteCount(U64 byteCount) {
-        this.byteCount = byteCount;
-        this.byteCountSet = true;
+    public OFFlowStatsEntry.Builder setInstructions(List<OFInstruction> instructions) {
+        this.instructions = instructions;
+        this.instructionsSet = true;
         return this;
     }
     @Override
@@ -576,33 +572,26 @@ class OFFlowStatsEntryVer11 implements OFFlowStatsEntry {
         return this;
     }
     @Override
-    public List<OFInstruction> getInstructions() {
-        return instructions;
+    public U64 getPacketCount() {
+        return packetCount;
     }
 
     @Override
-    public OFFlowStatsEntry.Builder setInstructions(List<OFInstruction> instructions) {
-        this.instructions = instructions;
-        this.instructionsSet = true;
+    public OFFlowStatsEntry.Builder setPacketCount(U64 packetCount) {
+        this.packetCount = packetCount;
+        this.packetCountSet = true;
         return this;
     }
     @Override
-    public List<OFAction> getActions()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property actions not supported in version 1.1");
+    public int getPriority() {
+        return priority;
     }
 
     @Override
-    public OFFlowStatsEntry.Builder setActions(List<OFAction> actions) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property actions not supported in version 1.1");
-    }
-    @Override
-    public int getImportance()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property importance not supported in version 1.1");
-    }
-
-    @Override
-    public OFFlowStatsEntry.Builder setImportance(int importance) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property importance not supported in version 1.1");
+    public OFFlowStatsEntry.Builder setPriority(int priority) {
+        this.priority = priority;
+        this.prioritySet = true;
+        return this;
     }
     @Override
     public Stat getStats()throws UnsupportedOperationException {
@@ -612,6 +601,17 @@ class OFFlowStatsEntryVer11 implements OFFlowStatsEntry {
     @Override
     public OFFlowStatsEntry.Builder setStats(Stat stats) throws UnsupportedOperationException {
             throw new UnsupportedOperationException("Property stats not supported in version 1.1");
+    }
+    @Override
+    public TableId getTableId() {
+        return tableId;
+    }
+
+    @Override
+    public OFFlowStatsEntry.Builder setTableId(TableId tableId) {
+        this.tableId = tableId;
+        this.tableIdSet = true;
+        return this;
     }
     @Override
     public OFVersion getVersion() {

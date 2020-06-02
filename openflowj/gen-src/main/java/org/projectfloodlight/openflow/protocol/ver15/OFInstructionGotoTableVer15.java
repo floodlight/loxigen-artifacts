@@ -58,13 +58,13 @@ class OFInstructionGotoTableVer15 implements OFInstructionGotoTable {
 
     // Accessors for OF message fields
     @Override
-    public OFInstructionType getType() {
-        return OFInstructionType.GOTO_TABLE;
+    public TableId getTableId() {
+        return tableId;
     }
 
     @Override
-    public TableId getTableId() {
-        return tableId;
+    public OFInstructionType getType() {
+        return OFInstructionType.GOTO_TABLE;
     }
 
     @Override
@@ -90,11 +90,6 @@ class OFInstructionGotoTableVer15 implements OFInstructionGotoTable {
         }
 
     @Override
-    public OFInstructionType getType() {
-        return OFInstructionType.GOTO_TABLE;
-    }
-
-    @Override
     public TableId getTableId() {
         return tableId;
     }
@@ -105,6 +100,11 @@ class OFInstructionGotoTableVer15 implements OFInstructionGotoTable {
         this.tableIdSet = true;
         return this;
     }
+    @Override
+    public OFInstructionType getType() {
+        return OFInstructionType.GOTO_TABLE;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_15;
@@ -132,11 +132,6 @@ class OFInstructionGotoTableVer15 implements OFInstructionGotoTable {
         private TableId tableId;
 
     @Override
-    public OFInstructionType getType() {
-        return OFInstructionType.GOTO_TABLE;
-    }
-
-    @Override
     public TableId getTableId() {
         return tableId;
     }
@@ -147,6 +142,11 @@ class OFInstructionGotoTableVer15 implements OFInstructionGotoTable {
         this.tableIdSet = true;
         return this;
     }
+    @Override
+    public OFInstructionType getType() {
+        return OFInstructionType.GOTO_TABLE;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_15;

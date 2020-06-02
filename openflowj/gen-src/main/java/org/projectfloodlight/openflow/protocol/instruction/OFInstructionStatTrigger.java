@@ -30,9 +30,9 @@ import java.util.List;
 import io.netty.buffer.ByteBuf;
 
 public interface OFInstructionStatTrigger extends OFObject, OFInstruction {
-    OFInstructionType getType();
     Set<OFStatTriggerFlags> getFlags();
     OFOxsList getThresholds();
+    OFInstructionType getType();
     OFVersion getVersion();
 
     void writeTo(ByteBuf channelBuffer);
@@ -40,11 +40,11 @@ public interface OFInstructionStatTrigger extends OFObject, OFInstruction {
     Builder createBuilder();
     public interface Builder extends OFInstruction.Builder {
         OFInstructionStatTrigger build();
-        OFInstructionType getType();
         Set<OFStatTriggerFlags> getFlags();
         Builder setFlags(Set<OFStatTriggerFlags> flags);
         OFOxsList getThresholds();
         Builder setThresholds(OFOxsList thresholds);
+        OFInstructionType getType();
         OFVersion getVersion();
     }
 }

@@ -59,13 +59,13 @@ class OFBsnTlvStripVlanOnEgressVer14 implements OFBsnTlvStripVlanOnEgress {
 
     // Accessors for OF message fields
     @Override
-    public int getType() {
-        return 0x49;
+    public Set<OFBsnStripVlan> getFlags() {
+        return flags;
     }
 
     @Override
-    public Set<OFBsnStripVlan> getFlags() {
-        return flags;
+    public int getType() {
+        return 0x49;
     }
 
     @Override
@@ -91,11 +91,6 @@ class OFBsnTlvStripVlanOnEgressVer14 implements OFBsnTlvStripVlanOnEgress {
         }
 
     @Override
-    public int getType() {
-        return 0x49;
-    }
-
-    @Override
     public Set<OFBsnStripVlan> getFlags() {
         return flags;
     }
@@ -106,6 +101,11 @@ class OFBsnTlvStripVlanOnEgressVer14 implements OFBsnTlvStripVlanOnEgress {
         this.flagsSet = true;
         return this;
     }
+    @Override
+    public int getType() {
+        return 0x49;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_14;
@@ -133,11 +133,6 @@ class OFBsnTlvStripVlanOnEgressVer14 implements OFBsnTlvStripVlanOnEgress {
         private Set<OFBsnStripVlan> flags;
 
     @Override
-    public int getType() {
-        return 0x49;
-    }
-
-    @Override
     public Set<OFBsnStripVlan> getFlags() {
         return flags;
     }
@@ -148,6 +143,11 @@ class OFBsnTlvStripVlanOnEgressVer14 implements OFBsnTlvStripVlanOnEgress {
         this.flagsSet = true;
         return this;
     }
+    @Override
+    public int getType() {
+        return 0x49;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_14;

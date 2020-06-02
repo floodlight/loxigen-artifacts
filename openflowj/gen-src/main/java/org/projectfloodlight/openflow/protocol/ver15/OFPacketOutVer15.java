@@ -84,18 +84,8 @@ class OFPacketOutVer15 implements OFPacketOut {
 
     // Accessors for OF message fields
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_15;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.PACKET_OUT;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
+    public List<OFAction> getActions() {
+        return actions;
     }
 
     @Override
@@ -104,23 +94,33 @@ class OFPacketOutVer15 implements OFPacketOut {
     }
 
     @Override
-    public OFPort getInPort()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property inPort not supported in version 1.5");
-    }
-
-    @Override
-    public List<OFAction> getActions() {
-        return actions;
-    }
-
-    @Override
     public byte[] getData() {
         return data;
     }
 
     @Override
+    public OFPort getInPort()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property inPort not supported in version 1.5");
+    }
+
+    @Override
     public Match getMatch() {
         return match;
+    }
+
+    @Override
+    public OFType getType() {
+        return OFType.PACKET_OUT;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_15;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
     }
 
 
@@ -149,24 +149,14 @@ class OFPacketOutVer15 implements OFPacketOut {
         }
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_15;
+    public List<OFAction> getActions() {
+        return actions;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.PACKET_OUT;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFPacketOut.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
+    public OFPacketOut.Builder setActions(List<OFAction> actions) {
+        this.actions = actions;
+        this.actionsSet = true;
         return this;
     }
     @Override
@@ -181,26 +171,6 @@ class OFPacketOutVer15 implements OFPacketOut {
         return this;
     }
     @Override
-    public OFPort getInPort()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property inPort not supported in version 1.5");
-    }
-
-    @Override
-    public OFPacketOut.Builder setInPort(OFPort inPort) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property inPort not supported in version 1.5");
-    }
-    @Override
-    public List<OFAction> getActions() {
-        return actions;
-    }
-
-    @Override
-    public OFPacketOut.Builder setActions(List<OFAction> actions) {
-        this.actions = actions;
-        this.actionsSet = true;
-        return this;
-    }
-    @Override
     public byte[] getData() {
         return data;
     }
@@ -212,6 +182,15 @@ class OFPacketOutVer15 implements OFPacketOut {
         return this;
     }
     @Override
+    public OFPort getInPort()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property inPort not supported in version 1.5");
+    }
+
+    @Override
+    public OFPacketOut.Builder setInPort(OFPort inPort) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property inPort not supported in version 1.5");
+    }
+    @Override
     public Match getMatch() {
         return match;
     }
@@ -220,6 +199,27 @@ class OFPacketOutVer15 implements OFPacketOut {
     public OFPacketOut.Builder setMatch(Match match) {
         this.match = match;
         this.matchSet = true;
+        return this;
+    }
+    @Override
+    public OFType getType() {
+        return OFType.PACKET_OUT;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_15;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFPacketOut.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 
@@ -266,24 +266,14 @@ class OFPacketOutVer15 implements OFPacketOut {
         private byte[] data;
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_15;
+    public List<OFAction> getActions() {
+        return actions;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.PACKET_OUT;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFPacketOut.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
+    public OFPacketOut.Builder setActions(List<OFAction> actions) {
+        this.actions = actions;
+        this.actionsSet = true;
         return this;
     }
     @Override
@@ -298,26 +288,6 @@ class OFPacketOutVer15 implements OFPacketOut {
         return this;
     }
     @Override
-    public OFPort getInPort()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property inPort not supported in version 1.5");
-    }
-
-    @Override
-    public OFPacketOut.Builder setInPort(OFPort inPort) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property inPort not supported in version 1.5");
-    }
-    @Override
-    public List<OFAction> getActions() {
-        return actions;
-    }
-
-    @Override
-    public OFPacketOut.Builder setActions(List<OFAction> actions) {
-        this.actions = actions;
-        this.actionsSet = true;
-        return this;
-    }
-    @Override
     public byte[] getData() {
         return data;
     }
@@ -329,6 +299,15 @@ class OFPacketOutVer15 implements OFPacketOut {
         return this;
     }
     @Override
+    public OFPort getInPort()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property inPort not supported in version 1.5");
+    }
+
+    @Override
+    public OFPacketOut.Builder setInPort(OFPort inPort) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property inPort not supported in version 1.5");
+    }
+    @Override
     public Match getMatch() {
         return match;
     }
@@ -337,6 +316,27 @@ class OFPacketOutVer15 implements OFPacketOut {
     public OFPacketOut.Builder setMatch(Match match) {
         this.match = match;
         this.matchSet = true;
+        return this;
+    }
+    @Override
+    public OFType getType() {
+        return OFType.PACKET_OUT;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_15;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFPacketOut.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 //

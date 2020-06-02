@@ -55,8 +55,13 @@ class OFBsnBwEnableGetRequestVer15 implements OFBsnBwEnableGetRequest {
 
     // Accessors for OF message fields
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_15;
+    public long getExperimenter() {
+        return 0x5c16c7L;
+    }
+
+    @Override
+    public long getSubtype() {
+        return 0x13L;
     }
 
     @Override
@@ -65,18 +70,13 @@ class OFBsnBwEnableGetRequestVer15 implements OFBsnBwEnableGetRequest {
     }
 
     @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_15;
+    }
+
+    @Override
     public long getXid() {
         return xid;
-    }
-
-    @Override
-    public long getExperimenter() {
-        return 0x5c16c7L;
-    }
-
-    @Override
-    public long getSubtype() {
-        return 0x13L;
     }
 
 
@@ -97,13 +97,23 @@ class OFBsnBwEnableGetRequestVer15 implements OFBsnBwEnableGetRequest {
         }
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_15;
+    public long getExperimenter() {
+        return 0x5c16c7L;
+    }
+
+    @Override
+    public long getSubtype() {
+        return 0x13L;
     }
 
     @Override
     public OFType getType() {
         return OFType.EXPERIMENTER;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_15;
     }
 
     @Override
@@ -117,16 +127,6 @@ class OFBsnBwEnableGetRequestVer15 implements OFBsnBwEnableGetRequest {
         this.xidSet = true;
         return this;
     }
-    @Override
-    public long getExperimenter() {
-        return 0x5c16c7L;
-    }
-
-    @Override
-    public long getSubtype() {
-        return 0x13L;
-    }
-
 
 
         @Override
@@ -147,13 +147,23 @@ class OFBsnBwEnableGetRequestVer15 implements OFBsnBwEnableGetRequest {
         private long xid;
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_15;
+    public long getExperimenter() {
+        return 0x5c16c7L;
+    }
+
+    @Override
+    public long getSubtype() {
+        return 0x13L;
     }
 
     @Override
     public OFType getType() {
         return OFType.EXPERIMENTER;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_15;
     }
 
     @Override
@@ -167,16 +177,6 @@ class OFBsnBwEnableGetRequestVer15 implements OFBsnBwEnableGetRequest {
         this.xidSet = true;
         return this;
     }
-    @Override
-    public long getExperimenter() {
-        return 0x5c16c7L;
-    }
-
-    @Override
-    public long getSubtype() {
-        return 0x13L;
-    }
-
 //
         @Override
         public OFBsnBwEnableGetRequest build() {

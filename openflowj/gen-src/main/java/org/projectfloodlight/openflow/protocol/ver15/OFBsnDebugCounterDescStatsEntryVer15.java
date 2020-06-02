@@ -75,13 +75,13 @@ class OFBsnDebugCounterDescStatsEntryVer15 implements OFBsnDebugCounterDescStats
     }
 
     @Override
-    public String getName() {
-        return name;
+    public String getDescription() {
+        return description;
     }
 
     @Override
-    public String getDescription() {
-        return description;
+    public String getName() {
+        return name;
     }
 
     @Override
@@ -122,17 +122,6 @@ class OFBsnDebugCounterDescStatsEntryVer15 implements OFBsnDebugCounterDescStats
         return this;
     }
     @Override
-    public String getName() {
-        return name;
-    }
-
-    @Override
-    public OFBsnDebugCounterDescStatsEntry.Builder setName(String name) {
-        this.name = name;
-        this.nameSet = true;
-        return this;
-    }
-    @Override
     public String getDescription() {
         return description;
     }
@@ -141,6 +130,17 @@ class OFBsnDebugCounterDescStatsEntryVer15 implements OFBsnDebugCounterDescStats
     public OFBsnDebugCounterDescStatsEntry.Builder setDescription(String description) {
         this.description = description;
         this.descriptionSet = true;
+        return this;
+    }
+    @Override
+    public String getName() {
+        return name;
+    }
+
+    @Override
+    public OFBsnDebugCounterDescStatsEntry.Builder setName(String name) {
+        this.name = name;
+        this.nameSet = true;
         return this;
     }
     @Override
@@ -193,17 +193,6 @@ class OFBsnDebugCounterDescStatsEntryVer15 implements OFBsnDebugCounterDescStats
         return this;
     }
     @Override
-    public String getName() {
-        return name;
-    }
-
-    @Override
-    public OFBsnDebugCounterDescStatsEntry.Builder setName(String name) {
-        this.name = name;
-        this.nameSet = true;
-        return this;
-    }
-    @Override
     public String getDescription() {
         return description;
     }
@@ -212,6 +201,17 @@ class OFBsnDebugCounterDescStatsEntryVer15 implements OFBsnDebugCounterDescStats
     public OFBsnDebugCounterDescStatsEntry.Builder setDescription(String description) {
         this.description = description;
         this.descriptionSet = true;
+        return this;
+    }
+    @Override
+    public String getName() {
+        return name;
+    }
+
+    @Override
+    public OFBsnDebugCounterDescStatsEntry.Builder setName(String name) {
+        this.name = name;
+        this.nameSet = true;
         return this;
     }
     @Override

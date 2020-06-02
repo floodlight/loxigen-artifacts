@@ -64,11 +64,6 @@ class OFInstructionWriteMetadataVer14 implements OFInstructionWriteMetadata {
 
     // Accessors for OF message fields
     @Override
-    public OFInstructionType getType() {
-        return OFInstructionType.WRITE_METADATA;
-    }
-
-    @Override
     public U64 getMetadata() {
         return metadata;
     }
@@ -76,6 +71,11 @@ class OFInstructionWriteMetadataVer14 implements OFInstructionWriteMetadata {
     @Override
     public U64 getMetadataMask() {
         return metadataMask;
+    }
+
+    @Override
+    public OFInstructionType getType() {
+        return OFInstructionType.WRITE_METADATA;
     }
 
     @Override
@@ -103,11 +103,6 @@ class OFInstructionWriteMetadataVer14 implements OFInstructionWriteMetadata {
         }
 
     @Override
-    public OFInstructionType getType() {
-        return OFInstructionType.WRITE_METADATA;
-    }
-
-    @Override
     public U64 getMetadata() {
         return metadata;
     }
@@ -129,6 +124,11 @@ class OFInstructionWriteMetadataVer14 implements OFInstructionWriteMetadata {
         this.metadataMaskSet = true;
         return this;
     }
+    @Override
+    public OFInstructionType getType() {
+        return OFInstructionType.WRITE_METADATA;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_14;
@@ -162,11 +162,6 @@ class OFInstructionWriteMetadataVer14 implements OFInstructionWriteMetadata {
         private U64 metadataMask;
 
     @Override
-    public OFInstructionType getType() {
-        return OFInstructionType.WRITE_METADATA;
-    }
-
-    @Override
     public U64 getMetadata() {
         return metadata;
     }
@@ -188,6 +183,11 @@ class OFInstructionWriteMetadataVer14 implements OFInstructionWriteMetadata {
         this.metadataMaskSet = true;
         return this;
     }
+    @Override
+    public OFInstructionType getType() {
+        return OFInstructionType.WRITE_METADATA;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_14;

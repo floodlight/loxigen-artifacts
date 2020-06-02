@@ -58,13 +58,13 @@ class OFActionPopMplsVer14 implements OFActionPopMpls {
 
     // Accessors for OF message fields
     @Override
-    public OFActionType getType() {
-        return OFActionType.POP_MPLS;
+    public EthType getEthertype() {
+        return ethertype;
     }
 
     @Override
-    public EthType getEthertype() {
-        return ethertype;
+    public OFActionType getType() {
+        return OFActionType.POP_MPLS;
     }
 
     @Override
@@ -90,11 +90,6 @@ class OFActionPopMplsVer14 implements OFActionPopMpls {
         }
 
     @Override
-    public OFActionType getType() {
-        return OFActionType.POP_MPLS;
-    }
-
-    @Override
     public EthType getEthertype() {
         return ethertype;
     }
@@ -105,6 +100,11 @@ class OFActionPopMplsVer14 implements OFActionPopMpls {
         this.ethertypeSet = true;
         return this;
     }
+    @Override
+    public OFActionType getType() {
+        return OFActionType.POP_MPLS;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_14;
@@ -132,11 +132,6 @@ class OFActionPopMplsVer14 implements OFActionPopMpls {
         private EthType ethertype;
 
     @Override
-    public OFActionType getType() {
-        return OFActionType.POP_MPLS;
-    }
-
-    @Override
     public EthType getEthertype() {
         return ethertype;
     }
@@ -147,6 +142,11 @@ class OFActionPopMplsVer14 implements OFActionPopMpls {
         this.ethertypeSet = true;
         return this;
     }
+    @Override
+    public OFActionType getType() {
+        return OFActionType.POP_MPLS;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_14;

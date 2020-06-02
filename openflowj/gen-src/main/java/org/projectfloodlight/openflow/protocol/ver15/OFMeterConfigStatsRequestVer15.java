@@ -65,18 +65,13 @@ class OFMeterConfigStatsRequestVer15 implements OFMeterConfigStatsRequest {
 
     // Accessors for OF message fields
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_15;
+    public Set<OFStatsRequestFlags> getFlags() {
+        return flags;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.STATS_REQUEST;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
+    public long getMeterId() {
+        return meterId;
     }
 
     @Override
@@ -85,13 +80,18 @@ class OFMeterConfigStatsRequestVer15 implements OFMeterConfigStatsRequest {
     }
 
     @Override
-    public Set<OFStatsRequestFlags> getFlags() {
-        return flags;
+    public OFType getType() {
+        return OFType.STATS_REQUEST;
     }
 
     @Override
-    public long getMeterId() {
-        return meterId;
+    public OFVersion getVersion() {
+        return OFVersion.OF_15;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
     }
 
 
@@ -116,32 +116,6 @@ class OFMeterConfigStatsRequestVer15 implements OFMeterConfigStatsRequest {
         }
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_15;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.STATS_REQUEST;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFMeterConfigStatsRequest.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
-        return this;
-    }
-    @Override
-    public OFStatsType getStatsType() {
-        return OFStatsType.METER_CONFIG;
-    }
-
-    @Override
     public Set<OFStatsRequestFlags> getFlags() {
         return flags;
     }
@@ -161,6 +135,32 @@ class OFMeterConfigStatsRequestVer15 implements OFMeterConfigStatsRequest {
     public OFMeterConfigStatsRequest.Builder setMeterId(long meterId) {
         this.meterId = meterId;
         this.meterIdSet = true;
+        return this;
+    }
+    @Override
+    public OFStatsType getStatsType() {
+        return OFStatsType.METER_CONFIG;
+    }
+
+    @Override
+    public OFType getType() {
+        return OFType.STATS_REQUEST;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_15;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFMeterConfigStatsRequest.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 
@@ -193,32 +193,6 @@ class OFMeterConfigStatsRequestVer15 implements OFMeterConfigStatsRequest {
         private long meterId;
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_15;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.STATS_REQUEST;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFMeterConfigStatsRequest.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
-        return this;
-    }
-    @Override
-    public OFStatsType getStatsType() {
-        return OFStatsType.METER_CONFIG;
-    }
-
-    @Override
     public Set<OFStatsRequestFlags> getFlags() {
         return flags;
     }
@@ -238,6 +212,32 @@ class OFMeterConfigStatsRequestVer15 implements OFMeterConfigStatsRequest {
     public OFMeterConfigStatsRequest.Builder setMeterId(long meterId) {
         this.meterId = meterId;
         this.meterIdSet = true;
+        return this;
+    }
+    @Override
+    public OFStatsType getStatsType() {
+        return OFStatsType.METER_CONFIG;
+    }
+
+    @Override
+    public OFType getType() {
+        return OFType.STATS_REQUEST;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_15;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFMeterConfigStatsRequest.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 //

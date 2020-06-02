@@ -64,18 +64,13 @@ class OFSwitchConfigFailedErrorMsgVer13 implements OFSwitchConfigFailedErrorMsg 
 
     // Accessors for OF message fields
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_13;
+    public OFSwitchConfigFailedCode getCode() {
+        return code;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.ERROR;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
+    public OFErrorCauseData getData() {
+        return data;
     }
 
     @Override
@@ -84,13 +79,18 @@ class OFSwitchConfigFailedErrorMsgVer13 implements OFSwitchConfigFailedErrorMsg 
     }
 
     @Override
-    public OFSwitchConfigFailedCode getCode() {
-        return code;
+    public OFType getType() {
+        return OFType.ERROR;
     }
 
     @Override
-    public OFErrorCauseData getData() {
-        return data;
+    public OFVersion getVersion() {
+        return OFVersion.OF_13;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
     }
 
 
@@ -115,32 +115,6 @@ class OFSwitchConfigFailedErrorMsgVer13 implements OFSwitchConfigFailedErrorMsg 
         }
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_13;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.ERROR;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFSwitchConfigFailedErrorMsg.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
-        return this;
-    }
-    @Override
-    public OFErrorType getErrType() {
-        return OFErrorType.SWITCH_CONFIG_FAILED;
-    }
-
-    @Override
     public OFSwitchConfigFailedCode getCode() {
         return code;
     }
@@ -160,6 +134,32 @@ class OFSwitchConfigFailedErrorMsgVer13 implements OFSwitchConfigFailedErrorMsg 
     public OFSwitchConfigFailedErrorMsg.Builder setData(OFErrorCauseData data) {
         this.data = data;
         this.dataSet = true;
+        return this;
+    }
+    @Override
+    public OFErrorType getErrType() {
+        return OFErrorType.SWITCH_CONFIG_FAILED;
+    }
+
+    @Override
+    public OFType getType() {
+        return OFType.ERROR;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_13;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFSwitchConfigFailedErrorMsg.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 
@@ -194,32 +194,6 @@ class OFSwitchConfigFailedErrorMsgVer13 implements OFSwitchConfigFailedErrorMsg 
         private OFErrorCauseData data;
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_13;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.ERROR;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFSwitchConfigFailedErrorMsg.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
-        return this;
-    }
-    @Override
-    public OFErrorType getErrType() {
-        return OFErrorType.SWITCH_CONFIG_FAILED;
-    }
-
-    @Override
     public OFSwitchConfigFailedCode getCode() {
         return code;
     }
@@ -239,6 +213,32 @@ class OFSwitchConfigFailedErrorMsgVer13 implements OFSwitchConfigFailedErrorMsg 
     public OFSwitchConfigFailedErrorMsg.Builder setData(OFErrorCauseData data) {
         this.data = data;
         this.dataSet = true;
+        return this;
+    }
+    @Override
+    public OFErrorType getErrType() {
+        return OFErrorType.SWITCH_CONFIG_FAILED;
+    }
+
+    @Override
+    public OFType getType() {
+        return OFType.ERROR;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_13;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFSwitchConfigFailedErrorMsg.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 //

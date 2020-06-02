@@ -72,23 +72,8 @@ class OFGroupDescStatsReplyVer11 implements OFGroupDescStatsReply {
 
     // Accessors for OF message fields
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_11;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.STATS_REPLY;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFStatsType getStatsType() {
-        return OFStatsType.GROUP_DESC;
+    public List<OFGroupDescStatsEntry> getEntries() {
+        return entries;
     }
 
     @Override
@@ -97,8 +82,23 @@ class OFGroupDescStatsReplyVer11 implements OFGroupDescStatsReply {
     }
 
     @Override
-    public List<OFGroupDescStatsEntry> getEntries() {
-        return entries;
+    public OFStatsType getStatsType() {
+        return OFStatsType.GROUP_DESC;
+    }
+
+    @Override
+    public OFType getType() {
+        return OFType.STATS_REPLY;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_11;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
     }
 
 
@@ -123,31 +123,16 @@ class OFGroupDescStatsReplyVer11 implements OFGroupDescStatsReply {
         }
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_11;
+    public List<OFGroupDescStatsEntry> getEntries() {
+        return entries;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.STATS_REPLY;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFGroupDescStatsReply.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
+    public OFGroupDescStatsReply.Builder setEntries(List<OFGroupDescStatsEntry> entries) {
+        this.entries = entries;
+        this.entriesSet = true;
         return this;
     }
-    @Override
-    public OFStatsType getStatsType() {
-        return OFStatsType.GROUP_DESC;
-    }
-
     @Override
     public Set<OFStatsReplyFlags> getFlags() {
         return flags;
@@ -160,14 +145,29 @@ class OFGroupDescStatsReplyVer11 implements OFGroupDescStatsReply {
         return this;
     }
     @Override
-    public List<OFGroupDescStatsEntry> getEntries() {
-        return entries;
+    public OFStatsType getStatsType() {
+        return OFStatsType.GROUP_DESC;
     }
 
     @Override
-    public OFGroupDescStatsReply.Builder setEntries(List<OFGroupDescStatsEntry> entries) {
-        this.entries = entries;
-        this.entriesSet = true;
+    public OFType getType() {
+        return OFType.STATS_REPLY;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_11;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFGroupDescStatsReply.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 
@@ -202,31 +202,16 @@ class OFGroupDescStatsReplyVer11 implements OFGroupDescStatsReply {
         private List<OFGroupDescStatsEntry> entries;
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_11;
+    public List<OFGroupDescStatsEntry> getEntries() {
+        return entries;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.STATS_REPLY;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFGroupDescStatsReply.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
+    public OFGroupDescStatsReply.Builder setEntries(List<OFGroupDescStatsEntry> entries) {
+        this.entries = entries;
+        this.entriesSet = true;
         return this;
     }
-    @Override
-    public OFStatsType getStatsType() {
-        return OFStatsType.GROUP_DESC;
-    }
-
     @Override
     public Set<OFStatsReplyFlags> getFlags() {
         return flags;
@@ -239,14 +224,29 @@ class OFGroupDescStatsReplyVer11 implements OFGroupDescStatsReply {
         return this;
     }
     @Override
-    public List<OFGroupDescStatsEntry> getEntries() {
-        return entries;
+    public OFStatsType getStatsType() {
+        return OFStatsType.GROUP_DESC;
     }
 
     @Override
-    public OFGroupDescStatsReply.Builder setEntries(List<OFGroupDescStatsEntry> entries) {
-        this.entries = entries;
-        this.entriesSet = true;
+    public OFType getType() {
+        return OFType.STATS_REPLY;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_11;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFGroupDescStatsReply.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 //

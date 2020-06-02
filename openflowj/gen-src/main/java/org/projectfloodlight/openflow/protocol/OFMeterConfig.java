@@ -25,14 +25,14 @@ import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
-import java.util.Set;
 import java.util.List;
+import java.util.Set;
 import io.netty.buffer.ByteBuf;
 
 public interface OFMeterConfig extends OFObject {
+    List<OFMeterBand> getEntries();
     Set<OFMeterFlags> getFlags();
     long getMeterId();
-    List<OFMeterBand> getEntries();
     OFVersion getVersion();
 
     void writeTo(ByteBuf channelBuffer);
@@ -40,12 +40,12 @@ public interface OFMeterConfig extends OFObject {
     Builder createBuilder();
     public interface Builder  {
         OFMeterConfig build();
+        List<OFMeterBand> getEntries();
+        Builder setEntries(List<OFMeterBand> entries);
         Set<OFMeterFlags> getFlags();
         Builder setFlags(Set<OFMeterFlags> flags);
         long getMeterId();
         Builder setMeterId(long meterId);
-        List<OFMeterBand> getEntries();
-        Builder setEntries(List<OFMeterBand> entries);
         OFVersion getVersion();
     }
 }

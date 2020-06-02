@@ -62,13 +62,13 @@ class OFTableFeaturePropApplyActionsMissVer14 implements OFTableFeaturePropApply
 
     // Accessors for OF message fields
     @Override
-    public int getType() {
-        return 0x7;
+    public List<OFActionId> getActionIds() {
+        return actionIds;
     }
 
     @Override
-    public List<OFActionId> getActionIds() {
-        return actionIds;
+    public int getType() {
+        return 0x7;
     }
 
     @Override
@@ -94,11 +94,6 @@ class OFTableFeaturePropApplyActionsMissVer14 implements OFTableFeaturePropApply
         }
 
     @Override
-    public int getType() {
-        return 0x7;
-    }
-
-    @Override
     public List<OFActionId> getActionIds() {
         return actionIds;
     }
@@ -109,6 +104,11 @@ class OFTableFeaturePropApplyActionsMissVer14 implements OFTableFeaturePropApply
         this.actionIdsSet = true;
         return this;
     }
+    @Override
+    public int getType() {
+        return 0x7;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_14;
@@ -136,11 +136,6 @@ class OFTableFeaturePropApplyActionsMissVer14 implements OFTableFeaturePropApply
         private List<OFActionId> actionIds;
 
     @Override
-    public int getType() {
-        return 0x7;
-    }
-
-    @Override
     public List<OFActionId> getActionIds() {
         return actionIds;
     }
@@ -151,6 +146,11 @@ class OFTableFeaturePropApplyActionsMissVer14 implements OFTableFeaturePropApply
         this.actionIdsSet = true;
         return this;
     }
+    @Override
+    public int getType() {
+        return 0x7;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_14;

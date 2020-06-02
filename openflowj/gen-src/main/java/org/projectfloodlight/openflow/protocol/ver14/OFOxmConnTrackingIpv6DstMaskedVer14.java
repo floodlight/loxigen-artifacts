@@ -64,6 +64,11 @@ class OFOxmConnTrackingIpv6DstMaskedVer14 implements OFOxmConnTrackingIpv6DstMas
 
     // Accessors for OF message fields
     @Override
+    public IPv6Address getMask() {
+        return mask;
+    }
+
+    @Override
     public long getTypeLen() {
         return 0x1f720L;
     }
@@ -71,21 +76,6 @@ class OFOxmConnTrackingIpv6DstMaskedVer14 implements OFOxmConnTrackingIpv6DstMas
     @Override
     public IPv6Address getValue() {
         return value;
-    }
-
-    @Override
-    public IPv6Address getMask() {
-        return mask;
-    }
-
-    @Override
-    public MatchField<IPv6Address> getMatchField() {
-        return MatchField.CONN_TRACKING_IPV6_DST;
-    }
-
-    @Override
-    public boolean isMasked() {
-        return true;
     }
 
     public OFOxm<IPv6Address> getCanonical() {
@@ -96,6 +86,16 @@ class OFOxmConnTrackingIpv6DstMaskedVer14 implements OFOxmConnTrackingIpv6DstMas
         } else {
             return this;
         }
+    }
+
+    @Override
+    public boolean isMasked() {
+        return true;
+    }
+
+    @Override
+    public MatchField<IPv6Address> getMatchField() {
+        return MatchField.CONN_TRACKING_IPV6_DST;
     }
 
     @Override
@@ -123,6 +123,17 @@ class OFOxmConnTrackingIpv6DstMaskedVer14 implements OFOxmConnTrackingIpv6DstMas
         }
 
     @Override
+    public IPv6Address getMask() {
+        return mask;
+    }
+
+    @Override
+    public OFOxmConnTrackingIpv6DstMasked.Builder setMask(IPv6Address mask) {
+        this.mask = mask;
+        this.maskSet = true;
+        return this;
+    }
+    @Override
     public long getTypeLen() {
         return 0x1f720L;
     }
@@ -139,19 +150,8 @@ class OFOxmConnTrackingIpv6DstMaskedVer14 implements OFOxmConnTrackingIpv6DstMas
         return this;
     }
     @Override
-    public IPv6Address getMask() {
-        return mask;
-    }
-
-    @Override
-    public OFOxmConnTrackingIpv6DstMasked.Builder setMask(IPv6Address mask) {
-        this.mask = mask;
-        this.maskSet = true;
-        return this;
-    }
-    @Override
-    public MatchField<IPv6Address> getMatchField() {
-        return MatchField.CONN_TRACKING_IPV6_DST;
+    public OFOxm<IPv6Address> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.4");
     }
 
     @Override
@@ -160,8 +160,8 @@ class OFOxmConnTrackingIpv6DstMaskedVer14 implements OFOxmConnTrackingIpv6DstMas
     }
 
     @Override
-    public OFOxm<IPv6Address> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.4");
+    public MatchField<IPv6Address> getMatchField() {
+        return MatchField.CONN_TRACKING_IPV6_DST;
     }
 
     @Override
@@ -197,6 +197,17 @@ class OFOxmConnTrackingIpv6DstMaskedVer14 implements OFOxmConnTrackingIpv6DstMas
         private IPv6Address mask;
 
     @Override
+    public IPv6Address getMask() {
+        return mask;
+    }
+
+    @Override
+    public OFOxmConnTrackingIpv6DstMasked.Builder setMask(IPv6Address mask) {
+        this.mask = mask;
+        this.maskSet = true;
+        return this;
+    }
+    @Override
     public long getTypeLen() {
         return 0x1f720L;
     }
@@ -213,19 +224,8 @@ class OFOxmConnTrackingIpv6DstMaskedVer14 implements OFOxmConnTrackingIpv6DstMas
         return this;
     }
     @Override
-    public IPv6Address getMask() {
-        return mask;
-    }
-
-    @Override
-    public OFOxmConnTrackingIpv6DstMasked.Builder setMask(IPv6Address mask) {
-        this.mask = mask;
-        this.maskSet = true;
-        return this;
-    }
-    @Override
-    public MatchField<IPv6Address> getMatchField() {
-        return MatchField.CONN_TRACKING_IPV6_DST;
+    public OFOxm<IPv6Address> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.4");
     }
 
     @Override
@@ -234,8 +234,8 @@ class OFOxmConnTrackingIpv6DstMaskedVer14 implements OFOxmConnTrackingIpv6DstMas
     }
 
     @Override
-    public OFOxm<IPv6Address> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.4");
+    public MatchField<IPv6Address> getMatchField() {
+        return MatchField.CONN_TRACKING_IPV6_DST;
     }
 
     @Override

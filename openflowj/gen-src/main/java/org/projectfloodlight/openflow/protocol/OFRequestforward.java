@@ -28,27 +28,27 @@ import org.projectfloodlight.openflow.exceptions.*;
 import io.netty.buffer.ByteBuf;
 
 public interface OFRequestforward extends OFObject, OFMessage {
-    OFVersion getVersion();
-    OFType getType();
-    long getXid();
+    byte[] getData() throws UnsupportedOperationException;
     OFMessage getRequest() throws UnsupportedOperationException;
     long getRole() throws UnsupportedOperationException;
-    byte[] getData() throws UnsupportedOperationException;
+    OFType getType();
+    OFVersion getVersion();
+    long getXid();
 
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();
     public interface Builder extends OFMessage.Builder {
         OFRequestforward build();
-        OFVersion getVersion();
-        OFType getType();
-        long getXid();
-        Builder setXid(long xid);
+        byte[] getData() throws UnsupportedOperationException;
+        Builder setData(byte[] data) throws UnsupportedOperationException;
         OFMessage getRequest() throws UnsupportedOperationException;
         Builder setRequest(OFMessage request) throws UnsupportedOperationException;
         long getRole() throws UnsupportedOperationException;
         Builder setRole(long role) throws UnsupportedOperationException;
-        byte[] getData() throws UnsupportedOperationException;
-        Builder setData(byte[] data) throws UnsupportedOperationException;
+        OFType getType();
+        OFVersion getVersion();
+        long getXid();
+        Builder setXid(long xid);
     }
 }

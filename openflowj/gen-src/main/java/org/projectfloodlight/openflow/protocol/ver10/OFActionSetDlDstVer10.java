@@ -58,13 +58,13 @@ class OFActionSetDlDstVer10 implements OFActionSetDlDst {
 
     // Accessors for OF message fields
     @Override
-    public OFActionType getType() {
-        return OFActionType.SET_DL_DST;
+    public MacAddress getDlAddr() {
+        return dlAddr;
     }
 
     @Override
-    public MacAddress getDlAddr() {
-        return dlAddr;
+    public OFActionType getType() {
+        return OFActionType.SET_DL_DST;
     }
 
     @Override
@@ -90,11 +90,6 @@ class OFActionSetDlDstVer10 implements OFActionSetDlDst {
         }
 
     @Override
-    public OFActionType getType() {
-        return OFActionType.SET_DL_DST;
-    }
-
-    @Override
     public MacAddress getDlAddr() {
         return dlAddr;
     }
@@ -105,6 +100,11 @@ class OFActionSetDlDstVer10 implements OFActionSetDlDst {
         this.dlAddrSet = true;
         return this;
     }
+    @Override
+    public OFActionType getType() {
+        return OFActionType.SET_DL_DST;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_10;
@@ -132,11 +132,6 @@ class OFActionSetDlDstVer10 implements OFActionSetDlDst {
         private MacAddress dlAddr;
 
     @Override
-    public OFActionType getType() {
-        return OFActionType.SET_DL_DST;
-    }
-
-    @Override
     public MacAddress getDlAddr() {
         return dlAddr;
     }
@@ -147,6 +142,11 @@ class OFActionSetDlDstVer10 implements OFActionSetDlDst {
         this.dlAddrSet = true;
         return this;
     }
+    @Override
+    public OFActionType getType() {
+        return OFActionType.SET_DL_DST;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_10;

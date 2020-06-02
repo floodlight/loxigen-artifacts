@@ -90,23 +90,43 @@ class OFFlowRemovedVer15 implements OFFlowRemoved {
 
     // Accessors for OF message fields
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_15;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.FLOW_REMOVED;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
+    public U64 getByteCount()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property byteCount not supported in version 1.5");
     }
 
     @Override
     public U64 getCookie() {
         return cookie;
+    }
+
+    @Override
+    public long getDurationNsec()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property durationNsec not supported in version 1.5");
+    }
+
+    @Override
+    public long getDurationSec()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property durationSec not supported in version 1.5");
+    }
+
+    @Override
+    public int getHardTimeout() {
+        return hardTimeout;
+    }
+
+    @Override
+    public int getIdleTimeout() {
+        return idleTimeout;
+    }
+
+    @Override
+    public Match getMatch() {
+        return match;
+    }
+
+    @Override
+    public U64 getPacketCount()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property packetCount not supported in version 1.5");
     }
 
     @Override
@@ -120,48 +140,28 @@ class OFFlowRemovedVer15 implements OFFlowRemoved {
     }
 
     @Override
+    public Stat getStats() {
+        return stats;
+    }
+
+    @Override
     public TableId getTableId() {
         return tableId;
     }
 
     @Override
-    public long getDurationSec()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property durationSec not supported in version 1.5");
+    public OFType getType() {
+        return OFType.FLOW_REMOVED;
     }
 
     @Override
-    public long getDurationNsec()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property durationNsec not supported in version 1.5");
+    public OFVersion getVersion() {
+        return OFVersion.OF_15;
     }
 
     @Override
-    public int getIdleTimeout() {
-        return idleTimeout;
-    }
-
-    @Override
-    public int getHardTimeout() {
-        return hardTimeout;
-    }
-
-    @Override
-    public U64 getPacketCount()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property packetCount not supported in version 1.5");
-    }
-
-    @Override
-    public U64 getByteCount()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property byteCount not supported in version 1.5");
-    }
-
-    @Override
-    public Match getMatch() {
-        return match;
-    }
-
-    @Override
-    public Stat getStats() {
-        return stats;
+    public long getXid() {
+        return xid;
     }
 
 
@@ -198,25 +198,13 @@ class OFFlowRemovedVer15 implements OFFlowRemoved {
         }
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_15;
+    public U64 getByteCount()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property byteCount not supported in version 1.5");
     }
 
     @Override
-    public OFType getType() {
-        return OFType.FLOW_REMOVED;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFFlowRemoved.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
-        return this;
+    public OFFlowRemoved.Builder setByteCount(U64 byteCount) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property byteCount not supported in version 1.5");
     }
     @Override
     public U64 getCookie() {
@@ -228,6 +216,66 @@ class OFFlowRemovedVer15 implements OFFlowRemoved {
         this.cookie = cookie;
         this.cookieSet = true;
         return this;
+    }
+    @Override
+    public long getDurationNsec()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property durationNsec not supported in version 1.5");
+    }
+
+    @Override
+    public OFFlowRemoved.Builder setDurationNsec(long durationNsec) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property durationNsec not supported in version 1.5");
+    }
+    @Override
+    public long getDurationSec()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property durationSec not supported in version 1.5");
+    }
+
+    @Override
+    public OFFlowRemoved.Builder setDurationSec(long durationSec) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property durationSec not supported in version 1.5");
+    }
+    @Override
+    public int getHardTimeout() {
+        return hardTimeout;
+    }
+
+    @Override
+    public OFFlowRemoved.Builder setHardTimeout(int hardTimeout) {
+        this.hardTimeout = hardTimeout;
+        this.hardTimeoutSet = true;
+        return this;
+    }
+    @Override
+    public int getIdleTimeout() {
+        return idleTimeout;
+    }
+
+    @Override
+    public OFFlowRemoved.Builder setIdleTimeout(int idleTimeout) {
+        this.idleTimeout = idleTimeout;
+        this.idleTimeoutSet = true;
+        return this;
+    }
+    @Override
+    public Match getMatch() {
+        return match;
+    }
+
+    @Override
+    public OFFlowRemoved.Builder setMatch(Match match) {
+        this.match = match;
+        this.matchSet = true;
+        return this;
+    }
+    @Override
+    public U64 getPacketCount()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property packetCount not supported in version 1.5");
+    }
+
+    @Override
+    public OFFlowRemoved.Builder setPacketCount(U64 packetCount) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property packetCount not supported in version 1.5");
     }
     @Override
     public int getPriority() {
@@ -252,6 +300,17 @@ class OFFlowRemovedVer15 implements OFFlowRemoved {
         return this;
     }
     @Override
+    public Stat getStats() {
+        return stats;
+    }
+
+    @Override
+    public OFFlowRemoved.Builder setStats(Stat stats) {
+        this.stats = stats;
+        this.statsSet = true;
+        return this;
+    }
+    @Override
     public TableId getTableId() {
         return tableId;
     }
@@ -263,83 +322,24 @@ class OFFlowRemovedVer15 implements OFFlowRemoved {
         return this;
     }
     @Override
-    public long getDurationSec()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property durationSec not supported in version 1.5");
+    public OFType getType() {
+        return OFType.FLOW_REMOVED;
     }
 
     @Override
-    public OFFlowRemoved.Builder setDurationSec(long durationSec) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property durationSec not supported in version 1.5");
-    }
-    @Override
-    public long getDurationNsec()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property durationNsec not supported in version 1.5");
+    public OFVersion getVersion() {
+        return OFVersion.OF_15;
     }
 
     @Override
-    public OFFlowRemoved.Builder setDurationNsec(long durationNsec) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property durationNsec not supported in version 1.5");
-    }
-    @Override
-    public int getIdleTimeout() {
-        return idleTimeout;
+    public long getXid() {
+        return xid;
     }
 
     @Override
-    public OFFlowRemoved.Builder setIdleTimeout(int idleTimeout) {
-        this.idleTimeout = idleTimeout;
-        this.idleTimeoutSet = true;
-        return this;
-    }
-    @Override
-    public int getHardTimeout() {
-        return hardTimeout;
-    }
-
-    @Override
-    public OFFlowRemoved.Builder setHardTimeout(int hardTimeout) {
-        this.hardTimeout = hardTimeout;
-        this.hardTimeoutSet = true;
-        return this;
-    }
-    @Override
-    public U64 getPacketCount()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property packetCount not supported in version 1.5");
-    }
-
-    @Override
-    public OFFlowRemoved.Builder setPacketCount(U64 packetCount) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property packetCount not supported in version 1.5");
-    }
-    @Override
-    public U64 getByteCount()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property byteCount not supported in version 1.5");
-    }
-
-    @Override
-    public OFFlowRemoved.Builder setByteCount(U64 byteCount) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property byteCount not supported in version 1.5");
-    }
-    @Override
-    public Match getMatch() {
-        return match;
-    }
-
-    @Override
-    public OFFlowRemoved.Builder setMatch(Match match) {
-        this.match = match;
-        this.matchSet = true;
-        return this;
-    }
-    @Override
-    public Stat getStats() {
-        return stats;
-    }
-
-    @Override
-    public OFFlowRemoved.Builder setStats(Stat stats) {
-        this.stats = stats;
-        this.statsSet = true;
+    public OFFlowRemoved.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 
@@ -404,25 +404,13 @@ class OFFlowRemovedVer15 implements OFFlowRemoved {
         private Stat stats;
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_15;
+    public U64 getByteCount()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property byteCount not supported in version 1.5");
     }
 
     @Override
-    public OFType getType() {
-        return OFType.FLOW_REMOVED;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFFlowRemoved.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
-        return this;
+    public OFFlowRemoved.Builder setByteCount(U64 byteCount) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property byteCount not supported in version 1.5");
     }
     @Override
     public U64 getCookie() {
@@ -434,6 +422,66 @@ class OFFlowRemovedVer15 implements OFFlowRemoved {
         this.cookie = cookie;
         this.cookieSet = true;
         return this;
+    }
+    @Override
+    public long getDurationNsec()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property durationNsec not supported in version 1.5");
+    }
+
+    @Override
+    public OFFlowRemoved.Builder setDurationNsec(long durationNsec) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property durationNsec not supported in version 1.5");
+    }
+    @Override
+    public long getDurationSec()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property durationSec not supported in version 1.5");
+    }
+
+    @Override
+    public OFFlowRemoved.Builder setDurationSec(long durationSec) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property durationSec not supported in version 1.5");
+    }
+    @Override
+    public int getHardTimeout() {
+        return hardTimeout;
+    }
+
+    @Override
+    public OFFlowRemoved.Builder setHardTimeout(int hardTimeout) {
+        this.hardTimeout = hardTimeout;
+        this.hardTimeoutSet = true;
+        return this;
+    }
+    @Override
+    public int getIdleTimeout() {
+        return idleTimeout;
+    }
+
+    @Override
+    public OFFlowRemoved.Builder setIdleTimeout(int idleTimeout) {
+        this.idleTimeout = idleTimeout;
+        this.idleTimeoutSet = true;
+        return this;
+    }
+    @Override
+    public Match getMatch() {
+        return match;
+    }
+
+    @Override
+    public OFFlowRemoved.Builder setMatch(Match match) {
+        this.match = match;
+        this.matchSet = true;
+        return this;
+    }
+    @Override
+    public U64 getPacketCount()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property packetCount not supported in version 1.5");
+    }
+
+    @Override
+    public OFFlowRemoved.Builder setPacketCount(U64 packetCount) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property packetCount not supported in version 1.5");
     }
     @Override
     public int getPriority() {
@@ -458,6 +506,17 @@ class OFFlowRemovedVer15 implements OFFlowRemoved {
         return this;
     }
     @Override
+    public Stat getStats() {
+        return stats;
+    }
+
+    @Override
+    public OFFlowRemoved.Builder setStats(Stat stats) {
+        this.stats = stats;
+        this.statsSet = true;
+        return this;
+    }
+    @Override
     public TableId getTableId() {
         return tableId;
     }
@@ -469,83 +528,24 @@ class OFFlowRemovedVer15 implements OFFlowRemoved {
         return this;
     }
     @Override
-    public long getDurationSec()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property durationSec not supported in version 1.5");
+    public OFType getType() {
+        return OFType.FLOW_REMOVED;
     }
 
     @Override
-    public OFFlowRemoved.Builder setDurationSec(long durationSec) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property durationSec not supported in version 1.5");
-    }
-    @Override
-    public long getDurationNsec()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property durationNsec not supported in version 1.5");
+    public OFVersion getVersion() {
+        return OFVersion.OF_15;
     }
 
     @Override
-    public OFFlowRemoved.Builder setDurationNsec(long durationNsec) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property durationNsec not supported in version 1.5");
-    }
-    @Override
-    public int getIdleTimeout() {
-        return idleTimeout;
+    public long getXid() {
+        return xid;
     }
 
     @Override
-    public OFFlowRemoved.Builder setIdleTimeout(int idleTimeout) {
-        this.idleTimeout = idleTimeout;
-        this.idleTimeoutSet = true;
-        return this;
-    }
-    @Override
-    public int getHardTimeout() {
-        return hardTimeout;
-    }
-
-    @Override
-    public OFFlowRemoved.Builder setHardTimeout(int hardTimeout) {
-        this.hardTimeout = hardTimeout;
-        this.hardTimeoutSet = true;
-        return this;
-    }
-    @Override
-    public U64 getPacketCount()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property packetCount not supported in version 1.5");
-    }
-
-    @Override
-    public OFFlowRemoved.Builder setPacketCount(U64 packetCount) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property packetCount not supported in version 1.5");
-    }
-    @Override
-    public U64 getByteCount()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property byteCount not supported in version 1.5");
-    }
-
-    @Override
-    public OFFlowRemoved.Builder setByteCount(U64 byteCount) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property byteCount not supported in version 1.5");
-    }
-    @Override
-    public Match getMatch() {
-        return match;
-    }
-
-    @Override
-    public OFFlowRemoved.Builder setMatch(Match match) {
-        this.match = match;
-        this.matchSet = true;
-        return this;
-    }
-    @Override
-    public Stat getStats() {
-        return stats;
-    }
-
-    @Override
-    public OFFlowRemoved.Builder setStats(Stat stats) {
-        this.stats = stats;
-        this.statsSet = true;
+    public OFFlowRemoved.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 //

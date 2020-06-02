@@ -64,18 +64,8 @@ class OFBsnShellOutputVer10 implements OFBsnShellOutput {
 
     // Accessors for OF message fields
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_10;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.EXPERIMENTER;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
+    public byte[] getData() {
+        return data;
     }
 
     @Override
@@ -89,8 +79,18 @@ class OFBsnShellOutputVer10 implements OFBsnShellOutput {
     }
 
     @Override
-    public byte[] getData() {
-        return data;
+    public OFType getType() {
+        return OFType.EXPERIMENTER;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_10;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
     }
 
 
@@ -113,24 +113,14 @@ class OFBsnShellOutputVer10 implements OFBsnShellOutput {
         }
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_10;
+    public byte[] getData() {
+        return data;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.EXPERIMENTER;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFBsnShellOutput.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
+    public OFBsnShellOutput.Builder setData(byte[] data) {
+        this.data = data;
+        this.dataSet = true;
         return this;
     }
     @Override
@@ -144,14 +134,24 @@ class OFBsnShellOutputVer10 implements OFBsnShellOutput {
     }
 
     @Override
-    public byte[] getData() {
-        return data;
+    public OFType getType() {
+        return OFType.EXPERIMENTER;
     }
 
     @Override
-    public OFBsnShellOutput.Builder setData(byte[] data) {
-        this.data = data;
-        this.dataSet = true;
+    public OFVersion getVersion() {
+        return OFVersion.OF_10;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFBsnShellOutput.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 
@@ -180,24 +180,14 @@ class OFBsnShellOutputVer10 implements OFBsnShellOutput {
         private byte[] data;
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_10;
+    public byte[] getData() {
+        return data;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.EXPERIMENTER;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFBsnShellOutput.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
+    public OFBsnShellOutput.Builder setData(byte[] data) {
+        this.data = data;
+        this.dataSet = true;
         return this;
     }
     @Override
@@ -211,14 +201,24 @@ class OFBsnShellOutputVer10 implements OFBsnShellOutput {
     }
 
     @Override
-    public byte[] getData() {
-        return data;
+    public OFType getType() {
+        return OFType.EXPERIMENTER;
     }
 
     @Override
-    public OFBsnShellOutput.Builder setData(byte[] data) {
-        this.data = data;
-        this.dataSet = true;
+    public OFVersion getVersion() {
+        return OFVersion.OF_10;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFBsnShellOutput.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 //

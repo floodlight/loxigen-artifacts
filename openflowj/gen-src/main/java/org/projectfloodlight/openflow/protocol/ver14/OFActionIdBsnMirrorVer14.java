@@ -52,11 +52,6 @@ class OFActionIdBsnMirrorVer14 implements OFActionIdBsnMirror {
 
     // Accessors for OF message fields
     @Override
-    public OFActionType getType() {
-        return OFActionType.EXPERIMENTER;
-    }
-
-    @Override
     public long getExperimenter() {
         return 0x5c16c7L;
     }
@@ -64,6 +59,11 @@ class OFActionIdBsnMirrorVer14 implements OFActionIdBsnMirror {
     @Override
     public long getSubtype() {
         return 0x1L;
+    }
+
+    @Override
+    public OFActionType getType() {
+        return OFActionType.EXPERIMENTER;
     }
 
     @Override

@@ -29,31 +29,31 @@ import java.util.Set;
 import io.netty.buffer.ByteBuf;
 
 public interface OFBsnLuaUpload extends OFObject, OFBsnHeader {
-    OFVersion getVersion();
-    OFType getType();
-    long getXid();
-    long getExperimenter();
-    long getSubtype();
-    Set<OFBsnLuaUploadFlags> getFlags();
-    String getFilename();
     byte[] getData();
+    long getExperimenter();
+    String getFilename();
+    Set<OFBsnLuaUploadFlags> getFlags();
+    long getSubtype();
+    OFType getType();
+    OFVersion getVersion();
+    long getXid();
 
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();
     public interface Builder extends OFBsnHeader.Builder {
         OFBsnLuaUpload build();
-        OFVersion getVersion();
-        OFType getType();
-        long getXid();
-        Builder setXid(long xid);
-        long getExperimenter();
-        long getSubtype();
-        Set<OFBsnLuaUploadFlags> getFlags();
-        Builder setFlags(Set<OFBsnLuaUploadFlags> flags);
-        String getFilename();
-        Builder setFilename(String filename);
         byte[] getData();
         Builder setData(byte[] data);
+        long getExperimenter();
+        String getFilename();
+        Builder setFilename(String filename);
+        Set<OFBsnLuaUploadFlags> getFlags();
+        Builder setFlags(Set<OFBsnLuaUploadFlags> flags);
+        long getSubtype();
+        OFType getType();
+        OFVersion getVersion();
+        long getXid();
+        Builder setXid(long xid);
     }
 }

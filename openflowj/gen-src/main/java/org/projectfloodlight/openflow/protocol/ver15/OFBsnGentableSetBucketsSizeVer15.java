@@ -59,18 +59,8 @@ class OFBsnGentableSetBucketsSizeVer15 implements OFBsnGentableSetBucketsSize {
 
     // Accessors for OF message fields
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_15;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.EXPERIMENTER;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
+    public long getBucketsSize() {
+        return bucketsSize;
     }
 
     @Override
@@ -89,8 +79,18 @@ class OFBsnGentableSetBucketsSizeVer15 implements OFBsnGentableSetBucketsSize {
     }
 
     @Override
-    public long getBucketsSize() {
-        return bucketsSize;
+    public OFType getType() {
+        return OFType.EXPERIMENTER;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_15;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
     }
 
 
@@ -115,24 +115,14 @@ class OFBsnGentableSetBucketsSizeVer15 implements OFBsnGentableSetBucketsSize {
         }
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_15;
+    public long getBucketsSize() {
+        return bucketsSize;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.EXPERIMENTER;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFBsnGentableSetBucketsSize.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
+    public OFBsnGentableSetBucketsSize.Builder setBucketsSize(long bucketsSize) {
+        this.bucketsSize = bucketsSize;
+        this.bucketsSizeSet = true;
         return this;
     }
     @Override
@@ -157,14 +147,24 @@ class OFBsnGentableSetBucketsSizeVer15 implements OFBsnGentableSetBucketsSize {
         return this;
     }
     @Override
-    public long getBucketsSize() {
-        return bucketsSize;
+    public OFType getType() {
+        return OFType.EXPERIMENTER;
     }
 
     @Override
-    public OFBsnGentableSetBucketsSize.Builder setBucketsSize(long bucketsSize) {
-        this.bucketsSize = bucketsSize;
-        this.bucketsSizeSet = true;
+    public OFVersion getVersion() {
+        return OFVersion.OF_15;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFBsnGentableSetBucketsSize.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 
@@ -197,24 +197,14 @@ class OFBsnGentableSetBucketsSizeVer15 implements OFBsnGentableSetBucketsSize {
         private long bucketsSize;
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_15;
+    public long getBucketsSize() {
+        return bucketsSize;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.EXPERIMENTER;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFBsnGentableSetBucketsSize.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
+    public OFBsnGentableSetBucketsSize.Builder setBucketsSize(long bucketsSize) {
+        this.bucketsSize = bucketsSize;
+        this.bucketsSizeSet = true;
         return this;
     }
     @Override
@@ -239,14 +229,24 @@ class OFBsnGentableSetBucketsSizeVer15 implements OFBsnGentableSetBucketsSize {
         return this;
     }
     @Override
-    public long getBucketsSize() {
-        return bucketsSize;
+    public OFType getType() {
+        return OFType.EXPERIMENTER;
     }
 
     @Override
-    public OFBsnGentableSetBucketsSize.Builder setBucketsSize(long bucketsSize) {
-        this.bucketsSize = bucketsSize;
-        this.bucketsSizeSet = true;
+    public OFVersion getVersion() {
+        return OFVersion.OF_15;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFBsnGentableSetBucketsSize.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 //

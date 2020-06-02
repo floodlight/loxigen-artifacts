@@ -72,23 +72,8 @@ class OFFlowMonitorRequestVer15 implements OFFlowMonitorRequest {
 
     // Accessors for OF message fields
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_15;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.STATS_REQUEST;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFStatsType getStatsType() {
-        return OFStatsType.FLOW_MONITOR;
+    public List<OFFlowMonitorEntry> getEntries() {
+        return entries;
     }
 
     @Override
@@ -97,8 +82,23 @@ class OFFlowMonitorRequestVer15 implements OFFlowMonitorRequest {
     }
 
     @Override
-    public List<OFFlowMonitorEntry> getEntries() {
-        return entries;
+    public OFStatsType getStatsType() {
+        return OFStatsType.FLOW_MONITOR;
+    }
+
+    @Override
+    public OFType getType() {
+        return OFType.STATS_REQUEST;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_15;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
     }
 
 
@@ -123,31 +123,16 @@ class OFFlowMonitorRequestVer15 implements OFFlowMonitorRequest {
         }
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_15;
+    public List<OFFlowMonitorEntry> getEntries() {
+        return entries;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.STATS_REQUEST;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFFlowMonitorRequest.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
+    public OFFlowMonitorRequest.Builder setEntries(List<OFFlowMonitorEntry> entries) {
+        this.entries = entries;
+        this.entriesSet = true;
         return this;
     }
-    @Override
-    public OFStatsType getStatsType() {
-        return OFStatsType.FLOW_MONITOR;
-    }
-
     @Override
     public Set<OFStatsRequestFlags> getFlags() {
         return flags;
@@ -160,14 +145,29 @@ class OFFlowMonitorRequestVer15 implements OFFlowMonitorRequest {
         return this;
     }
     @Override
-    public List<OFFlowMonitorEntry> getEntries() {
-        return entries;
+    public OFStatsType getStatsType() {
+        return OFStatsType.FLOW_MONITOR;
     }
 
     @Override
-    public OFFlowMonitorRequest.Builder setEntries(List<OFFlowMonitorEntry> entries) {
-        this.entries = entries;
-        this.entriesSet = true;
+    public OFType getType() {
+        return OFType.STATS_REQUEST;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_15;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFFlowMonitorRequest.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 
@@ -202,31 +202,16 @@ class OFFlowMonitorRequestVer15 implements OFFlowMonitorRequest {
         private List<OFFlowMonitorEntry> entries;
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_15;
+    public List<OFFlowMonitorEntry> getEntries() {
+        return entries;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.STATS_REQUEST;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFFlowMonitorRequest.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
+    public OFFlowMonitorRequest.Builder setEntries(List<OFFlowMonitorEntry> entries) {
+        this.entries = entries;
+        this.entriesSet = true;
         return this;
     }
-    @Override
-    public OFStatsType getStatsType() {
-        return OFStatsType.FLOW_MONITOR;
-    }
-
     @Override
     public Set<OFStatsRequestFlags> getFlags() {
         return flags;
@@ -239,14 +224,29 @@ class OFFlowMonitorRequestVer15 implements OFFlowMonitorRequest {
         return this;
     }
     @Override
-    public List<OFFlowMonitorEntry> getEntries() {
-        return entries;
+    public OFStatsType getStatsType() {
+        return OFStatsType.FLOW_MONITOR;
     }
 
     @Override
-    public OFFlowMonitorRequest.Builder setEntries(List<OFFlowMonitorEntry> entries) {
-        this.entries = entries;
-        this.entriesSet = true;
+    public OFType getType() {
+        return OFType.STATS_REQUEST;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_15;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFFlowMonitorRequest.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 //

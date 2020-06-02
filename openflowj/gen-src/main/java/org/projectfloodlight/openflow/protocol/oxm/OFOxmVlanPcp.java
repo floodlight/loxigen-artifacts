@@ -30,10 +30,10 @@ import io.netty.buffer.ByteBuf;
 public interface OFOxmVlanPcp extends OFObject, OFOxm<VlanPcp> {
     long getTypeLen();
     VlanPcp getValue();
-    MatchField<VlanPcp> getMatchField();
-    boolean isMasked();
     OFOxm<VlanPcp> getCanonical();
     VlanPcp getMask();
+    boolean isMasked();
+    MatchField<VlanPcp> getMatchField();
     OFVersion getVersion();
 
     void writeTo(ByteBuf channelBuffer);
@@ -44,10 +44,10 @@ public interface OFOxmVlanPcp extends OFObject, OFOxm<VlanPcp> {
         long getTypeLen();
         VlanPcp getValue();
         Builder setValue(VlanPcp value);
-        MatchField<VlanPcp> getMatchField();
-        boolean isMasked();
         OFOxm<VlanPcp> getCanonical();
         VlanPcp getMask();
+        boolean isMasked();
+        MatchField<VlanPcp> getMatchField();
         OFVersion getVersion();
     }
 }

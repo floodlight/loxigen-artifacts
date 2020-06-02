@@ -28,12 +28,12 @@ import org.projectfloodlight.openflow.exceptions.*;
 import io.netty.buffer.ByteBuf;
 
 public interface OFOxmTcpSrcMasked extends OFObject, OFOxm<TransportPort> {
+    TransportPort getMask();
     long getTypeLen();
     TransportPort getValue();
-    TransportPort getMask();
-    MatchField<TransportPort> getMatchField();
-    boolean isMasked();
     OFOxm<TransportPort> getCanonical();
+    boolean isMasked();
+    MatchField<TransportPort> getMatchField();
     OFVersion getVersion();
 
     void writeTo(ByteBuf channelBuffer);
@@ -41,14 +41,14 @@ public interface OFOxmTcpSrcMasked extends OFObject, OFOxm<TransportPort> {
     Builder createBuilder();
     public interface Builder extends OFOxm.Builder<TransportPort> {
         OFOxmTcpSrcMasked build();
+        TransportPort getMask();
+        Builder setMask(TransportPort mask);
         long getTypeLen();
         TransportPort getValue();
         Builder setValue(TransportPort value);
-        TransportPort getMask();
-        Builder setMask(TransportPort mask);
-        MatchField<TransportPort> getMatchField();
-        boolean isMasked();
         OFOxm<TransportPort> getCanonical();
+        boolean isMasked();
+        MatchField<TransportPort> getMatchField();
         OFVersion getVersion();
     }
 }

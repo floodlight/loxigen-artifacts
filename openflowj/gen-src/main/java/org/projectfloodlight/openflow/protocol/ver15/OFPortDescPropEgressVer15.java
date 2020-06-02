@@ -61,13 +61,13 @@ class OFPortDescPropEgressVer15 implements OFPortDescPropEgress {
 
     // Accessors for OF message fields
     @Override
-    public int getType() {
-        return 0x3;
+    public byte[] getOxmIds() {
+        return oxmIds;
     }
 
     @Override
-    public byte[] getOxmIds() {
-        return oxmIds;
+    public int getType() {
+        return 0x3;
     }
 
     @Override
@@ -93,11 +93,6 @@ class OFPortDescPropEgressVer15 implements OFPortDescPropEgress {
         }
 
     @Override
-    public int getType() {
-        return 0x3;
-    }
-
-    @Override
     public byte[] getOxmIds() {
         return oxmIds;
     }
@@ -108,6 +103,11 @@ class OFPortDescPropEgressVer15 implements OFPortDescPropEgress {
         this.oxmIdsSet = true;
         return this;
     }
+    @Override
+    public int getType() {
+        return 0x3;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_15;
@@ -135,11 +135,6 @@ class OFPortDescPropEgressVer15 implements OFPortDescPropEgress {
         private byte[] oxmIds;
 
     @Override
-    public int getType() {
-        return 0x3;
-    }
-
-    @Override
     public byte[] getOxmIds() {
         return oxmIds;
     }
@@ -150,6 +145,11 @@ class OFPortDescPropEgressVer15 implements OFPortDescPropEgress {
         this.oxmIdsSet = true;
         return this;
     }
+    @Override
+    public int getType() {
+        return 0x3;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_15;

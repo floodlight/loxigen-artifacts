@@ -55,13 +55,13 @@ class OFActionSetMplsTcVer11 implements OFActionSetMplsTc {
 
     // Accessors for OF message fields
     @Override
-    public OFActionType getType() {
-        return OFActionType.SET_MPLS_TC;
+    public short getMplsTc() {
+        return mplsTc;
     }
 
     @Override
-    public short getMplsTc() {
-        return mplsTc;
+    public OFActionType getType() {
+        return OFActionType.SET_MPLS_TC;
     }
 
     @Override
@@ -87,11 +87,6 @@ class OFActionSetMplsTcVer11 implements OFActionSetMplsTc {
         }
 
     @Override
-    public OFActionType getType() {
-        return OFActionType.SET_MPLS_TC;
-    }
-
-    @Override
     public short getMplsTc() {
         return mplsTc;
     }
@@ -102,6 +97,11 @@ class OFActionSetMplsTcVer11 implements OFActionSetMplsTc {
         this.mplsTcSet = true;
         return this;
     }
+    @Override
+    public OFActionType getType() {
+        return OFActionType.SET_MPLS_TC;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_11;
@@ -127,11 +127,6 @@ class OFActionSetMplsTcVer11 implements OFActionSetMplsTc {
         private short mplsTc;
 
     @Override
-    public OFActionType getType() {
-        return OFActionType.SET_MPLS_TC;
-    }
-
-    @Override
     public short getMplsTc() {
         return mplsTc;
     }
@@ -142,6 +137,11 @@ class OFActionSetMplsTcVer11 implements OFActionSetMplsTc {
         this.mplsTcSet = true;
         return this;
     }
+    @Override
+    public OFActionType getType() {
+        return OFActionType.SET_MPLS_TC;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_11;

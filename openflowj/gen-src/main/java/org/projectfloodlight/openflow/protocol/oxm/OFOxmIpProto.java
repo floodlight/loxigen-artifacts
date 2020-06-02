@@ -30,10 +30,10 @@ import io.netty.buffer.ByteBuf;
 public interface OFOxmIpProto extends OFObject, OFOxm<IpProtocol> {
     long getTypeLen();
     IpProtocol getValue();
-    MatchField<IpProtocol> getMatchField();
-    boolean isMasked();
     OFOxm<IpProtocol> getCanonical();
     IpProtocol getMask();
+    boolean isMasked();
+    MatchField<IpProtocol> getMatchField();
     OFVersion getVersion();
 
     void writeTo(ByteBuf channelBuffer);
@@ -44,10 +44,10 @@ public interface OFOxmIpProto extends OFObject, OFOxm<IpProtocol> {
         long getTypeLen();
         IpProtocol getValue();
         Builder setValue(IpProtocol value);
-        MatchField<IpProtocol> getMatchField();
-        boolean isMasked();
         OFOxm<IpProtocol> getCanonical();
         IpProtocol getMask();
+        boolean isMasked();
+        MatchField<IpProtocol> getMatchField();
         OFVersion getVersion();
     }
 }

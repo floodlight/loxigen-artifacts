@@ -44,38 +44,6 @@ public class OFInstructionsVer15 implements OFInstructions {
                     );
     }
 
-    public OFInstructionClearActions clearActions() {
-        return OFInstructionClearActionsVer15.INSTANCE;
-    }
-
-    public OFInstructionGotoTable.Builder buildGotoTable() {
-        return new OFInstructionGotoTableVer15.Builder();
-    }
-    public OFInstructionGotoTable gotoTable(TableId tableId) {
-        return new OFInstructionGotoTableVer15(
-                tableId
-                    );
-    }
-
-    public OFInstructionWriteActions.Builder buildWriteActions() {
-        return new OFInstructionWriteActionsVer15.Builder();
-    }
-    public OFInstructionWriteActions writeActions(List<OFAction> actions) {
-        return new OFInstructionWriteActionsVer15(
-                actions
-                    );
-    }
-
-    public OFInstructionWriteMetadata.Builder buildWriteMetadata() {
-        return new OFInstructionWriteMetadataVer15.Builder();
-    }
-    public OFInstructionWriteMetadata writeMetadata(U64 metadata, U64 metadataMask) {
-        return new OFInstructionWriteMetadataVer15(
-                metadata,
-                      metadataMask
-                    );
-    }
-
     public OFInstructionBsnArpOffload bsnArpOffload() {
         return OFInstructionBsnArpOffloadVer15.INSTANCE;
     }
@@ -154,6 +122,19 @@ public class OFInstructionsVer15 implements OFInstructions {
         return OFInstructionBsnSpanDestinationVer15.INSTANCE;
     }
 
+    public OFInstructionClearActions clearActions() {
+        return OFInstructionClearActionsVer15.INSTANCE;
+    }
+
+    public OFInstructionGotoTable.Builder buildGotoTable() {
+        return new OFInstructionGotoTableVer15.Builder();
+    }
+    public OFInstructionGotoTable gotoTable(TableId tableId) {
+        return new OFInstructionGotoTableVer15(
+                tableId
+                    );
+    }
+
     public OFInstructionMeter.Builder buildMeter() {
         throw new UnsupportedOperationException("OFInstructionMeter not supported in version 1.5");
     }
@@ -168,6 +149,25 @@ public class OFInstructionsVer15 implements OFInstructions {
         return new OFInstructionStatTriggerVer15(
                 flags,
                       thresholds
+                    );
+    }
+
+    public OFInstructionWriteActions.Builder buildWriteActions() {
+        return new OFInstructionWriteActionsVer15.Builder();
+    }
+    public OFInstructionWriteActions writeActions(List<OFAction> actions) {
+        return new OFInstructionWriteActionsVer15(
+                actions
+                    );
+    }
+
+    public OFInstructionWriteMetadata.Builder buildWriteMetadata() {
+        return new OFInstructionWriteMetadataVer15.Builder();
+    }
+    public OFInstructionWriteMetadata writeMetadata(U64 metadata, U64 metadataMask) {
+        return new OFInstructionWriteMetadataVer15(
+                metadata,
+                      metadataMask
                     );
     }
 

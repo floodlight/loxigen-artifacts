@@ -52,11 +52,6 @@ class OFInstructionIdBsnInternalPriorityVer15 implements OFInstructionIdBsnInter
 
     // Accessors for OF message fields
     @Override
-    public OFInstructionType getType() {
-        return OFInstructionType.EXPERIMENTER;
-    }
-
-    @Override
     public long getExperimenter() {
         return 0x5c16c7L;
     }
@@ -64,6 +59,11 @@ class OFInstructionIdBsnInternalPriorityVer15 implements OFInstructionIdBsnInter
     @Override
     public long getSubtype() {
         return 0xcL;
+    }
+
+    @Override
+    public OFInstructionType getType() {
+        return OFInstructionType.EXPERIMENTER;
     }
 
     @Override

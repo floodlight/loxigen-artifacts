@@ -62,13 +62,13 @@ class OFBundlePropTimeVer15 implements OFBundlePropTime {
 
     // Accessors for OF message fields
     @Override
-    public int getType() {
-        return 0x1;
+    public List<OFTime> getScheduledTime() {
+        return scheduledTime;
     }
 
     @Override
-    public List<OFTime> getScheduledTime() {
-        return scheduledTime;
+    public int getType() {
+        return 0x1;
     }
 
     @Override
@@ -94,11 +94,6 @@ class OFBundlePropTimeVer15 implements OFBundlePropTime {
         }
 
     @Override
-    public int getType() {
-        return 0x1;
-    }
-
-    @Override
     public List<OFTime> getScheduledTime() {
         return scheduledTime;
     }
@@ -109,6 +104,11 @@ class OFBundlePropTimeVer15 implements OFBundlePropTime {
         this.scheduledTimeSet = true;
         return this;
     }
+    @Override
+    public int getType() {
+        return 0x1;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_15;
@@ -136,11 +136,6 @@ class OFBundlePropTimeVer15 implements OFBundlePropTime {
         private List<OFTime> scheduledTime;
 
     @Override
-    public int getType() {
-        return 0x1;
-    }
-
-    @Override
     public List<OFTime> getScheduledTime() {
         return scheduledTime;
     }
@@ -151,6 +146,11 @@ class OFBundlePropTimeVer15 implements OFBundlePropTime {
         this.scheduledTimeSet = true;
         return this;
     }
+    @Override
+    public int getType() {
+        return 0x1;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_15;

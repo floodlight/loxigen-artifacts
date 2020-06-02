@@ -74,38 +74,13 @@ class OFBsnImageDescStatsReplyVer13 implements OFBsnImageDescStatsReply {
 
     // Accessors for OF message fields
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_13;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.STATS_REPLY;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFStatsType getStatsType() {
-        return OFStatsType.EXPERIMENTER;
-    }
-
-    @Override
-    public Set<OFStatsReplyFlags> getFlags() {
-        return flags;
-    }
-
-    @Override
     public long getExperimenter() {
         return 0x5c16c7L;
     }
 
     @Override
-    public long getSubtype() {
-        return 0xeL;
+    public Set<OFStatsReplyFlags> getFlags() {
+        return flags;
     }
 
     @Override
@@ -116,6 +91,31 @@ class OFBsnImageDescStatsReplyVer13 implements OFBsnImageDescStatsReply {
     @Override
     public String getStartupConfigChecksum() {
         return startupConfigChecksum;
+    }
+
+    @Override
+    public OFStatsType getStatsType() {
+        return OFStatsType.EXPERIMENTER;
+    }
+
+    @Override
+    public long getSubtype() {
+        return 0xeL;
+    }
+
+    @Override
+    public OFType getType() {
+        return OFType.STATS_REPLY;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_13;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
     }
 
 
@@ -142,29 +142,8 @@ class OFBsnImageDescStatsReplyVer13 implements OFBsnImageDescStatsReply {
         }
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_13;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.STATS_REPLY;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFBsnImageDescStatsReply.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
-        return this;
-    }
-    @Override
-    public OFStatsType getStatsType() {
-        return OFStatsType.EXPERIMENTER;
+    public long getExperimenter() {
+        return 0x5c16c7L;
     }
 
     @Override
@@ -178,16 +157,6 @@ class OFBsnImageDescStatsReplyVer13 implements OFBsnImageDescStatsReply {
         this.flagsSet = true;
         return this;
     }
-    @Override
-    public long getExperimenter() {
-        return 0x5c16c7L;
-    }
-
-    @Override
-    public long getSubtype() {
-        return 0xeL;
-    }
-
     @Override
     public String getImageChecksum() {
         return imageChecksum;
@@ -208,6 +177,37 @@ class OFBsnImageDescStatsReplyVer13 implements OFBsnImageDescStatsReply {
     public OFBsnImageDescStatsReply.Builder setStartupConfigChecksum(String startupConfigChecksum) {
         this.startupConfigChecksum = startupConfigChecksum;
         this.startupConfigChecksumSet = true;
+        return this;
+    }
+    @Override
+    public OFStatsType getStatsType() {
+        return OFStatsType.EXPERIMENTER;
+    }
+
+    @Override
+    public long getSubtype() {
+        return 0xeL;
+    }
+
+    @Override
+    public OFType getType() {
+        return OFType.STATS_REPLY;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_13;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFBsnImageDescStatsReply.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 
@@ -248,29 +248,8 @@ class OFBsnImageDescStatsReplyVer13 implements OFBsnImageDescStatsReply {
         private String startupConfigChecksum;
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_13;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.STATS_REPLY;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFBsnImageDescStatsReply.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
-        return this;
-    }
-    @Override
-    public OFStatsType getStatsType() {
-        return OFStatsType.EXPERIMENTER;
+    public long getExperimenter() {
+        return 0x5c16c7L;
     }
 
     @Override
@@ -284,16 +263,6 @@ class OFBsnImageDescStatsReplyVer13 implements OFBsnImageDescStatsReply {
         this.flagsSet = true;
         return this;
     }
-    @Override
-    public long getExperimenter() {
-        return 0x5c16c7L;
-    }
-
-    @Override
-    public long getSubtype() {
-        return 0xeL;
-    }
-
     @Override
     public String getImageChecksum() {
         return imageChecksum;
@@ -314,6 +283,37 @@ class OFBsnImageDescStatsReplyVer13 implements OFBsnImageDescStatsReply {
     public OFBsnImageDescStatsReply.Builder setStartupConfigChecksum(String startupConfigChecksum) {
         this.startupConfigChecksum = startupConfigChecksum;
         this.startupConfigChecksumSet = true;
+        return this;
+    }
+    @Override
+    public OFStatsType getStatsType() {
+        return OFStatsType.EXPERIMENTER;
+    }
+
+    @Override
+    public long getSubtype() {
+        return 0xeL;
+    }
+
+    @Override
+    public OFType getType() {
+        return OFType.STATS_REPLY;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_13;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFBsnImageDescStatsReply.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 //

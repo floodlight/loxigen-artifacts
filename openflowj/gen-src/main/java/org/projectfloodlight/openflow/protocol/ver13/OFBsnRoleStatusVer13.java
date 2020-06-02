@@ -67,33 +67,13 @@ class OFBsnRoleStatusVer13 implements OFBsnRoleStatus {
 
     // Accessors for OF message fields
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_13;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.EXPERIMENTER;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
     public long getExperimenter() {
         return 0x5c16c7L;
     }
 
     @Override
-    public long getSubtype() {
-        return 0x37L;
-    }
-
-    @Override
-    public OFControllerRole getRole() {
-        return role;
+    public U64 getGenerationId() {
+        return generationId;
     }
 
     @Override
@@ -102,8 +82,28 @@ class OFBsnRoleStatusVer13 implements OFBsnRoleStatus {
     }
 
     @Override
-    public U64 getGenerationId() {
-        return generationId;
+    public OFControllerRole getRole() {
+        return role;
+    }
+
+    @Override
+    public long getSubtype() {
+        return 0x37L;
+    }
+
+    @Override
+    public OFType getType() {
+        return OFType.EXPERIMENTER;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_13;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
     }
 
 
@@ -130,45 +130,19 @@ class OFBsnRoleStatusVer13 implements OFBsnRoleStatus {
         }
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_13;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.EXPERIMENTER;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFBsnRoleStatus.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
-        return this;
-    }
-    @Override
     public long getExperimenter() {
         return 0x5c16c7L;
     }
 
     @Override
-    public long getSubtype() {
-        return 0x37L;
+    public U64 getGenerationId() {
+        return generationId;
     }
 
     @Override
-    public OFControllerRole getRole() {
-        return role;
-    }
-
-    @Override
-    public OFBsnRoleStatus.Builder setRole(OFControllerRole role) {
-        this.role = role;
-        this.roleSet = true;
+    public OFBsnRoleStatus.Builder setGenerationId(U64 generationId) {
+        this.generationId = generationId;
+        this.generationIdSet = true;
         return this;
     }
     @Override
@@ -183,14 +157,40 @@ class OFBsnRoleStatusVer13 implements OFBsnRoleStatus {
         return this;
     }
     @Override
-    public U64 getGenerationId() {
-        return generationId;
+    public OFControllerRole getRole() {
+        return role;
     }
 
     @Override
-    public OFBsnRoleStatus.Builder setGenerationId(U64 generationId) {
-        this.generationId = generationId;
-        this.generationIdSet = true;
+    public OFBsnRoleStatus.Builder setRole(OFControllerRole role) {
+        this.role = role;
+        this.roleSet = true;
+        return this;
+    }
+    @Override
+    public long getSubtype() {
+        return 0x37L;
+    }
+
+    @Override
+    public OFType getType() {
+        return OFType.EXPERIMENTER;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_13;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFBsnRoleStatus.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 
@@ -231,45 +231,19 @@ class OFBsnRoleStatusVer13 implements OFBsnRoleStatus {
         private U64 generationId;
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_13;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.EXPERIMENTER;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFBsnRoleStatus.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
-        return this;
-    }
-    @Override
     public long getExperimenter() {
         return 0x5c16c7L;
     }
 
     @Override
-    public long getSubtype() {
-        return 0x37L;
+    public U64 getGenerationId() {
+        return generationId;
     }
 
     @Override
-    public OFControllerRole getRole() {
-        return role;
-    }
-
-    @Override
-    public OFBsnRoleStatus.Builder setRole(OFControllerRole role) {
-        this.role = role;
-        this.roleSet = true;
+    public OFBsnRoleStatus.Builder setGenerationId(U64 generationId) {
+        this.generationId = generationId;
+        this.generationIdSet = true;
         return this;
     }
     @Override
@@ -284,14 +258,40 @@ class OFBsnRoleStatusVer13 implements OFBsnRoleStatus {
         return this;
     }
     @Override
-    public U64 getGenerationId() {
-        return generationId;
+    public OFControllerRole getRole() {
+        return role;
     }
 
     @Override
-    public OFBsnRoleStatus.Builder setGenerationId(U64 generationId) {
-        this.generationId = generationId;
-        this.generationIdSet = true;
+    public OFBsnRoleStatus.Builder setRole(OFControllerRole role) {
+        this.role = role;
+        this.roleSet = true;
+        return this;
+    }
+    @Override
+    public long getSubtype() {
+        return 0x37L;
+    }
+
+    @Override
+    public OFType getType() {
+        return OFType.EXPERIMENTER;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_13;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFBsnRoleStatus.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 //

@@ -62,23 +62,8 @@ class OFBsnTableChecksumStatsRequestVer13 implements OFBsnTableChecksumStatsRequ
 
     // Accessors for OF message fields
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_13;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.STATS_REQUEST;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFStatsType getStatsType() {
-        return OFStatsType.EXPERIMENTER;
+    public long getExperimenter() {
+        return 0x5c16c7L;
     }
 
     @Override
@@ -87,13 +72,28 @@ class OFBsnTableChecksumStatsRequestVer13 implements OFBsnTableChecksumStatsRequ
     }
 
     @Override
-    public long getExperimenter() {
-        return 0x5c16c7L;
+    public OFStatsType getStatsType() {
+        return OFStatsType.EXPERIMENTER;
     }
 
     @Override
     public long getSubtype() {
         return 0xbL;
+    }
+
+    @Override
+    public OFType getType() {
+        return OFType.STATS_REQUEST;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_13;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
     }
 
 
@@ -116,29 +116,8 @@ class OFBsnTableChecksumStatsRequestVer13 implements OFBsnTableChecksumStatsRequ
         }
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_13;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.STATS_REQUEST;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFBsnTableChecksumStatsRequest.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
-        return this;
-    }
-    @Override
-    public OFStatsType getStatsType() {
-        return OFStatsType.EXPERIMENTER;
+    public long getExperimenter() {
+        return 0x5c16c7L;
     }
 
     @Override
@@ -153,8 +132,8 @@ class OFBsnTableChecksumStatsRequestVer13 implements OFBsnTableChecksumStatsRequ
         return this;
     }
     @Override
-    public long getExperimenter() {
-        return 0x5c16c7L;
+    public OFStatsType getStatsType() {
+        return OFStatsType.EXPERIMENTER;
     }
 
     @Override
@@ -162,6 +141,27 @@ class OFBsnTableChecksumStatsRequestVer13 implements OFBsnTableChecksumStatsRequ
         return 0xbL;
     }
 
+    @Override
+    public OFType getType() {
+        return OFType.STATS_REQUEST;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_13;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFBsnTableChecksumStatsRequest.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
+        return this;
+    }
 
 
         @Override
@@ -188,29 +188,8 @@ class OFBsnTableChecksumStatsRequestVer13 implements OFBsnTableChecksumStatsRequ
         private Set<OFStatsRequestFlags> flags;
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_13;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.STATS_REQUEST;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFBsnTableChecksumStatsRequest.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
-        return this;
-    }
-    @Override
-    public OFStatsType getStatsType() {
-        return OFStatsType.EXPERIMENTER;
+    public long getExperimenter() {
+        return 0x5c16c7L;
     }
 
     @Override
@@ -225,8 +204,8 @@ class OFBsnTableChecksumStatsRequestVer13 implements OFBsnTableChecksumStatsRequ
         return this;
     }
     @Override
-    public long getExperimenter() {
-        return 0x5c16c7L;
+    public OFStatsType getStatsType() {
+        return OFStatsType.EXPERIMENTER;
     }
 
     @Override
@@ -234,6 +213,27 @@ class OFBsnTableChecksumStatsRequestVer13 implements OFBsnTableChecksumStatsRequ
         return 0xbL;
     }
 
+    @Override
+    public OFType getType() {
+        return OFType.STATS_REQUEST;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_13;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFBsnTableChecksumStatsRequest.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
+        return this;
+    }
 //
         @Override
         public OFBsnTableChecksumStatsRequest build() {

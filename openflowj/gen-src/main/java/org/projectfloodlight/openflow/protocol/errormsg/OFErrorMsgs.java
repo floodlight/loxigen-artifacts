@@ -29,26 +29,26 @@ import org.projectfloodlight.openflow.exceptions.*;
 public interface OFErrorMsgs extends XidGenerator {
     // Subfactories
 
+    OFAsyncConfigFailedErrorMsg.Builder buildAsyncConfigFailedErrorMsg() throws UnsupportedOperationException;
     OFBadActionErrorMsg.Builder buildBadActionErrorMsg();
-    OFBadRequestErrorMsg.Builder buildBadRequestErrorMsg();
-    OFFlowModFailedErrorMsg.Builder buildFlowModFailedErrorMsg();
-    OFHelloFailedErrorMsg.Builder buildHelloFailedErrorMsg();
-    OFPortModFailedErrorMsg.Builder buildPortModFailedErrorMsg();
-    OFQueueOpFailedErrorMsg.Builder buildQueueOpFailedErrorMsg();
     OFBadInstructionErrorMsg.Builder buildBadInstructionErrorMsg() throws UnsupportedOperationException;
     OFBadMatchErrorMsg.Builder buildBadMatchErrorMsg() throws UnsupportedOperationException;
-    OFGroupModFailedErrorMsg.Builder buildGroupModFailedErrorMsg() throws UnsupportedOperationException;
-    OFSwitchConfigFailedErrorMsg.Builder buildSwitchConfigFailedErrorMsg() throws UnsupportedOperationException;
-    OFTableModFailedErrorMsg.Builder buildTableModFailedErrorMsg() throws UnsupportedOperationException;
-    OFRoleRequestFailedErrorMsg.Builder buildRoleRequestFailedErrorMsg() throws UnsupportedOperationException;
+    OFBadPropertyErrorMsg.Builder buildBadPropertyErrorMsg() throws UnsupportedOperationException;
+    OFBadRequestErrorMsg.Builder buildBadRequestErrorMsg();
     OFBsnError.Builder buildBsnError() throws UnsupportedOperationException;
     OFBsnGentableError.Builder buildBsnGentableError() throws UnsupportedOperationException;
-    OFMeterModFailedErrorMsg.Builder buildMeterModFailedErrorMsg() throws UnsupportedOperationException;
-    OFTableFeaturesFailedErrorMsg.Builder buildTableFeaturesFailedErrorMsg() throws UnsupportedOperationException;
-    OFAsyncConfigFailedErrorMsg.Builder buildAsyncConfigFailedErrorMsg() throws UnsupportedOperationException;
-    OFBadPropertyErrorMsg.Builder buildBadPropertyErrorMsg() throws UnsupportedOperationException;
     OFBundleFailedErrorMsg.Builder buildBundleFailedErrorMsg() throws UnsupportedOperationException;
+    OFFlowModFailedErrorMsg.Builder buildFlowModFailedErrorMsg();
     OFFlowMonitorFailedErrorMsg.Builder buildFlowMonitorFailedErrorMsg() throws UnsupportedOperationException;
+    OFGroupModFailedErrorMsg.Builder buildGroupModFailedErrorMsg() throws UnsupportedOperationException;
+    OFHelloFailedErrorMsg.Builder buildHelloFailedErrorMsg();
+    OFMeterModFailedErrorMsg.Builder buildMeterModFailedErrorMsg() throws UnsupportedOperationException;
+    OFPortModFailedErrorMsg.Builder buildPortModFailedErrorMsg();
+    OFQueueOpFailedErrorMsg.Builder buildQueueOpFailedErrorMsg();
+    OFRoleRequestFailedErrorMsg.Builder buildRoleRequestFailedErrorMsg() throws UnsupportedOperationException;
+    OFSwitchConfigFailedErrorMsg.Builder buildSwitchConfigFailedErrorMsg() throws UnsupportedOperationException;
+    OFTableFeaturesFailedErrorMsg.Builder buildTableFeaturesFailedErrorMsg() throws UnsupportedOperationException;
+    OFTableModFailedErrorMsg.Builder buildTableModFailedErrorMsg() throws UnsupportedOperationException;
 
     OFMessageReader<OFErrorMsg> getReader();
     OFVersion getVersion();

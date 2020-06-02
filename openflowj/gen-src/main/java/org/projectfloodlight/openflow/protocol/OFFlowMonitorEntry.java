@@ -29,13 +29,13 @@ import java.util.Set;
 import io.netty.buffer.ByteBuf;
 
 public interface OFFlowMonitorEntry extends OFObject {
-    long getMonitorId();
-    long getOutPort();
-    long getOutGroup();
-    Set<OFFlowMonitorFlags> getFlags();
-    TableId getTableId();
     OFFlowMonitorCommand getCommand();
+    Set<OFFlowMonitorFlags> getFlags();
     Match getMatch();
+    long getMonitorId();
+    long getOutGroup();
+    long getOutPort();
+    TableId getTableId();
     OFVersion getVersion();
 
     void writeTo(ByteBuf channelBuffer);
@@ -43,20 +43,20 @@ public interface OFFlowMonitorEntry extends OFObject {
     Builder createBuilder();
     public interface Builder  {
         OFFlowMonitorEntry build();
-        long getMonitorId();
-        Builder setMonitorId(long monitorId);
-        long getOutPort();
-        Builder setOutPort(long outPort);
-        long getOutGroup();
-        Builder setOutGroup(long outGroup);
-        Set<OFFlowMonitorFlags> getFlags();
-        Builder setFlags(Set<OFFlowMonitorFlags> flags);
-        TableId getTableId();
-        Builder setTableId(TableId tableId);
         OFFlowMonitorCommand getCommand();
         Builder setCommand(OFFlowMonitorCommand command);
+        Set<OFFlowMonitorFlags> getFlags();
+        Builder setFlags(Set<OFFlowMonitorFlags> flags);
         Match getMatch();
         Builder setMatch(Match match);
+        long getMonitorId();
+        Builder setMonitorId(long monitorId);
+        long getOutGroup();
+        Builder setOutGroup(long outGroup);
+        long getOutPort();
+        Builder setOutPort(long outPort);
+        TableId getTableId();
+        Builder setTableId(TableId tableId);
         OFVersion getVersion();
     }
 }

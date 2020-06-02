@@ -71,23 +71,13 @@ class OFBundleAddMsgVer14 implements OFBundleAddMsg {
 
     // Accessors for OF message fields
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_14;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.BUNDLE_ADD_MESSAGE;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
     public BundleId getBundleId() {
         return bundleId;
+    }
+
+    @Override
+    public OFMessage getData() {
+        return data;
     }
 
     @Override
@@ -106,8 +96,18 @@ class OFBundleAddMsgVer14 implements OFBundleAddMsg {
     }
 
     @Override
-    public OFMessage getData() {
-        return data;
+    public OFType getType() {
+        return OFType.BUNDLE_ADD_MESSAGE;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_14;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
     }
 
 
@@ -134,27 +134,6 @@ class OFBundleAddMsgVer14 implements OFBundleAddMsg {
         }
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_14;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.BUNDLE_ADD_MESSAGE;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFBundleAddMsg.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
-        return this;
-    }
-    @Override
     public BundleId getBundleId() {
         return bundleId;
     }
@@ -165,6 +144,27 @@ class OFBundleAddMsgVer14 implements OFBundleAddMsg {
         this.bundleIdSet = true;
         return this;
     }
+    @Override
+    public OFMessage getData() {
+        return data;
+    }
+
+    /** Custom setter that ensures the BundleAdd message inherits the XID from their
+     *  contained message, as per OF Spec 1.4.0:
+     *  <p>
+     *  7.3.9.6 Adding messages to a bundle
+     *  </p><p>
+     *     Message added in a bundle should have a unique xid to help matching errors to messages,
+     *     and the xid of the bundle add message must be the same.
+     *  </p>
+     */
+    @Override
+    public OFBundleAddMsg.Builder setData(OFMessage data) {
+        this.data = data;
+        this.dataSet = true;
+        return setXid(data.getXid());
+    }
+
     @Override
     public Set<OFBundleFlags> getFlags() {
         return flags;
@@ -195,26 +195,26 @@ class OFBundleAddMsgVer14 implements OFBundleAddMsg {
             throw new UnsupportedOperationException("Property properties not supported in version 1.4");
     }
     @Override
-    public OFMessage getData() {
-        return data;
+    public OFType getType() {
+        return OFType.BUNDLE_ADD_MESSAGE;
     }
 
-    /** Custom setter that ensures the BundleAdd message inherits the XID from their
-     *  contained message, as per OF Spec 1.4.0:
-     *  <p>
-     *  7.3.9.6 Adding messages to a bundle
-     *  </p><p>
-     *     Message added in a bundle should have a unique xid to help matching errors to messages,
-     *     and the xid of the bundle add message must be the same.
-     *  </p>
-     */
     @Override
-    public OFBundleAddMsg.Builder setData(OFMessage data) {
-        this.data = data;
-        this.dataSet = true;
-        return setXid(data.getXid());
+    public OFVersion getVersion() {
+        return OFVersion.OF_14;
     }
 
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFBundleAddMsg.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
+        return this;
+    }
 
 
         @Override
@@ -253,27 +253,6 @@ class OFBundleAddMsgVer14 implements OFBundleAddMsg {
         private OFMessage data;
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_14;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.BUNDLE_ADD_MESSAGE;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFBundleAddMsg.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
-        return this;
-    }
-    @Override
     public BundleId getBundleId() {
         return bundleId;
     }
@@ -284,6 +263,27 @@ class OFBundleAddMsgVer14 implements OFBundleAddMsg {
         this.bundleIdSet = true;
         return this;
     }
+    @Override
+    public OFMessage getData() {
+        return data;
+    }
+
+    /** Custom setter that ensures the BundleAdd message inherits the XID from their
+     *  contained message, as per OF Spec 1.4.0:
+     *  <p>
+     *  7.3.9.6 Adding messages to a bundle
+     *  </p><p>
+     *     Message added in a bundle should have a unique xid to help matching errors to messages,
+     *     and the xid of the bundle add message must be the same.
+     *  </p>
+     */
+    @Override
+    public OFBundleAddMsg.Builder setData(OFMessage data) {
+        this.data = data;
+        this.dataSet = true;
+        return setXid(data.getXid());
+    }
+
     @Override
     public Set<OFBundleFlags> getFlags() {
         return flags;
@@ -314,26 +314,26 @@ class OFBundleAddMsgVer14 implements OFBundleAddMsg {
             throw new UnsupportedOperationException("Property properties not supported in version 1.4");
     }
     @Override
-    public OFMessage getData() {
-        return data;
+    public OFType getType() {
+        return OFType.BUNDLE_ADD_MESSAGE;
     }
 
-    /** Custom setter that ensures the BundleAdd message inherits the XID from their
-     *  contained message, as per OF Spec 1.4.0:
-     *  <p>
-     *  7.3.9.6 Adding messages to a bundle
-     *  </p><p>
-     *     Message added in a bundle should have a unique xid to help matching errors to messages,
-     *     and the xid of the bundle add message must be the same.
-     *  </p>
-     */
     @Override
-    public OFBundleAddMsg.Builder setData(OFMessage data) {
-        this.data = data;
-        this.dataSet = true;
-        return setXid(data.getXid());
+    public OFVersion getVersion() {
+        return OFVersion.OF_14;
     }
 
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFBundleAddMsg.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
+        return this;
+    }
 //
         @Override
         public OFBundleAddMsg build() {

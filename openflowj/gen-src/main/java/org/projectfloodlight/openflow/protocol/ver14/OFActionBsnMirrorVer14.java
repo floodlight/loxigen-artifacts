@@ -64,8 +64,13 @@ class OFActionBsnMirrorVer14 implements OFActionBsnMirror {
 
     // Accessors for OF message fields
     @Override
-    public OFActionType getType() {
-        return OFActionType.EXPERIMENTER;
+    public short getCopyStage() {
+        return copyStage;
+    }
+
+    @Override
+    public OFPort getDestPort() {
+        return destPort;
     }
 
     @Override
@@ -79,18 +84,13 @@ class OFActionBsnMirrorVer14 implements OFActionBsnMirror {
     }
 
     @Override
-    public OFPort getDestPort() {
-        return destPort;
+    public OFActionType getType() {
+        return OFActionType.EXPERIMENTER;
     }
 
     @Override
     public long getVlanTag() {
         return vlanTag;
-    }
-
-    @Override
-    public short getCopyStage() {
-        return copyStage;
     }
 
     @Override
@@ -120,20 +120,16 @@ class OFActionBsnMirrorVer14 implements OFActionBsnMirror {
         }
 
     @Override
-    public OFActionType getType() {
-        return OFActionType.EXPERIMENTER;
+    public short getCopyStage() {
+        return copyStage;
     }
 
     @Override
-    public long getExperimenter() {
-        return 0x5c16c7L;
+    public OFActionBsnMirror.Builder setCopyStage(short copyStage) {
+        this.copyStage = copyStage;
+        this.copyStageSet = true;
+        return this;
     }
-
-    @Override
-    public long getSubtype() {
-        return 0x1L;
-    }
-
     @Override
     public OFPort getDestPort() {
         return destPort;
@@ -146,6 +142,21 @@ class OFActionBsnMirrorVer14 implements OFActionBsnMirror {
         return this;
     }
     @Override
+    public long getExperimenter() {
+        return 0x5c16c7L;
+    }
+
+    @Override
+    public long getSubtype() {
+        return 0x1L;
+    }
+
+    @Override
+    public OFActionType getType() {
+        return OFActionType.EXPERIMENTER;
+    }
+
+    @Override
     public long getVlanTag() {
         return vlanTag;
     }
@@ -154,17 +165,6 @@ class OFActionBsnMirrorVer14 implements OFActionBsnMirror {
     public OFActionBsnMirror.Builder setVlanTag(long vlanTag) {
         this.vlanTag = vlanTag;
         this.vlanTagSet = true;
-        return this;
-    }
-    @Override
-    public short getCopyStage() {
-        return copyStage;
-    }
-
-    @Override
-    public OFActionBsnMirror.Builder setCopyStage(short copyStage) {
-        this.copyStage = copyStage;
-        this.copyStageSet = true;
         return this;
     }
     @Override
@@ -202,20 +202,16 @@ class OFActionBsnMirrorVer14 implements OFActionBsnMirror {
         private short copyStage;
 
     @Override
-    public OFActionType getType() {
-        return OFActionType.EXPERIMENTER;
+    public short getCopyStage() {
+        return copyStage;
     }
 
     @Override
-    public long getExperimenter() {
-        return 0x5c16c7L;
+    public OFActionBsnMirror.Builder setCopyStage(short copyStage) {
+        this.copyStage = copyStage;
+        this.copyStageSet = true;
+        return this;
     }
-
-    @Override
-    public long getSubtype() {
-        return 0x1L;
-    }
-
     @Override
     public OFPort getDestPort() {
         return destPort;
@@ -228,6 +224,21 @@ class OFActionBsnMirrorVer14 implements OFActionBsnMirror {
         return this;
     }
     @Override
+    public long getExperimenter() {
+        return 0x5c16c7L;
+    }
+
+    @Override
+    public long getSubtype() {
+        return 0x1L;
+    }
+
+    @Override
+    public OFActionType getType() {
+        return OFActionType.EXPERIMENTER;
+    }
+
+    @Override
     public long getVlanTag() {
         return vlanTag;
     }
@@ -236,17 +247,6 @@ class OFActionBsnMirrorVer14 implements OFActionBsnMirror {
     public OFActionBsnMirror.Builder setVlanTag(long vlanTag) {
         this.vlanTag = vlanTag;
         this.vlanTagSet = true;
-        return this;
-    }
-    @Override
-    public short getCopyStage() {
-        return copyStage;
-    }
-
-    @Override
-    public OFActionBsnMirror.Builder setCopyStage(short copyStage) {
-        this.copyStage = copyStage;
-        this.copyStageSet = true;
         return this;
     }
     @Override

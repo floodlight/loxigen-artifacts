@@ -76,8 +76,13 @@ class OFPortStatsPropEthernetVer14 implements OFPortStatsPropEthernet {
 
     // Accessors for OF message fields
     @Override
-    public int getType() {
-        return 0x0;
+    public U64 getCollisions() {
+        return collisions;
+    }
+
+    @Override
+    public U64 getRxCrcErr() {
+        return rxCrcErr;
     }
 
     @Override
@@ -91,13 +96,8 @@ class OFPortStatsPropEthernetVer14 implements OFPortStatsPropEthernet {
     }
 
     @Override
-    public U64 getRxCrcErr() {
-        return rxCrcErr;
-    }
-
-    @Override
-    public U64 getCollisions() {
-        return collisions;
+    public int getType() {
+        return 0x0;
     }
 
     @Override
@@ -129,10 +129,27 @@ class OFPortStatsPropEthernetVer14 implements OFPortStatsPropEthernet {
         }
 
     @Override
-    public int getType() {
-        return 0x0;
+    public U64 getCollisions() {
+        return collisions;
     }
 
+    @Override
+    public OFPortStatsPropEthernet.Builder setCollisions(U64 collisions) {
+        this.collisions = collisions;
+        this.collisionsSet = true;
+        return this;
+    }
+    @Override
+    public U64 getRxCrcErr() {
+        return rxCrcErr;
+    }
+
+    @Override
+    public OFPortStatsPropEthernet.Builder setRxCrcErr(U64 rxCrcErr) {
+        this.rxCrcErr = rxCrcErr;
+        this.rxCrcErrSet = true;
+        return this;
+    }
     @Override
     public U64 getRxFrameErr() {
         return rxFrameErr;
@@ -156,27 +173,10 @@ class OFPortStatsPropEthernetVer14 implements OFPortStatsPropEthernet {
         return this;
     }
     @Override
-    public U64 getRxCrcErr() {
-        return rxCrcErr;
+    public int getType() {
+        return 0x0;
     }
 
-    @Override
-    public OFPortStatsPropEthernet.Builder setRxCrcErr(U64 rxCrcErr) {
-        this.rxCrcErr = rxCrcErr;
-        this.rxCrcErrSet = true;
-        return this;
-    }
-    @Override
-    public U64 getCollisions() {
-        return collisions;
-    }
-
-    @Override
-    public OFPortStatsPropEthernet.Builder setCollisions(U64 collisions) {
-        this.collisions = collisions;
-        this.collisionsSet = true;
-        return this;
-    }
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_14;
@@ -222,10 +222,27 @@ class OFPortStatsPropEthernetVer14 implements OFPortStatsPropEthernet {
         private U64 collisions;
 
     @Override
-    public int getType() {
-        return 0x0;
+    public U64 getCollisions() {
+        return collisions;
     }
 
+    @Override
+    public OFPortStatsPropEthernet.Builder setCollisions(U64 collisions) {
+        this.collisions = collisions;
+        this.collisionsSet = true;
+        return this;
+    }
+    @Override
+    public U64 getRxCrcErr() {
+        return rxCrcErr;
+    }
+
+    @Override
+    public OFPortStatsPropEthernet.Builder setRxCrcErr(U64 rxCrcErr) {
+        this.rxCrcErr = rxCrcErr;
+        this.rxCrcErrSet = true;
+        return this;
+    }
     @Override
     public U64 getRxFrameErr() {
         return rxFrameErr;
@@ -249,27 +266,10 @@ class OFPortStatsPropEthernetVer14 implements OFPortStatsPropEthernet {
         return this;
     }
     @Override
-    public U64 getRxCrcErr() {
-        return rxCrcErr;
+    public int getType() {
+        return 0x0;
     }
 
-    @Override
-    public OFPortStatsPropEthernet.Builder setRxCrcErr(U64 rxCrcErr) {
-        this.rxCrcErr = rxCrcErr;
-        this.rxCrcErrSet = true;
-        return this;
-    }
-    @Override
-    public U64 getCollisions() {
-        return collisions;
-    }
-
-    @Override
-    public OFPortStatsPropEthernet.Builder setCollisions(U64 collisions) {
-        this.collisions = collisions;
-        this.collisionsSet = true;
-        return this;
-    }
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_14;

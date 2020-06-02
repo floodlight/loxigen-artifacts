@@ -30,10 +30,10 @@ import io.netty.buffer.ByteBuf;
 public interface OFOxmMplsLabel extends OFObject, OFOxm<U32> {
     long getTypeLen();
     U32 getValue();
-    MatchField<U32> getMatchField();
-    boolean isMasked();
     OFOxm<U32> getCanonical();
     U32 getMask();
+    boolean isMasked();
+    MatchField<U32> getMatchField();
     OFVersion getVersion();
 
     void writeTo(ByteBuf channelBuffer);
@@ -44,10 +44,10 @@ public interface OFOxmMplsLabel extends OFObject, OFOxm<U32> {
         long getTypeLen();
         U32 getValue();
         Builder setValue(U32 value);
-        MatchField<U32> getMatchField();
-        boolean isMasked();
         OFOxm<U32> getCanonical();
         U32 getMask();
+        boolean isMasked();
+        MatchField<U32> getMatchField();
         OFVersion getVersion();
     }
 }

@@ -29,43 +29,43 @@ import java.util.Set;
 import io.netty.buffer.ByteBuf;
 
 public interface OFBsnSetLacpRequest extends OFObject, OFBsnHeader, OFRequest<OFBsnSetLacpReply> {
-    OFVersion getVersion();
-    OFType getType();
-    long getXid();
-    long getExperimenter();
-    long getSubtype();
-    short getEnabled();
-    OFPort getPortNo();
-    int getActorSysPriority();
-    MacAddress getActorSysMac();
-    int getActorPortPriority();
-    int getActorPortNum();
     int getActorKey();
+    int getActorPortNum();
+    int getActorPortPriority();
+    MacAddress getActorSysMac();
+    int getActorSysPriority();
+    short getEnabled();
+    long getExperimenter();
+    OFPort getPortNo();
+    long getSubtype();
+    OFType getType();
+    OFVersion getVersion();
+    long getXid();
 
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();
     public interface Builder extends OFBsnHeader.Builder {
         OFBsnSetLacpRequest build();
-        OFVersion getVersion();
-        OFType getType();
-        long getXid();
-        Builder setXid(long xid);
-        long getExperimenter();
-        long getSubtype();
-        short getEnabled();
-        Builder setEnabled(short enabled);
-        OFPort getPortNo();
-        Builder setPortNo(OFPort portNo);
-        int getActorSysPriority();
-        Builder setActorSysPriority(int actorSysPriority);
-        MacAddress getActorSysMac();
-        Builder setActorSysMac(MacAddress actorSysMac);
-        int getActorPortPriority();
-        Builder setActorPortPriority(int actorPortPriority);
-        int getActorPortNum();
-        Builder setActorPortNum(int actorPortNum);
         int getActorKey();
         Builder setActorKey(int actorKey);
+        int getActorPortNum();
+        Builder setActorPortNum(int actorPortNum);
+        int getActorPortPriority();
+        Builder setActorPortPriority(int actorPortPriority);
+        MacAddress getActorSysMac();
+        Builder setActorSysMac(MacAddress actorSysMac);
+        int getActorSysPriority();
+        Builder setActorSysPriority(int actorSysPriority);
+        short getEnabled();
+        Builder setEnabled(short enabled);
+        long getExperimenter();
+        OFPort getPortNo();
+        Builder setPortNo(OFPort portNo);
+        long getSubtype();
+        OFType getType();
+        OFVersion getVersion();
+        long getXid();
+        Builder setXid(long xid);
     }
 }

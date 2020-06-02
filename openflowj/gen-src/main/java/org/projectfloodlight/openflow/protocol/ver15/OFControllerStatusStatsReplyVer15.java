@@ -72,23 +72,8 @@ class OFControllerStatusStatsReplyVer15 implements OFControllerStatusStatsReply 
 
     // Accessors for OF message fields
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_15;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.STATS_REPLY;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFStatsType getStatsType() {
-        return OFStatsType.CONTROLLER_STATUS;
+    public List<OFControllerStatusEntry> getControllerStatus() {
+        return controllerStatus;
     }
 
     @Override
@@ -97,8 +82,23 @@ class OFControllerStatusStatsReplyVer15 implements OFControllerStatusStatsReply 
     }
 
     @Override
-    public List<OFControllerStatusEntry> getControllerStatus() {
-        return controllerStatus;
+    public OFStatsType getStatsType() {
+        return OFStatsType.CONTROLLER_STATUS;
+    }
+
+    @Override
+    public OFType getType() {
+        return OFType.STATS_REPLY;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_15;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
     }
 
 
@@ -123,31 +123,16 @@ class OFControllerStatusStatsReplyVer15 implements OFControllerStatusStatsReply 
         }
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_15;
+    public List<OFControllerStatusEntry> getControllerStatus() {
+        return controllerStatus;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.STATS_REPLY;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFControllerStatusStatsReply.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
+    public OFControllerStatusStatsReply.Builder setControllerStatus(List<OFControllerStatusEntry> controllerStatus) {
+        this.controllerStatus = controllerStatus;
+        this.controllerStatusSet = true;
         return this;
     }
-    @Override
-    public OFStatsType getStatsType() {
-        return OFStatsType.CONTROLLER_STATUS;
-    }
-
     @Override
     public Set<OFStatsReplyFlags> getFlags() {
         return flags;
@@ -160,14 +145,29 @@ class OFControllerStatusStatsReplyVer15 implements OFControllerStatusStatsReply 
         return this;
     }
     @Override
-    public List<OFControllerStatusEntry> getControllerStatus() {
-        return controllerStatus;
+    public OFStatsType getStatsType() {
+        return OFStatsType.CONTROLLER_STATUS;
     }
 
     @Override
-    public OFControllerStatusStatsReply.Builder setControllerStatus(List<OFControllerStatusEntry> controllerStatus) {
-        this.controllerStatus = controllerStatus;
-        this.controllerStatusSet = true;
+    public OFType getType() {
+        return OFType.STATS_REPLY;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_15;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFControllerStatusStatsReply.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 
@@ -202,31 +202,16 @@ class OFControllerStatusStatsReplyVer15 implements OFControllerStatusStatsReply 
         private List<OFControllerStatusEntry> controllerStatus;
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_15;
+    public List<OFControllerStatusEntry> getControllerStatus() {
+        return controllerStatus;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.STATS_REPLY;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFControllerStatusStatsReply.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
+    public OFControllerStatusStatsReply.Builder setControllerStatus(List<OFControllerStatusEntry> controllerStatus) {
+        this.controllerStatus = controllerStatus;
+        this.controllerStatusSet = true;
         return this;
     }
-    @Override
-    public OFStatsType getStatsType() {
-        return OFStatsType.CONTROLLER_STATUS;
-    }
-
     @Override
     public Set<OFStatsReplyFlags> getFlags() {
         return flags;
@@ -239,14 +224,29 @@ class OFControllerStatusStatsReplyVer15 implements OFControllerStatusStatsReply 
         return this;
     }
     @Override
-    public List<OFControllerStatusEntry> getControllerStatus() {
-        return controllerStatus;
+    public OFStatsType getStatsType() {
+        return OFStatsType.CONTROLLER_STATUS;
     }
 
     @Override
-    public OFControllerStatusStatsReply.Builder setControllerStatus(List<OFControllerStatusEntry> controllerStatus) {
-        this.controllerStatus = controllerStatus;
-        this.controllerStatusSet = true;
+    public OFType getType() {
+        return OFType.STATS_REPLY;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_15;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFControllerStatusStatsReply.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 //

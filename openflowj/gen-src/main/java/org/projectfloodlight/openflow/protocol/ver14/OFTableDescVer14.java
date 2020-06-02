@@ -66,11 +66,6 @@ class OFTableDescVer14 implements OFTableDesc {
 
     // Accessors for OF message fields
     @Override
-    public TableId getTableId() {
-        return tableId;
-    }
-
-    @Override
     public Set<OFTableConfig> getConfig() {
         return config;
     }
@@ -78,6 +73,11 @@ class OFTableDescVer14 implements OFTableDesc {
     @Override
     public List<OFTableModProp> getProperties()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property properties not supported in version 1.4");
+    }
+
+    @Override
+    public TableId getTableId() {
+        return tableId;
     }
 
     @Override
@@ -105,17 +105,6 @@ class OFTableDescVer14 implements OFTableDesc {
         }
 
     @Override
-    public TableId getTableId() {
-        return tableId;
-    }
-
-    @Override
-    public OFTableDesc.Builder setTableId(TableId tableId) {
-        this.tableId = tableId;
-        this.tableIdSet = true;
-        return this;
-    }
-    @Override
     public Set<OFTableConfig> getConfig() {
         return config;
     }
@@ -134,6 +123,17 @@ class OFTableDescVer14 implements OFTableDesc {
     @Override
     public OFTableDesc.Builder setProperties(List<OFTableModProp> properties) throws UnsupportedOperationException {
             throw new UnsupportedOperationException("Property properties not supported in version 1.4");
+    }
+    @Override
+    public TableId getTableId() {
+        return tableId;
+    }
+
+    @Override
+    public OFTableDesc.Builder setTableId(TableId tableId) {
+        this.tableId = tableId;
+        this.tableIdSet = true;
+        return this;
     }
     @Override
     public OFVersion getVersion() {
@@ -168,17 +168,6 @@ class OFTableDescVer14 implements OFTableDesc {
         private Set<OFTableConfig> config;
 
     @Override
-    public TableId getTableId() {
-        return tableId;
-    }
-
-    @Override
-    public OFTableDesc.Builder setTableId(TableId tableId) {
-        this.tableId = tableId;
-        this.tableIdSet = true;
-        return this;
-    }
-    @Override
     public Set<OFTableConfig> getConfig() {
         return config;
     }
@@ -197,6 +186,17 @@ class OFTableDescVer14 implements OFTableDesc {
     @Override
     public OFTableDesc.Builder setProperties(List<OFTableModProp> properties) throws UnsupportedOperationException {
             throw new UnsupportedOperationException("Property properties not supported in version 1.4");
+    }
+    @Override
+    public TableId getTableId() {
+        return tableId;
+    }
+
+    @Override
+    public OFTableDesc.Builder setTableId(TableId tableId) {
+        this.tableId = tableId;
+        this.tableIdSet = true;
+        return this;
     }
     @Override
     public OFVersion getVersion() {

@@ -67,16 +67,6 @@ class OFOxmBsnUdf4Ver14 implements OFOxmBsnUdf4 {
         return value;
     }
 
-    @Override
-    public MatchField<UDF> getMatchField() {
-        return MatchField.BSN_UDF4;
-    }
-
-    @Override
-    public boolean isMasked() {
-        return false;
-    }
-
     public OFOxm<UDF> getCanonical() {
         // exact match OXM is always canonical
         return this;
@@ -85,6 +75,16 @@ class OFOxmBsnUdf4Ver14 implements OFOxmBsnUdf4 {
     @Override
     public UDF getMask()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property mask not supported in version 1.4");
+    }
+
+    @Override
+    public boolean isMasked() {
+        return false;
+    }
+
+    @Override
+    public MatchField<UDF> getMatchField() {
+        return MatchField.BSN_UDF4;
     }
 
     @Override
@@ -126,8 +126,13 @@ class OFOxmBsnUdf4Ver14 implements OFOxmBsnUdf4 {
         return this;
     }
     @Override
-    public MatchField<UDF> getMatchField() {
-        return MatchField.BSN_UDF4;
+    public OFOxm<UDF> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.4");
+    }
+
+    @Override
+    public UDF getMask()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property mask not supported in version 1.4");
     }
 
     @Override
@@ -136,13 +141,8 @@ class OFOxmBsnUdf4Ver14 implements OFOxmBsnUdf4 {
     }
 
     @Override
-    public OFOxm<UDF> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.4");
-    }
-
-    @Override
-    public UDF getMask()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property mask not supported in version 1.4");
+    public MatchField<UDF> getMatchField() {
+        return MatchField.BSN_UDF4;
     }
 
     @Override
@@ -188,8 +188,13 @@ class OFOxmBsnUdf4Ver14 implements OFOxmBsnUdf4 {
         return this;
     }
     @Override
-    public MatchField<UDF> getMatchField() {
-        return MatchField.BSN_UDF4;
+    public OFOxm<UDF> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.4");
+    }
+
+    @Override
+    public UDF getMask()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property mask not supported in version 1.4");
     }
 
     @Override
@@ -198,13 +203,8 @@ class OFOxmBsnUdf4Ver14 implements OFOxmBsnUdf4 {
     }
 
     @Override
-    public OFOxm<UDF> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.4");
-    }
-
-    @Override
-    public UDF getMask()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property mask not supported in version 1.4");
+    public MatchField<UDF> getMatchField() {
+        return MatchField.BSN_UDF4;
     }
 
     @Override

@@ -64,6 +64,11 @@ class OFOxmBsnL2CacheHitMaskedVer13 implements OFOxmBsnL2CacheHitMasked {
 
     // Accessors for OF message fields
     @Override
+    public OFBooleanValue getMask() {
+        return mask;
+    }
+
+    @Override
     public long getTypeLen() {
         return 0x32502L;
     }
@@ -71,21 +76,6 @@ class OFOxmBsnL2CacheHitMaskedVer13 implements OFOxmBsnL2CacheHitMasked {
     @Override
     public OFBooleanValue getValue() {
         return value;
-    }
-
-    @Override
-    public OFBooleanValue getMask() {
-        return mask;
-    }
-
-    @Override
-    public MatchField<OFBooleanValue> getMatchField() {
-        return MatchField.BSN_L2_CACHE_HIT;
-    }
-
-    @Override
-    public boolean isMasked() {
-        return true;
     }
 
     public OFOxm<OFBooleanValue> getCanonical() {
@@ -96,6 +86,16 @@ class OFOxmBsnL2CacheHitMaskedVer13 implements OFOxmBsnL2CacheHitMasked {
         } else {
             return this;
         }
+    }
+
+    @Override
+    public boolean isMasked() {
+        return true;
+    }
+
+    @Override
+    public MatchField<OFBooleanValue> getMatchField() {
+        return MatchField.BSN_L2_CACHE_HIT;
     }
 
     @Override
@@ -123,6 +123,17 @@ class OFOxmBsnL2CacheHitMaskedVer13 implements OFOxmBsnL2CacheHitMasked {
         }
 
     @Override
+    public OFBooleanValue getMask() {
+        return mask;
+    }
+
+    @Override
+    public OFOxmBsnL2CacheHitMasked.Builder setMask(OFBooleanValue mask) {
+        this.mask = mask;
+        this.maskSet = true;
+        return this;
+    }
+    @Override
     public long getTypeLen() {
         return 0x32502L;
     }
@@ -139,19 +150,8 @@ class OFOxmBsnL2CacheHitMaskedVer13 implements OFOxmBsnL2CacheHitMasked {
         return this;
     }
     @Override
-    public OFBooleanValue getMask() {
-        return mask;
-    }
-
-    @Override
-    public OFOxmBsnL2CacheHitMasked.Builder setMask(OFBooleanValue mask) {
-        this.mask = mask;
-        this.maskSet = true;
-        return this;
-    }
-    @Override
-    public MatchField<OFBooleanValue> getMatchField() {
-        return MatchField.BSN_L2_CACHE_HIT;
+    public OFOxm<OFBooleanValue> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.3");
     }
 
     @Override
@@ -160,8 +160,8 @@ class OFOxmBsnL2CacheHitMaskedVer13 implements OFOxmBsnL2CacheHitMasked {
     }
 
     @Override
-    public OFOxm<OFBooleanValue> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.3");
+    public MatchField<OFBooleanValue> getMatchField() {
+        return MatchField.BSN_L2_CACHE_HIT;
     }
 
     @Override
@@ -197,6 +197,17 @@ class OFOxmBsnL2CacheHitMaskedVer13 implements OFOxmBsnL2CacheHitMasked {
         private OFBooleanValue mask;
 
     @Override
+    public OFBooleanValue getMask() {
+        return mask;
+    }
+
+    @Override
+    public OFOxmBsnL2CacheHitMasked.Builder setMask(OFBooleanValue mask) {
+        this.mask = mask;
+        this.maskSet = true;
+        return this;
+    }
+    @Override
     public long getTypeLen() {
         return 0x32502L;
     }
@@ -213,19 +224,8 @@ class OFOxmBsnL2CacheHitMaskedVer13 implements OFOxmBsnL2CacheHitMasked {
         return this;
     }
     @Override
-    public OFBooleanValue getMask() {
-        return mask;
-    }
-
-    @Override
-    public OFOxmBsnL2CacheHitMasked.Builder setMask(OFBooleanValue mask) {
-        this.mask = mask;
-        this.maskSet = true;
-        return this;
-    }
-    @Override
-    public MatchField<OFBooleanValue> getMatchField() {
-        return MatchField.BSN_L2_CACHE_HIT;
+    public OFOxm<OFBooleanValue> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.3");
     }
 
     @Override
@@ -234,8 +234,8 @@ class OFOxmBsnL2CacheHitMaskedVer13 implements OFOxmBsnL2CacheHitMasked {
     }
 
     @Override
-    public OFOxm<OFBooleanValue> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.3");
+    public MatchField<OFBooleanValue> getMatchField() {
+        return MatchField.BSN_L2_CACHE_HIT;
     }
 
     @Override

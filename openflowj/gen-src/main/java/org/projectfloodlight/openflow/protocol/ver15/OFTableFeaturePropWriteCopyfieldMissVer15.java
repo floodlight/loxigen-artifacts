@@ -62,13 +62,13 @@ class OFTableFeaturePropWriteCopyfieldMissVer15 implements OFTableFeaturePropWri
 
     // Accessors for OF message fields
     @Override
-    public int getType() {
-        return 0x13;
+    public List<U32> getOxmIds() {
+        return oxmIds;
     }
 
     @Override
-    public List<U32> getOxmIds() {
-        return oxmIds;
+    public int getType() {
+        return 0x13;
     }
 
     @Override
@@ -94,11 +94,6 @@ class OFTableFeaturePropWriteCopyfieldMissVer15 implements OFTableFeaturePropWri
         }
 
     @Override
-    public int getType() {
-        return 0x13;
-    }
-
-    @Override
     public List<U32> getOxmIds() {
         return oxmIds;
     }
@@ -109,6 +104,11 @@ class OFTableFeaturePropWriteCopyfieldMissVer15 implements OFTableFeaturePropWri
         this.oxmIdsSet = true;
         return this;
     }
+    @Override
+    public int getType() {
+        return 0x13;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_15;
@@ -136,11 +136,6 @@ class OFTableFeaturePropWriteCopyfieldMissVer15 implements OFTableFeaturePropWri
         private List<U32> oxmIds;
 
     @Override
-    public int getType() {
-        return 0x13;
-    }
-
-    @Override
     public List<U32> getOxmIds() {
         return oxmIds;
     }
@@ -151,6 +146,11 @@ class OFTableFeaturePropWriteCopyfieldMissVer15 implements OFTableFeaturePropWri
         this.oxmIdsSet = true;
         return this;
     }
+    @Override
+    public int getType() {
+        return 0x13;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_15;

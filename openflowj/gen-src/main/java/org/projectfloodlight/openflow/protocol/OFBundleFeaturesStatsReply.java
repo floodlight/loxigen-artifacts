@@ -30,29 +30,29 @@ import java.util.List;
 import io.netty.buffer.ByteBuf;
 
 public interface OFBundleFeaturesStatsReply extends OFObject, OFStatsReply {
-    OFVersion getVersion();
-    OFType getType();
-    long getXid();
-    OFStatsType getStatsType();
-    Set<OFStatsReplyFlags> getFlags();
     Set<OFBundleFeatureFlags> getCapabilities();
+    Set<OFStatsReplyFlags> getFlags();
     List<OFBundleFeaturesProp> getProperties();
+    OFStatsType getStatsType();
+    OFType getType();
+    OFVersion getVersion();
+    long getXid();
 
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();
     public interface Builder extends OFStatsReply.Builder {
         OFBundleFeaturesStatsReply build();
-        OFVersion getVersion();
-        OFType getType();
-        long getXid();
-        Builder setXid(long xid);
-        OFStatsType getStatsType();
-        Set<OFStatsReplyFlags> getFlags();
-        Builder setFlags(Set<OFStatsReplyFlags> flags);
         Set<OFBundleFeatureFlags> getCapabilities();
         Builder setCapabilities(Set<OFBundleFeatureFlags> capabilities);
+        Set<OFStatsReplyFlags> getFlags();
+        Builder setFlags(Set<OFStatsReplyFlags> flags);
         List<OFBundleFeaturesProp> getProperties();
         Builder setProperties(List<OFBundleFeaturesProp> properties);
+        OFStatsType getStatsType();
+        OFType getType();
+        OFVersion getVersion();
+        long getXid();
+        Builder setXid(long xid);
     }
 }

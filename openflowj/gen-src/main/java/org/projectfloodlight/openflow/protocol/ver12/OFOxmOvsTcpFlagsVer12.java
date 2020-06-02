@@ -58,28 +58,18 @@ class OFOxmOvsTcpFlagsVer12 implements OFOxmOvsTcpFlags {
 
     // Accessors for OF message fields
     @Override
-    public long getTypeLen() {
-        return 0xffff5406L;
-    }
-
-    @Override
     public long getExperimenterId() {
         return 0x4f4e4600L;
     }
 
     @Override
+    public long getTypeLen() {
+        return 0xffff5406L;
+    }
+
+    @Override
     public U16 getValue() {
         return value;
-    }
-
-    @Override
-    public MatchField<U16> getMatchField() {
-        return MatchField.OVS_TCP_FLAGS;
-    }
-
-    @Override
-    public boolean isMasked() {
-        return false;
     }
 
     public OFOxm<U16> getCanonical() {
@@ -90,6 +80,16 @@ class OFOxmOvsTcpFlagsVer12 implements OFOxmOvsTcpFlags {
     @Override
     public U16 getMask()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property mask not supported in version 1.2");
+    }
+
+    @Override
+    public boolean isMasked() {
+        return false;
+    }
+
+    @Override
+    public MatchField<U16> getMatchField() {
+        return MatchField.OVS_TCP_FLAGS;
     }
 
     @Override
@@ -115,13 +115,13 @@ class OFOxmOvsTcpFlagsVer12 implements OFOxmOvsTcpFlags {
         }
 
     @Override
-    public long getTypeLen() {
-        return 0xffff5406L;
+    public long getExperimenterId() {
+        return 0x4f4e4600L;
     }
 
     @Override
-    public long getExperimenterId() {
-        return 0x4f4e4600L;
+    public long getTypeLen() {
+        return 0xffff5406L;
     }
 
     @Override
@@ -136,8 +136,13 @@ class OFOxmOvsTcpFlagsVer12 implements OFOxmOvsTcpFlags {
         return this;
     }
     @Override
-    public MatchField<U16> getMatchField() {
-        return MatchField.OVS_TCP_FLAGS;
+    public OFOxm<U16> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.2");
+    }
+
+    @Override
+    public U16 getMask()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property mask not supported in version 1.2");
     }
 
     @Override
@@ -146,13 +151,8 @@ class OFOxmOvsTcpFlagsVer12 implements OFOxmOvsTcpFlags {
     }
 
     @Override
-    public OFOxm<U16> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.2");
-    }
-
-    @Override
-    public U16 getMask()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property mask not supported in version 1.2");
+    public MatchField<U16> getMatchField() {
+        return MatchField.OVS_TCP_FLAGS;
     }
 
     @Override
@@ -182,13 +182,13 @@ class OFOxmOvsTcpFlagsVer12 implements OFOxmOvsTcpFlags {
         private U16 value;
 
     @Override
-    public long getTypeLen() {
-        return 0xffff5406L;
+    public long getExperimenterId() {
+        return 0x4f4e4600L;
     }
 
     @Override
-    public long getExperimenterId() {
-        return 0x4f4e4600L;
+    public long getTypeLen() {
+        return 0xffff5406L;
     }
 
     @Override
@@ -203,8 +203,13 @@ class OFOxmOvsTcpFlagsVer12 implements OFOxmOvsTcpFlags {
         return this;
     }
     @Override
-    public MatchField<U16> getMatchField() {
-        return MatchField.OVS_TCP_FLAGS;
+    public OFOxm<U16> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.2");
+    }
+
+    @Override
+    public U16 getMask()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property mask not supported in version 1.2");
     }
 
     @Override
@@ -213,13 +218,8 @@ class OFOxmOvsTcpFlagsVer12 implements OFOxmOvsTcpFlags {
     }
 
     @Override
-    public OFOxm<U16> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.2");
-    }
-
-    @Override
-    public U16 getMask()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property mask not supported in version 1.2");
+    public MatchField<U16> getMatchField() {
+        return MatchField.OVS_TCP_FLAGS;
     }
 
     @Override

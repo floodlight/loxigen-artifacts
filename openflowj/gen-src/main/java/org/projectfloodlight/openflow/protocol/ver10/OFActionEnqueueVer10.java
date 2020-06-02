@@ -61,11 +61,6 @@ class OFActionEnqueueVer10 implements OFActionEnqueue {
 
     // Accessors for OF message fields
     @Override
-    public OFActionType getType() {
-        return OFActionType.ENQUEUE;
-    }
-
-    @Override
     public OFPort getPort() {
         return port;
     }
@@ -73,6 +68,11 @@ class OFActionEnqueueVer10 implements OFActionEnqueue {
     @Override
     public long getQueueId() {
         return queueId;
+    }
+
+    @Override
+    public OFActionType getType() {
+        return OFActionType.ENQUEUE;
     }
 
     @Override
@@ -100,11 +100,6 @@ class OFActionEnqueueVer10 implements OFActionEnqueue {
         }
 
     @Override
-    public OFActionType getType() {
-        return OFActionType.ENQUEUE;
-    }
-
-    @Override
     public OFPort getPort() {
         return port;
     }
@@ -126,6 +121,11 @@ class OFActionEnqueueVer10 implements OFActionEnqueue {
         this.queueIdSet = true;
         return this;
     }
+    @Override
+    public OFActionType getType() {
+        return OFActionType.ENQUEUE;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_10;
@@ -157,11 +157,6 @@ class OFActionEnqueueVer10 implements OFActionEnqueue {
         private long queueId;
 
     @Override
-    public OFActionType getType() {
-        return OFActionType.ENQUEUE;
-    }
-
-    @Override
     public OFPort getPort() {
         return port;
     }
@@ -183,6 +178,11 @@ class OFActionEnqueueVer10 implements OFActionEnqueue {
         this.queueIdSet = true;
         return this;
     }
+    @Override
+    public OFActionType getType() {
+        return OFActionType.ENQUEUE;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_10;

@@ -29,8 +29,8 @@ import java.util.Set;
 import io.netty.buffer.ByteBuf;
 
 public interface OFActionSetTpDst extends OFObject, OFAction {
-    OFActionType getType();
     TransportPort getTpPort();
+    OFActionType getType();
     OFVersion getVersion();
 
     void writeTo(ByteBuf channelBuffer);
@@ -38,9 +38,9 @@ public interface OFActionSetTpDst extends OFObject, OFAction {
     Builder createBuilder();
     public interface Builder extends OFAction.Builder {
         OFActionSetTpDst build();
-        OFActionType getType();
         TransportPort getTpPort();
         Builder setTpPort(TransportPort tpPort);
+        OFActionType getType();
         OFVersion getVersion();
     }
 }

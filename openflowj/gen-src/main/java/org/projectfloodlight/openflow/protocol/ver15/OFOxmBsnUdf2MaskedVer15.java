@@ -64,6 +64,11 @@ class OFOxmBsnUdf2MaskedVer15 implements OFOxmBsnUdf2Masked {
 
     // Accessors for OF message fields
     @Override
+    public UDF getMask() {
+        return mask;
+    }
+
+    @Override
     public long getTypeLen() {
         return 0x31508L;
     }
@@ -71,21 +76,6 @@ class OFOxmBsnUdf2MaskedVer15 implements OFOxmBsnUdf2Masked {
     @Override
     public UDF getValue() {
         return value;
-    }
-
-    @Override
-    public UDF getMask() {
-        return mask;
-    }
-
-    @Override
-    public MatchField<UDF> getMatchField() {
-        return MatchField.BSN_UDF2;
-    }
-
-    @Override
-    public boolean isMasked() {
-        return true;
     }
 
     public OFOxm<UDF> getCanonical() {
@@ -96,6 +86,16 @@ class OFOxmBsnUdf2MaskedVer15 implements OFOxmBsnUdf2Masked {
         } else {
             return this;
         }
+    }
+
+    @Override
+    public boolean isMasked() {
+        return true;
+    }
+
+    @Override
+    public MatchField<UDF> getMatchField() {
+        return MatchField.BSN_UDF2;
     }
 
     @Override
@@ -123,6 +123,17 @@ class OFOxmBsnUdf2MaskedVer15 implements OFOxmBsnUdf2Masked {
         }
 
     @Override
+    public UDF getMask() {
+        return mask;
+    }
+
+    @Override
+    public OFOxmBsnUdf2Masked.Builder setMask(UDF mask) {
+        this.mask = mask;
+        this.maskSet = true;
+        return this;
+    }
+    @Override
     public long getTypeLen() {
         return 0x31508L;
     }
@@ -139,19 +150,8 @@ class OFOxmBsnUdf2MaskedVer15 implements OFOxmBsnUdf2Masked {
         return this;
     }
     @Override
-    public UDF getMask() {
-        return mask;
-    }
-
-    @Override
-    public OFOxmBsnUdf2Masked.Builder setMask(UDF mask) {
-        this.mask = mask;
-        this.maskSet = true;
-        return this;
-    }
-    @Override
-    public MatchField<UDF> getMatchField() {
-        return MatchField.BSN_UDF2;
+    public OFOxm<UDF> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.5");
     }
 
     @Override
@@ -160,8 +160,8 @@ class OFOxmBsnUdf2MaskedVer15 implements OFOxmBsnUdf2Masked {
     }
 
     @Override
-    public OFOxm<UDF> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.5");
+    public MatchField<UDF> getMatchField() {
+        return MatchField.BSN_UDF2;
     }
 
     @Override
@@ -197,6 +197,17 @@ class OFOxmBsnUdf2MaskedVer15 implements OFOxmBsnUdf2Masked {
         private UDF mask;
 
     @Override
+    public UDF getMask() {
+        return mask;
+    }
+
+    @Override
+    public OFOxmBsnUdf2Masked.Builder setMask(UDF mask) {
+        this.mask = mask;
+        this.maskSet = true;
+        return this;
+    }
+    @Override
     public long getTypeLen() {
         return 0x31508L;
     }
@@ -213,19 +224,8 @@ class OFOxmBsnUdf2MaskedVer15 implements OFOxmBsnUdf2Masked {
         return this;
     }
     @Override
-    public UDF getMask() {
-        return mask;
-    }
-
-    @Override
-    public OFOxmBsnUdf2Masked.Builder setMask(UDF mask) {
-        this.mask = mask;
-        this.maskSet = true;
-        return this;
-    }
-    @Override
-    public MatchField<UDF> getMatchField() {
-        return MatchField.BSN_UDF2;
+    public OFOxm<UDF> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.5");
     }
 
     @Override
@@ -234,8 +234,8 @@ class OFOxmBsnUdf2MaskedVer15 implements OFOxmBsnUdf2Masked {
     }
 
     @Override
-    public OFOxm<UDF> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.5");
+    public MatchField<UDF> getMatchField() {
+        return MatchField.BSN_UDF2;
     }
 
     @Override

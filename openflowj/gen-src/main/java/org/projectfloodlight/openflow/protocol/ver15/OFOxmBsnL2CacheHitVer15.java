@@ -67,16 +67,6 @@ class OFOxmBsnL2CacheHitVer15 implements OFOxmBsnL2CacheHit {
         return value;
     }
 
-    @Override
-    public MatchField<OFBooleanValue> getMatchField() {
-        return MatchField.BSN_L2_CACHE_HIT;
-    }
-
-    @Override
-    public boolean isMasked() {
-        return false;
-    }
-
     public OFOxm<OFBooleanValue> getCanonical() {
         // exact match OXM is always canonical
         return this;
@@ -85,6 +75,16 @@ class OFOxmBsnL2CacheHitVer15 implements OFOxmBsnL2CacheHit {
     @Override
     public OFBooleanValue getMask()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property mask not supported in version 1.5");
+    }
+
+    @Override
+    public boolean isMasked() {
+        return false;
+    }
+
+    @Override
+    public MatchField<OFBooleanValue> getMatchField() {
+        return MatchField.BSN_L2_CACHE_HIT;
     }
 
     @Override
@@ -126,8 +126,13 @@ class OFOxmBsnL2CacheHitVer15 implements OFOxmBsnL2CacheHit {
         return this;
     }
     @Override
-    public MatchField<OFBooleanValue> getMatchField() {
-        return MatchField.BSN_L2_CACHE_HIT;
+    public OFOxm<OFBooleanValue> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.5");
+    }
+
+    @Override
+    public OFBooleanValue getMask()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property mask not supported in version 1.5");
     }
 
     @Override
@@ -136,13 +141,8 @@ class OFOxmBsnL2CacheHitVer15 implements OFOxmBsnL2CacheHit {
     }
 
     @Override
-    public OFOxm<OFBooleanValue> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.5");
-    }
-
-    @Override
-    public OFBooleanValue getMask()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property mask not supported in version 1.5");
+    public MatchField<OFBooleanValue> getMatchField() {
+        return MatchField.BSN_L2_CACHE_HIT;
     }
 
     @Override
@@ -188,8 +188,13 @@ class OFOxmBsnL2CacheHitVer15 implements OFOxmBsnL2CacheHit {
         return this;
     }
     @Override
-    public MatchField<OFBooleanValue> getMatchField() {
-        return MatchField.BSN_L2_CACHE_HIT;
+    public OFOxm<OFBooleanValue> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.5");
+    }
+
+    @Override
+    public OFBooleanValue getMask()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property mask not supported in version 1.5");
     }
 
     @Override
@@ -198,13 +203,8 @@ class OFOxmBsnL2CacheHitVer15 implements OFOxmBsnL2CacheHit {
     }
 
     @Override
-    public OFOxm<OFBooleanValue> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.5");
-    }
-
-    @Override
-    public OFBooleanValue getMask()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property mask not supported in version 1.5");
+    public MatchField<OFBooleanValue> getMatchField() {
+        return MatchField.BSN_L2_CACHE_HIT;
     }
 
     @Override

@@ -29,10 +29,10 @@ import java.util.Set;
 import io.netty.buffer.ByteBuf;
 
 public interface OFActionBsnSetTunnelDst extends OFObject, OFActionBsn {
-    OFActionType getType();
+    long getDst();
     long getExperimenter();
     long getSubtype();
-    long getDst();
+    OFActionType getType();
     OFVersion getVersion();
 
     void writeTo(ByteBuf channelBuffer);
@@ -40,11 +40,11 @@ public interface OFActionBsnSetTunnelDst extends OFObject, OFActionBsn {
     Builder createBuilder();
     public interface Builder extends OFActionBsn.Builder {
         OFActionBsnSetTunnelDst build();
-        OFActionType getType();
-        long getExperimenter();
-        long getSubtype();
         long getDst();
         Builder setDst(long dst);
+        long getExperimenter();
+        long getSubtype();
+        OFActionType getType();
         OFVersion getVersion();
     }
 }

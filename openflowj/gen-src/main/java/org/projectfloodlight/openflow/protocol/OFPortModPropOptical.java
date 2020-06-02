@@ -28,12 +28,12 @@ import org.projectfloodlight.openflow.exceptions.*;
 import io.netty.buffer.ByteBuf;
 
 public interface OFPortModPropOptical extends OFObject, OFPortModProp {
-    int getType();
     long getConfigure();
-    long getFreqLdma();
     long getFlOffset();
+    long getFreqLdma();
     long getGridSpan();
     long getTxPwr();
+    int getType();
     OFVersion getVersion();
 
     void writeTo(ByteBuf channelBuffer);
@@ -41,17 +41,17 @@ public interface OFPortModPropOptical extends OFObject, OFPortModProp {
     Builder createBuilder();
     public interface Builder extends OFPortModProp.Builder {
         OFPortModPropOptical build();
-        int getType();
         long getConfigure();
         Builder setConfigure(long configure);
-        long getFreqLdma();
-        Builder setFreqLdma(long freqLdma);
         long getFlOffset();
         Builder setFlOffset(long flOffset);
+        long getFreqLdma();
+        Builder setFreqLdma(long freqLdma);
         long getGridSpan();
         Builder setGridSpan(long gridSpan);
         long getTxPwr();
         Builder setTxPwr(long txPwr);
+        int getType();
         OFVersion getVersion();
     }
 }

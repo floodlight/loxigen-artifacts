@@ -62,13 +62,13 @@ class OFInstructionApplyActionsVer11 implements OFInstructionApplyActions {
 
     // Accessors for OF message fields
     @Override
-    public OFInstructionType getType() {
-        return OFInstructionType.APPLY_ACTIONS;
+    public List<OFAction> getActions() {
+        return actions;
     }
 
     @Override
-    public List<OFAction> getActions() {
-        return actions;
+    public OFInstructionType getType() {
+        return OFInstructionType.APPLY_ACTIONS;
     }
 
     @Override
@@ -94,11 +94,6 @@ class OFInstructionApplyActionsVer11 implements OFInstructionApplyActions {
         }
 
     @Override
-    public OFInstructionType getType() {
-        return OFInstructionType.APPLY_ACTIONS;
-    }
-
-    @Override
     public List<OFAction> getActions() {
         return actions;
     }
@@ -109,6 +104,11 @@ class OFInstructionApplyActionsVer11 implements OFInstructionApplyActions {
         this.actionsSet = true;
         return this;
     }
+    @Override
+    public OFInstructionType getType() {
+        return OFInstructionType.APPLY_ACTIONS;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_11;
@@ -136,11 +136,6 @@ class OFInstructionApplyActionsVer11 implements OFInstructionApplyActions {
         private List<OFAction> actions;
 
     @Override
-    public OFInstructionType getType() {
-        return OFInstructionType.APPLY_ACTIONS;
-    }
-
-    @Override
     public List<OFAction> getActions() {
         return actions;
     }
@@ -151,6 +146,11 @@ class OFInstructionApplyActionsVer11 implements OFInstructionApplyActions {
         this.actionsSet = true;
         return this;
     }
+    @Override
+    public OFInstructionType getType() {
+        return OFInstructionType.APPLY_ACTIONS;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_11;

@@ -28,8 +28,8 @@ import org.projectfloodlight.openflow.exceptions.*;
 import io.netty.buffer.ByteBuf;
 
 public interface OFAsyncConfigPropPacketInSlave extends OFObject, OFAsyncConfigProp {
-    int getType();
     long getMask();
+    int getType();
     OFVersion getVersion();
 
     void writeTo(ByteBuf channelBuffer);
@@ -37,9 +37,9 @@ public interface OFAsyncConfigPropPacketInSlave extends OFObject, OFAsyncConfigP
     Builder createBuilder();
     public interface Builder extends OFAsyncConfigProp.Builder {
         OFAsyncConfigPropPacketInSlave build();
-        int getType();
         long getMask();
         Builder setMask(long mask);
+        int getType();
         OFVersion getVersion();
     }
 }

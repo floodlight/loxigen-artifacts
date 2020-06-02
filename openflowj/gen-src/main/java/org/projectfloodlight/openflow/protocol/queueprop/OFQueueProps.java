@@ -29,10 +29,10 @@ import org.projectfloodlight.openflow.exceptions.*;
 public interface OFQueueProps {
     // Subfactories
 
-    OFQueuePropMinRate.Builder buildMinRate();
-    OFQueuePropMinRate minRate(int rate);
     OFQueuePropMaxRate.Builder buildMaxRate() throws UnsupportedOperationException;
     OFQueuePropMaxRate maxRate(int rate);
+    OFQueuePropMinRate.Builder buildMinRate();
+    OFQueuePropMinRate minRate(int rate);
 
     OFMessageReader<OFQueueProp> getReader();
     OFVersion getVersion();

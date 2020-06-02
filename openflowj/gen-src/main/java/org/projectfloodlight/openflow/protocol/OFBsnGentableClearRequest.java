@@ -28,31 +28,31 @@ import org.projectfloodlight.openflow.exceptions.*;
 import io.netty.buffer.ByteBuf;
 
 public interface OFBsnGentableClearRequest extends OFObject, OFBsnHeader, OFRequest<OFBsnGentableClearReply> {
-    OFVersion getVersion();
-    OFType getType();
-    long getXid();
+    U128 getChecksum();
+    U128 getChecksumMask();
     long getExperimenter();
     long getSubtype();
     GenTableId getTableId();
-    U128 getChecksum();
-    U128 getChecksumMask();
+    OFType getType();
+    OFVersion getVersion();
+    long getXid();
 
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();
     public interface Builder extends OFBsnHeader.Builder {
         OFBsnGentableClearRequest build();
-        OFVersion getVersion();
-        OFType getType();
-        long getXid();
-        Builder setXid(long xid);
-        long getExperimenter();
-        long getSubtype();
-        GenTableId getTableId();
-        Builder setTableId(GenTableId tableId);
         U128 getChecksum();
         Builder setChecksum(U128 checksum);
         U128 getChecksumMask();
         Builder setChecksumMask(U128 checksumMask);
+        long getExperimenter();
+        long getSubtype();
+        GenTableId getTableId();
+        Builder setTableId(GenTableId tableId);
+        OFType getType();
+        OFVersion getVersion();
+        long getXid();
+        Builder setXid(long xid);
     }
 }

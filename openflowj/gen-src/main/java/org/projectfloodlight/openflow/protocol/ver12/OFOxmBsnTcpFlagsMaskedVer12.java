@@ -64,6 +64,11 @@ class OFOxmBsnTcpFlagsMaskedVer12 implements OFOxmBsnTcpFlagsMasked {
 
     // Accessors for OF message fields
     @Override
+    public U16 getMask() {
+        return mask;
+    }
+
+    @Override
     public long getTypeLen() {
         return 0x32104L;
     }
@@ -71,21 +76,6 @@ class OFOxmBsnTcpFlagsMaskedVer12 implements OFOxmBsnTcpFlagsMasked {
     @Override
     public U16 getValue() {
         return value;
-    }
-
-    @Override
-    public U16 getMask() {
-        return mask;
-    }
-
-    @Override
-    public MatchField<U16> getMatchField() {
-        return MatchField.BSN_TCP_FLAGS;
-    }
-
-    @Override
-    public boolean isMasked() {
-        return true;
     }
 
     public OFOxm<U16> getCanonical() {
@@ -96,6 +86,16 @@ class OFOxmBsnTcpFlagsMaskedVer12 implements OFOxmBsnTcpFlagsMasked {
         } else {
             return this;
         }
+    }
+
+    @Override
+    public boolean isMasked() {
+        return true;
+    }
+
+    @Override
+    public MatchField<U16> getMatchField() {
+        return MatchField.BSN_TCP_FLAGS;
     }
 
     @Override
@@ -123,6 +123,17 @@ class OFOxmBsnTcpFlagsMaskedVer12 implements OFOxmBsnTcpFlagsMasked {
         }
 
     @Override
+    public U16 getMask() {
+        return mask;
+    }
+
+    @Override
+    public OFOxmBsnTcpFlagsMasked.Builder setMask(U16 mask) {
+        this.mask = mask;
+        this.maskSet = true;
+        return this;
+    }
+    @Override
     public long getTypeLen() {
         return 0x32104L;
     }
@@ -139,19 +150,8 @@ class OFOxmBsnTcpFlagsMaskedVer12 implements OFOxmBsnTcpFlagsMasked {
         return this;
     }
     @Override
-    public U16 getMask() {
-        return mask;
-    }
-
-    @Override
-    public OFOxmBsnTcpFlagsMasked.Builder setMask(U16 mask) {
-        this.mask = mask;
-        this.maskSet = true;
-        return this;
-    }
-    @Override
-    public MatchField<U16> getMatchField() {
-        return MatchField.BSN_TCP_FLAGS;
+    public OFOxm<U16> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.2");
     }
 
     @Override
@@ -160,8 +160,8 @@ class OFOxmBsnTcpFlagsMaskedVer12 implements OFOxmBsnTcpFlagsMasked {
     }
 
     @Override
-    public OFOxm<U16> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.2");
+    public MatchField<U16> getMatchField() {
+        return MatchField.BSN_TCP_FLAGS;
     }
 
     @Override
@@ -197,6 +197,17 @@ class OFOxmBsnTcpFlagsMaskedVer12 implements OFOxmBsnTcpFlagsMasked {
         private U16 mask;
 
     @Override
+    public U16 getMask() {
+        return mask;
+    }
+
+    @Override
+    public OFOxmBsnTcpFlagsMasked.Builder setMask(U16 mask) {
+        this.mask = mask;
+        this.maskSet = true;
+        return this;
+    }
+    @Override
     public long getTypeLen() {
         return 0x32104L;
     }
@@ -213,19 +224,8 @@ class OFOxmBsnTcpFlagsMaskedVer12 implements OFOxmBsnTcpFlagsMasked {
         return this;
     }
     @Override
-    public U16 getMask() {
-        return mask;
-    }
-
-    @Override
-    public OFOxmBsnTcpFlagsMasked.Builder setMask(U16 mask) {
-        this.mask = mask;
-        this.maskSet = true;
-        return this;
-    }
-    @Override
-    public MatchField<U16> getMatchField() {
-        return MatchField.BSN_TCP_FLAGS;
+    public OFOxm<U16> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.2");
     }
 
     @Override
@@ -234,8 +234,8 @@ class OFOxmBsnTcpFlagsMaskedVer12 implements OFOxmBsnTcpFlagsMasked {
     }
 
     @Override
-    public OFOxm<U16> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.2");
+    public MatchField<U16> getMatchField() {
+        return MatchField.BSN_TCP_FLAGS;
     }
 
     @Override

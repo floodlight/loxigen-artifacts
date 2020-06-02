@@ -103,13 +103,28 @@ class OFTableFeaturesVer15 implements OFTableFeatures {
 
     // Accessors for OF message fields
     @Override
-    public TableId getTableId() {
-        return tableId;
+    public Set<OFTableConfig> getCapabilities() {
+        return capabilities;
     }
 
     @Override
-    public String getName() {
-        return name;
+    public OFTableFeaturesCommand getCommand() {
+        return command;
+    }
+
+    @Override
+    public long getConfig()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property config not supported in version 1.5");
+    }
+
+    @Override
+    public Set<OFTableFeatureFlag> getFeatures() {
+        return features;
+    }
+
+    @Override
+    public long getMaxEntries() {
+        return maxEntries;
     }
 
     @Override
@@ -123,13 +138,8 @@ class OFTableFeaturesVer15 implements OFTableFeatures {
     }
 
     @Override
-    public long getConfig()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property config not supported in version 1.5");
-    }
-
-    @Override
-    public long getMaxEntries() {
-        return maxEntries;
+    public String getName() {
+        return name;
     }
 
     @Override
@@ -138,18 +148,8 @@ class OFTableFeaturesVer15 implements OFTableFeatures {
     }
 
     @Override
-    public OFTableFeaturesCommand getCommand() {
-        return command;
-    }
-
-    @Override
-    public Set<OFTableFeatureFlag> getFeatures() {
-        return features;
-    }
-
-    @Override
-    public Set<OFTableConfig> getCapabilities() {
-        return capabilities;
+    public TableId getTableId() {
+        return tableId;
     }
 
     @Override
@@ -191,25 +191,56 @@ class OFTableFeaturesVer15 implements OFTableFeatures {
         }
 
     @Override
-    public TableId getTableId() {
-        return tableId;
+    public Set<OFTableConfig> getCapabilities() {
+        return capabilities;
     }
 
     @Override
-    public OFTableFeatures.Builder setTableId(TableId tableId) {
-        this.tableId = tableId;
-        this.tableIdSet = true;
+    public OFTableFeatures.Builder setCapabilities(Set<OFTableConfig> capabilities) {
+        this.capabilities = capabilities;
+        this.capabilitiesSet = true;
         return this;
     }
     @Override
-    public String getName() {
-        return name;
+    public OFTableFeaturesCommand getCommand() {
+        return command;
     }
 
     @Override
-    public OFTableFeatures.Builder setName(String name) {
-        this.name = name;
-        this.nameSet = true;
+    public OFTableFeatures.Builder setCommand(OFTableFeaturesCommand command) {
+        this.command = command;
+        this.commandSet = true;
+        return this;
+    }
+    @Override
+    public long getConfig()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property config not supported in version 1.5");
+    }
+
+    @Override
+    public OFTableFeatures.Builder setConfig(long config) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property config not supported in version 1.5");
+    }
+    @Override
+    public Set<OFTableFeatureFlag> getFeatures() {
+        return features;
+    }
+
+    @Override
+    public OFTableFeatures.Builder setFeatures(Set<OFTableFeatureFlag> features) {
+        this.features = features;
+        this.featuresSet = true;
+        return this;
+    }
+    @Override
+    public long getMaxEntries() {
+        return maxEntries;
+    }
+
+    @Override
+    public OFTableFeatures.Builder setMaxEntries(long maxEntries) {
+        this.maxEntries = maxEntries;
+        this.maxEntriesSet = true;
         return this;
     }
     @Override
@@ -235,23 +266,14 @@ class OFTableFeaturesVer15 implements OFTableFeatures {
         return this;
     }
     @Override
-    public long getConfig()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property config not supported in version 1.5");
+    public String getName() {
+        return name;
     }
 
     @Override
-    public OFTableFeatures.Builder setConfig(long config) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property config not supported in version 1.5");
-    }
-    @Override
-    public long getMaxEntries() {
-        return maxEntries;
-    }
-
-    @Override
-    public OFTableFeatures.Builder setMaxEntries(long maxEntries) {
-        this.maxEntries = maxEntries;
-        this.maxEntriesSet = true;
+    public OFTableFeatures.Builder setName(String name) {
+        this.name = name;
+        this.nameSet = true;
         return this;
     }
     @Override
@@ -266,36 +288,14 @@ class OFTableFeaturesVer15 implements OFTableFeatures {
         return this;
     }
     @Override
-    public OFTableFeaturesCommand getCommand() {
-        return command;
+    public TableId getTableId() {
+        return tableId;
     }
 
     @Override
-    public OFTableFeatures.Builder setCommand(OFTableFeaturesCommand command) {
-        this.command = command;
-        this.commandSet = true;
-        return this;
-    }
-    @Override
-    public Set<OFTableFeatureFlag> getFeatures() {
-        return features;
-    }
-
-    @Override
-    public OFTableFeatures.Builder setFeatures(Set<OFTableFeatureFlag> features) {
-        this.features = features;
-        this.featuresSet = true;
-        return this;
-    }
-    @Override
-    public Set<OFTableConfig> getCapabilities() {
-        return capabilities;
-    }
-
-    @Override
-    public OFTableFeatures.Builder setCapabilities(Set<OFTableConfig> capabilities) {
-        this.capabilities = capabilities;
-        this.capabilitiesSet = true;
+    public OFTableFeatures.Builder setTableId(TableId tableId) {
+        this.tableId = tableId;
+        this.tableIdSet = true;
         return this;
     }
     @Override
@@ -371,25 +371,56 @@ class OFTableFeaturesVer15 implements OFTableFeatures {
         private List<OFTableFeatureProp> properties;
 
     @Override
-    public TableId getTableId() {
-        return tableId;
+    public Set<OFTableConfig> getCapabilities() {
+        return capabilities;
     }
 
     @Override
-    public OFTableFeatures.Builder setTableId(TableId tableId) {
-        this.tableId = tableId;
-        this.tableIdSet = true;
+    public OFTableFeatures.Builder setCapabilities(Set<OFTableConfig> capabilities) {
+        this.capabilities = capabilities;
+        this.capabilitiesSet = true;
         return this;
     }
     @Override
-    public String getName() {
-        return name;
+    public OFTableFeaturesCommand getCommand() {
+        return command;
     }
 
     @Override
-    public OFTableFeatures.Builder setName(String name) {
-        this.name = name;
-        this.nameSet = true;
+    public OFTableFeatures.Builder setCommand(OFTableFeaturesCommand command) {
+        this.command = command;
+        this.commandSet = true;
+        return this;
+    }
+    @Override
+    public long getConfig()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property config not supported in version 1.5");
+    }
+
+    @Override
+    public OFTableFeatures.Builder setConfig(long config) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property config not supported in version 1.5");
+    }
+    @Override
+    public Set<OFTableFeatureFlag> getFeatures() {
+        return features;
+    }
+
+    @Override
+    public OFTableFeatures.Builder setFeatures(Set<OFTableFeatureFlag> features) {
+        this.features = features;
+        this.featuresSet = true;
+        return this;
+    }
+    @Override
+    public long getMaxEntries() {
+        return maxEntries;
+    }
+
+    @Override
+    public OFTableFeatures.Builder setMaxEntries(long maxEntries) {
+        this.maxEntries = maxEntries;
+        this.maxEntriesSet = true;
         return this;
     }
     @Override
@@ -415,23 +446,14 @@ class OFTableFeaturesVer15 implements OFTableFeatures {
         return this;
     }
     @Override
-    public long getConfig()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property config not supported in version 1.5");
+    public String getName() {
+        return name;
     }
 
     @Override
-    public OFTableFeatures.Builder setConfig(long config) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property config not supported in version 1.5");
-    }
-    @Override
-    public long getMaxEntries() {
-        return maxEntries;
-    }
-
-    @Override
-    public OFTableFeatures.Builder setMaxEntries(long maxEntries) {
-        this.maxEntries = maxEntries;
-        this.maxEntriesSet = true;
+    public OFTableFeatures.Builder setName(String name) {
+        this.name = name;
+        this.nameSet = true;
         return this;
     }
     @Override
@@ -446,36 +468,14 @@ class OFTableFeaturesVer15 implements OFTableFeatures {
         return this;
     }
     @Override
-    public OFTableFeaturesCommand getCommand() {
-        return command;
+    public TableId getTableId() {
+        return tableId;
     }
 
     @Override
-    public OFTableFeatures.Builder setCommand(OFTableFeaturesCommand command) {
-        this.command = command;
-        this.commandSet = true;
-        return this;
-    }
-    @Override
-    public Set<OFTableFeatureFlag> getFeatures() {
-        return features;
-    }
-
-    @Override
-    public OFTableFeatures.Builder setFeatures(Set<OFTableFeatureFlag> features) {
-        this.features = features;
-        this.featuresSet = true;
-        return this;
-    }
-    @Override
-    public Set<OFTableConfig> getCapabilities() {
-        return capabilities;
-    }
-
-    @Override
-    public OFTableFeatures.Builder setCapabilities(Set<OFTableConfig> capabilities) {
-        this.capabilities = capabilities;
-        this.capabilitiesSet = true;
+    public OFTableFeatures.Builder setTableId(TableId tableId) {
+        this.tableId = tableId;
+        this.tableIdSet = true;
         return this;
     }
     @Override

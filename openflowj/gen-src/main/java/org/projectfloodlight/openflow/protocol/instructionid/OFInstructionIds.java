@@ -50,9 +50,9 @@ public interface OFInstructionIds {
     OFInstructionIdClearActions clearActions();
     OFInstructionIdGotoTable gotoTable();
     OFInstructionIdMeter meter();
+    OFInstructionIdStatTrigger statTrigger();
     OFInstructionIdWriteActions writeActions();
     OFInstructionIdWriteMetadata writeMetadata();
-    OFInstructionIdStatTrigger statTrigger();
 
     OFMessageReader<OFInstructionId> getReader();
     OFVersion getVersion();

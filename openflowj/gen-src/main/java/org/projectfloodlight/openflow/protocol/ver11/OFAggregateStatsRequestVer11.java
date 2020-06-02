@@ -98,46 +98,6 @@ class OFAggregateStatsRequestVer11 implements OFAggregateStatsRequest {
 
     // Accessors for OF message fields
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_11;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.STATS_REQUEST;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFStatsType getStatsType() {
-        return OFStatsType.AGGREGATE;
-    }
-
-    @Override
-    public Set<OFStatsRequestFlags> getFlags() {
-        return flags;
-    }
-
-    @Override
-    public TableId getTableId() {
-        return tableId;
-    }
-
-    @Override
-    public OFPort getOutPort() {
-        return outPort;
-    }
-
-    @Override
-    public OFGroup getOutGroup() {
-        return outGroup;
-    }
-
-    @Override
     public U64 getCookie() {
         return cookie;
     }
@@ -148,8 +108,48 @@ class OFAggregateStatsRequestVer11 implements OFAggregateStatsRequest {
     }
 
     @Override
+    public Set<OFStatsRequestFlags> getFlags() {
+        return flags;
+    }
+
+    @Override
     public Match getMatch() {
         return match;
+    }
+
+    @Override
+    public OFGroup getOutGroup() {
+        return outGroup;
+    }
+
+    @Override
+    public OFPort getOutPort() {
+        return outPort;
+    }
+
+    @Override
+    public OFStatsType getStatsType() {
+        return OFStatsType.AGGREGATE;
+    }
+
+    @Override
+    public TableId getTableId() {
+        return tableId;
+    }
+
+    @Override
+    public OFType getType() {
+        return OFType.STATS_REQUEST;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_11;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
     }
 
 
@@ -184,76 +184,6 @@ class OFAggregateStatsRequestVer11 implements OFAggregateStatsRequest {
         }
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_11;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.STATS_REQUEST;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFAggregateStatsRequest.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
-        return this;
-    }
-    @Override
-    public OFStatsType getStatsType() {
-        return OFStatsType.AGGREGATE;
-    }
-
-    @Override
-    public Set<OFStatsRequestFlags> getFlags() {
-        return flags;
-    }
-
-    @Override
-    public OFAggregateStatsRequest.Builder setFlags(Set<OFStatsRequestFlags> flags) {
-        this.flags = flags;
-        this.flagsSet = true;
-        return this;
-    }
-    @Override
-    public TableId getTableId() {
-        return tableId;
-    }
-
-    @Override
-    public OFAggregateStatsRequest.Builder setTableId(TableId tableId) {
-        this.tableId = tableId;
-        this.tableIdSet = true;
-        return this;
-    }
-    @Override
-    public OFPort getOutPort() {
-        return outPort;
-    }
-
-    @Override
-    public OFAggregateStatsRequest.Builder setOutPort(OFPort outPort) {
-        this.outPort = outPort;
-        this.outPortSet = true;
-        return this;
-    }
-    @Override
-    public OFGroup getOutGroup() {
-        return outGroup;
-    }
-
-    @Override
-    public OFAggregateStatsRequest.Builder setOutGroup(OFGroup outGroup) {
-        this.outGroup = outGroup;
-        this.outGroupSet = true;
-        return this;
-    }
-    @Override
     public U64 getCookie() {
         return cookie;
     }
@@ -276,6 +206,17 @@ class OFAggregateStatsRequestVer11 implements OFAggregateStatsRequest {
         return this;
     }
     @Override
+    public Set<OFStatsRequestFlags> getFlags() {
+        return flags;
+    }
+
+    @Override
+    public OFAggregateStatsRequest.Builder setFlags(Set<OFStatsRequestFlags> flags) {
+        this.flags = flags;
+        this.flagsSet = true;
+        return this;
+    }
+    @Override
     public Match getMatch() {
         return match;
     }
@@ -284,6 +225,65 @@ class OFAggregateStatsRequestVer11 implements OFAggregateStatsRequest {
     public OFAggregateStatsRequest.Builder setMatch(Match match) {
         this.match = match;
         this.matchSet = true;
+        return this;
+    }
+    @Override
+    public OFGroup getOutGroup() {
+        return outGroup;
+    }
+
+    @Override
+    public OFAggregateStatsRequest.Builder setOutGroup(OFGroup outGroup) {
+        this.outGroup = outGroup;
+        this.outGroupSet = true;
+        return this;
+    }
+    @Override
+    public OFPort getOutPort() {
+        return outPort;
+    }
+
+    @Override
+    public OFAggregateStatsRequest.Builder setOutPort(OFPort outPort) {
+        this.outPort = outPort;
+        this.outPortSet = true;
+        return this;
+    }
+    @Override
+    public OFStatsType getStatsType() {
+        return OFStatsType.AGGREGATE;
+    }
+
+    @Override
+    public TableId getTableId() {
+        return tableId;
+    }
+
+    @Override
+    public OFAggregateStatsRequest.Builder setTableId(TableId tableId) {
+        this.tableId = tableId;
+        this.tableIdSet = true;
+        return this;
+    }
+    @Override
+    public OFType getType() {
+        return OFType.STATS_REQUEST;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_11;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFAggregateStatsRequest.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 
@@ -348,76 +348,6 @@ class OFAggregateStatsRequestVer11 implements OFAggregateStatsRequest {
         private Match match;
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_11;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.STATS_REQUEST;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFAggregateStatsRequest.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
-        return this;
-    }
-    @Override
-    public OFStatsType getStatsType() {
-        return OFStatsType.AGGREGATE;
-    }
-
-    @Override
-    public Set<OFStatsRequestFlags> getFlags() {
-        return flags;
-    }
-
-    @Override
-    public OFAggregateStatsRequest.Builder setFlags(Set<OFStatsRequestFlags> flags) {
-        this.flags = flags;
-        this.flagsSet = true;
-        return this;
-    }
-    @Override
-    public TableId getTableId() {
-        return tableId;
-    }
-
-    @Override
-    public OFAggregateStatsRequest.Builder setTableId(TableId tableId) {
-        this.tableId = tableId;
-        this.tableIdSet = true;
-        return this;
-    }
-    @Override
-    public OFPort getOutPort() {
-        return outPort;
-    }
-
-    @Override
-    public OFAggregateStatsRequest.Builder setOutPort(OFPort outPort) {
-        this.outPort = outPort;
-        this.outPortSet = true;
-        return this;
-    }
-    @Override
-    public OFGroup getOutGroup() {
-        return outGroup;
-    }
-
-    @Override
-    public OFAggregateStatsRequest.Builder setOutGroup(OFGroup outGroup) {
-        this.outGroup = outGroup;
-        this.outGroupSet = true;
-        return this;
-    }
-    @Override
     public U64 getCookie() {
         return cookie;
     }
@@ -440,6 +370,17 @@ class OFAggregateStatsRequestVer11 implements OFAggregateStatsRequest {
         return this;
     }
     @Override
+    public Set<OFStatsRequestFlags> getFlags() {
+        return flags;
+    }
+
+    @Override
+    public OFAggregateStatsRequest.Builder setFlags(Set<OFStatsRequestFlags> flags) {
+        this.flags = flags;
+        this.flagsSet = true;
+        return this;
+    }
+    @Override
     public Match getMatch() {
         return match;
     }
@@ -448,6 +389,65 @@ class OFAggregateStatsRequestVer11 implements OFAggregateStatsRequest {
     public OFAggregateStatsRequest.Builder setMatch(Match match) {
         this.match = match;
         this.matchSet = true;
+        return this;
+    }
+    @Override
+    public OFGroup getOutGroup() {
+        return outGroup;
+    }
+
+    @Override
+    public OFAggregateStatsRequest.Builder setOutGroup(OFGroup outGroup) {
+        this.outGroup = outGroup;
+        this.outGroupSet = true;
+        return this;
+    }
+    @Override
+    public OFPort getOutPort() {
+        return outPort;
+    }
+
+    @Override
+    public OFAggregateStatsRequest.Builder setOutPort(OFPort outPort) {
+        this.outPort = outPort;
+        this.outPortSet = true;
+        return this;
+    }
+    @Override
+    public OFStatsType getStatsType() {
+        return OFStatsType.AGGREGATE;
+    }
+
+    @Override
+    public TableId getTableId() {
+        return tableId;
+    }
+
+    @Override
+    public OFAggregateStatsRequest.Builder setTableId(TableId tableId) {
+        this.tableId = tableId;
+        this.tableIdSet = true;
+        return this;
+    }
+    @Override
+    public OFType getType() {
+        return OFType.STATS_REQUEST;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_11;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFAggregateStatsRequest.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 //

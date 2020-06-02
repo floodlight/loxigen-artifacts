@@ -29,8 +29,8 @@ import java.util.List;
 import io.netty.buffer.ByteBuf;
 
 public interface OFInstructionApplyActions extends OFObject, OFInstruction {
-    OFInstructionType getType();
     List<OFAction> getActions();
+    OFInstructionType getType();
     OFVersion getVersion();
 
     void writeTo(ByteBuf channelBuffer);
@@ -38,9 +38,9 @@ public interface OFInstructionApplyActions extends OFObject, OFInstruction {
     Builder createBuilder();
     public interface Builder extends OFInstruction.Builder {
         OFInstructionApplyActions build();
-        OFInstructionType getType();
         List<OFAction> getActions();
         Builder setActions(List<OFAction> actions);
+        OFInstructionType getType();
         OFVersion getVersion();
     }
 }

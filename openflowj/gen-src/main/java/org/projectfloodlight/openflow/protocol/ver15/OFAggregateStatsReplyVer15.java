@@ -65,23 +65,8 @@ class OFAggregateStatsReplyVer15 implements OFAggregateStatsReply {
 
     // Accessors for OF message fields
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_15;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.STATS_REPLY;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFStatsType getStatsType() {
-        return OFStatsType.AGGREGATE;
+    public U64 getByteCount()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property byteCount not supported in version 1.5");
     }
 
     @Override
@@ -90,23 +75,38 @@ class OFAggregateStatsReplyVer15 implements OFAggregateStatsReply {
     }
 
     @Override
-    public U64 getPacketCount()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property packetCount not supported in version 1.5");
-    }
-
-    @Override
-    public U64 getByteCount()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property byteCount not supported in version 1.5");
-    }
-
-    @Override
     public long getFlowCount()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property flowCount not supported in version 1.5");
     }
 
     @Override
+    public U64 getPacketCount()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property packetCount not supported in version 1.5");
+    }
+
+    @Override
     public Stat getStats() {
         return stats;
+    }
+
+    @Override
+    public OFStatsType getStatsType() {
+        return OFStatsType.AGGREGATE;
+    }
+
+    @Override
+    public OFType getType() {
+        return OFType.STATS_REPLY;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_15;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
     }
 
 
@@ -131,31 +131,14 @@ class OFAggregateStatsReplyVer15 implements OFAggregateStatsReply {
         }
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_15;
+    public U64 getByteCount()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property byteCount not supported in version 1.5");
     }
 
     @Override
-    public OFType getType() {
-        return OFType.STATS_REPLY;
+    public OFAggregateStatsReply.Builder setByteCount(U64 byteCount) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property byteCount not supported in version 1.5");
     }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFAggregateStatsReply.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
-        return this;
-    }
-    @Override
-    public OFStatsType getStatsType() {
-        return OFStatsType.AGGREGATE;
-    }
-
     @Override
     public Set<OFStatsReplyFlags> getFlags() {
         return flags;
@@ -168,24 +151,6 @@ class OFAggregateStatsReplyVer15 implements OFAggregateStatsReply {
         return this;
     }
     @Override
-    public U64 getPacketCount()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property packetCount not supported in version 1.5");
-    }
-
-    @Override
-    public OFAggregateStatsReply.Builder setPacketCount(U64 packetCount) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property packetCount not supported in version 1.5");
-    }
-    @Override
-    public U64 getByteCount()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property byteCount not supported in version 1.5");
-    }
-
-    @Override
-    public OFAggregateStatsReply.Builder setByteCount(U64 byteCount) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property byteCount not supported in version 1.5");
-    }
-    @Override
     public long getFlowCount()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property flowCount not supported in version 1.5");
     }
@@ -193,6 +158,15 @@ class OFAggregateStatsReplyVer15 implements OFAggregateStatsReply {
     @Override
     public OFAggregateStatsReply.Builder setFlowCount(long flowCount) throws UnsupportedOperationException {
             throw new UnsupportedOperationException("Property flowCount not supported in version 1.5");
+    }
+    @Override
+    public U64 getPacketCount()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property packetCount not supported in version 1.5");
+    }
+
+    @Override
+    public OFAggregateStatsReply.Builder setPacketCount(U64 packetCount) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property packetCount not supported in version 1.5");
     }
     @Override
     public Stat getStats() {
@@ -203,6 +177,32 @@ class OFAggregateStatsReplyVer15 implements OFAggregateStatsReply {
     public OFAggregateStatsReply.Builder setStats(Stat stats) {
         this.stats = stats;
         this.statsSet = true;
+        return this;
+    }
+    @Override
+    public OFStatsType getStatsType() {
+        return OFStatsType.AGGREGATE;
+    }
+
+    @Override
+    public OFType getType() {
+        return OFType.STATS_REPLY;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_15;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFAggregateStatsReply.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 
@@ -237,31 +237,14 @@ class OFAggregateStatsReplyVer15 implements OFAggregateStatsReply {
         private Stat stats;
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_15;
+    public U64 getByteCount()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property byteCount not supported in version 1.5");
     }
 
     @Override
-    public OFType getType() {
-        return OFType.STATS_REPLY;
+    public OFAggregateStatsReply.Builder setByteCount(U64 byteCount) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property byteCount not supported in version 1.5");
     }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFAggregateStatsReply.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
-        return this;
-    }
-    @Override
-    public OFStatsType getStatsType() {
-        return OFStatsType.AGGREGATE;
-    }
-
     @Override
     public Set<OFStatsReplyFlags> getFlags() {
         return flags;
@@ -274,24 +257,6 @@ class OFAggregateStatsReplyVer15 implements OFAggregateStatsReply {
         return this;
     }
     @Override
-    public U64 getPacketCount()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property packetCount not supported in version 1.5");
-    }
-
-    @Override
-    public OFAggregateStatsReply.Builder setPacketCount(U64 packetCount) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property packetCount not supported in version 1.5");
-    }
-    @Override
-    public U64 getByteCount()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property byteCount not supported in version 1.5");
-    }
-
-    @Override
-    public OFAggregateStatsReply.Builder setByteCount(U64 byteCount) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property byteCount not supported in version 1.5");
-    }
-    @Override
     public long getFlowCount()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property flowCount not supported in version 1.5");
     }
@@ -299,6 +264,15 @@ class OFAggregateStatsReplyVer15 implements OFAggregateStatsReply {
     @Override
     public OFAggregateStatsReply.Builder setFlowCount(long flowCount) throws UnsupportedOperationException {
             throw new UnsupportedOperationException("Property flowCount not supported in version 1.5");
+    }
+    @Override
+    public U64 getPacketCount()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property packetCount not supported in version 1.5");
+    }
+
+    @Override
+    public OFAggregateStatsReply.Builder setPacketCount(U64 packetCount) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property packetCount not supported in version 1.5");
     }
     @Override
     public Stat getStats() {
@@ -309,6 +283,32 @@ class OFAggregateStatsReplyVer15 implements OFAggregateStatsReply {
     public OFAggregateStatsReply.Builder setStats(Stat stats) {
         this.stats = stats;
         this.statsSet = true;
+        return this;
+    }
+    @Override
+    public OFStatsType getStatsType() {
+        return OFStatsType.AGGREGATE;
+    }
+
+    @Override
+    public OFType getType() {
+        return OFType.STATS_REPLY;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_15;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFAggregateStatsReply.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 //

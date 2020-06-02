@@ -67,16 +67,6 @@ class OFOxmBsnL3InterfaceClassIdVer15 implements OFOxmBsnL3InterfaceClassId {
         return value;
     }
 
-    @Override
-    public MatchField<ClassId> getMatchField() {
-        return MatchField.BSN_L3_INTERFACE_CLASS_ID;
-    }
-
-    @Override
-    public boolean isMasked() {
-        return false;
-    }
-
     public OFOxm<ClassId> getCanonical() {
         // exact match OXM is always canonical
         return this;
@@ -85,6 +75,16 @@ class OFOxmBsnL3InterfaceClassIdVer15 implements OFOxmBsnL3InterfaceClassId {
     @Override
     public ClassId getMask()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property mask not supported in version 1.5");
+    }
+
+    @Override
+    public boolean isMasked() {
+        return false;
+    }
+
+    @Override
+    public MatchField<ClassId> getMatchField() {
+        return MatchField.BSN_L3_INTERFACE_CLASS_ID;
     }
 
     @Override
@@ -126,8 +126,13 @@ class OFOxmBsnL3InterfaceClassIdVer15 implements OFOxmBsnL3InterfaceClassId {
         return this;
     }
     @Override
-    public MatchField<ClassId> getMatchField() {
-        return MatchField.BSN_L3_INTERFACE_CLASS_ID;
+    public OFOxm<ClassId> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.5");
+    }
+
+    @Override
+    public ClassId getMask()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property mask not supported in version 1.5");
     }
 
     @Override
@@ -136,13 +141,8 @@ class OFOxmBsnL3InterfaceClassIdVer15 implements OFOxmBsnL3InterfaceClassId {
     }
 
     @Override
-    public OFOxm<ClassId> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.5");
-    }
-
-    @Override
-    public ClassId getMask()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property mask not supported in version 1.5");
+    public MatchField<ClassId> getMatchField() {
+        return MatchField.BSN_L3_INTERFACE_CLASS_ID;
     }
 
     @Override
@@ -188,8 +188,13 @@ class OFOxmBsnL3InterfaceClassIdVer15 implements OFOxmBsnL3InterfaceClassId {
         return this;
     }
     @Override
-    public MatchField<ClassId> getMatchField() {
-        return MatchField.BSN_L3_INTERFACE_CLASS_ID;
+    public OFOxm<ClassId> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.5");
+    }
+
+    @Override
+    public ClassId getMask()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property mask not supported in version 1.5");
     }
 
     @Override
@@ -198,13 +203,8 @@ class OFOxmBsnL3InterfaceClassIdVer15 implements OFOxmBsnL3InterfaceClassId {
     }
 
     @Override
-    public OFOxm<ClassId> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.5");
-    }
-
-    @Override
-    public ClassId getMask()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property mask not supported in version 1.5");
+    public MatchField<ClassId> getMatchField() {
+        return MatchField.BSN_L3_INTERFACE_CLASS_ID;
     }
 
     @Override

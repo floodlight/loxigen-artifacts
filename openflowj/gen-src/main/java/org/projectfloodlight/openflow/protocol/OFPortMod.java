@@ -30,36 +30,36 @@ import java.util.List;
 import io.netty.buffer.ByteBuf;
 
 public interface OFPortMod extends OFObject, OFMessage {
-    OFVersion getVersion();
-    OFType getType();
-    long getXid();
-    OFPort getPortNo();
-    MacAddress getHwAddr();
-    Set<OFPortConfig> getConfig();
-    Set<OFPortConfig> getMask();
     long getAdvertise() throws UnsupportedOperationException;
+    Set<OFPortConfig> getConfig();
+    MacAddress getHwAddr();
+    Set<OFPortConfig> getMask();
+    OFPort getPortNo();
     List<OFPortModProp> getProperties() throws UnsupportedOperationException;
+    OFType getType();
+    OFVersion getVersion();
+    long getXid();
 
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();
     public interface Builder extends OFMessage.Builder {
         OFPortMod build();
-        OFVersion getVersion();
-        OFType getType();
-        long getXid();
-        Builder setXid(long xid);
-        OFPort getPortNo();
-        Builder setPortNo(OFPort portNo);
-        MacAddress getHwAddr();
-        Builder setHwAddr(MacAddress hwAddr);
-        Set<OFPortConfig> getConfig();
-        Builder setConfig(Set<OFPortConfig> config);
-        Set<OFPortConfig> getMask();
-        Builder setMask(Set<OFPortConfig> mask);
         long getAdvertise() throws UnsupportedOperationException;
         Builder setAdvertise(long advertise) throws UnsupportedOperationException;
+        Set<OFPortConfig> getConfig();
+        Builder setConfig(Set<OFPortConfig> config);
+        MacAddress getHwAddr();
+        Builder setHwAddr(MacAddress hwAddr);
+        Set<OFPortConfig> getMask();
+        Builder setMask(Set<OFPortConfig> mask);
+        OFPort getPortNo();
+        Builder setPortNo(OFPort portNo);
         List<OFPortModProp> getProperties() throws UnsupportedOperationException;
         Builder setProperties(List<OFPortModProp> properties) throws UnsupportedOperationException;
+        OFType getType();
+        OFVersion getVersion();
+        long getXid();
+        Builder setXid(long xid);
     }
 }

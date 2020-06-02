@@ -123,86 +123,6 @@ class OFFlowModifyVer13 implements OFFlowModify {
     }
 
     // Accessors for OF message fields
-    @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_13;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.FLOW_MOD;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public U64 getCookie() {
-        return cookie;
-    }
-
-    @Override
-    public U64 getCookieMask() {
-        return cookieMask;
-    }
-
-    @Override
-    public TableId getTableId() {
-        return tableId;
-    }
-
-    @Override
-    public OFFlowModCommand getCommand() {
-        return OFFlowModCommand.MODIFY;
-    }
-
-    @Override
-    public int getIdleTimeout() {
-        return idleTimeout;
-    }
-
-    @Override
-    public int getHardTimeout() {
-        return hardTimeout;
-    }
-
-    @Override
-    public int getPriority() {
-        return priority;
-    }
-
-    @Override
-    public OFBufferId getBufferId() {
-        return bufferId;
-    }
-
-    @Override
-    public OFPort getOutPort() {
-        return outPort;
-    }
-
-    @Override
-    public OFGroup getOutGroup() {
-        return outGroup;
-    }
-
-    @Override
-    public Set<OFFlowModFlags> getFlags() {
-        return flags;
-    }
-
-    @Override
-    public Match getMatch() {
-        return match;
-    }
-
-    @Override
-    public List<OFInstruction> getInstructions() {
-        return instructions;
-    }
-
 
     @Override
     public List<OFAction> getActions()throws UnsupportedOperationException {
@@ -216,8 +136,88 @@ class OFFlowModifyVer13 implements OFFlowModify {
     }
 
     @Override
+    public OFBufferId getBufferId() {
+        return bufferId;
+    }
+
+    @Override
+    public OFFlowModCommand getCommand() {
+        return OFFlowModCommand.MODIFY;
+    }
+
+    @Override
+    public U64 getCookie() {
+        return cookie;
+    }
+
+    @Override
+    public U64 getCookieMask() {
+        return cookieMask;
+    }
+
+    @Override
+    public Set<OFFlowModFlags> getFlags() {
+        return flags;
+    }
+
+    @Override
+    public int getHardTimeout() {
+        return hardTimeout;
+    }
+
+    @Override
+    public int getIdleTimeout() {
+        return idleTimeout;
+    }
+
+    @Override
     public int getImportance()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property importance not supported in version 1.3");
+    }
+
+    @Override
+    public List<OFInstruction> getInstructions() {
+        return instructions;
+    }
+
+    @Override
+    public Match getMatch() {
+        return match;
+    }
+
+    @Override
+    public OFGroup getOutGroup() {
+        return outGroup;
+    }
+
+    @Override
+    public OFPort getOutPort() {
+        return outPort;
+    }
+
+    @Override
+    public int getPriority() {
+        return priority;
+    }
+
+    @Override
+    public TableId getTableId() {
+        return tableId;
+    }
+
+    @Override
+    public OFType getType() {
+        return OFType.FLOW_MOD;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_13;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
     }
 
 
@@ -261,164 +261,6 @@ class OFFlowModifyVer13 implements OFFlowModify {
             this.parentMessage = parentMessage;
         }
 
-    @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_13;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.FLOW_MOD;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFFlowModify.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
-        return this;
-    }
-    @Override
-    public U64 getCookie() {
-        return cookie;
-    }
-
-    @Override
-    public OFFlowModify.Builder setCookie(U64 cookie) {
-        this.cookie = cookie;
-        this.cookieSet = true;
-        return this;
-    }
-    @Override
-    public U64 getCookieMask() {
-        return cookieMask;
-    }
-
-    @Override
-    public OFFlowModify.Builder setCookieMask(U64 cookieMask) {
-        this.cookieMask = cookieMask;
-        this.cookieMaskSet = true;
-        return this;
-    }
-    @Override
-    public TableId getTableId() {
-        return tableId;
-    }
-
-    @Override
-    public OFFlowModify.Builder setTableId(TableId tableId) {
-        this.tableId = tableId;
-        this.tableIdSet = true;
-        return this;
-    }
-    @Override
-    public OFFlowModCommand getCommand() {
-        return OFFlowModCommand.MODIFY;
-    }
-
-    @Override
-    public int getIdleTimeout() {
-        return idleTimeout;
-    }
-
-    @Override
-    public OFFlowModify.Builder setIdleTimeout(int idleTimeout) {
-        this.idleTimeout = idleTimeout;
-        this.idleTimeoutSet = true;
-        return this;
-    }
-    @Override
-    public int getHardTimeout() {
-        return hardTimeout;
-    }
-
-    @Override
-    public OFFlowModify.Builder setHardTimeout(int hardTimeout) {
-        this.hardTimeout = hardTimeout;
-        this.hardTimeoutSet = true;
-        return this;
-    }
-    @Override
-    public int getPriority() {
-        return priority;
-    }
-
-    @Override
-    public OFFlowModify.Builder setPriority(int priority) {
-        this.priority = priority;
-        this.prioritySet = true;
-        return this;
-    }
-    @Override
-    public OFBufferId getBufferId() {
-        return bufferId;
-    }
-
-    @Override
-    public OFFlowModify.Builder setBufferId(OFBufferId bufferId) {
-        this.bufferId = bufferId;
-        this.bufferIdSet = true;
-        return this;
-    }
-    @Override
-    public OFPort getOutPort() {
-        return outPort;
-    }
-
-    @Override
-    public OFFlowModify.Builder setOutPort(OFPort outPort) {
-        this.outPort = outPort;
-        this.outPortSet = true;
-        return this;
-    }
-    @Override
-    public OFGroup getOutGroup() {
-        return outGroup;
-    }
-
-    @Override
-    public OFFlowModify.Builder setOutGroup(OFGroup outGroup) {
-        this.outGroup = outGroup;
-        this.outGroupSet = true;
-        return this;
-    }
-    @Override
-    public Set<OFFlowModFlags> getFlags() {
-        return flags;
-    }
-
-    @Override
-    public OFFlowModify.Builder setFlags(Set<OFFlowModFlags> flags) {
-        this.flags = flags;
-        this.flagsSet = true;
-        return this;
-    }
-    @Override
-    public Match getMatch() {
-        return match;
-    }
-
-    @Override
-    public OFFlowModify.Builder setMatch(Match match) {
-        this.match = match;
-        this.matchSet = true;
-        return this;
-    }
-    @Override
-    public List<OFInstruction> getInstructions() {
-        return instructions;
-    }
-
-    @Override
-    public OFFlowModify.Builder setInstructions(List<OFInstruction> instructions) {
-        this.instructions = instructions;
-        this.instructionsSet = true;
-        return this;
-    }
 
     @Override
     public List<OFAction> getActions()throws UnsupportedOperationException {
@@ -444,6 +286,77 @@ class OFFlowModifyVer13 implements OFFlowModify {
     }
 
     @Override
+    public OFBufferId getBufferId() {
+        return bufferId;
+    }
+
+    @Override
+    public OFFlowModify.Builder setBufferId(OFBufferId bufferId) {
+        this.bufferId = bufferId;
+        this.bufferIdSet = true;
+        return this;
+    }
+    @Override
+    public OFFlowModCommand getCommand() {
+        return OFFlowModCommand.MODIFY;
+    }
+
+    @Override
+    public U64 getCookie() {
+        return cookie;
+    }
+
+    @Override
+    public OFFlowModify.Builder setCookie(U64 cookie) {
+        this.cookie = cookie;
+        this.cookieSet = true;
+        return this;
+    }
+    @Override
+    public U64 getCookieMask() {
+        return cookieMask;
+    }
+
+    @Override
+    public OFFlowModify.Builder setCookieMask(U64 cookieMask) {
+        this.cookieMask = cookieMask;
+        this.cookieMaskSet = true;
+        return this;
+    }
+    @Override
+    public Set<OFFlowModFlags> getFlags() {
+        return flags;
+    }
+
+    @Override
+    public OFFlowModify.Builder setFlags(Set<OFFlowModFlags> flags) {
+        this.flags = flags;
+        this.flagsSet = true;
+        return this;
+    }
+    @Override
+    public int getHardTimeout() {
+        return hardTimeout;
+    }
+
+    @Override
+    public OFFlowModify.Builder setHardTimeout(int hardTimeout) {
+        this.hardTimeout = hardTimeout;
+        this.hardTimeoutSet = true;
+        return this;
+    }
+    @Override
+    public int getIdleTimeout() {
+        return idleTimeout;
+    }
+
+    @Override
+    public OFFlowModify.Builder setIdleTimeout(int idleTimeout) {
+        this.idleTimeout = idleTimeout;
+        this.idleTimeoutSet = true;
+        return this;
+    }
+    @Override
     public int getImportance()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property importance not supported in version 1.3");
     }
@@ -451,6 +364,93 @@ class OFFlowModifyVer13 implements OFFlowModify {
     @Override
     public OFFlowModify.Builder setImportance(int importance) throws UnsupportedOperationException {
             throw new UnsupportedOperationException("Property importance not supported in version 1.3");
+    }
+    @Override
+    public List<OFInstruction> getInstructions() {
+        return instructions;
+    }
+
+    @Override
+    public OFFlowModify.Builder setInstructions(List<OFInstruction> instructions) {
+        this.instructions = instructions;
+        this.instructionsSet = true;
+        return this;
+    }
+    @Override
+    public Match getMatch() {
+        return match;
+    }
+
+    @Override
+    public OFFlowModify.Builder setMatch(Match match) {
+        this.match = match;
+        this.matchSet = true;
+        return this;
+    }
+    @Override
+    public OFGroup getOutGroup() {
+        return outGroup;
+    }
+
+    @Override
+    public OFFlowModify.Builder setOutGroup(OFGroup outGroup) {
+        this.outGroup = outGroup;
+        this.outGroupSet = true;
+        return this;
+    }
+    @Override
+    public OFPort getOutPort() {
+        return outPort;
+    }
+
+    @Override
+    public OFFlowModify.Builder setOutPort(OFPort outPort) {
+        this.outPort = outPort;
+        this.outPortSet = true;
+        return this;
+    }
+    @Override
+    public int getPriority() {
+        return priority;
+    }
+
+    @Override
+    public OFFlowModify.Builder setPriority(int priority) {
+        this.priority = priority;
+        this.prioritySet = true;
+        return this;
+    }
+    @Override
+    public TableId getTableId() {
+        return tableId;
+    }
+
+    @Override
+    public OFFlowModify.Builder setTableId(TableId tableId) {
+        this.tableId = tableId;
+        this.tableIdSet = true;
+        return this;
+    }
+    @Override
+    public OFType getType() {
+        return OFType.FLOW_MOD;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_13;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFFlowModify.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
+        return this;
     }
 
 
@@ -537,164 +537,6 @@ class OFFlowModifyVer13 implements OFFlowModify {
         private boolean instructionsSet;
         private List<OFInstruction> instructions;
 
-    @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_13;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.FLOW_MOD;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFFlowModify.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
-        return this;
-    }
-    @Override
-    public U64 getCookie() {
-        return cookie;
-    }
-
-    @Override
-    public OFFlowModify.Builder setCookie(U64 cookie) {
-        this.cookie = cookie;
-        this.cookieSet = true;
-        return this;
-    }
-    @Override
-    public U64 getCookieMask() {
-        return cookieMask;
-    }
-
-    @Override
-    public OFFlowModify.Builder setCookieMask(U64 cookieMask) {
-        this.cookieMask = cookieMask;
-        this.cookieMaskSet = true;
-        return this;
-    }
-    @Override
-    public TableId getTableId() {
-        return tableId;
-    }
-
-    @Override
-    public OFFlowModify.Builder setTableId(TableId tableId) {
-        this.tableId = tableId;
-        this.tableIdSet = true;
-        return this;
-    }
-    @Override
-    public OFFlowModCommand getCommand() {
-        return OFFlowModCommand.MODIFY;
-    }
-
-    @Override
-    public int getIdleTimeout() {
-        return idleTimeout;
-    }
-
-    @Override
-    public OFFlowModify.Builder setIdleTimeout(int idleTimeout) {
-        this.idleTimeout = idleTimeout;
-        this.idleTimeoutSet = true;
-        return this;
-    }
-    @Override
-    public int getHardTimeout() {
-        return hardTimeout;
-    }
-
-    @Override
-    public OFFlowModify.Builder setHardTimeout(int hardTimeout) {
-        this.hardTimeout = hardTimeout;
-        this.hardTimeoutSet = true;
-        return this;
-    }
-    @Override
-    public int getPriority() {
-        return priority;
-    }
-
-    @Override
-    public OFFlowModify.Builder setPriority(int priority) {
-        this.priority = priority;
-        this.prioritySet = true;
-        return this;
-    }
-    @Override
-    public OFBufferId getBufferId() {
-        return bufferId;
-    }
-
-    @Override
-    public OFFlowModify.Builder setBufferId(OFBufferId bufferId) {
-        this.bufferId = bufferId;
-        this.bufferIdSet = true;
-        return this;
-    }
-    @Override
-    public OFPort getOutPort() {
-        return outPort;
-    }
-
-    @Override
-    public OFFlowModify.Builder setOutPort(OFPort outPort) {
-        this.outPort = outPort;
-        this.outPortSet = true;
-        return this;
-    }
-    @Override
-    public OFGroup getOutGroup() {
-        return outGroup;
-    }
-
-    @Override
-    public OFFlowModify.Builder setOutGroup(OFGroup outGroup) {
-        this.outGroup = outGroup;
-        this.outGroupSet = true;
-        return this;
-    }
-    @Override
-    public Set<OFFlowModFlags> getFlags() {
-        return flags;
-    }
-
-    @Override
-    public OFFlowModify.Builder setFlags(Set<OFFlowModFlags> flags) {
-        this.flags = flags;
-        this.flagsSet = true;
-        return this;
-    }
-    @Override
-    public Match getMatch() {
-        return match;
-    }
-
-    @Override
-    public OFFlowModify.Builder setMatch(Match match) {
-        this.match = match;
-        this.matchSet = true;
-        return this;
-    }
-    @Override
-    public List<OFInstruction> getInstructions() {
-        return instructions;
-    }
-
-    @Override
-    public OFFlowModify.Builder setInstructions(List<OFInstruction> instructions) {
-        this.instructions = instructions;
-        this.instructionsSet = true;
-        return this;
-    }
 
     @Override
     public List<OFAction> getActions()throws UnsupportedOperationException {
@@ -720,6 +562,77 @@ class OFFlowModifyVer13 implements OFFlowModify {
     }
 
     @Override
+    public OFBufferId getBufferId() {
+        return bufferId;
+    }
+
+    @Override
+    public OFFlowModify.Builder setBufferId(OFBufferId bufferId) {
+        this.bufferId = bufferId;
+        this.bufferIdSet = true;
+        return this;
+    }
+    @Override
+    public OFFlowModCommand getCommand() {
+        return OFFlowModCommand.MODIFY;
+    }
+
+    @Override
+    public U64 getCookie() {
+        return cookie;
+    }
+
+    @Override
+    public OFFlowModify.Builder setCookie(U64 cookie) {
+        this.cookie = cookie;
+        this.cookieSet = true;
+        return this;
+    }
+    @Override
+    public U64 getCookieMask() {
+        return cookieMask;
+    }
+
+    @Override
+    public OFFlowModify.Builder setCookieMask(U64 cookieMask) {
+        this.cookieMask = cookieMask;
+        this.cookieMaskSet = true;
+        return this;
+    }
+    @Override
+    public Set<OFFlowModFlags> getFlags() {
+        return flags;
+    }
+
+    @Override
+    public OFFlowModify.Builder setFlags(Set<OFFlowModFlags> flags) {
+        this.flags = flags;
+        this.flagsSet = true;
+        return this;
+    }
+    @Override
+    public int getHardTimeout() {
+        return hardTimeout;
+    }
+
+    @Override
+    public OFFlowModify.Builder setHardTimeout(int hardTimeout) {
+        this.hardTimeout = hardTimeout;
+        this.hardTimeoutSet = true;
+        return this;
+    }
+    @Override
+    public int getIdleTimeout() {
+        return idleTimeout;
+    }
+
+    @Override
+    public OFFlowModify.Builder setIdleTimeout(int idleTimeout) {
+        this.idleTimeout = idleTimeout;
+        this.idleTimeoutSet = true;
+        return this;
+    }
+    @Override
     public int getImportance()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property importance not supported in version 1.3");
     }
@@ -727,6 +640,93 @@ class OFFlowModifyVer13 implements OFFlowModify {
     @Override
     public OFFlowModify.Builder setImportance(int importance) throws UnsupportedOperationException {
             throw new UnsupportedOperationException("Property importance not supported in version 1.3");
+    }
+    @Override
+    public List<OFInstruction> getInstructions() {
+        return instructions;
+    }
+
+    @Override
+    public OFFlowModify.Builder setInstructions(List<OFInstruction> instructions) {
+        this.instructions = instructions;
+        this.instructionsSet = true;
+        return this;
+    }
+    @Override
+    public Match getMatch() {
+        return match;
+    }
+
+    @Override
+    public OFFlowModify.Builder setMatch(Match match) {
+        this.match = match;
+        this.matchSet = true;
+        return this;
+    }
+    @Override
+    public OFGroup getOutGroup() {
+        return outGroup;
+    }
+
+    @Override
+    public OFFlowModify.Builder setOutGroup(OFGroup outGroup) {
+        this.outGroup = outGroup;
+        this.outGroupSet = true;
+        return this;
+    }
+    @Override
+    public OFPort getOutPort() {
+        return outPort;
+    }
+
+    @Override
+    public OFFlowModify.Builder setOutPort(OFPort outPort) {
+        this.outPort = outPort;
+        this.outPortSet = true;
+        return this;
+    }
+    @Override
+    public int getPriority() {
+        return priority;
+    }
+
+    @Override
+    public OFFlowModify.Builder setPriority(int priority) {
+        this.priority = priority;
+        this.prioritySet = true;
+        return this;
+    }
+    @Override
+    public TableId getTableId() {
+        return tableId;
+    }
+
+    @Override
+    public OFFlowModify.Builder setTableId(TableId tableId) {
+        this.tableId = tableId;
+        this.tableIdSet = true;
+        return this;
+    }
+    @Override
+    public OFType getType() {
+        return OFType.FLOW_MOD;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_13;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFFlowModify.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
+        return this;
     }
 //
         @Override

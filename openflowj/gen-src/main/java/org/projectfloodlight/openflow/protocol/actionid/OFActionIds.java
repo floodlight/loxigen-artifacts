@@ -39,6 +39,7 @@ public interface OFActionIds {
     OFActionIdDecMplsTtl decMplsTtl();
     OFActionIdDecNwTtl decNwTtl();
     OFActionIdGroup group();
+    OFActionIdMeter meter();
     OFActionIdNiciraDecTtl niciraDecTtl();
     OFActionIdOutput output();
     OFActionIdPopMpls popMpls();
@@ -51,7 +52,6 @@ public interface OFActionIds {
     OFActionIdSetMplsTtl setMplsTtl();
     OFActionIdSetNwTtl setNwTtl();
     OFActionIdSetQueue setQueue();
-    OFActionIdMeter meter();
 
     OFMessageReader<OFActionId> getReader();
     OFVersion getVersion();

@@ -29,11 +29,11 @@ import java.util.List;
 import io.netty.buffer.ByteBuf;
 
 public interface OFControllerStatusEntry extends OFObject {
-    int getShortId();
-    OFControllerRole getRole();
-    OFControllerStatusReason getReason();
     OFControlChannelStatus getChannelStatus();
     List<OFControllerStatusProp> getProperties();
+    OFControllerStatusReason getReason();
+    OFControllerRole getRole();
+    int getShortId();
     OFVersion getVersion();
 
     void writeTo(ByteBuf channelBuffer);
@@ -41,16 +41,16 @@ public interface OFControllerStatusEntry extends OFObject {
     Builder createBuilder();
     public interface Builder  {
         OFControllerStatusEntry build();
-        int getShortId();
-        Builder setShortId(int shortId);
-        OFControllerRole getRole();
-        Builder setRole(OFControllerRole role);
-        OFControllerStatusReason getReason();
-        Builder setReason(OFControllerStatusReason reason);
         OFControlChannelStatus getChannelStatus();
         Builder setChannelStatus(OFControlChannelStatus channelStatus);
         List<OFControllerStatusProp> getProperties();
         Builder setProperties(List<OFControllerStatusProp> properties);
+        OFControllerStatusReason getReason();
+        Builder setReason(OFControllerStatusReason reason);
+        OFControllerRole getRole();
+        Builder setRole(OFControllerRole role);
+        int getShortId();
+        Builder setShortId(int shortId);
         OFVersion getVersion();
     }
 }

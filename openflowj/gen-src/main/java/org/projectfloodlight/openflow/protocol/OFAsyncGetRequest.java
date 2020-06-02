@@ -29,21 +29,21 @@ import java.util.List;
 import io.netty.buffer.ByteBuf;
 
 public interface OFAsyncGetRequest extends OFObject, OFMessage, OFRequest<OFAsyncGetReply> {
-    OFVersion getVersion();
-    OFType getType();
-    long getXid();
     List<OFAsyncConfigProp> getProperties() throws UnsupportedOperationException;
+    OFType getType();
+    OFVersion getVersion();
+    long getXid();
 
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();
     public interface Builder extends OFMessage.Builder {
         OFAsyncGetRequest build();
-        OFVersion getVersion();
-        OFType getType();
-        long getXid();
-        Builder setXid(long xid);
         List<OFAsyncConfigProp> getProperties() throws UnsupportedOperationException;
         Builder setProperties(List<OFAsyncConfigProp> properties) throws UnsupportedOperationException;
+        OFType getType();
+        OFVersion getVersion();
+        long getXid();
+        Builder setXid(long xid);
     }
 }

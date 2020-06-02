@@ -92,23 +92,8 @@ class OFDescStatsReplyVer14 implements OFDescStatsReply {
 
     // Accessors for OF message fields
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_14;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.STATS_REPLY;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFStatsType getStatsType() {
-        return OFStatsType.DESC;
+    public String getDpDesc() {
+        return dpDesc;
     }
 
     @Override
@@ -117,18 +102,13 @@ class OFDescStatsReplyVer14 implements OFDescStatsReply {
     }
 
     @Override
-    public String getMfrDesc() {
-        return mfrDesc;
-    }
-
-    @Override
     public String getHwDesc() {
         return hwDesc;
     }
 
     @Override
-    public String getSwDesc() {
-        return swDesc;
+    public String getMfrDesc() {
+        return mfrDesc;
     }
 
     @Override
@@ -137,8 +117,28 @@ class OFDescStatsReplyVer14 implements OFDescStatsReply {
     }
 
     @Override
-    public String getDpDesc() {
-        return dpDesc;
+    public OFStatsType getStatsType() {
+        return OFStatsType.DESC;
+    }
+
+    @Override
+    public String getSwDesc() {
+        return swDesc;
+    }
+
+    @Override
+    public OFType getType() {
+        return OFType.STATS_REPLY;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_14;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
     }
 
 
@@ -171,31 +171,16 @@ class OFDescStatsReplyVer14 implements OFDescStatsReply {
         }
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_14;
+    public String getDpDesc() {
+        return dpDesc;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.STATS_REPLY;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFDescStatsReply.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
+    public OFDescStatsReply.Builder setDpDesc(String dpDesc) {
+        this.dpDesc = dpDesc;
+        this.dpDescSet = true;
         return this;
     }
-    @Override
-    public OFStatsType getStatsType() {
-        return OFStatsType.DESC;
-    }
-
     @Override
     public Set<OFStatsReplyFlags> getFlags() {
         return flags;
@@ -205,17 +190,6 @@ class OFDescStatsReplyVer14 implements OFDescStatsReply {
     public OFDescStatsReply.Builder setFlags(Set<OFStatsReplyFlags> flags) {
         this.flags = flags;
         this.flagsSet = true;
-        return this;
-    }
-    @Override
-    public String getMfrDesc() {
-        return mfrDesc;
-    }
-
-    @Override
-    public OFDescStatsReply.Builder setMfrDesc(String mfrDesc) {
-        this.mfrDesc = mfrDesc;
-        this.mfrDescSet = true;
         return this;
     }
     @Override
@@ -230,14 +204,14 @@ class OFDescStatsReplyVer14 implements OFDescStatsReply {
         return this;
     }
     @Override
-    public String getSwDesc() {
-        return swDesc;
+    public String getMfrDesc() {
+        return mfrDesc;
     }
 
     @Override
-    public OFDescStatsReply.Builder setSwDesc(String swDesc) {
-        this.swDesc = swDesc;
-        this.swDescSet = true;
+    public OFDescStatsReply.Builder setMfrDesc(String mfrDesc) {
+        this.mfrDesc = mfrDesc;
+        this.mfrDescSet = true;
         return this;
     }
     @Override
@@ -252,14 +226,40 @@ class OFDescStatsReplyVer14 implements OFDescStatsReply {
         return this;
     }
     @Override
-    public String getDpDesc() {
-        return dpDesc;
+    public OFStatsType getStatsType() {
+        return OFStatsType.DESC;
     }
 
     @Override
-    public OFDescStatsReply.Builder setDpDesc(String dpDesc) {
-        this.dpDesc = dpDesc;
-        this.dpDescSet = true;
+    public String getSwDesc() {
+        return swDesc;
+    }
+
+    @Override
+    public OFDescStatsReply.Builder setSwDesc(String swDesc) {
+        this.swDesc = swDesc;
+        this.swDescSet = true;
+        return this;
+    }
+    @Override
+    public OFType getType() {
+        return OFType.STATS_REPLY;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_14;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFDescStatsReply.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 
@@ -318,31 +318,16 @@ class OFDescStatsReplyVer14 implements OFDescStatsReply {
         private String dpDesc;
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_14;
+    public String getDpDesc() {
+        return dpDesc;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.STATS_REPLY;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFDescStatsReply.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
+    public OFDescStatsReply.Builder setDpDesc(String dpDesc) {
+        this.dpDesc = dpDesc;
+        this.dpDescSet = true;
         return this;
     }
-    @Override
-    public OFStatsType getStatsType() {
-        return OFStatsType.DESC;
-    }
-
     @Override
     public Set<OFStatsReplyFlags> getFlags() {
         return flags;
@@ -352,17 +337,6 @@ class OFDescStatsReplyVer14 implements OFDescStatsReply {
     public OFDescStatsReply.Builder setFlags(Set<OFStatsReplyFlags> flags) {
         this.flags = flags;
         this.flagsSet = true;
-        return this;
-    }
-    @Override
-    public String getMfrDesc() {
-        return mfrDesc;
-    }
-
-    @Override
-    public OFDescStatsReply.Builder setMfrDesc(String mfrDesc) {
-        this.mfrDesc = mfrDesc;
-        this.mfrDescSet = true;
         return this;
     }
     @Override
@@ -377,14 +351,14 @@ class OFDescStatsReplyVer14 implements OFDescStatsReply {
         return this;
     }
     @Override
-    public String getSwDesc() {
-        return swDesc;
+    public String getMfrDesc() {
+        return mfrDesc;
     }
 
     @Override
-    public OFDescStatsReply.Builder setSwDesc(String swDesc) {
-        this.swDesc = swDesc;
-        this.swDescSet = true;
+    public OFDescStatsReply.Builder setMfrDesc(String mfrDesc) {
+        this.mfrDesc = mfrDesc;
+        this.mfrDescSet = true;
         return this;
     }
     @Override
@@ -399,14 +373,40 @@ class OFDescStatsReplyVer14 implements OFDescStatsReply {
         return this;
     }
     @Override
-    public String getDpDesc() {
-        return dpDesc;
+    public OFStatsType getStatsType() {
+        return OFStatsType.DESC;
     }
 
     @Override
-    public OFDescStatsReply.Builder setDpDesc(String dpDesc) {
-        this.dpDesc = dpDesc;
-        this.dpDescSet = true;
+    public String getSwDesc() {
+        return swDesc;
+    }
+
+    @Override
+    public OFDescStatsReply.Builder setSwDesc(String swDesc) {
+        this.swDesc = swDesc;
+        this.swDescSet = true;
+        return this;
+    }
+    @Override
+    public OFType getType() {
+        return OFType.STATS_REPLY;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_14;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFDescStatsReply.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 //

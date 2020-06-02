@@ -52,11 +52,6 @@ class OFInstructionBsnDisableL3Ver13 implements OFInstructionBsnDisableL3 {
 
     // Accessors for OF message fields
     @Override
-    public OFInstructionType getType() {
-        return OFInstructionType.EXPERIMENTER;
-    }
-
-    @Override
     public long getExperimenter() {
         return 0x5c16c7L;
     }
@@ -64,6 +59,11 @@ class OFInstructionBsnDisableL3Ver13 implements OFInstructionBsnDisableL3 {
     @Override
     public long getSubtype() {
         return 0xdL;
+    }
+
+    @Override
+    public OFInstructionType getType() {
+        return OFInstructionType.EXPERIMENTER;
     }
 
     @Override

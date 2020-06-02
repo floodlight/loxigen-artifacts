@@ -58,13 +58,13 @@ class OFActionSetNwEcnVer11 implements OFActionSetNwEcn {
 
     // Accessors for OF message fields
     @Override
-    public OFActionType getType() {
-        return OFActionType.SET_NW_ECN;
+    public IpEcn getNwEcn() {
+        return nwEcn;
     }
 
     @Override
-    public IpEcn getNwEcn() {
-        return nwEcn;
+    public OFActionType getType() {
+        return OFActionType.SET_NW_ECN;
     }
 
     @Override
@@ -90,11 +90,6 @@ class OFActionSetNwEcnVer11 implements OFActionSetNwEcn {
         }
 
     @Override
-    public OFActionType getType() {
-        return OFActionType.SET_NW_ECN;
-    }
-
-    @Override
     public IpEcn getNwEcn() {
         return nwEcn;
     }
@@ -105,6 +100,11 @@ class OFActionSetNwEcnVer11 implements OFActionSetNwEcn {
         this.nwEcnSet = true;
         return this;
     }
+    @Override
+    public OFActionType getType() {
+        return OFActionType.SET_NW_ECN;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_11;
@@ -132,11 +132,6 @@ class OFActionSetNwEcnVer11 implements OFActionSetNwEcn {
         private IpEcn nwEcn;
 
     @Override
-    public OFActionType getType() {
-        return OFActionType.SET_NW_ECN;
-    }
-
-    @Override
     public IpEcn getNwEcn() {
         return nwEcn;
     }
@@ -147,6 +142,11 @@ class OFActionSetNwEcnVer11 implements OFActionSetNwEcn {
         this.nwEcnSet = true;
         return this;
     }
+    @Override
+    public OFActionType getType() {
+        return OFActionType.SET_NW_ECN;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_11;

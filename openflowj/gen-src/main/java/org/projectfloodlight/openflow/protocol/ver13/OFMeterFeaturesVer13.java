@@ -67,11 +67,6 @@ class OFMeterFeaturesVer13 implements OFMeterFeatures {
 
     // Accessors for OF message fields
     @Override
-    public long getMaxMeter() {
-        return maxMeter;
-    }
-
-    @Override
     public long getBandTypes() {
         return bandTypes;
     }
@@ -79,6 +74,11 @@ class OFMeterFeaturesVer13 implements OFMeterFeatures {
     @Override
     public long getCapabilities() {
         return capabilities;
+    }
+
+    @Override
+    public long getFeatures()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property features not supported in version 1.3");
     }
 
     @Override
@@ -92,8 +92,8 @@ class OFMeterFeaturesVer13 implements OFMeterFeatures {
     }
 
     @Override
-    public long getFeatures()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property features not supported in version 1.3");
+    public long getMaxMeter() {
+        return maxMeter;
     }
 
     @Override
@@ -127,17 +127,6 @@ class OFMeterFeaturesVer13 implements OFMeterFeatures {
         }
 
     @Override
-    public long getMaxMeter() {
-        return maxMeter;
-    }
-
-    @Override
-    public OFMeterFeatures.Builder setMaxMeter(long maxMeter) {
-        this.maxMeter = maxMeter;
-        this.maxMeterSet = true;
-        return this;
-    }
-    @Override
     public long getBandTypes() {
         return bandTypes;
     }
@@ -158,6 +147,15 @@ class OFMeterFeaturesVer13 implements OFMeterFeatures {
         this.capabilities = capabilities;
         this.capabilitiesSet = true;
         return this;
+    }
+    @Override
+    public long getFeatures()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property features not supported in version 1.3");
+    }
+
+    @Override
+    public OFMeterFeatures.Builder setFeatures(long features) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property features not supported in version 1.3");
     }
     @Override
     public short getMaxBands() {
@@ -182,13 +180,15 @@ class OFMeterFeaturesVer13 implements OFMeterFeatures {
         return this;
     }
     @Override
-    public long getFeatures()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property features not supported in version 1.3");
+    public long getMaxMeter() {
+        return maxMeter;
     }
 
     @Override
-    public OFMeterFeatures.Builder setFeatures(long features) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property features not supported in version 1.3");
+    public OFMeterFeatures.Builder setMaxMeter(long maxMeter) {
+        this.maxMeter = maxMeter;
+        this.maxMeterSet = true;
+        return this;
     }
     @Override
     public OFVersion getVersion() {
@@ -231,17 +231,6 @@ class OFMeterFeaturesVer13 implements OFMeterFeatures {
         private short maxColor;
 
     @Override
-    public long getMaxMeter() {
-        return maxMeter;
-    }
-
-    @Override
-    public OFMeterFeatures.Builder setMaxMeter(long maxMeter) {
-        this.maxMeter = maxMeter;
-        this.maxMeterSet = true;
-        return this;
-    }
-    @Override
     public long getBandTypes() {
         return bandTypes;
     }
@@ -262,6 +251,15 @@ class OFMeterFeaturesVer13 implements OFMeterFeatures {
         this.capabilities = capabilities;
         this.capabilitiesSet = true;
         return this;
+    }
+    @Override
+    public long getFeatures()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property features not supported in version 1.3");
+    }
+
+    @Override
+    public OFMeterFeatures.Builder setFeatures(long features) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property features not supported in version 1.3");
     }
     @Override
     public short getMaxBands() {
@@ -286,13 +284,15 @@ class OFMeterFeaturesVer13 implements OFMeterFeatures {
         return this;
     }
     @Override
-    public long getFeatures()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property features not supported in version 1.3");
+    public long getMaxMeter() {
+        return maxMeter;
     }
 
     @Override
-    public OFMeterFeatures.Builder setFeatures(long features) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property features not supported in version 1.3");
+    public OFMeterFeatures.Builder setMaxMeter(long maxMeter) {
+        this.maxMeter = maxMeter;
+        this.maxMeterSet = true;
+        return this;
     }
     @Override
     public OFVersion getVersion() {

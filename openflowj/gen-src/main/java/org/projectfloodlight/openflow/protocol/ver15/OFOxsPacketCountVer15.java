@@ -67,16 +67,6 @@ class OFOxsPacketCountVer15 implements OFOxsPacketCount {
         return value;
     }
 
-    @Override
-    public StatField<U64> getStatField() {
-        return StatField.PACKET_COUNT;
-    }
-
-    @Override
-    public boolean isMasked() {
-        return false;
-    }
-
     public OFOxs<U64> getCanonical() {
         // exact match OXM is always canonical
         return this;
@@ -85,6 +75,16 @@ class OFOxsPacketCountVer15 implements OFOxsPacketCount {
     @Override
     public U64 getMask()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property mask not supported in version 1.5");
+    }
+
+    @Override
+    public boolean isMasked() {
+        return false;
+    }
+
+    @Override
+    public StatField<U64> getStatField() {
+        return StatField.PACKET_COUNT;
     }
 
     @Override
@@ -126,8 +126,13 @@ class OFOxsPacketCountVer15 implements OFOxsPacketCount {
         return this;
     }
     @Override
-    public StatField<U64> getStatField() {
-        return StatField.PACKET_COUNT;
+    public OFOxs<U64> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.5");
+    }
+
+    @Override
+    public U64 getMask()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property mask not supported in version 1.5");
     }
 
     @Override
@@ -136,13 +141,8 @@ class OFOxsPacketCountVer15 implements OFOxsPacketCount {
     }
 
     @Override
-    public OFOxs<U64> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.5");
-    }
-
-    @Override
-    public U64 getMask()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property mask not supported in version 1.5");
+    public StatField<U64> getStatField() {
+        return StatField.PACKET_COUNT;
     }
 
     @Override
@@ -188,8 +188,13 @@ class OFOxsPacketCountVer15 implements OFOxsPacketCount {
         return this;
     }
     @Override
-    public StatField<U64> getStatField() {
-        return StatField.PACKET_COUNT;
+    public OFOxs<U64> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.5");
+    }
+
+    @Override
+    public U64 getMask()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property mask not supported in version 1.5");
     }
 
     @Override
@@ -198,13 +203,8 @@ class OFOxsPacketCountVer15 implements OFOxsPacketCount {
     }
 
     @Override
-    public OFOxs<U64> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.5");
-    }
-
-    @Override
-    public U64 getMask()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property mask not supported in version 1.5");
+    public StatField<U64> getStatField() {
+        return StatField.PACKET_COUNT;
     }
 
     @Override

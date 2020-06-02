@@ -67,16 +67,6 @@ class OFOxmConnTrackingZoneVer12 implements OFOxmConnTrackingZone {
         return value;
     }
 
-    @Override
-    public MatchField<U16> getMatchField() {
-        return MatchField.CONN_TRACKING_ZONE;
-    }
-
-    @Override
-    public boolean isMasked() {
-        return false;
-    }
-
     public OFOxm<U16> getCanonical() {
         // exact match OXM is always canonical
         return this;
@@ -85,6 +75,16 @@ class OFOxmConnTrackingZoneVer12 implements OFOxmConnTrackingZone {
     @Override
     public U16 getMask()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property mask not supported in version 1.2");
+    }
+
+    @Override
+    public boolean isMasked() {
+        return false;
+    }
+
+    @Override
+    public MatchField<U16> getMatchField() {
+        return MatchField.CONN_TRACKING_ZONE;
     }
 
     @Override
@@ -126,8 +126,13 @@ class OFOxmConnTrackingZoneVer12 implements OFOxmConnTrackingZone {
         return this;
     }
     @Override
-    public MatchField<U16> getMatchField() {
-        return MatchField.CONN_TRACKING_ZONE;
+    public OFOxm<U16> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.2");
+    }
+
+    @Override
+    public U16 getMask()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property mask not supported in version 1.2");
     }
 
     @Override
@@ -136,13 +141,8 @@ class OFOxmConnTrackingZoneVer12 implements OFOxmConnTrackingZone {
     }
 
     @Override
-    public OFOxm<U16> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.2");
-    }
-
-    @Override
-    public U16 getMask()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property mask not supported in version 1.2");
+    public MatchField<U16> getMatchField() {
+        return MatchField.CONN_TRACKING_ZONE;
     }
 
     @Override
@@ -188,8 +188,13 @@ class OFOxmConnTrackingZoneVer12 implements OFOxmConnTrackingZone {
         return this;
     }
     @Override
-    public MatchField<U16> getMatchField() {
-        return MatchField.CONN_TRACKING_ZONE;
+    public OFOxm<U16> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.2");
+    }
+
+    @Override
+    public U16 getMask()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property mask not supported in version 1.2");
     }
 
     @Override
@@ -198,13 +203,8 @@ class OFOxmConnTrackingZoneVer12 implements OFOxmConnTrackingZone {
     }
 
     @Override
-    public OFOxm<U16> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.2");
-    }
-
-    @Override
-    public U16 getMask()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property mask not supported in version 1.2");
+    public MatchField<U16> getMatchField() {
+        return MatchField.CONN_TRACKING_ZONE;
     }
 
     @Override

@@ -42,31 +42,6 @@ public class OFInstructionsVer10 implements OFInstructions {
         throw new UnsupportedOperationException("OFInstructionApplyActions not supported in version 1.0");
     }
 
-    public OFInstructionClearActions clearActions() {
-        throw new UnsupportedOperationException("OFInstructionClearActions not supported in version 1.0");
-    }
-
-    public OFInstructionGotoTable.Builder buildGotoTable() {
-        throw new UnsupportedOperationException("OFInstructionGotoTable not supported in version 1.0");
-    }
-    public OFInstructionGotoTable gotoTable(TableId tableId) {
-        throw new UnsupportedOperationException("OFInstructionGotoTable not supported in version 1.0");
-    }
-
-    public OFInstructionWriteActions.Builder buildWriteActions() {
-        throw new UnsupportedOperationException("OFInstructionWriteActions not supported in version 1.0");
-    }
-    public OFInstructionWriteActions writeActions(List<OFAction> actions) {
-        throw new UnsupportedOperationException("OFInstructionWriteActions not supported in version 1.0");
-    }
-
-    public OFInstructionWriteMetadata.Builder buildWriteMetadata() {
-        throw new UnsupportedOperationException("OFInstructionWriteMetadata not supported in version 1.0");
-    }
-    public OFInstructionWriteMetadata writeMetadata(U64 metadata, U64 metadataMask) {
-        throw new UnsupportedOperationException("OFInstructionWriteMetadata not supported in version 1.0");
-    }
-
     public OFInstructionBsnArpOffload bsnArpOffload() {
         throw new UnsupportedOperationException("OFInstructionBsnArpOffload not supported in version 1.0");
     }
@@ -141,6 +116,17 @@ public class OFInstructionsVer10 implements OFInstructions {
         throw new UnsupportedOperationException("OFInstructionBsnSpanDestination not supported in version 1.0");
     }
 
+    public OFInstructionClearActions clearActions() {
+        throw new UnsupportedOperationException("OFInstructionClearActions not supported in version 1.0");
+    }
+
+    public OFInstructionGotoTable.Builder buildGotoTable() {
+        throw new UnsupportedOperationException("OFInstructionGotoTable not supported in version 1.0");
+    }
+    public OFInstructionGotoTable gotoTable(TableId tableId) {
+        throw new UnsupportedOperationException("OFInstructionGotoTable not supported in version 1.0");
+    }
+
     public OFInstructionMeter.Builder buildMeter() {
         throw new UnsupportedOperationException("OFInstructionMeter not supported in version 1.0");
     }
@@ -153,6 +139,20 @@ public class OFInstructionsVer10 implements OFInstructions {
     }
     public OFInstructionStatTrigger statTrigger(Set<OFStatTriggerFlags> flags, OFOxsList thresholds) {
         throw new UnsupportedOperationException("OFInstructionStatTrigger not supported in version 1.0");
+    }
+
+    public OFInstructionWriteActions.Builder buildWriteActions() {
+        throw new UnsupportedOperationException("OFInstructionWriteActions not supported in version 1.0");
+    }
+    public OFInstructionWriteActions writeActions(List<OFAction> actions) {
+        throw new UnsupportedOperationException("OFInstructionWriteActions not supported in version 1.0");
+    }
+
+    public OFInstructionWriteMetadata.Builder buildWriteMetadata() {
+        throw new UnsupportedOperationException("OFInstructionWriteMetadata not supported in version 1.0");
+    }
+    public OFInstructionWriteMetadata writeMetadata(U64 metadata, U64 metadataMask) {
+        throw new UnsupportedOperationException("OFInstructionWriteMetadata not supported in version 1.0");
     }
 
     public OFMessageReader<OFInstruction> getReader() {

@@ -28,26 +28,26 @@ import org.projectfloodlight.openflow.exceptions.*;
 import io.netty.buffer.ByteBuf;
 
 public interface OFAsyncConfigFailedErrorMsg extends OFObject, OFErrorMsg {
-    OFVersion getVersion();
-    OFType getType();
-    long getXid();
-    OFErrorType getErrType();
     OFAsyncConfigFailedCode getCode();
     OFErrorCauseData getData();
+    OFErrorType getErrType();
+    OFType getType();
+    OFVersion getVersion();
+    long getXid();
 
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();
     public interface Builder extends OFErrorMsg.Builder {
         OFAsyncConfigFailedErrorMsg build();
-        OFVersion getVersion();
-        OFType getType();
-        long getXid();
-        Builder setXid(long xid);
-        OFErrorType getErrType();
         OFAsyncConfigFailedCode getCode();
         Builder setCode(OFAsyncConfigFailedCode code);
         OFErrorCauseData getData();
         Builder setData(OFErrorCauseData data);
+        OFErrorType getErrType();
+        OFType getType();
+        OFVersion getVersion();
+        long getXid();
+        Builder setXid(long xid);
     }
 }

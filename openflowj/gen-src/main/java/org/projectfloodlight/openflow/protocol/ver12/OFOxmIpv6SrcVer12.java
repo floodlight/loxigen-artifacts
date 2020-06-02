@@ -67,16 +67,6 @@ class OFOxmIpv6SrcVer12 implements OFOxmIpv6Src {
         return value;
     }
 
-    @Override
-    public MatchField<IPv6Address> getMatchField() {
-        return MatchField.IPV6_SRC;
-    }
-
-    @Override
-    public boolean isMasked() {
-        return false;
-    }
-
     public OFOxm<IPv6Address> getCanonical() {
         // exact match OXM is always canonical
         return this;
@@ -85,6 +75,16 @@ class OFOxmIpv6SrcVer12 implements OFOxmIpv6Src {
     @Override
     public IPv6Address getMask()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property mask not supported in version 1.2");
+    }
+
+    @Override
+    public boolean isMasked() {
+        return false;
+    }
+
+    @Override
+    public MatchField<IPv6Address> getMatchField() {
+        return MatchField.IPV6_SRC;
     }
 
     @Override
@@ -126,8 +126,13 @@ class OFOxmIpv6SrcVer12 implements OFOxmIpv6Src {
         return this;
     }
     @Override
-    public MatchField<IPv6Address> getMatchField() {
-        return MatchField.IPV6_SRC;
+    public OFOxm<IPv6Address> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.2");
+    }
+
+    @Override
+    public IPv6Address getMask()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property mask not supported in version 1.2");
     }
 
     @Override
@@ -136,13 +141,8 @@ class OFOxmIpv6SrcVer12 implements OFOxmIpv6Src {
     }
 
     @Override
-    public OFOxm<IPv6Address> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.2");
-    }
-
-    @Override
-    public IPv6Address getMask()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property mask not supported in version 1.2");
+    public MatchField<IPv6Address> getMatchField() {
+        return MatchField.IPV6_SRC;
     }
 
     @Override
@@ -188,8 +188,13 @@ class OFOxmIpv6SrcVer12 implements OFOxmIpv6Src {
         return this;
     }
     @Override
-    public MatchField<IPv6Address> getMatchField() {
-        return MatchField.IPV6_SRC;
+    public OFOxm<IPv6Address> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.2");
+    }
+
+    @Override
+    public IPv6Address getMask()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property mask not supported in version 1.2");
     }
 
     @Override
@@ -198,13 +203,8 @@ class OFOxmIpv6SrcVer12 implements OFOxmIpv6Src {
     }
 
     @Override
-    public OFOxm<IPv6Address> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.2");
-    }
-
-    @Override
-    public IPv6Address getMask()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property mask not supported in version 1.2");
+    public MatchField<IPv6Address> getMatchField() {
+        return MatchField.IPV6_SRC;
     }
 
     @Override

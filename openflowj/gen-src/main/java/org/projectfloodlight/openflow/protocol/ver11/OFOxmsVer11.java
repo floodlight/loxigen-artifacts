@@ -33,6 +33,20 @@ public class OFOxmsVer11 implements OFOxms {
 
 
 
+    public OFOxmActsetOutput.Builder buildActsetOutput() {
+        throw new UnsupportedOperationException("OFOxmActsetOutput not supported in version 1.1");
+    }
+    public OFOxmActsetOutput actsetOutput(OFPort value) {
+        throw new UnsupportedOperationException("OFOxmActsetOutput not supported in version 1.1");
+    }
+
+    public OFOxmActsetOutputMasked.Builder buildActsetOutputMasked() {
+        throw new UnsupportedOperationException("OFOxmActsetOutputMasked not supported in version 1.1");
+    }
+    public OFOxmActsetOutputMasked actsetOutputMasked(OFPort value, OFPort mask) {
+        throw new UnsupportedOperationException("OFOxmActsetOutputMasked not supported in version 1.1");
+    }
+
     public OFOxmArpOp.Builder buildArpOp() {
         throw new UnsupportedOperationException("OFOxmArpOp not supported in version 1.1");
     }
@@ -131,6 +145,20 @@ public class OFOxmsVer11 implements OFOxms {
         throw new UnsupportedOperationException("OFOxmBsnGlobalVrfAllowedMasked not supported in version 1.1");
     }
 
+    public OFOxmBsnIfpClassId.Builder buildBsnIfpClassId() {
+        throw new UnsupportedOperationException("OFOxmBsnIfpClassId not supported in version 1.1");
+    }
+    public OFOxmBsnIfpClassId bsnIfpClassId(ClassId value) {
+        throw new UnsupportedOperationException("OFOxmBsnIfpClassId not supported in version 1.1");
+    }
+
+    public OFOxmBsnIfpClassIdMasked.Builder buildBsnIfpClassIdMasked() {
+        throw new UnsupportedOperationException("OFOxmBsnIfpClassIdMasked not supported in version 1.1");
+    }
+    public OFOxmBsnIfpClassIdMasked bsnIfpClassIdMasked(ClassId value, ClassId mask) {
+        throw new UnsupportedOperationException("OFOxmBsnIfpClassIdMasked not supported in version 1.1");
+    }
+
     public OFOxmBsnInPorts128.Builder buildBsnInPorts128() {
         throw new UnsupportedOperationException("OFOxmBsnInPorts128 not supported in version 1.1");
     }
@@ -171,6 +199,48 @@ public class OFOxmsVer11 implements OFOxms {
     }
     public OFOxmBsnIngressPortGroupIdMasked bsnIngressPortGroupIdMasked(ClassId value, ClassId mask) {
         throw new UnsupportedOperationException("OFOxmBsnIngressPortGroupIdMasked not supported in version 1.1");
+    }
+
+    public OFOxmBsnInnerEthDst.Builder buildBsnInnerEthDst() {
+        throw new UnsupportedOperationException("OFOxmBsnInnerEthDst not supported in version 1.1");
+    }
+    public OFOxmBsnInnerEthDst bsnInnerEthDst(MacAddress value) {
+        throw new UnsupportedOperationException("OFOxmBsnInnerEthDst not supported in version 1.1");
+    }
+
+    public OFOxmBsnInnerEthDstMasked.Builder buildBsnInnerEthDstMasked() {
+        throw new UnsupportedOperationException("OFOxmBsnInnerEthDstMasked not supported in version 1.1");
+    }
+    public OFOxmBsnInnerEthDstMasked bsnInnerEthDstMasked(MacAddress value, MacAddress mask) {
+        throw new UnsupportedOperationException("OFOxmBsnInnerEthDstMasked not supported in version 1.1");
+    }
+
+    public OFOxmBsnInnerEthSrc.Builder buildBsnInnerEthSrc() {
+        throw new UnsupportedOperationException("OFOxmBsnInnerEthSrc not supported in version 1.1");
+    }
+    public OFOxmBsnInnerEthSrc bsnInnerEthSrc(MacAddress value) {
+        throw new UnsupportedOperationException("OFOxmBsnInnerEthSrc not supported in version 1.1");
+    }
+
+    public OFOxmBsnInnerEthSrcMasked.Builder buildBsnInnerEthSrcMasked() {
+        throw new UnsupportedOperationException("OFOxmBsnInnerEthSrcMasked not supported in version 1.1");
+    }
+    public OFOxmBsnInnerEthSrcMasked bsnInnerEthSrcMasked(MacAddress value, MacAddress mask) {
+        throw new UnsupportedOperationException("OFOxmBsnInnerEthSrcMasked not supported in version 1.1");
+    }
+
+    public OFOxmBsnInnerVlanVid.Builder buildBsnInnerVlanVid() {
+        throw new UnsupportedOperationException("OFOxmBsnInnerVlanVid not supported in version 1.1");
+    }
+    public OFOxmBsnInnerVlanVid bsnInnerVlanVid(OFVlanVidMatch value) {
+        throw new UnsupportedOperationException("OFOxmBsnInnerVlanVid not supported in version 1.1");
+    }
+
+    public OFOxmBsnInnerVlanVidMasked.Builder buildBsnInnerVlanVidMasked() {
+        throw new UnsupportedOperationException("OFOxmBsnInnerVlanVidMasked not supported in version 1.1");
+    }
+    public OFOxmBsnInnerVlanVidMasked bsnInnerVlanVidMasked(OFVlanVidMatch value, OFVlanVidMatch mask) {
+        throw new UnsupportedOperationException("OFOxmBsnInnerVlanVidMasked not supported in version 1.1");
     }
 
     public OFOxmBsnIpFragmentation.Builder buildBsnIpFragmentation() {
@@ -383,6 +453,20 @@ public class OFOxmsVer11 implements OFOxms {
         throw new UnsupportedOperationException("OFOxmBsnUdf7Masked not supported in version 1.1");
     }
 
+    public OFOxmBsnVfi.Builder buildBsnVfi() {
+        throw new UnsupportedOperationException("OFOxmBsnVfi not supported in version 1.1");
+    }
+    public OFOxmBsnVfi bsnVfi(VFI value) {
+        throw new UnsupportedOperationException("OFOxmBsnVfi not supported in version 1.1");
+    }
+
+    public OFOxmBsnVfiMasked.Builder buildBsnVfiMasked() {
+        throw new UnsupportedOperationException("OFOxmBsnVfiMasked not supported in version 1.1");
+    }
+    public OFOxmBsnVfiMasked bsnVfiMasked(VFI value, VFI mask) {
+        throw new UnsupportedOperationException("OFOxmBsnVfiMasked not supported in version 1.1");
+    }
+
     public OFOxmBsnVlanXlatePortGroupId.Builder buildBsnVlanXlatePortGroupId() {
         throw new UnsupportedOperationException("OFOxmBsnVlanXlatePortGroupId not supported in version 1.1");
     }
@@ -409,6 +493,20 @@ public class OFOxmsVer11 implements OFOxms {
     }
     public OFOxmBsnVrfMasked bsnVrfMasked(VRF value, VRF mask) {
         throw new UnsupportedOperationException("OFOxmBsnVrfMasked not supported in version 1.1");
+    }
+
+    public OFOxmBsnVxlanNetworkId.Builder buildBsnVxlanNetworkId() {
+        throw new UnsupportedOperationException("OFOxmBsnVxlanNetworkId not supported in version 1.1");
+    }
+    public OFOxmBsnVxlanNetworkId bsnVxlanNetworkId(VxlanNI value) {
+        throw new UnsupportedOperationException("OFOxmBsnVxlanNetworkId not supported in version 1.1");
+    }
+
+    public OFOxmBsnVxlanNetworkIdMasked.Builder buildBsnVxlanNetworkIdMasked() {
+        throw new UnsupportedOperationException("OFOxmBsnVxlanNetworkIdMasked not supported in version 1.1");
+    }
+    public OFOxmBsnVxlanNetworkIdMasked bsnVxlanNetworkIdMasked(VxlanNI value, VxlanNI mask) {
+        throw new UnsupportedOperationException("OFOxmBsnVxlanNetworkIdMasked not supported in version 1.1");
     }
 
     public OFOxmConnTrackingIpv6Dst.Builder buildConnTrackingIpv6Dst() {
@@ -775,6 +873,20 @@ public class OFOxmsVer11 implements OFOxms {
         throw new UnsupportedOperationException("OFOxmIpv6DstMasked not supported in version 1.1");
     }
 
+    public OFOxmIpv6Exthdr.Builder buildIpv6Exthdr() {
+        throw new UnsupportedOperationException("OFOxmIpv6Exthdr not supported in version 1.1");
+    }
+    public OFOxmIpv6Exthdr ipv6Exthdr(U16 value) {
+        throw new UnsupportedOperationException("OFOxmIpv6Exthdr not supported in version 1.1");
+    }
+
+    public OFOxmIpv6ExthdrMasked.Builder buildIpv6ExthdrMasked() {
+        throw new UnsupportedOperationException("OFOxmIpv6ExthdrMasked not supported in version 1.1");
+    }
+    public OFOxmIpv6ExthdrMasked ipv6ExthdrMasked(U16 value, U16 mask) {
+        throw new UnsupportedOperationException("OFOxmIpv6ExthdrMasked not supported in version 1.1");
+    }
+
     public OFOxmIpv6Flabel.Builder buildIpv6Flabel() {
         throw new UnsupportedOperationException("OFOxmIpv6Flabel not supported in version 1.1");
     }
@@ -859,6 +971,20 @@ public class OFOxmsVer11 implements OFOxms {
         throw new UnsupportedOperationException("OFOxmMetadataMasked not supported in version 1.1");
     }
 
+    public OFOxmMplsBos.Builder buildMplsBos() {
+        throw new UnsupportedOperationException("OFOxmMplsBos not supported in version 1.1");
+    }
+    public OFOxmMplsBos mplsBos(OFBooleanValue value) {
+        throw new UnsupportedOperationException("OFOxmMplsBos not supported in version 1.1");
+    }
+
+    public OFOxmMplsBosMasked.Builder buildMplsBosMasked() {
+        throw new UnsupportedOperationException("OFOxmMplsBosMasked not supported in version 1.1");
+    }
+    public OFOxmMplsBosMasked mplsBosMasked(OFBooleanValue value, OFBooleanValue mask) {
+        throw new UnsupportedOperationException("OFOxmMplsBosMasked not supported in version 1.1");
+    }
+
     public OFOxmMplsLabel.Builder buildMplsLabel() {
         throw new UnsupportedOperationException("OFOxmMplsLabel not supported in version 1.1");
     }
@@ -899,6 +1025,34 @@ public class OFOxmsVer11 implements OFOxms {
     }
     public OFOxmOvsTcpFlagsMasked ovsTcpFlagsMasked(U16 value, U16 mask) {
         throw new UnsupportedOperationException("OFOxmOvsTcpFlagsMasked not supported in version 1.1");
+    }
+
+    public OFOxmPacketType.Builder buildPacketType() {
+        throw new UnsupportedOperationException("OFOxmPacketType not supported in version 1.1");
+    }
+    public OFOxmPacketType packetType(PacketType value) {
+        throw new UnsupportedOperationException("OFOxmPacketType not supported in version 1.1");
+    }
+
+    public OFOxmPacketTypeMasked.Builder buildPacketTypeMasked() {
+        throw new UnsupportedOperationException("OFOxmPacketTypeMasked not supported in version 1.1");
+    }
+    public OFOxmPacketTypeMasked packetTypeMasked(PacketType value, PacketType mask) {
+        throw new UnsupportedOperationException("OFOxmPacketTypeMasked not supported in version 1.1");
+    }
+
+    public OFOxmPbbUca.Builder buildPbbUca() {
+        throw new UnsupportedOperationException("OFOxmPbbUca not supported in version 1.1");
+    }
+    public OFOxmPbbUca pbbUca(OFBooleanValue value) {
+        throw new UnsupportedOperationException("OFOxmPbbUca not supported in version 1.1");
+    }
+
+    public OFOxmPbbUcaMasked.Builder buildPbbUcaMasked() {
+        throw new UnsupportedOperationException("OFOxmPbbUcaMasked not supported in version 1.1");
+    }
+    public OFOxmPbbUcaMasked pbbUcaMasked(OFBooleanValue value, OFBooleanValue mask) {
+        throw new UnsupportedOperationException("OFOxmPbbUcaMasked not supported in version 1.1");
     }
 
     public OFOxmSctpDst.Builder buildSctpDst() {
@@ -943,6 +1097,20 @@ public class OFOxmsVer11 implements OFOxms {
         throw new UnsupportedOperationException("OFOxmTcpDstMasked not supported in version 1.1");
     }
 
+    public OFOxmTcpFlags.Builder buildTcpFlags() {
+        throw new UnsupportedOperationException("OFOxmTcpFlags not supported in version 1.1");
+    }
+    public OFOxmTcpFlags tcpFlags(U16 value) {
+        throw new UnsupportedOperationException("OFOxmTcpFlags not supported in version 1.1");
+    }
+
+    public OFOxmTcpFlagsMasked.Builder buildTcpFlagsMasked() {
+        throw new UnsupportedOperationException("OFOxmTcpFlagsMasked not supported in version 1.1");
+    }
+    public OFOxmTcpFlagsMasked tcpFlagsMasked(U16 value, U16 mask) {
+        throw new UnsupportedOperationException("OFOxmTcpFlagsMasked not supported in version 1.1");
+    }
+
     public OFOxmTcpSrc.Builder buildTcpSrc() {
         throw new UnsupportedOperationException("OFOxmTcpSrc not supported in version 1.1");
     }
@@ -955,6 +1123,20 @@ public class OFOxmsVer11 implements OFOxms {
     }
     public OFOxmTcpSrcMasked tcpSrcMasked(TransportPort value, TransportPort mask) {
         throw new UnsupportedOperationException("OFOxmTcpSrcMasked not supported in version 1.1");
+    }
+
+    public OFOxmTunnelId.Builder buildTunnelId() {
+        throw new UnsupportedOperationException("OFOxmTunnelId not supported in version 1.1");
+    }
+    public OFOxmTunnelId tunnelId(U64 value) {
+        throw new UnsupportedOperationException("OFOxmTunnelId not supported in version 1.1");
+    }
+
+    public OFOxmTunnelIdMasked.Builder buildTunnelIdMasked() {
+        throw new UnsupportedOperationException("OFOxmTunnelIdMasked not supported in version 1.1");
+    }
+    public OFOxmTunnelIdMasked tunnelIdMasked(U64 value, U64 mask) {
+        throw new UnsupportedOperationException("OFOxmTunnelIdMasked not supported in version 1.1");
     }
 
     public OFOxmTunnelIpv4Dst.Builder buildTunnelIpv4Dst() {
@@ -1041,188 +1223,6 @@ public class OFOxmsVer11 implements OFOxms {
         throw new UnsupportedOperationException("OFOxmVlanVidMasked not supported in version 1.1");
     }
 
-    public OFOxmBsnInnerEthDst.Builder buildBsnInnerEthDst() {
-        throw new UnsupportedOperationException("OFOxmBsnInnerEthDst not supported in version 1.1");
-    }
-    public OFOxmBsnInnerEthDst bsnInnerEthDst(MacAddress value) {
-        throw new UnsupportedOperationException("OFOxmBsnInnerEthDst not supported in version 1.1");
-    }
-
-    public OFOxmBsnInnerEthDstMasked.Builder buildBsnInnerEthDstMasked() {
-        throw new UnsupportedOperationException("OFOxmBsnInnerEthDstMasked not supported in version 1.1");
-    }
-    public OFOxmBsnInnerEthDstMasked bsnInnerEthDstMasked(MacAddress value, MacAddress mask) {
-        throw new UnsupportedOperationException("OFOxmBsnInnerEthDstMasked not supported in version 1.1");
-    }
-
-    public OFOxmBsnInnerEthSrc.Builder buildBsnInnerEthSrc() {
-        throw new UnsupportedOperationException("OFOxmBsnInnerEthSrc not supported in version 1.1");
-    }
-    public OFOxmBsnInnerEthSrc bsnInnerEthSrc(MacAddress value) {
-        throw new UnsupportedOperationException("OFOxmBsnInnerEthSrc not supported in version 1.1");
-    }
-
-    public OFOxmBsnInnerEthSrcMasked.Builder buildBsnInnerEthSrcMasked() {
-        throw new UnsupportedOperationException("OFOxmBsnInnerEthSrcMasked not supported in version 1.1");
-    }
-    public OFOxmBsnInnerEthSrcMasked bsnInnerEthSrcMasked(MacAddress value, MacAddress mask) {
-        throw new UnsupportedOperationException("OFOxmBsnInnerEthSrcMasked not supported in version 1.1");
-    }
-
-    public OFOxmBsnInnerVlanVid.Builder buildBsnInnerVlanVid() {
-        throw new UnsupportedOperationException("OFOxmBsnInnerVlanVid not supported in version 1.1");
-    }
-    public OFOxmBsnInnerVlanVid bsnInnerVlanVid(OFVlanVidMatch value) {
-        throw new UnsupportedOperationException("OFOxmBsnInnerVlanVid not supported in version 1.1");
-    }
-
-    public OFOxmBsnInnerVlanVidMasked.Builder buildBsnInnerVlanVidMasked() {
-        throw new UnsupportedOperationException("OFOxmBsnInnerVlanVidMasked not supported in version 1.1");
-    }
-    public OFOxmBsnInnerVlanVidMasked bsnInnerVlanVidMasked(OFVlanVidMatch value, OFVlanVidMatch mask) {
-        throw new UnsupportedOperationException("OFOxmBsnInnerVlanVidMasked not supported in version 1.1");
-    }
-
-    public OFOxmBsnVfi.Builder buildBsnVfi() {
-        throw new UnsupportedOperationException("OFOxmBsnVfi not supported in version 1.1");
-    }
-    public OFOxmBsnVfi bsnVfi(VFI value) {
-        throw new UnsupportedOperationException("OFOxmBsnVfi not supported in version 1.1");
-    }
-
-    public OFOxmBsnVfiMasked.Builder buildBsnVfiMasked() {
-        throw new UnsupportedOperationException("OFOxmBsnVfiMasked not supported in version 1.1");
-    }
-    public OFOxmBsnVfiMasked bsnVfiMasked(VFI value, VFI mask) {
-        throw new UnsupportedOperationException("OFOxmBsnVfiMasked not supported in version 1.1");
-    }
-
-    public OFOxmBsnVxlanNetworkId.Builder buildBsnVxlanNetworkId() {
-        throw new UnsupportedOperationException("OFOxmBsnVxlanNetworkId not supported in version 1.1");
-    }
-    public OFOxmBsnVxlanNetworkId bsnVxlanNetworkId(VxlanNI value) {
-        throw new UnsupportedOperationException("OFOxmBsnVxlanNetworkId not supported in version 1.1");
-    }
-
-    public OFOxmBsnVxlanNetworkIdMasked.Builder buildBsnVxlanNetworkIdMasked() {
-        throw new UnsupportedOperationException("OFOxmBsnVxlanNetworkIdMasked not supported in version 1.1");
-    }
-    public OFOxmBsnVxlanNetworkIdMasked bsnVxlanNetworkIdMasked(VxlanNI value, VxlanNI mask) {
-        throw new UnsupportedOperationException("OFOxmBsnVxlanNetworkIdMasked not supported in version 1.1");
-    }
-
-    public OFOxmIpv6Exthdr.Builder buildIpv6Exthdr() {
-        throw new UnsupportedOperationException("OFOxmIpv6Exthdr not supported in version 1.1");
-    }
-    public OFOxmIpv6Exthdr ipv6Exthdr(U16 value) {
-        throw new UnsupportedOperationException("OFOxmIpv6Exthdr not supported in version 1.1");
-    }
-
-    public OFOxmIpv6ExthdrMasked.Builder buildIpv6ExthdrMasked() {
-        throw new UnsupportedOperationException("OFOxmIpv6ExthdrMasked not supported in version 1.1");
-    }
-    public OFOxmIpv6ExthdrMasked ipv6ExthdrMasked(U16 value, U16 mask) {
-        throw new UnsupportedOperationException("OFOxmIpv6ExthdrMasked not supported in version 1.1");
-    }
-
-    public OFOxmMplsBos.Builder buildMplsBos() {
-        throw new UnsupportedOperationException("OFOxmMplsBos not supported in version 1.1");
-    }
-    public OFOxmMplsBos mplsBos(OFBooleanValue value) {
-        throw new UnsupportedOperationException("OFOxmMplsBos not supported in version 1.1");
-    }
-
-    public OFOxmMplsBosMasked.Builder buildMplsBosMasked() {
-        throw new UnsupportedOperationException("OFOxmMplsBosMasked not supported in version 1.1");
-    }
-    public OFOxmMplsBosMasked mplsBosMasked(OFBooleanValue value, OFBooleanValue mask) {
-        throw new UnsupportedOperationException("OFOxmMplsBosMasked not supported in version 1.1");
-    }
-
-    public OFOxmTunnelId.Builder buildTunnelId() {
-        throw new UnsupportedOperationException("OFOxmTunnelId not supported in version 1.1");
-    }
-    public OFOxmTunnelId tunnelId(U64 value) {
-        throw new UnsupportedOperationException("OFOxmTunnelId not supported in version 1.1");
-    }
-
-    public OFOxmTunnelIdMasked.Builder buildTunnelIdMasked() {
-        throw new UnsupportedOperationException("OFOxmTunnelIdMasked not supported in version 1.1");
-    }
-    public OFOxmTunnelIdMasked tunnelIdMasked(U64 value, U64 mask) {
-        throw new UnsupportedOperationException("OFOxmTunnelIdMasked not supported in version 1.1");
-    }
-
-    public OFOxmBsnIfpClassId.Builder buildBsnIfpClassId() {
-        throw new UnsupportedOperationException("OFOxmBsnIfpClassId not supported in version 1.1");
-    }
-    public OFOxmBsnIfpClassId bsnIfpClassId(ClassId value) {
-        throw new UnsupportedOperationException("OFOxmBsnIfpClassId not supported in version 1.1");
-    }
-
-    public OFOxmBsnIfpClassIdMasked.Builder buildBsnIfpClassIdMasked() {
-        throw new UnsupportedOperationException("OFOxmBsnIfpClassIdMasked not supported in version 1.1");
-    }
-    public OFOxmBsnIfpClassIdMasked bsnIfpClassIdMasked(ClassId value, ClassId mask) {
-        throw new UnsupportedOperationException("OFOxmBsnIfpClassIdMasked not supported in version 1.1");
-    }
-
-    public OFOxmPbbUca.Builder buildPbbUca() {
-        throw new UnsupportedOperationException("OFOxmPbbUca not supported in version 1.1");
-    }
-    public OFOxmPbbUca pbbUca(OFBooleanValue value) {
-        throw new UnsupportedOperationException("OFOxmPbbUca not supported in version 1.1");
-    }
-
-    public OFOxmPbbUcaMasked.Builder buildPbbUcaMasked() {
-        throw new UnsupportedOperationException("OFOxmPbbUcaMasked not supported in version 1.1");
-    }
-    public OFOxmPbbUcaMasked pbbUcaMasked(OFBooleanValue value, OFBooleanValue mask) {
-        throw new UnsupportedOperationException("OFOxmPbbUcaMasked not supported in version 1.1");
-    }
-
-    public OFOxmActsetOutput.Builder buildActsetOutput() {
-        throw new UnsupportedOperationException("OFOxmActsetOutput not supported in version 1.1");
-    }
-    public OFOxmActsetOutput actsetOutput(OFPort value) {
-        throw new UnsupportedOperationException("OFOxmActsetOutput not supported in version 1.1");
-    }
-
-    public OFOxmActsetOutputMasked.Builder buildActsetOutputMasked() {
-        throw new UnsupportedOperationException("OFOxmActsetOutputMasked not supported in version 1.1");
-    }
-    public OFOxmActsetOutputMasked actsetOutputMasked(OFPort value, OFPort mask) {
-        throw new UnsupportedOperationException("OFOxmActsetOutputMasked not supported in version 1.1");
-    }
-
-    public OFOxmPacketType.Builder buildPacketType() {
-        throw new UnsupportedOperationException("OFOxmPacketType not supported in version 1.1");
-    }
-    public OFOxmPacketType packetType(PacketType value) {
-        throw new UnsupportedOperationException("OFOxmPacketType not supported in version 1.1");
-    }
-
-    public OFOxmPacketTypeMasked.Builder buildPacketTypeMasked() {
-        throw new UnsupportedOperationException("OFOxmPacketTypeMasked not supported in version 1.1");
-    }
-    public OFOxmPacketTypeMasked packetTypeMasked(PacketType value, PacketType mask) {
-        throw new UnsupportedOperationException("OFOxmPacketTypeMasked not supported in version 1.1");
-    }
-
-    public OFOxmTcpFlags.Builder buildTcpFlags() {
-        throw new UnsupportedOperationException("OFOxmTcpFlags not supported in version 1.1");
-    }
-    public OFOxmTcpFlags tcpFlags(U16 value) {
-        throw new UnsupportedOperationException("OFOxmTcpFlags not supported in version 1.1");
-    }
-
-    public OFOxmTcpFlagsMasked.Builder buildTcpFlagsMasked() {
-        throw new UnsupportedOperationException("OFOxmTcpFlagsMasked not supported in version 1.1");
-    }
-    public OFOxmTcpFlagsMasked tcpFlagsMasked(U16 value, U16 mask) {
-        throw new UnsupportedOperationException("OFOxmTcpFlagsMasked not supported in version 1.1");
-    }
-
     public OFMessageReader<OFOxm<?>> getReader() {
         throw new UnsupportedOperationException("Reader<OFOxm<?>> not supported in version 1.1");
     }
@@ -1230,6 +1230,8 @@ public class OFOxmsVer11 implements OFOxms {
     @SuppressWarnings("unchecked")
     public <F extends OFValueType<F>> OFOxm<F> fromValue(F value, MatchField<F> field) {
         switch (field.id) {
+            case ACTSET_OUTPUT:
+                return (OFOxm<F>)((Object)actsetOutput((OFPort)((Object)value)));
             case ARP_OP:
                 return (OFOxm<F>)((Object)arpOp((ArpOpcode)((Object)value)));
             case ARP_SHA:
@@ -1244,12 +1246,20 @@ public class OFOxmsVer11 implements OFOxms {
                 return (OFOxm<F>)((Object)bsnEgrPortGroupId((ClassId)((Object)value)));
             case BSN_GLOBAL_VRF_ALLOWED:
                 return (OFOxm<F>)((Object)bsnGlobalVrfAllowed((OFBooleanValue)((Object)value)));
+            case BSN_IFP_CLASS_ID:
+                return (OFOxm<F>)((Object)bsnIfpClassId((ClassId)((Object)value)));
             case BSN_IN_PORTS_128:
                 return (OFOxm<F>)((Object)bsnInPorts128((OFBitMask128)((Object)value)));
             case BSN_IN_PORTS_512:
                 return (OFOxm<F>)((Object)bsnInPorts512((OFBitMask512)((Object)value)));
             case BSN_INGRESS_PORT_GROUP_ID:
                 return (OFOxm<F>)((Object)bsnIngressPortGroupId((ClassId)((Object)value)));
+            case BSN_INNER_ETH_DST:
+                return (OFOxm<F>)((Object)bsnInnerEthDst((MacAddress)((Object)value)));
+            case BSN_INNER_ETH_SRC:
+                return (OFOxm<F>)((Object)bsnInnerEthSrc((MacAddress)((Object)value)));
+            case BSN_INNER_VLAN_VID:
+                return (OFOxm<F>)((Object)bsnInnerVlanVid((OFVlanVidMatch)((Object)value)));
             case BSN_IP_FRAGMENTATION:
                 return (OFOxm<F>)((Object)bsnIpFragmentation((OFBooleanValue)((Object)value)));
             case BSN_L2_CACHE_HIT:
@@ -1280,10 +1290,14 @@ public class OFOxmsVer11 implements OFOxms {
                 return (OFOxm<F>)((Object)bsnUdf6((UDF)((Object)value)));
             case BSN_UDF7:
                 return (OFOxm<F>)((Object)bsnUdf7((UDF)((Object)value)));
+            case BSN_VFI:
+                return (OFOxm<F>)((Object)bsnVfi((VFI)((Object)value)));
             case BSN_VLAN_XLATE_PORT_GROUP_ID:
                 return (OFOxm<F>)((Object)bsnVlanXlatePortGroupId((ClassId)((Object)value)));
             case BSN_VRF:
                 return (OFOxm<F>)((Object)bsnVrf((VRF)((Object)value)));
+            case BSN_VXLAN_NETWORK_ID:
+                return (OFOxm<F>)((Object)bsnVxlanNetworkId((VxlanNI)((Object)value)));
             case CONN_TRACKING_IPV6_DST:
                 return (OFOxm<F>)((Object)connTrackingIpv6Dst((IPv6Address)((Object)value)));
             case CONN_TRACKING_IPV6_SRC:
@@ -1336,6 +1350,8 @@ public class OFOxmsVer11 implements OFOxms {
                 return (OFOxm<F>)((Object)ipv4Src((IPv4Address)((Object)value)));
             case IPV6_DST:
                 return (OFOxm<F>)((Object)ipv6Dst((IPv6Address)((Object)value)));
+            case IPV6_EXTHDR:
+                return (OFOxm<F>)((Object)ipv6Exthdr((U16)((Object)value)));
             case IPV6_FLABEL:
                 return (OFOxm<F>)((Object)ipv6Flabel((IPv6FlowLabel)((Object)value)));
             case IPV6_ND_SLL:
@@ -1348,20 +1364,30 @@ public class OFOxmsVer11 implements OFOxms {
                 return (OFOxm<F>)((Object)ipv6Src((IPv6Address)((Object)value)));
             case METADATA:
                 return (OFOxm<F>)((Object)metadata((OFMetadata)((Object)value)));
+            case MPLS_BOS:
+                return (OFOxm<F>)((Object)mplsBos((OFBooleanValue)((Object)value)));
             case MPLS_LABEL:
                 return (OFOxm<F>)((Object)mplsLabel((U32)((Object)value)));
             case MPLS_TC:
                 return (OFOxm<F>)((Object)mplsTc((U8)((Object)value)));
             case OVS_TCP_FLAGS:
                 return (OFOxm<F>)((Object)ovsTcpFlags((U16)((Object)value)));
+            case PACKET_TYPE:
+                return (OFOxm<F>)((Object)packetType((PacketType)((Object)value)));
+            case PBB_UCA:
+                return (OFOxm<F>)((Object)pbbUca((OFBooleanValue)((Object)value)));
             case SCTP_DST:
                 return (OFOxm<F>)((Object)sctpDst((TransportPort)((Object)value)));
             case SCTP_SRC:
                 return (OFOxm<F>)((Object)sctpSrc((TransportPort)((Object)value)));
             case TCP_DST:
                 return (OFOxm<F>)((Object)tcpDst((TransportPort)((Object)value)));
+            case TCP_FLAGS:
+                return (OFOxm<F>)((Object)tcpFlags((U16)((Object)value)));
             case TCP_SRC:
                 return (OFOxm<F>)((Object)tcpSrc((TransportPort)((Object)value)));
+            case TUNNEL_ID:
+                return (OFOxm<F>)((Object)tunnelId((U64)((Object)value)));
             case TUNNEL_IPV4_DST:
                 return (OFOxm<F>)((Object)tunnelIpv4Dst((IPv4Address)((Object)value)));
             case TUNNEL_IPV4_SRC:
@@ -1374,32 +1400,6 @@ public class OFOxmsVer11 implements OFOxms {
                 return (OFOxm<F>)((Object)vlanPcp((VlanPcp)((Object)value)));
             case VLAN_VID:
                 return (OFOxm<F>)((Object)vlanVid((OFVlanVidMatch)((Object)value)));
-            case BSN_INNER_ETH_DST:
-                return (OFOxm<F>)((Object)bsnInnerEthDst((MacAddress)((Object)value)));
-            case BSN_INNER_ETH_SRC:
-                return (OFOxm<F>)((Object)bsnInnerEthSrc((MacAddress)((Object)value)));
-            case BSN_INNER_VLAN_VID:
-                return (OFOxm<F>)((Object)bsnInnerVlanVid((OFVlanVidMatch)((Object)value)));
-            case BSN_VFI:
-                return (OFOxm<F>)((Object)bsnVfi((VFI)((Object)value)));
-            case BSN_VXLAN_NETWORK_ID:
-                return (OFOxm<F>)((Object)bsnVxlanNetworkId((VxlanNI)((Object)value)));
-            case IPV6_EXTHDR:
-                return (OFOxm<F>)((Object)ipv6Exthdr((U16)((Object)value)));
-            case MPLS_BOS:
-                return (OFOxm<F>)((Object)mplsBos((OFBooleanValue)((Object)value)));
-            case TUNNEL_ID:
-                return (OFOxm<F>)((Object)tunnelId((U64)((Object)value)));
-            case BSN_IFP_CLASS_ID:
-                return (OFOxm<F>)((Object)bsnIfpClassId((ClassId)((Object)value)));
-            case PBB_UCA:
-                return (OFOxm<F>)((Object)pbbUca((OFBooleanValue)((Object)value)));
-            case ACTSET_OUTPUT:
-                return (OFOxm<F>)((Object)actsetOutput((OFPort)((Object)value)));
-            case PACKET_TYPE:
-                return (OFOxm<F>)((Object)packetType((PacketType)((Object)value)));
-            case TCP_FLAGS:
-                return (OFOxm<F>)((Object)tcpFlags((U16)((Object)value)));
             default:
                 throw new IllegalArgumentException("No OXM known for match field " + field);
         }
@@ -1408,6 +1408,8 @@ public class OFOxmsVer11 implements OFOxms {
     @SuppressWarnings("unchecked")
     public <F extends OFValueType<F>> OFOxm<F> fromValueAndMask(F value, F mask, MatchField<F> field) {
         switch (field.id) {
+            case ACTSET_OUTPUT:
+                return (OFOxm<F>)((Object)actsetOutputMasked((OFPort)((Object)value), (OFPort)((Object)mask)));
             case ARP_OP:
                 return (OFOxm<F>)((Object)arpOpMasked((ArpOpcode)((Object)value), (ArpOpcode)((Object)mask)));
             case ARP_SHA:
@@ -1422,12 +1424,20 @@ public class OFOxmsVer11 implements OFOxms {
                 return (OFOxm<F>)((Object)bsnEgrPortGroupIdMasked((ClassId)((Object)value), (ClassId)((Object)mask)));
             case BSN_GLOBAL_VRF_ALLOWED:
                 return (OFOxm<F>)((Object)bsnGlobalVrfAllowedMasked((OFBooleanValue)((Object)value), (OFBooleanValue)((Object)mask)));
+            case BSN_IFP_CLASS_ID:
+                return (OFOxm<F>)((Object)bsnIfpClassIdMasked((ClassId)((Object)value), (ClassId)((Object)mask)));
             case BSN_IN_PORTS_128:
                 return (OFOxm<F>)((Object)bsnInPorts128Masked((OFBitMask128)((Object)value), (OFBitMask128)((Object)mask)));
             case BSN_IN_PORTS_512:
                 return (OFOxm<F>)((Object)bsnInPorts512Masked((OFBitMask512)((Object)value), (OFBitMask512)((Object)mask)));
             case BSN_INGRESS_PORT_GROUP_ID:
                 return (OFOxm<F>)((Object)bsnIngressPortGroupIdMasked((ClassId)((Object)value), (ClassId)((Object)mask)));
+            case BSN_INNER_ETH_DST:
+                return (OFOxm<F>)((Object)bsnInnerEthDstMasked((MacAddress)((Object)value), (MacAddress)((Object)mask)));
+            case BSN_INNER_ETH_SRC:
+                return (OFOxm<F>)((Object)bsnInnerEthSrcMasked((MacAddress)((Object)value), (MacAddress)((Object)mask)));
+            case BSN_INNER_VLAN_VID:
+                return (OFOxm<F>)((Object)bsnInnerVlanVidMasked((OFVlanVidMatch)((Object)value), (OFVlanVidMatch)((Object)mask)));
             case BSN_IP_FRAGMENTATION:
                 return (OFOxm<F>)((Object)bsnIpFragmentationMasked((OFBooleanValue)((Object)value), (OFBooleanValue)((Object)mask)));
             case BSN_L2_CACHE_HIT:
@@ -1458,10 +1468,14 @@ public class OFOxmsVer11 implements OFOxms {
                 return (OFOxm<F>)((Object)bsnUdf6Masked((UDF)((Object)value), (UDF)((Object)mask)));
             case BSN_UDF7:
                 return (OFOxm<F>)((Object)bsnUdf7Masked((UDF)((Object)value), (UDF)((Object)mask)));
+            case BSN_VFI:
+                return (OFOxm<F>)((Object)bsnVfiMasked((VFI)((Object)value), (VFI)((Object)mask)));
             case BSN_VLAN_XLATE_PORT_GROUP_ID:
                 return (OFOxm<F>)((Object)bsnVlanXlatePortGroupIdMasked((ClassId)((Object)value), (ClassId)((Object)mask)));
             case BSN_VRF:
                 return (OFOxm<F>)((Object)bsnVrfMasked((VRF)((Object)value), (VRF)((Object)mask)));
+            case BSN_VXLAN_NETWORK_ID:
+                return (OFOxm<F>)((Object)bsnVxlanNetworkIdMasked((VxlanNI)((Object)value), (VxlanNI)((Object)mask)));
             case CONN_TRACKING_IPV6_DST:
                 return (OFOxm<F>)((Object)connTrackingIpv6DstMasked((IPv6Address)((Object)value), (IPv6Address)((Object)mask)));
             case CONN_TRACKING_IPV6_SRC:
@@ -1514,6 +1528,8 @@ public class OFOxmsVer11 implements OFOxms {
                 return (OFOxm<F>)((Object)ipv4SrcMasked((IPv4Address)((Object)value), (IPv4Address)((Object)mask)));
             case IPV6_DST:
                 return (OFOxm<F>)((Object)ipv6DstMasked((IPv6Address)((Object)value), (IPv6Address)((Object)mask)));
+            case IPV6_EXTHDR:
+                return (OFOxm<F>)((Object)ipv6ExthdrMasked((U16)((Object)value), (U16)((Object)mask)));
             case IPV6_FLABEL:
                 return (OFOxm<F>)((Object)ipv6FlabelMasked((IPv6FlowLabel)((Object)value), (IPv6FlowLabel)((Object)mask)));
             case IPV6_ND_SLL:
@@ -1526,20 +1542,30 @@ public class OFOxmsVer11 implements OFOxms {
                 return (OFOxm<F>)((Object)ipv6SrcMasked((IPv6Address)((Object)value), (IPv6Address)((Object)mask)));
             case METADATA:
                 return (OFOxm<F>)((Object)metadataMasked((OFMetadata)((Object)value), (OFMetadata)((Object)mask)));
+            case MPLS_BOS:
+                return (OFOxm<F>)((Object)mplsBosMasked((OFBooleanValue)((Object)value), (OFBooleanValue)((Object)mask)));
             case MPLS_LABEL:
                 return (OFOxm<F>)((Object)mplsLabelMasked((U32)((Object)value), (U32)((Object)mask)));
             case MPLS_TC:
                 return (OFOxm<F>)((Object)mplsTcMasked((U8)((Object)value), (U8)((Object)mask)));
             case OVS_TCP_FLAGS:
                 return (OFOxm<F>)((Object)ovsTcpFlagsMasked((U16)((Object)value), (U16)((Object)mask)));
+            case PACKET_TYPE:
+                return (OFOxm<F>)((Object)packetTypeMasked((PacketType)((Object)value), (PacketType)((Object)mask)));
+            case PBB_UCA:
+                return (OFOxm<F>)((Object)pbbUcaMasked((OFBooleanValue)((Object)value), (OFBooleanValue)((Object)mask)));
             case SCTP_DST:
                 return (OFOxm<F>)((Object)sctpDstMasked((TransportPort)((Object)value), (TransportPort)((Object)mask)));
             case SCTP_SRC:
                 return (OFOxm<F>)((Object)sctpSrcMasked((TransportPort)((Object)value), (TransportPort)((Object)mask)));
             case TCP_DST:
                 return (OFOxm<F>)((Object)tcpDstMasked((TransportPort)((Object)value), (TransportPort)((Object)mask)));
+            case TCP_FLAGS:
+                return (OFOxm<F>)((Object)tcpFlagsMasked((U16)((Object)value), (U16)((Object)mask)));
             case TCP_SRC:
                 return (OFOxm<F>)((Object)tcpSrcMasked((TransportPort)((Object)value), (TransportPort)((Object)mask)));
+            case TUNNEL_ID:
+                return (OFOxm<F>)((Object)tunnelIdMasked((U64)((Object)value), (U64)((Object)mask)));
             case TUNNEL_IPV4_DST:
                 return (OFOxm<F>)((Object)tunnelIpv4DstMasked((IPv4Address)((Object)value), (IPv4Address)((Object)mask)));
             case TUNNEL_IPV4_SRC:
@@ -1552,32 +1578,6 @@ public class OFOxmsVer11 implements OFOxms {
                 return (OFOxm<F>)((Object)vlanPcpMasked((VlanPcp)((Object)value), (VlanPcp)((Object)mask)));
             case VLAN_VID:
                 return (OFOxm<F>)((Object)vlanVidMasked((OFVlanVidMatch)((Object)value), (OFVlanVidMatch)((Object)mask)));
-            case BSN_INNER_ETH_DST:
-                return (OFOxm<F>)((Object)bsnInnerEthDstMasked((MacAddress)((Object)value), (MacAddress)((Object)mask)));
-            case BSN_INNER_ETH_SRC:
-                return (OFOxm<F>)((Object)bsnInnerEthSrcMasked((MacAddress)((Object)value), (MacAddress)((Object)mask)));
-            case BSN_INNER_VLAN_VID:
-                return (OFOxm<F>)((Object)bsnInnerVlanVidMasked((OFVlanVidMatch)((Object)value), (OFVlanVidMatch)((Object)mask)));
-            case BSN_VFI:
-                return (OFOxm<F>)((Object)bsnVfiMasked((VFI)((Object)value), (VFI)((Object)mask)));
-            case BSN_VXLAN_NETWORK_ID:
-                return (OFOxm<F>)((Object)bsnVxlanNetworkIdMasked((VxlanNI)((Object)value), (VxlanNI)((Object)mask)));
-            case IPV6_EXTHDR:
-                return (OFOxm<F>)((Object)ipv6ExthdrMasked((U16)((Object)value), (U16)((Object)mask)));
-            case MPLS_BOS:
-                return (OFOxm<F>)((Object)mplsBosMasked((OFBooleanValue)((Object)value), (OFBooleanValue)((Object)mask)));
-            case TUNNEL_ID:
-                return (OFOxm<F>)((Object)tunnelIdMasked((U64)((Object)value), (U64)((Object)mask)));
-            case BSN_IFP_CLASS_ID:
-                return (OFOxm<F>)((Object)bsnIfpClassIdMasked((ClassId)((Object)value), (ClassId)((Object)mask)));
-            case PBB_UCA:
-                return (OFOxm<F>)((Object)pbbUcaMasked((OFBooleanValue)((Object)value), (OFBooleanValue)((Object)mask)));
-            case ACTSET_OUTPUT:
-                return (OFOxm<F>)((Object)actsetOutputMasked((OFPort)((Object)value), (OFPort)((Object)mask)));
-            case PACKET_TYPE:
-                return (OFOxm<F>)((Object)packetTypeMasked((PacketType)((Object)value), (PacketType)((Object)mask)));
-            case TCP_FLAGS:
-                return (OFOxm<F>)((Object)tcpFlagsMasked((U16)((Object)value), (U16)((Object)mask)));
             default:
                 throw new IllegalArgumentException("No OXM known for match field " + field);
         }
@@ -1586,6 +1586,8 @@ public class OFOxmsVer11 implements OFOxms {
     @SuppressWarnings("unchecked")
     public <F extends OFValueType<F>> OFOxm<F> fromMasked(Masked<F> masked, MatchField<F> field) {
         switch (field.id) {
+            case ACTSET_OUTPUT:
+                return (OFOxm<F>)((Object)actsetOutputMasked((OFPort)((Object)(masked.getValue())), (OFPort)((Object)(masked.getMask()))));
             case ARP_OP:
                 return (OFOxm<F>)((Object)arpOpMasked((ArpOpcode)((Object)(masked.getValue())), (ArpOpcode)((Object)(masked.getMask()))));
             case ARP_SHA:
@@ -1600,12 +1602,20 @@ public class OFOxmsVer11 implements OFOxms {
                 return (OFOxm<F>)((Object)bsnEgrPortGroupIdMasked((ClassId)((Object)(masked.getValue())), (ClassId)((Object)(masked.getMask()))));
             case BSN_GLOBAL_VRF_ALLOWED:
                 return (OFOxm<F>)((Object)bsnGlobalVrfAllowedMasked((OFBooleanValue)((Object)(masked.getValue())), (OFBooleanValue)((Object)(masked.getMask()))));
+            case BSN_IFP_CLASS_ID:
+                return (OFOxm<F>)((Object)bsnIfpClassIdMasked((ClassId)((Object)(masked.getValue())), (ClassId)((Object)(masked.getMask()))));
             case BSN_IN_PORTS_128:
                 return (OFOxm<F>)((Object)bsnInPorts128Masked((OFBitMask128)((Object)(masked.getValue())), (OFBitMask128)((Object)(masked.getMask()))));
             case BSN_IN_PORTS_512:
                 return (OFOxm<F>)((Object)bsnInPorts512Masked((OFBitMask512)((Object)(masked.getValue())), (OFBitMask512)((Object)(masked.getMask()))));
             case BSN_INGRESS_PORT_GROUP_ID:
                 return (OFOxm<F>)((Object)bsnIngressPortGroupIdMasked((ClassId)((Object)(masked.getValue())), (ClassId)((Object)(masked.getMask()))));
+            case BSN_INNER_ETH_DST:
+                return (OFOxm<F>)((Object)bsnInnerEthDstMasked((MacAddress)((Object)(masked.getValue())), (MacAddress)((Object)(masked.getMask()))));
+            case BSN_INNER_ETH_SRC:
+                return (OFOxm<F>)((Object)bsnInnerEthSrcMasked((MacAddress)((Object)(masked.getValue())), (MacAddress)((Object)(masked.getMask()))));
+            case BSN_INNER_VLAN_VID:
+                return (OFOxm<F>)((Object)bsnInnerVlanVidMasked((OFVlanVidMatch)((Object)(masked.getValue())), (OFVlanVidMatch)((Object)(masked.getMask()))));
             case BSN_IP_FRAGMENTATION:
                 return (OFOxm<F>)((Object)bsnIpFragmentationMasked((OFBooleanValue)((Object)(masked.getValue())), (OFBooleanValue)((Object)(masked.getMask()))));
             case BSN_L2_CACHE_HIT:
@@ -1636,10 +1646,14 @@ public class OFOxmsVer11 implements OFOxms {
                 return (OFOxm<F>)((Object)bsnUdf6Masked((UDF)((Object)(masked.getValue())), (UDF)((Object)(masked.getMask()))));
             case BSN_UDF7:
                 return (OFOxm<F>)((Object)bsnUdf7Masked((UDF)((Object)(masked.getValue())), (UDF)((Object)(masked.getMask()))));
+            case BSN_VFI:
+                return (OFOxm<F>)((Object)bsnVfiMasked((VFI)((Object)(masked.getValue())), (VFI)((Object)(masked.getMask()))));
             case BSN_VLAN_XLATE_PORT_GROUP_ID:
                 return (OFOxm<F>)((Object)bsnVlanXlatePortGroupIdMasked((ClassId)((Object)(masked.getValue())), (ClassId)((Object)(masked.getMask()))));
             case BSN_VRF:
                 return (OFOxm<F>)((Object)bsnVrfMasked((VRF)((Object)(masked.getValue())), (VRF)((Object)(masked.getMask()))));
+            case BSN_VXLAN_NETWORK_ID:
+                return (OFOxm<F>)((Object)bsnVxlanNetworkIdMasked((VxlanNI)((Object)(masked.getValue())), (VxlanNI)((Object)(masked.getMask()))));
             case CONN_TRACKING_IPV6_DST:
                 return (OFOxm<F>)((Object)connTrackingIpv6DstMasked((IPv6Address)((Object)(masked.getValue())), (IPv6Address)((Object)(masked.getMask()))));
             case CONN_TRACKING_IPV6_SRC:
@@ -1692,6 +1706,8 @@ public class OFOxmsVer11 implements OFOxms {
                 return (OFOxm<F>)((Object)ipv4SrcMasked((IPv4Address)((Object)(masked.getValue())), (IPv4Address)((Object)(masked.getMask()))));
             case IPV6_DST:
                 return (OFOxm<F>)((Object)ipv6DstMasked((IPv6Address)((Object)(masked.getValue())), (IPv6Address)((Object)(masked.getMask()))));
+            case IPV6_EXTHDR:
+                return (OFOxm<F>)((Object)ipv6ExthdrMasked((U16)((Object)(masked.getValue())), (U16)((Object)(masked.getMask()))));
             case IPV6_FLABEL:
                 return (OFOxm<F>)((Object)ipv6FlabelMasked((IPv6FlowLabel)((Object)(masked.getValue())), (IPv6FlowLabel)((Object)(masked.getMask()))));
             case IPV6_ND_SLL:
@@ -1704,20 +1720,30 @@ public class OFOxmsVer11 implements OFOxms {
                 return (OFOxm<F>)((Object)ipv6SrcMasked((IPv6Address)((Object)(masked.getValue())), (IPv6Address)((Object)(masked.getMask()))));
             case METADATA:
                 return (OFOxm<F>)((Object)metadataMasked((OFMetadata)((Object)(masked.getValue())), (OFMetadata)((Object)(masked.getMask()))));
+            case MPLS_BOS:
+                return (OFOxm<F>)((Object)mplsBosMasked((OFBooleanValue)((Object)(masked.getValue())), (OFBooleanValue)((Object)(masked.getMask()))));
             case MPLS_LABEL:
                 return (OFOxm<F>)((Object)mplsLabelMasked((U32)((Object)(masked.getValue())), (U32)((Object)(masked.getMask()))));
             case MPLS_TC:
                 return (OFOxm<F>)((Object)mplsTcMasked((U8)((Object)(masked.getValue())), (U8)((Object)(masked.getMask()))));
             case OVS_TCP_FLAGS:
                 return (OFOxm<F>)((Object)ovsTcpFlagsMasked((U16)((Object)(masked.getValue())), (U16)((Object)(masked.getMask()))));
+            case PACKET_TYPE:
+                return (OFOxm<F>)((Object)packetTypeMasked((PacketType)((Object)(masked.getValue())), (PacketType)((Object)(masked.getMask()))));
+            case PBB_UCA:
+                return (OFOxm<F>)((Object)pbbUcaMasked((OFBooleanValue)((Object)(masked.getValue())), (OFBooleanValue)((Object)(masked.getMask()))));
             case SCTP_DST:
                 return (OFOxm<F>)((Object)sctpDstMasked((TransportPort)((Object)(masked.getValue())), (TransportPort)((Object)(masked.getMask()))));
             case SCTP_SRC:
                 return (OFOxm<F>)((Object)sctpSrcMasked((TransportPort)((Object)(masked.getValue())), (TransportPort)((Object)(masked.getMask()))));
             case TCP_DST:
                 return (OFOxm<F>)((Object)tcpDstMasked((TransportPort)((Object)(masked.getValue())), (TransportPort)((Object)(masked.getMask()))));
+            case TCP_FLAGS:
+                return (OFOxm<F>)((Object)tcpFlagsMasked((U16)((Object)(masked.getValue())), (U16)((Object)(masked.getMask()))));
             case TCP_SRC:
                 return (OFOxm<F>)((Object)tcpSrcMasked((TransportPort)((Object)(masked.getValue())), (TransportPort)((Object)(masked.getMask()))));
+            case TUNNEL_ID:
+                return (OFOxm<F>)((Object)tunnelIdMasked((U64)((Object)(masked.getValue())), (U64)((Object)(masked.getMask()))));
             case TUNNEL_IPV4_DST:
                 return (OFOxm<F>)((Object)tunnelIpv4DstMasked((IPv4Address)((Object)(masked.getValue())), (IPv4Address)((Object)(masked.getMask()))));
             case TUNNEL_IPV4_SRC:
@@ -1730,32 +1756,6 @@ public class OFOxmsVer11 implements OFOxms {
                 return (OFOxm<F>)((Object)vlanPcpMasked((VlanPcp)((Object)(masked.getValue())), (VlanPcp)((Object)(masked.getMask()))));
             case VLAN_VID:
                 return (OFOxm<F>)((Object)vlanVidMasked((OFVlanVidMatch)((Object)(masked.getValue())), (OFVlanVidMatch)((Object)(masked.getMask()))));
-            case BSN_INNER_ETH_DST:
-                return (OFOxm<F>)((Object)bsnInnerEthDstMasked((MacAddress)((Object)(masked.getValue())), (MacAddress)((Object)(masked.getMask()))));
-            case BSN_INNER_ETH_SRC:
-                return (OFOxm<F>)((Object)bsnInnerEthSrcMasked((MacAddress)((Object)(masked.getValue())), (MacAddress)((Object)(masked.getMask()))));
-            case BSN_INNER_VLAN_VID:
-                return (OFOxm<F>)((Object)bsnInnerVlanVidMasked((OFVlanVidMatch)((Object)(masked.getValue())), (OFVlanVidMatch)((Object)(masked.getMask()))));
-            case BSN_VFI:
-                return (OFOxm<F>)((Object)bsnVfiMasked((VFI)((Object)(masked.getValue())), (VFI)((Object)(masked.getMask()))));
-            case BSN_VXLAN_NETWORK_ID:
-                return (OFOxm<F>)((Object)bsnVxlanNetworkIdMasked((VxlanNI)((Object)(masked.getValue())), (VxlanNI)((Object)(masked.getMask()))));
-            case IPV6_EXTHDR:
-                return (OFOxm<F>)((Object)ipv6ExthdrMasked((U16)((Object)(masked.getValue())), (U16)((Object)(masked.getMask()))));
-            case MPLS_BOS:
-                return (OFOxm<F>)((Object)mplsBosMasked((OFBooleanValue)((Object)(masked.getValue())), (OFBooleanValue)((Object)(masked.getMask()))));
-            case TUNNEL_ID:
-                return (OFOxm<F>)((Object)tunnelIdMasked((U64)((Object)(masked.getValue())), (U64)((Object)(masked.getMask()))));
-            case BSN_IFP_CLASS_ID:
-                return (OFOxm<F>)((Object)bsnIfpClassIdMasked((ClassId)((Object)(masked.getValue())), (ClassId)((Object)(masked.getMask()))));
-            case PBB_UCA:
-                return (OFOxm<F>)((Object)pbbUcaMasked((OFBooleanValue)((Object)(masked.getValue())), (OFBooleanValue)((Object)(masked.getMask()))));
-            case ACTSET_OUTPUT:
-                return (OFOxm<F>)((Object)actsetOutputMasked((OFPort)((Object)(masked.getValue())), (OFPort)((Object)(masked.getMask()))));
-            case PACKET_TYPE:
-                return (OFOxm<F>)((Object)packetTypeMasked((PacketType)((Object)(masked.getValue())), (PacketType)((Object)(masked.getMask()))));
-            case TCP_FLAGS:
-                return (OFOxm<F>)((Object)tcpFlagsMasked((U16)((Object)(masked.getValue())), (U16)((Object)(masked.getMask()))));
             default:
                 return null;
         }

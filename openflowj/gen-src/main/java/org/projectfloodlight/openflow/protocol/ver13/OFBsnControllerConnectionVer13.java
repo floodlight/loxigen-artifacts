@@ -70,11 +70,6 @@ class OFBsnControllerConnectionVer13 implements OFBsnControllerConnection {
 
     // Accessors for OF message fields
     @Override
-    public OFBsnControllerConnectionState getState() {
-        return state;
-    }
-
-    @Override
     public OFAuxId getAuxiliaryId() {
         return auxiliaryId;
     }
@@ -82,6 +77,11 @@ class OFBsnControllerConnectionVer13 implements OFBsnControllerConnection {
     @Override
     public OFControllerRole getRole() {
         return role;
+    }
+
+    @Override
+    public OFBsnControllerConnectionState getState() {
+        return state;
     }
 
     @Override
@@ -118,17 +118,6 @@ class OFBsnControllerConnectionVer13 implements OFBsnControllerConnection {
         }
 
     @Override
-    public OFBsnControllerConnectionState getState() {
-        return state;
-    }
-
-    @Override
-    public OFBsnControllerConnection.Builder setState(OFBsnControllerConnectionState state) {
-        this.state = state;
-        this.stateSet = true;
-        return this;
-    }
-    @Override
     public OFAuxId getAuxiliaryId() {
         return auxiliaryId;
     }
@@ -148,6 +137,17 @@ class OFBsnControllerConnectionVer13 implements OFBsnControllerConnection {
     public OFBsnControllerConnection.Builder setRole(OFControllerRole role) {
         this.role = role;
         this.roleSet = true;
+        return this;
+    }
+    @Override
+    public OFBsnControllerConnectionState getState() {
+        return state;
+    }
+
+    @Override
+    public OFBsnControllerConnection.Builder setState(OFBsnControllerConnectionState state) {
+        this.state = state;
+        this.stateSet = true;
         return this;
     }
     @Override
@@ -206,17 +206,6 @@ class OFBsnControllerConnectionVer13 implements OFBsnControllerConnection {
         private String uri;
 
     @Override
-    public OFBsnControllerConnectionState getState() {
-        return state;
-    }
-
-    @Override
-    public OFBsnControllerConnection.Builder setState(OFBsnControllerConnectionState state) {
-        this.state = state;
-        this.stateSet = true;
-        return this;
-    }
-    @Override
     public OFAuxId getAuxiliaryId() {
         return auxiliaryId;
     }
@@ -236,6 +225,17 @@ class OFBsnControllerConnectionVer13 implements OFBsnControllerConnection {
     public OFBsnControllerConnection.Builder setRole(OFControllerRole role) {
         this.role = role;
         this.roleSet = true;
+        return this;
+    }
+    @Override
+    public OFBsnControllerConnectionState getState() {
+        return state;
+    }
+
+    @Override
+    public OFBsnControllerConnection.Builder setState(OFBsnControllerConnectionState state) {
+        this.state = state;
+        this.stateSet = true;
         return this;
     }
     @Override

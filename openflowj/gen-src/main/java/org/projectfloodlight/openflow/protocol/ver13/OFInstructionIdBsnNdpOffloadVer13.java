@@ -52,11 +52,6 @@ class OFInstructionIdBsnNdpOffloadVer13 implements OFInstructionIdBsnNdpOffload 
 
     // Accessors for OF message fields
     @Override
-    public OFInstructionType getType() {
-        return OFInstructionType.EXPERIMENTER;
-    }
-
-    @Override
     public long getExperimenter() {
         return 0x5c16c7L;
     }
@@ -64,6 +59,11 @@ class OFInstructionIdBsnNdpOffloadVer13 implements OFInstructionIdBsnNdpOffload 
     @Override
     public long getSubtype() {
         return 0xeL;
+    }
+
+    @Override
+    public OFInstructionType getType() {
+        return OFInstructionType.EXPERIMENTER;
     }
 
     @Override

@@ -100,53 +100,8 @@ class OFBsnLacpConvergenceNotifVer14 implements OFBsnLacpConvergenceNotif {
 
     // Accessors for OF message fields
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_14;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.EXPERIMENTER;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public long getExperimenter() {
-        return 0x5c16c7L;
-    }
-
-    @Override
-    public long getSubtype() {
-        return 0x2bL;
-    }
-
-    @Override
-    public short getConvergenceStatus() {
-        return convergenceStatus;
-    }
-
-    @Override
-    public OFPort getPortNo() {
-        return portNo;
-    }
-
-    @Override
-    public int getActorSysPriority() {
-        return actorSysPriority;
-    }
-
-    @Override
-    public MacAddress getActorSysMac() {
-        return actorSysMac;
-    }
-
-    @Override
-    public int getActorPortPriority() {
-        return actorPortPriority;
+    public int getActorKey() {
+        return actorKey;
     }
 
     @Override
@@ -155,23 +110,33 @@ class OFBsnLacpConvergenceNotifVer14 implements OFBsnLacpConvergenceNotif {
     }
 
     @Override
-    public int getActorKey() {
-        return actorKey;
+    public int getActorPortPriority() {
+        return actorPortPriority;
     }
 
     @Override
-    public int getPartnerSysPriority() {
-        return partnerSysPriority;
+    public MacAddress getActorSysMac() {
+        return actorSysMac;
     }
 
     @Override
-    public MacAddress getPartnerSysMac() {
-        return partnerSysMac;
+    public int getActorSysPriority() {
+        return actorSysPriority;
     }
 
     @Override
-    public int getPartnerPortPriority() {
-        return partnerPortPriority;
+    public short getConvergenceStatus() {
+        return convergenceStatus;
+    }
+
+    @Override
+    public long getExperimenter() {
+        return 0x5c16c7L;
+    }
+
+    @Override
+    public int getPartnerKey() {
+        return partnerKey;
     }
 
     @Override
@@ -180,8 +145,43 @@ class OFBsnLacpConvergenceNotifVer14 implements OFBsnLacpConvergenceNotif {
     }
 
     @Override
-    public int getPartnerKey() {
-        return partnerKey;
+    public int getPartnerPortPriority() {
+        return partnerPortPriority;
+    }
+
+    @Override
+    public MacAddress getPartnerSysMac() {
+        return partnerSysMac;
+    }
+
+    @Override
+    public int getPartnerSysPriority() {
+        return partnerSysPriority;
+    }
+
+    @Override
+    public OFPort getPortNo() {
+        return portNo;
+    }
+
+    @Override
+    public long getSubtype() {
+        return 0x2bL;
+    }
+
+    @Override
+    public OFType getType() {
+        return OFType.EXPERIMENTER;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_14;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
     }
 
 
@@ -226,89 +226,14 @@ class OFBsnLacpConvergenceNotifVer14 implements OFBsnLacpConvergenceNotif {
         }
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_14;
+    public int getActorKey() {
+        return actorKey;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.EXPERIMENTER;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFBsnLacpConvergenceNotif.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
-        return this;
-    }
-    @Override
-    public long getExperimenter() {
-        return 0x5c16c7L;
-    }
-
-    @Override
-    public long getSubtype() {
-        return 0x2bL;
-    }
-
-    @Override
-    public short getConvergenceStatus() {
-        return convergenceStatus;
-    }
-
-    @Override
-    public OFBsnLacpConvergenceNotif.Builder setConvergenceStatus(short convergenceStatus) {
-        this.convergenceStatus = convergenceStatus;
-        this.convergenceStatusSet = true;
-        return this;
-    }
-    @Override
-    public OFPort getPortNo() {
-        return portNo;
-    }
-
-    @Override
-    public OFBsnLacpConvergenceNotif.Builder setPortNo(OFPort portNo) {
-        this.portNo = portNo;
-        this.portNoSet = true;
-        return this;
-    }
-    @Override
-    public int getActorSysPriority() {
-        return actorSysPriority;
-    }
-
-    @Override
-    public OFBsnLacpConvergenceNotif.Builder setActorSysPriority(int actorSysPriority) {
-        this.actorSysPriority = actorSysPriority;
-        this.actorSysPrioritySet = true;
-        return this;
-    }
-    @Override
-    public MacAddress getActorSysMac() {
-        return actorSysMac;
-    }
-
-    @Override
-    public OFBsnLacpConvergenceNotif.Builder setActorSysMac(MacAddress actorSysMac) {
-        this.actorSysMac = actorSysMac;
-        this.actorSysMacSet = true;
-        return this;
-    }
-    @Override
-    public int getActorPortPriority() {
-        return actorPortPriority;
-    }
-
-    @Override
-    public OFBsnLacpConvergenceNotif.Builder setActorPortPriority(int actorPortPriority) {
-        this.actorPortPriority = actorPortPriority;
-        this.actorPortPrioritySet = true;
+    public OFBsnLacpConvergenceNotif.Builder setActorKey(int actorKey) {
+        this.actorKey = actorKey;
+        this.actorKeySet = true;
         return this;
     }
     @Override
@@ -323,47 +248,63 @@ class OFBsnLacpConvergenceNotifVer14 implements OFBsnLacpConvergenceNotif {
         return this;
     }
     @Override
-    public int getActorKey() {
-        return actorKey;
+    public int getActorPortPriority() {
+        return actorPortPriority;
     }
 
     @Override
-    public OFBsnLacpConvergenceNotif.Builder setActorKey(int actorKey) {
-        this.actorKey = actorKey;
-        this.actorKeySet = true;
+    public OFBsnLacpConvergenceNotif.Builder setActorPortPriority(int actorPortPriority) {
+        this.actorPortPriority = actorPortPriority;
+        this.actorPortPrioritySet = true;
         return this;
     }
     @Override
-    public int getPartnerSysPriority() {
-        return partnerSysPriority;
+    public MacAddress getActorSysMac() {
+        return actorSysMac;
     }
 
     @Override
-    public OFBsnLacpConvergenceNotif.Builder setPartnerSysPriority(int partnerSysPriority) {
-        this.partnerSysPriority = partnerSysPriority;
-        this.partnerSysPrioritySet = true;
+    public OFBsnLacpConvergenceNotif.Builder setActorSysMac(MacAddress actorSysMac) {
+        this.actorSysMac = actorSysMac;
+        this.actorSysMacSet = true;
         return this;
     }
     @Override
-    public MacAddress getPartnerSysMac() {
-        return partnerSysMac;
+    public int getActorSysPriority() {
+        return actorSysPriority;
     }
 
     @Override
-    public OFBsnLacpConvergenceNotif.Builder setPartnerSysMac(MacAddress partnerSysMac) {
-        this.partnerSysMac = partnerSysMac;
-        this.partnerSysMacSet = true;
+    public OFBsnLacpConvergenceNotif.Builder setActorSysPriority(int actorSysPriority) {
+        this.actorSysPriority = actorSysPriority;
+        this.actorSysPrioritySet = true;
         return this;
     }
     @Override
-    public int getPartnerPortPriority() {
-        return partnerPortPriority;
+    public short getConvergenceStatus() {
+        return convergenceStatus;
     }
 
     @Override
-    public OFBsnLacpConvergenceNotif.Builder setPartnerPortPriority(int partnerPortPriority) {
-        this.partnerPortPriority = partnerPortPriority;
-        this.partnerPortPrioritySet = true;
+    public OFBsnLacpConvergenceNotif.Builder setConvergenceStatus(short convergenceStatus) {
+        this.convergenceStatus = convergenceStatus;
+        this.convergenceStatusSet = true;
+        return this;
+    }
+    @Override
+    public long getExperimenter() {
+        return 0x5c16c7L;
+    }
+
+    @Override
+    public int getPartnerKey() {
+        return partnerKey;
+    }
+
+    @Override
+    public OFBsnLacpConvergenceNotif.Builder setPartnerKey(int partnerKey) {
+        this.partnerKey = partnerKey;
+        this.partnerKeySet = true;
         return this;
     }
     @Override
@@ -378,14 +319,73 @@ class OFBsnLacpConvergenceNotifVer14 implements OFBsnLacpConvergenceNotif {
         return this;
     }
     @Override
-    public int getPartnerKey() {
-        return partnerKey;
+    public int getPartnerPortPriority() {
+        return partnerPortPriority;
     }
 
     @Override
-    public OFBsnLacpConvergenceNotif.Builder setPartnerKey(int partnerKey) {
-        this.partnerKey = partnerKey;
-        this.partnerKeySet = true;
+    public OFBsnLacpConvergenceNotif.Builder setPartnerPortPriority(int partnerPortPriority) {
+        this.partnerPortPriority = partnerPortPriority;
+        this.partnerPortPrioritySet = true;
+        return this;
+    }
+    @Override
+    public MacAddress getPartnerSysMac() {
+        return partnerSysMac;
+    }
+
+    @Override
+    public OFBsnLacpConvergenceNotif.Builder setPartnerSysMac(MacAddress partnerSysMac) {
+        this.partnerSysMac = partnerSysMac;
+        this.partnerSysMacSet = true;
+        return this;
+    }
+    @Override
+    public int getPartnerSysPriority() {
+        return partnerSysPriority;
+    }
+
+    @Override
+    public OFBsnLacpConvergenceNotif.Builder setPartnerSysPriority(int partnerSysPriority) {
+        this.partnerSysPriority = partnerSysPriority;
+        this.partnerSysPrioritySet = true;
+        return this;
+    }
+    @Override
+    public OFPort getPortNo() {
+        return portNo;
+    }
+
+    @Override
+    public OFBsnLacpConvergenceNotif.Builder setPortNo(OFPort portNo) {
+        this.portNo = portNo;
+        this.portNoSet = true;
+        return this;
+    }
+    @Override
+    public long getSubtype() {
+        return 0x2bL;
+    }
+
+    @Override
+    public OFType getType() {
+        return OFType.EXPERIMENTER;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_14;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFBsnLacpConvergenceNotif.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 
@@ -462,89 +462,14 @@ class OFBsnLacpConvergenceNotifVer14 implements OFBsnLacpConvergenceNotif {
         private int partnerKey;
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_14;
+    public int getActorKey() {
+        return actorKey;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.EXPERIMENTER;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFBsnLacpConvergenceNotif.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
-        return this;
-    }
-    @Override
-    public long getExperimenter() {
-        return 0x5c16c7L;
-    }
-
-    @Override
-    public long getSubtype() {
-        return 0x2bL;
-    }
-
-    @Override
-    public short getConvergenceStatus() {
-        return convergenceStatus;
-    }
-
-    @Override
-    public OFBsnLacpConvergenceNotif.Builder setConvergenceStatus(short convergenceStatus) {
-        this.convergenceStatus = convergenceStatus;
-        this.convergenceStatusSet = true;
-        return this;
-    }
-    @Override
-    public OFPort getPortNo() {
-        return portNo;
-    }
-
-    @Override
-    public OFBsnLacpConvergenceNotif.Builder setPortNo(OFPort portNo) {
-        this.portNo = portNo;
-        this.portNoSet = true;
-        return this;
-    }
-    @Override
-    public int getActorSysPriority() {
-        return actorSysPriority;
-    }
-
-    @Override
-    public OFBsnLacpConvergenceNotif.Builder setActorSysPriority(int actorSysPriority) {
-        this.actorSysPriority = actorSysPriority;
-        this.actorSysPrioritySet = true;
-        return this;
-    }
-    @Override
-    public MacAddress getActorSysMac() {
-        return actorSysMac;
-    }
-
-    @Override
-    public OFBsnLacpConvergenceNotif.Builder setActorSysMac(MacAddress actorSysMac) {
-        this.actorSysMac = actorSysMac;
-        this.actorSysMacSet = true;
-        return this;
-    }
-    @Override
-    public int getActorPortPriority() {
-        return actorPortPriority;
-    }
-
-    @Override
-    public OFBsnLacpConvergenceNotif.Builder setActorPortPriority(int actorPortPriority) {
-        this.actorPortPriority = actorPortPriority;
-        this.actorPortPrioritySet = true;
+    public OFBsnLacpConvergenceNotif.Builder setActorKey(int actorKey) {
+        this.actorKey = actorKey;
+        this.actorKeySet = true;
         return this;
     }
     @Override
@@ -559,47 +484,63 @@ class OFBsnLacpConvergenceNotifVer14 implements OFBsnLacpConvergenceNotif {
         return this;
     }
     @Override
-    public int getActorKey() {
-        return actorKey;
+    public int getActorPortPriority() {
+        return actorPortPriority;
     }
 
     @Override
-    public OFBsnLacpConvergenceNotif.Builder setActorKey(int actorKey) {
-        this.actorKey = actorKey;
-        this.actorKeySet = true;
+    public OFBsnLacpConvergenceNotif.Builder setActorPortPriority(int actorPortPriority) {
+        this.actorPortPriority = actorPortPriority;
+        this.actorPortPrioritySet = true;
         return this;
     }
     @Override
-    public int getPartnerSysPriority() {
-        return partnerSysPriority;
+    public MacAddress getActorSysMac() {
+        return actorSysMac;
     }
 
     @Override
-    public OFBsnLacpConvergenceNotif.Builder setPartnerSysPriority(int partnerSysPriority) {
-        this.partnerSysPriority = partnerSysPriority;
-        this.partnerSysPrioritySet = true;
+    public OFBsnLacpConvergenceNotif.Builder setActorSysMac(MacAddress actorSysMac) {
+        this.actorSysMac = actorSysMac;
+        this.actorSysMacSet = true;
         return this;
     }
     @Override
-    public MacAddress getPartnerSysMac() {
-        return partnerSysMac;
+    public int getActorSysPriority() {
+        return actorSysPriority;
     }
 
     @Override
-    public OFBsnLacpConvergenceNotif.Builder setPartnerSysMac(MacAddress partnerSysMac) {
-        this.partnerSysMac = partnerSysMac;
-        this.partnerSysMacSet = true;
+    public OFBsnLacpConvergenceNotif.Builder setActorSysPriority(int actorSysPriority) {
+        this.actorSysPriority = actorSysPriority;
+        this.actorSysPrioritySet = true;
         return this;
     }
     @Override
-    public int getPartnerPortPriority() {
-        return partnerPortPriority;
+    public short getConvergenceStatus() {
+        return convergenceStatus;
     }
 
     @Override
-    public OFBsnLacpConvergenceNotif.Builder setPartnerPortPriority(int partnerPortPriority) {
-        this.partnerPortPriority = partnerPortPriority;
-        this.partnerPortPrioritySet = true;
+    public OFBsnLacpConvergenceNotif.Builder setConvergenceStatus(short convergenceStatus) {
+        this.convergenceStatus = convergenceStatus;
+        this.convergenceStatusSet = true;
+        return this;
+    }
+    @Override
+    public long getExperimenter() {
+        return 0x5c16c7L;
+    }
+
+    @Override
+    public int getPartnerKey() {
+        return partnerKey;
+    }
+
+    @Override
+    public OFBsnLacpConvergenceNotif.Builder setPartnerKey(int partnerKey) {
+        this.partnerKey = partnerKey;
+        this.partnerKeySet = true;
         return this;
     }
     @Override
@@ -614,14 +555,73 @@ class OFBsnLacpConvergenceNotifVer14 implements OFBsnLacpConvergenceNotif {
         return this;
     }
     @Override
-    public int getPartnerKey() {
-        return partnerKey;
+    public int getPartnerPortPriority() {
+        return partnerPortPriority;
     }
 
     @Override
-    public OFBsnLacpConvergenceNotif.Builder setPartnerKey(int partnerKey) {
-        this.partnerKey = partnerKey;
-        this.partnerKeySet = true;
+    public OFBsnLacpConvergenceNotif.Builder setPartnerPortPriority(int partnerPortPriority) {
+        this.partnerPortPriority = partnerPortPriority;
+        this.partnerPortPrioritySet = true;
+        return this;
+    }
+    @Override
+    public MacAddress getPartnerSysMac() {
+        return partnerSysMac;
+    }
+
+    @Override
+    public OFBsnLacpConvergenceNotif.Builder setPartnerSysMac(MacAddress partnerSysMac) {
+        this.partnerSysMac = partnerSysMac;
+        this.partnerSysMacSet = true;
+        return this;
+    }
+    @Override
+    public int getPartnerSysPriority() {
+        return partnerSysPriority;
+    }
+
+    @Override
+    public OFBsnLacpConvergenceNotif.Builder setPartnerSysPriority(int partnerSysPriority) {
+        this.partnerSysPriority = partnerSysPriority;
+        this.partnerSysPrioritySet = true;
+        return this;
+    }
+    @Override
+    public OFPort getPortNo() {
+        return portNo;
+    }
+
+    @Override
+    public OFBsnLacpConvergenceNotif.Builder setPortNo(OFPort portNo) {
+        this.portNo = portNo;
+        this.portNoSet = true;
+        return this;
+    }
+    @Override
+    public long getSubtype() {
+        return 0x2bL;
+    }
+
+    @Override
+    public OFType getType() {
+        return OFType.EXPERIMENTER;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_14;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFBsnLacpConvergenceNotif.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 //

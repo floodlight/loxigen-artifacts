@@ -63,23 +63,8 @@ class OFMeterFeaturesStatsReplyVer15 implements OFMeterFeaturesStatsReply {
 
     // Accessors for OF message fields
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_15;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.STATS_REPLY;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFStatsType getStatsType() {
-        return OFStatsType.METER_FEATURES;
+    public OFMeterFeatures getFeatures() {
+        return features;
     }
 
     @Override
@@ -88,8 +73,23 @@ class OFMeterFeaturesStatsReplyVer15 implements OFMeterFeaturesStatsReply {
     }
 
     @Override
-    public OFMeterFeatures getFeatures() {
-        return features;
+    public OFStatsType getStatsType() {
+        return OFStatsType.METER_FEATURES;
+    }
+
+    @Override
+    public OFType getType() {
+        return OFType.STATS_REPLY;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_15;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
     }
 
 
@@ -114,31 +114,16 @@ class OFMeterFeaturesStatsReplyVer15 implements OFMeterFeaturesStatsReply {
         }
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_15;
+    public OFMeterFeatures getFeatures() {
+        return features;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.STATS_REPLY;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFMeterFeaturesStatsReply.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
+    public OFMeterFeaturesStatsReply.Builder setFeatures(OFMeterFeatures features) {
+        this.features = features;
+        this.featuresSet = true;
         return this;
     }
-    @Override
-    public OFStatsType getStatsType() {
-        return OFStatsType.METER_FEATURES;
-    }
-
     @Override
     public Set<OFStatsReplyFlags> getFlags() {
         return flags;
@@ -151,14 +136,29 @@ class OFMeterFeaturesStatsReplyVer15 implements OFMeterFeaturesStatsReply {
         return this;
     }
     @Override
-    public OFMeterFeatures getFeatures() {
-        return features;
+    public OFStatsType getStatsType() {
+        return OFStatsType.METER_FEATURES;
     }
 
     @Override
-    public OFMeterFeaturesStatsReply.Builder setFeatures(OFMeterFeatures features) {
-        this.features = features;
-        this.featuresSet = true;
+    public OFType getType() {
+        return OFType.STATS_REPLY;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_15;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFMeterFeaturesStatsReply.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 
@@ -193,31 +193,16 @@ class OFMeterFeaturesStatsReplyVer15 implements OFMeterFeaturesStatsReply {
         private OFMeterFeatures features;
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_15;
+    public OFMeterFeatures getFeatures() {
+        return features;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.STATS_REPLY;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFMeterFeaturesStatsReply.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
+    public OFMeterFeaturesStatsReply.Builder setFeatures(OFMeterFeatures features) {
+        this.features = features;
+        this.featuresSet = true;
         return this;
     }
-    @Override
-    public OFStatsType getStatsType() {
-        return OFStatsType.METER_FEATURES;
-    }
-
     @Override
     public Set<OFStatsReplyFlags> getFlags() {
         return flags;
@@ -230,14 +215,29 @@ class OFMeterFeaturesStatsReplyVer15 implements OFMeterFeaturesStatsReply {
         return this;
     }
     @Override
-    public OFMeterFeatures getFeatures() {
-        return features;
+    public OFStatsType getStatsType() {
+        return OFStatsType.METER_FEATURES;
     }
 
     @Override
-    public OFMeterFeaturesStatsReply.Builder setFeatures(OFMeterFeatures features) {
-        this.features = features;
-        this.featuresSet = true;
+    public OFType getType() {
+        return OFType.STATS_REPLY;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_15;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFMeterFeaturesStatsReply.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 //

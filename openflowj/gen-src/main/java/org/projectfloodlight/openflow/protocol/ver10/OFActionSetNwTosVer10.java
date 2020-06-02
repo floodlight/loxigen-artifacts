@@ -55,13 +55,13 @@ class OFActionSetNwTosVer10 implements OFActionSetNwTos {
 
     // Accessors for OF message fields
     @Override
-    public OFActionType getType() {
-        return OFActionType.SET_NW_TOS;
+    public short getNwTos() {
+        return nwTos;
     }
 
     @Override
-    public short getNwTos() {
-        return nwTos;
+    public OFActionType getType() {
+        return OFActionType.SET_NW_TOS;
     }
 
     @Override
@@ -87,11 +87,6 @@ class OFActionSetNwTosVer10 implements OFActionSetNwTos {
         }
 
     @Override
-    public OFActionType getType() {
-        return OFActionType.SET_NW_TOS;
-    }
-
-    @Override
     public short getNwTos() {
         return nwTos;
     }
@@ -102,6 +97,11 @@ class OFActionSetNwTosVer10 implements OFActionSetNwTos {
         this.nwTosSet = true;
         return this;
     }
+    @Override
+    public OFActionType getType() {
+        return OFActionType.SET_NW_TOS;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_10;
@@ -127,11 +127,6 @@ class OFActionSetNwTosVer10 implements OFActionSetNwTos {
         private short nwTos;
 
     @Override
-    public OFActionType getType() {
-        return OFActionType.SET_NW_TOS;
-    }
-
-    @Override
     public short getNwTos() {
         return nwTos;
     }
@@ -142,6 +137,11 @@ class OFActionSetNwTosVer10 implements OFActionSetNwTos {
         this.nwTosSet = true;
         return this;
     }
+    @Override
+    public OFActionType getType() {
+        return OFActionType.SET_NW_TOS;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_10;

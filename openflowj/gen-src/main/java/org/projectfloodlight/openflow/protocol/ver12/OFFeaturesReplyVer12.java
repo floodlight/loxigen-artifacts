@@ -87,18 +87,18 @@ class OFFeaturesReplyVer12 implements OFFeaturesReply {
 
     // Accessors for OF message fields
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_12;
+    public Set<OFActionType> getActions()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property actions not supported in version 1.2");
     }
 
     @Override
-    public OFType getType() {
-        return OFType.FEATURES_REPLY;
+    public OFAuxId getAuxiliaryId()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property auxiliaryId not supported in version 1.2");
     }
 
     @Override
-    public long getXid() {
-        return xid;
+    public Set<OFCapabilities> getCapabilities() {
+        return capabilities;
     }
 
     @Override
@@ -117,13 +117,8 @@ class OFFeaturesReplyVer12 implements OFFeaturesReply {
     }
 
     @Override
-    public OFAuxId getAuxiliaryId()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property auxiliaryId not supported in version 1.2");
-    }
-
-    @Override
-    public Set<OFCapabilities> getCapabilities() {
-        return capabilities;
+    public List<OFPortDesc> getPorts() {
+        return ports;
     }
 
     @Override
@@ -132,13 +127,18 @@ class OFFeaturesReplyVer12 implements OFFeaturesReply {
     }
 
     @Override
-    public Set<OFActionType> getActions()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property actions not supported in version 1.2");
+    public OFType getType() {
+        return OFType.FEATURES_REPLY;
     }
 
     @Override
-    public List<OFPortDesc> getPorts() {
-        return ports;
+    public OFVersion getVersion() {
+        return OFVersion.OF_12;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
     }
 
 
@@ -171,24 +171,32 @@ class OFFeaturesReplyVer12 implements OFFeaturesReply {
         }
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_12;
+    public Set<OFActionType> getActions()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property actions not supported in version 1.2");
     }
 
     @Override
-    public OFType getType() {
-        return OFType.FEATURES_REPLY;
+    public OFFeaturesReply.Builder setActions(Set<OFActionType> actions) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property actions not supported in version 1.2");
+    }
+    @Override
+    public OFAuxId getAuxiliaryId()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property auxiliaryId not supported in version 1.2");
     }
 
     @Override
-    public long getXid() {
-        return xid;
+    public OFFeaturesReply.Builder setAuxiliaryId(OFAuxId auxiliaryId) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property auxiliaryId not supported in version 1.2");
+    }
+    @Override
+    public Set<OFCapabilities> getCapabilities() {
+        return capabilities;
     }
 
     @Override
-    public OFFeaturesReply.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
+    public OFFeaturesReply.Builder setCapabilities(Set<OFCapabilities> capabilities) {
+        this.capabilities = capabilities;
+        this.capabilitiesSet = true;
         return this;
     }
     @Override
@@ -225,23 +233,14 @@ class OFFeaturesReplyVer12 implements OFFeaturesReply {
         return this;
     }
     @Override
-    public OFAuxId getAuxiliaryId()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property auxiliaryId not supported in version 1.2");
+    public List<OFPortDesc> getPorts() {
+        return ports;
     }
 
     @Override
-    public OFFeaturesReply.Builder setAuxiliaryId(OFAuxId auxiliaryId) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property auxiliaryId not supported in version 1.2");
-    }
-    @Override
-    public Set<OFCapabilities> getCapabilities() {
-        return capabilities;
-    }
-
-    @Override
-    public OFFeaturesReply.Builder setCapabilities(Set<OFCapabilities> capabilities) {
-        this.capabilities = capabilities;
-        this.capabilitiesSet = true;
+    public OFFeaturesReply.Builder setPorts(List<OFPortDesc> ports) {
+        this.ports = ports;
+        this.portsSet = true;
         return this;
     }
     @Override
@@ -256,23 +255,24 @@ class OFFeaturesReplyVer12 implements OFFeaturesReply {
         return this;
     }
     @Override
-    public Set<OFActionType> getActions()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property actions not supported in version 1.2");
+    public OFType getType() {
+        return OFType.FEATURES_REPLY;
     }
 
     @Override
-    public OFFeaturesReply.Builder setActions(Set<OFActionType> actions) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property actions not supported in version 1.2");
-    }
-    @Override
-    public List<OFPortDesc> getPorts() {
-        return ports;
+    public OFVersion getVersion() {
+        return OFVersion.OF_12;
     }
 
     @Override
-    public OFFeaturesReply.Builder setPorts(List<OFPortDesc> ports) {
-        this.ports = ports;
-        this.portsSet = true;
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFFeaturesReply.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 
@@ -325,24 +325,32 @@ class OFFeaturesReplyVer12 implements OFFeaturesReply {
         private List<OFPortDesc> ports;
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_12;
+    public Set<OFActionType> getActions()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property actions not supported in version 1.2");
     }
 
     @Override
-    public OFType getType() {
-        return OFType.FEATURES_REPLY;
+    public OFFeaturesReply.Builder setActions(Set<OFActionType> actions) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property actions not supported in version 1.2");
+    }
+    @Override
+    public OFAuxId getAuxiliaryId()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property auxiliaryId not supported in version 1.2");
     }
 
     @Override
-    public long getXid() {
-        return xid;
+    public OFFeaturesReply.Builder setAuxiliaryId(OFAuxId auxiliaryId) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property auxiliaryId not supported in version 1.2");
+    }
+    @Override
+    public Set<OFCapabilities> getCapabilities() {
+        return capabilities;
     }
 
     @Override
-    public OFFeaturesReply.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
+    public OFFeaturesReply.Builder setCapabilities(Set<OFCapabilities> capabilities) {
+        this.capabilities = capabilities;
+        this.capabilitiesSet = true;
         return this;
     }
     @Override
@@ -379,23 +387,14 @@ class OFFeaturesReplyVer12 implements OFFeaturesReply {
         return this;
     }
     @Override
-    public OFAuxId getAuxiliaryId()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property auxiliaryId not supported in version 1.2");
+    public List<OFPortDesc> getPorts() {
+        return ports;
     }
 
     @Override
-    public OFFeaturesReply.Builder setAuxiliaryId(OFAuxId auxiliaryId) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property auxiliaryId not supported in version 1.2");
-    }
-    @Override
-    public Set<OFCapabilities> getCapabilities() {
-        return capabilities;
-    }
-
-    @Override
-    public OFFeaturesReply.Builder setCapabilities(Set<OFCapabilities> capabilities) {
-        this.capabilities = capabilities;
-        this.capabilitiesSet = true;
+    public OFFeaturesReply.Builder setPorts(List<OFPortDesc> ports) {
+        this.ports = ports;
+        this.portsSet = true;
         return this;
     }
     @Override
@@ -410,23 +409,24 @@ class OFFeaturesReplyVer12 implements OFFeaturesReply {
         return this;
     }
     @Override
-    public Set<OFActionType> getActions()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property actions not supported in version 1.2");
+    public OFType getType() {
+        return OFType.FEATURES_REPLY;
     }
 
     @Override
-    public OFFeaturesReply.Builder setActions(Set<OFActionType> actions) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property actions not supported in version 1.2");
-    }
-    @Override
-    public List<OFPortDesc> getPorts() {
-        return ports;
+    public OFVersion getVersion() {
+        return OFVersion.OF_12;
     }
 
     @Override
-    public OFFeaturesReply.Builder setPorts(List<OFPortDesc> ports) {
-        this.ports = ports;
-        this.portsSet = true;
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFFeaturesReply.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 //

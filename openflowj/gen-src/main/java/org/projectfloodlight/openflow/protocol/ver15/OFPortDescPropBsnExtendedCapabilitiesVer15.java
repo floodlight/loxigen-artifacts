@@ -76,21 +76,6 @@ class OFPortDescPropBsnExtendedCapabilitiesVer15 implements OFPortDescPropBsnExt
 
     // Accessors for OF message fields
     @Override
-    public int getType() {
-        return 0xffff;
-    }
-
-    @Override
-    public long getExperimenter() {
-        return 0x5c16c7L;
-    }
-
-    @Override
-    public long getExpType() {
-        return 0x8L;
-    }
-
-    @Override
     public U64 getConfigurability() {
         return configurability;
     }
@@ -101,6 +86,16 @@ class OFPortDescPropBsnExtendedCapabilitiesVer15 implements OFPortDescPropBsnExt
     }
 
     @Override
+    public long getExpType() {
+        return 0x8L;
+    }
+
+    @Override
+    public long getExperimenter() {
+        return 0x5c16c7L;
+    }
+
+    @Override
     public U64 getReserved1() {
         return reserved1;
     }
@@ -108,6 +103,11 @@ class OFPortDescPropBsnExtendedCapabilitiesVer15 implements OFPortDescPropBsnExt
     @Override
     public U64 getReserved2() {
         return reserved2;
+    }
+
+    @Override
+    public int getType() {
+        return 0xffff;
     }
 
     @Override
@@ -139,25 +139,6 @@ class OFPortDescPropBsnExtendedCapabilitiesVer15 implements OFPortDescPropBsnExt
         }
 
     @Override
-    public int getType() {
-        return 0xffff;
-    }
-
-    @Override
-    public long getExperimenter() {
-        return 0x5c16c7L;
-    }
-
-    @Override
-    public long getExpType() {
-        return 0x8L;
-    }
-
-    @Override
-    public OFPortDescPropBsnExtendedCapabilities.Builder setExpType(long expType) {
-            throw new UnsupportedOperationException("Property expType is not writeable");
-    }
-    @Override
     public U64 getConfigurability() {
         return configurability;
     }
@@ -180,6 +161,20 @@ class OFPortDescPropBsnExtendedCapabilitiesVer15 implements OFPortDescPropBsnExt
         return this;
     }
     @Override
+    public long getExpType() {
+        return 0x8L;
+    }
+
+    @Override
+    public OFPortDescPropBsnExtendedCapabilities.Builder setExpType(long expType) {
+            throw new UnsupportedOperationException("Property expType is not writeable");
+    }
+    @Override
+    public long getExperimenter() {
+        return 0x5c16c7L;
+    }
+
+    @Override
     public U64 getReserved1() {
         return reserved1;
     }
@@ -201,6 +196,11 @@ class OFPortDescPropBsnExtendedCapabilitiesVer15 implements OFPortDescPropBsnExt
         this.reserved2Set = true;
         return this;
     }
+    @Override
+    public int getType() {
+        return 0xffff;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_15;
@@ -246,25 +246,6 @@ class OFPortDescPropBsnExtendedCapabilitiesVer15 implements OFPortDescPropBsnExt
         private U64 reserved2;
 
     @Override
-    public int getType() {
-        return 0xffff;
-    }
-
-    @Override
-    public long getExperimenter() {
-        return 0x5c16c7L;
-    }
-
-    @Override
-    public long getExpType() {
-        return 0x8L;
-    }
-
-    @Override
-    public OFPortDescPropBsnExtendedCapabilities.Builder setExpType(long expType) {
-            throw new UnsupportedOperationException("Property expType is not writeable");
-    }
-    @Override
     public U64 getConfigurability() {
         return configurability;
     }
@@ -287,6 +268,20 @@ class OFPortDescPropBsnExtendedCapabilitiesVer15 implements OFPortDescPropBsnExt
         return this;
     }
     @Override
+    public long getExpType() {
+        return 0x8L;
+    }
+
+    @Override
+    public OFPortDescPropBsnExtendedCapabilities.Builder setExpType(long expType) {
+            throw new UnsupportedOperationException("Property expType is not writeable");
+    }
+    @Override
+    public long getExperimenter() {
+        return 0x5c16c7L;
+    }
+
+    @Override
     public U64 getReserved1() {
         return reserved1;
     }
@@ -308,6 +303,11 @@ class OFPortDescPropBsnExtendedCapabilitiesVer15 implements OFPortDescPropBsnExt
         this.reserved2Set = true;
         return this;
     }
+    @Override
+    public int getType() {
+        return 0xffff;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_15;

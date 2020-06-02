@@ -64,6 +64,11 @@ class OFOxmIpEcnMaskedVer13 implements OFOxmIpEcnMasked {
 
     // Accessors for OF message fields
     @Override
+    public IpEcn getMask() {
+        return mask;
+    }
+
+    @Override
     public long getTypeLen() {
         return 0x80001302L;
     }
@@ -71,21 +76,6 @@ class OFOxmIpEcnMaskedVer13 implements OFOxmIpEcnMasked {
     @Override
     public IpEcn getValue() {
         return value;
-    }
-
-    @Override
-    public IpEcn getMask() {
-        return mask;
-    }
-
-    @Override
-    public MatchField<IpEcn> getMatchField() {
-        return MatchField.IP_ECN;
-    }
-
-    @Override
-    public boolean isMasked() {
-        return true;
     }
 
     public OFOxm<IpEcn> getCanonical() {
@@ -96,6 +86,16 @@ class OFOxmIpEcnMaskedVer13 implements OFOxmIpEcnMasked {
         } else {
             return this;
         }
+    }
+
+    @Override
+    public boolean isMasked() {
+        return true;
+    }
+
+    @Override
+    public MatchField<IpEcn> getMatchField() {
+        return MatchField.IP_ECN;
     }
 
     @Override
@@ -123,6 +123,17 @@ class OFOxmIpEcnMaskedVer13 implements OFOxmIpEcnMasked {
         }
 
     @Override
+    public IpEcn getMask() {
+        return mask;
+    }
+
+    @Override
+    public OFOxmIpEcnMasked.Builder setMask(IpEcn mask) {
+        this.mask = mask;
+        this.maskSet = true;
+        return this;
+    }
+    @Override
     public long getTypeLen() {
         return 0x80001302L;
     }
@@ -139,19 +150,8 @@ class OFOxmIpEcnMaskedVer13 implements OFOxmIpEcnMasked {
         return this;
     }
     @Override
-    public IpEcn getMask() {
-        return mask;
-    }
-
-    @Override
-    public OFOxmIpEcnMasked.Builder setMask(IpEcn mask) {
-        this.mask = mask;
-        this.maskSet = true;
-        return this;
-    }
-    @Override
-    public MatchField<IpEcn> getMatchField() {
-        return MatchField.IP_ECN;
+    public OFOxm<IpEcn> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.3");
     }
 
     @Override
@@ -160,8 +160,8 @@ class OFOxmIpEcnMaskedVer13 implements OFOxmIpEcnMasked {
     }
 
     @Override
-    public OFOxm<IpEcn> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.3");
+    public MatchField<IpEcn> getMatchField() {
+        return MatchField.IP_ECN;
     }
 
     @Override
@@ -197,6 +197,17 @@ class OFOxmIpEcnMaskedVer13 implements OFOxmIpEcnMasked {
         private IpEcn mask;
 
     @Override
+    public IpEcn getMask() {
+        return mask;
+    }
+
+    @Override
+    public OFOxmIpEcnMasked.Builder setMask(IpEcn mask) {
+        this.mask = mask;
+        this.maskSet = true;
+        return this;
+    }
+    @Override
     public long getTypeLen() {
         return 0x80001302L;
     }
@@ -213,19 +224,8 @@ class OFOxmIpEcnMaskedVer13 implements OFOxmIpEcnMasked {
         return this;
     }
     @Override
-    public IpEcn getMask() {
-        return mask;
-    }
-
-    @Override
-    public OFOxmIpEcnMasked.Builder setMask(IpEcn mask) {
-        this.mask = mask;
-        this.maskSet = true;
-        return this;
-    }
-    @Override
-    public MatchField<IpEcn> getMatchField() {
-        return MatchField.IP_ECN;
+    public OFOxm<IpEcn> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.3");
     }
 
     @Override
@@ -234,8 +234,8 @@ class OFOxmIpEcnMaskedVer13 implements OFOxmIpEcnMasked {
     }
 
     @Override
-    public OFOxm<IpEcn> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.3");
+    public MatchField<IpEcn> getMatchField() {
+        return MatchField.IP_ECN;
     }
 
     @Override

@@ -58,18 +58,8 @@ class OFBsnFlowIdleEnableSetRequestVer15 implements OFBsnFlowIdleEnableSetReques
 
     // Accessors for OF message fields
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_15;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.EXPERIMENTER;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
+    public long getEnable() {
+        return enable;
     }
 
     @Override
@@ -83,8 +73,18 @@ class OFBsnFlowIdleEnableSetRequestVer15 implements OFBsnFlowIdleEnableSetReques
     }
 
     @Override
-    public long getEnable() {
-        return enable;
+    public OFType getType() {
+        return OFType.EXPERIMENTER;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_15;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
     }
 
 
@@ -107,24 +107,14 @@ class OFBsnFlowIdleEnableSetRequestVer15 implements OFBsnFlowIdleEnableSetReques
         }
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_15;
+    public long getEnable() {
+        return enable;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.EXPERIMENTER;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFBsnFlowIdleEnableSetRequest.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
+    public OFBsnFlowIdleEnableSetRequest.Builder setEnable(long enable) {
+        this.enable = enable;
+        this.enableSet = true;
         return this;
     }
     @Override
@@ -138,14 +128,24 @@ class OFBsnFlowIdleEnableSetRequestVer15 implements OFBsnFlowIdleEnableSetReques
     }
 
     @Override
-    public long getEnable() {
-        return enable;
+    public OFType getType() {
+        return OFType.EXPERIMENTER;
     }
 
     @Override
-    public OFBsnFlowIdleEnableSetRequest.Builder setEnable(long enable) {
-        this.enable = enable;
-        this.enableSet = true;
+    public OFVersion getVersion() {
+        return OFVersion.OF_15;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFBsnFlowIdleEnableSetRequest.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 
@@ -172,24 +172,14 @@ class OFBsnFlowIdleEnableSetRequestVer15 implements OFBsnFlowIdleEnableSetReques
         private long enable;
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_15;
+    public long getEnable() {
+        return enable;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.EXPERIMENTER;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFBsnFlowIdleEnableSetRequest.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
+    public OFBsnFlowIdleEnableSetRequest.Builder setEnable(long enable) {
+        this.enable = enable;
+        this.enableSet = true;
         return this;
     }
     @Override
@@ -203,14 +193,24 @@ class OFBsnFlowIdleEnableSetRequestVer15 implements OFBsnFlowIdleEnableSetReques
     }
 
     @Override
-    public long getEnable() {
-        return enable;
+    public OFType getType() {
+        return OFType.EXPERIMENTER;
     }
 
     @Override
-    public OFBsnFlowIdleEnableSetRequest.Builder setEnable(long enable) {
-        this.enable = enable;
-        this.enableSet = true;
+    public OFVersion getVersion() {
+        return OFVersion.OF_15;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFBsnFlowIdleEnableSetRequest.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 //

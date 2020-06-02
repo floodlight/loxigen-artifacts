@@ -78,23 +78,8 @@ class OFBundleFeaturesStatsRequestVer15 implements OFBundleFeaturesStatsRequest 
 
     // Accessors for OF message fields
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_15;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.STATS_REQUEST;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFStatsType getStatsType() {
-        return OFStatsType.BUNDLE_FEATURES;
+    public Set<OFBundleFeatureFlags> getFeatureRequestFlags() {
+        return featureRequestFlags;
     }
 
     @Override
@@ -103,13 +88,28 @@ class OFBundleFeaturesStatsRequestVer15 implements OFBundleFeaturesStatsRequest 
     }
 
     @Override
-    public Set<OFBundleFeatureFlags> getFeatureRequestFlags() {
-        return featureRequestFlags;
+    public List<OFBundleFeaturesProp> getProperties() {
+        return properties;
     }
 
     @Override
-    public List<OFBundleFeaturesProp> getProperties() {
-        return properties;
+    public OFStatsType getStatsType() {
+        return OFStatsType.BUNDLE_FEATURES;
+    }
+
+    @Override
+    public OFType getType() {
+        return OFType.STATS_REQUEST;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_15;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
     }
 
 
@@ -136,31 +136,16 @@ class OFBundleFeaturesStatsRequestVer15 implements OFBundleFeaturesStatsRequest 
         }
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_15;
+    public Set<OFBundleFeatureFlags> getFeatureRequestFlags() {
+        return featureRequestFlags;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.STATS_REQUEST;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFBundleFeaturesStatsRequest.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
+    public OFBundleFeaturesStatsRequest.Builder setFeatureRequestFlags(Set<OFBundleFeatureFlags> featureRequestFlags) {
+        this.featureRequestFlags = featureRequestFlags;
+        this.featureRequestFlagsSet = true;
         return this;
     }
-    @Override
-    public OFStatsType getStatsType() {
-        return OFStatsType.BUNDLE_FEATURES;
-    }
-
     @Override
     public Set<OFStatsRequestFlags> getFlags() {
         return flags;
@@ -173,17 +158,6 @@ class OFBundleFeaturesStatsRequestVer15 implements OFBundleFeaturesStatsRequest 
         return this;
     }
     @Override
-    public Set<OFBundleFeatureFlags> getFeatureRequestFlags() {
-        return featureRequestFlags;
-    }
-
-    @Override
-    public OFBundleFeaturesStatsRequest.Builder setFeatureRequestFlags(Set<OFBundleFeatureFlags> featureRequestFlags) {
-        this.featureRequestFlags = featureRequestFlags;
-        this.featureRequestFlagsSet = true;
-        return this;
-    }
-    @Override
     public List<OFBundleFeaturesProp> getProperties() {
         return properties;
     }
@@ -192,6 +166,32 @@ class OFBundleFeaturesStatsRequestVer15 implements OFBundleFeaturesStatsRequest 
     public OFBundleFeaturesStatsRequest.Builder setProperties(List<OFBundleFeaturesProp> properties) {
         this.properties = properties;
         this.propertiesSet = true;
+        return this;
+    }
+    @Override
+    public OFStatsType getStatsType() {
+        return OFStatsType.BUNDLE_FEATURES;
+    }
+
+    @Override
+    public OFType getType() {
+        return OFType.STATS_REQUEST;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_15;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFBundleFeaturesStatsRequest.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 
@@ -232,31 +232,16 @@ class OFBundleFeaturesStatsRequestVer15 implements OFBundleFeaturesStatsRequest 
         private List<OFBundleFeaturesProp> properties;
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_15;
+    public Set<OFBundleFeatureFlags> getFeatureRequestFlags() {
+        return featureRequestFlags;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.STATS_REQUEST;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFBundleFeaturesStatsRequest.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
+    public OFBundleFeaturesStatsRequest.Builder setFeatureRequestFlags(Set<OFBundleFeatureFlags> featureRequestFlags) {
+        this.featureRequestFlags = featureRequestFlags;
+        this.featureRequestFlagsSet = true;
         return this;
     }
-    @Override
-    public OFStatsType getStatsType() {
-        return OFStatsType.BUNDLE_FEATURES;
-    }
-
     @Override
     public Set<OFStatsRequestFlags> getFlags() {
         return flags;
@@ -269,17 +254,6 @@ class OFBundleFeaturesStatsRequestVer15 implements OFBundleFeaturesStatsRequest 
         return this;
     }
     @Override
-    public Set<OFBundleFeatureFlags> getFeatureRequestFlags() {
-        return featureRequestFlags;
-    }
-
-    @Override
-    public OFBundleFeaturesStatsRequest.Builder setFeatureRequestFlags(Set<OFBundleFeatureFlags> featureRequestFlags) {
-        this.featureRequestFlags = featureRequestFlags;
-        this.featureRequestFlagsSet = true;
-        return this;
-    }
-    @Override
     public List<OFBundleFeaturesProp> getProperties() {
         return properties;
     }
@@ -288,6 +262,32 @@ class OFBundleFeaturesStatsRequestVer15 implements OFBundleFeaturesStatsRequest 
     public OFBundleFeaturesStatsRequest.Builder setProperties(List<OFBundleFeaturesProp> properties) {
         this.properties = properties;
         this.propertiesSet = true;
+        return this;
+    }
+    @Override
+    public OFStatsType getStatsType() {
+        return OFStatsType.BUNDLE_FEATURES;
+    }
+
+    @Override
+    public OFType getType() {
+        return OFType.STATS_REQUEST;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_15;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFBundleFeaturesStatsRequest.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 //

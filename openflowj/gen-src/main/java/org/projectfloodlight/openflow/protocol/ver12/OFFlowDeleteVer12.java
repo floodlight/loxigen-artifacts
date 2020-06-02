@@ -123,18 +123,18 @@ class OFFlowDeleteVer12 implements OFFlowDelete {
 
     // Accessors for OF message fields
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_12;
+    public List<OFAction> getActions()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property actions not supported in version 1.2");
     }
 
     @Override
-    public OFType getType() {
-        return OFType.FLOW_MOD;
+    public OFBufferId getBufferId() {
+        return bufferId;
     }
 
     @Override
-    public long getXid() {
-        return xid;
+    public OFFlowModCommand getCommand() {
+        return OFFlowModCommand.DELETE;
     }
 
     @Override
@@ -148,18 +148,8 @@ class OFFlowDeleteVer12 implements OFFlowDelete {
     }
 
     @Override
-    public TableId getTableId() {
-        return tableId;
-    }
-
-    @Override
-    public OFFlowModCommand getCommand() {
-        return OFFlowModCommand.DELETE;
-    }
-
-    @Override
-    public int getIdleTimeout() {
-        return idleTimeout;
+    public Set<OFFlowModFlags> getFlags() {
+        return flags;
     }
 
     @Override
@@ -168,33 +158,13 @@ class OFFlowDeleteVer12 implements OFFlowDelete {
     }
 
     @Override
-    public int getPriority() {
-        return priority;
+    public int getIdleTimeout() {
+        return idleTimeout;
     }
 
     @Override
-    public OFBufferId getBufferId() {
-        return bufferId;
-    }
-
-    @Override
-    public OFPort getOutPort() {
-        return outPort;
-    }
-
-    @Override
-    public OFGroup getOutGroup() {
-        return outGroup;
-    }
-
-    @Override
-    public Set<OFFlowModFlags> getFlags() {
-        return flags;
-    }
-
-    @Override
-    public Match getMatch() {
-        return match;
+    public int getImportance()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property importance not supported in version 1.2");
     }
 
     @Override
@@ -203,13 +173,43 @@ class OFFlowDeleteVer12 implements OFFlowDelete {
     }
 
     @Override
-    public List<OFAction> getActions()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property actions not supported in version 1.2");
+    public Match getMatch() {
+        return match;
     }
 
     @Override
-    public int getImportance()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property importance not supported in version 1.2");
+    public OFGroup getOutGroup() {
+        return outGroup;
+    }
+
+    @Override
+    public OFPort getOutPort() {
+        return outPort;
+    }
+
+    @Override
+    public int getPriority() {
+        return priority;
+    }
+
+    @Override
+    public TableId getTableId() {
+        return tableId;
+    }
+
+    @Override
+    public OFType getType() {
+        return OFType.FLOW_MOD;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_12;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
     }
 
 
@@ -254,26 +254,30 @@ class OFFlowDeleteVer12 implements OFFlowDelete {
         }
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_12;
+    public List<OFAction> getActions()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property actions not supported in version 1.2");
     }
 
     @Override
-    public OFType getType() {
-        return OFType.FLOW_MOD;
+    public OFFlowDelete.Builder setActions(List<OFAction> actions) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property actions not supported in version 1.2");
+    }
+    @Override
+    public OFBufferId getBufferId() {
+        return bufferId;
     }
 
     @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFFlowDelete.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
+    public OFFlowDelete.Builder setBufferId(OFBufferId bufferId) {
+        this.bufferId = bufferId;
+        this.bufferIdSet = true;
         return this;
     }
+    @Override
+    public OFFlowModCommand getCommand() {
+        return OFFlowModCommand.DELETE;
+    }
+
     @Override
     public U64 getCookie() {
         return cookie;
@@ -297,30 +301,14 @@ class OFFlowDeleteVer12 implements OFFlowDelete {
         return this;
     }
     @Override
-    public TableId getTableId() {
-        return tableId;
+    public Set<OFFlowModFlags> getFlags() {
+        return flags;
     }
 
     @Override
-    public OFFlowDelete.Builder setTableId(TableId tableId) {
-        this.tableId = tableId;
-        this.tableIdSet = true;
-        return this;
-    }
-    @Override
-    public OFFlowModCommand getCommand() {
-        return OFFlowModCommand.DELETE;
-    }
-
-    @Override
-    public int getIdleTimeout() {
-        return idleTimeout;
-    }
-
-    @Override
-    public OFFlowDelete.Builder setIdleTimeout(int idleTimeout) {
-        this.idleTimeout = idleTimeout;
-        this.idleTimeoutSet = true;
+    public OFFlowDelete.Builder setFlags(Set<OFFlowModFlags> flags) {
+        this.flags = flags;
+        this.flagsSet = true;
         return this;
     }
     @Override
@@ -335,58 +323,34 @@ class OFFlowDeleteVer12 implements OFFlowDelete {
         return this;
     }
     @Override
-    public int getPriority() {
-        return priority;
+    public int getIdleTimeout() {
+        return idleTimeout;
     }
 
     @Override
-    public OFFlowDelete.Builder setPriority(int priority) {
-        this.priority = priority;
-        this.prioritySet = true;
+    public OFFlowDelete.Builder setIdleTimeout(int idleTimeout) {
+        this.idleTimeout = idleTimeout;
+        this.idleTimeoutSet = true;
         return this;
     }
     @Override
-    public OFBufferId getBufferId() {
-        return bufferId;
+    public int getImportance()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property importance not supported in version 1.2");
     }
 
     @Override
-    public OFFlowDelete.Builder setBufferId(OFBufferId bufferId) {
-        this.bufferId = bufferId;
-        this.bufferIdSet = true;
-        return this;
+    public OFFlowDelete.Builder setImportance(int importance) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property importance not supported in version 1.2");
     }
     @Override
-    public OFPort getOutPort() {
-        return outPort;
+    public List<OFInstruction> getInstructions() {
+        return instructions;
     }
 
     @Override
-    public OFFlowDelete.Builder setOutPort(OFPort outPort) {
-        this.outPort = outPort;
-        this.outPortSet = true;
-        return this;
-    }
-    @Override
-    public OFGroup getOutGroup() {
-        return outGroup;
-    }
-
-    @Override
-    public OFFlowDelete.Builder setOutGroup(OFGroup outGroup) {
-        this.outGroup = outGroup;
-        this.outGroupSet = true;
-        return this;
-    }
-    @Override
-    public Set<OFFlowModFlags> getFlags() {
-        return flags;
-    }
-
-    @Override
-    public OFFlowDelete.Builder setFlags(Set<OFFlowModFlags> flags) {
-        this.flags = flags;
-        this.flagsSet = true;
+    public OFFlowDelete.Builder setInstructions(List<OFInstruction> instructions) {
+        this.instructions = instructions;
+        this.instructionsSet = true;
         return this;
     }
     @Override
@@ -401,33 +365,69 @@ class OFFlowDeleteVer12 implements OFFlowDelete {
         return this;
     }
     @Override
-    public List<OFInstruction> getInstructions() {
-        return instructions;
+    public OFGroup getOutGroup() {
+        return outGroup;
     }
 
     @Override
-    public OFFlowDelete.Builder setInstructions(List<OFInstruction> instructions) {
-        this.instructions = instructions;
-        this.instructionsSet = true;
+    public OFFlowDelete.Builder setOutGroup(OFGroup outGroup) {
+        this.outGroup = outGroup;
+        this.outGroupSet = true;
         return this;
     }
     @Override
-    public List<OFAction> getActions()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property actions not supported in version 1.2");
+    public OFPort getOutPort() {
+        return outPort;
     }
 
     @Override
-    public OFFlowDelete.Builder setActions(List<OFAction> actions) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property actions not supported in version 1.2");
+    public OFFlowDelete.Builder setOutPort(OFPort outPort) {
+        this.outPort = outPort;
+        this.outPortSet = true;
+        return this;
     }
     @Override
-    public int getImportance()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property importance not supported in version 1.2");
+    public int getPriority() {
+        return priority;
     }
 
     @Override
-    public OFFlowDelete.Builder setImportance(int importance) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property importance not supported in version 1.2");
+    public OFFlowDelete.Builder setPriority(int priority) {
+        this.priority = priority;
+        this.prioritySet = true;
+        return this;
+    }
+    @Override
+    public TableId getTableId() {
+        return tableId;
+    }
+
+    @Override
+    public OFFlowDelete.Builder setTableId(TableId tableId) {
+        this.tableId = tableId;
+        this.tableIdSet = true;
+        return this;
+    }
+    @Override
+    public OFType getType() {
+        return OFType.FLOW_MOD;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_12;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFFlowDelete.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
+        return this;
     }
 
 
@@ -515,26 +515,30 @@ class OFFlowDeleteVer12 implements OFFlowDelete {
         private List<OFInstruction> instructions;
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_12;
+    public List<OFAction> getActions()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property actions not supported in version 1.2");
     }
 
     @Override
-    public OFType getType() {
-        return OFType.FLOW_MOD;
+    public OFFlowDelete.Builder setActions(List<OFAction> actions) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property actions not supported in version 1.2");
+    }
+    @Override
+    public OFBufferId getBufferId() {
+        return bufferId;
     }
 
     @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFFlowDelete.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
+    public OFFlowDelete.Builder setBufferId(OFBufferId bufferId) {
+        this.bufferId = bufferId;
+        this.bufferIdSet = true;
         return this;
     }
+    @Override
+    public OFFlowModCommand getCommand() {
+        return OFFlowModCommand.DELETE;
+    }
+
     @Override
     public U64 getCookie() {
         return cookie;
@@ -558,30 +562,14 @@ class OFFlowDeleteVer12 implements OFFlowDelete {
         return this;
     }
     @Override
-    public TableId getTableId() {
-        return tableId;
+    public Set<OFFlowModFlags> getFlags() {
+        return flags;
     }
 
     @Override
-    public OFFlowDelete.Builder setTableId(TableId tableId) {
-        this.tableId = tableId;
-        this.tableIdSet = true;
-        return this;
-    }
-    @Override
-    public OFFlowModCommand getCommand() {
-        return OFFlowModCommand.DELETE;
-    }
-
-    @Override
-    public int getIdleTimeout() {
-        return idleTimeout;
-    }
-
-    @Override
-    public OFFlowDelete.Builder setIdleTimeout(int idleTimeout) {
-        this.idleTimeout = idleTimeout;
-        this.idleTimeoutSet = true;
+    public OFFlowDelete.Builder setFlags(Set<OFFlowModFlags> flags) {
+        this.flags = flags;
+        this.flagsSet = true;
         return this;
     }
     @Override
@@ -596,58 +584,34 @@ class OFFlowDeleteVer12 implements OFFlowDelete {
         return this;
     }
     @Override
-    public int getPriority() {
-        return priority;
+    public int getIdleTimeout() {
+        return idleTimeout;
     }
 
     @Override
-    public OFFlowDelete.Builder setPriority(int priority) {
-        this.priority = priority;
-        this.prioritySet = true;
+    public OFFlowDelete.Builder setIdleTimeout(int idleTimeout) {
+        this.idleTimeout = idleTimeout;
+        this.idleTimeoutSet = true;
         return this;
     }
     @Override
-    public OFBufferId getBufferId() {
-        return bufferId;
+    public int getImportance()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property importance not supported in version 1.2");
     }
 
     @Override
-    public OFFlowDelete.Builder setBufferId(OFBufferId bufferId) {
-        this.bufferId = bufferId;
-        this.bufferIdSet = true;
-        return this;
+    public OFFlowDelete.Builder setImportance(int importance) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property importance not supported in version 1.2");
     }
     @Override
-    public OFPort getOutPort() {
-        return outPort;
+    public List<OFInstruction> getInstructions() {
+        return instructions;
     }
 
     @Override
-    public OFFlowDelete.Builder setOutPort(OFPort outPort) {
-        this.outPort = outPort;
-        this.outPortSet = true;
-        return this;
-    }
-    @Override
-    public OFGroup getOutGroup() {
-        return outGroup;
-    }
-
-    @Override
-    public OFFlowDelete.Builder setOutGroup(OFGroup outGroup) {
-        this.outGroup = outGroup;
-        this.outGroupSet = true;
-        return this;
-    }
-    @Override
-    public Set<OFFlowModFlags> getFlags() {
-        return flags;
-    }
-
-    @Override
-    public OFFlowDelete.Builder setFlags(Set<OFFlowModFlags> flags) {
-        this.flags = flags;
-        this.flagsSet = true;
+    public OFFlowDelete.Builder setInstructions(List<OFInstruction> instructions) {
+        this.instructions = instructions;
+        this.instructionsSet = true;
         return this;
     }
     @Override
@@ -662,33 +626,69 @@ class OFFlowDeleteVer12 implements OFFlowDelete {
         return this;
     }
     @Override
-    public List<OFInstruction> getInstructions() {
-        return instructions;
+    public OFGroup getOutGroup() {
+        return outGroup;
     }
 
     @Override
-    public OFFlowDelete.Builder setInstructions(List<OFInstruction> instructions) {
-        this.instructions = instructions;
-        this.instructionsSet = true;
+    public OFFlowDelete.Builder setOutGroup(OFGroup outGroup) {
+        this.outGroup = outGroup;
+        this.outGroupSet = true;
         return this;
     }
     @Override
-    public List<OFAction> getActions()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property actions not supported in version 1.2");
+    public OFPort getOutPort() {
+        return outPort;
     }
 
     @Override
-    public OFFlowDelete.Builder setActions(List<OFAction> actions) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property actions not supported in version 1.2");
+    public OFFlowDelete.Builder setOutPort(OFPort outPort) {
+        this.outPort = outPort;
+        this.outPortSet = true;
+        return this;
     }
     @Override
-    public int getImportance()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property importance not supported in version 1.2");
+    public int getPriority() {
+        return priority;
     }
 
     @Override
-    public OFFlowDelete.Builder setImportance(int importance) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property importance not supported in version 1.2");
+    public OFFlowDelete.Builder setPriority(int priority) {
+        this.priority = priority;
+        this.prioritySet = true;
+        return this;
+    }
+    @Override
+    public TableId getTableId() {
+        return tableId;
+    }
+
+    @Override
+    public OFFlowDelete.Builder setTableId(TableId tableId) {
+        this.tableId = tableId;
+        this.tableIdSet = true;
+        return this;
+    }
+    @Override
+    public OFType getType() {
+        return OFType.FLOW_MOD;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_12;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFFlowDelete.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
+        return this;
     }
 //
         @Override

@@ -64,18 +64,8 @@ class OFBsnLogVer13 implements OFBsnLog {
 
     // Accessors for OF message fields
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_13;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.EXPERIMENTER;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
+    public String getData() {
+        return data;
     }
 
     @Override
@@ -84,18 +74,28 @@ class OFBsnLogVer13 implements OFBsnLog {
     }
 
     @Override
-    public long getSubtype() {
-        return 0x3fL;
-    }
-
-    @Override
     public OFBsnLoglevel getLoglevel() {
         return loglevel;
     }
 
     @Override
-    public String getData() {
-        return data;
+    public long getSubtype() {
+        return 0x3fL;
+    }
+
+    @Override
+    public OFType getType() {
+        return OFType.EXPERIMENTER;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_13;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
     }
 
 
@@ -120,34 +120,19 @@ class OFBsnLogVer13 implements OFBsnLog {
         }
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_13;
+    public String getData() {
+        return data;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.EXPERIMENTER;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFBsnLog.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
+    public OFBsnLog.Builder setData(String data) {
+        this.data = data;
+        this.dataSet = true;
         return this;
     }
     @Override
     public long getExperimenter() {
         return 0x5c16c7L;
-    }
-
-    @Override
-    public long getSubtype() {
-        return 0x3fL;
     }
 
     @Override
@@ -162,14 +147,29 @@ class OFBsnLogVer13 implements OFBsnLog {
         return this;
     }
     @Override
-    public String getData() {
-        return data;
+    public long getSubtype() {
+        return 0x3fL;
     }
 
     @Override
-    public OFBsnLog.Builder setData(String data) {
-        this.data = data;
-        this.dataSet = true;
+    public OFType getType() {
+        return OFType.EXPERIMENTER;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_13;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFBsnLog.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 
@@ -204,34 +204,19 @@ class OFBsnLogVer13 implements OFBsnLog {
         private String data;
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_13;
+    public String getData() {
+        return data;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.EXPERIMENTER;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFBsnLog.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
+    public OFBsnLog.Builder setData(String data) {
+        this.data = data;
+        this.dataSet = true;
         return this;
     }
     @Override
     public long getExperimenter() {
         return 0x5c16c7L;
-    }
-
-    @Override
-    public long getSubtype() {
-        return 0x3fL;
     }
 
     @Override
@@ -246,14 +231,29 @@ class OFBsnLogVer13 implements OFBsnLog {
         return this;
     }
     @Override
-    public String getData() {
-        return data;
+    public long getSubtype() {
+        return 0x3fL;
     }
 
     @Override
-    public OFBsnLog.Builder setData(String data) {
-        this.data = data;
-        this.dataSet = true;
+    public OFType getType() {
+        return OFType.EXPERIMENTER;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_13;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFBsnLog.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 //

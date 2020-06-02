@@ -28,12 +28,12 @@ import org.projectfloodlight.openflow.exceptions.*;
 import io.netty.buffer.ByteBuf;
 
 public interface OFOxmEthSrcMasked extends OFObject, OFOxm<MacAddress> {
+    MacAddress getMask();
     long getTypeLen();
     MacAddress getValue();
-    MacAddress getMask();
-    MatchField<MacAddress> getMatchField();
-    boolean isMasked();
     OFOxm<MacAddress> getCanonical();
+    boolean isMasked();
+    MatchField<MacAddress> getMatchField();
     OFVersion getVersion();
 
     void writeTo(ByteBuf channelBuffer);
@@ -41,14 +41,14 @@ public interface OFOxmEthSrcMasked extends OFObject, OFOxm<MacAddress> {
     Builder createBuilder();
     public interface Builder extends OFOxm.Builder<MacAddress> {
         OFOxmEthSrcMasked build();
+        MacAddress getMask();
+        Builder setMask(MacAddress mask);
         long getTypeLen();
         MacAddress getValue();
         Builder setValue(MacAddress value);
-        MacAddress getMask();
-        Builder setMask(MacAddress mask);
-        MatchField<MacAddress> getMatchField();
-        boolean isMasked();
         OFOxm<MacAddress> getCanonical();
+        boolean isMasked();
+        MatchField<MacAddress> getMatchField();
         OFVersion getVersion();
     }
 }

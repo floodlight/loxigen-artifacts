@@ -68,18 +68,13 @@ class OFBsnGentableClearRequestVer15 implements OFBsnGentableClearRequest {
 
     // Accessors for OF message fields
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_15;
+    public U128 getChecksum() {
+        return checksum;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.EXPERIMENTER;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
+    public U128 getChecksumMask() {
+        return checksumMask;
     }
 
     @Override
@@ -98,13 +93,18 @@ class OFBsnGentableClearRequestVer15 implements OFBsnGentableClearRequest {
     }
 
     @Override
-    public U128 getChecksum() {
-        return checksum;
+    public OFType getType() {
+        return OFType.EXPERIMENTER;
     }
 
     @Override
-    public U128 getChecksumMask() {
-        return checksumMask;
+    public OFVersion getVersion() {
+        return OFVersion.OF_15;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
     }
 
 
@@ -131,24 +131,25 @@ class OFBsnGentableClearRequestVer15 implements OFBsnGentableClearRequest {
         }
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_15;
+    public U128 getChecksum() {
+        return checksum;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.EXPERIMENTER;
+    public OFBsnGentableClearRequest.Builder setChecksum(U128 checksum) {
+        this.checksum = checksum;
+        this.checksumSet = true;
+        return this;
+    }
+    @Override
+    public U128 getChecksumMask() {
+        return checksumMask;
     }
 
     @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFBsnGentableClearRequest.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
+    public OFBsnGentableClearRequest.Builder setChecksumMask(U128 checksumMask) {
+        this.checksumMask = checksumMask;
+        this.checksumMaskSet = true;
         return this;
     }
     @Override
@@ -173,25 +174,24 @@ class OFBsnGentableClearRequestVer15 implements OFBsnGentableClearRequest {
         return this;
     }
     @Override
-    public U128 getChecksum() {
-        return checksum;
+    public OFType getType() {
+        return OFType.EXPERIMENTER;
     }
 
     @Override
-    public OFBsnGentableClearRequest.Builder setChecksum(U128 checksum) {
-        this.checksum = checksum;
-        this.checksumSet = true;
-        return this;
-    }
-    @Override
-    public U128 getChecksumMask() {
-        return checksumMask;
+    public OFVersion getVersion() {
+        return OFVersion.OF_15;
     }
 
     @Override
-    public OFBsnGentableClearRequest.Builder setChecksumMask(U128 checksumMask) {
-        this.checksumMask = checksumMask;
-        this.checksumMaskSet = true;
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFBsnGentableClearRequest.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 
@@ -232,24 +232,25 @@ class OFBsnGentableClearRequestVer15 implements OFBsnGentableClearRequest {
         private U128 checksumMask;
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_15;
+    public U128 getChecksum() {
+        return checksum;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.EXPERIMENTER;
+    public OFBsnGentableClearRequest.Builder setChecksum(U128 checksum) {
+        this.checksum = checksum;
+        this.checksumSet = true;
+        return this;
+    }
+    @Override
+    public U128 getChecksumMask() {
+        return checksumMask;
     }
 
     @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFBsnGentableClearRequest.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
+    public OFBsnGentableClearRequest.Builder setChecksumMask(U128 checksumMask) {
+        this.checksumMask = checksumMask;
+        this.checksumMaskSet = true;
         return this;
     }
     @Override
@@ -274,25 +275,24 @@ class OFBsnGentableClearRequestVer15 implements OFBsnGentableClearRequest {
         return this;
     }
     @Override
-    public U128 getChecksum() {
-        return checksum;
+    public OFType getType() {
+        return OFType.EXPERIMENTER;
     }
 
     @Override
-    public OFBsnGentableClearRequest.Builder setChecksum(U128 checksum) {
-        this.checksum = checksum;
-        this.checksumSet = true;
-        return this;
-    }
-    @Override
-    public U128 getChecksumMask() {
-        return checksumMask;
+    public OFVersion getVersion() {
+        return OFVersion.OF_15;
     }
 
     @Override
-    public OFBsnGentableClearRequest.Builder setChecksumMask(U128 checksumMask) {
-        this.checksumMask = checksumMask;
-        this.checksumMaskSet = true;
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFBsnGentableClearRequest.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 //

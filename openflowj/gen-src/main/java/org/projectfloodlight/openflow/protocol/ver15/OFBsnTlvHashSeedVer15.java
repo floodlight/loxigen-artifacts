@@ -58,11 +58,6 @@ class OFBsnTlvHashSeedVer15 implements OFBsnTlvHashSeed {
 
     // Accessors for OF message fields
     @Override
-    public int getType() {
-        return 0x64;
-    }
-
-    @Override
     public long getSeed1() {
         return seed1;
     }
@@ -70,6 +65,11 @@ class OFBsnTlvHashSeedVer15 implements OFBsnTlvHashSeed {
     @Override
     public long getSeed2() {
         return seed2;
+    }
+
+    @Override
+    public int getType() {
+        return 0x64;
     }
 
     @Override
@@ -97,11 +97,6 @@ class OFBsnTlvHashSeedVer15 implements OFBsnTlvHashSeed {
         }
 
     @Override
-    public int getType() {
-        return 0x64;
-    }
-
-    @Override
     public long getSeed1() {
         return seed1;
     }
@@ -123,6 +118,11 @@ class OFBsnTlvHashSeedVer15 implements OFBsnTlvHashSeed {
         this.seed2Set = true;
         return this;
     }
+    @Override
+    public int getType() {
+        return 0x64;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_15;
@@ -152,11 +152,6 @@ class OFBsnTlvHashSeedVer15 implements OFBsnTlvHashSeed {
         private long seed2;
 
     @Override
-    public int getType() {
-        return 0x64;
-    }
-
-    @Override
     public long getSeed1() {
         return seed1;
     }
@@ -178,6 +173,11 @@ class OFBsnTlvHashSeedVer15 implements OFBsnTlvHashSeed {
         this.seed2Set = true;
         return this;
     }
+    @Override
+    public int getType() {
+        return 0x64;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_15;

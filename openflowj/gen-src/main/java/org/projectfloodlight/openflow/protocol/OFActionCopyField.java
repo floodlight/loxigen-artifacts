@@ -29,11 +29,11 @@ import java.util.List;
 import io.netty.buffer.ByteBuf;
 
 public interface OFActionCopyField extends OFObject {
-    int getType();
-    int getNBits();
-    int getSrcOffset();
     int getDstOffset();
+    int getNBits();
     OFOxmList getOxmIds();
+    int getSrcOffset();
+    int getType();
     OFVersion getVersion();
 
     void writeTo(ByteBuf channelBuffer);
@@ -41,15 +41,15 @@ public interface OFActionCopyField extends OFObject {
     Builder createBuilder();
     public interface Builder  {
         OFActionCopyField build();
-        int getType();
-        int getNBits();
-        Builder setNBits(int nBits);
-        int getSrcOffset();
-        Builder setSrcOffset(int srcOffset);
         int getDstOffset();
         Builder setDstOffset(int dstOffset);
+        int getNBits();
+        Builder setNBits(int nBits);
         OFOxmList getOxmIds();
         Builder setOxmIds(OFOxmList oxmIds);
+        int getSrcOffset();
+        Builder setSrcOffset(int srcOffset);
+        int getType();
         OFVersion getVersion();
     }
 }

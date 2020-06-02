@@ -59,13 +59,13 @@ class OFTableModPropEvictionVer15 implements OFTableModPropEviction {
 
     // Accessors for OF message fields
     @Override
-    public int getType() {
-        return 0x2;
+    public Set<OFTableModPropEvictionFlag> getFlags() {
+        return flags;
     }
 
     @Override
-    public Set<OFTableModPropEvictionFlag> getFlags() {
-        return flags;
+    public int getType() {
+        return 0x2;
     }
 
     @Override
@@ -91,11 +91,6 @@ class OFTableModPropEvictionVer15 implements OFTableModPropEviction {
         }
 
     @Override
-    public int getType() {
-        return 0x2;
-    }
-
-    @Override
     public Set<OFTableModPropEvictionFlag> getFlags() {
         return flags;
     }
@@ -106,6 +101,11 @@ class OFTableModPropEvictionVer15 implements OFTableModPropEviction {
         this.flagsSet = true;
         return this;
     }
+    @Override
+    public int getType() {
+        return 0x2;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_15;
@@ -133,11 +133,6 @@ class OFTableModPropEvictionVer15 implements OFTableModPropEviction {
         private Set<OFTableModPropEvictionFlag> flags;
 
     @Override
-    public int getType() {
-        return 0x2;
-    }
-
-    @Override
     public Set<OFTableModPropEvictionFlag> getFlags() {
         return flags;
     }
@@ -148,6 +143,11 @@ class OFTableModPropEvictionVer15 implements OFTableModPropEviction {
         this.flagsSet = true;
         return this;
     }
+    @Override
+    public int getType() {
+        return 0x2;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_15;

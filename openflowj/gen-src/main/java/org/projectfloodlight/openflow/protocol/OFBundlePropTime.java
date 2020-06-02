@@ -29,8 +29,8 @@ import java.util.List;
 import io.netty.buffer.ByteBuf;
 
 public interface OFBundlePropTime extends OFObject, OFBundleProp {
-    int getType();
     List<OFTime> getScheduledTime();
+    int getType();
     OFVersion getVersion();
 
     void writeTo(ByteBuf channelBuffer);
@@ -38,9 +38,9 @@ public interface OFBundlePropTime extends OFObject, OFBundleProp {
     Builder createBuilder();
     public interface Builder extends OFBundleProp.Builder {
         OFBundlePropTime build();
-        int getType();
         List<OFTime> getScheduledTime();
         Builder setScheduledTime(List<OFTime> scheduledTime);
+        int getType();
         OFVersion getVersion();
     }
 }

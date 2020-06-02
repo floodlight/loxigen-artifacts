@@ -29,8 +29,8 @@ import java.util.Map;
 import io.netty.buffer.ByteBuf;
 
 public interface OFMessage extends OFObject {
-    OFVersion getVersion();
     OFType getType();
+    OFVersion getVersion();
     long getXid();
 
     /**
@@ -66,8 +66,8 @@ public interface OFMessage extends OFObject {
     Builder createBuilder();
     public interface Builder  {
         OFMessage build();
-        OFVersion getVersion();
         OFType getType();
+        OFVersion getVersion();
         long getXid();
         Builder setXid(long xid);
     }

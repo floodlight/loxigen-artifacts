@@ -29,8 +29,8 @@ import java.util.List;
 import io.netty.buffer.ByteBuf;
 
 public interface OFBsnTlvVlanMacList extends OFObject, OFBsnTlv {
-    int getType();
     List<OFBsnVlanMac> getKey();
+    int getType();
     OFVersion getVersion();
 
     void writeTo(ByteBuf channelBuffer);
@@ -38,9 +38,9 @@ public interface OFBsnTlvVlanMacList extends OFObject, OFBsnTlv {
     Builder createBuilder();
     public interface Builder extends OFBsnTlv.Builder {
         OFBsnTlvVlanMacList build();
-        int getType();
         List<OFBsnVlanMac> getKey();
         Builder setKey(List<OFBsnVlanMac> key);
+        int getType();
         OFVersion getVersion();
     }
 }

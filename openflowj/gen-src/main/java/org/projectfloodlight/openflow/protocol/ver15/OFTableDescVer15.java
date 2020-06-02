@@ -75,11 +75,6 @@ class OFTableDescVer15 implements OFTableDesc {
 
     // Accessors for OF message fields
     @Override
-    public TableId getTableId() {
-        return tableId;
-    }
-
-    @Override
     public Set<OFTableConfig> getConfig() {
         return config;
     }
@@ -87,6 +82,11 @@ class OFTableDescVer15 implements OFTableDesc {
     @Override
     public List<OFTableModProp> getProperties() {
         return properties;
+    }
+
+    @Override
+    public TableId getTableId() {
+        return tableId;
     }
 
     @Override
@@ -116,17 +116,6 @@ class OFTableDescVer15 implements OFTableDesc {
         }
 
     @Override
-    public TableId getTableId() {
-        return tableId;
-    }
-
-    @Override
-    public OFTableDesc.Builder setTableId(TableId tableId) {
-        this.tableId = tableId;
-        this.tableIdSet = true;
-        return this;
-    }
-    @Override
     public Set<OFTableConfig> getConfig() {
         return config;
     }
@@ -146,6 +135,17 @@ class OFTableDescVer15 implements OFTableDesc {
     public OFTableDesc.Builder setProperties(List<OFTableModProp> properties) {
         this.properties = properties;
         this.propertiesSet = true;
+        return this;
+    }
+    @Override
+    public TableId getTableId() {
+        return tableId;
+    }
+
+    @Override
+    public OFTableDesc.Builder setTableId(TableId tableId) {
+        this.tableId = tableId;
+        this.tableIdSet = true;
         return this;
     }
     @Override
@@ -187,17 +187,6 @@ class OFTableDescVer15 implements OFTableDesc {
         private List<OFTableModProp> properties;
 
     @Override
-    public TableId getTableId() {
-        return tableId;
-    }
-
-    @Override
-    public OFTableDesc.Builder setTableId(TableId tableId) {
-        this.tableId = tableId;
-        this.tableIdSet = true;
-        return this;
-    }
-    @Override
     public Set<OFTableConfig> getConfig() {
         return config;
     }
@@ -217,6 +206,17 @@ class OFTableDescVer15 implements OFTableDesc {
     public OFTableDesc.Builder setProperties(List<OFTableModProp> properties) {
         this.properties = properties;
         this.propertiesSet = true;
+        return this;
+    }
+    @Override
+    public TableId getTableId() {
+        return tableId;
+    }
+
+    @Override
+    public OFTableDesc.Builder setTableId(TableId tableId) {
+        this.tableId = tableId;
+        this.tableIdSet = true;
         return this;
     }
     @Override

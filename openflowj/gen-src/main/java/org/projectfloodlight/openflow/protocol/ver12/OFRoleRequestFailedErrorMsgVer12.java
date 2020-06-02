@@ -64,18 +64,13 @@ class OFRoleRequestFailedErrorMsgVer12 implements OFRoleRequestFailedErrorMsg {
 
     // Accessors for OF message fields
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_12;
+    public OFRoleRequestFailedCode getCode() {
+        return code;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.ERROR;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
+    public OFErrorCauseData getData() {
+        return data;
     }
 
     @Override
@@ -84,13 +79,18 @@ class OFRoleRequestFailedErrorMsgVer12 implements OFRoleRequestFailedErrorMsg {
     }
 
     @Override
-    public OFRoleRequestFailedCode getCode() {
-        return code;
+    public OFType getType() {
+        return OFType.ERROR;
     }
 
     @Override
-    public OFErrorCauseData getData() {
-        return data;
+    public OFVersion getVersion() {
+        return OFVersion.OF_12;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
     }
 
 
@@ -115,32 +115,6 @@ class OFRoleRequestFailedErrorMsgVer12 implements OFRoleRequestFailedErrorMsg {
         }
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_12;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.ERROR;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFRoleRequestFailedErrorMsg.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
-        return this;
-    }
-    @Override
-    public OFErrorType getErrType() {
-        return OFErrorType.ROLE_REQUEST_FAILED;
-    }
-
-    @Override
     public OFRoleRequestFailedCode getCode() {
         return code;
     }
@@ -160,6 +134,32 @@ class OFRoleRequestFailedErrorMsgVer12 implements OFRoleRequestFailedErrorMsg {
     public OFRoleRequestFailedErrorMsg.Builder setData(OFErrorCauseData data) {
         this.data = data;
         this.dataSet = true;
+        return this;
+    }
+    @Override
+    public OFErrorType getErrType() {
+        return OFErrorType.ROLE_REQUEST_FAILED;
+    }
+
+    @Override
+    public OFType getType() {
+        return OFType.ERROR;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_12;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFRoleRequestFailedErrorMsg.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 
@@ -194,32 +194,6 @@ class OFRoleRequestFailedErrorMsgVer12 implements OFRoleRequestFailedErrorMsg {
         private OFErrorCauseData data;
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_12;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.ERROR;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFRoleRequestFailedErrorMsg.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
-        return this;
-    }
-    @Override
-    public OFErrorType getErrType() {
-        return OFErrorType.ROLE_REQUEST_FAILED;
-    }
-
-    @Override
     public OFRoleRequestFailedCode getCode() {
         return code;
     }
@@ -239,6 +213,32 @@ class OFRoleRequestFailedErrorMsgVer12 implements OFRoleRequestFailedErrorMsg {
     public OFRoleRequestFailedErrorMsg.Builder setData(OFErrorCauseData data) {
         this.data = data;
         this.dataSet = true;
+        return this;
+    }
+    @Override
+    public OFErrorType getErrType() {
+        return OFErrorType.ROLE_REQUEST_FAILED;
+    }
+
+    @Override
+    public OFType getType() {
+        return OFType.ERROR;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_12;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFRoleRequestFailedErrorMsg.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 //

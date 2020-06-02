@@ -64,23 +64,13 @@ class OFTableStatusVer14 implements OFTableStatus {
 
     // Accessors for OF message fields
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_14;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.TABLE_STATUS;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
     public OFTableReason getReason() {
         return reason;
+    }
+
+    @Override
+    public long getRole() {
+        return role;
     }
 
     @Override
@@ -89,8 +79,18 @@ class OFTableStatusVer14 implements OFTableStatus {
     }
 
     @Override
-    public long getRole() {
-        return role;
+    public OFType getType() {
+        return OFType.TABLE_STATUS;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_14;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
     }
 
 
@@ -117,27 +117,6 @@ class OFTableStatusVer14 implements OFTableStatus {
         }
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_14;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.TABLE_STATUS;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFTableStatus.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
-        return this;
-    }
-    @Override
     public OFTableReason getReason() {
         return reason;
     }
@@ -146,6 +125,17 @@ class OFTableStatusVer14 implements OFTableStatus {
     public OFTableStatus.Builder setReason(OFTableReason reason) {
         this.reason = reason;
         this.reasonSet = true;
+        return this;
+    }
+    @Override
+    public long getRole() {
+        return role;
+    }
+
+    @Override
+    public OFTableStatus.Builder setRole(long role) {
+        this.role = role;
+        this.roleSet = true;
         return this;
     }
     @Override
@@ -160,14 +150,24 @@ class OFTableStatusVer14 implements OFTableStatus {
         return this;
     }
     @Override
-    public long getRole() {
-        return role;
+    public OFType getType() {
+        return OFType.TABLE_STATUS;
     }
 
     @Override
-    public OFTableStatus.Builder setRole(long role) {
-        this.role = role;
-        this.roleSet = true;
+    public OFVersion getVersion() {
+        return OFVersion.OF_14;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFTableStatus.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 
@@ -206,27 +206,6 @@ class OFTableStatusVer14 implements OFTableStatus {
         private OFTableDesc table;
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_14;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.TABLE_STATUS;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFTableStatus.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
-        return this;
-    }
-    @Override
     public OFTableReason getReason() {
         return reason;
     }
@@ -235,6 +214,17 @@ class OFTableStatusVer14 implements OFTableStatus {
     public OFTableStatus.Builder setReason(OFTableReason reason) {
         this.reason = reason;
         this.reasonSet = true;
+        return this;
+    }
+    @Override
+    public long getRole() {
+        return role;
+    }
+
+    @Override
+    public OFTableStatus.Builder setRole(long role) {
+        this.role = role;
+        this.roleSet = true;
         return this;
     }
     @Override
@@ -249,14 +239,24 @@ class OFTableStatusVer14 implements OFTableStatus {
         return this;
     }
     @Override
-    public long getRole() {
-        return role;
+    public OFType getType() {
+        return OFType.TABLE_STATUS;
     }
 
     @Override
-    public OFTableStatus.Builder setRole(long role) {
-        this.role = role;
-        this.roleSet = true;
+    public OFVersion getVersion() {
+        return OFVersion.OF_14;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFTableStatus.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 //

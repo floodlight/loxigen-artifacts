@@ -34,28 +34,12 @@ public class OFErrorMsgsVer15 implements OFErrorMsgs {
 
 
 
+    public OFAsyncConfigFailedErrorMsg.Builder buildAsyncConfigFailedErrorMsg() {
+        return new OFAsyncConfigFailedErrorMsgVer15.Builder().setXid(nextXid());
+    }
+
     public OFBadActionErrorMsg.Builder buildBadActionErrorMsg() {
         return new OFBadActionErrorMsgVer15.Builder().setXid(nextXid());
-    }
-
-    public OFBadRequestErrorMsg.Builder buildBadRequestErrorMsg() {
-        return new OFBadRequestErrorMsgVer15.Builder().setXid(nextXid());
-    }
-
-    public OFFlowModFailedErrorMsg.Builder buildFlowModFailedErrorMsg() {
-        return new OFFlowModFailedErrorMsgVer15.Builder().setXid(nextXid());
-    }
-
-    public OFHelloFailedErrorMsg.Builder buildHelloFailedErrorMsg() {
-        return new OFHelloFailedErrorMsgVer15.Builder().setXid(nextXid());
-    }
-
-    public OFPortModFailedErrorMsg.Builder buildPortModFailedErrorMsg() {
-        return new OFPortModFailedErrorMsgVer15.Builder().setXid(nextXid());
-    }
-
-    public OFQueueOpFailedErrorMsg.Builder buildQueueOpFailedErrorMsg() {
-        return new OFQueueOpFailedErrorMsgVer15.Builder().setXid(nextXid());
     }
 
     public OFBadInstructionErrorMsg.Builder buildBadInstructionErrorMsg() {
@@ -66,20 +50,12 @@ public class OFErrorMsgsVer15 implements OFErrorMsgs {
         return new OFBadMatchErrorMsgVer15.Builder().setXid(nextXid());
     }
 
-    public OFGroupModFailedErrorMsg.Builder buildGroupModFailedErrorMsg() {
-        return new OFGroupModFailedErrorMsgVer15.Builder().setXid(nextXid());
+    public OFBadPropertyErrorMsg.Builder buildBadPropertyErrorMsg() {
+        return new OFBadPropertyErrorMsgVer15.Builder().setXid(nextXid());
     }
 
-    public OFSwitchConfigFailedErrorMsg.Builder buildSwitchConfigFailedErrorMsg() {
-        return new OFSwitchConfigFailedErrorMsgVer15.Builder().setXid(nextXid());
-    }
-
-    public OFTableModFailedErrorMsg.Builder buildTableModFailedErrorMsg() {
-        return new OFTableModFailedErrorMsgVer15.Builder().setXid(nextXid());
-    }
-
-    public OFRoleRequestFailedErrorMsg.Builder buildRoleRequestFailedErrorMsg() {
-        return new OFRoleRequestFailedErrorMsgVer15.Builder().setXid(nextXid());
+    public OFBadRequestErrorMsg.Builder buildBadRequestErrorMsg() {
+        return new OFBadRequestErrorMsgVer15.Builder().setXid(nextXid());
     }
 
     public OFBsnError.Builder buildBsnError() {
@@ -90,28 +66,52 @@ public class OFErrorMsgsVer15 implements OFErrorMsgs {
         return new OFBsnGentableErrorVer15.Builder().setXid(nextXid());
     }
 
+    public OFBundleFailedErrorMsg.Builder buildBundleFailedErrorMsg() {
+        return new OFBundleFailedErrorMsgVer15.Builder().setXid(nextXid());
+    }
+
+    public OFFlowModFailedErrorMsg.Builder buildFlowModFailedErrorMsg() {
+        return new OFFlowModFailedErrorMsgVer15.Builder().setXid(nextXid());
+    }
+
+    public OFFlowMonitorFailedErrorMsg.Builder buildFlowMonitorFailedErrorMsg() {
+        return new OFFlowMonitorFailedErrorMsgVer15.Builder().setXid(nextXid());
+    }
+
+    public OFGroupModFailedErrorMsg.Builder buildGroupModFailedErrorMsg() {
+        return new OFGroupModFailedErrorMsgVer15.Builder().setXid(nextXid());
+    }
+
+    public OFHelloFailedErrorMsg.Builder buildHelloFailedErrorMsg() {
+        return new OFHelloFailedErrorMsgVer15.Builder().setXid(nextXid());
+    }
+
     public OFMeterModFailedErrorMsg.Builder buildMeterModFailedErrorMsg() {
         return new OFMeterModFailedErrorMsgVer15.Builder().setXid(nextXid());
+    }
+
+    public OFPortModFailedErrorMsg.Builder buildPortModFailedErrorMsg() {
+        return new OFPortModFailedErrorMsgVer15.Builder().setXid(nextXid());
+    }
+
+    public OFQueueOpFailedErrorMsg.Builder buildQueueOpFailedErrorMsg() {
+        return new OFQueueOpFailedErrorMsgVer15.Builder().setXid(nextXid());
+    }
+
+    public OFRoleRequestFailedErrorMsg.Builder buildRoleRequestFailedErrorMsg() {
+        return new OFRoleRequestFailedErrorMsgVer15.Builder().setXid(nextXid());
+    }
+
+    public OFSwitchConfigFailedErrorMsg.Builder buildSwitchConfigFailedErrorMsg() {
+        return new OFSwitchConfigFailedErrorMsgVer15.Builder().setXid(nextXid());
     }
 
     public OFTableFeaturesFailedErrorMsg.Builder buildTableFeaturesFailedErrorMsg() {
         return new OFTableFeaturesFailedErrorMsgVer15.Builder().setXid(nextXid());
     }
 
-    public OFAsyncConfigFailedErrorMsg.Builder buildAsyncConfigFailedErrorMsg() {
-        return new OFAsyncConfigFailedErrorMsgVer15.Builder().setXid(nextXid());
-    }
-
-    public OFBadPropertyErrorMsg.Builder buildBadPropertyErrorMsg() {
-        return new OFBadPropertyErrorMsgVer15.Builder().setXid(nextXid());
-    }
-
-    public OFBundleFailedErrorMsg.Builder buildBundleFailedErrorMsg() {
-        return new OFBundleFailedErrorMsgVer15.Builder().setXid(nextXid());
-    }
-
-    public OFFlowMonitorFailedErrorMsg.Builder buildFlowMonitorFailedErrorMsg() {
-        return new OFFlowMonitorFailedErrorMsgVer15.Builder().setXid(nextXid());
+    public OFTableModFailedErrorMsg.Builder buildTableModFailedErrorMsg() {
+        return new OFTableModFailedErrorMsgVer15.Builder().setXid(nextXid());
     }
 
     public OFMessageReader<OFErrorMsg> getReader() {

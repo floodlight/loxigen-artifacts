@@ -29,37 +29,37 @@ import java.util.Set;
 import io.netty.buffer.ByteBuf;
 
 public interface OFBsnSetPktinSuppressionRequest extends OFObject, OFBsnHeader, OFRequest<OFBsnSetPktinSuppressionReply> {
-    OFVersion getVersion();
-    OFType getType();
-    long getXid();
-    long getExperimenter();
-    long getSubtype();
-    boolean isEnabled();
-    int getIdleTimeout();
-    int getHardTimeout();
-    int getPriority();
     U64 getCookie();
+    boolean isEnabled();
+    long getExperimenter();
+    int getHardTimeout();
+    int getIdleTimeout();
+    int getPriority();
+    long getSubtype();
+    OFType getType();
+    OFVersion getVersion();
+    long getXid();
 
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();
     public interface Builder extends OFBsnHeader.Builder {
         OFBsnSetPktinSuppressionRequest build();
-        OFVersion getVersion();
-        OFType getType();
-        long getXid();
-        Builder setXid(long xid);
-        long getExperimenter();
-        long getSubtype();
-        boolean isEnabled();
-        Builder setEnabled(boolean enabled);
-        int getIdleTimeout();
-        Builder setIdleTimeout(int idleTimeout);
-        int getHardTimeout();
-        Builder setHardTimeout(int hardTimeout);
-        int getPriority();
-        Builder setPriority(int priority);
         U64 getCookie();
         Builder setCookie(U64 cookie);
+        boolean isEnabled();
+        Builder setEnabled(boolean enabled);
+        long getExperimenter();
+        int getHardTimeout();
+        Builder setHardTimeout(int hardTimeout);
+        int getIdleTimeout();
+        Builder setIdleTimeout(int idleTimeout);
+        int getPriority();
+        Builder setPriority(int priority);
+        long getSubtype();
+        OFType getType();
+        OFVersion getVersion();
+        long getXid();
+        Builder setXid(long xid);
     }
 }

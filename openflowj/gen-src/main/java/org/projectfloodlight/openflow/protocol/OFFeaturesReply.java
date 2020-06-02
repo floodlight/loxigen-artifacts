@@ -30,42 +30,42 @@ import java.util.List;
 import io.netty.buffer.ByteBuf;
 
 public interface OFFeaturesReply extends OFObject, OFMessage {
-    OFVersion getVersion();
-    OFType getType();
-    long getXid();
+    Set<OFActionType> getActions() throws UnsupportedOperationException;
+    OFAuxId getAuxiliaryId() throws UnsupportedOperationException;
+    Set<OFCapabilities> getCapabilities();
     DatapathId getDatapathId();
     long getNBuffers();
     short getNTables();
-    OFAuxId getAuxiliaryId() throws UnsupportedOperationException;
-    Set<OFCapabilities> getCapabilities();
-    long getReserved() throws UnsupportedOperationException;
-    Set<OFActionType> getActions() throws UnsupportedOperationException;
     List<OFPortDesc> getPorts() throws UnsupportedOperationException;
+    long getReserved() throws UnsupportedOperationException;
+    OFType getType();
+    OFVersion getVersion();
+    long getXid();
 
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();
     public interface Builder extends OFMessage.Builder {
         OFFeaturesReply build();
-        OFVersion getVersion();
-        OFType getType();
-        long getXid();
-        Builder setXid(long xid);
+        Set<OFActionType> getActions() throws UnsupportedOperationException;
+        Builder setActions(Set<OFActionType> actions) throws UnsupportedOperationException;
+        OFAuxId getAuxiliaryId() throws UnsupportedOperationException;
+        Builder setAuxiliaryId(OFAuxId auxiliaryId) throws UnsupportedOperationException;
+        Set<OFCapabilities> getCapabilities();
+        Builder setCapabilities(Set<OFCapabilities> capabilities);
         DatapathId getDatapathId();
         Builder setDatapathId(DatapathId datapathId);
         long getNBuffers();
         Builder setNBuffers(long nBuffers);
         short getNTables();
         Builder setNTables(short nTables);
-        OFAuxId getAuxiliaryId() throws UnsupportedOperationException;
-        Builder setAuxiliaryId(OFAuxId auxiliaryId) throws UnsupportedOperationException;
-        Set<OFCapabilities> getCapabilities();
-        Builder setCapabilities(Set<OFCapabilities> capabilities);
-        long getReserved() throws UnsupportedOperationException;
-        Builder setReserved(long reserved) throws UnsupportedOperationException;
-        Set<OFActionType> getActions() throws UnsupportedOperationException;
-        Builder setActions(Set<OFActionType> actions) throws UnsupportedOperationException;
         List<OFPortDesc> getPorts() throws UnsupportedOperationException;
         Builder setPorts(List<OFPortDesc> ports) throws UnsupportedOperationException;
+        long getReserved() throws UnsupportedOperationException;
+        Builder setReserved(long reserved) throws UnsupportedOperationException;
+        OFType getType();
+        OFVersion getVersion();
+        long getXid();
+        Builder setXid(long xid);
     }
 }

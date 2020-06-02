@@ -61,28 +61,8 @@ class OFBsnGetL2TableReplyVer10 implements OFBsnGetL2TableReply {
 
     // Accessors for OF message fields
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_10;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.EXPERIMENTER;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
     public long getExperimenter() {
         return 0x5c16c7L;
-    }
-
-    @Override
-    public long getSubtype() {
-        return 0xeL;
     }
 
     @Override
@@ -93,6 +73,26 @@ class OFBsnGetL2TableReplyVer10 implements OFBsnGetL2TableReply {
     @Override
     public int getL2TablePriority() {
         return l2TablePriority;
+    }
+
+    @Override
+    public long getSubtype() {
+        return 0xeL;
+    }
+
+    @Override
+    public OFType getType() {
+        return OFType.EXPERIMENTER;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_10;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
     }
 
 
@@ -117,34 +117,8 @@ class OFBsnGetL2TableReplyVer10 implements OFBsnGetL2TableReply {
         }
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_10;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.EXPERIMENTER;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFBsnGetL2TableReply.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
-        return this;
-    }
-    @Override
     public long getExperimenter() {
         return 0x5c16c7L;
-    }
-
-    @Override
-    public long getSubtype() {
-        return 0xeL;
     }
 
     @Override
@@ -167,6 +141,32 @@ class OFBsnGetL2TableReplyVer10 implements OFBsnGetL2TableReply {
     public OFBsnGetL2TableReply.Builder setL2TablePriority(int l2TablePriority) {
         this.l2TablePriority = l2TablePriority;
         this.l2TablePrioritySet = true;
+        return this;
+    }
+    @Override
+    public long getSubtype() {
+        return 0xeL;
+    }
+
+    @Override
+    public OFType getType() {
+        return OFType.EXPERIMENTER;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_10;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFBsnGetL2TableReply.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 
@@ -197,34 +197,8 @@ class OFBsnGetL2TableReplyVer10 implements OFBsnGetL2TableReply {
         private int l2TablePriority;
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_10;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.EXPERIMENTER;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFBsnGetL2TableReply.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
-        return this;
-    }
-    @Override
     public long getExperimenter() {
         return 0x5c16c7L;
-    }
-
-    @Override
-    public long getSubtype() {
-        return 0xeL;
     }
 
     @Override
@@ -247,6 +221,32 @@ class OFBsnGetL2TableReplyVer10 implements OFBsnGetL2TableReply {
     public OFBsnGetL2TableReply.Builder setL2TablePriority(int l2TablePriority) {
         this.l2TablePriority = l2TablePriority;
         this.l2TablePrioritySet = true;
+        return this;
+    }
+    @Override
+    public long getSubtype() {
+        return 0xeL;
+    }
+
+    @Override
+    public OFType getType() {
+        return OFType.EXPERIMENTER;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_10;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFBsnGetL2TableReply.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 //

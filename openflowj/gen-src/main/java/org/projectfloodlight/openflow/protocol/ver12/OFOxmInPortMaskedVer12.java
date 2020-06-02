@@ -64,6 +64,11 @@ class OFOxmInPortMaskedVer12 implements OFOxmInPortMasked {
 
     // Accessors for OF message fields
     @Override
+    public OFPort getMask() {
+        return mask;
+    }
+
+    @Override
     public long getTypeLen() {
         return 0x80000108L;
     }
@@ -71,21 +76,6 @@ class OFOxmInPortMaskedVer12 implements OFOxmInPortMasked {
     @Override
     public OFPort getValue() {
         return value;
-    }
-
-    @Override
-    public OFPort getMask() {
-        return mask;
-    }
-
-    @Override
-    public MatchField<OFPort> getMatchField() {
-        return MatchField.IN_PORT;
-    }
-
-    @Override
-    public boolean isMasked() {
-        return true;
     }
 
     public OFOxm<OFPort> getCanonical() {
@@ -96,6 +86,16 @@ class OFOxmInPortMaskedVer12 implements OFOxmInPortMasked {
         } else {
             return this;
         }
+    }
+
+    @Override
+    public boolean isMasked() {
+        return true;
+    }
+
+    @Override
+    public MatchField<OFPort> getMatchField() {
+        return MatchField.IN_PORT;
     }
 
     @Override
@@ -123,6 +123,17 @@ class OFOxmInPortMaskedVer12 implements OFOxmInPortMasked {
         }
 
     @Override
+    public OFPort getMask() {
+        return mask;
+    }
+
+    @Override
+    public OFOxmInPortMasked.Builder setMask(OFPort mask) {
+        this.mask = mask;
+        this.maskSet = true;
+        return this;
+    }
+    @Override
     public long getTypeLen() {
         return 0x80000108L;
     }
@@ -139,19 +150,8 @@ class OFOxmInPortMaskedVer12 implements OFOxmInPortMasked {
         return this;
     }
     @Override
-    public OFPort getMask() {
-        return mask;
-    }
-
-    @Override
-    public OFOxmInPortMasked.Builder setMask(OFPort mask) {
-        this.mask = mask;
-        this.maskSet = true;
-        return this;
-    }
-    @Override
-    public MatchField<OFPort> getMatchField() {
-        return MatchField.IN_PORT;
+    public OFOxm<OFPort> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.2");
     }
 
     @Override
@@ -160,8 +160,8 @@ class OFOxmInPortMaskedVer12 implements OFOxmInPortMasked {
     }
 
     @Override
-    public OFOxm<OFPort> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.2");
+    public MatchField<OFPort> getMatchField() {
+        return MatchField.IN_PORT;
     }
 
     @Override
@@ -197,6 +197,17 @@ class OFOxmInPortMaskedVer12 implements OFOxmInPortMasked {
         private OFPort mask;
 
     @Override
+    public OFPort getMask() {
+        return mask;
+    }
+
+    @Override
+    public OFOxmInPortMasked.Builder setMask(OFPort mask) {
+        this.mask = mask;
+        this.maskSet = true;
+        return this;
+    }
+    @Override
     public long getTypeLen() {
         return 0x80000108L;
     }
@@ -213,19 +224,8 @@ class OFOxmInPortMaskedVer12 implements OFOxmInPortMasked {
         return this;
     }
     @Override
-    public OFPort getMask() {
-        return mask;
-    }
-
-    @Override
-    public OFOxmInPortMasked.Builder setMask(OFPort mask) {
-        this.mask = mask;
-        this.maskSet = true;
-        return this;
-    }
-    @Override
-    public MatchField<OFPort> getMatchField() {
-        return MatchField.IN_PORT;
+    public OFOxm<OFPort> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.2");
     }
 
     @Override
@@ -234,8 +234,8 @@ class OFOxmInPortMaskedVer12 implements OFOxmInPortMasked {
     }
 
     @Override
-    public OFOxm<OFPort> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.2");
+    public MatchField<OFPort> getMatchField() {
+        return MatchField.IN_PORT;
     }
 
     @Override

@@ -61,13 +61,13 @@ class OFPortDescPropRecirculateVer15 implements OFPortDescPropRecirculate {
 
     // Accessors for OF message fields
     @Override
-    public int getType() {
-        return 0x4;
+    public byte[] getPortNos() {
+        return portNos;
     }
 
     @Override
-    public byte[] getPortNos() {
-        return portNos;
+    public int getType() {
+        return 0x4;
     }
 
     @Override
@@ -93,11 +93,6 @@ class OFPortDescPropRecirculateVer15 implements OFPortDescPropRecirculate {
         }
 
     @Override
-    public int getType() {
-        return 0x4;
-    }
-
-    @Override
     public byte[] getPortNos() {
         return portNos;
     }
@@ -108,6 +103,11 @@ class OFPortDescPropRecirculateVer15 implements OFPortDescPropRecirculate {
         this.portNosSet = true;
         return this;
     }
+    @Override
+    public int getType() {
+        return 0x4;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_15;
@@ -135,11 +135,6 @@ class OFPortDescPropRecirculateVer15 implements OFPortDescPropRecirculate {
         private byte[] portNos;
 
     @Override
-    public int getType() {
-        return 0x4;
-    }
-
-    @Override
     public byte[] getPortNos() {
         return portNos;
     }
@@ -150,6 +145,11 @@ class OFPortDescPropRecirculateVer15 implements OFPortDescPropRecirculate {
         this.portNosSet = true;
         return this;
     }
+    @Override
+    public int getType() {
+        return 0x4;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_15;

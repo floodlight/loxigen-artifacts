@@ -58,8 +58,8 @@ class OFPortDescPropBsnGenerationIdVer15 implements OFPortDescPropBsnGenerationI
 
     // Accessors for OF message fields
     @Override
-    public int getType() {
-        return 0xffff;
+    public long getExpType() {
+        return 0x1L;
     }
 
     @Override
@@ -68,13 +68,13 @@ class OFPortDescPropBsnGenerationIdVer15 implements OFPortDescPropBsnGenerationI
     }
 
     @Override
-    public long getExpType() {
-        return 0x1L;
+    public U64 getGenerationId() {
+        return generationId;
     }
 
     @Override
-    public U64 getGenerationId() {
-        return generationId;
+    public int getType() {
+        return 0xffff;
     }
 
     @Override
@@ -100,16 +100,6 @@ class OFPortDescPropBsnGenerationIdVer15 implements OFPortDescPropBsnGenerationI
         }
 
     @Override
-    public int getType() {
-        return 0xffff;
-    }
-
-    @Override
-    public long getExperimenter() {
-        return 0x5c16c7L;
-    }
-
-    @Override
     public long getExpType() {
         return 0x1L;
     }
@@ -118,6 +108,11 @@ class OFPortDescPropBsnGenerationIdVer15 implements OFPortDescPropBsnGenerationI
     public OFPortDescPropBsnGenerationId.Builder setExpType(long expType) {
             throw new UnsupportedOperationException("Property expType is not writeable");
     }
+    @Override
+    public long getExperimenter() {
+        return 0x5c16c7L;
+    }
+
     @Override
     public U64 getGenerationId() {
         return generationId;
@@ -129,6 +124,11 @@ class OFPortDescPropBsnGenerationIdVer15 implements OFPortDescPropBsnGenerationI
         this.generationIdSet = true;
         return this;
     }
+    @Override
+    public int getType() {
+        return 0xffff;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_15;
@@ -156,16 +156,6 @@ class OFPortDescPropBsnGenerationIdVer15 implements OFPortDescPropBsnGenerationI
         private U64 generationId;
 
     @Override
-    public int getType() {
-        return 0xffff;
-    }
-
-    @Override
-    public long getExperimenter() {
-        return 0x5c16c7L;
-    }
-
-    @Override
     public long getExpType() {
         return 0x1L;
     }
@@ -174,6 +164,11 @@ class OFPortDescPropBsnGenerationIdVer15 implements OFPortDescPropBsnGenerationI
     public OFPortDescPropBsnGenerationId.Builder setExpType(long expType) {
             throw new UnsupportedOperationException("Property expType is not writeable");
     }
+    @Override
+    public long getExperimenter() {
+        return 0x5c16c7L;
+    }
+
     @Override
     public U64 getGenerationId() {
         return generationId;
@@ -185,6 +180,11 @@ class OFPortDescPropBsnGenerationIdVer15 implements OFPortDescPropBsnGenerationI
         this.generationIdSet = true;
         return this;
     }
+    @Override
+    public int getType() {
+        return 0xffff;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_15;

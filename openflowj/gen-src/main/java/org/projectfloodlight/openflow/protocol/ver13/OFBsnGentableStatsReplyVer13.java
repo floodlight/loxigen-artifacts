@@ -72,28 +72,8 @@ class OFBsnGentableStatsReplyVer13 implements OFBsnGentableStatsReply {
 
     // Accessors for OF message fields
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_13;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.STATS_REPLY;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFStatsType getStatsType() {
-        return OFStatsType.EXPERIMENTER;
-    }
-
-    @Override
-    public Set<OFStatsReplyFlags> getFlags() {
-        return flags;
+    public List<OFBsnGentableStatsEntry> getEntries() {
+        return entries;
     }
 
     @Override
@@ -102,13 +82,33 @@ class OFBsnGentableStatsReplyVer13 implements OFBsnGentableStatsReply {
     }
 
     @Override
+    public Set<OFStatsReplyFlags> getFlags() {
+        return flags;
+    }
+
+    @Override
+    public OFStatsType getStatsType() {
+        return OFStatsType.EXPERIMENTER;
+    }
+
+    @Override
     public long getSubtype() {
         return 0x7L;
     }
 
     @Override
-    public List<OFBsnGentableStatsEntry> getEntries() {
-        return entries;
+    public OFType getType() {
+        return OFType.STATS_REPLY;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_13;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
     }
 
 
@@ -133,29 +133,19 @@ class OFBsnGentableStatsReplyVer13 implements OFBsnGentableStatsReply {
         }
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_13;
+    public List<OFBsnGentableStatsEntry> getEntries() {
+        return entries;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.STATS_REPLY;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFBsnGentableStatsReply.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
+    public OFBsnGentableStatsReply.Builder setEntries(List<OFBsnGentableStatsEntry> entries) {
+        this.entries = entries;
+        this.entriesSet = true;
         return this;
     }
     @Override
-    public OFStatsType getStatsType() {
-        return OFStatsType.EXPERIMENTER;
+    public long getExperimenter() {
+        return 0x5c16c7L;
     }
 
     @Override
@@ -170,8 +160,8 @@ class OFBsnGentableStatsReplyVer13 implements OFBsnGentableStatsReply {
         return this;
     }
     @Override
-    public long getExperimenter() {
-        return 0x5c16c7L;
+    public OFStatsType getStatsType() {
+        return OFStatsType.EXPERIMENTER;
     }
 
     @Override
@@ -180,14 +170,24 @@ class OFBsnGentableStatsReplyVer13 implements OFBsnGentableStatsReply {
     }
 
     @Override
-    public List<OFBsnGentableStatsEntry> getEntries() {
-        return entries;
+    public OFType getType() {
+        return OFType.STATS_REPLY;
     }
 
     @Override
-    public OFBsnGentableStatsReply.Builder setEntries(List<OFBsnGentableStatsEntry> entries) {
-        this.entries = entries;
-        this.entriesSet = true;
+    public OFVersion getVersion() {
+        return OFVersion.OF_13;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFBsnGentableStatsReply.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 
@@ -222,29 +222,19 @@ class OFBsnGentableStatsReplyVer13 implements OFBsnGentableStatsReply {
         private List<OFBsnGentableStatsEntry> entries;
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_13;
+    public List<OFBsnGentableStatsEntry> getEntries() {
+        return entries;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.STATS_REPLY;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFBsnGentableStatsReply.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
+    public OFBsnGentableStatsReply.Builder setEntries(List<OFBsnGentableStatsEntry> entries) {
+        this.entries = entries;
+        this.entriesSet = true;
         return this;
     }
     @Override
-    public OFStatsType getStatsType() {
-        return OFStatsType.EXPERIMENTER;
+    public long getExperimenter() {
+        return 0x5c16c7L;
     }
 
     @Override
@@ -259,8 +249,8 @@ class OFBsnGentableStatsReplyVer13 implements OFBsnGentableStatsReply {
         return this;
     }
     @Override
-    public long getExperimenter() {
-        return 0x5c16c7L;
+    public OFStatsType getStatsType() {
+        return OFStatsType.EXPERIMENTER;
     }
 
     @Override
@@ -269,14 +259,24 @@ class OFBsnGentableStatsReplyVer13 implements OFBsnGentableStatsReply {
     }
 
     @Override
-    public List<OFBsnGentableStatsEntry> getEntries() {
-        return entries;
+    public OFType getType() {
+        return OFType.STATS_REPLY;
     }
 
     @Override
-    public OFBsnGentableStatsReply.Builder setEntries(List<OFBsnGentableStatsEntry> entries) {
-        this.entries = entries;
-        this.entriesSet = true;
+    public OFVersion getVersion() {
+        return OFVersion.OF_13;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFBsnGentableStatsReply.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 //

@@ -122,18 +122,28 @@ class OFPortStatsEntryVer15 implements OFPortStatsEntry {
 
     // Accessors for OF message fields
     @Override
+    public U64 getCollisions()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property collisions not supported in version 1.5");
+    }
+
+    @Override
+    public long getDurationNsec() {
+        return durationNsec;
+    }
+
+    @Override
+    public long getDurationSec() {
+        return durationSec;
+    }
+
+    @Override
     public OFPort getPortNo() {
         return portNo;
     }
 
     @Override
-    public U64 getRxPackets() {
-        return rxPackets;
-    }
-
-    @Override
-    public U64 getTxPackets() {
-        return txPackets;
+    public List<OFPortStatsProp> getProperties() {
+        return properties;
     }
 
     @Override
@@ -142,8 +152,8 @@ class OFPortStatsEntryVer15 implements OFPortStatsEntry {
     }
 
     @Override
-    public U64 getTxBytes() {
-        return txBytes;
+    public U64 getRxCrcErr()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property rxCrcErr not supported in version 1.5");
     }
 
     @Override
@@ -152,18 +162,8 @@ class OFPortStatsEntryVer15 implements OFPortStatsEntry {
     }
 
     @Override
-    public U64 getTxDropped() {
-        return txDropped;
-    }
-
-    @Override
     public U64 getRxErrors() {
         return rxErrors;
-    }
-
-    @Override
-    public U64 getTxErrors() {
-        return txErrors;
     }
 
     @Override
@@ -177,28 +177,28 @@ class OFPortStatsEntryVer15 implements OFPortStatsEntry {
     }
 
     @Override
-    public U64 getRxCrcErr()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property rxCrcErr not supported in version 1.5");
+    public U64 getRxPackets() {
+        return rxPackets;
     }
 
     @Override
-    public U64 getCollisions()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property collisions not supported in version 1.5");
+    public U64 getTxBytes() {
+        return txBytes;
     }
 
     @Override
-    public long getDurationSec() {
-        return durationSec;
+    public U64 getTxDropped() {
+        return txDropped;
     }
 
     @Override
-    public long getDurationNsec() {
-        return durationNsec;
+    public U64 getTxErrors() {
+        return txErrors;
     }
 
     @Override
-    public List<OFPortStatsProp> getProperties() {
-        return properties;
+    public U64 getTxPackets() {
+        return txPackets;
     }
 
     @Override
@@ -246,6 +246,37 @@ class OFPortStatsEntryVer15 implements OFPortStatsEntry {
         }
 
     @Override
+    public U64 getCollisions()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property collisions not supported in version 1.5");
+    }
+
+    @Override
+    public OFPortStatsEntry.Builder setCollisions(U64 collisions) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property collisions not supported in version 1.5");
+    }
+    @Override
+    public long getDurationNsec() {
+        return durationNsec;
+    }
+
+    @Override
+    public OFPortStatsEntry.Builder setDurationNsec(long durationNsec) {
+        this.durationNsec = durationNsec;
+        this.durationNsecSet = true;
+        return this;
+    }
+    @Override
+    public long getDurationSec() {
+        return durationSec;
+    }
+
+    @Override
+    public OFPortStatsEntry.Builder setDurationSec(long durationSec) {
+        this.durationSec = durationSec;
+        this.durationSecSet = true;
+        return this;
+    }
+    @Override
     public OFPort getPortNo() {
         return portNo;
     }
@@ -257,25 +288,14 @@ class OFPortStatsEntryVer15 implements OFPortStatsEntry {
         return this;
     }
     @Override
-    public U64 getRxPackets() {
-        return rxPackets;
+    public List<OFPortStatsProp> getProperties() {
+        return properties;
     }
 
     @Override
-    public OFPortStatsEntry.Builder setRxPackets(U64 rxPackets) {
-        this.rxPackets = rxPackets;
-        this.rxPacketsSet = true;
-        return this;
-    }
-    @Override
-    public U64 getTxPackets() {
-        return txPackets;
-    }
-
-    @Override
-    public OFPortStatsEntry.Builder setTxPackets(U64 txPackets) {
-        this.txPackets = txPackets;
-        this.txPacketsSet = true;
+    public OFPortStatsEntry.Builder setProperties(List<OFPortStatsProp> properties) {
+        this.properties = properties;
+        this.propertiesSet = true;
         return this;
     }
     @Override
@@ -290,15 +310,13 @@ class OFPortStatsEntryVer15 implements OFPortStatsEntry {
         return this;
     }
     @Override
-    public U64 getTxBytes() {
-        return txBytes;
+    public U64 getRxCrcErr()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property rxCrcErr not supported in version 1.5");
     }
 
     @Override
-    public OFPortStatsEntry.Builder setTxBytes(U64 txBytes) {
-        this.txBytes = txBytes;
-        this.txBytesSet = true;
-        return this;
+    public OFPortStatsEntry.Builder setRxCrcErr(U64 rxCrcErr) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property rxCrcErr not supported in version 1.5");
     }
     @Override
     public U64 getRxDropped() {
@@ -312,17 +330,6 @@ class OFPortStatsEntryVer15 implements OFPortStatsEntry {
         return this;
     }
     @Override
-    public U64 getTxDropped() {
-        return txDropped;
-    }
-
-    @Override
-    public OFPortStatsEntry.Builder setTxDropped(U64 txDropped) {
-        this.txDropped = txDropped;
-        this.txDroppedSet = true;
-        return this;
-    }
-    @Override
     public U64 getRxErrors() {
         return rxErrors;
     }
@@ -331,17 +338,6 @@ class OFPortStatsEntryVer15 implements OFPortStatsEntry {
     public OFPortStatsEntry.Builder setRxErrors(U64 rxErrors) {
         this.rxErrors = rxErrors;
         this.rxErrorsSet = true;
-        return this;
-    }
-    @Override
-    public U64 getTxErrors() {
-        return txErrors;
-    }
-
-    @Override
-    public OFPortStatsEntry.Builder setTxErrors(U64 txErrors) {
-        this.txErrors = txErrors;
-        this.txErrorsSet = true;
         return this;
     }
     @Override
@@ -363,54 +359,58 @@ class OFPortStatsEntryVer15 implements OFPortStatsEntry {
             throw new UnsupportedOperationException("Property rxOverErr not supported in version 1.5");
     }
     @Override
-    public U64 getRxCrcErr()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property rxCrcErr not supported in version 1.5");
+    public U64 getRxPackets() {
+        return rxPackets;
     }
 
     @Override
-    public OFPortStatsEntry.Builder setRxCrcErr(U64 rxCrcErr) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property rxCrcErr not supported in version 1.5");
-    }
-    @Override
-    public U64 getCollisions()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property collisions not supported in version 1.5");
-    }
-
-    @Override
-    public OFPortStatsEntry.Builder setCollisions(U64 collisions) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property collisions not supported in version 1.5");
-    }
-    @Override
-    public long getDurationSec() {
-        return durationSec;
-    }
-
-    @Override
-    public OFPortStatsEntry.Builder setDurationSec(long durationSec) {
-        this.durationSec = durationSec;
-        this.durationSecSet = true;
+    public OFPortStatsEntry.Builder setRxPackets(U64 rxPackets) {
+        this.rxPackets = rxPackets;
+        this.rxPacketsSet = true;
         return this;
     }
     @Override
-    public long getDurationNsec() {
-        return durationNsec;
+    public U64 getTxBytes() {
+        return txBytes;
     }
 
     @Override
-    public OFPortStatsEntry.Builder setDurationNsec(long durationNsec) {
-        this.durationNsec = durationNsec;
-        this.durationNsecSet = true;
+    public OFPortStatsEntry.Builder setTxBytes(U64 txBytes) {
+        this.txBytes = txBytes;
+        this.txBytesSet = true;
         return this;
     }
     @Override
-    public List<OFPortStatsProp> getProperties() {
-        return properties;
+    public U64 getTxDropped() {
+        return txDropped;
     }
 
     @Override
-    public OFPortStatsEntry.Builder setProperties(List<OFPortStatsProp> properties) {
-        this.properties = properties;
-        this.propertiesSet = true;
+    public OFPortStatsEntry.Builder setTxDropped(U64 txDropped) {
+        this.txDropped = txDropped;
+        this.txDroppedSet = true;
+        return this;
+    }
+    @Override
+    public U64 getTxErrors() {
+        return txErrors;
+    }
+
+    @Override
+    public OFPortStatsEntry.Builder setTxErrors(U64 txErrors) {
+        this.txErrors = txErrors;
+        this.txErrorsSet = true;
+        return this;
+    }
+    @Override
+    public U64 getTxPackets() {
+        return txPackets;
+    }
+
+    @Override
+    public OFPortStatsEntry.Builder setTxPackets(U64 txPackets) {
+        this.txPackets = txPackets;
+        this.txPacketsSet = true;
         return this;
     }
     @Override
@@ -502,6 +502,37 @@ class OFPortStatsEntryVer15 implements OFPortStatsEntry {
         private List<OFPortStatsProp> properties;
 
     @Override
+    public U64 getCollisions()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property collisions not supported in version 1.5");
+    }
+
+    @Override
+    public OFPortStatsEntry.Builder setCollisions(U64 collisions) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property collisions not supported in version 1.5");
+    }
+    @Override
+    public long getDurationNsec() {
+        return durationNsec;
+    }
+
+    @Override
+    public OFPortStatsEntry.Builder setDurationNsec(long durationNsec) {
+        this.durationNsec = durationNsec;
+        this.durationNsecSet = true;
+        return this;
+    }
+    @Override
+    public long getDurationSec() {
+        return durationSec;
+    }
+
+    @Override
+    public OFPortStatsEntry.Builder setDurationSec(long durationSec) {
+        this.durationSec = durationSec;
+        this.durationSecSet = true;
+        return this;
+    }
+    @Override
     public OFPort getPortNo() {
         return portNo;
     }
@@ -513,25 +544,14 @@ class OFPortStatsEntryVer15 implements OFPortStatsEntry {
         return this;
     }
     @Override
-    public U64 getRxPackets() {
-        return rxPackets;
+    public List<OFPortStatsProp> getProperties() {
+        return properties;
     }
 
     @Override
-    public OFPortStatsEntry.Builder setRxPackets(U64 rxPackets) {
-        this.rxPackets = rxPackets;
-        this.rxPacketsSet = true;
-        return this;
-    }
-    @Override
-    public U64 getTxPackets() {
-        return txPackets;
-    }
-
-    @Override
-    public OFPortStatsEntry.Builder setTxPackets(U64 txPackets) {
-        this.txPackets = txPackets;
-        this.txPacketsSet = true;
+    public OFPortStatsEntry.Builder setProperties(List<OFPortStatsProp> properties) {
+        this.properties = properties;
+        this.propertiesSet = true;
         return this;
     }
     @Override
@@ -546,15 +566,13 @@ class OFPortStatsEntryVer15 implements OFPortStatsEntry {
         return this;
     }
     @Override
-    public U64 getTxBytes() {
-        return txBytes;
+    public U64 getRxCrcErr()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property rxCrcErr not supported in version 1.5");
     }
 
     @Override
-    public OFPortStatsEntry.Builder setTxBytes(U64 txBytes) {
-        this.txBytes = txBytes;
-        this.txBytesSet = true;
-        return this;
+    public OFPortStatsEntry.Builder setRxCrcErr(U64 rxCrcErr) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property rxCrcErr not supported in version 1.5");
     }
     @Override
     public U64 getRxDropped() {
@@ -568,17 +586,6 @@ class OFPortStatsEntryVer15 implements OFPortStatsEntry {
         return this;
     }
     @Override
-    public U64 getTxDropped() {
-        return txDropped;
-    }
-
-    @Override
-    public OFPortStatsEntry.Builder setTxDropped(U64 txDropped) {
-        this.txDropped = txDropped;
-        this.txDroppedSet = true;
-        return this;
-    }
-    @Override
     public U64 getRxErrors() {
         return rxErrors;
     }
@@ -587,17 +594,6 @@ class OFPortStatsEntryVer15 implements OFPortStatsEntry {
     public OFPortStatsEntry.Builder setRxErrors(U64 rxErrors) {
         this.rxErrors = rxErrors;
         this.rxErrorsSet = true;
-        return this;
-    }
-    @Override
-    public U64 getTxErrors() {
-        return txErrors;
-    }
-
-    @Override
-    public OFPortStatsEntry.Builder setTxErrors(U64 txErrors) {
-        this.txErrors = txErrors;
-        this.txErrorsSet = true;
         return this;
     }
     @Override
@@ -619,54 +615,58 @@ class OFPortStatsEntryVer15 implements OFPortStatsEntry {
             throw new UnsupportedOperationException("Property rxOverErr not supported in version 1.5");
     }
     @Override
-    public U64 getRxCrcErr()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property rxCrcErr not supported in version 1.5");
+    public U64 getRxPackets() {
+        return rxPackets;
     }
 
     @Override
-    public OFPortStatsEntry.Builder setRxCrcErr(U64 rxCrcErr) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property rxCrcErr not supported in version 1.5");
-    }
-    @Override
-    public U64 getCollisions()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property collisions not supported in version 1.5");
-    }
-
-    @Override
-    public OFPortStatsEntry.Builder setCollisions(U64 collisions) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property collisions not supported in version 1.5");
-    }
-    @Override
-    public long getDurationSec() {
-        return durationSec;
-    }
-
-    @Override
-    public OFPortStatsEntry.Builder setDurationSec(long durationSec) {
-        this.durationSec = durationSec;
-        this.durationSecSet = true;
+    public OFPortStatsEntry.Builder setRxPackets(U64 rxPackets) {
+        this.rxPackets = rxPackets;
+        this.rxPacketsSet = true;
         return this;
     }
     @Override
-    public long getDurationNsec() {
-        return durationNsec;
+    public U64 getTxBytes() {
+        return txBytes;
     }
 
     @Override
-    public OFPortStatsEntry.Builder setDurationNsec(long durationNsec) {
-        this.durationNsec = durationNsec;
-        this.durationNsecSet = true;
+    public OFPortStatsEntry.Builder setTxBytes(U64 txBytes) {
+        this.txBytes = txBytes;
+        this.txBytesSet = true;
         return this;
     }
     @Override
-    public List<OFPortStatsProp> getProperties() {
-        return properties;
+    public U64 getTxDropped() {
+        return txDropped;
     }
 
     @Override
-    public OFPortStatsEntry.Builder setProperties(List<OFPortStatsProp> properties) {
-        this.properties = properties;
-        this.propertiesSet = true;
+    public OFPortStatsEntry.Builder setTxDropped(U64 txDropped) {
+        this.txDropped = txDropped;
+        this.txDroppedSet = true;
+        return this;
+    }
+    @Override
+    public U64 getTxErrors() {
+        return txErrors;
+    }
+
+    @Override
+    public OFPortStatsEntry.Builder setTxErrors(U64 txErrors) {
+        this.txErrors = txErrors;
+        this.txErrorsSet = true;
+        return this;
+    }
+    @Override
+    public U64 getTxPackets() {
+        return txPackets;
+    }
+
+    @Override
+    public OFPortStatsEntry.Builder setTxPackets(U64 txPackets) {
+        this.txPackets = txPackets;
+        this.txPacketsSet = true;
         return this;
     }
     @Override

@@ -45,9 +45,6 @@ abstract class OFActionIdVer15 {
             short type = bb.readShort();
             bb.readerIndex(start);
             switch(type) {
-               case (short) 0xffff:
-                   // discriminator value OFActionType.EXPERIMENTER=65535 for class OFActionIdExperimenterVer15
-                   return OFActionIdExperimenterVer15.READER.readFrom(bb);
                case (short) 0xc:
                    // discriminator value OFActionType.COPY_TTL_IN=12 for class OFActionIdCopyTtlInVer15
                    return OFActionIdCopyTtlInVer15.READER.readFrom(bb);
@@ -60,9 +57,15 @@ abstract class OFActionIdVer15 {
                case (short) 0x18:
                    // discriminator value OFActionType.DEC_NW_TTL=24 for class OFActionIdDecNwTtlVer15
                    return OFActionIdDecNwTtlVer15.READER.readFrom(bb);
+               case (short) 0xffff:
+                   // discriminator value OFActionType.EXPERIMENTER=65535 for class OFActionIdExperimenterVer15
+                   return OFActionIdExperimenterVer15.READER.readFrom(bb);
                case (short) 0x16:
                    // discriminator value OFActionType.GROUP=22 for class OFActionIdGroupVer15
                    return OFActionIdGroupVer15.READER.readFrom(bb);
+               case (short) 0x1d:
+                   // discriminator value OFActionType.METER=29 for class OFActionIdMeterVer15
+                   return OFActionIdMeterVer15.READER.readFrom(bb);
                case (short) 0x0:
                    // discriminator value OFActionType.OUTPUT=0 for class OFActionIdOutputVer15
                    return OFActionIdOutputVer15.READER.readFrom(bb);
@@ -96,9 +99,6 @@ abstract class OFActionIdVer15 {
                case (short) 0x15:
                    // discriminator value OFActionType.SET_QUEUE=21 for class OFActionIdSetQueueVer15
                    return OFActionIdSetQueueVer15.READER.readFrom(bb);
-               case (short) 0x1d:
-                   // discriminator value OFActionType.METER=29 for class OFActionIdMeterVer15
-                   return OFActionIdMeterVer15.READER.readFrom(bb);
                default:
                    throw new OFParseError("Unknown value for discriminator type of class OFActionIdVer15: " + type);
             }

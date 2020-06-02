@@ -72,28 +72,8 @@ class OFBsnVrfCounterStatsReplyVer13 implements OFBsnVrfCounterStatsReply {
 
     // Accessors for OF message fields
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_13;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.STATS_REPLY;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFStatsType getStatsType() {
-        return OFStatsType.EXPERIMENTER;
-    }
-
-    @Override
-    public Set<OFStatsReplyFlags> getFlags() {
-        return flags;
+    public List<OFBsnVrfCounterStatsEntry> getEntries() {
+        return entries;
     }
 
     @Override
@@ -102,13 +82,33 @@ class OFBsnVrfCounterStatsReplyVer13 implements OFBsnVrfCounterStatsReply {
     }
 
     @Override
+    public Set<OFStatsReplyFlags> getFlags() {
+        return flags;
+    }
+
+    @Override
+    public OFStatsType getStatsType() {
+        return OFStatsType.EXPERIMENTER;
+    }
+
+    @Override
     public long getSubtype() {
         return 0xfL;
     }
 
     @Override
-    public List<OFBsnVrfCounterStatsEntry> getEntries() {
-        return entries;
+    public OFType getType() {
+        return OFType.STATS_REPLY;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_13;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
     }
 
 
@@ -133,29 +133,19 @@ class OFBsnVrfCounterStatsReplyVer13 implements OFBsnVrfCounterStatsReply {
         }
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_13;
+    public List<OFBsnVrfCounterStatsEntry> getEntries() {
+        return entries;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.STATS_REPLY;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFBsnVrfCounterStatsReply.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
+    public OFBsnVrfCounterStatsReply.Builder setEntries(List<OFBsnVrfCounterStatsEntry> entries) {
+        this.entries = entries;
+        this.entriesSet = true;
         return this;
     }
     @Override
-    public OFStatsType getStatsType() {
-        return OFStatsType.EXPERIMENTER;
+    public long getExperimenter() {
+        return 0x5c16c7L;
     }
 
     @Override
@@ -170,8 +160,8 @@ class OFBsnVrfCounterStatsReplyVer13 implements OFBsnVrfCounterStatsReply {
         return this;
     }
     @Override
-    public long getExperimenter() {
-        return 0x5c16c7L;
+    public OFStatsType getStatsType() {
+        return OFStatsType.EXPERIMENTER;
     }
 
     @Override
@@ -180,14 +170,24 @@ class OFBsnVrfCounterStatsReplyVer13 implements OFBsnVrfCounterStatsReply {
     }
 
     @Override
-    public List<OFBsnVrfCounterStatsEntry> getEntries() {
-        return entries;
+    public OFType getType() {
+        return OFType.STATS_REPLY;
     }
 
     @Override
-    public OFBsnVrfCounterStatsReply.Builder setEntries(List<OFBsnVrfCounterStatsEntry> entries) {
-        this.entries = entries;
-        this.entriesSet = true;
+    public OFVersion getVersion() {
+        return OFVersion.OF_13;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFBsnVrfCounterStatsReply.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 
@@ -222,29 +222,19 @@ class OFBsnVrfCounterStatsReplyVer13 implements OFBsnVrfCounterStatsReply {
         private List<OFBsnVrfCounterStatsEntry> entries;
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_13;
+    public List<OFBsnVrfCounterStatsEntry> getEntries() {
+        return entries;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.STATS_REPLY;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFBsnVrfCounterStatsReply.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
+    public OFBsnVrfCounterStatsReply.Builder setEntries(List<OFBsnVrfCounterStatsEntry> entries) {
+        this.entries = entries;
+        this.entriesSet = true;
         return this;
     }
     @Override
-    public OFStatsType getStatsType() {
-        return OFStatsType.EXPERIMENTER;
+    public long getExperimenter() {
+        return 0x5c16c7L;
     }
 
     @Override
@@ -259,8 +249,8 @@ class OFBsnVrfCounterStatsReplyVer13 implements OFBsnVrfCounterStatsReply {
         return this;
     }
     @Override
-    public long getExperimenter() {
-        return 0x5c16c7L;
+    public OFStatsType getStatsType() {
+        return OFStatsType.EXPERIMENTER;
     }
 
     @Override
@@ -269,14 +259,24 @@ class OFBsnVrfCounterStatsReplyVer13 implements OFBsnVrfCounterStatsReply {
     }
 
     @Override
-    public List<OFBsnVrfCounterStatsEntry> getEntries() {
-        return entries;
+    public OFType getType() {
+        return OFType.STATS_REPLY;
     }
 
     @Override
-    public OFBsnVrfCounterStatsReply.Builder setEntries(List<OFBsnVrfCounterStatsEntry> entries) {
-        this.entries = entries;
-        this.entriesSet = true;
+    public OFVersion getVersion() {
+        return OFVersion.OF_13;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFBsnVrfCounterStatsReply.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 //

@@ -29,9 +29,9 @@ import io.netty.buffer.ByteBuf;
 
 public interface OFTableModPropVacancy extends OFObject, OFTableModProp {
     int getType();
+    short getVacancy();
     short getVacancyDown();
     short getVacancyUp();
-    short getVacancy();
     OFVersion getVersion();
 
     void writeTo(ByteBuf channelBuffer);
@@ -40,12 +40,12 @@ public interface OFTableModPropVacancy extends OFObject, OFTableModProp {
     public interface Builder extends OFTableModProp.Builder {
         OFTableModPropVacancy build();
         int getType();
+        short getVacancy();
+        Builder setVacancy(short vacancy);
         short getVacancyDown();
         Builder setVacancyDown(short vacancyDown);
         short getVacancyUp();
         Builder setVacancyUp(short vacancyUp);
-        short getVacancy();
-        Builder setVacancy(short vacancy);
         OFVersion getVersion();
     }
 }

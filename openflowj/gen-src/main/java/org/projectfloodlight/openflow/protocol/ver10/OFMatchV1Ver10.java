@@ -129,13 +129,8 @@ class OFMatchV1Ver10 implements OFMatchV1 {
 
     // Accessors for OF message fields
     @Override
-    public int getWildcards() {
-        return wildcards;
-    }
-
-    @Override
-    public OFPort getInPort() {
-        return inPort;
+    public MacAddress getEthDst() {
+        return ethDst;
     }
 
     @Override
@@ -144,23 +139,13 @@ class OFMatchV1Ver10 implements OFMatchV1 {
     }
 
     @Override
-    public MacAddress getEthDst() {
-        return ethDst;
-    }
-
-    @Override
-    public OFVlanVidMatch getVlanVid() {
-        return vlanVid;
-    }
-
-    @Override
-    public VlanPcp getVlanPcp() {
-        return vlanPcp;
-    }
-
-    @Override
     public EthType getEthType() {
         return ethType;
+    }
+
+    @Override
+    public OFPort getInPort() {
+        return inPort;
     }
 
     @Override
@@ -174,13 +159,18 @@ class OFMatchV1Ver10 implements OFMatchV1 {
     }
 
     @Override
+    public IPv4Address getIpv4Dst() {
+        return ipv4Dst;
+    }
+
+    @Override
     public IPv4Address getIpv4Src() {
         return ipv4Src;
     }
 
     @Override
-    public IPv4Address getIpv4Dst() {
-        return ipv4Dst;
+    public TransportPort getTcpDst() {
+        return tcpDst;
     }
 
     @Override
@@ -189,8 +179,18 @@ class OFMatchV1Ver10 implements OFMatchV1 {
     }
 
     @Override
-    public TransportPort getTcpDst() {
-        return tcpDst;
+    public VlanPcp getVlanPcp() {
+        return vlanPcp;
+    }
+
+    @Override
+    public OFVlanVidMatch getVlanVid() {
+        return vlanVid;
+    }
+
+    @Override
+    public int getWildcards() {
+        return wildcards;
     }
 
     @Override
@@ -654,25 +654,14 @@ class OFMatchV1Ver10 implements OFMatchV1 {
         }
 
     @Override
-    public int getWildcards() {
-        return wildcards;
+    public MacAddress getEthDst() {
+        return ethDst;
     }
 
     @Override
-    public OFMatchV1.Builder setWildcards(int wildcards) {
-        this.wildcards = wildcards;
-        this.wildcardsSet = true;
-        return this;
-    }
-    @Override
-    public OFPort getInPort() {
-        return inPort;
-    }
-
-    @Override
-    public OFMatchV1.Builder setInPort(OFPort inPort) {
-        this.inPort = inPort;
-        this.inPortSet = true;
+    public OFMatchV1.Builder setEthDst(MacAddress ethDst) {
+        this.ethDst = ethDst;
+        this.ethDstSet = true;
         return this;
     }
     @Override
@@ -687,39 +676,6 @@ class OFMatchV1Ver10 implements OFMatchV1 {
         return this;
     }
     @Override
-    public MacAddress getEthDst() {
-        return ethDst;
-    }
-
-    @Override
-    public OFMatchV1.Builder setEthDst(MacAddress ethDst) {
-        this.ethDst = ethDst;
-        this.ethDstSet = true;
-        return this;
-    }
-    @Override
-    public OFVlanVidMatch getVlanVid() {
-        return vlanVid;
-    }
-
-    @Override
-    public OFMatchV1.Builder setVlanVid(OFVlanVidMatch vlanVid) {
-        this.vlanVid = vlanVid;
-        this.vlanVidSet = true;
-        return this;
-    }
-    @Override
-    public VlanPcp getVlanPcp() {
-        return vlanPcp;
-    }
-
-    @Override
-    public OFMatchV1.Builder setVlanPcp(VlanPcp vlanPcp) {
-        this.vlanPcp = vlanPcp;
-        this.vlanPcpSet = true;
-        return this;
-    }
-    @Override
     public EthType getEthType() {
         return ethType;
     }
@@ -728,6 +684,17 @@ class OFMatchV1Ver10 implements OFMatchV1 {
     public OFMatchV1.Builder setEthType(EthType ethType) {
         this.ethType = ethType;
         this.ethTypeSet = true;
+        return this;
+    }
+    @Override
+    public OFPort getInPort() {
+        return inPort;
+    }
+
+    @Override
+    public OFMatchV1.Builder setInPort(OFPort inPort) {
+        this.inPort = inPort;
+        this.inPortSet = true;
         return this;
     }
     @Override
@@ -753,6 +720,17 @@ class OFMatchV1Ver10 implements OFMatchV1 {
         return this;
     }
     @Override
+    public IPv4Address getIpv4Dst() {
+        return ipv4Dst;
+    }
+
+    @Override
+    public OFMatchV1.Builder setIpv4Dst(IPv4Address ipv4Dst) {
+        this.ipv4Dst = ipv4Dst;
+        this.ipv4DstSet = true;
+        return this;
+    }
+    @Override
     public IPv4Address getIpv4Src() {
         return ipv4Src;
     }
@@ -764,14 +742,14 @@ class OFMatchV1Ver10 implements OFMatchV1 {
         return this;
     }
     @Override
-    public IPv4Address getIpv4Dst() {
-        return ipv4Dst;
+    public TransportPort getTcpDst() {
+        return tcpDst;
     }
 
     @Override
-    public OFMatchV1.Builder setIpv4Dst(IPv4Address ipv4Dst) {
-        this.ipv4Dst = ipv4Dst;
-        this.ipv4DstSet = true;
+    public OFMatchV1.Builder setTcpDst(TransportPort tcpDst) {
+        this.tcpDst = tcpDst;
+        this.tcpDstSet = true;
         return this;
     }
     @Override
@@ -786,14 +764,36 @@ class OFMatchV1Ver10 implements OFMatchV1 {
         return this;
     }
     @Override
-    public TransportPort getTcpDst() {
-        return tcpDst;
+    public VlanPcp getVlanPcp() {
+        return vlanPcp;
     }
 
     @Override
-    public OFMatchV1.Builder setTcpDst(TransportPort tcpDst) {
-        this.tcpDst = tcpDst;
-        this.tcpDstSet = true;
+    public OFMatchV1.Builder setVlanPcp(VlanPcp vlanPcp) {
+        this.vlanPcp = vlanPcp;
+        this.vlanPcpSet = true;
+        return this;
+    }
+    @Override
+    public OFVlanVidMatch getVlanVid() {
+        return vlanVid;
+    }
+
+    @Override
+    public OFMatchV1.Builder setVlanVid(OFVlanVidMatch vlanVid) {
+        this.vlanVid = vlanVid;
+        this.vlanVidSet = true;
+        return this;
+    }
+    @Override
+    public int getWildcards() {
+        return wildcards;
+    }
+
+    @Override
+    public OFMatchV1.Builder setWildcards(int wildcards) {
+        this.wildcards = wildcards;
+        this.wildcardsSet = true;
         return this;
     }
     @Override
@@ -1444,25 +1444,14 @@ class OFMatchV1Ver10 implements OFMatchV1 {
         private TransportPort tcpDst;
 
     @Override
-    public int getWildcards() {
-        return wildcards;
+    public MacAddress getEthDst() {
+        return ethDst;
     }
 
     @Override
-    public OFMatchV1.Builder setWildcards(int wildcards) {
-        this.wildcards = wildcards;
-        this.wildcardsSet = true;
-        return this;
-    }
-    @Override
-    public OFPort getInPort() {
-        return inPort;
-    }
-
-    @Override
-    public OFMatchV1.Builder setInPort(OFPort inPort) {
-        this.inPort = inPort;
-        this.inPortSet = true;
+    public OFMatchV1.Builder setEthDst(MacAddress ethDst) {
+        this.ethDst = ethDst;
+        this.ethDstSet = true;
         return this;
     }
     @Override
@@ -1477,39 +1466,6 @@ class OFMatchV1Ver10 implements OFMatchV1 {
         return this;
     }
     @Override
-    public MacAddress getEthDst() {
-        return ethDst;
-    }
-
-    @Override
-    public OFMatchV1.Builder setEthDst(MacAddress ethDst) {
-        this.ethDst = ethDst;
-        this.ethDstSet = true;
-        return this;
-    }
-    @Override
-    public OFVlanVidMatch getVlanVid() {
-        return vlanVid;
-    }
-
-    @Override
-    public OFMatchV1.Builder setVlanVid(OFVlanVidMatch vlanVid) {
-        this.vlanVid = vlanVid;
-        this.vlanVidSet = true;
-        return this;
-    }
-    @Override
-    public VlanPcp getVlanPcp() {
-        return vlanPcp;
-    }
-
-    @Override
-    public OFMatchV1.Builder setVlanPcp(VlanPcp vlanPcp) {
-        this.vlanPcp = vlanPcp;
-        this.vlanPcpSet = true;
-        return this;
-    }
-    @Override
     public EthType getEthType() {
         return ethType;
     }
@@ -1518,6 +1474,17 @@ class OFMatchV1Ver10 implements OFMatchV1 {
     public OFMatchV1.Builder setEthType(EthType ethType) {
         this.ethType = ethType;
         this.ethTypeSet = true;
+        return this;
+    }
+    @Override
+    public OFPort getInPort() {
+        return inPort;
+    }
+
+    @Override
+    public OFMatchV1.Builder setInPort(OFPort inPort) {
+        this.inPort = inPort;
+        this.inPortSet = true;
         return this;
     }
     @Override
@@ -1543,6 +1510,17 @@ class OFMatchV1Ver10 implements OFMatchV1 {
         return this;
     }
     @Override
+    public IPv4Address getIpv4Dst() {
+        return ipv4Dst;
+    }
+
+    @Override
+    public OFMatchV1.Builder setIpv4Dst(IPv4Address ipv4Dst) {
+        this.ipv4Dst = ipv4Dst;
+        this.ipv4DstSet = true;
+        return this;
+    }
+    @Override
     public IPv4Address getIpv4Src() {
         return ipv4Src;
     }
@@ -1554,14 +1532,14 @@ class OFMatchV1Ver10 implements OFMatchV1 {
         return this;
     }
     @Override
-    public IPv4Address getIpv4Dst() {
-        return ipv4Dst;
+    public TransportPort getTcpDst() {
+        return tcpDst;
     }
 
     @Override
-    public OFMatchV1.Builder setIpv4Dst(IPv4Address ipv4Dst) {
-        this.ipv4Dst = ipv4Dst;
-        this.ipv4DstSet = true;
+    public OFMatchV1.Builder setTcpDst(TransportPort tcpDst) {
+        this.tcpDst = tcpDst;
+        this.tcpDstSet = true;
         return this;
     }
     @Override
@@ -1576,14 +1554,36 @@ class OFMatchV1Ver10 implements OFMatchV1 {
         return this;
     }
     @Override
-    public TransportPort getTcpDst() {
-        return tcpDst;
+    public VlanPcp getVlanPcp() {
+        return vlanPcp;
     }
 
     @Override
-    public OFMatchV1.Builder setTcpDst(TransportPort tcpDst) {
-        this.tcpDst = tcpDst;
-        this.tcpDstSet = true;
+    public OFMatchV1.Builder setVlanPcp(VlanPcp vlanPcp) {
+        this.vlanPcp = vlanPcp;
+        this.vlanPcpSet = true;
+        return this;
+    }
+    @Override
+    public OFVlanVidMatch getVlanVid() {
+        return vlanVid;
+    }
+
+    @Override
+    public OFMatchV1.Builder setVlanVid(OFVlanVidMatch vlanVid) {
+        this.vlanVid = vlanVid;
+        this.vlanVidSet = true;
+        return this;
+    }
+    @Override
+    public int getWildcards() {
+        return wildcards;
+    }
+
+    @Override
+    public OFMatchV1.Builder setWildcards(int wildcards) {
+        this.wildcards = wildcards;
+        this.wildcardsSet = true;
         return this;
     }
     @Override

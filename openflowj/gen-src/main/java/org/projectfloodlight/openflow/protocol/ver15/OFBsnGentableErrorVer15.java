@@ -75,43 +75,8 @@ class OFBsnGentableErrorVer15 implements OFBsnGentableError {
 
     // Accessors for OF message fields
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_15;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.ERROR;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFErrorType getErrType() {
-        return OFErrorType.EXPERIMENTER;
-    }
-
-    @Override
-    public int getSubtype() {
-        return 0x2;
-    }
-
-    @Override
-    public long getExperimenter() {
-        return 0x5c16c7L;
-    }
-
-    @Override
-    public OFBsnGentableErrorCode getErrorCode() {
-        return errorCode;
-    }
-
-    @Override
-    public GenTableId getTableId() {
-        return tableId;
+    public OFErrorCauseData getData() {
+        return data;
     }
 
     @Override
@@ -120,8 +85,43 @@ class OFBsnGentableErrorVer15 implements OFBsnGentableError {
     }
 
     @Override
-    public OFErrorCauseData getData() {
-        return data;
+    public OFErrorType getErrType() {
+        return OFErrorType.EXPERIMENTER;
+    }
+
+    @Override
+    public OFBsnGentableErrorCode getErrorCode() {
+        return errorCode;
+    }
+
+    @Override
+    public long getExperimenter() {
+        return 0x5c16c7L;
+    }
+
+    @Override
+    public int getSubtype() {
+        return 0x2;
+    }
+
+    @Override
+    public GenTableId getTableId() {
+        return tableId;
+    }
+
+    @Override
+    public OFType getType() {
+        return OFType.ERROR;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_15;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
     }
 
 
@@ -150,65 +150,14 @@ class OFBsnGentableErrorVer15 implements OFBsnGentableError {
         }
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_15;
+    public OFErrorCauseData getData() {
+        return data;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.ERROR;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFBsnGentableError.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
-        return this;
-    }
-    @Override
-    public OFErrorType getErrType() {
-        return OFErrorType.EXPERIMENTER;
-    }
-
-    @Override
-    public int getSubtype() {
-        return 0x2;
-    }
-
-    @Override
-    public OFBsnGentableError.Builder setSubtype(int subtype) {
-            throw new UnsupportedOperationException("Property subtype is not writeable");
-    }
-    @Override
-    public long getExperimenter() {
-        return 0x5c16c7L;
-    }
-
-    @Override
-    public OFBsnGentableErrorCode getErrorCode() {
-        return errorCode;
-    }
-
-    @Override
-    public OFBsnGentableError.Builder setErrorCode(OFBsnGentableErrorCode errorCode) {
-        this.errorCode = errorCode;
-        this.errorCodeSet = true;
-        return this;
-    }
-    @Override
-    public GenTableId getTableId() {
-        return tableId;
-    }
-
-    @Override
-    public OFBsnGentableError.Builder setTableId(GenTableId tableId) {
-        this.tableId = tableId;
-        this.tableIdSet = true;
+    public OFBsnGentableError.Builder setData(OFErrorCauseData data) {
+        this.data = data;
+        this.dataSet = true;
         return this;
     }
     @Override
@@ -223,14 +172,65 @@ class OFBsnGentableErrorVer15 implements OFBsnGentableError {
         return this;
     }
     @Override
-    public OFErrorCauseData getData() {
-        return data;
+    public OFErrorType getErrType() {
+        return OFErrorType.EXPERIMENTER;
     }
 
     @Override
-    public OFBsnGentableError.Builder setData(OFErrorCauseData data) {
-        this.data = data;
-        this.dataSet = true;
+    public OFBsnGentableErrorCode getErrorCode() {
+        return errorCode;
+    }
+
+    @Override
+    public OFBsnGentableError.Builder setErrorCode(OFBsnGentableErrorCode errorCode) {
+        this.errorCode = errorCode;
+        this.errorCodeSet = true;
+        return this;
+    }
+    @Override
+    public long getExperimenter() {
+        return 0x5c16c7L;
+    }
+
+    @Override
+    public int getSubtype() {
+        return 0x2;
+    }
+
+    @Override
+    public OFBsnGentableError.Builder setSubtype(int subtype) {
+            throw new UnsupportedOperationException("Property subtype is not writeable");
+    }
+    @Override
+    public GenTableId getTableId() {
+        return tableId;
+    }
+
+    @Override
+    public OFBsnGentableError.Builder setTableId(GenTableId tableId) {
+        this.tableId = tableId;
+        this.tableIdSet = true;
+        return this;
+    }
+    @Override
+    public OFType getType() {
+        return OFType.ERROR;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_15;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFBsnGentableError.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 
@@ -277,65 +277,14 @@ class OFBsnGentableErrorVer15 implements OFBsnGentableError {
         private OFErrorCauseData data;
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_15;
+    public OFErrorCauseData getData() {
+        return data;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.ERROR;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFBsnGentableError.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
-        return this;
-    }
-    @Override
-    public OFErrorType getErrType() {
-        return OFErrorType.EXPERIMENTER;
-    }
-
-    @Override
-    public int getSubtype() {
-        return 0x2;
-    }
-
-    @Override
-    public OFBsnGentableError.Builder setSubtype(int subtype) {
-            throw new UnsupportedOperationException("Property subtype is not writeable");
-    }
-    @Override
-    public long getExperimenter() {
-        return 0x5c16c7L;
-    }
-
-    @Override
-    public OFBsnGentableErrorCode getErrorCode() {
-        return errorCode;
-    }
-
-    @Override
-    public OFBsnGentableError.Builder setErrorCode(OFBsnGentableErrorCode errorCode) {
-        this.errorCode = errorCode;
-        this.errorCodeSet = true;
-        return this;
-    }
-    @Override
-    public GenTableId getTableId() {
-        return tableId;
-    }
-
-    @Override
-    public OFBsnGentableError.Builder setTableId(GenTableId tableId) {
-        this.tableId = tableId;
-        this.tableIdSet = true;
+    public OFBsnGentableError.Builder setData(OFErrorCauseData data) {
+        this.data = data;
+        this.dataSet = true;
         return this;
     }
     @Override
@@ -350,14 +299,65 @@ class OFBsnGentableErrorVer15 implements OFBsnGentableError {
         return this;
     }
     @Override
-    public OFErrorCauseData getData() {
-        return data;
+    public OFErrorType getErrType() {
+        return OFErrorType.EXPERIMENTER;
     }
 
     @Override
-    public OFBsnGentableError.Builder setData(OFErrorCauseData data) {
-        this.data = data;
-        this.dataSet = true;
+    public OFBsnGentableErrorCode getErrorCode() {
+        return errorCode;
+    }
+
+    @Override
+    public OFBsnGentableError.Builder setErrorCode(OFBsnGentableErrorCode errorCode) {
+        this.errorCode = errorCode;
+        this.errorCodeSet = true;
+        return this;
+    }
+    @Override
+    public long getExperimenter() {
+        return 0x5c16c7L;
+    }
+
+    @Override
+    public int getSubtype() {
+        return 0x2;
+    }
+
+    @Override
+    public OFBsnGentableError.Builder setSubtype(int subtype) {
+            throw new UnsupportedOperationException("Property subtype is not writeable");
+    }
+    @Override
+    public GenTableId getTableId() {
+        return tableId;
+    }
+
+    @Override
+    public OFBsnGentableError.Builder setTableId(GenTableId tableId) {
+        this.tableId = tableId;
+        this.tableIdSet = true;
+        return this;
+    }
+    @Override
+    public OFType getType() {
+        return OFType.ERROR;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_15;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFBsnGentableError.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 //

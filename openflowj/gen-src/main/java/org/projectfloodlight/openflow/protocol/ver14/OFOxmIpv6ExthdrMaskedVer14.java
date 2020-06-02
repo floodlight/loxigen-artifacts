@@ -64,6 +64,11 @@ class OFOxmIpv6ExthdrMaskedVer14 implements OFOxmIpv6ExthdrMasked {
 
     // Accessors for OF message fields
     @Override
+    public U16 getMask() {
+        return mask;
+    }
+
+    @Override
     public long getTypeLen() {
         return 0x80004f04L;
     }
@@ -71,21 +76,6 @@ class OFOxmIpv6ExthdrMaskedVer14 implements OFOxmIpv6ExthdrMasked {
     @Override
     public U16 getValue() {
         return value;
-    }
-
-    @Override
-    public U16 getMask() {
-        return mask;
-    }
-
-    @Override
-    public MatchField<U16> getMatchField() {
-        return MatchField.IPV6_EXTHDR;
-    }
-
-    @Override
-    public boolean isMasked() {
-        return true;
     }
 
     public OFOxm<U16> getCanonical() {
@@ -96,6 +86,16 @@ class OFOxmIpv6ExthdrMaskedVer14 implements OFOxmIpv6ExthdrMasked {
         } else {
             return this;
         }
+    }
+
+    @Override
+    public boolean isMasked() {
+        return true;
+    }
+
+    @Override
+    public MatchField<U16> getMatchField() {
+        return MatchField.IPV6_EXTHDR;
     }
 
     @Override
@@ -123,6 +123,17 @@ class OFOxmIpv6ExthdrMaskedVer14 implements OFOxmIpv6ExthdrMasked {
         }
 
     @Override
+    public U16 getMask() {
+        return mask;
+    }
+
+    @Override
+    public OFOxmIpv6ExthdrMasked.Builder setMask(U16 mask) {
+        this.mask = mask;
+        this.maskSet = true;
+        return this;
+    }
+    @Override
     public long getTypeLen() {
         return 0x80004f04L;
     }
@@ -139,19 +150,8 @@ class OFOxmIpv6ExthdrMaskedVer14 implements OFOxmIpv6ExthdrMasked {
         return this;
     }
     @Override
-    public U16 getMask() {
-        return mask;
-    }
-
-    @Override
-    public OFOxmIpv6ExthdrMasked.Builder setMask(U16 mask) {
-        this.mask = mask;
-        this.maskSet = true;
-        return this;
-    }
-    @Override
-    public MatchField<U16> getMatchField() {
-        return MatchField.IPV6_EXTHDR;
+    public OFOxm<U16> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.4");
     }
 
     @Override
@@ -160,8 +160,8 @@ class OFOxmIpv6ExthdrMaskedVer14 implements OFOxmIpv6ExthdrMasked {
     }
 
     @Override
-    public OFOxm<U16> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.4");
+    public MatchField<U16> getMatchField() {
+        return MatchField.IPV6_EXTHDR;
     }
 
     @Override
@@ -197,6 +197,17 @@ class OFOxmIpv6ExthdrMaskedVer14 implements OFOxmIpv6ExthdrMasked {
         private U16 mask;
 
     @Override
+    public U16 getMask() {
+        return mask;
+    }
+
+    @Override
+    public OFOxmIpv6ExthdrMasked.Builder setMask(U16 mask) {
+        this.mask = mask;
+        this.maskSet = true;
+        return this;
+    }
+    @Override
     public long getTypeLen() {
         return 0x80004f04L;
     }
@@ -213,19 +224,8 @@ class OFOxmIpv6ExthdrMaskedVer14 implements OFOxmIpv6ExthdrMasked {
         return this;
     }
     @Override
-    public U16 getMask() {
-        return mask;
-    }
-
-    @Override
-    public OFOxmIpv6ExthdrMasked.Builder setMask(U16 mask) {
-        this.mask = mask;
-        this.maskSet = true;
-        return this;
-    }
-    @Override
-    public MatchField<U16> getMatchField() {
-        return MatchField.IPV6_EXTHDR;
+    public OFOxm<U16> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.4");
     }
 
     @Override
@@ -234,8 +234,8 @@ class OFOxmIpv6ExthdrMaskedVer14 implements OFOxmIpv6ExthdrMasked {
     }
 
     @Override
-    public OFOxm<U16> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.4");
+    public MatchField<U16> getMatchField() {
+        return MatchField.IPV6_EXTHDR;
     }
 
     @Override

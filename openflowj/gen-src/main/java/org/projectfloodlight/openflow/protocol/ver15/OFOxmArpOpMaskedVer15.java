@@ -64,6 +64,11 @@ class OFOxmArpOpMaskedVer15 implements OFOxmArpOpMasked {
 
     // Accessors for OF message fields
     @Override
+    public ArpOpcode getMask() {
+        return mask;
+    }
+
+    @Override
     public long getTypeLen() {
         return 0x80002b04L;
     }
@@ -71,21 +76,6 @@ class OFOxmArpOpMaskedVer15 implements OFOxmArpOpMasked {
     @Override
     public ArpOpcode getValue() {
         return value;
-    }
-
-    @Override
-    public ArpOpcode getMask() {
-        return mask;
-    }
-
-    @Override
-    public MatchField<ArpOpcode> getMatchField() {
-        return MatchField.ARP_OP;
-    }
-
-    @Override
-    public boolean isMasked() {
-        return true;
     }
 
     public OFOxm<ArpOpcode> getCanonical() {
@@ -96,6 +86,16 @@ class OFOxmArpOpMaskedVer15 implements OFOxmArpOpMasked {
         } else {
             return this;
         }
+    }
+
+    @Override
+    public boolean isMasked() {
+        return true;
+    }
+
+    @Override
+    public MatchField<ArpOpcode> getMatchField() {
+        return MatchField.ARP_OP;
     }
 
     @Override
@@ -123,6 +123,17 @@ class OFOxmArpOpMaskedVer15 implements OFOxmArpOpMasked {
         }
 
     @Override
+    public ArpOpcode getMask() {
+        return mask;
+    }
+
+    @Override
+    public OFOxmArpOpMasked.Builder setMask(ArpOpcode mask) {
+        this.mask = mask;
+        this.maskSet = true;
+        return this;
+    }
+    @Override
     public long getTypeLen() {
         return 0x80002b04L;
     }
@@ -139,19 +150,8 @@ class OFOxmArpOpMaskedVer15 implements OFOxmArpOpMasked {
         return this;
     }
     @Override
-    public ArpOpcode getMask() {
-        return mask;
-    }
-
-    @Override
-    public OFOxmArpOpMasked.Builder setMask(ArpOpcode mask) {
-        this.mask = mask;
-        this.maskSet = true;
-        return this;
-    }
-    @Override
-    public MatchField<ArpOpcode> getMatchField() {
-        return MatchField.ARP_OP;
+    public OFOxm<ArpOpcode> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.5");
     }
 
     @Override
@@ -160,8 +160,8 @@ class OFOxmArpOpMaskedVer15 implements OFOxmArpOpMasked {
     }
 
     @Override
-    public OFOxm<ArpOpcode> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.5");
+    public MatchField<ArpOpcode> getMatchField() {
+        return MatchField.ARP_OP;
     }
 
     @Override
@@ -197,6 +197,17 @@ class OFOxmArpOpMaskedVer15 implements OFOxmArpOpMasked {
         private ArpOpcode mask;
 
     @Override
+    public ArpOpcode getMask() {
+        return mask;
+    }
+
+    @Override
+    public OFOxmArpOpMasked.Builder setMask(ArpOpcode mask) {
+        this.mask = mask;
+        this.maskSet = true;
+        return this;
+    }
+    @Override
     public long getTypeLen() {
         return 0x80002b04L;
     }
@@ -213,19 +224,8 @@ class OFOxmArpOpMaskedVer15 implements OFOxmArpOpMasked {
         return this;
     }
     @Override
-    public ArpOpcode getMask() {
-        return mask;
-    }
-
-    @Override
-    public OFOxmArpOpMasked.Builder setMask(ArpOpcode mask) {
-        this.mask = mask;
-        this.maskSet = true;
-        return this;
-    }
-    @Override
-    public MatchField<ArpOpcode> getMatchField() {
-        return MatchField.ARP_OP;
+    public OFOxm<ArpOpcode> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.5");
     }
 
     @Override
@@ -234,8 +234,8 @@ class OFOxmArpOpMaskedVer15 implements OFOxmArpOpMasked {
     }
 
     @Override
-    public OFOxm<ArpOpcode> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.5");
+    public MatchField<ArpOpcode> getMatchField() {
+        return MatchField.ARP_OP;
     }
 
     @Override

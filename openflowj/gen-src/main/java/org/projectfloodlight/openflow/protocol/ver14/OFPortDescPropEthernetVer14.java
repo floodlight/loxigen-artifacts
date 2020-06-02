@@ -70,28 +70,13 @@ class OFPortDescPropEthernetVer14 implements OFPortDescPropEthernet {
 
     // Accessors for OF message fields
     @Override
-    public int getType() {
-        return 0x0;
-    }
-
-    @Override
-    public long getCurr() {
-        return curr;
-    }
-
-    @Override
     public long getAdvertised() {
         return advertised;
     }
 
     @Override
-    public long getSupported() {
-        return supported;
-    }
-
-    @Override
-    public long getPeer() {
-        return peer;
+    public long getCurr() {
+        return curr;
     }
 
     @Override
@@ -102,6 +87,21 @@ class OFPortDescPropEthernetVer14 implements OFPortDescPropEthernet {
     @Override
     public long getMaxSpeed() {
         return maxSpeed;
+    }
+
+    @Override
+    public long getPeer() {
+        return peer;
+    }
+
+    @Override
+    public long getSupported() {
+        return supported;
+    }
+
+    @Override
+    public int getType() {
+        return 0x0;
     }
 
     @Override
@@ -137,22 +137,6 @@ class OFPortDescPropEthernetVer14 implements OFPortDescPropEthernet {
         }
 
     @Override
-    public int getType() {
-        return 0x0;
-    }
-
-    @Override
-    public long getCurr() {
-        return curr;
-    }
-
-    @Override
-    public OFPortDescPropEthernet.Builder setCurr(long curr) {
-        this.curr = curr;
-        this.currSet = true;
-        return this;
-    }
-    @Override
     public long getAdvertised() {
         return advertised;
     }
@@ -164,25 +148,14 @@ class OFPortDescPropEthernetVer14 implements OFPortDescPropEthernet {
         return this;
     }
     @Override
-    public long getSupported() {
-        return supported;
+    public long getCurr() {
+        return curr;
     }
 
     @Override
-    public OFPortDescPropEthernet.Builder setSupported(long supported) {
-        this.supported = supported;
-        this.supportedSet = true;
-        return this;
-    }
-    @Override
-    public long getPeer() {
-        return peer;
-    }
-
-    @Override
-    public OFPortDescPropEthernet.Builder setPeer(long peer) {
-        this.peer = peer;
-        this.peerSet = true;
+    public OFPortDescPropEthernet.Builder setCurr(long curr) {
+        this.curr = curr;
+        this.currSet = true;
         return this;
     }
     @Override
@@ -207,6 +180,33 @@ class OFPortDescPropEthernetVer14 implements OFPortDescPropEthernet {
         this.maxSpeedSet = true;
         return this;
     }
+    @Override
+    public long getPeer() {
+        return peer;
+    }
+
+    @Override
+    public OFPortDescPropEthernet.Builder setPeer(long peer) {
+        this.peer = peer;
+        this.peerSet = true;
+        return this;
+    }
+    @Override
+    public long getSupported() {
+        return supported;
+    }
+
+    @Override
+    public OFPortDescPropEthernet.Builder setSupported(long supported) {
+        this.supported = supported;
+        this.supportedSet = true;
+        return this;
+    }
+    @Override
+    public int getType() {
+        return 0x0;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_14;
@@ -252,22 +252,6 @@ class OFPortDescPropEthernetVer14 implements OFPortDescPropEthernet {
         private long maxSpeed;
 
     @Override
-    public int getType() {
-        return 0x0;
-    }
-
-    @Override
-    public long getCurr() {
-        return curr;
-    }
-
-    @Override
-    public OFPortDescPropEthernet.Builder setCurr(long curr) {
-        this.curr = curr;
-        this.currSet = true;
-        return this;
-    }
-    @Override
     public long getAdvertised() {
         return advertised;
     }
@@ -279,25 +263,14 @@ class OFPortDescPropEthernetVer14 implements OFPortDescPropEthernet {
         return this;
     }
     @Override
-    public long getSupported() {
-        return supported;
+    public long getCurr() {
+        return curr;
     }
 
     @Override
-    public OFPortDescPropEthernet.Builder setSupported(long supported) {
-        this.supported = supported;
-        this.supportedSet = true;
-        return this;
-    }
-    @Override
-    public long getPeer() {
-        return peer;
-    }
-
-    @Override
-    public OFPortDescPropEthernet.Builder setPeer(long peer) {
-        this.peer = peer;
-        this.peerSet = true;
+    public OFPortDescPropEthernet.Builder setCurr(long curr) {
+        this.curr = curr;
+        this.currSet = true;
         return this;
     }
     @Override
@@ -322,6 +295,33 @@ class OFPortDescPropEthernetVer14 implements OFPortDescPropEthernet {
         this.maxSpeedSet = true;
         return this;
     }
+    @Override
+    public long getPeer() {
+        return peer;
+    }
+
+    @Override
+    public OFPortDescPropEthernet.Builder setPeer(long peer) {
+        this.peer = peer;
+        this.peerSet = true;
+        return this;
+    }
+    @Override
+    public long getSupported() {
+        return supported;
+    }
+
+    @Override
+    public OFPortDescPropEthernet.Builder setSupported(long supported) {
+        this.supported = supported;
+        this.supportedSet = true;
+        return this;
+    }
+    @Override
+    public int getType() {
+        return 0x0;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_14;

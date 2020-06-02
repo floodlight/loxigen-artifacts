@@ -28,18 +28,18 @@ import org.projectfloodlight.openflow.exceptions.*;
 import io.netty.buffer.ByteBuf;
 
 public interface OFBsnLacpStatsEntry extends OFObject {
-    OFPort getPortNo();
-    int getActorSysPriority();
-    MacAddress getActorSysMac();
-    int getActorPortPriority();
-    int getActorPortNum();
     int getActorKey();
+    int getActorPortNum();
+    int getActorPortPriority();
+    MacAddress getActorSysMac();
+    int getActorSysPriority();
     short getConvergenceStatus();
-    int getPartnerSysPriority();
-    MacAddress getPartnerSysMac();
-    int getPartnerPortPriority();
-    int getPartnerPortNum();
     int getPartnerKey();
+    int getPartnerPortNum();
+    int getPartnerPortPriority();
+    MacAddress getPartnerSysMac();
+    int getPartnerSysPriority();
+    OFPort getPortNo();
     OFVersion getVersion();
 
     void writeTo(ByteBuf channelBuffer);
@@ -47,30 +47,30 @@ public interface OFBsnLacpStatsEntry extends OFObject {
     Builder createBuilder();
     public interface Builder  {
         OFBsnLacpStatsEntry build();
-        OFPort getPortNo();
-        Builder setPortNo(OFPort portNo);
-        int getActorSysPriority();
-        Builder setActorSysPriority(int actorSysPriority);
-        MacAddress getActorSysMac();
-        Builder setActorSysMac(MacAddress actorSysMac);
-        int getActorPortPriority();
-        Builder setActorPortPriority(int actorPortPriority);
-        int getActorPortNum();
-        Builder setActorPortNum(int actorPortNum);
         int getActorKey();
         Builder setActorKey(int actorKey);
+        int getActorPortNum();
+        Builder setActorPortNum(int actorPortNum);
+        int getActorPortPriority();
+        Builder setActorPortPriority(int actorPortPriority);
+        MacAddress getActorSysMac();
+        Builder setActorSysMac(MacAddress actorSysMac);
+        int getActorSysPriority();
+        Builder setActorSysPriority(int actorSysPriority);
         short getConvergenceStatus();
         Builder setConvergenceStatus(short convergenceStatus);
-        int getPartnerSysPriority();
-        Builder setPartnerSysPriority(int partnerSysPriority);
-        MacAddress getPartnerSysMac();
-        Builder setPartnerSysMac(MacAddress partnerSysMac);
-        int getPartnerPortPriority();
-        Builder setPartnerPortPriority(int partnerPortPriority);
-        int getPartnerPortNum();
-        Builder setPartnerPortNum(int partnerPortNum);
         int getPartnerKey();
         Builder setPartnerKey(int partnerKey);
+        int getPartnerPortNum();
+        Builder setPartnerPortNum(int partnerPortNum);
+        int getPartnerPortPriority();
+        Builder setPartnerPortPriority(int partnerPortPriority);
+        MacAddress getPartnerSysMac();
+        Builder setPartnerSysMac(MacAddress partnerSysMac);
+        int getPartnerSysPriority();
+        Builder setPartnerSysPriority(int partnerSysPriority);
+        OFPort getPortNo();
+        Builder setPortNo(OFPort portNo);
         OFVersion getVersion();
     }
 }

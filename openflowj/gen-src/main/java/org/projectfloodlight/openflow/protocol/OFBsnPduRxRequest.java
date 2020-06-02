@@ -28,34 +28,34 @@ import org.projectfloodlight.openflow.exceptions.*;
 import io.netty.buffer.ByteBuf;
 
 public interface OFBsnPduRxRequest extends OFObject, OFBsnHeader, OFRequest<OFBsnPduRxReply> {
-    OFVersion getVersion();
-    OFType getType();
-    long getXid();
+    byte[] getData();
     long getExperimenter();
-    long getSubtype();
-    long getTimeoutMs();
     OFPort getPortNo();
     short getSlotNum();
-    byte[] getData();
+    long getSubtype();
+    long getTimeoutMs();
+    OFType getType();
+    OFVersion getVersion();
+    long getXid();
 
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();
     public interface Builder extends OFBsnHeader.Builder {
         OFBsnPduRxRequest build();
-        OFVersion getVersion();
-        OFType getType();
-        long getXid();
-        Builder setXid(long xid);
+        byte[] getData();
+        Builder setData(byte[] data);
         long getExperimenter();
-        long getSubtype();
-        long getTimeoutMs();
-        Builder setTimeoutMs(long timeoutMs);
         OFPort getPortNo();
         Builder setPortNo(OFPort portNo);
         short getSlotNum();
         Builder setSlotNum(short slotNum);
-        byte[] getData();
-        Builder setData(byte[] data);
+        long getSubtype();
+        long getTimeoutMs();
+        Builder setTimeoutMs(long timeoutMs);
+        OFType getType();
+        OFVersion getVersion();
+        long getXid();
+        Builder setXid(long xid);
     }
 }

@@ -52,11 +52,6 @@ class OFInstructionBsnPrioritizePdusVer15 implements OFInstructionBsnPrioritizeP
 
     // Accessors for OF message fields
     @Override
-    public OFInstructionType getType() {
-        return OFInstructionType.EXPERIMENTER;
-    }
-
-    @Override
     public long getExperimenter() {
         return 0x5c16c7L;
     }
@@ -64,6 +59,11 @@ class OFInstructionBsnPrioritizePdusVer15 implements OFInstructionBsnPrioritizeP
     @Override
     public long getSubtype() {
         return 0x7L;
+    }
+
+    @Override
+    public OFInstructionType getType() {
+        return OFInstructionType.EXPERIMENTER;
     }
 
     @Override

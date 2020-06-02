@@ -72,18 +72,8 @@ class OFGroupDeleteVer13 implements OFGroupDelete {
 
     // Accessors for OF message fields
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_13;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.GROUP_MOD;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
+    public List<OFBucket> getBuckets() {
+        return buckets;
     }
 
     @Override
@@ -92,8 +82,8 @@ class OFGroupDeleteVer13 implements OFGroupDelete {
     }
 
     @Override
-    public OFGroupType getGroupType() {
-        return groupType;
+    public OFGroupBucket getCommandBucketId()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property commandBucketId not supported in version 1.3");
     }
 
     @Override
@@ -102,18 +92,28 @@ class OFGroupDeleteVer13 implements OFGroupDelete {
     }
 
     @Override
-    public List<OFBucket> getBuckets() {
-        return buckets;
-    }
-
-    @Override
-    public OFGroupBucket getCommandBucketId()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property commandBucketId not supported in version 1.3");
+    public OFGroupType getGroupType() {
+        return groupType;
     }
 
     @Override
     public List<OFGroupProp> getProperties()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property properties not supported in version 1.3");
+    }
+
+    @Override
+    public OFType getType() {
+        return OFType.GROUP_MOD;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_13;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
     }
 
 
@@ -140,24 +140,14 @@ class OFGroupDeleteVer13 implements OFGroupDelete {
         }
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_13;
+    public List<OFBucket> getBuckets() {
+        return buckets;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.GROUP_MOD;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFGroupDelete.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
+    public OFGroupDelete.Builder setBuckets(List<OFBucket> buckets) {
+        this.buckets = buckets;
+        this.bucketsSet = true;
         return this;
     }
     @Override
@@ -166,15 +156,13 @@ class OFGroupDeleteVer13 implements OFGroupDelete {
     }
 
     @Override
-    public OFGroupType getGroupType() {
-        return groupType;
+    public OFGroupBucket getCommandBucketId()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property commandBucketId not supported in version 1.3");
     }
 
     @Override
-    public OFGroupDelete.Builder setGroupType(OFGroupType groupType) {
-        this.groupType = groupType;
-        this.groupTypeSet = true;
-        return this;
+    public OFGroupDelete.Builder setCommandBucketId(OFGroupBucket commandBucketId) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property commandBucketId not supported in version 1.3");
     }
     @Override
     public OFGroup getGroup() {
@@ -188,24 +176,15 @@ class OFGroupDeleteVer13 implements OFGroupDelete {
         return this;
     }
     @Override
-    public List<OFBucket> getBuckets() {
-        return buckets;
+    public OFGroupType getGroupType() {
+        return groupType;
     }
 
     @Override
-    public OFGroupDelete.Builder setBuckets(List<OFBucket> buckets) {
-        this.buckets = buckets;
-        this.bucketsSet = true;
+    public OFGroupDelete.Builder setGroupType(OFGroupType groupType) {
+        this.groupType = groupType;
+        this.groupTypeSet = true;
         return this;
-    }
-    @Override
-    public OFGroupBucket getCommandBucketId()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property commandBucketId not supported in version 1.3");
-    }
-
-    @Override
-    public OFGroupDelete.Builder setCommandBucketId(OFGroupBucket commandBucketId) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property commandBucketId not supported in version 1.3");
     }
     @Override
     public List<OFGroupProp> getProperties()throws UnsupportedOperationException {
@@ -215,6 +194,27 @@ class OFGroupDeleteVer13 implements OFGroupDelete {
     @Override
     public OFGroupDelete.Builder setProperties(List<OFGroupProp> properties) throws UnsupportedOperationException {
             throw new UnsupportedOperationException("Property properties not supported in version 1.3");
+    }
+    @Override
+    public OFType getType() {
+        return OFType.GROUP_MOD;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_13;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFGroupDelete.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
+        return this;
     }
 
 
@@ -254,24 +254,14 @@ class OFGroupDeleteVer13 implements OFGroupDelete {
         private List<OFBucket> buckets;
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_13;
+    public List<OFBucket> getBuckets() {
+        return buckets;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.GROUP_MOD;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFGroupDelete.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
+    public OFGroupDelete.Builder setBuckets(List<OFBucket> buckets) {
+        this.buckets = buckets;
+        this.bucketsSet = true;
         return this;
     }
     @Override
@@ -280,15 +270,13 @@ class OFGroupDeleteVer13 implements OFGroupDelete {
     }
 
     @Override
-    public OFGroupType getGroupType() {
-        return groupType;
+    public OFGroupBucket getCommandBucketId()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property commandBucketId not supported in version 1.3");
     }
 
     @Override
-    public OFGroupDelete.Builder setGroupType(OFGroupType groupType) {
-        this.groupType = groupType;
-        this.groupTypeSet = true;
-        return this;
+    public OFGroupDelete.Builder setCommandBucketId(OFGroupBucket commandBucketId) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property commandBucketId not supported in version 1.3");
     }
     @Override
     public OFGroup getGroup() {
@@ -302,24 +290,15 @@ class OFGroupDeleteVer13 implements OFGroupDelete {
         return this;
     }
     @Override
-    public List<OFBucket> getBuckets() {
-        return buckets;
+    public OFGroupType getGroupType() {
+        return groupType;
     }
 
     @Override
-    public OFGroupDelete.Builder setBuckets(List<OFBucket> buckets) {
-        this.buckets = buckets;
-        this.bucketsSet = true;
+    public OFGroupDelete.Builder setGroupType(OFGroupType groupType) {
+        this.groupType = groupType;
+        this.groupTypeSet = true;
         return this;
-    }
-    @Override
-    public OFGroupBucket getCommandBucketId()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property commandBucketId not supported in version 1.3");
-    }
-
-    @Override
-    public OFGroupDelete.Builder setCommandBucketId(OFGroupBucket commandBucketId) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property commandBucketId not supported in version 1.3");
     }
     @Override
     public List<OFGroupProp> getProperties()throws UnsupportedOperationException {
@@ -329,6 +308,27 @@ class OFGroupDeleteVer13 implements OFGroupDelete {
     @Override
     public OFGroupDelete.Builder setProperties(List<OFGroupProp> properties) throws UnsupportedOperationException {
             throw new UnsupportedOperationException("Property properties not supported in version 1.3");
+    }
+    @Override
+    public OFType getType() {
+        return OFType.GROUP_MOD;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_13;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFGroupDelete.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
+        return this;
     }
 //
         @Override

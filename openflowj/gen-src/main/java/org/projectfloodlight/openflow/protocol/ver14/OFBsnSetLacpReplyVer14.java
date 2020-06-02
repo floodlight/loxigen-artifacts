@@ -64,28 +64,13 @@ class OFBsnSetLacpReplyVer14 implements OFBsnSetLacpReply {
 
     // Accessors for OF message fields
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_14;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.EXPERIMENTER;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
     public long getExperimenter() {
         return 0x5c16c7L;
     }
 
     @Override
-    public long getSubtype() {
-        return 0x2aL;
+    public OFPort getPortNo() {
+        return portNo;
     }
 
     @Override
@@ -94,8 +79,23 @@ class OFBsnSetLacpReplyVer14 implements OFBsnSetLacpReply {
     }
 
     @Override
-    public OFPort getPortNo() {
-        return portNo;
+    public long getSubtype() {
+        return 0x2aL;
+    }
+
+    @Override
+    public OFType getType() {
+        return OFType.EXPERIMENTER;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_14;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
     }
 
 
@@ -120,36 +120,21 @@ class OFBsnSetLacpReplyVer14 implements OFBsnSetLacpReply {
         }
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_14;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.EXPERIMENTER;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFBsnSetLacpReply.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
-        return this;
-    }
-    @Override
     public long getExperimenter() {
         return 0x5c16c7L;
     }
 
     @Override
-    public long getSubtype() {
-        return 0x2aL;
+    public OFPort getPortNo() {
+        return portNo;
     }
 
+    @Override
+    public OFBsnSetLacpReply.Builder setPortNo(OFPort portNo) {
+        this.portNo = portNo;
+        this.portNoSet = true;
+        return this;
+    }
     @Override
     public long getStatus() {
         return status;
@@ -162,14 +147,29 @@ class OFBsnSetLacpReplyVer14 implements OFBsnSetLacpReply {
         return this;
     }
     @Override
-    public OFPort getPortNo() {
-        return portNo;
+    public long getSubtype() {
+        return 0x2aL;
     }
 
     @Override
-    public OFBsnSetLacpReply.Builder setPortNo(OFPort portNo) {
-        this.portNo = portNo;
-        this.portNoSet = true;
+    public OFType getType() {
+        return OFType.EXPERIMENTER;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_14;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFBsnSetLacpReply.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 
@@ -202,36 +202,21 @@ class OFBsnSetLacpReplyVer14 implements OFBsnSetLacpReply {
         private OFPort portNo;
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_14;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.EXPERIMENTER;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFBsnSetLacpReply.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
-        return this;
-    }
-    @Override
     public long getExperimenter() {
         return 0x5c16c7L;
     }
 
     @Override
-    public long getSubtype() {
-        return 0x2aL;
+    public OFPort getPortNo() {
+        return portNo;
     }
 
+    @Override
+    public OFBsnSetLacpReply.Builder setPortNo(OFPort portNo) {
+        this.portNo = portNo;
+        this.portNoSet = true;
+        return this;
+    }
     @Override
     public long getStatus() {
         return status;
@@ -244,14 +229,29 @@ class OFBsnSetLacpReplyVer14 implements OFBsnSetLacpReply {
         return this;
     }
     @Override
-    public OFPort getPortNo() {
-        return portNo;
+    public long getSubtype() {
+        return 0x2aL;
     }
 
     @Override
-    public OFBsnSetLacpReply.Builder setPortNo(OFPort portNo) {
-        this.portNo = portNo;
-        this.portNoSet = true;
+    public OFType getType() {
+        return OFType.EXPERIMENTER;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_14;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFBsnSetLacpReply.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 //

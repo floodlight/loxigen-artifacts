@@ -67,16 +67,6 @@ class OFOxmUdpDstVer13 implements OFOxmUdpDst {
         return value;
     }
 
-    @Override
-    public MatchField<TransportPort> getMatchField() {
-        return MatchField.UDP_DST;
-    }
-
-    @Override
-    public boolean isMasked() {
-        return false;
-    }
-
     public OFOxm<TransportPort> getCanonical() {
         // exact match OXM is always canonical
         return this;
@@ -85,6 +75,16 @@ class OFOxmUdpDstVer13 implements OFOxmUdpDst {
     @Override
     public TransportPort getMask()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property mask not supported in version 1.3");
+    }
+
+    @Override
+    public boolean isMasked() {
+        return false;
+    }
+
+    @Override
+    public MatchField<TransportPort> getMatchField() {
+        return MatchField.UDP_DST;
     }
 
     @Override
@@ -126,8 +126,13 @@ class OFOxmUdpDstVer13 implements OFOxmUdpDst {
         return this;
     }
     @Override
-    public MatchField<TransportPort> getMatchField() {
-        return MatchField.UDP_DST;
+    public OFOxm<TransportPort> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.3");
+    }
+
+    @Override
+    public TransportPort getMask()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property mask not supported in version 1.3");
     }
 
     @Override
@@ -136,13 +141,8 @@ class OFOxmUdpDstVer13 implements OFOxmUdpDst {
     }
 
     @Override
-    public OFOxm<TransportPort> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.3");
-    }
-
-    @Override
-    public TransportPort getMask()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property mask not supported in version 1.3");
+    public MatchField<TransportPort> getMatchField() {
+        return MatchField.UDP_DST;
     }
 
     @Override
@@ -188,8 +188,13 @@ class OFOxmUdpDstVer13 implements OFOxmUdpDst {
         return this;
     }
     @Override
-    public MatchField<TransportPort> getMatchField() {
-        return MatchField.UDP_DST;
+    public OFOxm<TransportPort> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.3");
+    }
+
+    @Override
+    public TransportPort getMask()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property mask not supported in version 1.3");
     }
 
     @Override
@@ -198,13 +203,8 @@ class OFOxmUdpDstVer13 implements OFOxmUdpDst {
     }
 
     @Override
-    public OFOxm<TransportPort> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.3");
-    }
-
-    @Override
-    public TransportPort getMask()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property mask not supported in version 1.3");
+    public MatchField<TransportPort> getMatchField() {
+        return MatchField.UDP_DST;
     }
 
     @Override

@@ -62,13 +62,13 @@ class OFTableFeaturePropInstructionsVer14 implements OFTableFeaturePropInstructi
 
     // Accessors for OF message fields
     @Override
-    public int getType() {
-        return 0x0;
+    public List<OFInstructionId> getInstructionIds() {
+        return instructionIds;
     }
 
     @Override
-    public List<OFInstructionId> getInstructionIds() {
-        return instructionIds;
+    public int getType() {
+        return 0x0;
     }
 
     @Override
@@ -94,11 +94,6 @@ class OFTableFeaturePropInstructionsVer14 implements OFTableFeaturePropInstructi
         }
 
     @Override
-    public int getType() {
-        return 0x0;
-    }
-
-    @Override
     public List<OFInstructionId> getInstructionIds() {
         return instructionIds;
     }
@@ -109,6 +104,11 @@ class OFTableFeaturePropInstructionsVer14 implements OFTableFeaturePropInstructi
         this.instructionIdsSet = true;
         return this;
     }
+    @Override
+    public int getType() {
+        return 0x0;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_14;
@@ -136,11 +136,6 @@ class OFTableFeaturePropInstructionsVer14 implements OFTableFeaturePropInstructi
         private List<OFInstructionId> instructionIds;
 
     @Override
-    public int getType() {
-        return 0x0;
-    }
-
-    @Override
     public List<OFInstructionId> getInstructionIds() {
         return instructionIds;
     }
@@ -151,6 +146,11 @@ class OFTableFeaturePropInstructionsVer14 implements OFTableFeaturePropInstructi
         this.instructionIdsSet = true;
         return this;
     }
+    @Override
+    public int getType() {
+        return 0x0;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_14;

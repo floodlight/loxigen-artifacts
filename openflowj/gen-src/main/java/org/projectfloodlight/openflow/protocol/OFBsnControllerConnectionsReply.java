@@ -29,25 +29,25 @@ import java.util.List;
 import io.netty.buffer.ByteBuf;
 
 public interface OFBsnControllerConnectionsReply extends OFObject, OFBsnHeader {
-    OFVersion getVersion();
-    OFType getType();
-    long getXid();
+    List<OFBsnControllerConnection> getConnections();
     long getExperimenter();
     long getSubtype();
-    List<OFBsnControllerConnection> getConnections();
+    OFType getType();
+    OFVersion getVersion();
+    long getXid();
 
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();
     public interface Builder extends OFBsnHeader.Builder {
         OFBsnControllerConnectionsReply build();
-        OFVersion getVersion();
-        OFType getType();
-        long getXid();
-        Builder setXid(long xid);
-        long getExperimenter();
-        long getSubtype();
         List<OFBsnControllerConnection> getConnections();
         Builder setConnections(List<OFBsnControllerConnection> connections);
+        long getExperimenter();
+        long getSubtype();
+        OFType getType();
+        OFVersion getVersion();
+        long getXid();
+        Builder setXid(long xid);
     }
 }

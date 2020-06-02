@@ -59,15 +59,15 @@ abstract class OFActionBsnVer15 {
                case 0x4:
                    // discriminator value 0x4L=0x4L for class OFActionBsnChecksumVer15
                    return OFActionBsnChecksumVer15.READER.readFrom(bb);
+               case 0x5:
+                   // discriminator value 0x5L=0x5L for class OFActionBsnGentableVer15
+                   return OFActionBsnGentableVer15.READER.readFrom(bb);
                case 0x1:
                    // discriminator value 0x1L=0x1L for class OFActionBsnMirrorVer15
                    return OFActionBsnMirrorVer15.READER.readFrom(bb);
                case 0x2:
                    // discriminator value 0x2L=0x2L for class OFActionBsnSetTunnelDstVer15
                    return OFActionBsnSetTunnelDstVer15.READER.readFrom(bb);
-               case 0x5:
-                   // discriminator value 0x5L=0x5L for class OFActionBsnGentableVer15
-                   return OFActionBsnGentableVer15.READER.readFrom(bb);
                default:
                    throw new OFParseError("Unknown value for discriminator subtype of class OFActionBsnVer15: " + subtype);
             }

@@ -29,28 +29,28 @@ import java.util.Set;
 import io.netty.buffer.ByteBuf;
 
 public interface OFBsnTableSetBucketsSize extends OFObject, OFBsnHeader {
-    OFVersion getVersion();
-    OFType getType();
-    long getXid();
+    long getBucketsSize();
     long getExperimenter();
     long getSubtype();
     TableId getTableId();
-    long getBucketsSize();
+    OFType getType();
+    OFVersion getVersion();
+    long getXid();
 
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();
     public interface Builder extends OFBsnHeader.Builder {
         OFBsnTableSetBucketsSize build();
-        OFVersion getVersion();
-        OFType getType();
-        long getXid();
-        Builder setXid(long xid);
+        long getBucketsSize();
+        Builder setBucketsSize(long bucketsSize);
         long getExperimenter();
         long getSubtype();
         TableId getTableId();
         Builder setTableId(TableId tableId);
-        long getBucketsSize();
-        Builder setBucketsSize(long bucketsSize);
+        OFType getType();
+        OFVersion getVersion();
+        long getXid();
+        Builder setXid(long xid);
     }
 }

@@ -83,18 +83,8 @@ class OFGroupStatsEntryVer11 implements OFGroupStatsEntry {
 
     // Accessors for OF message fields
     @Override
-    public OFGroup getGroup() {
-        return group;
-    }
-
-    @Override
-    public long getRefCount() {
-        return refCount;
-    }
-
-    @Override
-    public U64 getPacketCount() {
-        return packetCount;
+    public List<OFBucketCounter> getBucketStats() {
+        return bucketStats;
     }
 
     @Override
@@ -103,8 +93,8 @@ class OFGroupStatsEntryVer11 implements OFGroupStatsEntry {
     }
 
     @Override
-    public List<OFBucketCounter> getBucketStats() {
-        return bucketStats;
+    public long getDurationNsec()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property durationNsec not supported in version 1.1");
     }
 
     @Override
@@ -113,8 +103,18 @@ class OFGroupStatsEntryVer11 implements OFGroupStatsEntry {
     }
 
     @Override
-    public long getDurationNsec()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property durationNsec not supported in version 1.1");
+    public OFGroup getGroup() {
+        return group;
+    }
+
+    @Override
+    public U64 getPacketCount() {
+        return packetCount;
+    }
+
+    @Override
+    public long getRefCount() {
+        return refCount;
     }
 
     @Override
@@ -148,36 +148,14 @@ class OFGroupStatsEntryVer11 implements OFGroupStatsEntry {
         }
 
     @Override
-    public OFGroup getGroup() {
-        return group;
+    public List<OFBucketCounter> getBucketStats() {
+        return bucketStats;
     }
 
     @Override
-    public OFGroupStatsEntry.Builder setGroup(OFGroup group) {
-        this.group = group;
-        this.groupSet = true;
-        return this;
-    }
-    @Override
-    public long getRefCount() {
-        return refCount;
-    }
-
-    @Override
-    public OFGroupStatsEntry.Builder setRefCount(long refCount) {
-        this.refCount = refCount;
-        this.refCountSet = true;
-        return this;
-    }
-    @Override
-    public U64 getPacketCount() {
-        return packetCount;
-    }
-
-    @Override
-    public OFGroupStatsEntry.Builder setPacketCount(U64 packetCount) {
-        this.packetCount = packetCount;
-        this.packetCountSet = true;
+    public OFGroupStatsEntry.Builder setBucketStats(List<OFBucketCounter> bucketStats) {
+        this.bucketStats = bucketStats;
+        this.bucketStatsSet = true;
         return this;
     }
     @Override
@@ -192,15 +170,13 @@ class OFGroupStatsEntryVer11 implements OFGroupStatsEntry {
         return this;
     }
     @Override
-    public List<OFBucketCounter> getBucketStats() {
-        return bucketStats;
+    public long getDurationNsec()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property durationNsec not supported in version 1.1");
     }
 
     @Override
-    public OFGroupStatsEntry.Builder setBucketStats(List<OFBucketCounter> bucketStats) {
-        this.bucketStats = bucketStats;
-        this.bucketStatsSet = true;
-        return this;
+    public OFGroupStatsEntry.Builder setDurationNsec(long durationNsec) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property durationNsec not supported in version 1.1");
     }
     @Override
     public long getDurationSec()throws UnsupportedOperationException {
@@ -212,13 +188,37 @@ class OFGroupStatsEntryVer11 implements OFGroupStatsEntry {
             throw new UnsupportedOperationException("Property durationSec not supported in version 1.1");
     }
     @Override
-    public long getDurationNsec()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property durationNsec not supported in version 1.1");
+    public OFGroup getGroup() {
+        return group;
     }
 
     @Override
-    public OFGroupStatsEntry.Builder setDurationNsec(long durationNsec) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property durationNsec not supported in version 1.1");
+    public OFGroupStatsEntry.Builder setGroup(OFGroup group) {
+        this.group = group;
+        this.groupSet = true;
+        return this;
+    }
+    @Override
+    public U64 getPacketCount() {
+        return packetCount;
+    }
+
+    @Override
+    public OFGroupStatsEntry.Builder setPacketCount(U64 packetCount) {
+        this.packetCount = packetCount;
+        this.packetCountSet = true;
+        return this;
+    }
+    @Override
+    public long getRefCount() {
+        return refCount;
+    }
+
+    @Override
+    public OFGroupStatsEntry.Builder setRefCount(long refCount) {
+        this.refCount = refCount;
+        this.refCountSet = true;
+        return this;
     }
     @Override
     public OFVersion getVersion() {
@@ -269,36 +269,14 @@ class OFGroupStatsEntryVer11 implements OFGroupStatsEntry {
         private List<OFBucketCounter> bucketStats;
 
     @Override
-    public OFGroup getGroup() {
-        return group;
+    public List<OFBucketCounter> getBucketStats() {
+        return bucketStats;
     }
 
     @Override
-    public OFGroupStatsEntry.Builder setGroup(OFGroup group) {
-        this.group = group;
-        this.groupSet = true;
-        return this;
-    }
-    @Override
-    public long getRefCount() {
-        return refCount;
-    }
-
-    @Override
-    public OFGroupStatsEntry.Builder setRefCount(long refCount) {
-        this.refCount = refCount;
-        this.refCountSet = true;
-        return this;
-    }
-    @Override
-    public U64 getPacketCount() {
-        return packetCount;
-    }
-
-    @Override
-    public OFGroupStatsEntry.Builder setPacketCount(U64 packetCount) {
-        this.packetCount = packetCount;
-        this.packetCountSet = true;
+    public OFGroupStatsEntry.Builder setBucketStats(List<OFBucketCounter> bucketStats) {
+        this.bucketStats = bucketStats;
+        this.bucketStatsSet = true;
         return this;
     }
     @Override
@@ -313,15 +291,13 @@ class OFGroupStatsEntryVer11 implements OFGroupStatsEntry {
         return this;
     }
     @Override
-    public List<OFBucketCounter> getBucketStats() {
-        return bucketStats;
+    public long getDurationNsec()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property durationNsec not supported in version 1.1");
     }
 
     @Override
-    public OFGroupStatsEntry.Builder setBucketStats(List<OFBucketCounter> bucketStats) {
-        this.bucketStats = bucketStats;
-        this.bucketStatsSet = true;
-        return this;
+    public OFGroupStatsEntry.Builder setDurationNsec(long durationNsec) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property durationNsec not supported in version 1.1");
     }
     @Override
     public long getDurationSec()throws UnsupportedOperationException {
@@ -333,13 +309,37 @@ class OFGroupStatsEntryVer11 implements OFGroupStatsEntry {
             throw new UnsupportedOperationException("Property durationSec not supported in version 1.1");
     }
     @Override
-    public long getDurationNsec()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property durationNsec not supported in version 1.1");
+    public OFGroup getGroup() {
+        return group;
     }
 
     @Override
-    public OFGroupStatsEntry.Builder setDurationNsec(long durationNsec) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property durationNsec not supported in version 1.1");
+    public OFGroupStatsEntry.Builder setGroup(OFGroup group) {
+        this.group = group;
+        this.groupSet = true;
+        return this;
+    }
+    @Override
+    public U64 getPacketCount() {
+        return packetCount;
+    }
+
+    @Override
+    public OFGroupStatsEntry.Builder setPacketCount(U64 packetCount) {
+        this.packetCount = packetCount;
+        this.packetCountSet = true;
+        return this;
+    }
+    @Override
+    public long getRefCount() {
+        return refCount;
+    }
+
+    @Override
+    public OFGroupStatsEntry.Builder setRefCount(long refCount) {
+        this.refCount = refCount;
+        this.refCountSet = true;
+        return this;
     }
     @Override
     public OFVersion getVersion() {

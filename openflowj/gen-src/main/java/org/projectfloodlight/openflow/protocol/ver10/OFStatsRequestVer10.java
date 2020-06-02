@@ -59,12 +59,12 @@ abstract class OFStatsRequestVer10 {
                case (short) 0x2:
                    // discriminator value OFStatsType.AGGREGATE=2 for class OFAggregateStatsRequestVer10
                    return OFAggregateStatsRequestVer10.READER.readFrom(bb);
-               case (short) 0xffff:
-                   // discriminator value OFStatsType.EXPERIMENTER=65535 for class OFExperimenterStatsRequestVer10
-                   return OFExperimenterStatsRequestVer10.READER.readFrom(bb);
                case (short) 0x0:
                    // discriminator value OFStatsType.DESC=0 for class OFDescStatsRequestVer10
                    return OFDescStatsRequestVer10.READER.readFrom(bb);
+               case (short) 0xffff:
+                   // discriminator value OFStatsType.EXPERIMENTER=65535 for class OFExperimenterStatsRequestVer10
+                   return OFExperimenterStatsRequestVer10.READER.readFrom(bb);
                case (short) 0x1:
                    // discriminator value OFStatsType.FLOW=1 for class OFFlowStatsRequestVer10
                    return OFFlowStatsRequestVer10.READER.readFrom(bb);

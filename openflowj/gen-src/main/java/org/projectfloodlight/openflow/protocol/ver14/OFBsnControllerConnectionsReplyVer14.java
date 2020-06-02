@@ -65,18 +65,8 @@ class OFBsnControllerConnectionsReplyVer14 implements OFBsnControllerConnections
 
     // Accessors for OF message fields
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_14;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.EXPERIMENTER;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
+    public List<OFBsnControllerConnection> getConnections() {
+        return connections;
     }
 
     @Override
@@ -90,8 +80,18 @@ class OFBsnControllerConnectionsReplyVer14 implements OFBsnControllerConnections
     }
 
     @Override
-    public List<OFBsnControllerConnection> getConnections() {
-        return connections;
+    public OFType getType() {
+        return OFType.EXPERIMENTER;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_14;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
     }
 
 
@@ -114,24 +114,14 @@ class OFBsnControllerConnectionsReplyVer14 implements OFBsnControllerConnections
         }
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_14;
+    public List<OFBsnControllerConnection> getConnections() {
+        return connections;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.EXPERIMENTER;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFBsnControllerConnectionsReply.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
+    public OFBsnControllerConnectionsReply.Builder setConnections(List<OFBsnControllerConnection> connections) {
+        this.connections = connections;
+        this.connectionsSet = true;
         return this;
     }
     @Override
@@ -145,14 +135,24 @@ class OFBsnControllerConnectionsReplyVer14 implements OFBsnControllerConnections
     }
 
     @Override
-    public List<OFBsnControllerConnection> getConnections() {
-        return connections;
+    public OFType getType() {
+        return OFType.EXPERIMENTER;
     }
 
     @Override
-    public OFBsnControllerConnectionsReply.Builder setConnections(List<OFBsnControllerConnection> connections) {
-        this.connections = connections;
-        this.connectionsSet = true;
+    public OFVersion getVersion() {
+        return OFVersion.OF_14;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFBsnControllerConnectionsReply.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 
@@ -181,24 +181,14 @@ class OFBsnControllerConnectionsReplyVer14 implements OFBsnControllerConnections
         private List<OFBsnControllerConnection> connections;
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_14;
+    public List<OFBsnControllerConnection> getConnections() {
+        return connections;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.EXPERIMENTER;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFBsnControllerConnectionsReply.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
+    public OFBsnControllerConnectionsReply.Builder setConnections(List<OFBsnControllerConnection> connections) {
+        this.connections = connections;
+        this.connectionsSet = true;
         return this;
     }
     @Override
@@ -212,14 +202,24 @@ class OFBsnControllerConnectionsReplyVer14 implements OFBsnControllerConnections
     }
 
     @Override
-    public List<OFBsnControllerConnection> getConnections() {
-        return connections;
+    public OFType getType() {
+        return OFType.EXPERIMENTER;
     }
 
     @Override
-    public OFBsnControllerConnectionsReply.Builder setConnections(List<OFBsnControllerConnection> connections) {
-        this.connections = connections;
-        this.connectionsSet = true;
+    public OFVersion getVersion() {
+        return OFVersion.OF_14;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFBsnControllerConnectionsReply.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 //

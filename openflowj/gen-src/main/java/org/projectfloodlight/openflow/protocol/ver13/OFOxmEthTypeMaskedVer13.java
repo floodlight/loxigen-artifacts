@@ -64,6 +64,11 @@ class OFOxmEthTypeMaskedVer13 implements OFOxmEthTypeMasked {
 
     // Accessors for OF message fields
     @Override
+    public EthType getMask() {
+        return mask;
+    }
+
+    @Override
     public long getTypeLen() {
         return 0x80000b04L;
     }
@@ -71,21 +76,6 @@ class OFOxmEthTypeMaskedVer13 implements OFOxmEthTypeMasked {
     @Override
     public EthType getValue() {
         return value;
-    }
-
-    @Override
-    public EthType getMask() {
-        return mask;
-    }
-
-    @Override
-    public MatchField<EthType> getMatchField() {
-        return MatchField.ETH_TYPE;
-    }
-
-    @Override
-    public boolean isMasked() {
-        return true;
     }
 
     public OFOxm<EthType> getCanonical() {
@@ -96,6 +86,16 @@ class OFOxmEthTypeMaskedVer13 implements OFOxmEthTypeMasked {
         } else {
             return this;
         }
+    }
+
+    @Override
+    public boolean isMasked() {
+        return true;
+    }
+
+    @Override
+    public MatchField<EthType> getMatchField() {
+        return MatchField.ETH_TYPE;
     }
 
     @Override
@@ -123,6 +123,17 @@ class OFOxmEthTypeMaskedVer13 implements OFOxmEthTypeMasked {
         }
 
     @Override
+    public EthType getMask() {
+        return mask;
+    }
+
+    @Override
+    public OFOxmEthTypeMasked.Builder setMask(EthType mask) {
+        this.mask = mask;
+        this.maskSet = true;
+        return this;
+    }
+    @Override
     public long getTypeLen() {
         return 0x80000b04L;
     }
@@ -139,19 +150,8 @@ class OFOxmEthTypeMaskedVer13 implements OFOxmEthTypeMasked {
         return this;
     }
     @Override
-    public EthType getMask() {
-        return mask;
-    }
-
-    @Override
-    public OFOxmEthTypeMasked.Builder setMask(EthType mask) {
-        this.mask = mask;
-        this.maskSet = true;
-        return this;
-    }
-    @Override
-    public MatchField<EthType> getMatchField() {
-        return MatchField.ETH_TYPE;
+    public OFOxm<EthType> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.3");
     }
 
     @Override
@@ -160,8 +160,8 @@ class OFOxmEthTypeMaskedVer13 implements OFOxmEthTypeMasked {
     }
 
     @Override
-    public OFOxm<EthType> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.3");
+    public MatchField<EthType> getMatchField() {
+        return MatchField.ETH_TYPE;
     }
 
     @Override
@@ -197,6 +197,17 @@ class OFOxmEthTypeMaskedVer13 implements OFOxmEthTypeMasked {
         private EthType mask;
 
     @Override
+    public EthType getMask() {
+        return mask;
+    }
+
+    @Override
+    public OFOxmEthTypeMasked.Builder setMask(EthType mask) {
+        this.mask = mask;
+        this.maskSet = true;
+        return this;
+    }
+    @Override
     public long getTypeLen() {
         return 0x80000b04L;
     }
@@ -213,19 +224,8 @@ class OFOxmEthTypeMaskedVer13 implements OFOxmEthTypeMasked {
         return this;
     }
     @Override
-    public EthType getMask() {
-        return mask;
-    }
-
-    @Override
-    public OFOxmEthTypeMasked.Builder setMask(EthType mask) {
-        this.mask = mask;
-        this.maskSet = true;
-        return this;
-    }
-    @Override
-    public MatchField<EthType> getMatchField() {
-        return MatchField.ETH_TYPE;
+    public OFOxm<EthType> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.3");
     }
 
     @Override
@@ -234,8 +234,8 @@ class OFOxmEthTypeMaskedVer13 implements OFOxmEthTypeMasked {
     }
 
     @Override
-    public OFOxm<EthType> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.3");
+    public MatchField<EthType> getMatchField() {
+        return MatchField.ETH_TYPE;
     }
 
     @Override

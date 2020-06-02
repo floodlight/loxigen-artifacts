@@ -28,8 +28,8 @@ import org.projectfloodlight.openflow.exceptions.*;
 import io.netty.buffer.ByteBuf;
 
 public interface OFBsnVlanMac extends OFObject {
-    int getVlanVid();
     MacAddress getMac();
+    int getVlanVid();
     OFVersion getVersion();
 
     void writeTo(ByteBuf channelBuffer);
@@ -37,10 +37,10 @@ public interface OFBsnVlanMac extends OFObject {
     Builder createBuilder();
     public interface Builder  {
         OFBsnVlanMac build();
-        int getVlanVid();
-        Builder setVlanVid(int vlanVid);
         MacAddress getMac();
         Builder setMac(MacAddress mac);
+        int getVlanVid();
+        Builder setVlanVid(int vlanVid);
         OFVersion getVersion();
     }
 }

@@ -61,13 +61,13 @@ class OFTimeVer15 implements OFTime {
 
     // Accessors for OF message fields
     @Override
-    public U64 getSeconds() {
-        return seconds;
+    public long getNanoseconds() {
+        return nanoseconds;
     }
 
     @Override
-    public long getNanoseconds() {
-        return nanoseconds;
+    public U64 getSeconds() {
+        return seconds;
     }
 
     @Override
@@ -95,17 +95,6 @@ class OFTimeVer15 implements OFTime {
         }
 
     @Override
-    public U64 getSeconds() {
-        return seconds;
-    }
-
-    @Override
-    public OFTime.Builder setSeconds(U64 seconds) {
-        this.seconds = seconds;
-        this.secondsSet = true;
-        return this;
-    }
-    @Override
     public long getNanoseconds() {
         return nanoseconds;
     }
@@ -114,6 +103,17 @@ class OFTimeVer15 implements OFTime {
     public OFTime.Builder setNanoseconds(long nanoseconds) {
         this.nanoseconds = nanoseconds;
         this.nanosecondsSet = true;
+        return this;
+    }
+    @Override
+    public U64 getSeconds() {
+        return seconds;
+    }
+
+    @Override
+    public OFTime.Builder setSeconds(U64 seconds) {
+        this.seconds = seconds;
+        this.secondsSet = true;
         return this;
     }
     @Override
@@ -147,17 +147,6 @@ class OFTimeVer15 implements OFTime {
         private long nanoseconds;
 
     @Override
-    public U64 getSeconds() {
-        return seconds;
-    }
-
-    @Override
-    public OFTime.Builder setSeconds(U64 seconds) {
-        this.seconds = seconds;
-        this.secondsSet = true;
-        return this;
-    }
-    @Override
     public long getNanoseconds() {
         return nanoseconds;
     }
@@ -166,6 +155,17 @@ class OFTimeVer15 implements OFTime {
     public OFTime.Builder setNanoseconds(long nanoseconds) {
         this.nanoseconds = nanoseconds;
         this.nanosecondsSet = true;
+        return this;
+    }
+    @Override
+    public U64 getSeconds() {
+        return seconds;
+    }
+
+    @Override
+    public OFTime.Builder setSeconds(U64 seconds) {
+        this.seconds = seconds;
+        this.secondsSet = true;
         return this;
     }
     @Override

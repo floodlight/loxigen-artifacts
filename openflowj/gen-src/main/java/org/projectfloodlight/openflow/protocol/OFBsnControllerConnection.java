@@ -28,9 +28,9 @@ import org.projectfloodlight.openflow.exceptions.*;
 import io.netty.buffer.ByteBuf;
 
 public interface OFBsnControllerConnection extends OFObject {
-    OFBsnControllerConnectionState getState();
     OFAuxId getAuxiliaryId();
     OFControllerRole getRole();
+    OFBsnControllerConnectionState getState();
     String getUri();
     OFVersion getVersion();
 
@@ -39,12 +39,12 @@ public interface OFBsnControllerConnection extends OFObject {
     Builder createBuilder();
     public interface Builder  {
         OFBsnControllerConnection build();
-        OFBsnControllerConnectionState getState();
-        Builder setState(OFBsnControllerConnectionState state);
         OFAuxId getAuxiliaryId();
         Builder setAuxiliaryId(OFAuxId auxiliaryId);
         OFControllerRole getRole();
         Builder setRole(OFControllerRole role);
+        OFBsnControllerConnectionState getState();
+        Builder setState(OFBsnControllerConnectionState state);
         String getUri();
         Builder setUri(String uri);
         OFVersion getVersion();

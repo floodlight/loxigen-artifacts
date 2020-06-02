@@ -67,16 +67,6 @@ class OFOxmIpEcnVer14 implements OFOxmIpEcn {
         return value;
     }
 
-    @Override
-    public MatchField<IpEcn> getMatchField() {
-        return MatchField.IP_ECN;
-    }
-
-    @Override
-    public boolean isMasked() {
-        return false;
-    }
-
     public OFOxm<IpEcn> getCanonical() {
         // exact match OXM is always canonical
         return this;
@@ -85,6 +75,16 @@ class OFOxmIpEcnVer14 implements OFOxmIpEcn {
     @Override
     public IpEcn getMask()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property mask not supported in version 1.4");
+    }
+
+    @Override
+    public boolean isMasked() {
+        return false;
+    }
+
+    @Override
+    public MatchField<IpEcn> getMatchField() {
+        return MatchField.IP_ECN;
     }
 
     @Override
@@ -126,8 +126,13 @@ class OFOxmIpEcnVer14 implements OFOxmIpEcn {
         return this;
     }
     @Override
-    public MatchField<IpEcn> getMatchField() {
-        return MatchField.IP_ECN;
+    public OFOxm<IpEcn> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.4");
+    }
+
+    @Override
+    public IpEcn getMask()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property mask not supported in version 1.4");
     }
 
     @Override
@@ -136,13 +141,8 @@ class OFOxmIpEcnVer14 implements OFOxmIpEcn {
     }
 
     @Override
-    public OFOxm<IpEcn> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.4");
-    }
-
-    @Override
-    public IpEcn getMask()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property mask not supported in version 1.4");
+    public MatchField<IpEcn> getMatchField() {
+        return MatchField.IP_ECN;
     }
 
     @Override
@@ -188,8 +188,13 @@ class OFOxmIpEcnVer14 implements OFOxmIpEcn {
         return this;
     }
     @Override
-    public MatchField<IpEcn> getMatchField() {
-        return MatchField.IP_ECN;
+    public OFOxm<IpEcn> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.4");
+    }
+
+    @Override
+    public IpEcn getMask()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property mask not supported in version 1.4");
     }
 
     @Override
@@ -198,13 +203,8 @@ class OFOxmIpEcnVer14 implements OFOxmIpEcn {
     }
 
     @Override
-    public OFOxm<IpEcn> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.4");
-    }
-
-    @Override
-    public IpEcn getMask()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property mask not supported in version 1.4");
+    public MatchField<IpEcn> getMatchField() {
+        return MatchField.IP_ECN;
     }
 
     @Override

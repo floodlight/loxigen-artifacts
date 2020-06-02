@@ -29,8 +29,8 @@ import java.util.List;
 import io.netty.buffer.ByteBuf;
 
 public interface OFBsnVrfCounterStatsEntry extends OFObject {
-    long getVrf();
     List<U64> getValues();
+    long getVrf();
     OFVersion getVersion();
 
     void writeTo(ByteBuf channelBuffer);
@@ -38,10 +38,10 @@ public interface OFBsnVrfCounterStatsEntry extends OFObject {
     Builder createBuilder();
     public interface Builder  {
         OFBsnVrfCounterStatsEntry build();
-        long getVrf();
-        Builder setVrf(long vrf);
         List<U64> getValues();
         Builder setValues(List<U64> values);
+        long getVrf();
+        Builder setVrf(long vrf);
         OFVersion getVersion();
     }
 }

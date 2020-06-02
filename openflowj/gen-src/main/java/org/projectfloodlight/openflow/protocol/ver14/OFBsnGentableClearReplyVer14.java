@@ -62,18 +62,13 @@ class OFBsnGentableClearReplyVer14 implements OFBsnGentableClearReply {
 
     // Accessors for OF message fields
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_14;
+    public long getDeletedCount() {
+        return deletedCount;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.EXPERIMENTER;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
+    public long getErrorCount() {
+        return errorCount;
     }
 
     @Override
@@ -92,13 +87,18 @@ class OFBsnGentableClearReplyVer14 implements OFBsnGentableClearReply {
     }
 
     @Override
-    public long getDeletedCount() {
-        return deletedCount;
+    public OFType getType() {
+        return OFType.EXPERIMENTER;
     }
 
     @Override
-    public long getErrorCount() {
-        return errorCount;
+    public OFVersion getVersion() {
+        return OFVersion.OF_14;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
     }
 
 
@@ -125,24 +125,25 @@ class OFBsnGentableClearReplyVer14 implements OFBsnGentableClearReply {
         }
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_14;
+    public long getDeletedCount() {
+        return deletedCount;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.EXPERIMENTER;
+    public OFBsnGentableClearReply.Builder setDeletedCount(long deletedCount) {
+        this.deletedCount = deletedCount;
+        this.deletedCountSet = true;
+        return this;
+    }
+    @Override
+    public long getErrorCount() {
+        return errorCount;
     }
 
     @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFBsnGentableClearReply.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
+    public OFBsnGentableClearReply.Builder setErrorCount(long errorCount) {
+        this.errorCount = errorCount;
+        this.errorCountSet = true;
         return this;
     }
     @Override
@@ -167,25 +168,24 @@ class OFBsnGentableClearReplyVer14 implements OFBsnGentableClearReply {
         return this;
     }
     @Override
-    public long getDeletedCount() {
-        return deletedCount;
+    public OFType getType() {
+        return OFType.EXPERIMENTER;
     }
 
     @Override
-    public OFBsnGentableClearReply.Builder setDeletedCount(long deletedCount) {
-        this.deletedCount = deletedCount;
-        this.deletedCountSet = true;
-        return this;
-    }
-    @Override
-    public long getErrorCount() {
-        return errorCount;
+    public OFVersion getVersion() {
+        return OFVersion.OF_14;
     }
 
     @Override
-    public OFBsnGentableClearReply.Builder setErrorCount(long errorCount) {
-        this.errorCount = errorCount;
-        this.errorCountSet = true;
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFBsnGentableClearReply.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 
@@ -222,24 +222,25 @@ class OFBsnGentableClearReplyVer14 implements OFBsnGentableClearReply {
         private long errorCount;
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_14;
+    public long getDeletedCount() {
+        return deletedCount;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.EXPERIMENTER;
+    public OFBsnGentableClearReply.Builder setDeletedCount(long deletedCount) {
+        this.deletedCount = deletedCount;
+        this.deletedCountSet = true;
+        return this;
+    }
+    @Override
+    public long getErrorCount() {
+        return errorCount;
     }
 
     @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFBsnGentableClearReply.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
+    public OFBsnGentableClearReply.Builder setErrorCount(long errorCount) {
+        this.errorCount = errorCount;
+        this.errorCountSet = true;
         return this;
     }
     @Override
@@ -264,25 +265,24 @@ class OFBsnGentableClearReplyVer14 implements OFBsnGentableClearReply {
         return this;
     }
     @Override
-    public long getDeletedCount() {
-        return deletedCount;
+    public OFType getType() {
+        return OFType.EXPERIMENTER;
     }
 
     @Override
-    public OFBsnGentableClearReply.Builder setDeletedCount(long deletedCount) {
-        this.deletedCount = deletedCount;
-        this.deletedCountSet = true;
-        return this;
-    }
-    @Override
-    public long getErrorCount() {
-        return errorCount;
+    public OFVersion getVersion() {
+        return OFVersion.OF_14;
     }
 
     @Override
-    public OFBsnGentableClearReply.Builder setErrorCount(long errorCount) {
-        this.errorCount = errorCount;
-        this.errorCountSet = true;
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFBsnGentableClearReply.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 //

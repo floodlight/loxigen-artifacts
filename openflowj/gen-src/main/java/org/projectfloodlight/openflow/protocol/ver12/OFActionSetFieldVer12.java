@@ -55,13 +55,13 @@ class OFActionSetFieldVer12 implements OFActionSetField {
 
     // Accessors for OF message fields
     @Override
-    public OFActionType getType() {
-        return OFActionType.SET_FIELD;
+    public OFOxm<?> getField() {
+        return field;
     }
 
     @Override
-    public OFOxm<?> getField() {
-        return field;
+    public OFActionType getType() {
+        return OFActionType.SET_FIELD;
     }
 
     @Override
@@ -87,11 +87,6 @@ class OFActionSetFieldVer12 implements OFActionSetField {
         }
 
     @Override
-    public OFActionType getType() {
-        return OFActionType.SET_FIELD;
-    }
-
-    @Override
     public OFOxm<?> getField() {
         return field;
     }
@@ -102,6 +97,11 @@ class OFActionSetFieldVer12 implements OFActionSetField {
         this.fieldSet = true;
         return this;
     }
+    @Override
+    public OFActionType getType() {
+        return OFActionType.SET_FIELD;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_12;
@@ -129,11 +129,6 @@ class OFActionSetFieldVer12 implements OFActionSetField {
         private OFOxm<?> field;
 
     @Override
-    public OFActionType getType() {
-        return OFActionType.SET_FIELD;
-    }
-
-    @Override
     public OFOxm<?> getField() {
         return field;
     }
@@ -144,6 +139,11 @@ class OFActionSetFieldVer12 implements OFActionSetField {
         this.fieldSet = true;
         return this;
     }
+    @Override
+    public OFActionType getType() {
+        return OFActionType.SET_FIELD;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_12;

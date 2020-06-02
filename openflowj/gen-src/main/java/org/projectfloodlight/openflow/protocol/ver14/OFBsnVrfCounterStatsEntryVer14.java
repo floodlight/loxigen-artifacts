@@ -65,13 +65,13 @@ class OFBsnVrfCounterStatsEntryVer14 implements OFBsnVrfCounterStatsEntry {
 
     // Accessors for OF message fields
     @Override
-    public long getVrf() {
-        return vrf;
+    public List<U64> getValues() {
+        return values;
     }
 
     @Override
-    public List<U64> getValues() {
-        return values;
+    public long getVrf() {
+        return vrf;
     }
 
     @Override
@@ -99,17 +99,6 @@ class OFBsnVrfCounterStatsEntryVer14 implements OFBsnVrfCounterStatsEntry {
         }
 
     @Override
-    public long getVrf() {
-        return vrf;
-    }
-
-    @Override
-    public OFBsnVrfCounterStatsEntry.Builder setVrf(long vrf) {
-        this.vrf = vrf;
-        this.vrfSet = true;
-        return this;
-    }
-    @Override
     public List<U64> getValues() {
         return values;
     }
@@ -118,6 +107,17 @@ class OFBsnVrfCounterStatsEntryVer14 implements OFBsnVrfCounterStatsEntry {
     public OFBsnVrfCounterStatsEntry.Builder setValues(List<U64> values) {
         this.values = values;
         this.valuesSet = true;
+        return this;
+    }
+    @Override
+    public long getVrf() {
+        return vrf;
+    }
+
+    @Override
+    public OFBsnVrfCounterStatsEntry.Builder setVrf(long vrf) {
+        this.vrf = vrf;
+        this.vrfSet = true;
         return this;
     }
     @Override
@@ -151,17 +151,6 @@ class OFBsnVrfCounterStatsEntryVer14 implements OFBsnVrfCounterStatsEntry {
         private List<U64> values;
 
     @Override
-    public long getVrf() {
-        return vrf;
-    }
-
-    @Override
-    public OFBsnVrfCounterStatsEntry.Builder setVrf(long vrf) {
-        this.vrf = vrf;
-        this.vrfSet = true;
-        return this;
-    }
-    @Override
     public List<U64> getValues() {
         return values;
     }
@@ -170,6 +159,17 @@ class OFBsnVrfCounterStatsEntryVer14 implements OFBsnVrfCounterStatsEntry {
     public OFBsnVrfCounterStatsEntry.Builder setValues(List<U64> values) {
         this.values = values;
         this.valuesSet = true;
+        return this;
+    }
+    @Override
+    public long getVrf() {
+        return vrf;
+    }
+
+    @Override
+    public OFBsnVrfCounterStatsEntry.Builder setVrf(long vrf) {
+        this.vrf = vrf;
+        this.vrfSet = true;
         return this;
     }
     @Override

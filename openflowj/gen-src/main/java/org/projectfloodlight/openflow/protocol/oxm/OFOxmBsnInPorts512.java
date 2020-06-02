@@ -30,10 +30,10 @@ import io.netty.buffer.ByteBuf;
 public interface OFOxmBsnInPorts512 extends OFObject, OFOxm<OFBitMask512> {
     long getTypeLen();
     OFBitMask512 getValue();
-    MatchField<OFBitMask512> getMatchField();
-    boolean isMasked();
     OFOxm<OFBitMask512> getCanonical();
     OFBitMask512 getMask();
+    boolean isMasked();
+    MatchField<OFBitMask512> getMatchField();
     OFVersion getVersion();
 
     void writeTo(ByteBuf channelBuffer);
@@ -44,10 +44,10 @@ public interface OFOxmBsnInPorts512 extends OFObject, OFOxm<OFBitMask512> {
         long getTypeLen();
         OFBitMask512 getValue();
         Builder setValue(OFBitMask512 value);
-        MatchField<OFBitMask512> getMatchField();
-        boolean isMasked();
         OFOxm<OFBitMask512> getCanonical();
         OFBitMask512 getMask();
+        boolean isMasked();
+        MatchField<OFBitMask512> getMatchField();
         OFVersion getVersion();
     }
 }

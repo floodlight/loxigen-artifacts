@@ -30,10 +30,10 @@ import io.netty.buffer.ByteBuf;
 public interface OFOxmIpv6NdTll extends OFObject, OFOxm<MacAddress> {
     long getTypeLen();
     MacAddress getValue();
-    MatchField<MacAddress> getMatchField();
-    boolean isMasked();
     OFOxm<MacAddress> getCanonical();
     MacAddress getMask();
+    boolean isMasked();
+    MatchField<MacAddress> getMatchField();
     OFVersion getVersion();
 
     void writeTo(ByteBuf channelBuffer);
@@ -44,10 +44,10 @@ public interface OFOxmIpv6NdTll extends OFObject, OFOxm<MacAddress> {
         long getTypeLen();
         MacAddress getValue();
         Builder setValue(MacAddress value);
-        MatchField<MacAddress> getMatchField();
-        boolean isMasked();
         OFOxm<MacAddress> getCanonical();
         MacAddress getMask();
+        boolean isMasked();
+        MatchField<MacAddress> getMatchField();
         OFVersion getVersion();
     }
 }

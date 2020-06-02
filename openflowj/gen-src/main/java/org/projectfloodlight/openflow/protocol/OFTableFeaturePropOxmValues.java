@@ -28,8 +28,8 @@ import org.projectfloodlight.openflow.exceptions.*;
 import io.netty.buffer.ByteBuf;
 
 public interface OFTableFeaturePropOxmValues extends OFObject {
-    int getType();
     byte[] getOxmValues();
+    int getType();
     OFVersion getVersion();
 
     void writeTo(ByteBuf channelBuffer);
@@ -37,9 +37,9 @@ public interface OFTableFeaturePropOxmValues extends OFObject {
     Builder createBuilder();
     public interface Builder  {
         OFTableFeaturePropOxmValues build();
-        int getType();
         byte[] getOxmValues();
         Builder setOxmValues(byte[] oxmValues);
+        int getType();
         OFVersion getVersion();
     }
 }

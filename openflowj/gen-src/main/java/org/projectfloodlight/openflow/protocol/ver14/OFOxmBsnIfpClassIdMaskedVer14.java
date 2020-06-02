@@ -64,6 +64,11 @@ class OFOxmBsnIfpClassIdMaskedVer14 implements OFOxmBsnIfpClassIdMasked {
 
     // Accessors for OF message fields
     @Override
+    public ClassId getMask() {
+        return mask;
+    }
+
+    @Override
     public long getTypeLen() {
         return 0x33708L;
     }
@@ -71,21 +76,6 @@ class OFOxmBsnIfpClassIdMaskedVer14 implements OFOxmBsnIfpClassIdMasked {
     @Override
     public ClassId getValue() {
         return value;
-    }
-
-    @Override
-    public ClassId getMask() {
-        return mask;
-    }
-
-    @Override
-    public MatchField<ClassId> getMatchField() {
-        return MatchField.BSN_IFP_CLASS_ID;
-    }
-
-    @Override
-    public boolean isMasked() {
-        return true;
     }
 
     public OFOxm<ClassId> getCanonical() {
@@ -96,6 +86,16 @@ class OFOxmBsnIfpClassIdMaskedVer14 implements OFOxmBsnIfpClassIdMasked {
         } else {
             return this;
         }
+    }
+
+    @Override
+    public boolean isMasked() {
+        return true;
+    }
+
+    @Override
+    public MatchField<ClassId> getMatchField() {
+        return MatchField.BSN_IFP_CLASS_ID;
     }
 
     @Override
@@ -123,6 +123,17 @@ class OFOxmBsnIfpClassIdMaskedVer14 implements OFOxmBsnIfpClassIdMasked {
         }
 
     @Override
+    public ClassId getMask() {
+        return mask;
+    }
+
+    @Override
+    public OFOxmBsnIfpClassIdMasked.Builder setMask(ClassId mask) {
+        this.mask = mask;
+        this.maskSet = true;
+        return this;
+    }
+    @Override
     public long getTypeLen() {
         return 0x33708L;
     }
@@ -139,19 +150,8 @@ class OFOxmBsnIfpClassIdMaskedVer14 implements OFOxmBsnIfpClassIdMasked {
         return this;
     }
     @Override
-    public ClassId getMask() {
-        return mask;
-    }
-
-    @Override
-    public OFOxmBsnIfpClassIdMasked.Builder setMask(ClassId mask) {
-        this.mask = mask;
-        this.maskSet = true;
-        return this;
-    }
-    @Override
-    public MatchField<ClassId> getMatchField() {
-        return MatchField.BSN_IFP_CLASS_ID;
+    public OFOxm<ClassId> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.4");
     }
 
     @Override
@@ -160,8 +160,8 @@ class OFOxmBsnIfpClassIdMaskedVer14 implements OFOxmBsnIfpClassIdMasked {
     }
 
     @Override
-    public OFOxm<ClassId> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.4");
+    public MatchField<ClassId> getMatchField() {
+        return MatchField.BSN_IFP_CLASS_ID;
     }
 
     @Override
@@ -197,6 +197,17 @@ class OFOxmBsnIfpClassIdMaskedVer14 implements OFOxmBsnIfpClassIdMasked {
         private ClassId mask;
 
     @Override
+    public ClassId getMask() {
+        return mask;
+    }
+
+    @Override
+    public OFOxmBsnIfpClassIdMasked.Builder setMask(ClassId mask) {
+        this.mask = mask;
+        this.maskSet = true;
+        return this;
+    }
+    @Override
     public long getTypeLen() {
         return 0x33708L;
     }
@@ -213,19 +224,8 @@ class OFOxmBsnIfpClassIdMaskedVer14 implements OFOxmBsnIfpClassIdMasked {
         return this;
     }
     @Override
-    public ClassId getMask() {
-        return mask;
-    }
-
-    @Override
-    public OFOxmBsnIfpClassIdMasked.Builder setMask(ClassId mask) {
-        this.mask = mask;
-        this.maskSet = true;
-        return this;
-    }
-    @Override
-    public MatchField<ClassId> getMatchField() {
-        return MatchField.BSN_IFP_CLASS_ID;
+    public OFOxm<ClassId> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.4");
     }
 
     @Override
@@ -234,8 +234,8 @@ class OFOxmBsnIfpClassIdMaskedVer14 implements OFOxmBsnIfpClassIdMasked {
     }
 
     @Override
-    public OFOxm<ClassId> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.4");
+    public MatchField<ClassId> getMatchField() {
+        return MatchField.BSN_IFP_CLASS_ID;
     }
 
     @Override

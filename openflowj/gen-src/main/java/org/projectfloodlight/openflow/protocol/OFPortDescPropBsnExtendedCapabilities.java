@@ -28,13 +28,13 @@ import org.projectfloodlight.openflow.exceptions.*;
 import io.netty.buffer.ByteBuf;
 
 public interface OFPortDescPropBsnExtendedCapabilities extends OFObject, OFPortDescPropBsn {
-    int getType();
-    long getExperimenter();
-    long getExpType();
     U64 getConfigurability();
     U64 getConflict();
+    long getExpType();
+    long getExperimenter();
     U64 getReserved1();
     U64 getReserved2();
+    int getType();
     OFVersion getVersion();
 
     void writeTo(ByteBuf channelBuffer);
@@ -42,18 +42,18 @@ public interface OFPortDescPropBsnExtendedCapabilities extends OFObject, OFPortD
     Builder createBuilder();
     public interface Builder extends OFPortDescPropBsn.Builder {
         OFPortDescPropBsnExtendedCapabilities build();
-        int getType();
-        long getExperimenter();
-        long getExpType();
-        Builder setExpType(long expType);
         U64 getConfigurability();
         Builder setConfigurability(U64 configurability);
         U64 getConflict();
         Builder setConflict(U64 conflict);
+        long getExpType();
+        Builder setExpType(long expType);
+        long getExperimenter();
         U64 getReserved1();
         Builder setReserved1(U64 reserved1);
         U64 getReserved2();
         Builder setReserved2(U64 reserved2);
+        int getType();
         OFVersion getVersion();
     }
 }

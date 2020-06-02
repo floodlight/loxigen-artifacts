@@ -67,16 +67,6 @@ class OFOxmEthTypeVer14 implements OFOxmEthType {
         return value;
     }
 
-    @Override
-    public MatchField<EthType> getMatchField() {
-        return MatchField.ETH_TYPE;
-    }
-
-    @Override
-    public boolean isMasked() {
-        return false;
-    }
-
     public OFOxm<EthType> getCanonical() {
         // exact match OXM is always canonical
         return this;
@@ -85,6 +75,16 @@ class OFOxmEthTypeVer14 implements OFOxmEthType {
     @Override
     public EthType getMask()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property mask not supported in version 1.4");
+    }
+
+    @Override
+    public boolean isMasked() {
+        return false;
+    }
+
+    @Override
+    public MatchField<EthType> getMatchField() {
+        return MatchField.ETH_TYPE;
     }
 
     @Override
@@ -126,8 +126,13 @@ class OFOxmEthTypeVer14 implements OFOxmEthType {
         return this;
     }
     @Override
-    public MatchField<EthType> getMatchField() {
-        return MatchField.ETH_TYPE;
+    public OFOxm<EthType> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.4");
+    }
+
+    @Override
+    public EthType getMask()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property mask not supported in version 1.4");
     }
 
     @Override
@@ -136,13 +141,8 @@ class OFOxmEthTypeVer14 implements OFOxmEthType {
     }
 
     @Override
-    public OFOxm<EthType> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.4");
-    }
-
-    @Override
-    public EthType getMask()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property mask not supported in version 1.4");
+    public MatchField<EthType> getMatchField() {
+        return MatchField.ETH_TYPE;
     }
 
     @Override
@@ -188,8 +188,13 @@ class OFOxmEthTypeVer14 implements OFOxmEthType {
         return this;
     }
     @Override
-    public MatchField<EthType> getMatchField() {
-        return MatchField.ETH_TYPE;
+    public OFOxm<EthType> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.4");
+    }
+
+    @Override
+    public EthType getMask()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property mask not supported in version 1.4");
     }
 
     @Override
@@ -198,13 +203,8 @@ class OFOxmEthTypeVer14 implements OFOxmEthType {
     }
 
     @Override
-    public OFOxm<EthType> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.4");
-    }
-
-    @Override
-    public EthType getMask()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property mask not supported in version 1.4");
+    public MatchField<EthType> getMatchField() {
+        return MatchField.ETH_TYPE;
     }
 
     @Override

@@ -67,16 +67,6 @@ class OFOxmBsnInnerEthDstVer14 implements OFOxmBsnInnerEthDst {
         return value;
     }
 
-    @Override
-    public MatchField<MacAddress> getMatchField() {
-        return MatchField.BSN_INNER_ETH_DST;
-    }
-
-    @Override
-    public boolean isMasked() {
-        return false;
-    }
-
     public OFOxm<MacAddress> getCanonical() {
         // exact match OXM is always canonical
         return this;
@@ -85,6 +75,16 @@ class OFOxmBsnInnerEthDstVer14 implements OFOxmBsnInnerEthDst {
     @Override
     public MacAddress getMask()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property mask not supported in version 1.4");
+    }
+
+    @Override
+    public boolean isMasked() {
+        return false;
+    }
+
+    @Override
+    public MatchField<MacAddress> getMatchField() {
+        return MatchField.BSN_INNER_ETH_DST;
     }
 
     @Override
@@ -126,8 +126,13 @@ class OFOxmBsnInnerEthDstVer14 implements OFOxmBsnInnerEthDst {
         return this;
     }
     @Override
-    public MatchField<MacAddress> getMatchField() {
-        return MatchField.BSN_INNER_ETH_DST;
+    public OFOxm<MacAddress> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.4");
+    }
+
+    @Override
+    public MacAddress getMask()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property mask not supported in version 1.4");
     }
 
     @Override
@@ -136,13 +141,8 @@ class OFOxmBsnInnerEthDstVer14 implements OFOxmBsnInnerEthDst {
     }
 
     @Override
-    public OFOxm<MacAddress> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.4");
-    }
-
-    @Override
-    public MacAddress getMask()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property mask not supported in version 1.4");
+    public MatchField<MacAddress> getMatchField() {
+        return MatchField.BSN_INNER_ETH_DST;
     }
 
     @Override
@@ -188,8 +188,13 @@ class OFOxmBsnInnerEthDstVer14 implements OFOxmBsnInnerEthDst {
         return this;
     }
     @Override
-    public MatchField<MacAddress> getMatchField() {
-        return MatchField.BSN_INNER_ETH_DST;
+    public OFOxm<MacAddress> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.4");
+    }
+
+    @Override
+    public MacAddress getMask()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property mask not supported in version 1.4");
     }
 
     @Override
@@ -198,13 +203,8 @@ class OFOxmBsnInnerEthDstVer14 implements OFOxmBsnInnerEthDst {
     }
 
     @Override
-    public OFOxm<MacAddress> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.4");
-    }
-
-    @Override
-    public MacAddress getMask()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property mask not supported in version 1.4");
+    public MatchField<MacAddress> getMatchField() {
+        return MatchField.BSN_INNER_ETH_DST;
     }
 
     @Override

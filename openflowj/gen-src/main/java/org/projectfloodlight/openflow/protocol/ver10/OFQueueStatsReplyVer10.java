@@ -72,23 +72,8 @@ class OFQueueStatsReplyVer10 implements OFQueueStatsReply {
 
     // Accessors for OF message fields
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_10;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.STATS_REPLY;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFStatsType getStatsType() {
-        return OFStatsType.QUEUE;
+    public List<OFQueueStatsEntry> getEntries() {
+        return entries;
     }
 
     @Override
@@ -97,8 +82,23 @@ class OFQueueStatsReplyVer10 implements OFQueueStatsReply {
     }
 
     @Override
-    public List<OFQueueStatsEntry> getEntries() {
-        return entries;
+    public OFStatsType getStatsType() {
+        return OFStatsType.QUEUE;
+    }
+
+    @Override
+    public OFType getType() {
+        return OFType.STATS_REPLY;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_10;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
     }
 
 
@@ -123,31 +123,16 @@ class OFQueueStatsReplyVer10 implements OFQueueStatsReply {
         }
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_10;
+    public List<OFQueueStatsEntry> getEntries() {
+        return entries;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.STATS_REPLY;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFQueueStatsReply.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
+    public OFQueueStatsReply.Builder setEntries(List<OFQueueStatsEntry> entries) {
+        this.entries = entries;
+        this.entriesSet = true;
         return this;
     }
-    @Override
-    public OFStatsType getStatsType() {
-        return OFStatsType.QUEUE;
-    }
-
     @Override
     public Set<OFStatsReplyFlags> getFlags() {
         return flags;
@@ -160,14 +145,29 @@ class OFQueueStatsReplyVer10 implements OFQueueStatsReply {
         return this;
     }
     @Override
-    public List<OFQueueStatsEntry> getEntries() {
-        return entries;
+    public OFStatsType getStatsType() {
+        return OFStatsType.QUEUE;
     }
 
     @Override
-    public OFQueueStatsReply.Builder setEntries(List<OFQueueStatsEntry> entries) {
-        this.entries = entries;
-        this.entriesSet = true;
+    public OFType getType() {
+        return OFType.STATS_REPLY;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_10;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFQueueStatsReply.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 
@@ -202,31 +202,16 @@ class OFQueueStatsReplyVer10 implements OFQueueStatsReply {
         private List<OFQueueStatsEntry> entries;
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_10;
+    public List<OFQueueStatsEntry> getEntries() {
+        return entries;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.STATS_REPLY;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFQueueStatsReply.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
+    public OFQueueStatsReply.Builder setEntries(List<OFQueueStatsEntry> entries) {
+        this.entries = entries;
+        this.entriesSet = true;
         return this;
     }
-    @Override
-    public OFStatsType getStatsType() {
-        return OFStatsType.QUEUE;
-    }
-
     @Override
     public Set<OFStatsReplyFlags> getFlags() {
         return flags;
@@ -239,14 +224,29 @@ class OFQueueStatsReplyVer10 implements OFQueueStatsReply {
         return this;
     }
     @Override
-    public List<OFQueueStatsEntry> getEntries() {
-        return entries;
+    public OFStatsType getStatsType() {
+        return OFStatsType.QUEUE;
     }
 
     @Override
-    public OFQueueStatsReply.Builder setEntries(List<OFQueueStatsEntry> entries) {
-        this.entries = entries;
-        this.entriesSet = true;
+    public OFType getType() {
+        return OFType.STATS_REPLY;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_10;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFQueueStatsReply.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 //

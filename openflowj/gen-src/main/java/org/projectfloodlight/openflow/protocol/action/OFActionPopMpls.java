@@ -28,8 +28,8 @@ import org.projectfloodlight.openflow.exceptions.*;
 import io.netty.buffer.ByteBuf;
 
 public interface OFActionPopMpls extends OFObject, OFAction {
-    OFActionType getType();
     EthType getEthertype();
+    OFActionType getType();
     OFVersion getVersion();
 
     void writeTo(ByteBuf channelBuffer);
@@ -37,9 +37,9 @@ public interface OFActionPopMpls extends OFObject, OFAction {
     Builder createBuilder();
     public interface Builder extends OFAction.Builder {
         OFActionPopMpls build();
-        OFActionType getType();
         EthType getEthertype();
         Builder setEthertype(EthType ethertype);
+        OFActionType getType();
         OFVersion getVersion();
     }
 }

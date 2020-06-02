@@ -58,23 +58,13 @@ class OFBsnSetPktinSuppressionReplyVer11 implements OFBsnSetPktinSuppressionRepl
 
     // Accessors for OF message fields
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_11;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.EXPERIMENTER;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
     public long getExperimenter() {
         return 0x5c16c7L;
+    }
+
+    @Override
+    public long getStatus() {
+        return status;
     }
 
     @Override
@@ -83,8 +73,18 @@ class OFBsnSetPktinSuppressionReplyVer11 implements OFBsnSetPktinSuppressionRepl
     }
 
     @Override
-    public long getStatus() {
-        return status;
+    public OFType getType() {
+        return OFType.EXPERIMENTER;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_11;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
     }
 
 
@@ -107,34 +107,8 @@ class OFBsnSetPktinSuppressionReplyVer11 implements OFBsnSetPktinSuppressionRepl
         }
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_11;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.EXPERIMENTER;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFBsnSetPktinSuppressionReply.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
-        return this;
-    }
-    @Override
     public long getExperimenter() {
         return 0x5c16c7L;
-    }
-
-    @Override
-    public long getSubtype() {
-        return 0x19L;
     }
 
     @Override
@@ -146,6 +120,32 @@ class OFBsnSetPktinSuppressionReplyVer11 implements OFBsnSetPktinSuppressionRepl
     public OFBsnSetPktinSuppressionReply.Builder setStatus(long status) {
         this.status = status;
         this.statusSet = true;
+        return this;
+    }
+    @Override
+    public long getSubtype() {
+        return 0x19L;
+    }
+
+    @Override
+    public OFType getType() {
+        return OFType.EXPERIMENTER;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_11;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFBsnSetPktinSuppressionReply.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 
@@ -172,34 +172,8 @@ class OFBsnSetPktinSuppressionReplyVer11 implements OFBsnSetPktinSuppressionRepl
         private long status;
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_11;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.EXPERIMENTER;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFBsnSetPktinSuppressionReply.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
-        return this;
-    }
-    @Override
     public long getExperimenter() {
         return 0x5c16c7L;
-    }
-
-    @Override
-    public long getSubtype() {
-        return 0x19L;
     }
 
     @Override
@@ -211,6 +185,32 @@ class OFBsnSetPktinSuppressionReplyVer11 implements OFBsnSetPktinSuppressionRepl
     public OFBsnSetPktinSuppressionReply.Builder setStatus(long status) {
         this.status = status;
         this.statusSet = true;
+        return this;
+    }
+    @Override
+    public long getSubtype() {
+        return 0x19L;
+    }
+
+    @Override
+    public OFType getType() {
+        return OFType.EXPERIMENTER;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_11;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFBsnSetPktinSuppressionReply.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 //

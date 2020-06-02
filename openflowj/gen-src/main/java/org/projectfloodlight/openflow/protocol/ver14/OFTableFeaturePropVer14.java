@@ -78,6 +78,9 @@ abstract class OFTableFeaturePropVer14 {
                case (short) 0x3:
                    // discriminator value 0x3=0x3 for class OFTableFeaturePropNextTablesMissVer14
                    return OFTableFeaturePropNextTablesMissVer14.READER.readFrom(bb);
+               case (short) 0x10:
+                   // discriminator value 0x10=0x10 for class OFTableFeaturePropTableSyncFromVer14
+                   return OFTableFeaturePropTableSyncFromVer14.READER.readFrom(bb);
                case (short) 0xa:
                    // discriminator value 0xa=0xa for class OFTableFeaturePropWildcardsVer14
                    return OFTableFeaturePropWildcardsVer14.READER.readFrom(bb);
@@ -93,9 +96,6 @@ abstract class OFTableFeaturePropVer14 {
                case (short) 0xd:
                    // discriminator value 0xd=0xd for class OFTableFeaturePropWriteSetfieldMissVer14
                    return OFTableFeaturePropWriteSetfieldMissVer14.READER.readFrom(bb);
-               case (short) 0x10:
-                   // discriminator value 0x10=0x10 for class OFTableFeaturePropTableSyncFromVer14
-                   return OFTableFeaturePropTableSyncFromVer14.READER.readFrom(bb);
                default:
                    throw new OFParseError("Unknown value for discriminator type of class OFTableFeaturePropVer14: " + type);
             }

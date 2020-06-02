@@ -58,8 +58,8 @@ class OFActionBsnChecksumVer15 implements OFActionBsnChecksum {
 
     // Accessors for OF message fields
     @Override
-    public OFActionType getType() {
-        return OFActionType.EXPERIMENTER;
+    public U128 getChecksum() {
+        return checksum;
     }
 
     @Override
@@ -73,8 +73,8 @@ class OFActionBsnChecksumVer15 implements OFActionBsnChecksum {
     }
 
     @Override
-    public U128 getChecksum() {
-        return checksum;
+    public OFActionType getType() {
+        return OFActionType.EXPERIMENTER;
     }
 
     @Override
@@ -100,10 +100,16 @@ class OFActionBsnChecksumVer15 implements OFActionBsnChecksum {
         }
 
     @Override
-    public OFActionType getType() {
-        return OFActionType.EXPERIMENTER;
+    public U128 getChecksum() {
+        return checksum;
     }
 
+    @Override
+    public OFActionBsnChecksum.Builder setChecksum(U128 checksum) {
+        this.checksum = checksum;
+        this.checksumSet = true;
+        return this;
+    }
     @Override
     public long getExperimenter() {
         return 0x5c16c7L;
@@ -115,16 +121,10 @@ class OFActionBsnChecksumVer15 implements OFActionBsnChecksum {
     }
 
     @Override
-    public U128 getChecksum() {
-        return checksum;
+    public OFActionType getType() {
+        return OFActionType.EXPERIMENTER;
     }
 
-    @Override
-    public OFActionBsnChecksum.Builder setChecksum(U128 checksum) {
-        this.checksum = checksum;
-        this.checksumSet = true;
-        return this;
-    }
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_15;
@@ -152,10 +152,16 @@ class OFActionBsnChecksumVer15 implements OFActionBsnChecksum {
         private U128 checksum;
 
     @Override
-    public OFActionType getType() {
-        return OFActionType.EXPERIMENTER;
+    public U128 getChecksum() {
+        return checksum;
     }
 
+    @Override
+    public OFActionBsnChecksum.Builder setChecksum(U128 checksum) {
+        this.checksum = checksum;
+        this.checksumSet = true;
+        return this;
+    }
     @Override
     public long getExperimenter() {
         return 0x5c16c7L;
@@ -167,16 +173,10 @@ class OFActionBsnChecksumVer15 implements OFActionBsnChecksum {
     }
 
     @Override
-    public U128 getChecksum() {
-        return checksum;
+    public OFActionType getType() {
+        return OFActionType.EXPERIMENTER;
     }
 
-    @Override
-    public OFActionBsnChecksum.Builder setChecksum(U128 checksum) {
-        this.checksum = checksum;
-        this.checksumSet = true;
-        return this;
-    }
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_15;

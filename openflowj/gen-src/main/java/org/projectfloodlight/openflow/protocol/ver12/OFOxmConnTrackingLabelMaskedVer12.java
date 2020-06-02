@@ -64,6 +64,11 @@ class OFOxmConnTrackingLabelMaskedVer12 implements OFOxmConnTrackingLabelMasked 
 
     // Accessors for OF message fields
     @Override
+    public U128 getMask() {
+        return mask;
+    }
+
+    @Override
     public long getTypeLen() {
         return 0x1d920L;
     }
@@ -71,21 +76,6 @@ class OFOxmConnTrackingLabelMaskedVer12 implements OFOxmConnTrackingLabelMasked 
     @Override
     public U128 getValue() {
         return value;
-    }
-
-    @Override
-    public U128 getMask() {
-        return mask;
-    }
-
-    @Override
-    public MatchField<U128> getMatchField() {
-        return MatchField.CONN_TRACKING_LABEL;
-    }
-
-    @Override
-    public boolean isMasked() {
-        return true;
     }
 
     public OFOxm<U128> getCanonical() {
@@ -96,6 +86,16 @@ class OFOxmConnTrackingLabelMaskedVer12 implements OFOxmConnTrackingLabelMasked 
         } else {
             return this;
         }
+    }
+
+    @Override
+    public boolean isMasked() {
+        return true;
+    }
+
+    @Override
+    public MatchField<U128> getMatchField() {
+        return MatchField.CONN_TRACKING_LABEL;
     }
 
     @Override
@@ -123,6 +123,17 @@ class OFOxmConnTrackingLabelMaskedVer12 implements OFOxmConnTrackingLabelMasked 
         }
 
     @Override
+    public U128 getMask() {
+        return mask;
+    }
+
+    @Override
+    public OFOxmConnTrackingLabelMasked.Builder setMask(U128 mask) {
+        this.mask = mask;
+        this.maskSet = true;
+        return this;
+    }
+    @Override
     public long getTypeLen() {
         return 0x1d920L;
     }
@@ -139,19 +150,8 @@ class OFOxmConnTrackingLabelMaskedVer12 implements OFOxmConnTrackingLabelMasked 
         return this;
     }
     @Override
-    public U128 getMask() {
-        return mask;
-    }
-
-    @Override
-    public OFOxmConnTrackingLabelMasked.Builder setMask(U128 mask) {
-        this.mask = mask;
-        this.maskSet = true;
-        return this;
-    }
-    @Override
-    public MatchField<U128> getMatchField() {
-        return MatchField.CONN_TRACKING_LABEL;
+    public OFOxm<U128> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.2");
     }
 
     @Override
@@ -160,8 +160,8 @@ class OFOxmConnTrackingLabelMaskedVer12 implements OFOxmConnTrackingLabelMasked 
     }
 
     @Override
-    public OFOxm<U128> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.2");
+    public MatchField<U128> getMatchField() {
+        return MatchField.CONN_TRACKING_LABEL;
     }
 
     @Override
@@ -197,6 +197,17 @@ class OFOxmConnTrackingLabelMaskedVer12 implements OFOxmConnTrackingLabelMasked 
         private U128 mask;
 
     @Override
+    public U128 getMask() {
+        return mask;
+    }
+
+    @Override
+    public OFOxmConnTrackingLabelMasked.Builder setMask(U128 mask) {
+        this.mask = mask;
+        this.maskSet = true;
+        return this;
+    }
+    @Override
     public long getTypeLen() {
         return 0x1d920L;
     }
@@ -213,19 +224,8 @@ class OFOxmConnTrackingLabelMaskedVer12 implements OFOxmConnTrackingLabelMasked 
         return this;
     }
     @Override
-    public U128 getMask() {
-        return mask;
-    }
-
-    @Override
-    public OFOxmConnTrackingLabelMasked.Builder setMask(U128 mask) {
-        this.mask = mask;
-        this.maskSet = true;
-        return this;
-    }
-    @Override
-    public MatchField<U128> getMatchField() {
-        return MatchField.CONN_TRACKING_LABEL;
+    public OFOxm<U128> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.2");
     }
 
     @Override
@@ -234,8 +234,8 @@ class OFOxmConnTrackingLabelMaskedVer12 implements OFOxmConnTrackingLabelMasked 
     }
 
     @Override
-    public OFOxm<U128> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.2");
+    public MatchField<U128> getMatchField() {
+        return MatchField.CONN_TRACKING_LABEL;
     }
 
     @Override

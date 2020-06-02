@@ -28,45 +28,45 @@ import org.projectfloodlight.openflow.exceptions.*;
 import io.netty.buffer.ByteBuf;
 
 public interface OFPacketIn extends OFObject, OFMessage {
-    OFVersion getVersion();
-    OFType getType();
-    long getXid();
     OFBufferId getBufferId();
-    int getTotalLen();
+    U64 getCookie() throws UnsupportedOperationException;
+    byte[] getData();
+    OFPort getInPhyPort() throws UnsupportedOperationException;
+    OFPort getInPort() throws UnsupportedOperationException;
+    Match getMatch() throws UnsupportedOperationException;
     OFPacketInReason getReason();
     TableId getTableId() throws UnsupportedOperationException;
-    U64 getCookie() throws UnsupportedOperationException;
-    Match getMatch() throws UnsupportedOperationException;
-    byte[] getData();
-    OFPort getInPort() throws UnsupportedOperationException;
-    OFPort getInPhyPort() throws UnsupportedOperationException;
+    int getTotalLen();
+    OFType getType();
+    OFVersion getVersion();
+    long getXid();
 
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();
     public interface Builder extends OFMessage.Builder {
         OFPacketIn build();
-        OFVersion getVersion();
-        OFType getType();
-        long getXid();
-        Builder setXid(long xid);
         OFBufferId getBufferId();
         Builder setBufferId(OFBufferId bufferId);
-        int getTotalLen();
-        Builder setTotalLen(int totalLen);
+        U64 getCookie() throws UnsupportedOperationException;
+        Builder setCookie(U64 cookie) throws UnsupportedOperationException;
+        byte[] getData();
+        Builder setData(byte[] data);
+        OFPort getInPhyPort() throws UnsupportedOperationException;
+        Builder setInPhyPort(OFPort inPhyPort) throws UnsupportedOperationException;
+        OFPort getInPort() throws UnsupportedOperationException;
+        Builder setInPort(OFPort inPort) throws UnsupportedOperationException;
+        Match getMatch() throws UnsupportedOperationException;
+        Builder setMatch(Match match) throws UnsupportedOperationException;
         OFPacketInReason getReason();
         Builder setReason(OFPacketInReason reason);
         TableId getTableId() throws UnsupportedOperationException;
         Builder setTableId(TableId tableId) throws UnsupportedOperationException;
-        U64 getCookie() throws UnsupportedOperationException;
-        Builder setCookie(U64 cookie) throws UnsupportedOperationException;
-        Match getMatch() throws UnsupportedOperationException;
-        Builder setMatch(Match match) throws UnsupportedOperationException;
-        byte[] getData();
-        Builder setData(byte[] data);
-        OFPort getInPort() throws UnsupportedOperationException;
-        Builder setInPort(OFPort inPort) throws UnsupportedOperationException;
-        OFPort getInPhyPort() throws UnsupportedOperationException;
-        Builder setInPhyPort(OFPort inPhyPort) throws UnsupportedOperationException;
+        int getTotalLen();
+        Builder setTotalLen(int totalLen);
+        OFType getType();
+        OFVersion getVersion();
+        long getXid();
+        Builder setXid(long xid);
     }
 }

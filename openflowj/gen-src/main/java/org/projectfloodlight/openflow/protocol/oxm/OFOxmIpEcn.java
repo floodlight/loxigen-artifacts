@@ -30,10 +30,10 @@ import io.netty.buffer.ByteBuf;
 public interface OFOxmIpEcn extends OFObject, OFOxm<IpEcn> {
     long getTypeLen();
     IpEcn getValue();
-    MatchField<IpEcn> getMatchField();
-    boolean isMasked();
     OFOxm<IpEcn> getCanonical();
     IpEcn getMask();
+    boolean isMasked();
+    MatchField<IpEcn> getMatchField();
     OFVersion getVersion();
 
     void writeTo(ByteBuf channelBuffer);
@@ -44,10 +44,10 @@ public interface OFOxmIpEcn extends OFObject, OFOxm<IpEcn> {
         long getTypeLen();
         IpEcn getValue();
         Builder setValue(IpEcn value);
-        MatchField<IpEcn> getMatchField();
-        boolean isMasked();
         OFOxm<IpEcn> getCanonical();
         IpEcn getMask();
+        boolean isMasked();
+        MatchField<IpEcn> getMatchField();
         OFVersion getVersion();
     }
 }

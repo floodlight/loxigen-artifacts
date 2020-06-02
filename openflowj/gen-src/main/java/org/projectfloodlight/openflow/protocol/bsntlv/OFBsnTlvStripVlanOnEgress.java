@@ -29,8 +29,8 @@ import java.util.Set;
 import io.netty.buffer.ByteBuf;
 
 public interface OFBsnTlvStripVlanOnEgress extends OFObject, OFBsnTlv {
-    int getType();
     Set<OFBsnStripVlan> getFlags();
+    int getType();
     OFVersion getVersion();
 
     void writeTo(ByteBuf channelBuffer);
@@ -38,9 +38,9 @@ public interface OFBsnTlvStripVlanOnEgress extends OFObject, OFBsnTlv {
     Builder createBuilder();
     public interface Builder extends OFBsnTlv.Builder {
         OFBsnTlvStripVlanOnEgress build();
-        int getType();
         Set<OFBsnStripVlan> getFlags();
         Builder setFlags(Set<OFBsnStripVlan> flags);
+        int getType();
         OFVersion getVersion();
     }
 }

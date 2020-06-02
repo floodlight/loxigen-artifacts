@@ -59,13 +59,13 @@ class OFInstructionBsnHashSelectVer13 implements OFInstructionBsnHashSelect {
 
     // Accessors for OF message fields
     @Override
-    public OFInstructionType getType() {
-        return OFInstructionType.EXPERIMENTER;
+    public long getExperimenter() {
+        return 0x5c16c7L;
     }
 
     @Override
-    public long getExperimenter() {
-        return 0x5c16c7L;
+    public Set<OFBsnHashSelectFlags> getFlags() {
+        return flags;
     }
 
     @Override
@@ -74,8 +74,8 @@ class OFInstructionBsnHashSelectVer13 implements OFInstructionBsnHashSelect {
     }
 
     @Override
-    public Set<OFBsnHashSelectFlags> getFlags() {
-        return flags;
+    public OFInstructionType getType() {
+        return OFInstructionType.EXPERIMENTER;
     }
 
     @Override
@@ -101,18 +101,8 @@ class OFInstructionBsnHashSelectVer13 implements OFInstructionBsnHashSelect {
         }
 
     @Override
-    public OFInstructionType getType() {
-        return OFInstructionType.EXPERIMENTER;
-    }
-
-    @Override
     public long getExperimenter() {
         return 0x5c16c7L;
-    }
-
-    @Override
-    public long getSubtype() {
-        return 0xfL;
     }
 
     @Override
@@ -126,6 +116,16 @@ class OFInstructionBsnHashSelectVer13 implements OFInstructionBsnHashSelect {
         this.flagsSet = true;
         return this;
     }
+    @Override
+    public long getSubtype() {
+        return 0xfL;
+    }
+
+    @Override
+    public OFInstructionType getType() {
+        return OFInstructionType.EXPERIMENTER;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_13;
@@ -153,18 +153,8 @@ class OFInstructionBsnHashSelectVer13 implements OFInstructionBsnHashSelect {
         private Set<OFBsnHashSelectFlags> flags;
 
     @Override
-    public OFInstructionType getType() {
-        return OFInstructionType.EXPERIMENTER;
-    }
-
-    @Override
     public long getExperimenter() {
         return 0x5c16c7L;
-    }
-
-    @Override
-    public long getSubtype() {
-        return 0xfL;
     }
 
     @Override
@@ -178,6 +168,16 @@ class OFInstructionBsnHashSelectVer13 implements OFInstructionBsnHashSelect {
         this.flagsSet = true;
         return this;
     }
+    @Override
+    public long getSubtype() {
+        return 0xfL;
+    }
+
+    @Override
+    public OFInstructionType getType() {
+        return OFInstructionType.EXPERIMENTER;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_13;

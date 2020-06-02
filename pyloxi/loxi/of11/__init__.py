@@ -8,9 +8,9 @@
 
 import const
 import action
-import message
-import instruction
 import common
+import instruction
+import message
 from const import *
 from common import *
 from loxi import ProtocolError

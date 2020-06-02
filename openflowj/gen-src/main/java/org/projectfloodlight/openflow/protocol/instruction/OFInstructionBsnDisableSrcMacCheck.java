@@ -28,9 +28,9 @@ import org.projectfloodlight.openflow.exceptions.*;
 import io.netty.buffer.ByteBuf;
 
 public interface OFInstructionBsnDisableSrcMacCheck extends OFObject, OFInstructionBsn {
-    OFInstructionType getType();
     long getExperimenter();
     long getSubtype();
+    OFInstructionType getType();
     OFVersion getVersion();
 
     void writeTo(ByteBuf channelBuffer);
@@ -38,9 +38,9 @@ public interface OFInstructionBsnDisableSrcMacCheck extends OFObject, OFInstruct
     Builder createBuilder();
     public interface Builder extends OFInstructionBsn.Builder {
         OFInstructionBsnDisableSrcMacCheck build();
-        OFInstructionType getType();
         long getExperimenter();
         long getSubtype();
+        OFInstructionType getType();
         OFVersion getVersion();
     }
 }

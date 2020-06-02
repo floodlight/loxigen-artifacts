@@ -45,39 +45,6 @@ abstract class OFActionVer11 {
             short type = bb.readShort();
             bb.readerIndex(start);
             switch(type) {
-               case (short) 0xffff:
-                   // discriminator value OFActionType.EXPERIMENTER=65535 for class OFActionExperimenterVer11
-                   return OFActionExperimenterVer11.READER.readFrom(bb);
-               case (short) 0x0:
-                   // discriminator value OFActionType.OUTPUT=0 for class OFActionOutputVer11
-                   return OFActionOutputVer11.READER.readFrom(bb);
-               case (short) 0x4:
-                   // discriminator value OFActionType.SET_DL_DST=4 for class OFActionSetDlDstVer11
-                   return OFActionSetDlDstVer11.READER.readFrom(bb);
-               case (short) 0x3:
-                   // discriminator value OFActionType.SET_DL_SRC=3 for class OFActionSetDlSrcVer11
-                   return OFActionSetDlSrcVer11.READER.readFrom(bb);
-               case (short) 0x6:
-                   // discriminator value OFActionType.SET_NW_DST=6 for class OFActionSetNwDstVer11
-                   return OFActionSetNwDstVer11.READER.readFrom(bb);
-               case (short) 0x5:
-                   // discriminator value OFActionType.SET_NW_SRC=5 for class OFActionSetNwSrcVer11
-                   return OFActionSetNwSrcVer11.READER.readFrom(bb);
-               case (short) 0x7:
-                   // discriminator value OFActionType.SET_NW_TOS=7 for class OFActionSetNwTosVer11
-                   return OFActionSetNwTosVer11.READER.readFrom(bb);
-               case (short) 0xa:
-                   // discriminator value OFActionType.SET_TP_DST=10 for class OFActionSetTpDstVer11
-                   return OFActionSetTpDstVer11.READER.readFrom(bb);
-               case (short) 0x9:
-                   // discriminator value OFActionType.SET_TP_SRC=9 for class OFActionSetTpSrcVer11
-                   return OFActionSetTpSrcVer11.READER.readFrom(bb);
-               case (short) 0x2:
-                   // discriminator value OFActionType.SET_VLAN_PCP=2 for class OFActionSetVlanPcpVer11
-                   return OFActionSetVlanPcpVer11.READER.readFrom(bb);
-               case (short) 0x1:
-                   // discriminator value OFActionType.SET_VLAN_VID=1 for class OFActionSetVlanVidVer11
-                   return OFActionSetVlanVidVer11.READER.readFrom(bb);
                case (short) 0xc:
                    // discriminator value OFActionType.COPY_TTL_IN=12 for class OFActionCopyTtlInVer11
                    return OFActionCopyTtlInVer11.READER.readFrom(bb);
@@ -90,9 +57,15 @@ abstract class OFActionVer11 {
                case (short) 0x18:
                    // discriminator value OFActionType.DEC_NW_TTL=24 for class OFActionDecNwTtlVer11
                    return OFActionDecNwTtlVer11.READER.readFrom(bb);
+               case (short) 0xffff:
+                   // discriminator value OFActionType.EXPERIMENTER=65535 for class OFActionExperimenterVer11
+                   return OFActionExperimenterVer11.READER.readFrom(bb);
                case (short) 0x16:
                    // discriminator value OFActionType.GROUP=22 for class OFActionGroupVer11
                    return OFActionGroupVer11.READER.readFrom(bb);
+               case (short) 0x0:
+                   // discriminator value OFActionType.OUTPUT=0 for class OFActionOutputVer11
+                   return OFActionOutputVer11.READER.readFrom(bb);
                case (short) 0x14:
                    // discriminator value OFActionType.POP_MPLS=20 for class OFActionPopMplsVer11
                    return OFActionPopMplsVer11.READER.readFrom(bb);
@@ -105,6 +78,12 @@ abstract class OFActionVer11 {
                case (short) 0x11:
                    // discriminator value OFActionType.PUSH_VLAN=17 for class OFActionPushVlanVer11
                    return OFActionPushVlanVer11.READER.readFrom(bb);
+               case (short) 0x4:
+                   // discriminator value OFActionType.SET_DL_DST=4 for class OFActionSetDlDstVer11
+                   return OFActionSetDlDstVer11.READER.readFrom(bb);
+               case (short) 0x3:
+                   // discriminator value OFActionType.SET_DL_SRC=3 for class OFActionSetDlSrcVer11
+                   return OFActionSetDlSrcVer11.READER.readFrom(bb);
                case (short) 0xd:
                    // discriminator value OFActionType.SET_MPLS_LABEL=13 for class OFActionSetMplsLabelVer11
                    return OFActionSetMplsLabelVer11.READER.readFrom(bb);
@@ -114,15 +93,36 @@ abstract class OFActionVer11 {
                case (short) 0xf:
                    // discriminator value OFActionType.SET_MPLS_TTL=15 for class OFActionSetMplsTtlVer11
                    return OFActionSetMplsTtlVer11.READER.readFrom(bb);
+               case (short) 0x6:
+                   // discriminator value OFActionType.SET_NW_DST=6 for class OFActionSetNwDstVer11
+                   return OFActionSetNwDstVer11.READER.readFrom(bb);
                case (short) 0x8:
                    // discriminator value OFActionType.SET_NW_ECN=8 for class OFActionSetNwEcnVer11
                    return OFActionSetNwEcnVer11.READER.readFrom(bb);
+               case (short) 0x5:
+                   // discriminator value OFActionType.SET_NW_SRC=5 for class OFActionSetNwSrcVer11
+                   return OFActionSetNwSrcVer11.READER.readFrom(bb);
+               case (short) 0x7:
+                   // discriminator value OFActionType.SET_NW_TOS=7 for class OFActionSetNwTosVer11
+                   return OFActionSetNwTosVer11.READER.readFrom(bb);
                case (short) 0x17:
                    // discriminator value OFActionType.SET_NW_TTL=23 for class OFActionSetNwTtlVer11
                    return OFActionSetNwTtlVer11.READER.readFrom(bb);
                case (short) 0x15:
                    // discriminator value OFActionType.SET_QUEUE=21 for class OFActionSetQueueVer11
                    return OFActionSetQueueVer11.READER.readFrom(bb);
+               case (short) 0xa:
+                   // discriminator value OFActionType.SET_TP_DST=10 for class OFActionSetTpDstVer11
+                   return OFActionSetTpDstVer11.READER.readFrom(bb);
+               case (short) 0x9:
+                   // discriminator value OFActionType.SET_TP_SRC=9 for class OFActionSetTpSrcVer11
+                   return OFActionSetTpSrcVer11.READER.readFrom(bb);
+               case (short) 0x2:
+                   // discriminator value OFActionType.SET_VLAN_PCP=2 for class OFActionSetVlanPcpVer11
+                   return OFActionSetVlanPcpVer11.READER.readFrom(bb);
+               case (short) 0x1:
+                   // discriminator value OFActionType.SET_VLAN_VID=1 for class OFActionSetVlanVidVer11
+                   return OFActionSetVlanVidVer11.READER.readFrom(bb);
                default:
                    throw new OFParseError("Unknown value for discriminator type of class OFActionVer11: " + type);
             }

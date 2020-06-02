@@ -73,28 +73,8 @@ class OFBsnSetPktinSuppressionRequestVer15 implements OFBsnSetPktinSuppressionRe
 
     // Accessors for OF message fields
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_15;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.EXPERIMENTER;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public long getExperimenter() {
-        return 0x5c16c7L;
-    }
-
-    @Override
-    public long getSubtype() {
-        return 0xbL;
+    public U64 getCookie() {
+        return cookie;
     }
 
     @Override
@@ -103,8 +83,8 @@ class OFBsnSetPktinSuppressionRequestVer15 implements OFBsnSetPktinSuppressionRe
     }
 
     @Override
-    public int getIdleTimeout() {
-        return idleTimeout;
+    public long getExperimenter() {
+        return 0x5c16c7L;
     }
 
     @Override
@@ -113,13 +93,33 @@ class OFBsnSetPktinSuppressionRequestVer15 implements OFBsnSetPktinSuppressionRe
     }
 
     @Override
+    public int getIdleTimeout() {
+        return idleTimeout;
+    }
+
+    @Override
     public int getPriority() {
         return priority;
     }
 
     @Override
-    public U64 getCookie() {
-        return cookie;
+    public long getSubtype() {
+        return 0xbL;
+    }
+
+    @Override
+    public OFType getType() {
+        return OFType.EXPERIMENTER;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_15;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
     }
 
 
@@ -150,36 +150,16 @@ class OFBsnSetPktinSuppressionRequestVer15 implements OFBsnSetPktinSuppressionRe
         }
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_15;
+    public U64 getCookie() {
+        return cookie;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.EXPERIMENTER;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFBsnSetPktinSuppressionRequest.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
+    public OFBsnSetPktinSuppressionRequest.Builder setCookie(U64 cookie) {
+        this.cookie = cookie;
+        this.cookieSet = true;
         return this;
     }
-    @Override
-    public long getExperimenter() {
-        return 0x5c16c7L;
-    }
-
-    @Override
-    public long getSubtype() {
-        return 0xbL;
-    }
-
     @Override
     public boolean isEnabled() {
         return enabled;
@@ -189,6 +169,22 @@ class OFBsnSetPktinSuppressionRequestVer15 implements OFBsnSetPktinSuppressionRe
     public OFBsnSetPktinSuppressionRequest.Builder setEnabled(boolean enabled) {
         this.enabled = enabled;
         this.enabledSet = true;
+        return this;
+    }
+    @Override
+    public long getExperimenter() {
+        return 0x5c16c7L;
+    }
+
+    @Override
+    public int getHardTimeout() {
+        return hardTimeout;
+    }
+
+    @Override
+    public OFBsnSetPktinSuppressionRequest.Builder setHardTimeout(int hardTimeout) {
+        this.hardTimeout = hardTimeout;
+        this.hardTimeoutSet = true;
         return this;
     }
     @Override
@@ -203,17 +199,6 @@ class OFBsnSetPktinSuppressionRequestVer15 implements OFBsnSetPktinSuppressionRe
         return this;
     }
     @Override
-    public int getHardTimeout() {
-        return hardTimeout;
-    }
-
-    @Override
-    public OFBsnSetPktinSuppressionRequest.Builder setHardTimeout(int hardTimeout) {
-        this.hardTimeout = hardTimeout;
-        this.hardTimeoutSet = true;
-        return this;
-    }
-    @Override
     public int getPriority() {
         return priority;
     }
@@ -225,14 +210,29 @@ class OFBsnSetPktinSuppressionRequestVer15 implements OFBsnSetPktinSuppressionRe
         return this;
     }
     @Override
-    public U64 getCookie() {
-        return cookie;
+    public long getSubtype() {
+        return 0xbL;
     }
 
     @Override
-    public OFBsnSetPktinSuppressionRequest.Builder setCookie(U64 cookie) {
-        this.cookie = cookie;
-        this.cookieSet = true;
+    public OFType getType() {
+        return OFType.EXPERIMENTER;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_15;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFBsnSetPktinSuppressionRequest.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 
@@ -277,36 +277,16 @@ class OFBsnSetPktinSuppressionRequestVer15 implements OFBsnSetPktinSuppressionRe
         private U64 cookie;
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_15;
+    public U64 getCookie() {
+        return cookie;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.EXPERIMENTER;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFBsnSetPktinSuppressionRequest.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
+    public OFBsnSetPktinSuppressionRequest.Builder setCookie(U64 cookie) {
+        this.cookie = cookie;
+        this.cookieSet = true;
         return this;
     }
-    @Override
-    public long getExperimenter() {
-        return 0x5c16c7L;
-    }
-
-    @Override
-    public long getSubtype() {
-        return 0xbL;
-    }
-
     @Override
     public boolean isEnabled() {
         return enabled;
@@ -316,6 +296,22 @@ class OFBsnSetPktinSuppressionRequestVer15 implements OFBsnSetPktinSuppressionRe
     public OFBsnSetPktinSuppressionRequest.Builder setEnabled(boolean enabled) {
         this.enabled = enabled;
         this.enabledSet = true;
+        return this;
+    }
+    @Override
+    public long getExperimenter() {
+        return 0x5c16c7L;
+    }
+
+    @Override
+    public int getHardTimeout() {
+        return hardTimeout;
+    }
+
+    @Override
+    public OFBsnSetPktinSuppressionRequest.Builder setHardTimeout(int hardTimeout) {
+        this.hardTimeout = hardTimeout;
+        this.hardTimeoutSet = true;
         return this;
     }
     @Override
@@ -330,17 +326,6 @@ class OFBsnSetPktinSuppressionRequestVer15 implements OFBsnSetPktinSuppressionRe
         return this;
     }
     @Override
-    public int getHardTimeout() {
-        return hardTimeout;
-    }
-
-    @Override
-    public OFBsnSetPktinSuppressionRequest.Builder setHardTimeout(int hardTimeout) {
-        this.hardTimeout = hardTimeout;
-        this.hardTimeoutSet = true;
-        return this;
-    }
-    @Override
     public int getPriority() {
         return priority;
     }
@@ -352,14 +337,29 @@ class OFBsnSetPktinSuppressionRequestVer15 implements OFBsnSetPktinSuppressionRe
         return this;
     }
     @Override
-    public U64 getCookie() {
-        return cookie;
+    public long getSubtype() {
+        return 0xbL;
     }
 
     @Override
-    public OFBsnSetPktinSuppressionRequest.Builder setCookie(U64 cookie) {
-        this.cookie = cookie;
-        this.cookieSet = true;
+    public OFType getType() {
+        return OFType.EXPERIMENTER;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_15;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFBsnSetPktinSuppressionRequest.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 //

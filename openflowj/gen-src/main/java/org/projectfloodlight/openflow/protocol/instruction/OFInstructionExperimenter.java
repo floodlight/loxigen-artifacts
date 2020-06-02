@@ -28,8 +28,8 @@ import org.projectfloodlight.openflow.exceptions.*;
 import io.netty.buffer.ByteBuf;
 
 public interface OFInstructionExperimenter extends OFObject, OFInstruction {
-    OFInstructionType getType();
     long getExperimenter();
+    OFInstructionType getType();
     OFVersion getVersion();
 
     void writeTo(ByteBuf channelBuffer);
@@ -37,8 +37,8 @@ public interface OFInstructionExperimenter extends OFObject, OFInstruction {
     Builder createBuilder();
     public interface Builder extends OFInstruction.Builder {
         OFInstructionExperimenter build();
-        OFInstructionType getType();
         long getExperimenter();
+        OFInstructionType getType();
         OFVersion getVersion();
     }
 }

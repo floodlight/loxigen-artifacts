@@ -25,8 +25,8 @@ import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
-import java.util.Set;
 import java.util.List;
+import java.util.Set;
 import org.projectfloodlight.openflow.protocol.OFOxmList;
 
 
@@ -75,6 +75,143 @@ public class OFFactoryVer13 implements OFFactory {
         return new OFAggregateStatsRequestVer13.Builder().setXid(nextXid());
     }
 
+    public OFAsyncConfigPropContStatusMaster.Builder buildAsyncConfigPropContStatusMaster() {
+        throw new UnsupportedOperationException("OFAsyncConfigPropContStatusMaster not supported in version 1.3");
+    }
+    public OFAsyncConfigPropContStatusMaster asyncConfigPropContStatusMaster(long mask) {
+        throw new UnsupportedOperationException("OFAsyncConfigPropContStatusMaster not supported in version 1.3");
+    }
+
+    public OFAsyncConfigPropContStatusSlave.Builder buildAsyncConfigPropContStatusSlave() {
+        throw new UnsupportedOperationException("OFAsyncConfigPropContStatusSlave not supported in version 1.3");
+    }
+    public OFAsyncConfigPropContStatusSlave asyncConfigPropContStatusSlave(long mask) {
+        throw new UnsupportedOperationException("OFAsyncConfigPropContStatusSlave not supported in version 1.3");
+    }
+
+    public OFAsyncConfigPropExperimenterMaster asyncConfigPropExperimenterMaster() {
+        throw new UnsupportedOperationException("OFAsyncConfigPropExperimenterMaster not supported in version 1.3");
+    }
+
+    public OFAsyncConfigPropExperimenterSlave asyncConfigPropExperimenterSlave() {
+        throw new UnsupportedOperationException("OFAsyncConfigPropExperimenterSlave not supported in version 1.3");
+    }
+
+    public OFAsyncConfigPropFlowRemovedMaster.Builder buildAsyncConfigPropFlowRemovedMaster() {
+        throw new UnsupportedOperationException("OFAsyncConfigPropFlowRemovedMaster not supported in version 1.3");
+    }
+    public OFAsyncConfigPropFlowRemovedMaster asyncConfigPropFlowRemovedMaster(long mask) {
+        throw new UnsupportedOperationException("OFAsyncConfigPropFlowRemovedMaster not supported in version 1.3");
+    }
+
+    public OFAsyncConfigPropFlowRemovedSlave.Builder buildAsyncConfigPropFlowRemovedSlave() {
+        throw new UnsupportedOperationException("OFAsyncConfigPropFlowRemovedSlave not supported in version 1.3");
+    }
+    public OFAsyncConfigPropFlowRemovedSlave asyncConfigPropFlowRemovedSlave(long mask) {
+        throw new UnsupportedOperationException("OFAsyncConfigPropFlowRemovedSlave not supported in version 1.3");
+    }
+
+    public OFAsyncConfigPropFlowStatsMaster.Builder buildAsyncConfigPropFlowStatsMaster() {
+        throw new UnsupportedOperationException("OFAsyncConfigPropFlowStatsMaster not supported in version 1.3");
+    }
+    public OFAsyncConfigPropFlowStatsMaster asyncConfigPropFlowStatsMaster(long mask) {
+        throw new UnsupportedOperationException("OFAsyncConfigPropFlowStatsMaster not supported in version 1.3");
+    }
+
+    public OFAsyncConfigPropFlowStatsSlave.Builder buildAsyncConfigPropFlowStatsSlave() {
+        throw new UnsupportedOperationException("OFAsyncConfigPropFlowStatsSlave not supported in version 1.3");
+    }
+    public OFAsyncConfigPropFlowStatsSlave asyncConfigPropFlowStatsSlave(long mask) {
+        throw new UnsupportedOperationException("OFAsyncConfigPropFlowStatsSlave not supported in version 1.3");
+    }
+
+    public OFAsyncConfigPropPacketInMaster.Builder buildAsyncConfigPropPacketInMaster() {
+        throw new UnsupportedOperationException("OFAsyncConfigPropPacketInMaster not supported in version 1.3");
+    }
+    public OFAsyncConfigPropPacketInMaster asyncConfigPropPacketInMaster(long mask) {
+        throw new UnsupportedOperationException("OFAsyncConfigPropPacketInMaster not supported in version 1.3");
+    }
+
+    public OFAsyncConfigPropPacketInSlave.Builder buildAsyncConfigPropPacketInSlave() {
+        throw new UnsupportedOperationException("OFAsyncConfigPropPacketInSlave not supported in version 1.3");
+    }
+    public OFAsyncConfigPropPacketInSlave asyncConfigPropPacketInSlave(long mask) {
+        throw new UnsupportedOperationException("OFAsyncConfigPropPacketInSlave not supported in version 1.3");
+    }
+
+    public OFAsyncConfigPropPortStatusMaster.Builder buildAsyncConfigPropPortStatusMaster() {
+        throw new UnsupportedOperationException("OFAsyncConfigPropPortStatusMaster not supported in version 1.3");
+    }
+    public OFAsyncConfigPropPortStatusMaster asyncConfigPropPortStatusMaster(long mask) {
+        throw new UnsupportedOperationException("OFAsyncConfigPropPortStatusMaster not supported in version 1.3");
+    }
+
+    public OFAsyncConfigPropPortStatusSlave.Builder buildAsyncConfigPropPortStatusSlave() {
+        throw new UnsupportedOperationException("OFAsyncConfigPropPortStatusSlave not supported in version 1.3");
+    }
+    public OFAsyncConfigPropPortStatusSlave asyncConfigPropPortStatusSlave(long mask) {
+        throw new UnsupportedOperationException("OFAsyncConfigPropPortStatusSlave not supported in version 1.3");
+    }
+
+    public OFAsyncConfigPropRequestforwardMaster.Builder buildAsyncConfigPropRequestforwardMaster() {
+        throw new UnsupportedOperationException("OFAsyncConfigPropRequestforwardMaster not supported in version 1.3");
+    }
+    public OFAsyncConfigPropRequestforwardMaster asyncConfigPropRequestforwardMaster(long mask) {
+        throw new UnsupportedOperationException("OFAsyncConfigPropRequestforwardMaster not supported in version 1.3");
+    }
+
+    public OFAsyncConfigPropRequestforwardSlave.Builder buildAsyncConfigPropRequestforwardSlave() {
+        throw new UnsupportedOperationException("OFAsyncConfigPropRequestforwardSlave not supported in version 1.3");
+    }
+    public OFAsyncConfigPropRequestforwardSlave asyncConfigPropRequestforwardSlave(long mask) {
+        throw new UnsupportedOperationException("OFAsyncConfigPropRequestforwardSlave not supported in version 1.3");
+    }
+
+    public OFAsyncConfigPropRoleStatusMaster.Builder buildAsyncConfigPropRoleStatusMaster() {
+        throw new UnsupportedOperationException("OFAsyncConfigPropRoleStatusMaster not supported in version 1.3");
+    }
+    public OFAsyncConfigPropRoleStatusMaster asyncConfigPropRoleStatusMaster(long mask) {
+        throw new UnsupportedOperationException("OFAsyncConfigPropRoleStatusMaster not supported in version 1.3");
+    }
+
+    public OFAsyncConfigPropRoleStatusSlave.Builder buildAsyncConfigPropRoleStatusSlave() {
+        throw new UnsupportedOperationException("OFAsyncConfigPropRoleStatusSlave not supported in version 1.3");
+    }
+    public OFAsyncConfigPropRoleStatusSlave asyncConfigPropRoleStatusSlave(long mask) {
+        throw new UnsupportedOperationException("OFAsyncConfigPropRoleStatusSlave not supported in version 1.3");
+    }
+
+    public OFAsyncConfigPropTableStatusMaster.Builder buildAsyncConfigPropTableStatusMaster() {
+        throw new UnsupportedOperationException("OFAsyncConfigPropTableStatusMaster not supported in version 1.3");
+    }
+    public OFAsyncConfigPropTableStatusMaster asyncConfigPropTableStatusMaster(long mask) {
+        throw new UnsupportedOperationException("OFAsyncConfigPropTableStatusMaster not supported in version 1.3");
+    }
+
+    public OFAsyncConfigPropTableStatusSlave.Builder buildAsyncConfigPropTableStatusSlave() {
+        throw new UnsupportedOperationException("OFAsyncConfigPropTableStatusSlave not supported in version 1.3");
+    }
+    public OFAsyncConfigPropTableStatusSlave asyncConfigPropTableStatusSlave(long mask) {
+        throw new UnsupportedOperationException("OFAsyncConfigPropTableStatusSlave not supported in version 1.3");
+    }
+
+    public OFAsyncGetReply.Builder buildAsyncGetReply() {
+        return new OFAsyncGetReplyVer13.Builder().setXid(nextXid());
+    }
+
+    public OFAsyncGetRequest.Builder buildAsyncGetRequest() {
+        return new OFAsyncGetRequestVer13.Builder().setXid(nextXid());
+    }
+    public OFAsyncGetRequest asyncGetRequest(List<OFAsyncConfigProp> properties) {
+        return new OFAsyncGetRequestVer13(
+                nextXid()
+                    );
+    }
+
+    public OFAsyncSet.Builder buildAsyncSet() {
+        return new OFAsyncSetVer13.Builder().setXid(nextXid());
+    }
+
     public OFBarrierReply.Builder buildBarrierReply() {
         return new OFBarrierReplyVer13.Builder().setXid(nextXid());
     }
@@ -91,6 +228,10 @@ public class OFFactoryVer13 implements OFFactory {
         return new OFBarrierRequestVer13(
                 nextXid()
                     );
+    }
+
+    public OFBsnArpIdle.Builder buildBsnArpIdle() {
+        return new OFBsnArpIdleVer13.Builder().setXid(nextXid());
     }
 
     public OFBsnBwClearDataReply.Builder buildBsnBwClearDataReply() {
@@ -143,525 +284,6 @@ public class OFFactoryVer13 implements OFFactory {
                 nextXid(),
                       enable
                     );
-    }
-
-    public OFBsnGetInterfacesReply.Builder buildBsnGetInterfacesReply() {
-        return new OFBsnGetInterfacesReplyVer13.Builder().setXid(nextXid());
-    }
-    public OFBsnGetInterfacesReply bsnGetInterfacesReply(List<OFBsnInterface> interfaces) {
-        return new OFBsnGetInterfacesReplyVer13(
-                nextXid(),
-                      interfaces
-                    );
-    }
-
-    public OFBsnGetInterfacesRequest.Builder buildBsnGetInterfacesRequest() {
-        return new OFBsnGetInterfacesRequestVer13.Builder().setXid(nextXid());
-    }
-    public OFBsnGetInterfacesRequest bsnGetInterfacesRequest() {
-        return new OFBsnGetInterfacesRequestVer13(
-                nextXid()
-                    );
-    }
-
-    public OFBsnGetIpMaskReply.Builder buildBsnGetIpMaskReply() {
-        throw new UnsupportedOperationException("OFBsnGetIpMaskReply not supported in version 1.3");
-    }
-
-    public OFBsnGetIpMaskRequest.Builder buildBsnGetIpMaskRequest() {
-        throw new UnsupportedOperationException("OFBsnGetIpMaskRequest not supported in version 1.3");
-    }
-    public OFBsnGetIpMaskRequest bsnGetIpMaskRequest(short index) {
-        throw new UnsupportedOperationException("OFBsnGetIpMaskRequest not supported in version 1.3");
-    }
-
-    public OFBsnGetL2TableReply.Builder buildBsnGetL2TableReply() {
-        throw new UnsupportedOperationException("OFBsnGetL2TableReply not supported in version 1.3");
-    }
-
-    public OFBsnGetL2TableRequest.Builder buildBsnGetL2TableRequest() {
-        throw new UnsupportedOperationException("OFBsnGetL2TableRequest not supported in version 1.3");
-    }
-    public OFBsnGetL2TableRequest bsnGetL2TableRequest() {
-        throw new UnsupportedOperationException("OFBsnGetL2TableRequest not supported in version 1.3");
-    }
-
-    public OFBsnGetMirroringReply.Builder buildBsnGetMirroringReply() {
-        return new OFBsnGetMirroringReplyVer13.Builder().setXid(nextXid());
-    }
-    public OFBsnGetMirroringReply bsnGetMirroringReply(short reportMirrorPorts) {
-        return new OFBsnGetMirroringReplyVer13(
-                nextXid(),
-                      reportMirrorPorts
-                    );
-    }
-
-    public OFBsnGetMirroringRequest.Builder buildBsnGetMirroringRequest() {
-        return new OFBsnGetMirroringRequestVer13.Builder().setXid(nextXid());
-    }
-    public OFBsnGetMirroringRequest bsnGetMirroringRequest(short reportMirrorPorts) {
-        return new OFBsnGetMirroringRequestVer13(
-                nextXid(),
-                      reportMirrorPorts
-                    );
-    }
-
-    public OFBsnHybridGetReply.Builder buildBsnHybridGetReply() {
-        throw new UnsupportedOperationException("OFBsnHybridGetReply not supported in version 1.3");
-    }
-
-    public OFBsnHybridGetRequest.Builder buildBsnHybridGetRequest() {
-        throw new UnsupportedOperationException("OFBsnHybridGetRequest not supported in version 1.3");
-    }
-    public OFBsnHybridGetRequest bsnHybridGetRequest() {
-        throw new UnsupportedOperationException("OFBsnHybridGetRequest not supported in version 1.3");
-    }
-
-    public OFBsnInterface.Builder buildBsnInterface() {
-        return new OFBsnInterfaceVer13.Builder();
-    }
-
-    public OFBsnPduRxReply.Builder buildBsnPduRxReply() {
-        return new OFBsnPduRxReplyVer13.Builder().setXid(nextXid());
-    }
-
-    public OFBsnPduRxRequest.Builder buildBsnPduRxRequest() {
-        return new OFBsnPduRxRequestVer13.Builder().setXid(nextXid());
-    }
-
-    public OFBsnPduRxTimeout.Builder buildBsnPduRxTimeout() {
-        return new OFBsnPduRxTimeoutVer13.Builder().setXid(nextXid());
-    }
-
-    public OFBsnPduTxReply.Builder buildBsnPduTxReply() {
-        return new OFBsnPduTxReplyVer13.Builder().setXid(nextXid());
-    }
-
-    public OFBsnPduTxRequest.Builder buildBsnPduTxRequest() {
-        return new OFBsnPduTxRequestVer13.Builder().setXid(nextXid());
-    }
-
-    public OFBsnSetIpMask.Builder buildBsnSetIpMask() {
-        throw new UnsupportedOperationException("OFBsnSetIpMask not supported in version 1.3");
-    }
-
-    public OFBsnSetL2TableReply.Builder buildBsnSetL2TableReply() {
-        throw new UnsupportedOperationException("OFBsnSetL2TableReply not supported in version 1.3");
-    }
-
-    public OFBsnSetL2TableRequest.Builder buildBsnSetL2TableRequest() {
-        throw new UnsupportedOperationException("OFBsnSetL2TableRequest not supported in version 1.3");
-    }
-
-    public OFBsnSetMirroring.Builder buildBsnSetMirroring() {
-        return new OFBsnSetMirroringVer13.Builder().setXid(nextXid());
-    }
-    public OFBsnSetMirroring bsnSetMirroring(short reportMirrorPorts) {
-        return new OFBsnSetMirroringVer13(
-                nextXid(),
-                      reportMirrorPorts
-                    );
-    }
-
-    public OFBsnSetPktinSuppressionReply.Builder buildBsnSetPktinSuppressionReply() {
-        return new OFBsnSetPktinSuppressionReplyVer13.Builder().setXid(nextXid());
-    }
-    public OFBsnSetPktinSuppressionReply bsnSetPktinSuppressionReply(long status) {
-        return new OFBsnSetPktinSuppressionReplyVer13(
-                nextXid(),
-                      status
-                    );
-    }
-
-    public OFBsnSetPktinSuppressionRequest.Builder buildBsnSetPktinSuppressionRequest() {
-        return new OFBsnSetPktinSuppressionRequestVer13.Builder().setXid(nextXid());
-    }
-
-    public OFBsnShellCommand.Builder buildBsnShellCommand() {
-        throw new UnsupportedOperationException("OFBsnShellCommand not supported in version 1.3");
-    }
-
-    public OFBsnShellOutput.Builder buildBsnShellOutput() {
-        throw new UnsupportedOperationException("OFBsnShellOutput not supported in version 1.3");
-    }
-    public OFBsnShellOutput bsnShellOutput(byte[] data) {
-        throw new UnsupportedOperationException("OFBsnShellOutput not supported in version 1.3");
-    }
-
-    public OFBsnShellStatus.Builder buildBsnShellStatus() {
-        throw new UnsupportedOperationException("OFBsnShellStatus not supported in version 1.3");
-    }
-    public OFBsnShellStatus bsnShellStatus(long status) {
-        throw new UnsupportedOperationException("OFBsnShellStatus not supported in version 1.3");
-    }
-
-    public OFBsnVirtualPortCreateReply.Builder buildBsnVirtualPortCreateReply() {
-        return new OFBsnVirtualPortCreateReplyVer13.Builder().setXid(nextXid());
-    }
-
-    public OFBsnVirtualPortCreateRequest.Builder buildBsnVirtualPortCreateRequest() {
-        return new OFBsnVirtualPortCreateRequestVer13.Builder().setXid(nextXid());
-    }
-    public OFBsnVirtualPortCreateRequest bsnVirtualPortCreateRequest(OFBsnVport vport) {
-        return new OFBsnVirtualPortCreateRequestVer13(
-                nextXid(),
-                      vport
-                    );
-    }
-
-    public OFBsnVirtualPortRemoveReply.Builder buildBsnVirtualPortRemoveReply() {
-        return new OFBsnVirtualPortRemoveReplyVer13.Builder().setXid(nextXid());
-    }
-    public OFBsnVirtualPortRemoveReply bsnVirtualPortRemoveReply(long status) {
-        return new OFBsnVirtualPortRemoveReplyVer13(
-                nextXid(),
-                      status
-                    );
-    }
-
-    public OFBsnVirtualPortRemoveRequest.Builder buildBsnVirtualPortRemoveRequest() {
-        return new OFBsnVirtualPortRemoveRequestVer13.Builder().setXid(nextXid());
-    }
-    public OFBsnVirtualPortRemoveRequest bsnVirtualPortRemoveRequest(long vportNo) {
-        return new OFBsnVirtualPortRemoveRequestVer13(
-                nextXid(),
-                      vportNo
-                    );
-    }
-
-    public OFBsnVportL2Gre.Builder buildBsnVportL2Gre() {
-        return new OFBsnVportL2GreVer13.Builder();
-    }
-
-    public OFBsnVportQInQ.Builder buildBsnVportQInQ() {
-        return new OFBsnVportQInQVer13.Builder();
-    }
-
-    public OFDescStatsReply.Builder buildDescStatsReply() {
-        return new OFDescStatsReplyVer13.Builder().setXid(nextXid());
-    }
-
-    public OFDescStatsRequest.Builder buildDescStatsRequest() {
-        return new OFDescStatsRequestVer13.Builder().setXid(nextXid());
-    }
-    public OFDescStatsRequest descStatsRequest(Set<OFStatsRequestFlags> flags) {
-        return new OFDescStatsRequestVer13(
-                nextXid(),
-                      flags
-                    );
-    }
-
-    public OFEchoReply.Builder buildEchoReply() {
-        return new OFEchoReplyVer13.Builder().setXid(nextXid());
-    }
-    public OFEchoReply echoReply(byte[] data) {
-        return new OFEchoReplyVer13(
-                nextXid(),
-                      data
-                    );
-    }
-
-    public OFEchoRequest.Builder buildEchoRequest() {
-        return new OFEchoRequestVer13.Builder().setXid(nextXid());
-    }
-    public OFEchoRequest echoRequest(byte[] data) {
-        return new OFEchoRequestVer13(
-                nextXid(),
-                      data
-                    );
-    }
-
-    public OFFeaturesReply.Builder buildFeaturesReply() {
-        return new OFFeaturesReplyVer13.Builder().setXid(nextXid());
-    }
-
-    public OFFeaturesRequest.Builder buildFeaturesRequest() {
-        return new OFFeaturesRequestVer13.Builder().setXid(nextXid());
-    }
-    public OFFeaturesRequest featuresRequest() {
-        return new OFFeaturesRequestVer13(
-                nextXid()
-                    );
-    }
-
-    public OFFlowAdd.Builder buildFlowAdd() {
-        return new OFFlowAddVer13.Builder().setXid(nextXid());
-    }
-
-    public OFFlowDelete.Builder buildFlowDelete() {
-        return new OFFlowDeleteVer13.Builder().setXid(nextXid());
-    }
-
-    public OFFlowDeleteStrict.Builder buildFlowDeleteStrict() {
-        return new OFFlowDeleteStrictVer13.Builder().setXid(nextXid());
-    }
-
-    public OFFlowModify.Builder buildFlowModify() {
-        return new OFFlowModifyVer13.Builder().setXid(nextXid());
-    }
-
-    public OFFlowModifyStrict.Builder buildFlowModifyStrict() {
-        return new OFFlowModifyStrictVer13.Builder().setXid(nextXid());
-    }
-
-    public OFFlowRemoved.Builder buildFlowRemoved() {
-        return new OFFlowRemovedVer13.Builder().setXid(nextXid());
-    }
-
-    public OFFlowStatsEntry.Builder buildFlowStatsEntry() {
-        return new OFFlowStatsEntryVer13.Builder();
-    }
-
-    public OFFlowStatsReply.Builder buildFlowStatsReply() {
-        return new OFFlowStatsReplyVer13.Builder().setXid(nextXid());
-    }
-
-    public OFFlowStatsRequest.Builder buildFlowStatsRequest() {
-        return new OFFlowStatsRequestVer13.Builder().setXid(nextXid());
-    }
-
-    public OFGetConfigReply.Builder buildGetConfigReply() {
-        return new OFGetConfigReplyVer13.Builder().setXid(nextXid());
-    }
-
-    public OFGetConfigRequest.Builder buildGetConfigRequest() {
-        return new OFGetConfigRequestVer13.Builder().setXid(nextXid());
-    }
-    public OFGetConfigRequest getConfigRequest() {
-        return new OFGetConfigRequestVer13(
-                nextXid()
-                    );
-    }
-
-    public OFHello.Builder buildHello() {
-        return new OFHelloVer13.Builder().setXid(nextXid());
-    }
-    public OFHello hello(List<OFHelloElem> elements) {
-        return new OFHelloVer13(
-                nextXid(),
-                      elements
-                    );
-    }
-
-    public OFMatchV1.Builder buildMatchV1() {
-        throw new UnsupportedOperationException("OFMatchV1 not supported in version 1.3");
-    }
-
-    public OFNiciraControllerRoleReply.Builder buildNiciraControllerRoleReply() {
-        throw new UnsupportedOperationException("OFNiciraControllerRoleReply not supported in version 1.3");
-    }
-    public OFNiciraControllerRoleReply niciraControllerRoleReply(OFNiciraControllerRole role) {
-        throw new UnsupportedOperationException("OFNiciraControllerRoleReply not supported in version 1.3");
-    }
-
-    public OFNiciraControllerRoleRequest.Builder buildNiciraControllerRoleRequest() {
-        throw new UnsupportedOperationException("OFNiciraControllerRoleRequest not supported in version 1.3");
-    }
-    public OFNiciraControllerRoleRequest niciraControllerRoleRequest(OFNiciraControllerRole role) {
-        throw new UnsupportedOperationException("OFNiciraControllerRoleRequest not supported in version 1.3");
-    }
-
-    public OFPacketIn.Builder buildPacketIn() {
-        return new OFPacketInVer13.Builder().setXid(nextXid());
-    }
-
-    public OFPacketOut.Builder buildPacketOut() {
-        return new OFPacketOutVer13.Builder().setXid(nextXid());
-    }
-
-    public OFPacketQueue.Builder buildPacketQueue() {
-        return new OFPacketQueueVer13.Builder();
-    }
-
-    public OFPortDesc.Builder buildPortDesc() {
-        return new OFPortDescVer13.Builder();
-    }
-
-    public OFPortMod.Builder buildPortMod() {
-        return new OFPortModVer13.Builder().setXid(nextXid());
-    }
-
-    public OFPortStatsEntry.Builder buildPortStatsEntry() {
-        return new OFPortStatsEntryVer13.Builder();
-    }
-
-    public OFPortStatsReply.Builder buildPortStatsReply() {
-        return new OFPortStatsReplyVer13.Builder().setXid(nextXid());
-    }
-
-    public OFPortStatsRequest.Builder buildPortStatsRequest() {
-        return new OFPortStatsRequestVer13.Builder().setXid(nextXid());
-    }
-
-    public OFPortStatus.Builder buildPortStatus() {
-        return new OFPortStatusVer13.Builder().setXid(nextXid());
-    }
-
-    public OFQueueGetConfigReply.Builder buildQueueGetConfigReply() {
-        return new OFQueueGetConfigReplyVer13.Builder().setXid(nextXid());
-    }
-
-    public OFQueueGetConfigRequest.Builder buildQueueGetConfigRequest() {
-        return new OFQueueGetConfigRequestVer13.Builder().setXid(nextXid());
-    }
-    public OFQueueGetConfigRequest queueGetConfigRequest(OFPort port) {
-        return new OFQueueGetConfigRequestVer13(
-                nextXid(),
-                      port
-                    );
-    }
-
-    public OFQueueStatsEntry.Builder buildQueueStatsEntry() {
-        return new OFQueueStatsEntryVer13.Builder();
-    }
-
-    public OFQueueStatsReply.Builder buildQueueStatsReply() {
-        return new OFQueueStatsReplyVer13.Builder().setXid(nextXid());
-    }
-
-    public OFQueueStatsRequest.Builder buildQueueStatsRequest() {
-        return new OFQueueStatsRequestVer13.Builder().setXid(nextXid());
-    }
-
-    public OFSetConfig.Builder buildSetConfig() {
-        return new OFSetConfigVer13.Builder().setXid(nextXid());
-    }
-
-    public OFTableMod.Builder buildTableMod() {
-        return new OFTableModVer13.Builder().setXid(nextXid());
-    }
-
-    public OFTableStatsEntry.Builder buildTableStatsEntry() {
-        return new OFTableStatsEntryVer13.Builder();
-    }
-
-    public OFTableStatsReply.Builder buildTableStatsReply() {
-        return new OFTableStatsReplyVer13.Builder().setXid(nextXid());
-    }
-
-    public OFTableStatsRequest.Builder buildTableStatsRequest() {
-        return new OFTableStatsRequestVer13.Builder().setXid(nextXid());
-    }
-    public OFTableStatsRequest tableStatsRequest(Set<OFStatsRequestFlags> flags) {
-        return new OFTableStatsRequestVer13(
-                nextXid(),
-                      flags
-                    );
-    }
-
-    public OFBucket.Builder buildBucket() {
-        return new OFBucketVer13.Builder();
-    }
-
-    public OFBucketCounter.Builder buildBucketCounter() {
-        return new OFBucketCounterVer13.Builder();
-    }
-    public OFBucketCounter bucketCounter(U64 packetCount, U64 byteCount) {
-        return new OFBucketCounterVer13(
-                packetCount,
-                      byteCount
-                    );
-    }
-
-    public OFGroupAdd.Builder buildGroupAdd() {
-        return new OFGroupAddVer13.Builder().setXid(nextXid());
-    }
-
-    public OFGroupDelete.Builder buildGroupDelete() {
-        return new OFGroupDeleteVer13.Builder().setXid(nextXid());
-    }
-
-    public OFGroupDescStatsEntry.Builder buildGroupDescStatsEntry() {
-        return new OFGroupDescStatsEntryVer13.Builder();
-    }
-
-    public OFGroupDescStatsReply.Builder buildGroupDescStatsReply() {
-        return new OFGroupDescStatsReplyVer13.Builder().setXid(nextXid());
-    }
-
-    public OFGroupDescStatsRequest.Builder buildGroupDescStatsRequest() {
-        return new OFGroupDescStatsRequestVer13.Builder().setXid(nextXid());
-    }
-
-    public OFGroupModify.Builder buildGroupModify() {
-        return new OFGroupModifyVer13.Builder().setXid(nextXid());
-    }
-
-    public OFGroupStatsEntry.Builder buildGroupStatsEntry() {
-        return new OFGroupStatsEntryVer13.Builder();
-    }
-
-    public OFGroupStatsReply.Builder buildGroupStatsReply() {
-        return new OFGroupStatsReplyVer13.Builder().setXid(nextXid());
-    }
-
-    public OFGroupStatsRequest.Builder buildGroupStatsRequest() {
-        return new OFGroupStatsRequestVer13.Builder().setXid(nextXid());
-    }
-
-    public OFMatchV2.Builder buildMatchV2() {
-        throw new UnsupportedOperationException("OFMatchV2 not supported in version 1.3");
-    }
-
-    public OFGroupFeaturesStatsReply.Builder buildGroupFeaturesStatsReply() {
-        return new OFGroupFeaturesStatsReplyVer13.Builder().setXid(nextXid());
-    }
-
-    public OFGroupFeaturesStatsRequest.Builder buildGroupFeaturesStatsRequest() {
-        return new OFGroupFeaturesStatsRequestVer13.Builder().setXid(nextXid());
-    }
-    public OFGroupFeaturesStatsRequest groupFeaturesStatsRequest(Set<OFStatsRequestFlags> flags) {
-        return new OFGroupFeaturesStatsRequestVer13(
-                nextXid(),
-                      flags
-                    );
-    }
-
-    public OFMatchV3.Builder buildMatchV3() {
-        return new OFMatchV3Ver13.Builder();
-    }
-    public Match.Builder buildMatch() {
-        return new OFMatchV3Ver13.Builder();
-    }
-
-    final static Match MATCH_WILDCARD_ALL = OFMatchV3Ver13.DEFAULT;
-
-    public Match matchWildcardAll() {
-        return MATCH_WILDCARD_ALL;
-    }
-    public OFMatchV3 matchV3(OFOxmList oxmList) {
-        return new OFMatchV3Ver13(
-                oxmList
-                    );
-    }
-
-    public OFRoleReply.Builder buildRoleReply() {
-        return new OFRoleReplyVer13.Builder().setXid(nextXid());
-    }
-
-    public OFRoleRequest.Builder buildRoleRequest() {
-        return new OFRoleRequestVer13.Builder().setXid(nextXid());
-    }
-
-    public OFAsyncGetReply.Builder buildAsyncGetReply() {
-        return new OFAsyncGetReplyVer13.Builder().setXid(nextXid());
-    }
-
-    public OFAsyncGetRequest.Builder buildAsyncGetRequest() {
-        return new OFAsyncGetRequestVer13.Builder().setXid(nextXid());
-    }
-    public OFAsyncGetRequest asyncGetRequest(List<OFAsyncConfigProp> properties) {
-        return new OFAsyncGetRequestVer13(
-                nextXid()
-                    );
-    }
-
-    public OFAsyncSet.Builder buildAsyncSet() {
-        return new OFAsyncSetVer13.Builder().setXid(nextXid());
-    }
-
-    public OFBsnArpIdle.Builder buildBsnArpIdle() {
-        return new OFBsnArpIdleVer13.Builder().setXid(nextXid());
     }
 
     public OFBsnControllerConnection.Builder buildBsnControllerConnection() {
@@ -781,6 +403,14 @@ public class OFFactoryVer13 implements OFFactory {
                 nextXid(),
                       enable
                     );
+    }
+
+    public OFBsnGenericAsync.Builder buildBsnGenericAsync() {
+        throw new UnsupportedOperationException("OFBsnGenericAsync not supported in version 1.3");
+    }
+
+    public OFBsnGenericCommand.Builder buildBsnGenericCommand() {
+        throw new UnsupportedOperationException("OFBsnGenericCommand not supported in version 1.3");
     }
 
     public OFBsnGenericStatsEntry.Builder buildBsnGenericStatsEntry() {
@@ -903,6 +533,67 @@ public class OFFactoryVer13 implements OFFactory {
                     );
     }
 
+    public OFBsnGetInterfacesReply.Builder buildBsnGetInterfacesReply() {
+        return new OFBsnGetInterfacesReplyVer13.Builder().setXid(nextXid());
+    }
+    public OFBsnGetInterfacesReply bsnGetInterfacesReply(List<OFBsnInterface> interfaces) {
+        return new OFBsnGetInterfacesReplyVer13(
+                nextXid(),
+                      interfaces
+                    );
+    }
+
+    public OFBsnGetInterfacesRequest.Builder buildBsnGetInterfacesRequest() {
+        return new OFBsnGetInterfacesRequestVer13.Builder().setXid(nextXid());
+    }
+    public OFBsnGetInterfacesRequest bsnGetInterfacesRequest() {
+        return new OFBsnGetInterfacesRequestVer13(
+                nextXid()
+                    );
+    }
+
+    public OFBsnGetIpMaskReply.Builder buildBsnGetIpMaskReply() {
+        throw new UnsupportedOperationException("OFBsnGetIpMaskReply not supported in version 1.3");
+    }
+
+    public OFBsnGetIpMaskRequest.Builder buildBsnGetIpMaskRequest() {
+        throw new UnsupportedOperationException("OFBsnGetIpMaskRequest not supported in version 1.3");
+    }
+    public OFBsnGetIpMaskRequest bsnGetIpMaskRequest(short index) {
+        throw new UnsupportedOperationException("OFBsnGetIpMaskRequest not supported in version 1.3");
+    }
+
+    public OFBsnGetL2TableReply.Builder buildBsnGetL2TableReply() {
+        throw new UnsupportedOperationException("OFBsnGetL2TableReply not supported in version 1.3");
+    }
+
+    public OFBsnGetL2TableRequest.Builder buildBsnGetL2TableRequest() {
+        throw new UnsupportedOperationException("OFBsnGetL2TableRequest not supported in version 1.3");
+    }
+    public OFBsnGetL2TableRequest bsnGetL2TableRequest() {
+        throw new UnsupportedOperationException("OFBsnGetL2TableRequest not supported in version 1.3");
+    }
+
+    public OFBsnGetMirroringReply.Builder buildBsnGetMirroringReply() {
+        return new OFBsnGetMirroringReplyVer13.Builder().setXid(nextXid());
+    }
+    public OFBsnGetMirroringReply bsnGetMirroringReply(short reportMirrorPorts) {
+        return new OFBsnGetMirroringReplyVer13(
+                nextXid(),
+                      reportMirrorPorts
+                    );
+    }
+
+    public OFBsnGetMirroringRequest.Builder buildBsnGetMirroringRequest() {
+        return new OFBsnGetMirroringRequestVer13.Builder().setXid(nextXid());
+    }
+    public OFBsnGetMirroringRequest bsnGetMirroringRequest(short reportMirrorPorts) {
+        return new OFBsnGetMirroringRequestVer13(
+                nextXid(),
+                      reportMirrorPorts
+                    );
+    }
+
     public OFBsnGetSwitchPipelineReply.Builder buildBsnGetSwitchPipelineReply() {
         return new OFBsnGetSwitchPipelineReplyVer13.Builder().setXid(nextXid());
     }
@@ -922,6 +613,17 @@ public class OFFactoryVer13 implements OFFactory {
                     );
     }
 
+    public OFBsnHybridGetReply.Builder buildBsnHybridGetReply() {
+        throw new UnsupportedOperationException("OFBsnHybridGetReply not supported in version 1.3");
+    }
+
+    public OFBsnHybridGetRequest.Builder buildBsnHybridGetRequest() {
+        throw new UnsupportedOperationException("OFBsnHybridGetRequest not supported in version 1.3");
+    }
+    public OFBsnHybridGetRequest bsnHybridGetRequest() {
+        throw new UnsupportedOperationException("OFBsnHybridGetRequest not supported in version 1.3");
+    }
+
     public OFBsnImageDescStatsReply.Builder buildBsnImageDescStatsReply() {
         return new OFBsnImageDescStatsReplyVer13.Builder().setXid(nextXid());
     }
@@ -934,6 +636,10 @@ public class OFFactoryVer13 implements OFFactory {
                 nextXid(),
                       flags
                     );
+    }
+
+    public OFBsnInterface.Builder buildBsnInterface() {
+        return new OFBsnInterfaceVer13.Builder();
     }
 
     public OFBsnLacpConvergenceNotif.Builder buildBsnLacpConvergenceNotif() {
@@ -996,6 +702,26 @@ public class OFFactoryVer13 implements OFFactory {
         return new OFBsnLuaUploadVer13.Builder().setXid(nextXid());
     }
 
+    public OFBsnPduRxReply.Builder buildBsnPduRxReply() {
+        return new OFBsnPduRxReplyVer13.Builder().setXid(nextXid());
+    }
+
+    public OFBsnPduRxRequest.Builder buildBsnPduRxRequest() {
+        return new OFBsnPduRxRequestVer13.Builder().setXid(nextXid());
+    }
+
+    public OFBsnPduRxTimeout.Builder buildBsnPduRxTimeout() {
+        return new OFBsnPduRxTimeoutVer13.Builder().setXid(nextXid());
+    }
+
+    public OFBsnPduTxReply.Builder buildBsnPduTxReply() {
+        return new OFBsnPduTxReplyVer13.Builder().setXid(nextXid());
+    }
+
+    public OFBsnPduTxRequest.Builder buildBsnPduTxRequest() {
+        return new OFBsnPduTxRequestVer13.Builder().setXid(nextXid());
+    }
+
     public OFBsnPortCounterStatsEntry.Builder buildBsnPortCounterStatsEntry() {
         return new OFBsnPortCounterStatsEntryVer13.Builder();
     }
@@ -1032,12 +758,48 @@ public class OFFactoryVer13 implements OFFactory {
                     );
     }
 
+    public OFBsnSetIpMask.Builder buildBsnSetIpMask() {
+        throw new UnsupportedOperationException("OFBsnSetIpMask not supported in version 1.3");
+    }
+
+    public OFBsnSetL2TableReply.Builder buildBsnSetL2TableReply() {
+        throw new UnsupportedOperationException("OFBsnSetL2TableReply not supported in version 1.3");
+    }
+
+    public OFBsnSetL2TableRequest.Builder buildBsnSetL2TableRequest() {
+        throw new UnsupportedOperationException("OFBsnSetL2TableRequest not supported in version 1.3");
+    }
+
     public OFBsnSetLacpReply.Builder buildBsnSetLacpReply() {
         return new OFBsnSetLacpReplyVer13.Builder().setXid(nextXid());
     }
 
     public OFBsnSetLacpRequest.Builder buildBsnSetLacpRequest() {
         return new OFBsnSetLacpRequestVer13.Builder().setXid(nextXid());
+    }
+
+    public OFBsnSetMirroring.Builder buildBsnSetMirroring() {
+        return new OFBsnSetMirroringVer13.Builder().setXid(nextXid());
+    }
+    public OFBsnSetMirroring bsnSetMirroring(short reportMirrorPorts) {
+        return new OFBsnSetMirroringVer13(
+                nextXid(),
+                      reportMirrorPorts
+                    );
+    }
+
+    public OFBsnSetPktinSuppressionReply.Builder buildBsnSetPktinSuppressionReply() {
+        return new OFBsnSetPktinSuppressionReplyVer13.Builder().setXid(nextXid());
+    }
+    public OFBsnSetPktinSuppressionReply bsnSetPktinSuppressionReply(long status) {
+        return new OFBsnSetPktinSuppressionReplyVer13(
+                nextXid(),
+                      status
+                    );
+    }
+
+    public OFBsnSetPktinSuppressionRequest.Builder buildBsnSetPktinSuppressionRequest() {
+        return new OFBsnSetPktinSuppressionRequestVer13.Builder().setXid(nextXid());
     }
 
     public OFBsnSetSwitchPipelineReply.Builder buildBsnSetSwitchPipelineReply() {
@@ -1058,6 +820,24 @@ public class OFFactoryVer13 implements OFFactory {
                 nextXid(),
                       pipeline
                     );
+    }
+
+    public OFBsnShellCommand.Builder buildBsnShellCommand() {
+        throw new UnsupportedOperationException("OFBsnShellCommand not supported in version 1.3");
+    }
+
+    public OFBsnShellOutput.Builder buildBsnShellOutput() {
+        throw new UnsupportedOperationException("OFBsnShellOutput not supported in version 1.3");
+    }
+    public OFBsnShellOutput bsnShellOutput(byte[] data) {
+        throw new UnsupportedOperationException("OFBsnShellOutput not supported in version 1.3");
+    }
+
+    public OFBsnShellStatus.Builder buildBsnShellStatus() {
+        throw new UnsupportedOperationException("OFBsnShellStatus not supported in version 1.3");
+    }
+    public OFBsnShellStatus bsnShellStatus(long status) {
+        throw new UnsupportedOperationException("OFBsnShellStatus not supported in version 1.3");
     }
 
     public OFBsnSwitchPipelineStatsEntry.Builder buildBsnSwitchPipelineStatsEntry() {
@@ -1111,6 +891,13 @@ public class OFFactoryVer13 implements OFFactory {
         return new OFBsnTableSetBucketsSizeVer13.Builder().setXid(nextXid());
     }
 
+    public OFBsnTakeover.Builder buildBsnTakeover() {
+        throw new UnsupportedOperationException("OFBsnTakeover not supported in version 1.3");
+    }
+    public OFBsnTakeover bsnTakeover() {
+        throw new UnsupportedOperationException("OFBsnTakeover not supported in version 1.3");
+    }
+
     public OFBsnTimeReply.Builder buildBsnTimeReply() {
         return new OFBsnTimeReplyVer13.Builder().setXid(nextXid());
     }
@@ -1127,6 +914,40 @@ public class OFFactoryVer13 implements OFFactory {
     public OFBsnTimeRequest bsnTimeRequest() {
         return new OFBsnTimeRequestVer13(
                 nextXid()
+                    );
+    }
+
+    public OFBsnVirtualPortCreateReply.Builder buildBsnVirtualPortCreateReply() {
+        return new OFBsnVirtualPortCreateReplyVer13.Builder().setXid(nextXid());
+    }
+
+    public OFBsnVirtualPortCreateRequest.Builder buildBsnVirtualPortCreateRequest() {
+        return new OFBsnVirtualPortCreateRequestVer13.Builder().setXid(nextXid());
+    }
+    public OFBsnVirtualPortCreateRequest bsnVirtualPortCreateRequest(OFBsnVport vport) {
+        return new OFBsnVirtualPortCreateRequestVer13(
+                nextXid(),
+                      vport
+                    );
+    }
+
+    public OFBsnVirtualPortRemoveReply.Builder buildBsnVirtualPortRemoveReply() {
+        return new OFBsnVirtualPortRemoveReplyVer13.Builder().setXid(nextXid());
+    }
+    public OFBsnVirtualPortRemoveReply bsnVirtualPortRemoveReply(long status) {
+        return new OFBsnVirtualPortRemoveReplyVer13(
+                nextXid(),
+                      status
+                    );
+    }
+
+    public OFBsnVirtualPortRemoveRequest.Builder buildBsnVirtualPortRemoveRequest() {
+        return new OFBsnVirtualPortRemoveRequestVer13.Builder().setXid(nextXid());
+    }
+    public OFBsnVirtualPortRemoveRequest bsnVirtualPortRemoveRequest(long vportNo) {
+        return new OFBsnVirtualPortRemoveRequestVer13(
+                nextXid(),
+                      vportNo
                     );
     }
 
@@ -1168,6 +989,14 @@ public class OFFactoryVer13 implements OFFactory {
                     );
     }
 
+    public OFBsnVportL2Gre.Builder buildBsnVportL2Gre() {
+        return new OFBsnVportL2GreVer13.Builder();
+    }
+
+    public OFBsnVportQInQ.Builder buildBsnVportQInQ() {
+        return new OFBsnVportQInQVer13.Builder();
+    }
+
     public OFBsnVrfCounterStatsEntry.Builder buildBsnVrfCounterStatsEntry() {
         return new OFBsnVrfCounterStatsEntryVer13.Builder();
     }
@@ -1186,12 +1015,317 @@ public class OFFactoryVer13 implements OFFactory {
         return new OFBsnVrfCounterStatsRequestVer13.Builder().setXid(nextXid());
     }
 
+    public OFBucket.Builder buildBucket() {
+        return new OFBucketVer13.Builder();
+    }
+
+    public OFBucketCounter.Builder buildBucketCounter() {
+        return new OFBucketCounterVer13.Builder();
+    }
+    public OFBucketCounter bucketCounter(U64 packetCount, U64 byteCount) {
+        return new OFBucketCounterVer13(
+                packetCount,
+                      byteCount
+                    );
+    }
+
+    public OFBundleAddMsg.Builder buildBundleAddMsg() {
+        throw new UnsupportedOperationException("OFBundleAddMsg not supported in version 1.3");
+    }
+
+    public OFBundleCtrlMsg.Builder buildBundleCtrlMsg() {
+        throw new UnsupportedOperationException("OFBundleCtrlMsg not supported in version 1.3");
+    }
+
+    public OFBundleFeaturesPropTime.Builder buildBundleFeaturesPropTime() {
+        throw new UnsupportedOperationException("OFBundleFeaturesPropTime not supported in version 1.3");
+    }
+
+    public OFBundleFeaturesStatsReply.Builder buildBundleFeaturesStatsReply() {
+        throw new UnsupportedOperationException("OFBundleFeaturesStatsReply not supported in version 1.3");
+    }
+
+    public OFBundleFeaturesStatsRequest.Builder buildBundleFeaturesStatsRequest() {
+        throw new UnsupportedOperationException("OFBundleFeaturesStatsRequest not supported in version 1.3");
+    }
+
+    public OFBundlePropTime.Builder buildBundlePropTime() {
+        throw new UnsupportedOperationException("OFBundlePropTime not supported in version 1.3");
+    }
+    public OFBundlePropTime bundlePropTime(List<OFTime> scheduledTime) {
+        throw new UnsupportedOperationException("OFBundlePropTime not supported in version 1.3");
+    }
+
+    public OFControllerStatus.Builder buildControllerStatus() {
+        throw new UnsupportedOperationException("OFControllerStatus not supported in version 1.3");
+    }
+    public OFControllerStatus controllerStatus(OFControllerStatusEntry entry) {
+        throw new UnsupportedOperationException("OFControllerStatus not supported in version 1.3");
+    }
+
+    public OFControllerStatusEntry.Builder buildControllerStatusEntry() {
+        throw new UnsupportedOperationException("OFControllerStatusEntry not supported in version 1.3");
+    }
+
+    public OFControllerStatusStatsReply.Builder buildControllerStatusStatsReply() {
+        throw new UnsupportedOperationException("OFControllerStatusStatsReply not supported in version 1.3");
+    }
+
+    public OFControllerStatusStatsRequest.Builder buildControllerStatusStatsRequest() {
+        throw new UnsupportedOperationException("OFControllerStatusStatsRequest not supported in version 1.3");
+    }
+    public OFControllerStatusStatsRequest controllerStatusStatsRequest(Set<OFStatsRequestFlags> flags) {
+        throw new UnsupportedOperationException("OFControllerStatusStatsRequest not supported in version 1.3");
+    }
+
+    public OFDescStatsReply.Builder buildDescStatsReply() {
+        return new OFDescStatsReplyVer13.Builder().setXid(nextXid());
+    }
+
+    public OFDescStatsRequest.Builder buildDescStatsRequest() {
+        return new OFDescStatsRequestVer13.Builder().setXid(nextXid());
+    }
+    public OFDescStatsRequest descStatsRequest(Set<OFStatsRequestFlags> flags) {
+        return new OFDescStatsRequestVer13(
+                nextXid(),
+                      flags
+                    );
+    }
+
+    public OFEchoReply.Builder buildEchoReply() {
+        return new OFEchoReplyVer13.Builder().setXid(nextXid());
+    }
+    public OFEchoReply echoReply(byte[] data) {
+        return new OFEchoReplyVer13(
+                nextXid(),
+                      data
+                    );
+    }
+
+    public OFEchoRequest.Builder buildEchoRequest() {
+        return new OFEchoRequestVer13.Builder().setXid(nextXid());
+    }
+    public OFEchoRequest echoRequest(byte[] data) {
+        return new OFEchoRequestVer13(
+                nextXid(),
+                      data
+                    );
+    }
+
+    public OFFeaturesReply.Builder buildFeaturesReply() {
+        return new OFFeaturesReplyVer13.Builder().setXid(nextXid());
+    }
+
+    public OFFeaturesRequest.Builder buildFeaturesRequest() {
+        return new OFFeaturesRequestVer13.Builder().setXid(nextXid());
+    }
+    public OFFeaturesRequest featuresRequest() {
+        return new OFFeaturesRequestVer13(
+                nextXid()
+                    );
+    }
+
+    public OFFlowAdd.Builder buildFlowAdd() {
+        return new OFFlowAddVer13.Builder().setXid(nextXid());
+    }
+
+    public OFFlowDelete.Builder buildFlowDelete() {
+        return new OFFlowDeleteVer13.Builder().setXid(nextXid());
+    }
+
+    public OFFlowDeleteStrict.Builder buildFlowDeleteStrict() {
+        return new OFFlowDeleteStrictVer13.Builder().setXid(nextXid());
+    }
+
+    public OFFlowLightweightStatsEntry.Builder buildFlowLightweightStatsEntry() {
+        throw new UnsupportedOperationException("OFFlowLightweightStatsEntry not supported in version 1.3");
+    }
+
+    public OFFlowLightweightStatsReply.Builder buildFlowLightweightStatsReply() {
+        throw new UnsupportedOperationException("OFFlowLightweightStatsReply not supported in version 1.3");
+    }
+
+    public OFFlowLightweightStatsRequest.Builder buildFlowLightweightStatsRequest() {
+        throw new UnsupportedOperationException("OFFlowLightweightStatsRequest not supported in version 1.3");
+    }
+
+    public OFFlowModify.Builder buildFlowModify() {
+        return new OFFlowModifyVer13.Builder().setXid(nextXid());
+    }
+
+    public OFFlowModifyStrict.Builder buildFlowModifyStrict() {
+        return new OFFlowModifyStrictVer13.Builder().setXid(nextXid());
+    }
+
+    public OFFlowMonitorEntry.Builder buildFlowMonitorEntry() {
+        throw new UnsupportedOperationException("OFFlowMonitorEntry not supported in version 1.3");
+    }
+
+    public OFFlowMonitorReply.Builder buildFlowMonitorReply() {
+        throw new UnsupportedOperationException("OFFlowMonitorReply not supported in version 1.3");
+    }
+
+    public OFFlowMonitorReplyEntry.Builder buildFlowMonitorReplyEntry() {
+        throw new UnsupportedOperationException("OFFlowMonitorReplyEntry not supported in version 1.3");
+    }
+    public OFFlowMonitorReplyEntry flowMonitorReplyEntry(OFFlowUpdateEvent event) {
+        throw new UnsupportedOperationException("OFFlowMonitorReplyEntry not supported in version 1.3");
+    }
+
+    public OFFlowMonitorRequest.Builder buildFlowMonitorRequest() {
+        throw new UnsupportedOperationException("OFFlowMonitorRequest not supported in version 1.3");
+    }
+
+    public OFFlowRemoved.Builder buildFlowRemoved() {
+        return new OFFlowRemovedVer13.Builder().setXid(nextXid());
+    }
+
+    public OFFlowStatsEntry.Builder buildFlowStatsEntry() {
+        return new OFFlowStatsEntryVer13.Builder();
+    }
+
+    public OFFlowStatsReply.Builder buildFlowStatsReply() {
+        return new OFFlowStatsReplyVer13.Builder().setXid(nextXid());
+    }
+
+    public OFFlowStatsRequest.Builder buildFlowStatsRequest() {
+        return new OFFlowStatsRequestVer13.Builder().setXid(nextXid());
+    }
+
+    public OFGetConfigReply.Builder buildGetConfigReply() {
+        return new OFGetConfigReplyVer13.Builder().setXid(nextXid());
+    }
+
+    public OFGetConfigRequest.Builder buildGetConfigRequest() {
+        return new OFGetConfigRequestVer13.Builder().setXid(nextXid());
+    }
+    public OFGetConfigRequest getConfigRequest() {
+        return new OFGetConfigRequestVer13(
+                nextXid()
+                    );
+    }
+
+    public OFGroupAdd.Builder buildGroupAdd() {
+        return new OFGroupAddVer13.Builder().setXid(nextXid());
+    }
+
+    public OFGroupBucketPropWatchGroup.Builder buildGroupBucketPropWatchGroup() {
+        throw new UnsupportedOperationException("OFGroupBucketPropWatchGroup not supported in version 1.3");
+    }
+    public OFGroupBucketPropWatchGroup groupBucketPropWatchGroup(long watch) {
+        throw new UnsupportedOperationException("OFGroupBucketPropWatchGroup not supported in version 1.3");
+    }
+
+    public OFGroupBucketPropWatchPort.Builder buildGroupBucketPropWatchPort() {
+        throw new UnsupportedOperationException("OFGroupBucketPropWatchPort not supported in version 1.3");
+    }
+    public OFGroupBucketPropWatchPort groupBucketPropWatchPort(long watch) {
+        throw new UnsupportedOperationException("OFGroupBucketPropWatchPort not supported in version 1.3");
+    }
+
+    public OFGroupBucketPropWeight.Builder buildGroupBucketPropWeight() {
+        throw new UnsupportedOperationException("OFGroupBucketPropWeight not supported in version 1.3");
+    }
+    public OFGroupBucketPropWeight groupBucketPropWeight(int weight) {
+        throw new UnsupportedOperationException("OFGroupBucketPropWeight not supported in version 1.3");
+    }
+
+    public OFGroupDelete.Builder buildGroupDelete() {
+        return new OFGroupDeleteVer13.Builder().setXid(nextXid());
+    }
+
+    public OFGroupDescStatsEntry.Builder buildGroupDescStatsEntry() {
+        return new OFGroupDescStatsEntryVer13.Builder();
+    }
+
+    public OFGroupDescStatsReply.Builder buildGroupDescStatsReply() {
+        return new OFGroupDescStatsReplyVer13.Builder().setXid(nextXid());
+    }
+
+    public OFGroupDescStatsRequest.Builder buildGroupDescStatsRequest() {
+        return new OFGroupDescStatsRequestVer13.Builder().setXid(nextXid());
+    }
+
+    public OFGroupFeaturesStatsReply.Builder buildGroupFeaturesStatsReply() {
+        return new OFGroupFeaturesStatsReplyVer13.Builder().setXid(nextXid());
+    }
+
+    public OFGroupFeaturesStatsRequest.Builder buildGroupFeaturesStatsRequest() {
+        return new OFGroupFeaturesStatsRequestVer13.Builder().setXid(nextXid());
+    }
+    public OFGroupFeaturesStatsRequest groupFeaturesStatsRequest(Set<OFStatsRequestFlags> flags) {
+        return new OFGroupFeaturesStatsRequestVer13(
+                nextXid(),
+                      flags
+                    );
+    }
+
+    public OFGroupInsertBucket.Builder buildGroupInsertBucket() {
+        throw new UnsupportedOperationException("OFGroupInsertBucket not supported in version 1.3");
+    }
+
+    public OFGroupModify.Builder buildGroupModify() {
+        return new OFGroupModifyVer13.Builder().setXid(nextXid());
+    }
+
+    public OFGroupRemoveBucket.Builder buildGroupRemoveBucket() {
+        throw new UnsupportedOperationException("OFGroupRemoveBucket not supported in version 1.3");
+    }
+
+    public OFGroupStatsEntry.Builder buildGroupStatsEntry() {
+        return new OFGroupStatsEntryVer13.Builder();
+    }
+
+    public OFGroupStatsReply.Builder buildGroupStatsReply() {
+        return new OFGroupStatsReplyVer13.Builder().setXid(nextXid());
+    }
+
+    public OFGroupStatsRequest.Builder buildGroupStatsRequest() {
+        return new OFGroupStatsRequestVer13.Builder().setXid(nextXid());
+    }
+
+    public OFHello.Builder buildHello() {
+        return new OFHelloVer13.Builder().setXid(nextXid());
+    }
+    public OFHello hello(List<OFHelloElem> elements) {
+        return new OFHelloVer13(
+                nextXid(),
+                      elements
+                    );
+    }
+
     public OFHelloElemVersionbitmap.Builder buildHelloElemVersionbitmap() {
         return new OFHelloElemVersionbitmapVer13.Builder();
     }
     public OFHelloElemVersionbitmap helloElemVersionbitmap(List<U32> bitmaps) {
         return new OFHelloElemVersionbitmapVer13(
                 bitmaps
+                    );
+    }
+
+    public OFMatchV1.Builder buildMatchV1() {
+        throw new UnsupportedOperationException("OFMatchV1 not supported in version 1.3");
+    }
+
+    public OFMatchV2.Builder buildMatchV2() {
+        throw new UnsupportedOperationException("OFMatchV2 not supported in version 1.3");
+    }
+
+    public OFMatchV3.Builder buildMatchV3() {
+        return new OFMatchV3Ver13.Builder();
+    }
+    public Match.Builder buildMatch() {
+        return new OFMatchV3Ver13.Builder();
+    }
+
+    final static Match MATCH_WILDCARD_ALL = OFMatchV3Ver13.DEFAULT;
+
+    public Match matchWildcardAll() {
+        return MATCH_WILDCARD_ALL;
+    }
+    public OFMatchV3 matchV3(OFOxmList oxmList) {
+        return new OFMatchV3Ver13(
+                oxmList
                     );
     }
 
@@ -1251,12 +1385,273 @@ public class OFFactoryVer13 implements OFFactory {
         return new OFMeterStatsRequestVer13.Builder().setXid(nextXid());
     }
 
+    public OFNiciraControllerRoleReply.Builder buildNiciraControllerRoleReply() {
+        throw new UnsupportedOperationException("OFNiciraControllerRoleReply not supported in version 1.3");
+    }
+    public OFNiciraControllerRoleReply niciraControllerRoleReply(OFNiciraControllerRole role) {
+        throw new UnsupportedOperationException("OFNiciraControllerRoleReply not supported in version 1.3");
+    }
+
+    public OFNiciraControllerRoleRequest.Builder buildNiciraControllerRoleRequest() {
+        throw new UnsupportedOperationException("OFNiciraControllerRoleRequest not supported in version 1.3");
+    }
+    public OFNiciraControllerRoleRequest niciraControllerRoleRequest(OFNiciraControllerRole role) {
+        throw new UnsupportedOperationException("OFNiciraControllerRoleRequest not supported in version 1.3");
+    }
+
+    public OFPacketIn.Builder buildPacketIn() {
+        return new OFPacketInVer13.Builder().setXid(nextXid());
+    }
+
+    public OFPacketOut.Builder buildPacketOut() {
+        return new OFPacketOutVer13.Builder().setXid(nextXid());
+    }
+
+    public OFPacketQueue.Builder buildPacketQueue() {
+        return new OFPacketQueueVer13.Builder();
+    }
+
+    public OFPortDesc.Builder buildPortDesc() {
+        return new OFPortDescVer13.Builder();
+    }
+
+    public OFPortDescPropBsnBreakout.Builder buildPortDescPropBsnBreakout() {
+        throw new UnsupportedOperationException("OFPortDescPropBsnBreakout not supported in version 1.3");
+    }
+    public OFPortDescPropBsnBreakout portDescPropBsnBreakout(int subInterfaceCount, int subInterfaceSpeedGbps) {
+        throw new UnsupportedOperationException("OFPortDescPropBsnBreakout not supported in version 1.3");
+    }
+
+    public OFPortDescPropBsnDriverInfoJson.Builder buildPortDescPropBsnDriverInfoJson() {
+        throw new UnsupportedOperationException("OFPortDescPropBsnDriverInfoJson not supported in version 1.3");
+    }
+    public OFPortDescPropBsnDriverInfoJson portDescPropBsnDriverInfoJson(byte[] driverInfoJson) {
+        throw new UnsupportedOperationException("OFPortDescPropBsnDriverInfoJson not supported in version 1.3");
+    }
+
+    public OFPortDescPropBsnExtendedCapabilities.Builder buildPortDescPropBsnExtendedCapabilities() {
+        throw new UnsupportedOperationException("OFPortDescPropBsnExtendedCapabilities not supported in version 1.3");
+    }
+
+    public OFPortDescPropBsnForwardErrorCorrection.Builder buildPortDescPropBsnForwardErrorCorrection() {
+        throw new UnsupportedOperationException("OFPortDescPropBsnForwardErrorCorrection not supported in version 1.3");
+    }
+    public OFPortDescPropBsnForwardErrorCorrection portDescPropBsnForwardErrorCorrection(OFBsnFecConfigState configured, long enabled) {
+        throw new UnsupportedOperationException("OFPortDescPropBsnForwardErrorCorrection not supported in version 1.3");
+    }
+
+    public OFPortDescPropBsnGenerationId.Builder buildPortDescPropBsnGenerationId() {
+        throw new UnsupportedOperationException("OFPortDescPropBsnGenerationId not supported in version 1.3");
+    }
+    public OFPortDescPropBsnGenerationId portDescPropBsnGenerationId(U64 generationId) {
+        throw new UnsupportedOperationException("OFPortDescPropBsnGenerationId not supported in version 1.3");
+    }
+
+    public OFPortDescPropBsnMiscCapabilities.Builder buildPortDescPropBsnMiscCapabilities() {
+        throw new UnsupportedOperationException("OFPortDescPropBsnMiscCapabilities not supported in version 1.3");
+    }
+
+    public OFPortDescPropBsnSffJson.Builder buildPortDescPropBsnSffJson() {
+        throw new UnsupportedOperationException("OFPortDescPropBsnSffJson not supported in version 1.3");
+    }
+    public OFPortDescPropBsnSffJson portDescPropBsnSffJson(byte[] dataJson) {
+        throw new UnsupportedOperationException("OFPortDescPropBsnSffJson not supported in version 1.3");
+    }
+
+    public OFPortDescPropBsnSpeedCapabilities.Builder buildPortDescPropBsnSpeedCapabilities() {
+        throw new UnsupportedOperationException("OFPortDescPropBsnSpeedCapabilities not supported in version 1.3");
+    }
+
+    public OFPortDescPropBsnUplink portDescPropBsnUplink() {
+        throw new UnsupportedOperationException("OFPortDescPropBsnUplink not supported in version 1.3");
+    }
+
+    public OFPortDescPropEgress.Builder buildPortDescPropEgress() {
+        throw new UnsupportedOperationException("OFPortDescPropEgress not supported in version 1.3");
+    }
+    public OFPortDescPropEgress portDescPropEgress(byte[] oxmIds) {
+        throw new UnsupportedOperationException("OFPortDescPropEgress not supported in version 1.3");
+    }
+
+    public OFPortDescPropEthernet.Builder buildPortDescPropEthernet() {
+        throw new UnsupportedOperationException("OFPortDescPropEthernet not supported in version 1.3");
+    }
+
+    public OFPortDescPropIngress.Builder buildPortDescPropIngress() {
+        throw new UnsupportedOperationException("OFPortDescPropIngress not supported in version 1.3");
+    }
+    public OFPortDescPropIngress portDescPropIngress(byte[] oxmIds) {
+        throw new UnsupportedOperationException("OFPortDescPropIngress not supported in version 1.3");
+    }
+
+    public OFPortDescPropOptical.Builder buildPortDescPropOptical() {
+        throw new UnsupportedOperationException("OFPortDescPropOptical not supported in version 1.3");
+    }
+
     public OFPortDescStatsReply.Builder buildPortDescStatsReply() {
         return new OFPortDescStatsReplyVer13.Builder().setXid(nextXid());
     }
 
     public OFPortDescStatsRequest.Builder buildPortDescStatsRequest() {
         return new OFPortDescStatsRequestVer13.Builder().setXid(nextXid());
+    }
+
+    public OFPortMod.Builder buildPortMod() {
+        return new OFPortModVer13.Builder().setXid(nextXid());
+    }
+
+    public OFPortModPropEthernet.Builder buildPortModPropEthernet() {
+        throw new UnsupportedOperationException("OFPortModPropEthernet not supported in version 1.3");
+    }
+    public OFPortModPropEthernet portModPropEthernet(Set<OFPortFeatures> advertise) {
+        throw new UnsupportedOperationException("OFPortModPropEthernet not supported in version 1.3");
+    }
+
+    public OFPortModPropOptical.Builder buildPortModPropOptical() {
+        throw new UnsupportedOperationException("OFPortModPropOptical not supported in version 1.3");
+    }
+
+    public OFPortStatsEntry.Builder buildPortStatsEntry() {
+        return new OFPortStatsEntryVer13.Builder();
+    }
+
+    public OFPortStatsPropEthernet.Builder buildPortStatsPropEthernet() {
+        throw new UnsupportedOperationException("OFPortStatsPropEthernet not supported in version 1.3");
+    }
+
+    public OFPortStatsPropExperimenterIntel.Builder buildPortStatsPropExperimenterIntel() {
+        throw new UnsupportedOperationException("OFPortStatsPropExperimenterIntel not supported in version 1.3");
+    }
+
+    public OFPortStatsPropOptical.Builder buildPortStatsPropOptical() {
+        throw new UnsupportedOperationException("OFPortStatsPropOptical not supported in version 1.3");
+    }
+
+    public OFPortStatsReply.Builder buildPortStatsReply() {
+        return new OFPortStatsReplyVer13.Builder().setXid(nextXid());
+    }
+
+    public OFPortStatsRequest.Builder buildPortStatsRequest() {
+        return new OFPortStatsRequestVer13.Builder().setXid(nextXid());
+    }
+
+    public OFPortStatus.Builder buildPortStatus() {
+        return new OFPortStatusVer13.Builder().setXid(nextXid());
+    }
+
+    public OFQueueDesc.Builder buildQueueDesc() {
+        throw new UnsupportedOperationException("OFQueueDesc not supported in version 1.3");
+    }
+
+    public OFQueueDescPropBsnQueueName.Builder buildQueueDescPropBsnQueueName() {
+        throw new UnsupportedOperationException("OFQueueDescPropBsnQueueName not supported in version 1.3");
+    }
+    public OFQueueDescPropBsnQueueName queueDescPropBsnQueueName(byte[] name) {
+        throw new UnsupportedOperationException("OFQueueDescPropBsnQueueName not supported in version 1.3");
+    }
+
+    public OFQueueDescPropMaxRate.Builder buildQueueDescPropMaxRate() {
+        throw new UnsupportedOperationException("OFQueueDescPropMaxRate not supported in version 1.3");
+    }
+    public OFQueueDescPropMaxRate queueDescPropMaxRate(int rate) {
+        throw new UnsupportedOperationException("OFQueueDescPropMaxRate not supported in version 1.3");
+    }
+
+    public OFQueueDescPropMinRate.Builder buildQueueDescPropMinRate() {
+        throw new UnsupportedOperationException("OFQueueDescPropMinRate not supported in version 1.3");
+    }
+    public OFQueueDescPropMinRate queueDescPropMinRate(int rate) {
+        throw new UnsupportedOperationException("OFQueueDescPropMinRate not supported in version 1.3");
+    }
+
+    public OFQueueDescStatsReply.Builder buildQueueDescStatsReply() {
+        throw new UnsupportedOperationException("OFQueueDescStatsReply not supported in version 1.3");
+    }
+
+    public OFQueueDescStatsRequest.Builder buildQueueDescStatsRequest() {
+        throw new UnsupportedOperationException("OFQueueDescStatsRequest not supported in version 1.3");
+    }
+
+    public OFQueueGetConfigReply.Builder buildQueueGetConfigReply() {
+        return new OFQueueGetConfigReplyVer13.Builder().setXid(nextXid());
+    }
+
+    public OFQueueGetConfigRequest.Builder buildQueueGetConfigRequest() {
+        return new OFQueueGetConfigRequestVer13.Builder().setXid(nextXid());
+    }
+    public OFQueueGetConfigRequest queueGetConfigRequest(OFPort port) {
+        return new OFQueueGetConfigRequestVer13(
+                nextXid(),
+                      port
+                    );
+    }
+
+    public OFQueueStatsEntry.Builder buildQueueStatsEntry() {
+        return new OFQueueStatsEntryVer13.Builder();
+    }
+
+    public OFQueueStatsPropBsn.Builder buildQueueStatsPropBsn() {
+        throw new UnsupportedOperationException("OFQueueStatsPropBsn not supported in version 1.3");
+    }
+    public OFQueueStatsPropBsn queueStatsPropBsn(byte[] experimenterData) {
+        throw new UnsupportedOperationException("OFQueueStatsPropBsn not supported in version 1.3");
+    }
+
+    public OFQueueStatsReply.Builder buildQueueStatsReply() {
+        return new OFQueueStatsReplyVer13.Builder().setXid(nextXid());
+    }
+
+    public OFQueueStatsRequest.Builder buildQueueStatsRequest() {
+        return new OFQueueStatsRequestVer13.Builder().setXid(nextXid());
+    }
+
+    public OFRequestforward.Builder buildRequestforward() {
+        throw new UnsupportedOperationException("OFRequestforward not supported in version 1.3");
+    }
+
+    public OFRolePropBsn.Builder buildRolePropBsn() {
+        throw new UnsupportedOperationException("OFRolePropBsn not supported in version 1.3");
+    }
+    public OFRolePropBsn rolePropBsn(byte[] experimenterData) {
+        throw new UnsupportedOperationException("OFRolePropBsn not supported in version 1.3");
+    }
+
+    public OFRoleReply.Builder buildRoleReply() {
+        return new OFRoleReplyVer13.Builder().setXid(nextXid());
+    }
+
+    public OFRoleRequest.Builder buildRoleRequest() {
+        return new OFRoleRequestVer13.Builder().setXid(nextXid());
+    }
+
+    public OFRoleStatus.Builder buildRoleStatus() {
+        throw new UnsupportedOperationException("OFRoleStatus not supported in version 1.3");
+    }
+
+    public OFSetConfig.Builder buildSetConfig() {
+        return new OFSetConfigVer13.Builder().setXid(nextXid());
+    }
+
+    public OFStatV6.Builder buildStatV6() {
+        throw new UnsupportedOperationException("OFStatV6 not supported in version 1.3");
+    }
+    public OFStatV6 statV6(OFOxsList oxsFields) {
+        throw new UnsupportedOperationException("OFStatV6 not supported in version 1.3");
+    }
+
+    public OFTableDesc.Builder buildTableDesc() {
+        throw new UnsupportedOperationException("OFTableDesc not supported in version 1.3");
+    }
+
+    public OFTableDescStatsReply.Builder buildTableDescStatsReply() {
+        throw new UnsupportedOperationException("OFTableDescStatsReply not supported in version 1.3");
+    }
+
+    public OFTableDescStatsRequest.Builder buildTableDescStatsRequest() {
+        throw new UnsupportedOperationException("OFTableDescStatsRequest not supported in version 1.3");
+    }
+    public OFTableDescStatsRequest tableDescStatsRequest(Set<OFStatsRequestFlags> flags) {
+        throw new UnsupportedOperationException("OFTableDescStatsRequest not supported in version 1.3");
     }
 
     public OFTableFeaturePropApplyActions.Builder buildTableFeaturePropApplyActions() {
@@ -1275,6 +1670,20 @@ public class OFFactoryVer13 implements OFFactory {
         return new OFTableFeaturePropApplyActionsMissVer13(
                 actionIds
                     );
+    }
+
+    public OFTableFeaturePropApplyCopyfield.Builder buildTableFeaturePropApplyCopyfield() {
+        throw new UnsupportedOperationException("OFTableFeaturePropApplyCopyfield not supported in version 1.3");
+    }
+    public OFTableFeaturePropApplyCopyfield tableFeaturePropApplyCopyfield(List<U32> oxmIds) {
+        throw new UnsupportedOperationException("OFTableFeaturePropApplyCopyfield not supported in version 1.3");
+    }
+
+    public OFTableFeaturePropApplyCopyfieldMiss.Builder buildTableFeaturePropApplyCopyfieldMiss() {
+        throw new UnsupportedOperationException("OFTableFeaturePropApplyCopyfieldMiss not supported in version 1.3");
+    }
+    public OFTableFeaturePropApplyCopyfieldMiss tableFeaturePropApplyCopyfieldMiss(List<U32> oxmIds) {
+        throw new UnsupportedOperationException("OFTableFeaturePropApplyCopyfieldMiss not supported in version 1.3");
     }
 
     public OFTableFeaturePropApplySetfield.Builder buildTableFeaturePropApplySetfield() {
@@ -1340,6 +1749,20 @@ public class OFFactoryVer13 implements OFFactory {
                     );
     }
 
+    public OFTableFeaturePropOxmValues.Builder buildTableFeaturePropOxmValues() {
+        throw new UnsupportedOperationException("OFTableFeaturePropOxmValues not supported in version 1.3");
+    }
+    public OFTableFeaturePropOxmValues tableFeaturePropOxmValues(byte[] oxmValues) {
+        throw new UnsupportedOperationException("OFTableFeaturePropOxmValues not supported in version 1.3");
+    }
+
+    public OFTableFeaturePropTableSyncFrom.Builder buildTableFeaturePropTableSyncFrom() {
+        throw new UnsupportedOperationException("OFTableFeaturePropTableSyncFrom not supported in version 1.3");
+    }
+    public OFTableFeaturePropTableSyncFrom tableFeaturePropTableSyncFrom(List<U8> tableIds) {
+        throw new UnsupportedOperationException("OFTableFeaturePropTableSyncFrom not supported in version 1.3");
+    }
+
     public OFTableFeaturePropWildcards.Builder buildTableFeaturePropWildcards() {
         return new OFTableFeaturePropWildcardsVer13.Builder();
     }
@@ -1365,6 +1788,20 @@ public class OFFactoryVer13 implements OFFactory {
         return new OFTableFeaturePropWriteActionsMissVer13(
                 actionIds
                     );
+    }
+
+    public OFTableFeaturePropWriteCopyfield.Builder buildTableFeaturePropWriteCopyfield() {
+        throw new UnsupportedOperationException("OFTableFeaturePropWriteCopyfield not supported in version 1.3");
+    }
+    public OFTableFeaturePropWriteCopyfield tableFeaturePropWriteCopyfield(List<U32> oxmIds) {
+        throw new UnsupportedOperationException("OFTableFeaturePropWriteCopyfield not supported in version 1.3");
+    }
+
+    public OFTableFeaturePropWriteCopyfieldMiss.Builder buildTableFeaturePropWriteCopyfieldMiss() {
+        throw new UnsupportedOperationException("OFTableFeaturePropWriteCopyfieldMiss not supported in version 1.3");
+    }
+    public OFTableFeaturePropWriteCopyfieldMiss tableFeaturePropWriteCopyfieldMiss(List<U32> oxmIds) {
+        throw new UnsupportedOperationException("OFTableFeaturePropWriteCopyfieldMiss not supported in version 1.3");
     }
 
     public OFTableFeaturePropWriteSetfield.Builder buildTableFeaturePropWriteSetfield() {
@@ -1397,273 +1834,8 @@ public class OFFactoryVer13 implements OFFactory {
         return new OFTableFeaturesStatsRequestVer13.Builder().setXid(nextXid());
     }
 
-    public OFUint64.Builder buildUint64() {
-        return new OFUint64Ver13.Builder();
-    }
-    public OFUint64 uint64(U64 value) {
-        return new OFUint64Ver13(
-                value
-                    );
-    }
-
-    public OFAsyncConfigPropExperimenterMaster asyncConfigPropExperimenterMaster() {
-        throw new UnsupportedOperationException("OFAsyncConfigPropExperimenterMaster not supported in version 1.3");
-    }
-
-    public OFAsyncConfigPropExperimenterSlave asyncConfigPropExperimenterSlave() {
-        throw new UnsupportedOperationException("OFAsyncConfigPropExperimenterSlave not supported in version 1.3");
-    }
-
-    public OFAsyncConfigPropFlowRemovedMaster.Builder buildAsyncConfigPropFlowRemovedMaster() {
-        throw new UnsupportedOperationException("OFAsyncConfigPropFlowRemovedMaster not supported in version 1.3");
-    }
-    public OFAsyncConfigPropFlowRemovedMaster asyncConfigPropFlowRemovedMaster(long mask) {
-        throw new UnsupportedOperationException("OFAsyncConfigPropFlowRemovedMaster not supported in version 1.3");
-    }
-
-    public OFAsyncConfigPropFlowRemovedSlave.Builder buildAsyncConfigPropFlowRemovedSlave() {
-        throw new UnsupportedOperationException("OFAsyncConfigPropFlowRemovedSlave not supported in version 1.3");
-    }
-    public OFAsyncConfigPropFlowRemovedSlave asyncConfigPropFlowRemovedSlave(long mask) {
-        throw new UnsupportedOperationException("OFAsyncConfigPropFlowRemovedSlave not supported in version 1.3");
-    }
-
-    public OFAsyncConfigPropPacketInMaster.Builder buildAsyncConfigPropPacketInMaster() {
-        throw new UnsupportedOperationException("OFAsyncConfigPropPacketInMaster not supported in version 1.3");
-    }
-    public OFAsyncConfigPropPacketInMaster asyncConfigPropPacketInMaster(long mask) {
-        throw new UnsupportedOperationException("OFAsyncConfigPropPacketInMaster not supported in version 1.3");
-    }
-
-    public OFAsyncConfigPropPacketInSlave.Builder buildAsyncConfigPropPacketInSlave() {
-        throw new UnsupportedOperationException("OFAsyncConfigPropPacketInSlave not supported in version 1.3");
-    }
-    public OFAsyncConfigPropPacketInSlave asyncConfigPropPacketInSlave(long mask) {
-        throw new UnsupportedOperationException("OFAsyncConfigPropPacketInSlave not supported in version 1.3");
-    }
-
-    public OFAsyncConfigPropPortStatusMaster.Builder buildAsyncConfigPropPortStatusMaster() {
-        throw new UnsupportedOperationException("OFAsyncConfigPropPortStatusMaster not supported in version 1.3");
-    }
-    public OFAsyncConfigPropPortStatusMaster asyncConfigPropPortStatusMaster(long mask) {
-        throw new UnsupportedOperationException("OFAsyncConfigPropPortStatusMaster not supported in version 1.3");
-    }
-
-    public OFAsyncConfigPropPortStatusSlave.Builder buildAsyncConfigPropPortStatusSlave() {
-        throw new UnsupportedOperationException("OFAsyncConfigPropPortStatusSlave not supported in version 1.3");
-    }
-    public OFAsyncConfigPropPortStatusSlave asyncConfigPropPortStatusSlave(long mask) {
-        throw new UnsupportedOperationException("OFAsyncConfigPropPortStatusSlave not supported in version 1.3");
-    }
-
-    public OFAsyncConfigPropRequestforwardMaster.Builder buildAsyncConfigPropRequestforwardMaster() {
-        throw new UnsupportedOperationException("OFAsyncConfigPropRequestforwardMaster not supported in version 1.3");
-    }
-    public OFAsyncConfigPropRequestforwardMaster asyncConfigPropRequestforwardMaster(long mask) {
-        throw new UnsupportedOperationException("OFAsyncConfigPropRequestforwardMaster not supported in version 1.3");
-    }
-
-    public OFAsyncConfigPropRequestforwardSlave.Builder buildAsyncConfigPropRequestforwardSlave() {
-        throw new UnsupportedOperationException("OFAsyncConfigPropRequestforwardSlave not supported in version 1.3");
-    }
-    public OFAsyncConfigPropRequestforwardSlave asyncConfigPropRequestforwardSlave(long mask) {
-        throw new UnsupportedOperationException("OFAsyncConfigPropRequestforwardSlave not supported in version 1.3");
-    }
-
-    public OFAsyncConfigPropRoleStatusMaster.Builder buildAsyncConfigPropRoleStatusMaster() {
-        throw new UnsupportedOperationException("OFAsyncConfigPropRoleStatusMaster not supported in version 1.3");
-    }
-    public OFAsyncConfigPropRoleStatusMaster asyncConfigPropRoleStatusMaster(long mask) {
-        throw new UnsupportedOperationException("OFAsyncConfigPropRoleStatusMaster not supported in version 1.3");
-    }
-
-    public OFAsyncConfigPropRoleStatusSlave.Builder buildAsyncConfigPropRoleStatusSlave() {
-        throw new UnsupportedOperationException("OFAsyncConfigPropRoleStatusSlave not supported in version 1.3");
-    }
-    public OFAsyncConfigPropRoleStatusSlave asyncConfigPropRoleStatusSlave(long mask) {
-        throw new UnsupportedOperationException("OFAsyncConfigPropRoleStatusSlave not supported in version 1.3");
-    }
-
-    public OFAsyncConfigPropTableStatusMaster.Builder buildAsyncConfigPropTableStatusMaster() {
-        throw new UnsupportedOperationException("OFAsyncConfigPropTableStatusMaster not supported in version 1.3");
-    }
-    public OFAsyncConfigPropTableStatusMaster asyncConfigPropTableStatusMaster(long mask) {
-        throw new UnsupportedOperationException("OFAsyncConfigPropTableStatusMaster not supported in version 1.3");
-    }
-
-    public OFAsyncConfigPropTableStatusSlave.Builder buildAsyncConfigPropTableStatusSlave() {
-        throw new UnsupportedOperationException("OFAsyncConfigPropTableStatusSlave not supported in version 1.3");
-    }
-    public OFAsyncConfigPropTableStatusSlave asyncConfigPropTableStatusSlave(long mask) {
-        throw new UnsupportedOperationException("OFAsyncConfigPropTableStatusSlave not supported in version 1.3");
-    }
-
-    public OFBsnGenericAsync.Builder buildBsnGenericAsync() {
-        throw new UnsupportedOperationException("OFBsnGenericAsync not supported in version 1.3");
-    }
-
-    public OFBsnGenericCommand.Builder buildBsnGenericCommand() {
-        throw new UnsupportedOperationException("OFBsnGenericCommand not supported in version 1.3");
-    }
-
-    public OFBsnTakeover.Builder buildBsnTakeover() {
-        throw new UnsupportedOperationException("OFBsnTakeover not supported in version 1.3");
-    }
-    public OFBsnTakeover bsnTakeover() {
-        throw new UnsupportedOperationException("OFBsnTakeover not supported in version 1.3");
-    }
-
-    public OFBundleAddMsg.Builder buildBundleAddMsg() {
-        throw new UnsupportedOperationException("OFBundleAddMsg not supported in version 1.3");
-    }
-
-    public OFBundleCtrlMsg.Builder buildBundleCtrlMsg() {
-        throw new UnsupportedOperationException("OFBundleCtrlMsg not supported in version 1.3");
-    }
-
-    public OFPortDescPropBsnBreakout.Builder buildPortDescPropBsnBreakout() {
-        throw new UnsupportedOperationException("OFPortDescPropBsnBreakout not supported in version 1.3");
-    }
-    public OFPortDescPropBsnBreakout portDescPropBsnBreakout(int subInterfaceCount, int subInterfaceSpeedGbps) {
-        throw new UnsupportedOperationException("OFPortDescPropBsnBreakout not supported in version 1.3");
-    }
-
-    public OFPortDescPropBsnDriverInfoJson.Builder buildPortDescPropBsnDriverInfoJson() {
-        throw new UnsupportedOperationException("OFPortDescPropBsnDriverInfoJson not supported in version 1.3");
-    }
-    public OFPortDescPropBsnDriverInfoJson portDescPropBsnDriverInfoJson(byte[] driverInfoJson) {
-        throw new UnsupportedOperationException("OFPortDescPropBsnDriverInfoJson not supported in version 1.3");
-    }
-
-    public OFPortDescPropBsnExtendedCapabilities.Builder buildPortDescPropBsnExtendedCapabilities() {
-        throw new UnsupportedOperationException("OFPortDescPropBsnExtendedCapabilities not supported in version 1.3");
-    }
-
-    public OFPortDescPropBsnForwardErrorCorrection.Builder buildPortDescPropBsnForwardErrorCorrection() {
-        throw new UnsupportedOperationException("OFPortDescPropBsnForwardErrorCorrection not supported in version 1.3");
-    }
-    public OFPortDescPropBsnForwardErrorCorrection portDescPropBsnForwardErrorCorrection(OFBsnFecConfigState configured, long enabled) {
-        throw new UnsupportedOperationException("OFPortDescPropBsnForwardErrorCorrection not supported in version 1.3");
-    }
-
-    public OFPortDescPropBsnGenerationId.Builder buildPortDescPropBsnGenerationId() {
-        throw new UnsupportedOperationException("OFPortDescPropBsnGenerationId not supported in version 1.3");
-    }
-    public OFPortDescPropBsnGenerationId portDescPropBsnGenerationId(U64 generationId) {
-        throw new UnsupportedOperationException("OFPortDescPropBsnGenerationId not supported in version 1.3");
-    }
-
-    public OFPortDescPropBsnMiscCapabilities.Builder buildPortDescPropBsnMiscCapabilities() {
-        throw new UnsupportedOperationException("OFPortDescPropBsnMiscCapabilities not supported in version 1.3");
-    }
-
-    public OFPortDescPropBsnSffJson.Builder buildPortDescPropBsnSffJson() {
-        throw new UnsupportedOperationException("OFPortDescPropBsnSffJson not supported in version 1.3");
-    }
-    public OFPortDescPropBsnSffJson portDescPropBsnSffJson(byte[] dataJson) {
-        throw new UnsupportedOperationException("OFPortDescPropBsnSffJson not supported in version 1.3");
-    }
-
-    public OFPortDescPropBsnSpeedCapabilities.Builder buildPortDescPropBsnSpeedCapabilities() {
-        throw new UnsupportedOperationException("OFPortDescPropBsnSpeedCapabilities not supported in version 1.3");
-    }
-
-    public OFPortDescPropBsnUplink portDescPropBsnUplink() {
-        throw new UnsupportedOperationException("OFPortDescPropBsnUplink not supported in version 1.3");
-    }
-
-    public OFPortDescPropEthernet.Builder buildPortDescPropEthernet() {
-        throw new UnsupportedOperationException("OFPortDescPropEthernet not supported in version 1.3");
-    }
-
-    public OFPortDescPropOptical.Builder buildPortDescPropOptical() {
-        throw new UnsupportedOperationException("OFPortDescPropOptical not supported in version 1.3");
-    }
-
-    public OFPortModPropEthernet.Builder buildPortModPropEthernet() {
-        throw new UnsupportedOperationException("OFPortModPropEthernet not supported in version 1.3");
-    }
-    public OFPortModPropEthernet portModPropEthernet(Set<OFPortFeatures> advertise) {
-        throw new UnsupportedOperationException("OFPortModPropEthernet not supported in version 1.3");
-    }
-
-    public OFPortModPropOptical.Builder buildPortModPropOptical() {
-        throw new UnsupportedOperationException("OFPortModPropOptical not supported in version 1.3");
-    }
-
-    public OFPortStatsPropEthernet.Builder buildPortStatsPropEthernet() {
-        throw new UnsupportedOperationException("OFPortStatsPropEthernet not supported in version 1.3");
-    }
-
-    public OFPortStatsPropExperimenterIntel.Builder buildPortStatsPropExperimenterIntel() {
-        throw new UnsupportedOperationException("OFPortStatsPropExperimenterIntel not supported in version 1.3");
-    }
-
-    public OFPortStatsPropOptical.Builder buildPortStatsPropOptical() {
-        throw new UnsupportedOperationException("OFPortStatsPropOptical not supported in version 1.3");
-    }
-
-    public OFQueueDesc.Builder buildQueueDesc() {
-        throw new UnsupportedOperationException("OFQueueDesc not supported in version 1.3");
-    }
-
-    public OFQueueDescPropBsnQueueName.Builder buildQueueDescPropBsnQueueName() {
-        throw new UnsupportedOperationException("OFQueueDescPropBsnQueueName not supported in version 1.3");
-    }
-    public OFQueueDescPropBsnQueueName queueDescPropBsnQueueName(byte[] name) {
-        throw new UnsupportedOperationException("OFQueueDescPropBsnQueueName not supported in version 1.3");
-    }
-
-    public OFQueueDescPropMaxRate.Builder buildQueueDescPropMaxRate() {
-        throw new UnsupportedOperationException("OFQueueDescPropMaxRate not supported in version 1.3");
-    }
-    public OFQueueDescPropMaxRate queueDescPropMaxRate(int rate) {
-        throw new UnsupportedOperationException("OFQueueDescPropMaxRate not supported in version 1.3");
-    }
-
-    public OFQueueDescPropMinRate.Builder buildQueueDescPropMinRate() {
-        throw new UnsupportedOperationException("OFQueueDescPropMinRate not supported in version 1.3");
-    }
-    public OFQueueDescPropMinRate queueDescPropMinRate(int rate) {
-        throw new UnsupportedOperationException("OFQueueDescPropMinRate not supported in version 1.3");
-    }
-
-    public OFQueueDescStatsReply.Builder buildQueueDescStatsReply() {
-        throw new UnsupportedOperationException("OFQueueDescStatsReply not supported in version 1.3");
-    }
-
-    public OFQueueDescStatsRequest.Builder buildQueueDescStatsRequest() {
-        throw new UnsupportedOperationException("OFQueueDescStatsRequest not supported in version 1.3");
-    }
-
-    public OFRequestforward.Builder buildRequestforward() {
-        throw new UnsupportedOperationException("OFRequestforward not supported in version 1.3");
-    }
-
-    public OFRoleStatus.Builder buildRoleStatus() {
-        throw new UnsupportedOperationException("OFRoleStatus not supported in version 1.3");
-    }
-
-    public OFTableDesc.Builder buildTableDesc() {
-        throw new UnsupportedOperationException("OFTableDesc not supported in version 1.3");
-    }
-
-    public OFTableDescStatsReply.Builder buildTableDescStatsReply() {
-        throw new UnsupportedOperationException("OFTableDescStatsReply not supported in version 1.3");
-    }
-
-    public OFTableDescStatsRequest.Builder buildTableDescStatsRequest() {
-        throw new UnsupportedOperationException("OFTableDescStatsRequest not supported in version 1.3");
-    }
-    public OFTableDescStatsRequest tableDescStatsRequest(Set<OFStatsRequestFlags> flags) {
-        throw new UnsupportedOperationException("OFTableDescStatsRequest not supported in version 1.3");
-    }
-
-    public OFTableFeaturePropTableSyncFrom.Builder buildTableFeaturePropTableSyncFrom() {
-        throw new UnsupportedOperationException("OFTableFeaturePropTableSyncFrom not supported in version 1.3");
-    }
-    public OFTableFeaturePropTableSyncFrom tableFeaturePropTableSyncFrom(List<U8> tableIds) {
-        throw new UnsupportedOperationException("OFTableFeaturePropTableSyncFrom not supported in version 1.3");
+    public OFTableMod.Builder buildTableMod() {
+        return new OFTableModVer13.Builder().setXid(nextXid());
     }
 
     public OFTableModPropEviction.Builder buildTableModPropEviction() {
@@ -1677,36 +1849,26 @@ public class OFFactoryVer13 implements OFFactory {
         throw new UnsupportedOperationException("OFTableModPropVacancy not supported in version 1.3");
     }
 
+    public OFTableStatsEntry.Builder buildTableStatsEntry() {
+        return new OFTableStatsEntryVer13.Builder();
+    }
+
+    public OFTableStatsReply.Builder buildTableStatsReply() {
+        return new OFTableStatsReplyVer13.Builder().setXid(nextXid());
+    }
+
+    public OFTableStatsRequest.Builder buildTableStatsRequest() {
+        return new OFTableStatsRequestVer13.Builder().setXid(nextXid());
+    }
+    public OFTableStatsRequest tableStatsRequest(Set<OFStatsRequestFlags> flags) {
+        return new OFTableStatsRequestVer13(
+                nextXid(),
+                      flags
+                    );
+    }
+
     public OFTableStatus.Builder buildTableStatus() {
         throw new UnsupportedOperationException("OFTableStatus not supported in version 1.3");
-    }
-
-    public OFAsyncConfigPropContStatusMaster.Builder buildAsyncConfigPropContStatusMaster() {
-        throw new UnsupportedOperationException("OFAsyncConfigPropContStatusMaster not supported in version 1.3");
-    }
-    public OFAsyncConfigPropContStatusMaster asyncConfigPropContStatusMaster(long mask) {
-        throw new UnsupportedOperationException("OFAsyncConfigPropContStatusMaster not supported in version 1.3");
-    }
-
-    public OFAsyncConfigPropContStatusSlave.Builder buildAsyncConfigPropContStatusSlave() {
-        throw new UnsupportedOperationException("OFAsyncConfigPropContStatusSlave not supported in version 1.3");
-    }
-    public OFAsyncConfigPropContStatusSlave asyncConfigPropContStatusSlave(long mask) {
-        throw new UnsupportedOperationException("OFAsyncConfigPropContStatusSlave not supported in version 1.3");
-    }
-
-    public OFAsyncConfigPropFlowStatsMaster.Builder buildAsyncConfigPropFlowStatsMaster() {
-        throw new UnsupportedOperationException("OFAsyncConfigPropFlowStatsMaster not supported in version 1.3");
-    }
-    public OFAsyncConfigPropFlowStatsMaster asyncConfigPropFlowStatsMaster(long mask) {
-        throw new UnsupportedOperationException("OFAsyncConfigPropFlowStatsMaster not supported in version 1.3");
-    }
-
-    public OFAsyncConfigPropFlowStatsSlave.Builder buildAsyncConfigPropFlowStatsSlave() {
-        throw new UnsupportedOperationException("OFAsyncConfigPropFlowStatsSlave not supported in version 1.3");
-    }
-    public OFAsyncConfigPropFlowStatsSlave asyncConfigPropFlowStatsSlave(long mask) {
-        throw new UnsupportedOperationException("OFAsyncConfigPropFlowStatsSlave not supported in version 1.3");
     }
 
     public OFTime.Builder buildTime() {
@@ -1716,175 +1878,13 @@ public class OFFactoryVer13 implements OFFactory {
         throw new UnsupportedOperationException("OFTime not supported in version 1.3");
     }
 
-    public OFBundleFeaturesPropTime.Builder buildBundleFeaturesPropTime() {
-        throw new UnsupportedOperationException("OFBundleFeaturesPropTime not supported in version 1.3");
+    public OFUint64.Builder buildUint64() {
+        return new OFUint64Ver13.Builder();
     }
-
-    public OFBundleFeaturesStatsReply.Builder buildBundleFeaturesStatsReply() {
-        throw new UnsupportedOperationException("OFBundleFeaturesStatsReply not supported in version 1.3");
-    }
-
-    public OFBundleFeaturesStatsRequest.Builder buildBundleFeaturesStatsRequest() {
-        throw new UnsupportedOperationException("OFBundleFeaturesStatsRequest not supported in version 1.3");
-    }
-
-    public OFBundlePropTime.Builder buildBundlePropTime() {
-        throw new UnsupportedOperationException("OFBundlePropTime not supported in version 1.3");
-    }
-    public OFBundlePropTime bundlePropTime(List<OFTime> scheduledTime) {
-        throw new UnsupportedOperationException("OFBundlePropTime not supported in version 1.3");
-    }
-
-    public OFControllerStatusEntry.Builder buildControllerStatusEntry() {
-        throw new UnsupportedOperationException("OFControllerStatusEntry not supported in version 1.3");
-    }
-
-    public OFControllerStatus.Builder buildControllerStatus() {
-        throw new UnsupportedOperationException("OFControllerStatus not supported in version 1.3");
-    }
-    public OFControllerStatus controllerStatus(OFControllerStatusEntry entry) {
-        throw new UnsupportedOperationException("OFControllerStatus not supported in version 1.3");
-    }
-
-    public OFControllerStatusStatsReply.Builder buildControllerStatusStatsReply() {
-        throw new UnsupportedOperationException("OFControllerStatusStatsReply not supported in version 1.3");
-    }
-
-    public OFControllerStatusStatsRequest.Builder buildControllerStatusStatsRequest() {
-        throw new UnsupportedOperationException("OFControllerStatusStatsRequest not supported in version 1.3");
-    }
-    public OFControllerStatusStatsRequest controllerStatusStatsRequest(Set<OFStatsRequestFlags> flags) {
-        throw new UnsupportedOperationException("OFControllerStatusStatsRequest not supported in version 1.3");
-    }
-
-    public OFFlowLightweightStatsEntry.Builder buildFlowLightweightStatsEntry() {
-        throw new UnsupportedOperationException("OFFlowLightweightStatsEntry not supported in version 1.3");
-    }
-
-    public OFFlowLightweightStatsReply.Builder buildFlowLightweightStatsReply() {
-        throw new UnsupportedOperationException("OFFlowLightweightStatsReply not supported in version 1.3");
-    }
-
-    public OFFlowLightweightStatsRequest.Builder buildFlowLightweightStatsRequest() {
-        throw new UnsupportedOperationException("OFFlowLightweightStatsRequest not supported in version 1.3");
-    }
-
-    public OFFlowMonitorEntry.Builder buildFlowMonitorEntry() {
-        throw new UnsupportedOperationException("OFFlowMonitorEntry not supported in version 1.3");
-    }
-
-    public OFFlowMonitorReply.Builder buildFlowMonitorReply() {
-        throw new UnsupportedOperationException("OFFlowMonitorReply not supported in version 1.3");
-    }
-
-    public OFFlowMonitorReplyEntry.Builder buildFlowMonitorReplyEntry() {
-        throw new UnsupportedOperationException("OFFlowMonitorReplyEntry not supported in version 1.3");
-    }
-    public OFFlowMonitorReplyEntry flowMonitorReplyEntry(OFFlowUpdateEvent event) {
-        throw new UnsupportedOperationException("OFFlowMonitorReplyEntry not supported in version 1.3");
-    }
-
-    public OFFlowMonitorRequest.Builder buildFlowMonitorRequest() {
-        throw new UnsupportedOperationException("OFFlowMonitorRequest not supported in version 1.3");
-    }
-
-    public OFGroupBucketPropWatchGroup.Builder buildGroupBucketPropWatchGroup() {
-        throw new UnsupportedOperationException("OFGroupBucketPropWatchGroup not supported in version 1.3");
-    }
-    public OFGroupBucketPropWatchGroup groupBucketPropWatchGroup(long watch) {
-        throw new UnsupportedOperationException("OFGroupBucketPropWatchGroup not supported in version 1.3");
-    }
-
-    public OFGroupBucketPropWatchPort.Builder buildGroupBucketPropWatchPort() {
-        throw new UnsupportedOperationException("OFGroupBucketPropWatchPort not supported in version 1.3");
-    }
-    public OFGroupBucketPropWatchPort groupBucketPropWatchPort(long watch) {
-        throw new UnsupportedOperationException("OFGroupBucketPropWatchPort not supported in version 1.3");
-    }
-
-    public OFGroupBucketPropWeight.Builder buildGroupBucketPropWeight() {
-        throw new UnsupportedOperationException("OFGroupBucketPropWeight not supported in version 1.3");
-    }
-    public OFGroupBucketPropWeight groupBucketPropWeight(int weight) {
-        throw new UnsupportedOperationException("OFGroupBucketPropWeight not supported in version 1.3");
-    }
-
-    public OFGroupInsertBucket.Builder buildGroupInsertBucket() {
-        throw new UnsupportedOperationException("OFGroupInsertBucket not supported in version 1.3");
-    }
-
-    public OFGroupRemoveBucket.Builder buildGroupRemoveBucket() {
-        throw new UnsupportedOperationException("OFGroupRemoveBucket not supported in version 1.3");
-    }
-
-    public OFPortDescPropEgress.Builder buildPortDescPropEgress() {
-        throw new UnsupportedOperationException("OFPortDescPropEgress not supported in version 1.3");
-    }
-    public OFPortDescPropEgress portDescPropEgress(byte[] oxmIds) {
-        throw new UnsupportedOperationException("OFPortDescPropEgress not supported in version 1.3");
-    }
-
-    public OFPortDescPropIngress.Builder buildPortDescPropIngress() {
-        throw new UnsupportedOperationException("OFPortDescPropIngress not supported in version 1.3");
-    }
-    public OFPortDescPropIngress portDescPropIngress(byte[] oxmIds) {
-        throw new UnsupportedOperationException("OFPortDescPropIngress not supported in version 1.3");
-    }
-
-    public OFQueueStatsPropBsn.Builder buildQueueStatsPropBsn() {
-        throw new UnsupportedOperationException("OFQueueStatsPropBsn not supported in version 1.3");
-    }
-    public OFQueueStatsPropBsn queueStatsPropBsn(byte[] experimenterData) {
-        throw new UnsupportedOperationException("OFQueueStatsPropBsn not supported in version 1.3");
-    }
-
-    public OFRolePropBsn.Builder buildRolePropBsn() {
-        throw new UnsupportedOperationException("OFRolePropBsn not supported in version 1.3");
-    }
-    public OFRolePropBsn rolePropBsn(byte[] experimenterData) {
-        throw new UnsupportedOperationException("OFRolePropBsn not supported in version 1.3");
-    }
-
-    public OFStatV6.Builder buildStatV6() {
-        throw new UnsupportedOperationException("OFStatV6 not supported in version 1.3");
-    }
-    public OFStatV6 statV6(OFOxsList oxsFields) {
-        throw new UnsupportedOperationException("OFStatV6 not supported in version 1.3");
-    }
-
-    public OFTableFeaturePropApplyCopyfield.Builder buildTableFeaturePropApplyCopyfield() {
-        throw new UnsupportedOperationException("OFTableFeaturePropApplyCopyfield not supported in version 1.3");
-    }
-    public OFTableFeaturePropApplyCopyfield tableFeaturePropApplyCopyfield(List<U32> oxmIds) {
-        throw new UnsupportedOperationException("OFTableFeaturePropApplyCopyfield not supported in version 1.3");
-    }
-
-    public OFTableFeaturePropApplyCopyfieldMiss.Builder buildTableFeaturePropApplyCopyfieldMiss() {
-        throw new UnsupportedOperationException("OFTableFeaturePropApplyCopyfieldMiss not supported in version 1.3");
-    }
-    public OFTableFeaturePropApplyCopyfieldMiss tableFeaturePropApplyCopyfieldMiss(List<U32> oxmIds) {
-        throw new UnsupportedOperationException("OFTableFeaturePropApplyCopyfieldMiss not supported in version 1.3");
-    }
-
-    public OFTableFeaturePropOxmValues.Builder buildTableFeaturePropOxmValues() {
-        throw new UnsupportedOperationException("OFTableFeaturePropOxmValues not supported in version 1.3");
-    }
-    public OFTableFeaturePropOxmValues tableFeaturePropOxmValues(byte[] oxmValues) {
-        throw new UnsupportedOperationException("OFTableFeaturePropOxmValues not supported in version 1.3");
-    }
-
-    public OFTableFeaturePropWriteCopyfield.Builder buildTableFeaturePropWriteCopyfield() {
-        throw new UnsupportedOperationException("OFTableFeaturePropWriteCopyfield not supported in version 1.3");
-    }
-    public OFTableFeaturePropWriteCopyfield tableFeaturePropWriteCopyfield(List<U32> oxmIds) {
-        throw new UnsupportedOperationException("OFTableFeaturePropWriteCopyfield not supported in version 1.3");
-    }
-
-    public OFTableFeaturePropWriteCopyfieldMiss.Builder buildTableFeaturePropWriteCopyfieldMiss() {
-        throw new UnsupportedOperationException("OFTableFeaturePropWriteCopyfieldMiss not supported in version 1.3");
-    }
-    public OFTableFeaturePropWriteCopyfieldMiss tableFeaturePropWriteCopyfieldMiss(List<U32> oxmIds) {
-        throw new UnsupportedOperationException("OFTableFeaturePropWriteCopyfieldMiss not supported in version 1.3");
+    public OFUint64 uint64(U64 value) {
+        return new OFUint64Ver13(
+                value
+                    );
     }
 
     public OFActionCopyField.Builder buildActionCopyField() {

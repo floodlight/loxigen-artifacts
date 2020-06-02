@@ -64,6 +64,11 @@ class OFOxmVlanVidMaskedVer12 implements OFOxmVlanVidMasked {
 
     // Accessors for OF message fields
     @Override
+    public OFVlanVidMatch getMask() {
+        return mask;
+    }
+
+    @Override
     public long getTypeLen() {
         return 0x80000d04L;
     }
@@ -71,21 +76,6 @@ class OFOxmVlanVidMaskedVer12 implements OFOxmVlanVidMasked {
     @Override
     public OFVlanVidMatch getValue() {
         return value;
-    }
-
-    @Override
-    public OFVlanVidMatch getMask() {
-        return mask;
-    }
-
-    @Override
-    public MatchField<OFVlanVidMatch> getMatchField() {
-        return MatchField.VLAN_VID;
-    }
-
-    @Override
-    public boolean isMasked() {
-        return true;
     }
 
     public OFOxm<OFVlanVidMatch> getCanonical() {
@@ -96,6 +86,16 @@ class OFOxmVlanVidMaskedVer12 implements OFOxmVlanVidMasked {
         } else {
             return this;
         }
+    }
+
+    @Override
+    public boolean isMasked() {
+        return true;
+    }
+
+    @Override
+    public MatchField<OFVlanVidMatch> getMatchField() {
+        return MatchField.VLAN_VID;
     }
 
     @Override
@@ -123,6 +123,17 @@ class OFOxmVlanVidMaskedVer12 implements OFOxmVlanVidMasked {
         }
 
     @Override
+    public OFVlanVidMatch getMask() {
+        return mask;
+    }
+
+    @Override
+    public OFOxmVlanVidMasked.Builder setMask(OFVlanVidMatch mask) {
+        this.mask = mask;
+        this.maskSet = true;
+        return this;
+    }
+    @Override
     public long getTypeLen() {
         return 0x80000d04L;
     }
@@ -139,19 +150,8 @@ class OFOxmVlanVidMaskedVer12 implements OFOxmVlanVidMasked {
         return this;
     }
     @Override
-    public OFVlanVidMatch getMask() {
-        return mask;
-    }
-
-    @Override
-    public OFOxmVlanVidMasked.Builder setMask(OFVlanVidMatch mask) {
-        this.mask = mask;
-        this.maskSet = true;
-        return this;
-    }
-    @Override
-    public MatchField<OFVlanVidMatch> getMatchField() {
-        return MatchField.VLAN_VID;
+    public OFOxm<OFVlanVidMatch> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.2");
     }
 
     @Override
@@ -160,8 +160,8 @@ class OFOxmVlanVidMaskedVer12 implements OFOxmVlanVidMasked {
     }
 
     @Override
-    public OFOxm<OFVlanVidMatch> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.2");
+    public MatchField<OFVlanVidMatch> getMatchField() {
+        return MatchField.VLAN_VID;
     }
 
     @Override
@@ -197,6 +197,17 @@ class OFOxmVlanVidMaskedVer12 implements OFOxmVlanVidMasked {
         private OFVlanVidMatch mask;
 
     @Override
+    public OFVlanVidMatch getMask() {
+        return mask;
+    }
+
+    @Override
+    public OFOxmVlanVidMasked.Builder setMask(OFVlanVidMatch mask) {
+        this.mask = mask;
+        this.maskSet = true;
+        return this;
+    }
+    @Override
     public long getTypeLen() {
         return 0x80000d04L;
     }
@@ -213,19 +224,8 @@ class OFOxmVlanVidMaskedVer12 implements OFOxmVlanVidMasked {
         return this;
     }
     @Override
-    public OFVlanVidMatch getMask() {
-        return mask;
-    }
-
-    @Override
-    public OFOxmVlanVidMasked.Builder setMask(OFVlanVidMatch mask) {
-        this.mask = mask;
-        this.maskSet = true;
-        return this;
-    }
-    @Override
-    public MatchField<OFVlanVidMatch> getMatchField() {
-        return MatchField.VLAN_VID;
+    public OFOxm<OFVlanVidMatch> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.2");
     }
 
     @Override
@@ -234,8 +234,8 @@ class OFOxmVlanVidMaskedVer12 implements OFOxmVlanVidMasked {
     }
 
     @Override
-    public OFOxm<OFVlanVidMatch> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.2");
+    public MatchField<OFVlanVidMatch> getMatchField() {
+        return MatchField.VLAN_VID;
     }
 
     @Override

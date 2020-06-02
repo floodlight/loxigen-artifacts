@@ -55,13 +55,13 @@ class OFQueueDescPropMaxRateVer14 implements OFQueueDescPropMaxRate {
 
     // Accessors for OF message fields
     @Override
-    public int getType() {
-        return 0x2;
+    public int getRate() {
+        return rate;
     }
 
     @Override
-    public int getRate() {
-        return rate;
+    public int getType() {
+        return 0x2;
     }
 
     @Override
@@ -87,11 +87,6 @@ class OFQueueDescPropMaxRateVer14 implements OFQueueDescPropMaxRate {
         }
 
     @Override
-    public int getType() {
-        return 0x2;
-    }
-
-    @Override
     public int getRate() {
         return rate;
     }
@@ -102,6 +97,11 @@ class OFQueueDescPropMaxRateVer14 implements OFQueueDescPropMaxRate {
         this.rateSet = true;
         return this;
     }
+    @Override
+    public int getType() {
+        return 0x2;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_14;
@@ -127,11 +127,6 @@ class OFQueueDescPropMaxRateVer14 implements OFQueueDescPropMaxRate {
         private int rate;
 
     @Override
-    public int getType() {
-        return 0x2;
-    }
-
-    @Override
     public int getRate() {
         return rate;
     }
@@ -142,6 +137,11 @@ class OFQueueDescPropMaxRateVer14 implements OFQueueDescPropMaxRate {
         this.rateSet = true;
         return this;
     }
+    @Override
+    public int getType() {
+        return 0x2;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_14;

@@ -58,13 +58,13 @@ class OFActionPushPbbVer15 implements OFActionPushPbb {
 
     // Accessors for OF message fields
     @Override
-    public OFActionType getType() {
-        return OFActionType.PUSH_PBB;
+    public EthType getEthertype() {
+        return ethertype;
     }
 
     @Override
-    public EthType getEthertype() {
-        return ethertype;
+    public OFActionType getType() {
+        return OFActionType.PUSH_PBB;
     }
 
     @Override
@@ -90,11 +90,6 @@ class OFActionPushPbbVer15 implements OFActionPushPbb {
         }
 
     @Override
-    public OFActionType getType() {
-        return OFActionType.PUSH_PBB;
-    }
-
-    @Override
     public EthType getEthertype() {
         return ethertype;
     }
@@ -105,6 +100,11 @@ class OFActionPushPbbVer15 implements OFActionPushPbb {
         this.ethertypeSet = true;
         return this;
     }
+    @Override
+    public OFActionType getType() {
+        return OFActionType.PUSH_PBB;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_15;
@@ -132,11 +132,6 @@ class OFActionPushPbbVer15 implements OFActionPushPbb {
         private EthType ethertype;
 
     @Override
-    public OFActionType getType() {
-        return OFActionType.PUSH_PBB;
-    }
-
-    @Override
     public EthType getEthertype() {
         return ethertype;
     }
@@ -147,6 +142,11 @@ class OFActionPushPbbVer15 implements OFActionPushPbb {
         this.ethertypeSet = true;
         return this;
     }
+    @Override
+    public OFActionType getType() {
+        return OFActionType.PUSH_PBB;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_15;

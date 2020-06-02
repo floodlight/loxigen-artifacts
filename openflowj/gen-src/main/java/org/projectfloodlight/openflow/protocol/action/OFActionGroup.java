@@ -28,8 +28,8 @@ import org.projectfloodlight.openflow.exceptions.*;
 import io.netty.buffer.ByteBuf;
 
 public interface OFActionGroup extends OFObject, OFAction {
-    OFActionType getType();
     OFGroup getGroup();
+    OFActionType getType();
     OFVersion getVersion();
 
     void writeTo(ByteBuf channelBuffer);
@@ -37,9 +37,9 @@ public interface OFActionGroup extends OFObject, OFAction {
     Builder createBuilder();
     public interface Builder extends OFAction.Builder {
         OFActionGroup build();
-        OFActionType getType();
         OFGroup getGroup();
         Builder setGroup(OFGroup group);
+        OFActionType getType();
         OFVersion getVersion();
     }
 }

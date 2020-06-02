@@ -64,13 +64,13 @@ class OFMeterBandStatsVer13 implements OFMeterBandStats {
 
     // Accessors for OF message fields
     @Override
-    public U64 getPacketBandCount() {
-        return packetBandCount;
+    public U64 getByteBandCount() {
+        return byteBandCount;
     }
 
     @Override
-    public U64 getByteBandCount() {
-        return byteBandCount;
+    public U64 getPacketBandCount() {
+        return packetBandCount;
     }
 
     @Override
@@ -98,17 +98,6 @@ class OFMeterBandStatsVer13 implements OFMeterBandStats {
         }
 
     @Override
-    public U64 getPacketBandCount() {
-        return packetBandCount;
-    }
-
-    @Override
-    public OFMeterBandStats.Builder setPacketBandCount(U64 packetBandCount) {
-        this.packetBandCount = packetBandCount;
-        this.packetBandCountSet = true;
-        return this;
-    }
-    @Override
     public U64 getByteBandCount() {
         return byteBandCount;
     }
@@ -117,6 +106,17 @@ class OFMeterBandStatsVer13 implements OFMeterBandStats {
     public OFMeterBandStats.Builder setByteBandCount(U64 byteBandCount) {
         this.byteBandCount = byteBandCount;
         this.byteBandCountSet = true;
+        return this;
+    }
+    @Override
+    public U64 getPacketBandCount() {
+        return packetBandCount;
+    }
+
+    @Override
+    public OFMeterBandStats.Builder setPacketBandCount(U64 packetBandCount) {
+        this.packetBandCount = packetBandCount;
+        this.packetBandCountSet = true;
         return this;
     }
     @Override
@@ -152,17 +152,6 @@ class OFMeterBandStatsVer13 implements OFMeterBandStats {
         private U64 byteBandCount;
 
     @Override
-    public U64 getPacketBandCount() {
-        return packetBandCount;
-    }
-
-    @Override
-    public OFMeterBandStats.Builder setPacketBandCount(U64 packetBandCount) {
-        this.packetBandCount = packetBandCount;
-        this.packetBandCountSet = true;
-        return this;
-    }
-    @Override
     public U64 getByteBandCount() {
         return byteBandCount;
     }
@@ -171,6 +160,17 @@ class OFMeterBandStatsVer13 implements OFMeterBandStats {
     public OFMeterBandStats.Builder setByteBandCount(U64 byteBandCount) {
         this.byteBandCount = byteBandCount;
         this.byteBandCountSet = true;
+        return this;
+    }
+    @Override
+    public U64 getPacketBandCount() {
+        return packetBandCount;
+    }
+
+    @Override
+    public OFMeterBandStats.Builder setPacketBandCount(U64 packetBandCount) {
+        this.packetBandCount = packetBandCount;
+        this.packetBandCountSet = true;
         return this;
     }
     @Override

@@ -51,6 +51,12 @@ abstract class OFTableFeaturePropVer15 {
                case (short) 0x7:
                    // discriminator value 0x7=0x7 for class OFTableFeaturePropApplyActionsMissVer15
                    return OFTableFeaturePropApplyActionsMissVer15.READER.readFrom(bb);
+               case (short) 0x14:
+                   // discriminator value 0x14=0x14 for class OFTableFeaturePropApplyCopyfieldVer15
+                   return OFTableFeaturePropApplyCopyfieldVer15.READER.readFrom(bb);
+               case (short) 0x15:
+                   // discriminator value 0x15=0x15 for class OFTableFeaturePropApplyCopyfieldMissVer15
+                   return OFTableFeaturePropApplyCopyfieldMissVer15.READER.readFrom(bb);
                case (short) 0xe:
                    // discriminator value 0xe=0xe for class OFTableFeaturePropApplySetfieldVer15
                    return OFTableFeaturePropApplySetfieldVer15.READER.readFrom(bb);
@@ -78,6 +84,9 @@ abstract class OFTableFeaturePropVer15 {
                case (short) 0x3:
                    // discriminator value 0x3=0x3 for class OFTableFeaturePropNextTablesMissVer15
                    return OFTableFeaturePropNextTablesMissVer15.READER.readFrom(bb);
+               case (short) 0x10:
+                   // discriminator value 0x10=0x10 for class OFTableFeaturePropTableSyncFromVer15
+                   return OFTableFeaturePropTableSyncFromVer15.READER.readFrom(bb);
                case (short) 0xa:
                    // discriminator value 0xa=0xa for class OFTableFeaturePropWildcardsVer15
                    return OFTableFeaturePropWildcardsVer15.READER.readFrom(bb);
@@ -87,27 +96,18 @@ abstract class OFTableFeaturePropVer15 {
                case (short) 0x5:
                    // discriminator value 0x5=0x5 for class OFTableFeaturePropWriteActionsMissVer15
                    return OFTableFeaturePropWriteActionsMissVer15.READER.readFrom(bb);
-               case (short) 0xc:
-                   // discriminator value 0xc=0xc for class OFTableFeaturePropWriteSetfieldVer15
-                   return OFTableFeaturePropWriteSetfieldVer15.READER.readFrom(bb);
-               case (short) 0xd:
-                   // discriminator value 0xd=0xd for class OFTableFeaturePropWriteSetfieldMissVer15
-                   return OFTableFeaturePropWriteSetfieldMissVer15.READER.readFrom(bb);
-               case (short) 0x10:
-                   // discriminator value 0x10=0x10 for class OFTableFeaturePropTableSyncFromVer15
-                   return OFTableFeaturePropTableSyncFromVer15.READER.readFrom(bb);
-               case (short) 0x14:
-                   // discriminator value 0x14=0x14 for class OFTableFeaturePropApplyCopyfieldVer15
-                   return OFTableFeaturePropApplyCopyfieldVer15.READER.readFrom(bb);
-               case (short) 0x15:
-                   // discriminator value 0x15=0x15 for class OFTableFeaturePropApplyCopyfieldMissVer15
-                   return OFTableFeaturePropApplyCopyfieldMissVer15.READER.readFrom(bb);
                case (short) 0x12:
                    // discriminator value 0x12=0x12 for class OFTableFeaturePropWriteCopyfieldVer15
                    return OFTableFeaturePropWriteCopyfieldVer15.READER.readFrom(bb);
                case (short) 0x13:
                    // discriminator value 0x13=0x13 for class OFTableFeaturePropWriteCopyfieldMissVer15
                    return OFTableFeaturePropWriteCopyfieldMissVer15.READER.readFrom(bb);
+               case (short) 0xc:
+                   // discriminator value 0xc=0xc for class OFTableFeaturePropWriteSetfieldVer15
+                   return OFTableFeaturePropWriteSetfieldVer15.READER.readFrom(bb);
+               case (short) 0xd:
+                   // discriminator value 0xd=0xd for class OFTableFeaturePropWriteSetfieldMissVer15
+                   return OFTableFeaturePropWriteSetfieldMissVer15.READER.readFrom(bb);
                default:
                    throw new OFParseError("Unknown value for discriminator type of class OFTableFeaturePropVer15: " + type);
             }

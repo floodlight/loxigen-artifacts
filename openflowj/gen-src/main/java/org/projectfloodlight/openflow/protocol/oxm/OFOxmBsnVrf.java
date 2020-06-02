@@ -30,10 +30,10 @@ import io.netty.buffer.ByteBuf;
 public interface OFOxmBsnVrf extends OFObject, OFOxm<VRF> {
     long getTypeLen();
     VRF getValue();
-    MatchField<VRF> getMatchField();
-    boolean isMasked();
     OFOxm<VRF> getCanonical();
     VRF getMask();
+    boolean isMasked();
+    MatchField<VRF> getMatchField();
     OFVersion getVersion();
 
     void writeTo(ByteBuf channelBuffer);
@@ -44,10 +44,10 @@ public interface OFOxmBsnVrf extends OFObject, OFOxm<VRF> {
         long getTypeLen();
         VRF getValue();
         Builder setValue(VRF value);
-        MatchField<VRF> getMatchField();
-        boolean isMasked();
         OFOxm<VRF> getCanonical();
         VRF getMask();
+        boolean isMasked();
+        MatchField<VRF> getMatchField();
         OFVersion getVersion();
     }
 }

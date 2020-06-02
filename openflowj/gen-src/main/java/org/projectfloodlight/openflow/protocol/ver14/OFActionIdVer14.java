@@ -45,9 +45,6 @@ abstract class OFActionIdVer14 {
             short type = bb.readShort();
             bb.readerIndex(start);
             switch(type) {
-               case (short) 0xffff:
-                   // discriminator value OFActionType.EXPERIMENTER=65535 for class OFActionIdExperimenterVer14
-                   return OFActionIdExperimenterVer14.READER.readFrom(bb);
                case (short) 0xc:
                    // discriminator value OFActionType.COPY_TTL_IN=12 for class OFActionIdCopyTtlInVer14
                    return OFActionIdCopyTtlInVer14.READER.readFrom(bb);
@@ -60,6 +57,9 @@ abstract class OFActionIdVer14 {
                case (short) 0x18:
                    // discriminator value OFActionType.DEC_NW_TTL=24 for class OFActionIdDecNwTtlVer14
                    return OFActionIdDecNwTtlVer14.READER.readFrom(bb);
+               case (short) 0xffff:
+                   // discriminator value OFActionType.EXPERIMENTER=65535 for class OFActionIdExperimenterVer14
+                   return OFActionIdExperimenterVer14.READER.readFrom(bb);
                case (short) 0x16:
                    // discriminator value OFActionType.GROUP=22 for class OFActionIdGroupVer14
                    return OFActionIdGroupVer14.READER.readFrom(bb);

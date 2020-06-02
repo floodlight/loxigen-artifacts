@@ -65,8 +65,8 @@ class OFAsyncGetRequestVer14 implements OFAsyncGetRequest {
 
     // Accessors for OF message fields
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_14;
+    public List<OFAsyncConfigProp> getProperties() {
+        return properties;
     }
 
     @Override
@@ -75,13 +75,13 @@ class OFAsyncGetRequestVer14 implements OFAsyncGetRequest {
     }
 
     @Override
-    public long getXid() {
-        return xid;
+    public OFVersion getVersion() {
+        return OFVersion.OF_14;
     }
 
     @Override
-    public List<OFAsyncConfigProp> getProperties() {
-        return properties;
+    public long getXid() {
+        return xid;
     }
 
 
@@ -104,13 +104,24 @@ class OFAsyncGetRequestVer14 implements OFAsyncGetRequest {
         }
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_14;
+    public List<OFAsyncConfigProp> getProperties() {
+        return properties;
     }
 
     @Override
+    public OFAsyncGetRequest.Builder setProperties(List<OFAsyncConfigProp> properties) {
+        this.properties = properties;
+        this.propertiesSet = true;
+        return this;
+    }
+    @Override
     public OFType getType() {
         return OFType.GET_ASYNC_REQUEST;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_14;
     }
 
     @Override
@@ -122,17 +133,6 @@ class OFAsyncGetRequestVer14 implements OFAsyncGetRequest {
     public OFAsyncGetRequest.Builder setXid(long xid) {
         this.xid = xid;
         this.xidSet = true;
-        return this;
-    }
-    @Override
-    public List<OFAsyncConfigProp> getProperties() {
-        return properties;
-    }
-
-    @Override
-    public OFAsyncGetRequest.Builder setProperties(List<OFAsyncConfigProp> properties) {
-        this.properties = properties;
-        this.propertiesSet = true;
         return this;
     }
 
@@ -161,13 +161,24 @@ class OFAsyncGetRequestVer14 implements OFAsyncGetRequest {
         private List<OFAsyncConfigProp> properties;
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_14;
+    public List<OFAsyncConfigProp> getProperties() {
+        return properties;
     }
 
     @Override
+    public OFAsyncGetRequest.Builder setProperties(List<OFAsyncConfigProp> properties) {
+        this.properties = properties;
+        this.propertiesSet = true;
+        return this;
+    }
+    @Override
     public OFType getType() {
         return OFType.GET_ASYNC_REQUEST;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_14;
     }
 
     @Override
@@ -179,17 +190,6 @@ class OFAsyncGetRequestVer14 implements OFAsyncGetRequest {
     public OFAsyncGetRequest.Builder setXid(long xid) {
         this.xid = xid;
         this.xidSet = true;
-        return this;
-    }
-    @Override
-    public List<OFAsyncConfigProp> getProperties() {
-        return properties;
-    }
-
-    @Override
-    public OFAsyncGetRequest.Builder setProperties(List<OFAsyncConfigProp> properties) {
-        this.properties = properties;
-        this.propertiesSet = true;
         return this;
     }
 //

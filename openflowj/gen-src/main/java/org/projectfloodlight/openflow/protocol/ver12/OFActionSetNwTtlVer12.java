@@ -55,13 +55,13 @@ class OFActionSetNwTtlVer12 implements OFActionSetNwTtl {
 
     // Accessors for OF message fields
     @Override
-    public OFActionType getType() {
-        return OFActionType.SET_NW_TTL;
+    public short getNwTtl() {
+        return nwTtl;
     }
 
     @Override
-    public short getNwTtl() {
-        return nwTtl;
+    public OFActionType getType() {
+        return OFActionType.SET_NW_TTL;
     }
 
     @Override
@@ -87,11 +87,6 @@ class OFActionSetNwTtlVer12 implements OFActionSetNwTtl {
         }
 
     @Override
-    public OFActionType getType() {
-        return OFActionType.SET_NW_TTL;
-    }
-
-    @Override
     public short getNwTtl() {
         return nwTtl;
     }
@@ -102,6 +97,11 @@ class OFActionSetNwTtlVer12 implements OFActionSetNwTtl {
         this.nwTtlSet = true;
         return this;
     }
+    @Override
+    public OFActionType getType() {
+        return OFActionType.SET_NW_TTL;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_12;
@@ -127,11 +127,6 @@ class OFActionSetNwTtlVer12 implements OFActionSetNwTtl {
         private short nwTtl;
 
     @Override
-    public OFActionType getType() {
-        return OFActionType.SET_NW_TTL;
-    }
-
-    @Override
     public short getNwTtl() {
         return nwTtl;
     }
@@ -142,6 +137,11 @@ class OFActionSetNwTtlVer12 implements OFActionSetNwTtl {
         this.nwTtlSet = true;
         return this;
     }
+    @Override
+    public OFActionType getType() {
+        return OFActionType.SET_NW_TTL;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_12;

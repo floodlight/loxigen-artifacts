@@ -30,10 +30,10 @@ import io.netty.buffer.ByteBuf;
 public interface OFOxmBsnUdf7 extends OFObject, OFOxm<UDF> {
     long getTypeLen();
     UDF getValue();
-    MatchField<UDF> getMatchField();
-    boolean isMasked();
     OFOxm<UDF> getCanonical();
     UDF getMask();
+    boolean isMasked();
+    MatchField<UDF> getMatchField();
     OFVersion getVersion();
 
     void writeTo(ByteBuf channelBuffer);
@@ -44,10 +44,10 @@ public interface OFOxmBsnUdf7 extends OFObject, OFOxm<UDF> {
         long getTypeLen();
         UDF getValue();
         Builder setValue(UDF value);
-        MatchField<UDF> getMatchField();
-        boolean isMasked();
         OFOxm<UDF> getCanonical();
         UDF getMask();
+        boolean isMasked();
+        MatchField<UDF> getMatchField();
         OFVersion getVersion();
     }
 }

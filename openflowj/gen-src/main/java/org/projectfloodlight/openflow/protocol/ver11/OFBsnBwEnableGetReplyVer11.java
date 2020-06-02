@@ -58,18 +58,8 @@ class OFBsnBwEnableGetReplyVer11 implements OFBsnBwEnableGetReply {
 
     // Accessors for OF message fields
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_11;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.EXPERIMENTER;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
+    public long getEnabled() {
+        return enabled;
     }
 
     @Override
@@ -83,8 +73,18 @@ class OFBsnBwEnableGetReplyVer11 implements OFBsnBwEnableGetReply {
     }
 
     @Override
-    public long getEnabled() {
-        return enabled;
+    public OFType getType() {
+        return OFType.EXPERIMENTER;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_11;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
     }
 
 
@@ -107,24 +107,14 @@ class OFBsnBwEnableGetReplyVer11 implements OFBsnBwEnableGetReply {
         }
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_11;
+    public long getEnabled() {
+        return enabled;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.EXPERIMENTER;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFBsnBwEnableGetReply.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
+    public OFBsnBwEnableGetReply.Builder setEnabled(long enabled) {
+        this.enabled = enabled;
+        this.enabledSet = true;
         return this;
     }
     @Override
@@ -138,14 +128,24 @@ class OFBsnBwEnableGetReplyVer11 implements OFBsnBwEnableGetReply {
     }
 
     @Override
-    public long getEnabled() {
-        return enabled;
+    public OFType getType() {
+        return OFType.EXPERIMENTER;
     }
 
     @Override
-    public OFBsnBwEnableGetReply.Builder setEnabled(long enabled) {
-        this.enabled = enabled;
-        this.enabledSet = true;
+    public OFVersion getVersion() {
+        return OFVersion.OF_11;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFBsnBwEnableGetReply.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 
@@ -172,24 +172,14 @@ class OFBsnBwEnableGetReplyVer11 implements OFBsnBwEnableGetReply {
         private long enabled;
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_11;
+    public long getEnabled() {
+        return enabled;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.EXPERIMENTER;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFBsnBwEnableGetReply.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
+    public OFBsnBwEnableGetReply.Builder setEnabled(long enabled) {
+        this.enabled = enabled;
+        this.enabledSet = true;
         return this;
     }
     @Override
@@ -203,14 +193,24 @@ class OFBsnBwEnableGetReplyVer11 implements OFBsnBwEnableGetReply {
     }
 
     @Override
-    public long getEnabled() {
-        return enabled;
+    public OFType getType() {
+        return OFType.EXPERIMENTER;
     }
 
     @Override
-    public OFBsnBwEnableGetReply.Builder setEnabled(long enabled) {
-        this.enabled = enabled;
-        this.enabledSet = true;
+    public OFVersion getVersion() {
+        return OFVersion.OF_11;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFBsnBwEnableGetReply.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 //

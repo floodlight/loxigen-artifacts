@@ -65,8 +65,8 @@ class OFHelloVer13 implements OFHello {
 
     // Accessors for OF message fields
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_13;
+    public List<OFHelloElem> getElements() {
+        return elements;
     }
 
     @Override
@@ -75,13 +75,13 @@ class OFHelloVer13 implements OFHello {
     }
 
     @Override
-    public long getXid() {
-        return xid;
+    public OFVersion getVersion() {
+        return OFVersion.OF_13;
     }
 
     @Override
-    public List<OFHelloElem> getElements() {
-        return elements;
+    public long getXid() {
+        return xid;
     }
 
 
@@ -104,13 +104,24 @@ class OFHelloVer13 implements OFHello {
         }
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_13;
+    public List<OFHelloElem> getElements() {
+        return elements;
     }
 
     @Override
+    public OFHello.Builder setElements(List<OFHelloElem> elements) {
+        this.elements = elements;
+        this.elementsSet = true;
+        return this;
+    }
+    @Override
     public OFType getType() {
         return OFType.HELLO;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_13;
     }
 
     @Override
@@ -122,17 +133,6 @@ class OFHelloVer13 implements OFHello {
     public OFHello.Builder setXid(long xid) {
         this.xid = xid;
         this.xidSet = true;
-        return this;
-    }
-    @Override
-    public List<OFHelloElem> getElements() {
-        return elements;
-    }
-
-    @Override
-    public OFHello.Builder setElements(List<OFHelloElem> elements) {
-        this.elements = elements;
-        this.elementsSet = true;
         return this;
     }
 
@@ -161,13 +161,24 @@ class OFHelloVer13 implements OFHello {
         private List<OFHelloElem> elements;
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_13;
+    public List<OFHelloElem> getElements() {
+        return elements;
     }
 
     @Override
+    public OFHello.Builder setElements(List<OFHelloElem> elements) {
+        this.elements = elements;
+        this.elementsSet = true;
+        return this;
+    }
+    @Override
     public OFType getType() {
         return OFType.HELLO;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_13;
     }
 
     @Override
@@ -179,17 +190,6 @@ class OFHelloVer13 implements OFHello {
     public OFHello.Builder setXid(long xid) {
         this.xid = xid;
         this.xidSet = true;
-        return this;
-    }
-    @Override
-    public List<OFHelloElem> getElements() {
-        return elements;
-    }
-
-    @Override
-    public OFHello.Builder setElements(List<OFHelloElem> elements) {
-        this.elements = elements;
-        this.elementsSet = true;
         return this;
     }
 //

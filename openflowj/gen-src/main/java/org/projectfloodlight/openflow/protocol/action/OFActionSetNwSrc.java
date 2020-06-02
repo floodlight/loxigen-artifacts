@@ -29,8 +29,8 @@ import java.util.Set;
 import io.netty.buffer.ByteBuf;
 
 public interface OFActionSetNwSrc extends OFObject, OFAction {
-    OFActionType getType();
     IPv4Address getNwAddr();
+    OFActionType getType();
     OFVersion getVersion();
 
     void writeTo(ByteBuf channelBuffer);
@@ -38,9 +38,9 @@ public interface OFActionSetNwSrc extends OFObject, OFAction {
     Builder createBuilder();
     public interface Builder extends OFAction.Builder {
         OFActionSetNwSrc build();
-        OFActionType getType();
         IPv4Address getNwAddr();
         Builder setNwAddr(IPv4Address nwAddr);
+        OFActionType getType();
         OFVersion getVersion();
     }
 }

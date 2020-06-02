@@ -28,12 +28,12 @@ import org.projectfloodlight.openflow.exceptions.*;
 import io.netty.buffer.ByteBuf;
 
 public interface OFOxmConnTrackingLabelMasked extends OFObject, OFOxm<U128> {
+    U128 getMask();
     long getTypeLen();
     U128 getValue();
-    U128 getMask();
-    MatchField<U128> getMatchField();
-    boolean isMasked();
     OFOxm<U128> getCanonical();
+    boolean isMasked();
+    MatchField<U128> getMatchField();
     OFVersion getVersion();
 
     void writeTo(ByteBuf channelBuffer);
@@ -41,14 +41,14 @@ public interface OFOxmConnTrackingLabelMasked extends OFObject, OFOxm<U128> {
     Builder createBuilder();
     public interface Builder extends OFOxm.Builder<U128> {
         OFOxmConnTrackingLabelMasked build();
+        U128 getMask();
+        Builder setMask(U128 mask);
         long getTypeLen();
         U128 getValue();
         Builder setValue(U128 value);
-        U128 getMask();
-        Builder setMask(U128 mask);
-        MatchField<U128> getMatchField();
-        boolean isMasked();
         OFOxm<U128> getCanonical();
+        boolean isMasked();
+        MatchField<U128> getMatchField();
         OFVersion getVersion();
     }
 }

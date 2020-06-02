@@ -30,18 +30,18 @@ import java.util.List;
 import io.netty.buffer.ByteBuf;
 
 public interface OFPortDesc extends OFObject {
-    OFPort getPortNo();
-    MacAddress getHwAddr();
-    String getName();
-    Set<OFPortConfig> getConfig();
-    Set<OFPortState> getState();
-    Set<OFPortFeatures> getCurr() throws UnsupportedOperationException;
     Set<OFPortFeatures> getAdvertised() throws UnsupportedOperationException;
-    Set<OFPortFeatures> getSupported() throws UnsupportedOperationException;
-    Set<OFPortFeatures> getPeer() throws UnsupportedOperationException;
+    Set<OFPortConfig> getConfig();
+    Set<OFPortFeatures> getCurr() throws UnsupportedOperationException;
     long getCurrSpeed() throws UnsupportedOperationException;
+    MacAddress getHwAddr();
     long getMaxSpeed() throws UnsupportedOperationException;
+    String getName();
+    Set<OFPortFeatures> getPeer() throws UnsupportedOperationException;
+    OFPort getPortNo();
     List<OFPortDescProp> getProperties() throws UnsupportedOperationException;
+    Set<OFPortState> getState();
+    Set<OFPortFeatures> getSupported() throws UnsupportedOperationException;
     OFVersion getVersion();
     // Additional methods
 
@@ -72,30 +72,30 @@ public interface OFPortDesc extends OFObject {
     Builder createBuilder();
     public interface Builder  {
         OFPortDesc build();
-        OFPort getPortNo();
-        Builder setPortNo(OFPort portNo);
-        MacAddress getHwAddr();
-        Builder setHwAddr(MacAddress hwAddr);
-        String getName();
-        Builder setName(String name);
-        Set<OFPortConfig> getConfig();
-        Builder setConfig(Set<OFPortConfig> config);
-        Set<OFPortState> getState();
-        Builder setState(Set<OFPortState> state);
-        Set<OFPortFeatures> getCurr() throws UnsupportedOperationException;
-        Builder setCurr(Set<OFPortFeatures> curr) throws UnsupportedOperationException;
         Set<OFPortFeatures> getAdvertised() throws UnsupportedOperationException;
         Builder setAdvertised(Set<OFPortFeatures> advertised) throws UnsupportedOperationException;
-        Set<OFPortFeatures> getSupported() throws UnsupportedOperationException;
-        Builder setSupported(Set<OFPortFeatures> supported) throws UnsupportedOperationException;
-        Set<OFPortFeatures> getPeer() throws UnsupportedOperationException;
-        Builder setPeer(Set<OFPortFeatures> peer) throws UnsupportedOperationException;
+        Set<OFPortConfig> getConfig();
+        Builder setConfig(Set<OFPortConfig> config);
+        Set<OFPortFeatures> getCurr() throws UnsupportedOperationException;
+        Builder setCurr(Set<OFPortFeatures> curr) throws UnsupportedOperationException;
         long getCurrSpeed() throws UnsupportedOperationException;
         Builder setCurrSpeed(long currSpeed) throws UnsupportedOperationException;
+        MacAddress getHwAddr();
+        Builder setHwAddr(MacAddress hwAddr);
         long getMaxSpeed() throws UnsupportedOperationException;
         Builder setMaxSpeed(long maxSpeed) throws UnsupportedOperationException;
+        String getName();
+        Builder setName(String name);
+        Set<OFPortFeatures> getPeer() throws UnsupportedOperationException;
+        Builder setPeer(Set<OFPortFeatures> peer) throws UnsupportedOperationException;
+        OFPort getPortNo();
+        Builder setPortNo(OFPort portNo);
         List<OFPortDescProp> getProperties() throws UnsupportedOperationException;
         Builder setProperties(List<OFPortDescProp> properties) throws UnsupportedOperationException;
+        Set<OFPortState> getState();
+        Builder setState(Set<OFPortState> state);
+        Set<OFPortFeatures> getSupported() throws UnsupportedOperationException;
+        Builder setSupported(Set<OFPortFeatures> supported) throws UnsupportedOperationException;
         OFVersion getVersion();
     }
 }

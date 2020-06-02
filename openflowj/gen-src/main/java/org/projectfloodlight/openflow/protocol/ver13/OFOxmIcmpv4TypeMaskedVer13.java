@@ -64,6 +64,11 @@ class OFOxmIcmpv4TypeMaskedVer13 implements OFOxmIcmpv4TypeMasked {
 
     // Accessors for OF message fields
     @Override
+    public ICMPv4Type getMask() {
+        return mask;
+    }
+
+    @Override
     public long getTypeLen() {
         return 0x80002702L;
     }
@@ -71,21 +76,6 @@ class OFOxmIcmpv4TypeMaskedVer13 implements OFOxmIcmpv4TypeMasked {
     @Override
     public ICMPv4Type getValue() {
         return value;
-    }
-
-    @Override
-    public ICMPv4Type getMask() {
-        return mask;
-    }
-
-    @Override
-    public MatchField<ICMPv4Type> getMatchField() {
-        return MatchField.ICMPV4_TYPE;
-    }
-
-    @Override
-    public boolean isMasked() {
-        return true;
     }
 
     public OFOxm<ICMPv4Type> getCanonical() {
@@ -96,6 +86,16 @@ class OFOxmIcmpv4TypeMaskedVer13 implements OFOxmIcmpv4TypeMasked {
         } else {
             return this;
         }
+    }
+
+    @Override
+    public boolean isMasked() {
+        return true;
+    }
+
+    @Override
+    public MatchField<ICMPv4Type> getMatchField() {
+        return MatchField.ICMPV4_TYPE;
     }
 
     @Override
@@ -123,6 +123,17 @@ class OFOxmIcmpv4TypeMaskedVer13 implements OFOxmIcmpv4TypeMasked {
         }
 
     @Override
+    public ICMPv4Type getMask() {
+        return mask;
+    }
+
+    @Override
+    public OFOxmIcmpv4TypeMasked.Builder setMask(ICMPv4Type mask) {
+        this.mask = mask;
+        this.maskSet = true;
+        return this;
+    }
+    @Override
     public long getTypeLen() {
         return 0x80002702L;
     }
@@ -139,19 +150,8 @@ class OFOxmIcmpv4TypeMaskedVer13 implements OFOxmIcmpv4TypeMasked {
         return this;
     }
     @Override
-    public ICMPv4Type getMask() {
-        return mask;
-    }
-
-    @Override
-    public OFOxmIcmpv4TypeMasked.Builder setMask(ICMPv4Type mask) {
-        this.mask = mask;
-        this.maskSet = true;
-        return this;
-    }
-    @Override
-    public MatchField<ICMPv4Type> getMatchField() {
-        return MatchField.ICMPV4_TYPE;
+    public OFOxm<ICMPv4Type> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.3");
     }
 
     @Override
@@ -160,8 +160,8 @@ class OFOxmIcmpv4TypeMaskedVer13 implements OFOxmIcmpv4TypeMasked {
     }
 
     @Override
-    public OFOxm<ICMPv4Type> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.3");
+    public MatchField<ICMPv4Type> getMatchField() {
+        return MatchField.ICMPV4_TYPE;
     }
 
     @Override
@@ -197,6 +197,17 @@ class OFOxmIcmpv4TypeMaskedVer13 implements OFOxmIcmpv4TypeMasked {
         private ICMPv4Type mask;
 
     @Override
+    public ICMPv4Type getMask() {
+        return mask;
+    }
+
+    @Override
+    public OFOxmIcmpv4TypeMasked.Builder setMask(ICMPv4Type mask) {
+        this.mask = mask;
+        this.maskSet = true;
+        return this;
+    }
+    @Override
     public long getTypeLen() {
         return 0x80002702L;
     }
@@ -213,19 +224,8 @@ class OFOxmIcmpv4TypeMaskedVer13 implements OFOxmIcmpv4TypeMasked {
         return this;
     }
     @Override
-    public ICMPv4Type getMask() {
-        return mask;
-    }
-
-    @Override
-    public OFOxmIcmpv4TypeMasked.Builder setMask(ICMPv4Type mask) {
-        this.mask = mask;
-        this.maskSet = true;
-        return this;
-    }
-    @Override
-    public MatchField<ICMPv4Type> getMatchField() {
-        return MatchField.ICMPV4_TYPE;
+    public OFOxm<ICMPv4Type> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.3");
     }
 
     @Override
@@ -234,8 +234,8 @@ class OFOxmIcmpv4TypeMaskedVer13 implements OFOxmIcmpv4TypeMasked {
     }
 
     @Override
-    public OFOxm<ICMPv4Type> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.3");
+    public MatchField<ICMPv4Type> getMatchField() {
+        return MatchField.ICMPV4_TYPE;
     }
 
     @Override

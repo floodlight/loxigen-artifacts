@@ -30,29 +30,29 @@ import java.util.List;
 import io.netty.buffer.ByteBuf;
 
 public interface OFBundleFeaturesStatsRequest extends OFObject, OFStatsRequest<OFBundleFeaturesStatsReply>, OFRequest<OFBundleFeaturesStatsReply> {
-    OFVersion getVersion();
-    OFType getType();
-    long getXid();
-    OFStatsType getStatsType();
-    Set<OFStatsRequestFlags> getFlags();
     Set<OFBundleFeatureFlags> getFeatureRequestFlags();
+    Set<OFStatsRequestFlags> getFlags();
     List<OFBundleFeaturesProp> getProperties();
+    OFStatsType getStatsType();
+    OFType getType();
+    OFVersion getVersion();
+    long getXid();
 
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();
     public interface Builder extends OFStatsRequest.Builder<OFBundleFeaturesStatsReply> {
         OFBundleFeaturesStatsRequest build();
-        OFVersion getVersion();
-        OFType getType();
-        long getXid();
-        Builder setXid(long xid);
-        OFStatsType getStatsType();
-        Set<OFStatsRequestFlags> getFlags();
-        Builder setFlags(Set<OFStatsRequestFlags> flags);
         Set<OFBundleFeatureFlags> getFeatureRequestFlags();
         Builder setFeatureRequestFlags(Set<OFBundleFeatureFlags> featureRequestFlags);
+        Set<OFStatsRequestFlags> getFlags();
+        Builder setFlags(Set<OFStatsRequestFlags> flags);
         List<OFBundleFeaturesProp> getProperties();
         Builder setProperties(List<OFBundleFeaturesProp> properties);
+        OFStatsType getStatsType();
+        OFType getType();
+        OFVersion getVersion();
+        long getXid();
+        Builder setXid(long xid);
     }
 }

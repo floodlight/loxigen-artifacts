@@ -30,10 +30,10 @@ import io.netty.buffer.ByteBuf;
 public interface OFOxmIcmpv6Type extends OFObject, OFOxm<U8> {
     long getTypeLen();
     U8 getValue();
-    MatchField<U8> getMatchField();
-    boolean isMasked();
     OFOxm<U8> getCanonical();
     U8 getMask();
+    boolean isMasked();
+    MatchField<U8> getMatchField();
     OFVersion getVersion();
 
     void writeTo(ByteBuf channelBuffer);
@@ -44,10 +44,10 @@ public interface OFOxmIcmpv6Type extends OFObject, OFOxm<U8> {
         long getTypeLen();
         U8 getValue();
         Builder setValue(U8 value);
-        MatchField<U8> getMatchField();
-        boolean isMasked();
         OFOxm<U8> getCanonical();
         U8 getMask();
+        boolean isMasked();
+        MatchField<U8> getMatchField();
         OFVersion getVersion();
     }
 }

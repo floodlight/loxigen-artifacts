@@ -29,8 +29,8 @@ import io.netty.buffer.ByteBuf;
 
 public interface OFBsnDebugCounterDescStatsEntry extends OFObject {
     U64 getCounterId();
-    String getName();
     String getDescription();
+    String getName();
     OFVersion getVersion();
 
     void writeTo(ByteBuf channelBuffer);
@@ -40,10 +40,10 @@ public interface OFBsnDebugCounterDescStatsEntry extends OFObject {
         OFBsnDebugCounterDescStatsEntry build();
         U64 getCounterId();
         Builder setCounterId(U64 counterId);
-        String getName();
-        Builder setName(String name);
         String getDescription();
         Builder setDescription(String description);
+        String getName();
+        Builder setName(String name);
         OFVersion getVersion();
     }
 }

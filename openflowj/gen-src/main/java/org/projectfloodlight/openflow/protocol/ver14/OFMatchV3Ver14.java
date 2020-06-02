@@ -63,13 +63,13 @@ class OFMatchV3Ver14 implements OFMatchV3 {
 
     // Accessors for OF message fields
     @Override
-    public int getType() {
-        return 0x1;
+    public OFOxmList getOxmList() {
+        return oxmList;
     }
 
     @Override
-    public OFOxmList getOxmList() {
-        return oxmList;
+    public int getType() {
+        return 0x1;
     }
 
     @Override
@@ -294,11 +294,6 @@ class OFMatchV3Ver14 implements OFMatchV3 {
         }
 
     @Override
-    public int getType() {
-        return 0x1;
-    }
-
-    @Override
     public OFOxmList getOxmList() {
         return oxmList;
     }
@@ -309,6 +304,11 @@ class OFMatchV3Ver14 implements OFMatchV3 {
         this.oxmListSet = true;
         return this;
     }
+    @Override
+    public int getType() {
+        return 0x1;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_14;
@@ -438,11 +438,6 @@ class OFMatchV3Ver14 implements OFMatchV3 {
         private OFOxmList oxmList;
 
     @Override
-    public int getType() {
-        return 0x1;
-    }
-
-    @Override
     public OFOxmList getOxmList() {
         return oxmList;
     }
@@ -453,6 +448,11 @@ class OFMatchV3Ver14 implements OFMatchV3 {
         this.oxmListSet = true;
         return this;
     }
+    @Override
+    public int getType() {
+        return 0x1;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_14;

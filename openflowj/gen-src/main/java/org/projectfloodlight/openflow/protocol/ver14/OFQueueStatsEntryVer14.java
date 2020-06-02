@@ -95,8 +95,23 @@ class OFQueueStatsEntryVer14 implements OFQueueStatsEntry {
 
     // Accessors for OF message fields
     @Override
+    public long getDurationNsec() {
+        return durationNsec;
+    }
+
+    @Override
+    public long getDurationSec() {
+        return durationSec;
+    }
+
+    @Override
     public OFPort getPortNo() {
         return portNo;
+    }
+
+    @Override
+    public List<OFQueueStatsProp> getProperties() {
+        return properties;
     }
 
     @Override
@@ -110,28 +125,13 @@ class OFQueueStatsEntryVer14 implements OFQueueStatsEntry {
     }
 
     @Override
-    public U64 getTxPackets() {
-        return txPackets;
-    }
-
-    @Override
     public U64 getTxErrors() {
         return txErrors;
     }
 
     @Override
-    public long getDurationSec() {
-        return durationSec;
-    }
-
-    @Override
-    public long getDurationNsec() {
-        return durationNsec;
-    }
-
-    @Override
-    public List<OFQueueStatsProp> getProperties() {
-        return properties;
+    public U64 getTxPackets() {
+        return txPackets;
     }
 
     @Override
@@ -171,6 +171,28 @@ class OFQueueStatsEntryVer14 implements OFQueueStatsEntry {
         }
 
     @Override
+    public long getDurationNsec() {
+        return durationNsec;
+    }
+
+    @Override
+    public OFQueueStatsEntry.Builder setDurationNsec(long durationNsec) {
+        this.durationNsec = durationNsec;
+        this.durationNsecSet = true;
+        return this;
+    }
+    @Override
+    public long getDurationSec() {
+        return durationSec;
+    }
+
+    @Override
+    public OFQueueStatsEntry.Builder setDurationSec(long durationSec) {
+        this.durationSec = durationSec;
+        this.durationSecSet = true;
+        return this;
+    }
+    @Override
     public OFPort getPortNo() {
         return portNo;
     }
@@ -179,6 +201,17 @@ class OFQueueStatsEntryVer14 implements OFQueueStatsEntry {
     public OFQueueStatsEntry.Builder setPortNo(OFPort portNo) {
         this.portNo = portNo;
         this.portNoSet = true;
+        return this;
+    }
+    @Override
+    public List<OFQueueStatsProp> getProperties() {
+        return properties;
+    }
+
+    @Override
+    public OFQueueStatsEntry.Builder setProperties(List<OFQueueStatsProp> properties) {
+        this.properties = properties;
+        this.propertiesSet = true;
         return this;
     }
     @Override
@@ -204,17 +237,6 @@ class OFQueueStatsEntryVer14 implements OFQueueStatsEntry {
         return this;
     }
     @Override
-    public U64 getTxPackets() {
-        return txPackets;
-    }
-
-    @Override
-    public OFQueueStatsEntry.Builder setTxPackets(U64 txPackets) {
-        this.txPackets = txPackets;
-        this.txPacketsSet = true;
-        return this;
-    }
-    @Override
     public U64 getTxErrors() {
         return txErrors;
     }
@@ -226,36 +248,14 @@ class OFQueueStatsEntryVer14 implements OFQueueStatsEntry {
         return this;
     }
     @Override
-    public long getDurationSec() {
-        return durationSec;
+    public U64 getTxPackets() {
+        return txPackets;
     }
 
     @Override
-    public OFQueueStatsEntry.Builder setDurationSec(long durationSec) {
-        this.durationSec = durationSec;
-        this.durationSecSet = true;
-        return this;
-    }
-    @Override
-    public long getDurationNsec() {
-        return durationNsec;
-    }
-
-    @Override
-    public OFQueueStatsEntry.Builder setDurationNsec(long durationNsec) {
-        this.durationNsec = durationNsec;
-        this.durationNsecSet = true;
-        return this;
-    }
-    @Override
-    public List<OFQueueStatsProp> getProperties() {
-        return properties;
-    }
-
-    @Override
-    public OFQueueStatsEntry.Builder setProperties(List<OFQueueStatsProp> properties) {
-        this.properties = properties;
-        this.propertiesSet = true;
+    public OFQueueStatsEntry.Builder setTxPackets(U64 txPackets) {
+        this.txPackets = txPackets;
+        this.txPacketsSet = true;
         return this;
     }
     @Override
@@ -321,6 +321,28 @@ class OFQueueStatsEntryVer14 implements OFQueueStatsEntry {
         private List<OFQueueStatsProp> properties;
 
     @Override
+    public long getDurationNsec() {
+        return durationNsec;
+    }
+
+    @Override
+    public OFQueueStatsEntry.Builder setDurationNsec(long durationNsec) {
+        this.durationNsec = durationNsec;
+        this.durationNsecSet = true;
+        return this;
+    }
+    @Override
+    public long getDurationSec() {
+        return durationSec;
+    }
+
+    @Override
+    public OFQueueStatsEntry.Builder setDurationSec(long durationSec) {
+        this.durationSec = durationSec;
+        this.durationSecSet = true;
+        return this;
+    }
+    @Override
     public OFPort getPortNo() {
         return portNo;
     }
@@ -329,6 +351,17 @@ class OFQueueStatsEntryVer14 implements OFQueueStatsEntry {
     public OFQueueStatsEntry.Builder setPortNo(OFPort portNo) {
         this.portNo = portNo;
         this.portNoSet = true;
+        return this;
+    }
+    @Override
+    public List<OFQueueStatsProp> getProperties() {
+        return properties;
+    }
+
+    @Override
+    public OFQueueStatsEntry.Builder setProperties(List<OFQueueStatsProp> properties) {
+        this.properties = properties;
+        this.propertiesSet = true;
         return this;
     }
     @Override
@@ -354,17 +387,6 @@ class OFQueueStatsEntryVer14 implements OFQueueStatsEntry {
         return this;
     }
     @Override
-    public U64 getTxPackets() {
-        return txPackets;
-    }
-
-    @Override
-    public OFQueueStatsEntry.Builder setTxPackets(U64 txPackets) {
-        this.txPackets = txPackets;
-        this.txPacketsSet = true;
-        return this;
-    }
-    @Override
     public U64 getTxErrors() {
         return txErrors;
     }
@@ -376,36 +398,14 @@ class OFQueueStatsEntryVer14 implements OFQueueStatsEntry {
         return this;
     }
     @Override
-    public long getDurationSec() {
-        return durationSec;
+    public U64 getTxPackets() {
+        return txPackets;
     }
 
     @Override
-    public OFQueueStatsEntry.Builder setDurationSec(long durationSec) {
-        this.durationSec = durationSec;
-        this.durationSecSet = true;
-        return this;
-    }
-    @Override
-    public long getDurationNsec() {
-        return durationNsec;
-    }
-
-    @Override
-    public OFQueueStatsEntry.Builder setDurationNsec(long durationNsec) {
-        this.durationNsec = durationNsec;
-        this.durationNsecSet = true;
-        return this;
-    }
-    @Override
-    public List<OFQueueStatsProp> getProperties() {
-        return properties;
-    }
-
-    @Override
-    public OFQueueStatsEntry.Builder setProperties(List<OFQueueStatsProp> properties) {
-        this.properties = properties;
-        this.propertiesSet = true;
+    public OFQueueStatsEntry.Builder setTxPackets(U64 txPackets) {
+        this.txPackets = txPackets;
+        this.txPacketsSet = true;
         return this;
     }
     @Override

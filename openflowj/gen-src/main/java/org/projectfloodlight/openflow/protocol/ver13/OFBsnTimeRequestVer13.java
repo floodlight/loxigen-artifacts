@@ -55,8 +55,13 @@ class OFBsnTimeRequestVer13 implements OFBsnTimeRequest {
 
     // Accessors for OF message fields
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_13;
+    public long getExperimenter() {
+        return 0x5c16c7L;
+    }
+
+    @Override
+    public long getSubtype() {
+        return 0x2cL;
     }
 
     @Override
@@ -65,18 +70,13 @@ class OFBsnTimeRequestVer13 implements OFBsnTimeRequest {
     }
 
     @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_13;
+    }
+
+    @Override
     public long getXid() {
         return xid;
-    }
-
-    @Override
-    public long getExperimenter() {
-        return 0x5c16c7L;
-    }
-
-    @Override
-    public long getSubtype() {
-        return 0x2cL;
     }
 
 
@@ -97,13 +97,23 @@ class OFBsnTimeRequestVer13 implements OFBsnTimeRequest {
         }
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_13;
+    public long getExperimenter() {
+        return 0x5c16c7L;
+    }
+
+    @Override
+    public long getSubtype() {
+        return 0x2cL;
     }
 
     @Override
     public OFType getType() {
         return OFType.EXPERIMENTER;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_13;
     }
 
     @Override
@@ -117,16 +127,6 @@ class OFBsnTimeRequestVer13 implements OFBsnTimeRequest {
         this.xidSet = true;
         return this;
     }
-    @Override
-    public long getExperimenter() {
-        return 0x5c16c7L;
-    }
-
-    @Override
-    public long getSubtype() {
-        return 0x2cL;
-    }
-
 
 
         @Override
@@ -147,13 +147,23 @@ class OFBsnTimeRequestVer13 implements OFBsnTimeRequest {
         private long xid;
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_13;
+    public long getExperimenter() {
+        return 0x5c16c7L;
+    }
+
+    @Override
+    public long getSubtype() {
+        return 0x2cL;
     }
 
     @Override
     public OFType getType() {
         return OFType.EXPERIMENTER;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_13;
     }
 
     @Override
@@ -167,16 +177,6 @@ class OFBsnTimeRequestVer13 implements OFBsnTimeRequest {
         this.xidSet = true;
         return this;
     }
-    @Override
-    public long getExperimenter() {
-        return 0x5c16c7L;
-    }
-
-    @Override
-    public long getSubtype() {
-        return 0x2cL;
-    }
-
 //
         @Override
         public OFBsnTimeRequest build() {

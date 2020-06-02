@@ -29,8 +29,8 @@ import java.util.Set;
 import io.netty.buffer.ByteBuf;
 
 public interface OFActionSetNwEcn extends OFObject, OFAction {
-    OFActionType getType();
     IpEcn getNwEcn();
+    OFActionType getType();
     OFVersion getVersion();
 
     void writeTo(ByteBuf channelBuffer);
@@ -38,9 +38,9 @@ public interface OFActionSetNwEcn extends OFObject, OFAction {
     Builder createBuilder();
     public interface Builder extends OFAction.Builder {
         OFActionSetNwEcn build();
-        OFActionType getType();
         IpEcn getNwEcn();
         Builder setNwEcn(IpEcn nwEcn);
+        OFActionType getType();
         OFVersion getVersion();
     }
 }

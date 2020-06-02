@@ -83,18 +83,8 @@ class OFFlowMonitorEntryVer15 implements OFFlowMonitorEntry {
 
     // Accessors for OF message fields
     @Override
-    public long getMonitorId() {
-        return monitorId;
-    }
-
-    @Override
-    public long getOutPort() {
-        return outPort;
-    }
-
-    @Override
-    public long getOutGroup() {
-        return outGroup;
+    public OFFlowMonitorCommand getCommand() {
+        return command;
     }
 
     @Override
@@ -103,18 +93,28 @@ class OFFlowMonitorEntryVer15 implements OFFlowMonitorEntry {
     }
 
     @Override
-    public TableId getTableId() {
-        return tableId;
-    }
-
-    @Override
-    public OFFlowMonitorCommand getCommand() {
-        return command;
-    }
-
-    @Override
     public Match getMatch() {
         return match;
+    }
+
+    @Override
+    public long getMonitorId() {
+        return monitorId;
+    }
+
+    @Override
+    public long getOutGroup() {
+        return outGroup;
+    }
+
+    @Override
+    public long getOutPort() {
+        return outPort;
+    }
+
+    @Override
+    public TableId getTableId() {
+        return tableId;
     }
 
     @Override
@@ -152,36 +152,14 @@ class OFFlowMonitorEntryVer15 implements OFFlowMonitorEntry {
         }
 
     @Override
-    public long getMonitorId() {
-        return monitorId;
+    public OFFlowMonitorCommand getCommand() {
+        return command;
     }
 
     @Override
-    public OFFlowMonitorEntry.Builder setMonitorId(long monitorId) {
-        this.monitorId = monitorId;
-        this.monitorIdSet = true;
-        return this;
-    }
-    @Override
-    public long getOutPort() {
-        return outPort;
-    }
-
-    @Override
-    public OFFlowMonitorEntry.Builder setOutPort(long outPort) {
-        this.outPort = outPort;
-        this.outPortSet = true;
-        return this;
-    }
-    @Override
-    public long getOutGroup() {
-        return outGroup;
-    }
-
-    @Override
-    public OFFlowMonitorEntry.Builder setOutGroup(long outGroup) {
-        this.outGroup = outGroup;
-        this.outGroupSet = true;
+    public OFFlowMonitorEntry.Builder setCommand(OFFlowMonitorCommand command) {
+        this.command = command;
+        this.commandSet = true;
         return this;
     }
     @Override
@@ -196,28 +174,6 @@ class OFFlowMonitorEntryVer15 implements OFFlowMonitorEntry {
         return this;
     }
     @Override
-    public TableId getTableId() {
-        return tableId;
-    }
-
-    @Override
-    public OFFlowMonitorEntry.Builder setTableId(TableId tableId) {
-        this.tableId = tableId;
-        this.tableIdSet = true;
-        return this;
-    }
-    @Override
-    public OFFlowMonitorCommand getCommand() {
-        return command;
-    }
-
-    @Override
-    public OFFlowMonitorEntry.Builder setCommand(OFFlowMonitorCommand command) {
-        this.command = command;
-        this.commandSet = true;
-        return this;
-    }
-    @Override
     public Match getMatch() {
         return match;
     }
@@ -226,6 +182,50 @@ class OFFlowMonitorEntryVer15 implements OFFlowMonitorEntry {
     public OFFlowMonitorEntry.Builder setMatch(Match match) {
         this.match = match;
         this.matchSet = true;
+        return this;
+    }
+    @Override
+    public long getMonitorId() {
+        return monitorId;
+    }
+
+    @Override
+    public OFFlowMonitorEntry.Builder setMonitorId(long monitorId) {
+        this.monitorId = monitorId;
+        this.monitorIdSet = true;
+        return this;
+    }
+    @Override
+    public long getOutGroup() {
+        return outGroup;
+    }
+
+    @Override
+    public OFFlowMonitorEntry.Builder setOutGroup(long outGroup) {
+        this.outGroup = outGroup;
+        this.outGroupSet = true;
+        return this;
+    }
+    @Override
+    public long getOutPort() {
+        return outPort;
+    }
+
+    @Override
+    public OFFlowMonitorEntry.Builder setOutPort(long outPort) {
+        this.outPort = outPort;
+        this.outPortSet = true;
+        return this;
+    }
+    @Override
+    public TableId getTableId() {
+        return tableId;
+    }
+
+    @Override
+    public OFFlowMonitorEntry.Builder setTableId(TableId tableId) {
+        this.tableId = tableId;
+        this.tableIdSet = true;
         return this;
     }
     @Override
@@ -285,36 +285,14 @@ class OFFlowMonitorEntryVer15 implements OFFlowMonitorEntry {
         private Match match;
 
     @Override
-    public long getMonitorId() {
-        return monitorId;
+    public OFFlowMonitorCommand getCommand() {
+        return command;
     }
 
     @Override
-    public OFFlowMonitorEntry.Builder setMonitorId(long monitorId) {
-        this.monitorId = monitorId;
-        this.monitorIdSet = true;
-        return this;
-    }
-    @Override
-    public long getOutPort() {
-        return outPort;
-    }
-
-    @Override
-    public OFFlowMonitorEntry.Builder setOutPort(long outPort) {
-        this.outPort = outPort;
-        this.outPortSet = true;
-        return this;
-    }
-    @Override
-    public long getOutGroup() {
-        return outGroup;
-    }
-
-    @Override
-    public OFFlowMonitorEntry.Builder setOutGroup(long outGroup) {
-        this.outGroup = outGroup;
-        this.outGroupSet = true;
+    public OFFlowMonitorEntry.Builder setCommand(OFFlowMonitorCommand command) {
+        this.command = command;
+        this.commandSet = true;
         return this;
     }
     @Override
@@ -329,28 +307,6 @@ class OFFlowMonitorEntryVer15 implements OFFlowMonitorEntry {
         return this;
     }
     @Override
-    public TableId getTableId() {
-        return tableId;
-    }
-
-    @Override
-    public OFFlowMonitorEntry.Builder setTableId(TableId tableId) {
-        this.tableId = tableId;
-        this.tableIdSet = true;
-        return this;
-    }
-    @Override
-    public OFFlowMonitorCommand getCommand() {
-        return command;
-    }
-
-    @Override
-    public OFFlowMonitorEntry.Builder setCommand(OFFlowMonitorCommand command) {
-        this.command = command;
-        this.commandSet = true;
-        return this;
-    }
-    @Override
     public Match getMatch() {
         return match;
     }
@@ -359,6 +315,50 @@ class OFFlowMonitorEntryVer15 implements OFFlowMonitorEntry {
     public OFFlowMonitorEntry.Builder setMatch(Match match) {
         this.match = match;
         this.matchSet = true;
+        return this;
+    }
+    @Override
+    public long getMonitorId() {
+        return monitorId;
+    }
+
+    @Override
+    public OFFlowMonitorEntry.Builder setMonitorId(long monitorId) {
+        this.monitorId = monitorId;
+        this.monitorIdSet = true;
+        return this;
+    }
+    @Override
+    public long getOutGroup() {
+        return outGroup;
+    }
+
+    @Override
+    public OFFlowMonitorEntry.Builder setOutGroup(long outGroup) {
+        this.outGroup = outGroup;
+        this.outGroupSet = true;
+        return this;
+    }
+    @Override
+    public long getOutPort() {
+        return outPort;
+    }
+
+    @Override
+    public OFFlowMonitorEntry.Builder setOutPort(long outPort) {
+        this.outPort = outPort;
+        this.outPortSet = true;
+        return this;
+    }
+    @Override
+    public TableId getTableId() {
+        return tableId;
+    }
+
+    @Override
+    public OFFlowMonitorEntry.Builder setTableId(TableId tableId) {
+        this.tableId = tableId;
+        this.tableIdSet = true;
         return this;
     }
     @Override

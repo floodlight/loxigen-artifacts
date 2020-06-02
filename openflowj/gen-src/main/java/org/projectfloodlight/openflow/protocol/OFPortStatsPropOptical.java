@@ -28,18 +28,18 @@ import org.projectfloodlight.openflow.exceptions.*;
 import io.netty.buffer.ByteBuf;
 
 public interface OFPortStatsPropOptical extends OFObject, OFPortStatsProp {
-    int getType();
-    long getFlags();
-    long getTxFreqLmda();
-    long getTxOffset();
-    long getTxGridSpan();
-    long getRxFreqLmda();
-    long getRxOffset();
-    long getRxGridSpan();
-    int getTxPwr();
-    int getRxPwr();
     int getBiasCurrent();
+    long getFlags();
+    long getRxFreqLmda();
+    long getRxGridSpan();
+    long getRxOffset();
+    int getRxPwr();
     int getTemperature();
+    long getTxFreqLmda();
+    long getTxGridSpan();
+    long getTxOffset();
+    int getTxPwr();
+    int getType();
     OFVersion getVersion();
 
     void writeTo(ByteBuf channelBuffer);
@@ -47,29 +47,29 @@ public interface OFPortStatsPropOptical extends OFObject, OFPortStatsProp {
     Builder createBuilder();
     public interface Builder extends OFPortStatsProp.Builder {
         OFPortStatsPropOptical build();
-        int getType();
-        long getFlags();
-        Builder setFlags(long flags);
-        long getTxFreqLmda();
-        Builder setTxFreqLmda(long txFreqLmda);
-        long getTxOffset();
-        Builder setTxOffset(long txOffset);
-        long getTxGridSpan();
-        Builder setTxGridSpan(long txGridSpan);
-        long getRxFreqLmda();
-        Builder setRxFreqLmda(long rxFreqLmda);
-        long getRxOffset();
-        Builder setRxOffset(long rxOffset);
-        long getRxGridSpan();
-        Builder setRxGridSpan(long rxGridSpan);
-        int getTxPwr();
-        Builder setTxPwr(int txPwr);
-        int getRxPwr();
-        Builder setRxPwr(int rxPwr);
         int getBiasCurrent();
         Builder setBiasCurrent(int biasCurrent);
+        long getFlags();
+        Builder setFlags(long flags);
+        long getRxFreqLmda();
+        Builder setRxFreqLmda(long rxFreqLmda);
+        long getRxGridSpan();
+        Builder setRxGridSpan(long rxGridSpan);
+        long getRxOffset();
+        Builder setRxOffset(long rxOffset);
+        int getRxPwr();
+        Builder setRxPwr(int rxPwr);
         int getTemperature();
         Builder setTemperature(int temperature);
+        long getTxFreqLmda();
+        Builder setTxFreqLmda(long txFreqLmda);
+        long getTxGridSpan();
+        Builder setTxGridSpan(long txGridSpan);
+        long getTxOffset();
+        Builder setTxOffset(long txOffset);
+        int getTxPwr();
+        Builder setTxPwr(int txPwr);
+        int getType();
         OFVersion getVersion();
     }
 }

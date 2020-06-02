@@ -56,23 +56,13 @@ class OFNiciraControllerRoleRequestVer10 implements OFNiciraControllerRoleReques
 
     // Accessors for OF message fields
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_10;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.EXPERIMENTER;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
     public long getExperimenter() {
         return 0x2320L;
+    }
+
+    @Override
+    public OFNiciraControllerRole getRole() {
+        return role;
     }
 
     @Override
@@ -81,8 +71,18 @@ class OFNiciraControllerRoleRequestVer10 implements OFNiciraControllerRoleReques
     }
 
     @Override
-    public OFNiciraControllerRole getRole() {
-        return role;
+    public OFType getType() {
+        return OFType.EXPERIMENTER;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_10;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
     }
 
 
@@ -105,34 +105,8 @@ class OFNiciraControllerRoleRequestVer10 implements OFNiciraControllerRoleReques
         }
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_10;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.EXPERIMENTER;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFNiciraControllerRoleRequest.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
-        return this;
-    }
-    @Override
     public long getExperimenter() {
         return 0x2320L;
-    }
-
-    @Override
-    public long getSubtype() {
-        return 0xaL;
     }
 
     @Override
@@ -144,6 +118,32 @@ class OFNiciraControllerRoleRequestVer10 implements OFNiciraControllerRoleReques
     public OFNiciraControllerRoleRequest.Builder setRole(OFNiciraControllerRole role) {
         this.role = role;
         this.roleSet = true;
+        return this;
+    }
+    @Override
+    public long getSubtype() {
+        return 0xaL;
+    }
+
+    @Override
+    public OFType getType() {
+        return OFType.EXPERIMENTER;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_10;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFNiciraControllerRoleRequest.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 
@@ -172,34 +172,8 @@ class OFNiciraControllerRoleRequestVer10 implements OFNiciraControllerRoleReques
         private OFNiciraControllerRole role;
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_10;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.EXPERIMENTER;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFNiciraControllerRoleRequest.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
-        return this;
-    }
-    @Override
     public long getExperimenter() {
         return 0x2320L;
-    }
-
-    @Override
-    public long getSubtype() {
-        return 0xaL;
     }
 
     @Override
@@ -211,6 +185,32 @@ class OFNiciraControllerRoleRequestVer10 implements OFNiciraControllerRoleReques
     public OFNiciraControllerRoleRequest.Builder setRole(OFNiciraControllerRole role) {
         this.role = role;
         this.roleSet = true;
+        return this;
+    }
+    @Override
+    public long getSubtype() {
+        return 0xaL;
+    }
+
+    @Override
+    public OFType getType() {
+        return OFType.EXPERIMENTER;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_10;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFNiciraControllerRoleRequest.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 //

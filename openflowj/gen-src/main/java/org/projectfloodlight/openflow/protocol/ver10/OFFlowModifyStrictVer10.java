@@ -105,18 +105,18 @@ class OFFlowModifyStrictVer10 implements OFFlowModifyStrict {
 
     // Accessors for OF message fields
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_10;
+    public List<OFAction> getActions() {
+        return actions;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.FLOW_MOD;
+    public OFBufferId getBufferId() {
+        return bufferId;
     }
 
     @Override
-    public long getXid() {
-        return xid;
+    public OFFlowModCommand getCommand() {
+        return OFFlowModCommand.MODIFY_STRICT;
     }
 
     @Override
@@ -130,18 +130,8 @@ class OFFlowModifyStrictVer10 implements OFFlowModifyStrict {
     }
 
     @Override
-    public TableId getTableId()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property tableId not supported in version 1.0");
-    }
-
-    @Override
-    public OFFlowModCommand getCommand() {
-        return OFFlowModCommand.MODIFY_STRICT;
-    }
-
-    @Override
-    public int getIdleTimeout() {
-        return idleTimeout;
+    public Set<OFFlowModFlags> getFlags() {
+        return flags;
     }
 
     @Override
@@ -150,33 +140,13 @@ class OFFlowModifyStrictVer10 implements OFFlowModifyStrict {
     }
 
     @Override
-    public int getPriority() {
-        return priority;
+    public int getIdleTimeout() {
+        return idleTimeout;
     }
 
     @Override
-    public OFBufferId getBufferId() {
-        return bufferId;
-    }
-
-    @Override
-    public OFPort getOutPort() {
-        return outPort;
-    }
-
-    @Override
-    public OFGroup getOutGroup()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property outGroup not supported in version 1.0");
-    }
-
-    @Override
-    public Set<OFFlowModFlags> getFlags() {
-        return flags;
-    }
-
-    @Override
-    public Match getMatch() {
-        return match;
+    public int getImportance()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property importance not supported in version 1.0");
     }
 
     @Override
@@ -185,13 +155,43 @@ class OFFlowModifyStrictVer10 implements OFFlowModifyStrict {
     }
 
     @Override
-    public List<OFAction> getActions() {
-        return actions;
+    public Match getMatch() {
+        return match;
     }
 
     @Override
-    public int getImportance()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property importance not supported in version 1.0");
+    public OFGroup getOutGroup()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property outGroup not supported in version 1.0");
+    }
+
+    @Override
+    public OFPort getOutPort() {
+        return outPort;
+    }
+
+    @Override
+    public int getPriority() {
+        return priority;
+    }
+
+    @Override
+    public TableId getTableId()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property tableId not supported in version 1.0");
+    }
+
+    @Override
+    public OFType getType() {
+        return OFType.FLOW_MOD;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_10;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
     }
 
 
@@ -230,26 +230,32 @@ class OFFlowModifyStrictVer10 implements OFFlowModifyStrict {
         }
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_10;
+    public List<OFAction> getActions() {
+        return actions;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.FLOW_MOD;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFFlowModifyStrict.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
+    public OFFlowModifyStrict.Builder setActions(List<OFAction> actions) {
+        this.actions = actions;
+        this.actionsSet = true;
         return this;
     }
+    @Override
+    public OFBufferId getBufferId() {
+        return bufferId;
+    }
+
+    @Override
+    public OFFlowModifyStrict.Builder setBufferId(OFBufferId bufferId) {
+        this.bufferId = bufferId;
+        this.bufferIdSet = true;
+        return this;
+    }
+    @Override
+    public OFFlowModCommand getCommand() {
+        return OFFlowModCommand.MODIFY_STRICT;
+    }
+
     @Override
     public U64 getCookie() {
         return cookie;
@@ -271,28 +277,14 @@ class OFFlowModifyStrictVer10 implements OFFlowModifyStrict {
             throw new UnsupportedOperationException("Property cookieMask not supported in version 1.0");
     }
     @Override
-    public TableId getTableId()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property tableId not supported in version 1.0");
+    public Set<OFFlowModFlags> getFlags() {
+        return flags;
     }
 
     @Override
-    public OFFlowModifyStrict.Builder setTableId(TableId tableId) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property tableId not supported in version 1.0");
-    }
-    @Override
-    public OFFlowModCommand getCommand() {
-        return OFFlowModCommand.MODIFY_STRICT;
-    }
-
-    @Override
-    public int getIdleTimeout() {
-        return idleTimeout;
-    }
-
-    @Override
-    public OFFlowModifyStrict.Builder setIdleTimeout(int idleTimeout) {
-        this.idleTimeout = idleTimeout;
-        this.idleTimeoutSet = true;
+    public OFFlowModifyStrict.Builder setFlags(Set<OFFlowModFlags> flags) {
+        this.flags = flags;
+        this.flagsSet = true;
         return this;
     }
     @Override
@@ -307,57 +299,33 @@ class OFFlowModifyStrictVer10 implements OFFlowModifyStrict {
         return this;
     }
     @Override
-    public int getPriority() {
-        return priority;
+    public int getIdleTimeout() {
+        return idleTimeout;
     }
 
     @Override
-    public OFFlowModifyStrict.Builder setPriority(int priority) {
-        this.priority = priority;
-        this.prioritySet = true;
+    public OFFlowModifyStrict.Builder setIdleTimeout(int idleTimeout) {
+        this.idleTimeout = idleTimeout;
+        this.idleTimeoutSet = true;
         return this;
     }
     @Override
-    public OFBufferId getBufferId() {
-        return bufferId;
+    public int getImportance()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property importance not supported in version 1.0");
     }
 
     @Override
-    public OFFlowModifyStrict.Builder setBufferId(OFBufferId bufferId) {
-        this.bufferId = bufferId;
-        this.bufferIdSet = true;
-        return this;
+    public OFFlowModifyStrict.Builder setImportance(int importance) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property importance not supported in version 1.0");
     }
     @Override
-    public OFPort getOutPort() {
-        return outPort;
+    public List<OFInstruction> getInstructions()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property instructions not supported in version 1.0");
     }
 
     @Override
-    public OFFlowModifyStrict.Builder setOutPort(OFPort outPort) {
-        this.outPort = outPort;
-        this.outPortSet = true;
-        return this;
-    }
-    @Override
-    public OFGroup getOutGroup()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property outGroup not supported in version 1.0");
-    }
-
-    @Override
-    public OFFlowModifyStrict.Builder setOutGroup(OFGroup outGroup) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property outGroup not supported in version 1.0");
-    }
-    @Override
-    public Set<OFFlowModFlags> getFlags() {
-        return flags;
-    }
-
-    @Override
-    public OFFlowModifyStrict.Builder setFlags(Set<OFFlowModFlags> flags) {
-        this.flags = flags;
-        this.flagsSet = true;
-        return this;
+    public OFFlowModifyStrict.Builder setInstructions(List<OFInstruction> instructions) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property instructions not supported in version 1.0");
     }
     @Override
     public Match getMatch() {
@@ -371,33 +339,65 @@ class OFFlowModifyStrictVer10 implements OFFlowModifyStrict {
         return this;
     }
     @Override
-    public List<OFInstruction> getInstructions()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property instructions not supported in version 1.0");
+    public OFGroup getOutGroup()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property outGroup not supported in version 1.0");
     }
 
     @Override
-    public OFFlowModifyStrict.Builder setInstructions(List<OFInstruction> instructions) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property instructions not supported in version 1.0");
+    public OFFlowModifyStrict.Builder setOutGroup(OFGroup outGroup) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property outGroup not supported in version 1.0");
     }
     @Override
-    public List<OFAction> getActions() {
-        return actions;
+    public OFPort getOutPort() {
+        return outPort;
     }
 
     @Override
-    public OFFlowModifyStrict.Builder setActions(List<OFAction> actions) {
-        this.actions = actions;
-        this.actionsSet = true;
+    public OFFlowModifyStrict.Builder setOutPort(OFPort outPort) {
+        this.outPort = outPort;
+        this.outPortSet = true;
         return this;
     }
     @Override
-    public int getImportance()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property importance not supported in version 1.0");
+    public int getPriority() {
+        return priority;
     }
 
     @Override
-    public OFFlowModifyStrict.Builder setImportance(int importance) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property importance not supported in version 1.0");
+    public OFFlowModifyStrict.Builder setPriority(int priority) {
+        this.priority = priority;
+        this.prioritySet = true;
+        return this;
+    }
+    @Override
+    public TableId getTableId()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property tableId not supported in version 1.0");
+    }
+
+    @Override
+    public OFFlowModifyStrict.Builder setTableId(TableId tableId) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property tableId not supported in version 1.0");
+    }
+    @Override
+    public OFType getType() {
+        return OFType.FLOW_MOD;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_10;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFFlowModifyStrict.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
+        return this;
     }
 
 
@@ -467,26 +467,32 @@ class OFFlowModifyStrictVer10 implements OFFlowModifyStrict {
         private List<OFAction> actions;
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_10;
+    public List<OFAction> getActions() {
+        return actions;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.FLOW_MOD;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFFlowModifyStrict.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
+    public OFFlowModifyStrict.Builder setActions(List<OFAction> actions) {
+        this.actions = actions;
+        this.actionsSet = true;
         return this;
     }
+    @Override
+    public OFBufferId getBufferId() {
+        return bufferId;
+    }
+
+    @Override
+    public OFFlowModifyStrict.Builder setBufferId(OFBufferId bufferId) {
+        this.bufferId = bufferId;
+        this.bufferIdSet = true;
+        return this;
+    }
+    @Override
+    public OFFlowModCommand getCommand() {
+        return OFFlowModCommand.MODIFY_STRICT;
+    }
+
     @Override
     public U64 getCookie() {
         return cookie;
@@ -508,28 +514,14 @@ class OFFlowModifyStrictVer10 implements OFFlowModifyStrict {
             throw new UnsupportedOperationException("Property cookieMask not supported in version 1.0");
     }
     @Override
-    public TableId getTableId()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property tableId not supported in version 1.0");
+    public Set<OFFlowModFlags> getFlags() {
+        return flags;
     }
 
     @Override
-    public OFFlowModifyStrict.Builder setTableId(TableId tableId) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property tableId not supported in version 1.0");
-    }
-    @Override
-    public OFFlowModCommand getCommand() {
-        return OFFlowModCommand.MODIFY_STRICT;
-    }
-
-    @Override
-    public int getIdleTimeout() {
-        return idleTimeout;
-    }
-
-    @Override
-    public OFFlowModifyStrict.Builder setIdleTimeout(int idleTimeout) {
-        this.idleTimeout = idleTimeout;
-        this.idleTimeoutSet = true;
+    public OFFlowModifyStrict.Builder setFlags(Set<OFFlowModFlags> flags) {
+        this.flags = flags;
+        this.flagsSet = true;
         return this;
     }
     @Override
@@ -544,57 +536,33 @@ class OFFlowModifyStrictVer10 implements OFFlowModifyStrict {
         return this;
     }
     @Override
-    public int getPriority() {
-        return priority;
+    public int getIdleTimeout() {
+        return idleTimeout;
     }
 
     @Override
-    public OFFlowModifyStrict.Builder setPriority(int priority) {
-        this.priority = priority;
-        this.prioritySet = true;
+    public OFFlowModifyStrict.Builder setIdleTimeout(int idleTimeout) {
+        this.idleTimeout = idleTimeout;
+        this.idleTimeoutSet = true;
         return this;
     }
     @Override
-    public OFBufferId getBufferId() {
-        return bufferId;
+    public int getImportance()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property importance not supported in version 1.0");
     }
 
     @Override
-    public OFFlowModifyStrict.Builder setBufferId(OFBufferId bufferId) {
-        this.bufferId = bufferId;
-        this.bufferIdSet = true;
-        return this;
+    public OFFlowModifyStrict.Builder setImportance(int importance) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property importance not supported in version 1.0");
     }
     @Override
-    public OFPort getOutPort() {
-        return outPort;
+    public List<OFInstruction> getInstructions()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property instructions not supported in version 1.0");
     }
 
     @Override
-    public OFFlowModifyStrict.Builder setOutPort(OFPort outPort) {
-        this.outPort = outPort;
-        this.outPortSet = true;
-        return this;
-    }
-    @Override
-    public OFGroup getOutGroup()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property outGroup not supported in version 1.0");
-    }
-
-    @Override
-    public OFFlowModifyStrict.Builder setOutGroup(OFGroup outGroup) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property outGroup not supported in version 1.0");
-    }
-    @Override
-    public Set<OFFlowModFlags> getFlags() {
-        return flags;
-    }
-
-    @Override
-    public OFFlowModifyStrict.Builder setFlags(Set<OFFlowModFlags> flags) {
-        this.flags = flags;
-        this.flagsSet = true;
-        return this;
+    public OFFlowModifyStrict.Builder setInstructions(List<OFInstruction> instructions) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property instructions not supported in version 1.0");
     }
     @Override
     public Match getMatch() {
@@ -608,33 +576,65 @@ class OFFlowModifyStrictVer10 implements OFFlowModifyStrict {
         return this;
     }
     @Override
-    public List<OFInstruction> getInstructions()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property instructions not supported in version 1.0");
+    public OFGroup getOutGroup()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property outGroup not supported in version 1.0");
     }
 
     @Override
-    public OFFlowModifyStrict.Builder setInstructions(List<OFInstruction> instructions) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property instructions not supported in version 1.0");
+    public OFFlowModifyStrict.Builder setOutGroup(OFGroup outGroup) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property outGroup not supported in version 1.0");
     }
     @Override
-    public List<OFAction> getActions() {
-        return actions;
+    public OFPort getOutPort() {
+        return outPort;
     }
 
     @Override
-    public OFFlowModifyStrict.Builder setActions(List<OFAction> actions) {
-        this.actions = actions;
-        this.actionsSet = true;
+    public OFFlowModifyStrict.Builder setOutPort(OFPort outPort) {
+        this.outPort = outPort;
+        this.outPortSet = true;
         return this;
     }
     @Override
-    public int getImportance()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property importance not supported in version 1.0");
+    public int getPriority() {
+        return priority;
     }
 
     @Override
-    public OFFlowModifyStrict.Builder setImportance(int importance) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property importance not supported in version 1.0");
+    public OFFlowModifyStrict.Builder setPriority(int priority) {
+        this.priority = priority;
+        this.prioritySet = true;
+        return this;
+    }
+    @Override
+    public TableId getTableId()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property tableId not supported in version 1.0");
+    }
+
+    @Override
+    public OFFlowModifyStrict.Builder setTableId(TableId tableId) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property tableId not supported in version 1.0");
+    }
+    @Override
+    public OFType getType() {
+        return OFType.FLOW_MOD;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_10;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFFlowModifyStrict.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
+        return this;
     }
 //
         @Override

@@ -86,18 +86,8 @@ class OFMeterStatsVer13 implements OFMeterStats {
 
     // Accessors for OF message fields
     @Override
-    public long getMeterId() {
-        return meterId;
-    }
-
-    @Override
-    public long getFlowCount() {
-        return flowCount;
-    }
-
-    @Override
-    public U64 getPacketInCount() {
-        return packetInCount;
+    public List<OFMeterBandStats> getBandStats() {
+        return bandStats;
     }
 
     @Override
@@ -106,18 +96,28 @@ class OFMeterStatsVer13 implements OFMeterStats {
     }
 
     @Override
-    public long getDurationSec() {
-        return durationSec;
-    }
-
-    @Override
     public long getDurationNsec() {
         return durationNsec;
     }
 
     @Override
-    public List<OFMeterBandStats> getBandStats() {
-        return bandStats;
+    public long getDurationSec() {
+        return durationSec;
+    }
+
+    @Override
+    public long getFlowCount() {
+        return flowCount;
+    }
+
+    @Override
+    public long getMeterId() {
+        return meterId;
+    }
+
+    @Override
+    public U64 getPacketInCount() {
+        return packetInCount;
     }
 
     @Override
@@ -160,36 +160,14 @@ class OFMeterStatsVer13 implements OFMeterStats {
         }
 
     @Override
-    public long getMeterId() {
-        return meterId;
+    public List<OFMeterBandStats> getBandStats() {
+        return bandStats;
     }
 
     @Override
-    public OFMeterStats.Builder setMeterId(long meterId) {
-        this.meterId = meterId;
-        this.meterIdSet = true;
-        return this;
-    }
-    @Override
-    public long getFlowCount() {
-        return flowCount;
-    }
-
-    @Override
-    public OFMeterStats.Builder setFlowCount(long flowCount) {
-        this.flowCount = flowCount;
-        this.flowCountSet = true;
-        return this;
-    }
-    @Override
-    public U64 getPacketInCount() {
-        return packetInCount;
-    }
-
-    @Override
-    public OFMeterStats.Builder setPacketInCount(U64 packetInCount) {
-        this.packetInCount = packetInCount;
-        this.packetInCountSet = true;
+    public OFMeterStats.Builder setBandStats(List<OFMeterBandStats> bandStats) {
+        this.bandStats = bandStats;
+        this.bandStatsSet = true;
         return this;
     }
     @Override
@@ -204,17 +182,6 @@ class OFMeterStatsVer13 implements OFMeterStats {
         return this;
     }
     @Override
-    public long getDurationSec() {
-        return durationSec;
-    }
-
-    @Override
-    public OFMeterStats.Builder setDurationSec(long durationSec) {
-        this.durationSec = durationSec;
-        this.durationSecSet = true;
-        return this;
-    }
-    @Override
     public long getDurationNsec() {
         return durationNsec;
     }
@@ -226,14 +193,47 @@ class OFMeterStatsVer13 implements OFMeterStats {
         return this;
     }
     @Override
-    public List<OFMeterBandStats> getBandStats() {
-        return bandStats;
+    public long getDurationSec() {
+        return durationSec;
     }
 
     @Override
-    public OFMeterStats.Builder setBandStats(List<OFMeterBandStats> bandStats) {
-        this.bandStats = bandStats;
-        this.bandStatsSet = true;
+    public OFMeterStats.Builder setDurationSec(long durationSec) {
+        this.durationSec = durationSec;
+        this.durationSecSet = true;
+        return this;
+    }
+    @Override
+    public long getFlowCount() {
+        return flowCount;
+    }
+
+    @Override
+    public OFMeterStats.Builder setFlowCount(long flowCount) {
+        this.flowCount = flowCount;
+        this.flowCountSet = true;
+        return this;
+    }
+    @Override
+    public long getMeterId() {
+        return meterId;
+    }
+
+    @Override
+    public OFMeterStats.Builder setMeterId(long meterId) {
+        this.meterId = meterId;
+        this.meterIdSet = true;
+        return this;
+    }
+    @Override
+    public U64 getPacketInCount() {
+        return packetInCount;
+    }
+
+    @Override
+    public OFMeterStats.Builder setPacketInCount(U64 packetInCount) {
+        this.packetInCount = packetInCount;
+        this.packetInCountSet = true;
         return this;
     }
     @Override
@@ -300,36 +300,14 @@ class OFMeterStatsVer13 implements OFMeterStats {
         private List<OFMeterBandStats> bandStats;
 
     @Override
-    public long getMeterId() {
-        return meterId;
+    public List<OFMeterBandStats> getBandStats() {
+        return bandStats;
     }
 
     @Override
-    public OFMeterStats.Builder setMeterId(long meterId) {
-        this.meterId = meterId;
-        this.meterIdSet = true;
-        return this;
-    }
-    @Override
-    public long getFlowCount() {
-        return flowCount;
-    }
-
-    @Override
-    public OFMeterStats.Builder setFlowCount(long flowCount) {
-        this.flowCount = flowCount;
-        this.flowCountSet = true;
-        return this;
-    }
-    @Override
-    public U64 getPacketInCount() {
-        return packetInCount;
-    }
-
-    @Override
-    public OFMeterStats.Builder setPacketInCount(U64 packetInCount) {
-        this.packetInCount = packetInCount;
-        this.packetInCountSet = true;
+    public OFMeterStats.Builder setBandStats(List<OFMeterBandStats> bandStats) {
+        this.bandStats = bandStats;
+        this.bandStatsSet = true;
         return this;
     }
     @Override
@@ -344,17 +322,6 @@ class OFMeterStatsVer13 implements OFMeterStats {
         return this;
     }
     @Override
-    public long getDurationSec() {
-        return durationSec;
-    }
-
-    @Override
-    public OFMeterStats.Builder setDurationSec(long durationSec) {
-        this.durationSec = durationSec;
-        this.durationSecSet = true;
-        return this;
-    }
-    @Override
     public long getDurationNsec() {
         return durationNsec;
     }
@@ -366,14 +333,47 @@ class OFMeterStatsVer13 implements OFMeterStats {
         return this;
     }
     @Override
-    public List<OFMeterBandStats> getBandStats() {
-        return bandStats;
+    public long getDurationSec() {
+        return durationSec;
     }
 
     @Override
-    public OFMeterStats.Builder setBandStats(List<OFMeterBandStats> bandStats) {
-        this.bandStats = bandStats;
-        this.bandStatsSet = true;
+    public OFMeterStats.Builder setDurationSec(long durationSec) {
+        this.durationSec = durationSec;
+        this.durationSecSet = true;
+        return this;
+    }
+    @Override
+    public long getFlowCount() {
+        return flowCount;
+    }
+
+    @Override
+    public OFMeterStats.Builder setFlowCount(long flowCount) {
+        this.flowCount = flowCount;
+        this.flowCountSet = true;
+        return this;
+    }
+    @Override
+    public long getMeterId() {
+        return meterId;
+    }
+
+    @Override
+    public OFMeterStats.Builder setMeterId(long meterId) {
+        this.meterId = meterId;
+        this.meterIdSet = true;
+        return this;
+    }
+    @Override
+    public U64 getPacketInCount() {
+        return packetInCount;
+    }
+
+    @Override
+    public OFMeterStats.Builder setPacketInCount(U64 packetInCount) {
+        this.packetInCount = packetInCount;
+        this.packetInCountSet = true;
         return this;
     }
     @Override

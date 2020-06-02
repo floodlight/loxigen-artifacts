@@ -67,16 +67,6 @@ class OFOxmPbbUcaVer14 implements OFOxmPbbUca {
         return value;
     }
 
-    @Override
-    public MatchField<OFBooleanValue> getMatchField() {
-        return MatchField.PBB_UCA;
-    }
-
-    @Override
-    public boolean isMasked() {
-        return false;
-    }
-
     public OFOxm<OFBooleanValue> getCanonical() {
         // exact match OXM is always canonical
         return this;
@@ -85,6 +75,16 @@ class OFOxmPbbUcaVer14 implements OFOxmPbbUca {
     @Override
     public OFBooleanValue getMask()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property mask not supported in version 1.4");
+    }
+
+    @Override
+    public boolean isMasked() {
+        return false;
+    }
+
+    @Override
+    public MatchField<OFBooleanValue> getMatchField() {
+        return MatchField.PBB_UCA;
     }
 
     @Override
@@ -126,8 +126,13 @@ class OFOxmPbbUcaVer14 implements OFOxmPbbUca {
         return this;
     }
     @Override
-    public MatchField<OFBooleanValue> getMatchField() {
-        return MatchField.PBB_UCA;
+    public OFOxm<OFBooleanValue> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.4");
+    }
+
+    @Override
+    public OFBooleanValue getMask()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property mask not supported in version 1.4");
     }
 
     @Override
@@ -136,13 +141,8 @@ class OFOxmPbbUcaVer14 implements OFOxmPbbUca {
     }
 
     @Override
-    public OFOxm<OFBooleanValue> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.4");
-    }
-
-    @Override
-    public OFBooleanValue getMask()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property mask not supported in version 1.4");
+    public MatchField<OFBooleanValue> getMatchField() {
+        return MatchField.PBB_UCA;
     }
 
     @Override
@@ -188,8 +188,13 @@ class OFOxmPbbUcaVer14 implements OFOxmPbbUca {
         return this;
     }
     @Override
-    public MatchField<OFBooleanValue> getMatchField() {
-        return MatchField.PBB_UCA;
+    public OFOxm<OFBooleanValue> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.4");
+    }
+
+    @Override
+    public OFBooleanValue getMask()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property mask not supported in version 1.4");
     }
 
     @Override
@@ -198,13 +203,8 @@ class OFOxmPbbUcaVer14 implements OFOxmPbbUca {
     }
 
     @Override
-    public OFOxm<OFBooleanValue> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.4");
-    }
-
-    @Override
-    public OFBooleanValue getMask()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property mask not supported in version 1.4");
+    public MatchField<OFBooleanValue> getMatchField() {
+        return MatchField.PBB_UCA;
     }
 
     @Override

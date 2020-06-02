@@ -67,16 +67,6 @@ class OFOxmMetadataVer15 implements OFOxmMetadata {
         return value;
     }
 
-    @Override
-    public MatchField<OFMetadata> getMatchField() {
-        return MatchField.METADATA;
-    }
-
-    @Override
-    public boolean isMasked() {
-        return false;
-    }
-
     public OFOxm<OFMetadata> getCanonical() {
         // exact match OXM is always canonical
         return this;
@@ -85,6 +75,16 @@ class OFOxmMetadataVer15 implements OFOxmMetadata {
     @Override
     public OFMetadata getMask()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property mask not supported in version 1.5");
+    }
+
+    @Override
+    public boolean isMasked() {
+        return false;
+    }
+
+    @Override
+    public MatchField<OFMetadata> getMatchField() {
+        return MatchField.METADATA;
     }
 
     @Override
@@ -126,8 +126,13 @@ class OFOxmMetadataVer15 implements OFOxmMetadata {
         return this;
     }
     @Override
-    public MatchField<OFMetadata> getMatchField() {
-        return MatchField.METADATA;
+    public OFOxm<OFMetadata> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.5");
+    }
+
+    @Override
+    public OFMetadata getMask()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property mask not supported in version 1.5");
     }
 
     @Override
@@ -136,13 +141,8 @@ class OFOxmMetadataVer15 implements OFOxmMetadata {
     }
 
     @Override
-    public OFOxm<OFMetadata> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.5");
-    }
-
-    @Override
-    public OFMetadata getMask()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property mask not supported in version 1.5");
+    public MatchField<OFMetadata> getMatchField() {
+        return MatchField.METADATA;
     }
 
     @Override
@@ -188,8 +188,13 @@ class OFOxmMetadataVer15 implements OFOxmMetadata {
         return this;
     }
     @Override
-    public MatchField<OFMetadata> getMatchField() {
-        return MatchField.METADATA;
+    public OFOxm<OFMetadata> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.5");
+    }
+
+    @Override
+    public OFMetadata getMask()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property mask not supported in version 1.5");
     }
 
     @Override
@@ -198,13 +203,8 @@ class OFOxmMetadataVer15 implements OFOxmMetadata {
     }
 
     @Override
-    public OFOxm<OFMetadata> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.5");
-    }
-
-    @Override
-    public OFMetadata getMask()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property mask not supported in version 1.5");
+    public MatchField<OFMetadata> getMatchField() {
+        return MatchField.METADATA;
     }
 
     @Override

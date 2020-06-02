@@ -28,9 +28,9 @@ import org.projectfloodlight.openflow.exceptions.*;
 import io.netty.buffer.ByteBuf;
 
 public interface OFInstructionIdBsnAutoNegotiation extends OFObject, OFInstructionIdBsn {
-    OFInstructionType getType();
     long getExperimenter();
     long getSubtype();
+    OFInstructionType getType();
     OFVersion getVersion();
 
     void writeTo(ByteBuf channelBuffer);
@@ -38,9 +38,9 @@ public interface OFInstructionIdBsnAutoNegotiation extends OFObject, OFInstructi
     Builder createBuilder();
     public interface Builder extends OFInstructionIdBsn.Builder {
         OFInstructionIdBsnAutoNegotiation build();
-        OFInstructionType getType();
         long getExperimenter();
         long getSubtype();
+        OFInstructionType getType();
         OFVersion getVersion();
     }
 }

@@ -58,23 +58,13 @@ class OFBsnGetIpMaskRequestVer10 implements OFBsnGetIpMaskRequest {
 
     // Accessors for OF message fields
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_10;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.EXPERIMENTER;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
     public long getExperimenter() {
         return 0x5c16c7L;
+    }
+
+    @Override
+    public short getIndex() {
+        return index;
     }
 
     @Override
@@ -83,8 +73,18 @@ class OFBsnGetIpMaskRequestVer10 implements OFBsnGetIpMaskRequest {
     }
 
     @Override
-    public short getIndex() {
-        return index;
+    public OFType getType() {
+        return OFType.EXPERIMENTER;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_10;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
     }
 
 
@@ -107,34 +107,8 @@ class OFBsnGetIpMaskRequestVer10 implements OFBsnGetIpMaskRequest {
         }
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_10;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.EXPERIMENTER;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFBsnGetIpMaskRequest.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
-        return this;
-    }
-    @Override
     public long getExperimenter() {
         return 0x5c16c7L;
-    }
-
-    @Override
-    public long getSubtype() {
-        return 0x1L;
     }
 
     @Override
@@ -146,6 +120,32 @@ class OFBsnGetIpMaskRequestVer10 implements OFBsnGetIpMaskRequest {
     public OFBsnGetIpMaskRequest.Builder setIndex(short index) {
         this.index = index;
         this.indexSet = true;
+        return this;
+    }
+    @Override
+    public long getSubtype() {
+        return 0x1L;
+    }
+
+    @Override
+    public OFType getType() {
+        return OFType.EXPERIMENTER;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_10;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFBsnGetIpMaskRequest.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 
@@ -172,34 +172,8 @@ class OFBsnGetIpMaskRequestVer10 implements OFBsnGetIpMaskRequest {
         private short index;
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_10;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.EXPERIMENTER;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFBsnGetIpMaskRequest.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
-        return this;
-    }
-    @Override
     public long getExperimenter() {
         return 0x5c16c7L;
-    }
-
-    @Override
-    public long getSubtype() {
-        return 0x1L;
     }
 
     @Override
@@ -211,6 +185,32 @@ class OFBsnGetIpMaskRequestVer10 implements OFBsnGetIpMaskRequest {
     public OFBsnGetIpMaskRequest.Builder setIndex(short index) {
         this.index = index;
         this.indexSet = true;
+        return this;
+    }
+    @Override
+    public long getSubtype() {
+        return 0x1L;
+    }
+
+    @Override
+    public OFType getType() {
+        return OFType.EXPERIMENTER;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_10;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFBsnGetIpMaskRequest.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 //

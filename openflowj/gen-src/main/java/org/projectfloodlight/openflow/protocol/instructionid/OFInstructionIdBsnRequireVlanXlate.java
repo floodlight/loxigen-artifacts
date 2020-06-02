@@ -28,9 +28,9 @@ import org.projectfloodlight.openflow.exceptions.*;
 import io.netty.buffer.ByteBuf;
 
 public interface OFInstructionIdBsnRequireVlanXlate extends OFObject, OFInstructionIdBsn {
-    OFInstructionType getType();
     long getExperimenter();
     long getSubtype();
+    OFInstructionType getType();
     OFVersion getVersion();
 
     void writeTo(ByteBuf channelBuffer);
@@ -38,9 +38,9 @@ public interface OFInstructionIdBsnRequireVlanXlate extends OFObject, OFInstruct
     Builder createBuilder();
     public interface Builder extends OFInstructionIdBsn.Builder {
         OFInstructionIdBsnRequireVlanXlate build();
-        OFInstructionType getType();
         long getExperimenter();
         long getSubtype();
+        OFInstructionType getType();
         OFVersion getVersion();
     }
 }

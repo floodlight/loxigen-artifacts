@@ -30,8 +30,8 @@ import java.util.List;
 import io.netty.buffer.ByteBuf;
 
 public interface OFTableFeaturePropApplySetfieldMiss extends OFObject, OFTableFeatureProp {
-    int getType();
     List<U32> getOxmIds();
+    int getType();
     OFVersion getVersion();
 
     void writeTo(ByteBuf channelBuffer);
@@ -39,9 +39,9 @@ public interface OFTableFeaturePropApplySetfieldMiss extends OFObject, OFTableFe
     Builder createBuilder();
     public interface Builder extends OFTableFeatureProp.Builder {
         OFTableFeaturePropApplySetfieldMiss build();
-        int getType();
         List<U32> getOxmIds();
         Builder setOxmIds(List<U32> oxmIds);
+        int getType();
         OFVersion getVersion();
     }
 }

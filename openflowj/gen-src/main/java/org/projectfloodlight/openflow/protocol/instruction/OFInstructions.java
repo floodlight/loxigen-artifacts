@@ -33,13 +33,6 @@ public interface OFInstructions {
 
     OFInstructionApplyActions.Builder buildApplyActions() throws UnsupportedOperationException;
     OFInstructionApplyActions applyActions(List<OFAction> actions);
-    OFInstructionClearActions clearActions();
-    OFInstructionGotoTable.Builder buildGotoTable() throws UnsupportedOperationException;
-    OFInstructionGotoTable gotoTable(TableId tableId);
-    OFInstructionWriteActions.Builder buildWriteActions() throws UnsupportedOperationException;
-    OFInstructionWriteActions writeActions(List<OFAction> actions);
-    OFInstructionWriteMetadata.Builder buildWriteMetadata() throws UnsupportedOperationException;
-    OFInstructionWriteMetadata writeMetadata(U64 metadata, U64 metadataMask);
     OFInstructionBsnArpOffload bsnArpOffload();
     OFInstructionBsnAutoNegotiation bsnAutoNegotiation();
     OFInstructionBsnDeny bsnDeny();
@@ -59,10 +52,17 @@ public interface OFInstructions {
     OFInstructionBsnPrioritizePdus bsnPrioritizePdus();
     OFInstructionBsnRequireVlanXlate bsnRequireVlanXlate();
     OFInstructionBsnSpanDestination bsnSpanDestination();
+    OFInstructionClearActions clearActions();
+    OFInstructionGotoTable.Builder buildGotoTable() throws UnsupportedOperationException;
+    OFInstructionGotoTable gotoTable(TableId tableId);
     OFInstructionMeter.Builder buildMeter() throws UnsupportedOperationException;
     OFInstructionMeter meter(long meterId);
     OFInstructionStatTrigger.Builder buildStatTrigger() throws UnsupportedOperationException;
     OFInstructionStatTrigger statTrigger(Set<OFStatTriggerFlags> flags, OFOxsList thresholds);
+    OFInstructionWriteActions.Builder buildWriteActions() throws UnsupportedOperationException;
+    OFInstructionWriteActions writeActions(List<OFAction> actions);
+    OFInstructionWriteMetadata.Builder buildWriteMetadata() throws UnsupportedOperationException;
+    OFInstructionWriteMetadata writeMetadata(U64 metadata, U64 metadataMask);
 
     OFMessageReader<OFInstruction> getReader();
     OFVersion getVersion();

@@ -55,13 +55,13 @@ class OFAsyncConfigPropFlowStatsMasterVer15 implements OFAsyncConfigPropFlowStat
 
     // Accessors for OF message fields
     @Override
-    public int getType() {
-        return 0xd;
+    public long getMask() {
+        return mask;
     }
 
     @Override
-    public long getMask() {
-        return mask;
+    public int getType() {
+        return 0xd;
     }
 
     @Override
@@ -87,11 +87,6 @@ class OFAsyncConfigPropFlowStatsMasterVer15 implements OFAsyncConfigPropFlowStat
         }
 
     @Override
-    public int getType() {
-        return 0xd;
-    }
-
-    @Override
     public long getMask() {
         return mask;
     }
@@ -102,6 +97,11 @@ class OFAsyncConfigPropFlowStatsMasterVer15 implements OFAsyncConfigPropFlowStat
         this.maskSet = true;
         return this;
     }
+    @Override
+    public int getType() {
+        return 0xd;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_15;
@@ -127,11 +127,6 @@ class OFAsyncConfigPropFlowStatsMasterVer15 implements OFAsyncConfigPropFlowStat
         private long mask;
 
     @Override
-    public int getType() {
-        return 0xd;
-    }
-
-    @Override
     public long getMask() {
         return mask;
     }
@@ -142,6 +137,11 @@ class OFAsyncConfigPropFlowStatsMasterVer15 implements OFAsyncConfigPropFlowStat
         this.maskSet = true;
         return this;
     }
+    @Override
+    public int getType() {
+        return 0xd;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_15;

@@ -58,8 +58,8 @@ class OFMeterBandDropVer13 implements OFMeterBandDrop {
 
     // Accessors for OF message fields
     @Override
-    public int getType() {
-        return 0x1;
+    public long getBurstSize() {
+        return burstSize;
     }
 
     @Override
@@ -68,8 +68,8 @@ class OFMeterBandDropVer13 implements OFMeterBandDrop {
     }
 
     @Override
-    public long getBurstSize() {
-        return burstSize;
+    public int getType() {
+        return 0x1;
     }
 
     @Override
@@ -97,10 +97,16 @@ class OFMeterBandDropVer13 implements OFMeterBandDrop {
         }
 
     @Override
-    public int getType() {
-        return 0x1;
+    public long getBurstSize() {
+        return burstSize;
     }
 
+    @Override
+    public OFMeterBandDrop.Builder setBurstSize(long burstSize) {
+        this.burstSize = burstSize;
+        this.burstSizeSet = true;
+        return this;
+    }
     @Override
     public long getRate() {
         return rate;
@@ -113,16 +119,10 @@ class OFMeterBandDropVer13 implements OFMeterBandDrop {
         return this;
     }
     @Override
-    public long getBurstSize() {
-        return burstSize;
+    public int getType() {
+        return 0x1;
     }
 
-    @Override
-    public OFMeterBandDrop.Builder setBurstSize(long burstSize) {
-        this.burstSize = burstSize;
-        this.burstSizeSet = true;
-        return this;
-    }
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_13;
@@ -152,10 +152,16 @@ class OFMeterBandDropVer13 implements OFMeterBandDrop {
         private long burstSize;
 
     @Override
-    public int getType() {
-        return 0x1;
+    public long getBurstSize() {
+        return burstSize;
     }
 
+    @Override
+    public OFMeterBandDrop.Builder setBurstSize(long burstSize) {
+        this.burstSize = burstSize;
+        this.burstSizeSet = true;
+        return this;
+    }
     @Override
     public long getRate() {
         return rate;
@@ -168,16 +174,10 @@ class OFMeterBandDropVer13 implements OFMeterBandDrop {
         return this;
     }
     @Override
-    public long getBurstSize() {
-        return burstSize;
+    public int getType() {
+        return 0x1;
     }
 
-    @Override
-    public OFMeterBandDrop.Builder setBurstSize(long burstSize) {
-        this.burstSize = burstSize;
-        this.burstSizeSet = true;
-        return this;
-    }
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_13;

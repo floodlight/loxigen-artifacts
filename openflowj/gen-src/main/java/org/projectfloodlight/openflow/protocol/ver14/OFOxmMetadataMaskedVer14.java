@@ -64,6 +64,11 @@ class OFOxmMetadataMaskedVer14 implements OFOxmMetadataMasked {
 
     // Accessors for OF message fields
     @Override
+    public OFMetadata getMask() {
+        return mask;
+    }
+
+    @Override
     public long getTypeLen() {
         return 0x80000510L;
     }
@@ -71,21 +76,6 @@ class OFOxmMetadataMaskedVer14 implements OFOxmMetadataMasked {
     @Override
     public OFMetadata getValue() {
         return value;
-    }
-
-    @Override
-    public OFMetadata getMask() {
-        return mask;
-    }
-
-    @Override
-    public MatchField<OFMetadata> getMatchField() {
-        return MatchField.METADATA;
-    }
-
-    @Override
-    public boolean isMasked() {
-        return true;
     }
 
     public OFOxm<OFMetadata> getCanonical() {
@@ -96,6 +86,16 @@ class OFOxmMetadataMaskedVer14 implements OFOxmMetadataMasked {
         } else {
             return this;
         }
+    }
+
+    @Override
+    public boolean isMasked() {
+        return true;
+    }
+
+    @Override
+    public MatchField<OFMetadata> getMatchField() {
+        return MatchField.METADATA;
     }
 
     @Override
@@ -123,6 +123,17 @@ class OFOxmMetadataMaskedVer14 implements OFOxmMetadataMasked {
         }
 
     @Override
+    public OFMetadata getMask() {
+        return mask;
+    }
+
+    @Override
+    public OFOxmMetadataMasked.Builder setMask(OFMetadata mask) {
+        this.mask = mask;
+        this.maskSet = true;
+        return this;
+    }
+    @Override
     public long getTypeLen() {
         return 0x80000510L;
     }
@@ -139,19 +150,8 @@ class OFOxmMetadataMaskedVer14 implements OFOxmMetadataMasked {
         return this;
     }
     @Override
-    public OFMetadata getMask() {
-        return mask;
-    }
-
-    @Override
-    public OFOxmMetadataMasked.Builder setMask(OFMetadata mask) {
-        this.mask = mask;
-        this.maskSet = true;
-        return this;
-    }
-    @Override
-    public MatchField<OFMetadata> getMatchField() {
-        return MatchField.METADATA;
+    public OFOxm<OFMetadata> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.4");
     }
 
     @Override
@@ -160,8 +160,8 @@ class OFOxmMetadataMaskedVer14 implements OFOxmMetadataMasked {
     }
 
     @Override
-    public OFOxm<OFMetadata> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.4");
+    public MatchField<OFMetadata> getMatchField() {
+        return MatchField.METADATA;
     }
 
     @Override
@@ -197,6 +197,17 @@ class OFOxmMetadataMaskedVer14 implements OFOxmMetadataMasked {
         private OFMetadata mask;
 
     @Override
+    public OFMetadata getMask() {
+        return mask;
+    }
+
+    @Override
+    public OFOxmMetadataMasked.Builder setMask(OFMetadata mask) {
+        this.mask = mask;
+        this.maskSet = true;
+        return this;
+    }
+    @Override
     public long getTypeLen() {
         return 0x80000510L;
     }
@@ -213,19 +224,8 @@ class OFOxmMetadataMaskedVer14 implements OFOxmMetadataMasked {
         return this;
     }
     @Override
-    public OFMetadata getMask() {
-        return mask;
-    }
-
-    @Override
-    public OFOxmMetadataMasked.Builder setMask(OFMetadata mask) {
-        this.mask = mask;
-        this.maskSet = true;
-        return this;
-    }
-    @Override
-    public MatchField<OFMetadata> getMatchField() {
-        return MatchField.METADATA;
+    public OFOxm<OFMetadata> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.4");
     }
 
     @Override
@@ -234,8 +234,8 @@ class OFOxmMetadataMaskedVer14 implements OFOxmMetadataMasked {
     }
 
     @Override
-    public OFOxm<OFMetadata> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.4");
+    public MatchField<OFMetadata> getMatchField() {
+        return MatchField.METADATA;
     }
 
     @Override

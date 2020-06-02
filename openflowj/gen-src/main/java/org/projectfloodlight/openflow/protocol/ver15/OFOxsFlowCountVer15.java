@@ -67,16 +67,6 @@ class OFOxsFlowCountVer15 implements OFOxsFlowCount {
         return value;
     }
 
-    @Override
-    public StatField<U32> getStatField() {
-        return StatField.FLOW_COUNT;
-    }
-
-    @Override
-    public boolean isMasked() {
-        return false;
-    }
-
     public OFOxs<U32> getCanonical() {
         // exact match OXM is always canonical
         return this;
@@ -85,6 +75,16 @@ class OFOxsFlowCountVer15 implements OFOxsFlowCount {
     @Override
     public U32 getMask()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property mask not supported in version 1.5");
+    }
+
+    @Override
+    public boolean isMasked() {
+        return false;
+    }
+
+    @Override
+    public StatField<U32> getStatField() {
+        return StatField.FLOW_COUNT;
     }
 
     @Override
@@ -126,8 +126,13 @@ class OFOxsFlowCountVer15 implements OFOxsFlowCount {
         return this;
     }
     @Override
-    public StatField<U32> getStatField() {
-        return StatField.FLOW_COUNT;
+    public OFOxs<U32> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.5");
+    }
+
+    @Override
+    public U32 getMask()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property mask not supported in version 1.5");
     }
 
     @Override
@@ -136,13 +141,8 @@ class OFOxsFlowCountVer15 implements OFOxsFlowCount {
     }
 
     @Override
-    public OFOxs<U32> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.5");
-    }
-
-    @Override
-    public U32 getMask()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property mask not supported in version 1.5");
+    public StatField<U32> getStatField() {
+        return StatField.FLOW_COUNT;
     }
 
     @Override
@@ -188,8 +188,13 @@ class OFOxsFlowCountVer15 implements OFOxsFlowCount {
         return this;
     }
     @Override
-    public StatField<U32> getStatField() {
-        return StatField.FLOW_COUNT;
+    public OFOxs<U32> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.5");
+    }
+
+    @Override
+    public U32 getMask()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property mask not supported in version 1.5");
     }
 
     @Override
@@ -198,13 +203,8 @@ class OFOxsFlowCountVer15 implements OFOxsFlowCount {
     }
 
     @Override
-    public OFOxs<U32> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.5");
-    }
-
-    @Override
-    public U32 getMask()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property mask not supported in version 1.5");
+    public StatField<U32> getStatField() {
+        return StatField.FLOW_COUNT;
     }
 
     @Override

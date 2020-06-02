@@ -28,12 +28,12 @@ import org.projectfloodlight.openflow.exceptions.*;
 import io.netty.buffer.ByteBuf;
 
 public interface OFOxmArpOpMasked extends OFObject, OFOxm<ArpOpcode> {
+    ArpOpcode getMask();
     long getTypeLen();
     ArpOpcode getValue();
-    ArpOpcode getMask();
-    MatchField<ArpOpcode> getMatchField();
-    boolean isMasked();
     OFOxm<ArpOpcode> getCanonical();
+    boolean isMasked();
+    MatchField<ArpOpcode> getMatchField();
     OFVersion getVersion();
 
     void writeTo(ByteBuf channelBuffer);
@@ -41,14 +41,14 @@ public interface OFOxmArpOpMasked extends OFObject, OFOxm<ArpOpcode> {
     Builder createBuilder();
     public interface Builder extends OFOxm.Builder<ArpOpcode> {
         OFOxmArpOpMasked build();
+        ArpOpcode getMask();
+        Builder setMask(ArpOpcode mask);
         long getTypeLen();
         ArpOpcode getValue();
         Builder setValue(ArpOpcode value);
-        ArpOpcode getMask();
-        Builder setMask(ArpOpcode mask);
-        MatchField<ArpOpcode> getMatchField();
-        boolean isMasked();
         OFOxm<ArpOpcode> getCanonical();
+        boolean isMasked();
+        MatchField<ArpOpcode> getMatchField();
         OFVersion getVersion();
     }
 }

@@ -65,13 +65,13 @@ class OFBsnVlanCounterStatsEntryVer13 implements OFBsnVlanCounterStatsEntry {
 
     // Accessors for OF message fields
     @Override
-    public int getVlanVid() {
-        return vlanVid;
+    public List<U64> getValues() {
+        return values;
     }
 
     @Override
-    public List<U64> getValues() {
-        return values;
+    public int getVlanVid() {
+        return vlanVid;
     }
 
     @Override
@@ -99,17 +99,6 @@ class OFBsnVlanCounterStatsEntryVer13 implements OFBsnVlanCounterStatsEntry {
         }
 
     @Override
-    public int getVlanVid() {
-        return vlanVid;
-    }
-
-    @Override
-    public OFBsnVlanCounterStatsEntry.Builder setVlanVid(int vlanVid) {
-        this.vlanVid = vlanVid;
-        this.vlanVidSet = true;
-        return this;
-    }
-    @Override
     public List<U64> getValues() {
         return values;
     }
@@ -118,6 +107,17 @@ class OFBsnVlanCounterStatsEntryVer13 implements OFBsnVlanCounterStatsEntry {
     public OFBsnVlanCounterStatsEntry.Builder setValues(List<U64> values) {
         this.values = values;
         this.valuesSet = true;
+        return this;
+    }
+    @Override
+    public int getVlanVid() {
+        return vlanVid;
+    }
+
+    @Override
+    public OFBsnVlanCounterStatsEntry.Builder setVlanVid(int vlanVid) {
+        this.vlanVid = vlanVid;
+        this.vlanVidSet = true;
         return this;
     }
     @Override
@@ -151,17 +151,6 @@ class OFBsnVlanCounterStatsEntryVer13 implements OFBsnVlanCounterStatsEntry {
         private List<U64> values;
 
     @Override
-    public int getVlanVid() {
-        return vlanVid;
-    }
-
-    @Override
-    public OFBsnVlanCounterStatsEntry.Builder setVlanVid(int vlanVid) {
-        this.vlanVid = vlanVid;
-        this.vlanVidSet = true;
-        return this;
-    }
-    @Override
     public List<U64> getValues() {
         return values;
     }
@@ -170,6 +159,17 @@ class OFBsnVlanCounterStatsEntryVer13 implements OFBsnVlanCounterStatsEntry {
     public OFBsnVlanCounterStatsEntry.Builder setValues(List<U64> values) {
         this.values = values;
         this.valuesSet = true;
+        return this;
+    }
+    @Override
+    public int getVlanVid() {
+        return vlanVid;
+    }
+
+    @Override
+    public OFBsnVlanCounterStatsEntry.Builder setVlanVid(int vlanVid) {
+        this.vlanVid = vlanVid;
+        this.vlanVidSet = true;
         return this;
     }
     @Override

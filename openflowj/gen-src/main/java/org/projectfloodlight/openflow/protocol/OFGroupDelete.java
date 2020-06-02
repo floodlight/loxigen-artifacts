@@ -29,35 +29,35 @@ import java.util.List;
 import io.netty.buffer.ByteBuf;
 
 public interface OFGroupDelete extends OFObject, OFGroupMod {
-    OFVersion getVersion();
-    OFType getType();
-    long getXid();
-    OFGroupModCommand getCommand();
-    OFGroupType getGroupType();
-    OFGroup getGroup();
     List<OFBucket> getBuckets();
+    OFGroupModCommand getCommand();
     OFGroupBucket getCommandBucketId() throws UnsupportedOperationException;
+    OFGroup getGroup();
+    OFGroupType getGroupType();
     List<OFGroupProp> getProperties() throws UnsupportedOperationException;
+    OFType getType();
+    OFVersion getVersion();
+    long getXid();
 
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();
     public interface Builder extends OFGroupMod.Builder {
         OFGroupDelete build();
-        OFVersion getVersion();
-        OFType getType();
-        long getXid();
-        Builder setXid(long xid);
-        OFGroupModCommand getCommand();
-        OFGroupType getGroupType();
-        Builder setGroupType(OFGroupType groupType);
-        OFGroup getGroup();
-        Builder setGroup(OFGroup group);
         List<OFBucket> getBuckets();
         Builder setBuckets(List<OFBucket> buckets);
+        OFGroupModCommand getCommand();
         OFGroupBucket getCommandBucketId() throws UnsupportedOperationException;
         Builder setCommandBucketId(OFGroupBucket commandBucketId) throws UnsupportedOperationException;
+        OFGroup getGroup();
+        Builder setGroup(OFGroup group);
+        OFGroupType getGroupType();
+        Builder setGroupType(OFGroupType groupType);
         List<OFGroupProp> getProperties() throws UnsupportedOperationException;
         Builder setProperties(List<OFGroupProp> properties) throws UnsupportedOperationException;
+        OFType getType();
+        OFVersion getVersion();
+        long getXid();
+        Builder setXid(long xid);
     }
 }

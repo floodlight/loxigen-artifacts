@@ -58,6 +58,11 @@ class OFOxmPacketTypeMaskedVer15 implements OFOxmPacketTypeMasked {
 
     // Accessors for OF message fields
     @Override
+    public PacketType getMask() {
+        return mask;
+    }
+
+    @Override
     public long getTypeLen() {
         return 0x80005908L;
     }
@@ -65,21 +70,6 @@ class OFOxmPacketTypeMaskedVer15 implements OFOxmPacketTypeMasked {
     @Override
     public PacketType getValue() {
         return value;
-    }
-
-    @Override
-    public PacketType getMask() {
-        return mask;
-    }
-
-    @Override
-    public MatchField<PacketType> getMatchField() {
-        return MatchField.PACKET_TYPE;
-    }
-
-    @Override
-    public boolean isMasked() {
-        return true;
     }
 
     public OFOxm<PacketType> getCanonical() {
@@ -90,6 +80,16 @@ class OFOxmPacketTypeMaskedVer15 implements OFOxmPacketTypeMasked {
         } else {
             return this;
         }
+    }
+
+    @Override
+    public boolean isMasked() {
+        return true;
+    }
+
+    @Override
+    public MatchField<PacketType> getMatchField() {
+        return MatchField.PACKET_TYPE;
     }
 
     @Override
@@ -117,6 +117,17 @@ class OFOxmPacketTypeMaskedVer15 implements OFOxmPacketTypeMasked {
         }
 
     @Override
+    public PacketType getMask() {
+        return mask;
+    }
+
+    @Override
+    public OFOxmPacketTypeMasked.Builder setMask(PacketType mask) {
+        this.mask = mask;
+        this.maskSet = true;
+        return this;
+    }
+    @Override
     public long getTypeLen() {
         return 0x80005908L;
     }
@@ -133,19 +144,8 @@ class OFOxmPacketTypeMaskedVer15 implements OFOxmPacketTypeMasked {
         return this;
     }
     @Override
-    public PacketType getMask() {
-        return mask;
-    }
-
-    @Override
-    public OFOxmPacketTypeMasked.Builder setMask(PacketType mask) {
-        this.mask = mask;
-        this.maskSet = true;
-        return this;
-    }
-    @Override
-    public MatchField<PacketType> getMatchField() {
-        return MatchField.PACKET_TYPE;
+    public OFOxm<PacketType> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.5");
     }
 
     @Override
@@ -154,8 +154,8 @@ class OFOxmPacketTypeMaskedVer15 implements OFOxmPacketTypeMasked {
     }
 
     @Override
-    public OFOxm<PacketType> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.5");
+    public MatchField<PacketType> getMatchField() {
+        return MatchField.PACKET_TYPE;
     }
 
     @Override
@@ -191,6 +191,17 @@ class OFOxmPacketTypeMaskedVer15 implements OFOxmPacketTypeMasked {
         private PacketType mask;
 
     @Override
+    public PacketType getMask() {
+        return mask;
+    }
+
+    @Override
+    public OFOxmPacketTypeMasked.Builder setMask(PacketType mask) {
+        this.mask = mask;
+        this.maskSet = true;
+        return this;
+    }
+    @Override
     public long getTypeLen() {
         return 0x80005908L;
     }
@@ -207,19 +218,8 @@ class OFOxmPacketTypeMaskedVer15 implements OFOxmPacketTypeMasked {
         return this;
     }
     @Override
-    public PacketType getMask() {
-        return mask;
-    }
-
-    @Override
-    public OFOxmPacketTypeMasked.Builder setMask(PacketType mask) {
-        this.mask = mask;
-        this.maskSet = true;
-        return this;
-    }
-    @Override
-    public MatchField<PacketType> getMatchField() {
-        return MatchField.PACKET_TYPE;
+    public OFOxm<PacketType> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.5");
     }
 
     @Override
@@ -228,8 +228,8 @@ class OFOxmPacketTypeMaskedVer15 implements OFOxmPacketTypeMasked {
     }
 
     @Override
-    public OFOxm<PacketType> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.5");
+    public MatchField<PacketType> getMatchField() {
+        return MatchField.PACKET_TYPE;
     }
 
     @Override

@@ -56,8 +56,8 @@ class OFAsyncGetRequestVer13 implements OFAsyncGetRequest {
 
     // Accessors for OF message fields
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_13;
+    public List<OFAsyncConfigProp> getProperties()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property properties not supported in version 1.3");
     }
 
     @Override
@@ -66,13 +66,13 @@ class OFAsyncGetRequestVer13 implements OFAsyncGetRequest {
     }
 
     @Override
-    public long getXid() {
-        return xid;
+    public OFVersion getVersion() {
+        return OFVersion.OF_13;
     }
 
     @Override
-    public List<OFAsyncConfigProp> getProperties()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property properties not supported in version 1.3");
+    public long getXid() {
+        return xid;
     }
 
 
@@ -93,13 +93,22 @@ class OFAsyncGetRequestVer13 implements OFAsyncGetRequest {
         }
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_13;
+    public List<OFAsyncConfigProp> getProperties()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property properties not supported in version 1.3");
     }
 
     @Override
+    public OFAsyncGetRequest.Builder setProperties(List<OFAsyncConfigProp> properties) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property properties not supported in version 1.3");
+    }
+    @Override
     public OFType getType() {
         return OFType.GET_ASYNC_REQUEST;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_13;
     }
 
     @Override
@@ -112,15 +121,6 @@ class OFAsyncGetRequestVer13 implements OFAsyncGetRequest {
         this.xid = xid;
         this.xidSet = true;
         return this;
-    }
-    @Override
-    public List<OFAsyncConfigProp> getProperties()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property properties not supported in version 1.3");
-    }
-
-    @Override
-    public OFAsyncGetRequest.Builder setProperties(List<OFAsyncConfigProp> properties) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property properties not supported in version 1.3");
     }
 
 
@@ -142,13 +142,22 @@ class OFAsyncGetRequestVer13 implements OFAsyncGetRequest {
         private long xid;
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_13;
+    public List<OFAsyncConfigProp> getProperties()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property properties not supported in version 1.3");
     }
 
     @Override
+    public OFAsyncGetRequest.Builder setProperties(List<OFAsyncConfigProp> properties) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property properties not supported in version 1.3");
+    }
+    @Override
     public OFType getType() {
         return OFType.GET_ASYNC_REQUEST;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_13;
     }
 
     @Override
@@ -161,15 +170,6 @@ class OFAsyncGetRequestVer13 implements OFAsyncGetRequest {
         this.xid = xid;
         this.xidSet = true;
         return this;
-    }
-    @Override
-    public List<OFAsyncConfigProp> getProperties()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property properties not supported in version 1.3");
-    }
-
-    @Override
-    public OFAsyncGetRequest.Builder setProperties(List<OFAsyncConfigProp> properties) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property properties not supported in version 1.3");
     }
 //
         @Override

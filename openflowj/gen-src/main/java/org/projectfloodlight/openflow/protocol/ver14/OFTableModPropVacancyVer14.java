@@ -66,6 +66,11 @@ class OFTableModPropVacancyVer14 implements OFTableModPropVacancy {
     }
 
     @Override
+    public short getVacancy() {
+        return vacancy;
+    }
+
+    @Override
     public short getVacancyDown() {
         return vacancyDown;
     }
@@ -73,11 +78,6 @@ class OFTableModPropVacancyVer14 implements OFTableModPropVacancy {
     @Override
     public short getVacancyUp() {
         return vacancyUp;
-    }
-
-    @Override
-    public short getVacancy() {
-        return vacancy;
     }
 
     @Override
@@ -112,6 +112,17 @@ class OFTableModPropVacancyVer14 implements OFTableModPropVacancy {
     }
 
     @Override
+    public short getVacancy() {
+        return vacancy;
+    }
+
+    @Override
+    public OFTableModPropVacancy.Builder setVacancy(short vacancy) {
+        this.vacancy = vacancy;
+        this.vacancySet = true;
+        return this;
+    }
+    @Override
     public short getVacancyDown() {
         return vacancyDown;
     }
@@ -131,17 +142,6 @@ class OFTableModPropVacancyVer14 implements OFTableModPropVacancy {
     public OFTableModPropVacancy.Builder setVacancyUp(short vacancyUp) {
         this.vacancyUp = vacancyUp;
         this.vacancyUpSet = true;
-        return this;
-    }
-    @Override
-    public short getVacancy() {
-        return vacancy;
-    }
-
-    @Override
-    public OFTableModPropVacancy.Builder setVacancy(short vacancy) {
-        this.vacancy = vacancy;
-        this.vacancySet = true;
         return this;
     }
     @Override
@@ -182,6 +182,17 @@ class OFTableModPropVacancyVer14 implements OFTableModPropVacancy {
     }
 
     @Override
+    public short getVacancy() {
+        return vacancy;
+    }
+
+    @Override
+    public OFTableModPropVacancy.Builder setVacancy(short vacancy) {
+        this.vacancy = vacancy;
+        this.vacancySet = true;
+        return this;
+    }
+    @Override
     public short getVacancyDown() {
         return vacancyDown;
     }
@@ -201,17 +212,6 @@ class OFTableModPropVacancyVer14 implements OFTableModPropVacancy {
     public OFTableModPropVacancy.Builder setVacancyUp(short vacancyUp) {
         this.vacancyUp = vacancyUp;
         this.vacancyUpSet = true;
-        return this;
-    }
-    @Override
-    public short getVacancy() {
-        return vacancy;
-    }
-
-    @Override
-    public OFTableModPropVacancy.Builder setVacancy(short vacancy) {
-        this.vacancy = vacancy;
-        this.vacancySet = true;
         return this;
     }
     @Override

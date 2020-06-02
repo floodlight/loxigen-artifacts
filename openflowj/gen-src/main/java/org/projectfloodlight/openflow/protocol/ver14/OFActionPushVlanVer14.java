@@ -58,13 +58,13 @@ class OFActionPushVlanVer14 implements OFActionPushVlan {
 
     // Accessors for OF message fields
     @Override
-    public OFActionType getType() {
-        return OFActionType.PUSH_VLAN;
+    public EthType getEthertype() {
+        return ethertype;
     }
 
     @Override
-    public EthType getEthertype() {
-        return ethertype;
+    public OFActionType getType() {
+        return OFActionType.PUSH_VLAN;
     }
 
     @Override
@@ -90,11 +90,6 @@ class OFActionPushVlanVer14 implements OFActionPushVlan {
         }
 
     @Override
-    public OFActionType getType() {
-        return OFActionType.PUSH_VLAN;
-    }
-
-    @Override
     public EthType getEthertype() {
         return ethertype;
     }
@@ -105,6 +100,11 @@ class OFActionPushVlanVer14 implements OFActionPushVlan {
         this.ethertypeSet = true;
         return this;
     }
+    @Override
+    public OFActionType getType() {
+        return OFActionType.PUSH_VLAN;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_14;
@@ -132,11 +132,6 @@ class OFActionPushVlanVer14 implements OFActionPushVlan {
         private EthType ethertype;
 
     @Override
-    public OFActionType getType() {
-        return OFActionType.PUSH_VLAN;
-    }
-
-    @Override
     public EthType getEthertype() {
         return ethertype;
     }
@@ -147,6 +142,11 @@ class OFActionPushVlanVer14 implements OFActionPushVlan {
         this.ethertypeSet = true;
         return this;
     }
+    @Override
+    public OFActionType getType() {
+        return OFActionType.PUSH_VLAN;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_14;

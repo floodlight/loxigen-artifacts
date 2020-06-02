@@ -52,11 +52,6 @@ class OFActionNiciraDecTtlVer10 implements OFActionNiciraDecTtl {
 
     // Accessors for OF message fields
     @Override
-    public OFActionType getType() {
-        return OFActionType.EXPERIMENTER;
-    }
-
-    @Override
     public long getExperimenter() {
         return 0x2320L;
     }
@@ -64,6 +59,11 @@ class OFActionNiciraDecTtlVer10 implements OFActionNiciraDecTtl {
     @Override
     public int getSubtype() {
         return 0x12;
+    }
+
+    @Override
+    public OFActionType getType() {
+        return OFActionType.EXPERIMENTER;
     }
 
     @Override

@@ -30,10 +30,10 @@ import io.netty.buffer.ByteBuf;
 public interface OFOxmArpSpa extends OFObject, OFOxm<IPv4Address> {
     long getTypeLen();
     IPv4Address getValue();
-    MatchField<IPv4Address> getMatchField();
-    boolean isMasked();
     OFOxm<IPv4Address> getCanonical();
     IPv4Address getMask();
+    boolean isMasked();
+    MatchField<IPv4Address> getMatchField();
     OFVersion getVersion();
 
     void writeTo(ByteBuf channelBuffer);
@@ -44,10 +44,10 @@ public interface OFOxmArpSpa extends OFObject, OFOxm<IPv4Address> {
         long getTypeLen();
         IPv4Address getValue();
         Builder setValue(IPv4Address value);
-        MatchField<IPv4Address> getMatchField();
-        boolean isMasked();
         OFOxm<IPv4Address> getCanonical();
         IPv4Address getMask();
+        boolean isMasked();
+        MatchField<IPv4Address> getMatchField();
         OFVersion getVersion();
     }
 }

@@ -70,6 +70,10 @@ public class OFActionIdsVer15 implements OFActionIds {
         return OFActionIdGroupVer15.INSTANCE;
     }
 
+    public OFActionIdMeter meter() {
+        return OFActionIdMeterVer15.INSTANCE;
+    }
+
     public OFActionIdNiciraDecTtl niciraDecTtl() {
         return OFActionIdNiciraDecTtlVer15.INSTANCE;
     }
@@ -116,10 +120,6 @@ public class OFActionIdsVer15 implements OFActionIds {
 
     public OFActionIdSetQueue setQueue() {
         return OFActionIdSetQueueVer15.INSTANCE;
-    }
-
-    public OFActionIdMeter meter() {
-        return OFActionIdMeterVer15.INSTANCE;
     }
 
     public OFMessageReader<OFActionId> getReader() {

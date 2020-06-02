@@ -7,24 +7,24 @@
 # Do not modify
 
 import const
-import port_desc_prop
+import action
+import action_id
+import async_config_prop
 import bsn_tlv
-import meter_band
-import table_mod_prop
-import instruction
-import queue_desc_prop
-import oxm
 import bundle_prop
 import common
+import instruction
 import instruction_id
-import action
-import role_prop
 import message
-import queue_stats_prop
-import port_stats_prop
+import meter_band
+import oxm
+import port_desc_prop
 import port_mod_prop
-import async_config_prop
-import action_id
+import port_stats_prop
+import queue_desc_prop
+import queue_stats_prop
+import role_prop
+import table_mod_prop
 from const import *
 from common import *
 from loxi import ProtocolError

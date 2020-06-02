@@ -76,33 +76,13 @@ class OFBsnPduTxRequestVer13 implements OFBsnPduTxRequest {
 
     // Accessors for OF message fields
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_13;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.EXPERIMENTER;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
+    public byte[] getData() {
+        return data;
     }
 
     @Override
     public long getExperimenter() {
         return 0x5c16c7L;
-    }
-
-    @Override
-    public long getSubtype() {
-        return 0x1fL;
-    }
-
-    @Override
-    public long getTxIntervalMs() {
-        return txIntervalMs;
     }
 
     @Override
@@ -116,8 +96,28 @@ class OFBsnPduTxRequestVer13 implements OFBsnPduTxRequest {
     }
 
     @Override
-    public byte[] getData() {
-        return data;
+    public long getSubtype() {
+        return 0x1fL;
+    }
+
+    @Override
+    public long getTxIntervalMs() {
+        return txIntervalMs;
+    }
+
+    @Override
+    public OFType getType() {
+        return OFType.EXPERIMENTER;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_13;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
     }
 
 
@@ -146,24 +146,14 @@ class OFBsnPduTxRequestVer13 implements OFBsnPduTxRequest {
         }
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_13;
+    public byte[] getData() {
+        return data;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.EXPERIMENTER;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFBsnPduTxRequest.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
+    public OFBsnPduTxRequest.Builder setData(byte[] data) {
+        this.data = data;
+        this.dataSet = true;
         return this;
     }
     @Override
@@ -171,22 +161,6 @@ class OFBsnPduTxRequestVer13 implements OFBsnPduTxRequest {
         return 0x5c16c7L;
     }
 
-    @Override
-    public long getSubtype() {
-        return 0x1fL;
-    }
-
-    @Override
-    public long getTxIntervalMs() {
-        return txIntervalMs;
-    }
-
-    @Override
-    public OFBsnPduTxRequest.Builder setTxIntervalMs(long txIntervalMs) {
-        this.txIntervalMs = txIntervalMs;
-        this.txIntervalMsSet = true;
-        return this;
-    }
     @Override
     public OFPort getPortNo() {
         return portNo;
@@ -210,14 +184,40 @@ class OFBsnPduTxRequestVer13 implements OFBsnPduTxRequest {
         return this;
     }
     @Override
-    public byte[] getData() {
-        return data;
+    public long getSubtype() {
+        return 0x1fL;
     }
 
     @Override
-    public OFBsnPduTxRequest.Builder setData(byte[] data) {
-        this.data = data;
-        this.dataSet = true;
+    public long getTxIntervalMs() {
+        return txIntervalMs;
+    }
+
+    @Override
+    public OFBsnPduTxRequest.Builder setTxIntervalMs(long txIntervalMs) {
+        this.txIntervalMs = txIntervalMs;
+        this.txIntervalMsSet = true;
+        return this;
+    }
+    @Override
+    public OFType getType() {
+        return OFType.EXPERIMENTER;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_13;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFBsnPduTxRequest.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 
@@ -260,24 +260,14 @@ class OFBsnPduTxRequestVer13 implements OFBsnPduTxRequest {
         private byte[] data;
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_13;
+    public byte[] getData() {
+        return data;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.EXPERIMENTER;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFBsnPduTxRequest.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
+    public OFBsnPduTxRequest.Builder setData(byte[] data) {
+        this.data = data;
+        this.dataSet = true;
         return this;
     }
     @Override
@@ -285,22 +275,6 @@ class OFBsnPduTxRequestVer13 implements OFBsnPduTxRequest {
         return 0x5c16c7L;
     }
 
-    @Override
-    public long getSubtype() {
-        return 0x1fL;
-    }
-
-    @Override
-    public long getTxIntervalMs() {
-        return txIntervalMs;
-    }
-
-    @Override
-    public OFBsnPduTxRequest.Builder setTxIntervalMs(long txIntervalMs) {
-        this.txIntervalMs = txIntervalMs;
-        this.txIntervalMsSet = true;
-        return this;
-    }
     @Override
     public OFPort getPortNo() {
         return portNo;
@@ -324,14 +298,40 @@ class OFBsnPduTxRequestVer13 implements OFBsnPduTxRequest {
         return this;
     }
     @Override
-    public byte[] getData() {
-        return data;
+    public long getSubtype() {
+        return 0x1fL;
     }
 
     @Override
-    public OFBsnPduTxRequest.Builder setData(byte[] data) {
-        this.data = data;
-        this.dataSet = true;
+    public long getTxIntervalMs() {
+        return txIntervalMs;
+    }
+
+    @Override
+    public OFBsnPduTxRequest.Builder setTxIntervalMs(long txIntervalMs) {
+        this.txIntervalMs = txIntervalMs;
+        this.txIntervalMsSet = true;
+        return this;
+    }
+    @Override
+    public OFType getType() {
+        return OFType.EXPERIMENTER;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_13;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFBsnPduTxRequest.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 //

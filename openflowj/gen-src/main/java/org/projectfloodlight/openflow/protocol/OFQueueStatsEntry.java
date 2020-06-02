@@ -29,14 +29,14 @@ import java.util.List;
 import io.netty.buffer.ByteBuf;
 
 public interface OFQueueStatsEntry extends OFObject {
+    long getDurationNsec() throws UnsupportedOperationException;
+    long getDurationSec() throws UnsupportedOperationException;
     OFPort getPortNo();
+    List<OFQueueStatsProp> getProperties() throws UnsupportedOperationException;
     long getQueueId();
     U64 getTxBytes();
-    U64 getTxPackets();
     U64 getTxErrors();
-    long getDurationSec() throws UnsupportedOperationException;
-    long getDurationNsec() throws UnsupportedOperationException;
-    List<OFQueueStatsProp> getProperties() throws UnsupportedOperationException;
+    U64 getTxPackets();
     OFVersion getVersion();
 
     void writeTo(ByteBuf channelBuffer);
@@ -44,22 +44,22 @@ public interface OFQueueStatsEntry extends OFObject {
     Builder createBuilder();
     public interface Builder  {
         OFQueueStatsEntry build();
+        long getDurationNsec() throws UnsupportedOperationException;
+        Builder setDurationNsec(long durationNsec) throws UnsupportedOperationException;
+        long getDurationSec() throws UnsupportedOperationException;
+        Builder setDurationSec(long durationSec) throws UnsupportedOperationException;
         OFPort getPortNo();
         Builder setPortNo(OFPort portNo);
+        List<OFQueueStatsProp> getProperties() throws UnsupportedOperationException;
+        Builder setProperties(List<OFQueueStatsProp> properties) throws UnsupportedOperationException;
         long getQueueId();
         Builder setQueueId(long queueId);
         U64 getTxBytes();
         Builder setTxBytes(U64 txBytes);
-        U64 getTxPackets();
-        Builder setTxPackets(U64 txPackets);
         U64 getTxErrors();
         Builder setTxErrors(U64 txErrors);
-        long getDurationSec() throws UnsupportedOperationException;
-        Builder setDurationSec(long durationSec) throws UnsupportedOperationException;
-        long getDurationNsec() throws UnsupportedOperationException;
-        Builder setDurationNsec(long durationNsec) throws UnsupportedOperationException;
-        List<OFQueueStatsProp> getProperties() throws UnsupportedOperationException;
-        Builder setProperties(List<OFQueueStatsProp> properties) throws UnsupportedOperationException;
+        U64 getTxPackets();
+        Builder setTxPackets(U64 txPackets);
         OFVersion getVersion();
     }
 }

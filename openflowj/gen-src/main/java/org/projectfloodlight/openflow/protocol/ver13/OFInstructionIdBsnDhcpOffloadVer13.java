@@ -52,11 +52,6 @@ class OFInstructionIdBsnDhcpOffloadVer13 implements OFInstructionIdBsnDhcpOffloa
 
     // Accessors for OF message fields
     @Override
-    public OFInstructionType getType() {
-        return OFInstructionType.EXPERIMENTER;
-    }
-
-    @Override
     public long getExperimenter() {
         return 0x5c16c7L;
     }
@@ -64,6 +59,11 @@ class OFInstructionIdBsnDhcpOffloadVer13 implements OFInstructionIdBsnDhcpOffloa
     @Override
     public long getSubtype() {
         return 0x2L;
+    }
+
+    @Override
+    public OFInstructionType getType() {
+        return OFInstructionType.EXPERIMENTER;
     }
 
     @Override

@@ -8,8 +8,8 @@
 
 import const
 import action
-import message
 import common
+import message
 from const import *
 from common import *
 from loxi import ProtocolError

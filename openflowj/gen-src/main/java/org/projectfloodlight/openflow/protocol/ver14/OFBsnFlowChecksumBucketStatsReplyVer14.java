@@ -72,28 +72,8 @@ class OFBsnFlowChecksumBucketStatsReplyVer14 implements OFBsnFlowChecksumBucketS
 
     // Accessors for OF message fields
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_14;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.STATS_REPLY;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFStatsType getStatsType() {
-        return OFStatsType.EXPERIMENTER;
-    }
-
-    @Override
-    public Set<OFStatsReplyFlags> getFlags() {
-        return flags;
+    public List<OFBsnFlowChecksumBucketStatsEntry> getEntries() {
+        return entries;
     }
 
     @Override
@@ -102,13 +82,33 @@ class OFBsnFlowChecksumBucketStatsReplyVer14 implements OFBsnFlowChecksumBucketS
     }
 
     @Override
+    public Set<OFStatsReplyFlags> getFlags() {
+        return flags;
+    }
+
+    @Override
+    public OFStatsType getStatsType() {
+        return OFStatsType.EXPERIMENTER;
+    }
+
+    @Override
     public long getSubtype() {
         return 0xaL;
     }
 
     @Override
-    public List<OFBsnFlowChecksumBucketStatsEntry> getEntries() {
-        return entries;
+    public OFType getType() {
+        return OFType.STATS_REPLY;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_14;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
     }
 
 
@@ -133,29 +133,19 @@ class OFBsnFlowChecksumBucketStatsReplyVer14 implements OFBsnFlowChecksumBucketS
         }
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_14;
+    public List<OFBsnFlowChecksumBucketStatsEntry> getEntries() {
+        return entries;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.STATS_REPLY;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFBsnFlowChecksumBucketStatsReply.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
+    public OFBsnFlowChecksumBucketStatsReply.Builder setEntries(List<OFBsnFlowChecksumBucketStatsEntry> entries) {
+        this.entries = entries;
+        this.entriesSet = true;
         return this;
     }
     @Override
-    public OFStatsType getStatsType() {
-        return OFStatsType.EXPERIMENTER;
+    public long getExperimenter() {
+        return 0x5c16c7L;
     }
 
     @Override
@@ -170,8 +160,8 @@ class OFBsnFlowChecksumBucketStatsReplyVer14 implements OFBsnFlowChecksumBucketS
         return this;
     }
     @Override
-    public long getExperimenter() {
-        return 0x5c16c7L;
+    public OFStatsType getStatsType() {
+        return OFStatsType.EXPERIMENTER;
     }
 
     @Override
@@ -180,14 +170,24 @@ class OFBsnFlowChecksumBucketStatsReplyVer14 implements OFBsnFlowChecksumBucketS
     }
 
     @Override
-    public List<OFBsnFlowChecksumBucketStatsEntry> getEntries() {
-        return entries;
+    public OFType getType() {
+        return OFType.STATS_REPLY;
     }
 
     @Override
-    public OFBsnFlowChecksumBucketStatsReply.Builder setEntries(List<OFBsnFlowChecksumBucketStatsEntry> entries) {
-        this.entries = entries;
-        this.entriesSet = true;
+    public OFVersion getVersion() {
+        return OFVersion.OF_14;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFBsnFlowChecksumBucketStatsReply.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 
@@ -222,29 +222,19 @@ class OFBsnFlowChecksumBucketStatsReplyVer14 implements OFBsnFlowChecksumBucketS
         private List<OFBsnFlowChecksumBucketStatsEntry> entries;
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_14;
+    public List<OFBsnFlowChecksumBucketStatsEntry> getEntries() {
+        return entries;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.STATS_REPLY;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFBsnFlowChecksumBucketStatsReply.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
+    public OFBsnFlowChecksumBucketStatsReply.Builder setEntries(List<OFBsnFlowChecksumBucketStatsEntry> entries) {
+        this.entries = entries;
+        this.entriesSet = true;
         return this;
     }
     @Override
-    public OFStatsType getStatsType() {
-        return OFStatsType.EXPERIMENTER;
+    public long getExperimenter() {
+        return 0x5c16c7L;
     }
 
     @Override
@@ -259,8 +249,8 @@ class OFBsnFlowChecksumBucketStatsReplyVer14 implements OFBsnFlowChecksumBucketS
         return this;
     }
     @Override
-    public long getExperimenter() {
-        return 0x5c16c7L;
+    public OFStatsType getStatsType() {
+        return OFStatsType.EXPERIMENTER;
     }
 
     @Override
@@ -269,14 +259,24 @@ class OFBsnFlowChecksumBucketStatsReplyVer14 implements OFBsnFlowChecksumBucketS
     }
 
     @Override
-    public List<OFBsnFlowChecksumBucketStatsEntry> getEntries() {
-        return entries;
+    public OFType getType() {
+        return OFType.STATS_REPLY;
     }
 
     @Override
-    public OFBsnFlowChecksumBucketStatsReply.Builder setEntries(List<OFBsnFlowChecksumBucketStatsEntry> entries) {
-        this.entries = entries;
-        this.entriesSet = true;
+    public OFVersion getVersion() {
+        return OFVersion.OF_14;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFBsnFlowChecksumBucketStatsReply.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 //

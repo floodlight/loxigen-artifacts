@@ -64,18 +64,8 @@ class OFBsnLuaNotificationVer13 implements OFBsnLuaNotification {
 
     // Accessors for OF message fields
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_13;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.EXPERIMENTER;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
+    public byte[] getData() {
+        return data;
     }
 
     @Override
@@ -89,8 +79,18 @@ class OFBsnLuaNotificationVer13 implements OFBsnLuaNotification {
     }
 
     @Override
-    public byte[] getData() {
-        return data;
+    public OFType getType() {
+        return OFType.EXPERIMENTER;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_13;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
     }
 
 
@@ -113,24 +113,14 @@ class OFBsnLuaNotificationVer13 implements OFBsnLuaNotification {
         }
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_13;
+    public byte[] getData() {
+        return data;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.EXPERIMENTER;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFBsnLuaNotification.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
+    public OFBsnLuaNotification.Builder setData(byte[] data) {
+        this.data = data;
+        this.dataSet = true;
         return this;
     }
     @Override
@@ -144,14 +134,24 @@ class OFBsnLuaNotificationVer13 implements OFBsnLuaNotification {
     }
 
     @Override
-    public byte[] getData() {
-        return data;
+    public OFType getType() {
+        return OFType.EXPERIMENTER;
     }
 
     @Override
-    public OFBsnLuaNotification.Builder setData(byte[] data) {
-        this.data = data;
-        this.dataSet = true;
+    public OFVersion getVersion() {
+        return OFVersion.OF_13;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFBsnLuaNotification.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 
@@ -180,24 +180,14 @@ class OFBsnLuaNotificationVer13 implements OFBsnLuaNotification {
         private byte[] data;
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_13;
+    public byte[] getData() {
+        return data;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.EXPERIMENTER;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFBsnLuaNotification.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
+    public OFBsnLuaNotification.Builder setData(byte[] data) {
+        this.data = data;
+        this.dataSet = true;
         return this;
     }
     @Override
@@ -211,14 +201,24 @@ class OFBsnLuaNotificationVer13 implements OFBsnLuaNotification {
     }
 
     @Override
-    public byte[] getData() {
-        return data;
+    public OFType getType() {
+        return OFType.EXPERIMENTER;
     }
 
     @Override
-    public OFBsnLuaNotification.Builder setData(byte[] data) {
-        this.data = data;
-        this.dataSet = true;
+    public OFVersion getVersion() {
+        return OFVersion.OF_13;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFBsnLuaNotification.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 //

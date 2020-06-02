@@ -33,6 +33,13 @@ public class OFQueuePropsVer10 implements OFQueueProps {
 
 
 
+    public OFQueuePropMaxRate.Builder buildMaxRate() {
+        throw new UnsupportedOperationException("OFQueuePropMaxRate not supported in version 1.0");
+    }
+    public OFQueuePropMaxRate maxRate(int rate) {
+        throw new UnsupportedOperationException("OFQueuePropMaxRate not supported in version 1.0");
+    }
+
     public OFQueuePropMinRate.Builder buildMinRate() {
         return new OFQueuePropMinRateVer10.Builder();
     }
@@ -40,13 +47,6 @@ public class OFQueuePropsVer10 implements OFQueueProps {
         return new OFQueuePropMinRateVer10(
                 rate
                     );
-    }
-
-    public OFQueuePropMaxRate.Builder buildMaxRate() {
-        throw new UnsupportedOperationException("OFQueuePropMaxRate not supported in version 1.0");
-    }
-    public OFQueuePropMaxRate maxRate(int rate) {
-        throw new UnsupportedOperationException("OFQueuePropMaxRate not supported in version 1.0");
     }
 
     public OFMessageReader<OFQueueProp> getReader() {

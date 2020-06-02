@@ -76,33 +76,13 @@ class OFBsnPduRxRequestVer11 implements OFBsnPduRxRequest {
 
     // Accessors for OF message fields
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_11;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.EXPERIMENTER;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
+    public byte[] getData() {
+        return data;
     }
 
     @Override
     public long getExperimenter() {
         return 0x5c16c7L;
-    }
-
-    @Override
-    public long getSubtype() {
-        return 0x21L;
-    }
-
-    @Override
-    public long getTimeoutMs() {
-        return timeoutMs;
     }
 
     @Override
@@ -116,8 +96,28 @@ class OFBsnPduRxRequestVer11 implements OFBsnPduRxRequest {
     }
 
     @Override
-    public byte[] getData() {
-        return data;
+    public long getSubtype() {
+        return 0x21L;
+    }
+
+    @Override
+    public long getTimeoutMs() {
+        return timeoutMs;
+    }
+
+    @Override
+    public OFType getType() {
+        return OFType.EXPERIMENTER;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_11;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
     }
 
 
@@ -146,24 +146,14 @@ class OFBsnPduRxRequestVer11 implements OFBsnPduRxRequest {
         }
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_11;
+    public byte[] getData() {
+        return data;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.EXPERIMENTER;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFBsnPduRxRequest.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
+    public OFBsnPduRxRequest.Builder setData(byte[] data) {
+        this.data = data;
+        this.dataSet = true;
         return this;
     }
     @Override
@@ -171,22 +161,6 @@ class OFBsnPduRxRequestVer11 implements OFBsnPduRxRequest {
         return 0x5c16c7L;
     }
 
-    @Override
-    public long getSubtype() {
-        return 0x21L;
-    }
-
-    @Override
-    public long getTimeoutMs() {
-        return timeoutMs;
-    }
-
-    @Override
-    public OFBsnPduRxRequest.Builder setTimeoutMs(long timeoutMs) {
-        this.timeoutMs = timeoutMs;
-        this.timeoutMsSet = true;
-        return this;
-    }
     @Override
     public OFPort getPortNo() {
         return portNo;
@@ -210,14 +184,40 @@ class OFBsnPduRxRequestVer11 implements OFBsnPduRxRequest {
         return this;
     }
     @Override
-    public byte[] getData() {
-        return data;
+    public long getSubtype() {
+        return 0x21L;
     }
 
     @Override
-    public OFBsnPduRxRequest.Builder setData(byte[] data) {
-        this.data = data;
-        this.dataSet = true;
+    public long getTimeoutMs() {
+        return timeoutMs;
+    }
+
+    @Override
+    public OFBsnPduRxRequest.Builder setTimeoutMs(long timeoutMs) {
+        this.timeoutMs = timeoutMs;
+        this.timeoutMsSet = true;
+        return this;
+    }
+    @Override
+    public OFType getType() {
+        return OFType.EXPERIMENTER;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_11;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFBsnPduRxRequest.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 
@@ -260,24 +260,14 @@ class OFBsnPduRxRequestVer11 implements OFBsnPduRxRequest {
         private byte[] data;
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_11;
+    public byte[] getData() {
+        return data;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.EXPERIMENTER;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFBsnPduRxRequest.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
+    public OFBsnPduRxRequest.Builder setData(byte[] data) {
+        this.data = data;
+        this.dataSet = true;
         return this;
     }
     @Override
@@ -285,22 +275,6 @@ class OFBsnPduRxRequestVer11 implements OFBsnPduRxRequest {
         return 0x5c16c7L;
     }
 
-    @Override
-    public long getSubtype() {
-        return 0x21L;
-    }
-
-    @Override
-    public long getTimeoutMs() {
-        return timeoutMs;
-    }
-
-    @Override
-    public OFBsnPduRxRequest.Builder setTimeoutMs(long timeoutMs) {
-        this.timeoutMs = timeoutMs;
-        this.timeoutMsSet = true;
-        return this;
-    }
     @Override
     public OFPort getPortNo() {
         return portNo;
@@ -324,14 +298,40 @@ class OFBsnPduRxRequestVer11 implements OFBsnPduRxRequest {
         return this;
     }
     @Override
-    public byte[] getData() {
-        return data;
+    public long getSubtype() {
+        return 0x21L;
     }
 
     @Override
-    public OFBsnPduRxRequest.Builder setData(byte[] data) {
-        this.data = data;
-        this.dataSet = true;
+    public long getTimeoutMs() {
+        return timeoutMs;
+    }
+
+    @Override
+    public OFBsnPduRxRequest.Builder setTimeoutMs(long timeoutMs) {
+        this.timeoutMs = timeoutMs;
+        this.timeoutMsSet = true;
+        return this;
+    }
+    @Override
+    public OFType getType() {
+        return OFType.EXPERIMENTER;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_11;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFBsnPduRxRequest.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 //

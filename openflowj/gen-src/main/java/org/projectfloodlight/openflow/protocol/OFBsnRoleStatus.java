@@ -28,31 +28,31 @@ import org.projectfloodlight.openflow.exceptions.*;
 import io.netty.buffer.ByteBuf;
 
 public interface OFBsnRoleStatus extends OFObject, OFBsnHeader {
-    OFVersion getVersion();
-    OFType getType();
-    long getXid();
     long getExperimenter();
-    long getSubtype();
-    OFControllerRole getRole();
-    OFBsnControllerRoleReason getReason();
     U64 getGenerationId();
+    OFBsnControllerRoleReason getReason();
+    OFControllerRole getRole();
+    long getSubtype();
+    OFType getType();
+    OFVersion getVersion();
+    long getXid();
 
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();
     public interface Builder extends OFBsnHeader.Builder {
         OFBsnRoleStatus build();
-        OFVersion getVersion();
-        OFType getType();
-        long getXid();
-        Builder setXid(long xid);
         long getExperimenter();
-        long getSubtype();
-        OFControllerRole getRole();
-        Builder setRole(OFControllerRole role);
-        OFBsnControllerRoleReason getReason();
-        Builder setReason(OFBsnControllerRoleReason reason);
         U64 getGenerationId();
         Builder setGenerationId(U64 generationId);
+        OFBsnControllerRoleReason getReason();
+        Builder setReason(OFBsnControllerRoleReason reason);
+        OFControllerRole getRole();
+        Builder setRole(OFControllerRole role);
+        long getSubtype();
+        OFType getType();
+        OFVersion getVersion();
+        long getXid();
+        Builder setXid(long xid);
     }
 }

@@ -67,16 +67,6 @@ class OFOxmBsnGlobalVrfAllowedVer12 implements OFOxmBsnGlobalVrfAllowed {
         return value;
     }
 
-    @Override
-    public MatchField<OFBooleanValue> getMatchField() {
-        return MatchField.BSN_GLOBAL_VRF_ALLOWED;
-    }
-
-    @Override
-    public boolean isMasked() {
-        return false;
-    }
-
     public OFOxm<OFBooleanValue> getCanonical() {
         // exact match OXM is always canonical
         return this;
@@ -85,6 +75,16 @@ class OFOxmBsnGlobalVrfAllowedVer12 implements OFOxmBsnGlobalVrfAllowed {
     @Override
     public OFBooleanValue getMask()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property mask not supported in version 1.2");
+    }
+
+    @Override
+    public boolean isMasked() {
+        return false;
+    }
+
+    @Override
+    public MatchField<OFBooleanValue> getMatchField() {
+        return MatchField.BSN_GLOBAL_VRF_ALLOWED;
     }
 
     @Override
@@ -126,8 +126,13 @@ class OFOxmBsnGlobalVrfAllowedVer12 implements OFOxmBsnGlobalVrfAllowed {
         return this;
     }
     @Override
-    public MatchField<OFBooleanValue> getMatchField() {
-        return MatchField.BSN_GLOBAL_VRF_ALLOWED;
+    public OFOxm<OFBooleanValue> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.2");
+    }
+
+    @Override
+    public OFBooleanValue getMask()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property mask not supported in version 1.2");
     }
 
     @Override
@@ -136,13 +141,8 @@ class OFOxmBsnGlobalVrfAllowedVer12 implements OFOxmBsnGlobalVrfAllowed {
     }
 
     @Override
-    public OFOxm<OFBooleanValue> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.2");
-    }
-
-    @Override
-    public OFBooleanValue getMask()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property mask not supported in version 1.2");
+    public MatchField<OFBooleanValue> getMatchField() {
+        return MatchField.BSN_GLOBAL_VRF_ALLOWED;
     }
 
     @Override
@@ -188,8 +188,13 @@ class OFOxmBsnGlobalVrfAllowedVer12 implements OFOxmBsnGlobalVrfAllowed {
         return this;
     }
     @Override
-    public MatchField<OFBooleanValue> getMatchField() {
-        return MatchField.BSN_GLOBAL_VRF_ALLOWED;
+    public OFOxm<OFBooleanValue> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.2");
+    }
+
+    @Override
+    public OFBooleanValue getMask()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property mask not supported in version 1.2");
     }
 
     @Override
@@ -198,13 +203,8 @@ class OFOxmBsnGlobalVrfAllowedVer12 implements OFOxmBsnGlobalVrfAllowed {
     }
 
     @Override
-    public OFOxm<OFBooleanValue> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.2");
-    }
-
-    @Override
-    public OFBooleanValue getMask()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property mask not supported in version 1.2");
+    public MatchField<OFBooleanValue> getMatchField() {
+        return MatchField.BSN_GLOBAL_VRF_ALLOWED;
     }
 
     @Override

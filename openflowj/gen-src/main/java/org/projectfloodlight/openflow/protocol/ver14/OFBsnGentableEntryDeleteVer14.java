@@ -66,23 +66,13 @@ class OFBsnGentableEntryDeleteVer14 implements OFBsnGentableEntryDelete {
 
     // Accessors for OF message fields
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_14;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.EXPERIMENTER;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
     public long getExperimenter() {
         return 0x5c16c7L;
+    }
+
+    @Override
+    public List<OFBsnTlv> getKey() {
+        return key;
     }
 
     @Override
@@ -96,8 +86,18 @@ class OFBsnGentableEntryDeleteVer14 implements OFBsnGentableEntryDelete {
     }
 
     @Override
-    public List<OFBsnTlv> getKey() {
-        return key;
+    public OFType getType() {
+        return OFType.EXPERIMENTER;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_14;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
     }
 
 
@@ -122,31 +122,21 @@ class OFBsnGentableEntryDeleteVer14 implements OFBsnGentableEntryDelete {
         }
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_14;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.EXPERIMENTER;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFBsnGentableEntryDelete.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
-        return this;
-    }
-    @Override
     public long getExperimenter() {
         return 0x5c16c7L;
     }
 
+    @Override
+    public List<OFBsnTlv> getKey() {
+        return key;
+    }
+
+    @Override
+    public OFBsnGentableEntryDelete.Builder setKey(List<OFBsnTlv> key) {
+        this.key = key;
+        this.keySet = true;
+        return this;
+    }
     @Override
     public long getSubtype() {
         return 0x2fL;
@@ -164,14 +154,24 @@ class OFBsnGentableEntryDeleteVer14 implements OFBsnGentableEntryDelete {
         return this;
     }
     @Override
-    public List<OFBsnTlv> getKey() {
-        return key;
+    public OFType getType() {
+        return OFType.EXPERIMENTER;
     }
 
     @Override
-    public OFBsnGentableEntryDelete.Builder setKey(List<OFBsnTlv> key) {
-        this.key = key;
-        this.keySet = true;
+    public OFVersion getVersion() {
+        return OFVersion.OF_14;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFBsnGentableEntryDelete.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 
@@ -206,31 +206,21 @@ class OFBsnGentableEntryDeleteVer14 implements OFBsnGentableEntryDelete {
         private List<OFBsnTlv> key;
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_14;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.EXPERIMENTER;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFBsnGentableEntryDelete.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
-        return this;
-    }
-    @Override
     public long getExperimenter() {
         return 0x5c16c7L;
     }
 
+    @Override
+    public List<OFBsnTlv> getKey() {
+        return key;
+    }
+
+    @Override
+    public OFBsnGentableEntryDelete.Builder setKey(List<OFBsnTlv> key) {
+        this.key = key;
+        this.keySet = true;
+        return this;
+    }
     @Override
     public long getSubtype() {
         return 0x2fL;
@@ -248,14 +238,24 @@ class OFBsnGentableEntryDeleteVer14 implements OFBsnGentableEntryDelete {
         return this;
     }
     @Override
-    public List<OFBsnTlv> getKey() {
-        return key;
+    public OFType getType() {
+        return OFType.EXPERIMENTER;
     }
 
     @Override
-    public OFBsnGentableEntryDelete.Builder setKey(List<OFBsnTlv> key) {
-        this.key = key;
-        this.keySet = true;
+    public OFVersion getVersion() {
+        return OFVersion.OF_14;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFBsnGentableEntryDelete.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 //

@@ -78,23 +78,18 @@ class OFBsnGentableEntryAddVer13 implements OFBsnGentableEntryAdd {
 
     // Accessors for OF message fields
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_13;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.EXPERIMENTER;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
+    public U128 getChecksum() {
+        return checksum;
     }
 
     @Override
     public long getExperimenter() {
         return 0x5c16c7L;
+    }
+
+    @Override
+    public List<OFBsnTlv> getKey() {
+        return key;
     }
 
     @Override
@@ -108,18 +103,23 @@ class OFBsnGentableEntryAddVer13 implements OFBsnGentableEntryAdd {
     }
 
     @Override
-    public U128 getChecksum() {
-        return checksum;
-    }
-
-    @Override
-    public List<OFBsnTlv> getKey() {
-        return key;
+    public OFType getType() {
+        return OFType.EXPERIMENTER;
     }
 
     @Override
     public List<OFBsnTlv> getValue() {
         return value;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_13;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
     }
 
 
@@ -148,24 +148,14 @@ class OFBsnGentableEntryAddVer13 implements OFBsnGentableEntryAdd {
         }
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_13;
+    public U128 getChecksum() {
+        return checksum;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.EXPERIMENTER;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFBsnGentableEntryAdd.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
+    public OFBsnGentableEntryAdd.Builder setChecksum(U128 checksum) {
+        this.checksum = checksum;
+        this.checksumSet = true;
         return this;
     }
     @Override
@@ -173,6 +163,17 @@ class OFBsnGentableEntryAddVer13 implements OFBsnGentableEntryAdd {
         return 0x5c16c7L;
     }
 
+    @Override
+    public List<OFBsnTlv> getKey() {
+        return key;
+    }
+
+    @Override
+    public OFBsnGentableEntryAdd.Builder setKey(List<OFBsnTlv> key) {
+        this.key = key;
+        this.keySet = true;
+        return this;
+    }
     @Override
     public long getSubtype() {
         return 0x2eL;
@@ -190,27 +191,10 @@ class OFBsnGentableEntryAddVer13 implements OFBsnGentableEntryAdd {
         return this;
     }
     @Override
-    public U128 getChecksum() {
-        return checksum;
+    public OFType getType() {
+        return OFType.EXPERIMENTER;
     }
 
-    @Override
-    public OFBsnGentableEntryAdd.Builder setChecksum(U128 checksum) {
-        this.checksum = checksum;
-        this.checksumSet = true;
-        return this;
-    }
-    @Override
-    public List<OFBsnTlv> getKey() {
-        return key;
-    }
-
-    @Override
-    public OFBsnGentableEntryAdd.Builder setKey(List<OFBsnTlv> key) {
-        this.key = key;
-        this.keySet = true;
-        return this;
-    }
     @Override
     public List<OFBsnTlv> getValue() {
         return value;
@@ -220,6 +204,22 @@ class OFBsnGentableEntryAddVer13 implements OFBsnGentableEntryAdd {
     public OFBsnGentableEntryAdd.Builder setValue(List<OFBsnTlv> value) {
         this.value = value;
         this.valueSet = true;
+        return this;
+    }
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_13;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFBsnGentableEntryAdd.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 
@@ -266,24 +266,14 @@ class OFBsnGentableEntryAddVer13 implements OFBsnGentableEntryAdd {
         private List<OFBsnTlv> value;
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_13;
+    public U128 getChecksum() {
+        return checksum;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.EXPERIMENTER;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFBsnGentableEntryAdd.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
+    public OFBsnGentableEntryAdd.Builder setChecksum(U128 checksum) {
+        this.checksum = checksum;
+        this.checksumSet = true;
         return this;
     }
     @Override
@@ -291,6 +281,17 @@ class OFBsnGentableEntryAddVer13 implements OFBsnGentableEntryAdd {
         return 0x5c16c7L;
     }
 
+    @Override
+    public List<OFBsnTlv> getKey() {
+        return key;
+    }
+
+    @Override
+    public OFBsnGentableEntryAdd.Builder setKey(List<OFBsnTlv> key) {
+        this.key = key;
+        this.keySet = true;
+        return this;
+    }
     @Override
     public long getSubtype() {
         return 0x2eL;
@@ -308,27 +309,10 @@ class OFBsnGentableEntryAddVer13 implements OFBsnGentableEntryAdd {
         return this;
     }
     @Override
-    public U128 getChecksum() {
-        return checksum;
+    public OFType getType() {
+        return OFType.EXPERIMENTER;
     }
 
-    @Override
-    public OFBsnGentableEntryAdd.Builder setChecksum(U128 checksum) {
-        this.checksum = checksum;
-        this.checksumSet = true;
-        return this;
-    }
-    @Override
-    public List<OFBsnTlv> getKey() {
-        return key;
-    }
-
-    @Override
-    public OFBsnGentableEntryAdd.Builder setKey(List<OFBsnTlv> key) {
-        this.key = key;
-        this.keySet = true;
-        return this;
-    }
     @Override
     public List<OFBsnTlv> getValue() {
         return value;
@@ -338,6 +322,22 @@ class OFBsnGentableEntryAddVer13 implements OFBsnGentableEntryAdd {
     public OFBsnGentableEntryAdd.Builder setValue(List<OFBsnTlv> value) {
         this.value = value;
         this.valueSet = true;
+        return this;
+    }
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_13;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFBsnGentableEntryAdd.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 //

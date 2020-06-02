@@ -68,18 +68,13 @@ class OFGroupStatsRequestVer12 implements OFGroupStatsRequest {
 
     // Accessors for OF message fields
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_12;
+    public Set<OFStatsRequestFlags> getFlags() {
+        return flags;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.STATS_REQUEST;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
+    public OFGroup getGroup() {
+        return group;
     }
 
     @Override
@@ -88,13 +83,18 @@ class OFGroupStatsRequestVer12 implements OFGroupStatsRequest {
     }
 
     @Override
-    public Set<OFStatsRequestFlags> getFlags() {
-        return flags;
+    public OFType getType() {
+        return OFType.STATS_REQUEST;
     }
 
     @Override
-    public OFGroup getGroup() {
-        return group;
+    public OFVersion getVersion() {
+        return OFVersion.OF_12;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
     }
 
 
@@ -119,32 +119,6 @@ class OFGroupStatsRequestVer12 implements OFGroupStatsRequest {
         }
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_12;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.STATS_REQUEST;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFGroupStatsRequest.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
-        return this;
-    }
-    @Override
-    public OFStatsType getStatsType() {
-        return OFStatsType.GROUP;
-    }
-
-    @Override
     public Set<OFStatsRequestFlags> getFlags() {
         return flags;
     }
@@ -164,6 +138,32 @@ class OFGroupStatsRequestVer12 implements OFGroupStatsRequest {
     public OFGroupStatsRequest.Builder setGroup(OFGroup group) {
         this.group = group;
         this.groupSet = true;
+        return this;
+    }
+    @Override
+    public OFStatsType getStatsType() {
+        return OFStatsType.GROUP;
+    }
+
+    @Override
+    public OFType getType() {
+        return OFType.STATS_REQUEST;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_12;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFGroupStatsRequest.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 
@@ -198,32 +198,6 @@ class OFGroupStatsRequestVer12 implements OFGroupStatsRequest {
         private OFGroup group;
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_12;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.STATS_REQUEST;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFGroupStatsRequest.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
-        return this;
-    }
-    @Override
-    public OFStatsType getStatsType() {
-        return OFStatsType.GROUP;
-    }
-
-    @Override
     public Set<OFStatsRequestFlags> getFlags() {
         return flags;
     }
@@ -243,6 +217,32 @@ class OFGroupStatsRequestVer12 implements OFGroupStatsRequest {
     public OFGroupStatsRequest.Builder setGroup(OFGroup group) {
         this.group = group;
         this.groupSet = true;
+        return this;
+    }
+    @Override
+    public OFStatsType getStatsType() {
+        return OFStatsType.GROUP;
+    }
+
+    @Override
+    public OFType getType() {
+        return OFType.STATS_REQUEST;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_12;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFGroupStatsRequest.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 //

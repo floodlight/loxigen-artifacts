@@ -83,18 +83,8 @@ class OFGroupModifyVer15 implements OFGroupModify {
 
     // Accessors for OF message fields
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_15;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.GROUP_MOD;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
+    public List<OFBucket> getBuckets() {
+        return buckets;
     }
 
     @Override
@@ -103,8 +93,8 @@ class OFGroupModifyVer15 implements OFGroupModify {
     }
 
     @Override
-    public OFGroupType getGroupType() {
-        return groupType;
+    public OFGroupBucket getCommandBucketId() {
+        return commandBucketId;
     }
 
     @Override
@@ -113,18 +103,28 @@ class OFGroupModifyVer15 implements OFGroupModify {
     }
 
     @Override
-    public List<OFBucket> getBuckets() {
-        return buckets;
-    }
-
-    @Override
-    public OFGroupBucket getCommandBucketId() {
-        return commandBucketId;
+    public OFGroupType getGroupType() {
+        return groupType;
     }
 
     @Override
     public List<OFGroupProp> getProperties() {
         return properties;
+    }
+
+    @Override
+    public OFType getType() {
+        return OFType.GROUP_MOD;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_15;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
     }
 
 
@@ -155,24 +155,14 @@ class OFGroupModifyVer15 implements OFGroupModify {
         }
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_15;
+    public List<OFBucket> getBuckets() {
+        return buckets;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.GROUP_MOD;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFGroupModify.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
+    public OFGroupModify.Builder setBuckets(List<OFBucket> buckets) {
+        this.buckets = buckets;
+        this.bucketsSet = true;
         return this;
     }
     @Override
@@ -181,14 +171,14 @@ class OFGroupModifyVer15 implements OFGroupModify {
     }
 
     @Override
-    public OFGroupType getGroupType() {
-        return groupType;
+    public OFGroupBucket getCommandBucketId() {
+        return commandBucketId;
     }
 
     @Override
-    public OFGroupModify.Builder setGroupType(OFGroupType groupType) {
-        this.groupType = groupType;
-        this.groupTypeSet = true;
+    public OFGroupModify.Builder setCommandBucketId(OFGroupBucket commandBucketId) {
+        this.commandBucketId = commandBucketId;
+        this.commandBucketIdSet = true;
         return this;
     }
     @Override
@@ -203,25 +193,14 @@ class OFGroupModifyVer15 implements OFGroupModify {
         return this;
     }
     @Override
-    public List<OFBucket> getBuckets() {
-        return buckets;
+    public OFGroupType getGroupType() {
+        return groupType;
     }
 
     @Override
-    public OFGroupModify.Builder setBuckets(List<OFBucket> buckets) {
-        this.buckets = buckets;
-        this.bucketsSet = true;
-        return this;
-    }
-    @Override
-    public OFGroupBucket getCommandBucketId() {
-        return commandBucketId;
-    }
-
-    @Override
-    public OFGroupModify.Builder setCommandBucketId(OFGroupBucket commandBucketId) {
-        this.commandBucketId = commandBucketId;
-        this.commandBucketIdSet = true;
+    public OFGroupModify.Builder setGroupType(OFGroupType groupType) {
+        this.groupType = groupType;
+        this.groupTypeSet = true;
         return this;
     }
     @Override
@@ -233,6 +212,27 @@ class OFGroupModifyVer15 implements OFGroupModify {
     public OFGroupModify.Builder setProperties(List<OFGroupProp> properties) {
         this.properties = properties;
         this.propertiesSet = true;
+        return this;
+    }
+    @Override
+    public OFType getType() {
+        return OFType.GROUP_MOD;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_15;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFGroupModify.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 
@@ -285,24 +285,14 @@ class OFGroupModifyVer15 implements OFGroupModify {
         private List<OFGroupProp> properties;
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_15;
+    public List<OFBucket> getBuckets() {
+        return buckets;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.GROUP_MOD;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFGroupModify.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
+    public OFGroupModify.Builder setBuckets(List<OFBucket> buckets) {
+        this.buckets = buckets;
+        this.bucketsSet = true;
         return this;
     }
     @Override
@@ -311,14 +301,14 @@ class OFGroupModifyVer15 implements OFGroupModify {
     }
 
     @Override
-    public OFGroupType getGroupType() {
-        return groupType;
+    public OFGroupBucket getCommandBucketId() {
+        return commandBucketId;
     }
 
     @Override
-    public OFGroupModify.Builder setGroupType(OFGroupType groupType) {
-        this.groupType = groupType;
-        this.groupTypeSet = true;
+    public OFGroupModify.Builder setCommandBucketId(OFGroupBucket commandBucketId) {
+        this.commandBucketId = commandBucketId;
+        this.commandBucketIdSet = true;
         return this;
     }
     @Override
@@ -333,25 +323,14 @@ class OFGroupModifyVer15 implements OFGroupModify {
         return this;
     }
     @Override
-    public List<OFBucket> getBuckets() {
-        return buckets;
+    public OFGroupType getGroupType() {
+        return groupType;
     }
 
     @Override
-    public OFGroupModify.Builder setBuckets(List<OFBucket> buckets) {
-        this.buckets = buckets;
-        this.bucketsSet = true;
-        return this;
-    }
-    @Override
-    public OFGroupBucket getCommandBucketId() {
-        return commandBucketId;
-    }
-
-    @Override
-    public OFGroupModify.Builder setCommandBucketId(OFGroupBucket commandBucketId) {
-        this.commandBucketId = commandBucketId;
-        this.commandBucketIdSet = true;
+    public OFGroupModify.Builder setGroupType(OFGroupType groupType) {
+        this.groupType = groupType;
+        this.groupTypeSet = true;
         return this;
     }
     @Override
@@ -363,6 +342,27 @@ class OFGroupModifyVer15 implements OFGroupModify {
     public OFGroupModify.Builder setProperties(List<OFGroupProp> properties) {
         this.properties = properties;
         this.propertiesSet = true;
+        return this;
+    }
+    @Override
+    public OFType getType() {
+        return OFType.GROUP_MOD;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_15;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFGroupModify.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 //

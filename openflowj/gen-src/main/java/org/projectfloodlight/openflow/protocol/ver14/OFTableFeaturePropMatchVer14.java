@@ -62,13 +62,13 @@ class OFTableFeaturePropMatchVer14 implements OFTableFeaturePropMatch {
 
     // Accessors for OF message fields
     @Override
-    public int getType() {
-        return 0x8;
+    public List<U32> getOxmIds() {
+        return oxmIds;
     }
 
     @Override
-    public List<U32> getOxmIds() {
-        return oxmIds;
+    public int getType() {
+        return 0x8;
     }
 
     @Override
@@ -94,11 +94,6 @@ class OFTableFeaturePropMatchVer14 implements OFTableFeaturePropMatch {
         }
 
     @Override
-    public int getType() {
-        return 0x8;
-    }
-
-    @Override
     public List<U32> getOxmIds() {
         return oxmIds;
     }
@@ -109,6 +104,11 @@ class OFTableFeaturePropMatchVer14 implements OFTableFeaturePropMatch {
         this.oxmIdsSet = true;
         return this;
     }
+    @Override
+    public int getType() {
+        return 0x8;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_14;
@@ -136,11 +136,6 @@ class OFTableFeaturePropMatchVer14 implements OFTableFeaturePropMatch {
         private List<U32> oxmIds;
 
     @Override
-    public int getType() {
-        return 0x8;
-    }
-
-    @Override
     public List<U32> getOxmIds() {
         return oxmIds;
     }
@@ -151,6 +146,11 @@ class OFTableFeaturePropMatchVer14 implements OFTableFeaturePropMatch {
         this.oxmIdsSet = true;
         return this;
     }
+    @Override
+    public int getType() {
+        return 0x8;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_14;

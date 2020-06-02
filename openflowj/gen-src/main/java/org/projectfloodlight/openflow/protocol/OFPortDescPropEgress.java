@@ -28,8 +28,8 @@ import org.projectfloodlight.openflow.exceptions.*;
 import io.netty.buffer.ByteBuf;
 
 public interface OFPortDescPropEgress extends OFObject {
-    int getType();
     byte[] getOxmIds();
+    int getType();
     OFVersion getVersion();
 
     void writeTo(ByteBuf channelBuffer);
@@ -37,9 +37,9 @@ public interface OFPortDescPropEgress extends OFObject {
     Builder createBuilder();
     public interface Builder  {
         OFPortDescPropEgress build();
-        int getType();
         byte[] getOxmIds();
         Builder setOxmIds(byte[] oxmIds);
+        int getType();
         OFVersion getVersion();
     }
 }

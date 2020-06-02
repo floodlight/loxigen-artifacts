@@ -64,6 +64,11 @@ class OFOxmIcmpv6TypeMaskedVer14 implements OFOxmIcmpv6TypeMasked {
 
     // Accessors for OF message fields
     @Override
+    public U8 getMask() {
+        return mask;
+    }
+
+    @Override
     public long getTypeLen() {
         return 0x80003b02L;
     }
@@ -71,21 +76,6 @@ class OFOxmIcmpv6TypeMaskedVer14 implements OFOxmIcmpv6TypeMasked {
     @Override
     public U8 getValue() {
         return value;
-    }
-
-    @Override
-    public U8 getMask() {
-        return mask;
-    }
-
-    @Override
-    public MatchField<U8> getMatchField() {
-        return MatchField.ICMPV6_TYPE;
-    }
-
-    @Override
-    public boolean isMasked() {
-        return true;
     }
 
     public OFOxm<U8> getCanonical() {
@@ -96,6 +86,16 @@ class OFOxmIcmpv6TypeMaskedVer14 implements OFOxmIcmpv6TypeMasked {
         } else {
             return this;
         }
+    }
+
+    @Override
+    public boolean isMasked() {
+        return true;
+    }
+
+    @Override
+    public MatchField<U8> getMatchField() {
+        return MatchField.ICMPV6_TYPE;
     }
 
     @Override
@@ -123,6 +123,17 @@ class OFOxmIcmpv6TypeMaskedVer14 implements OFOxmIcmpv6TypeMasked {
         }
 
     @Override
+    public U8 getMask() {
+        return mask;
+    }
+
+    @Override
+    public OFOxmIcmpv6TypeMasked.Builder setMask(U8 mask) {
+        this.mask = mask;
+        this.maskSet = true;
+        return this;
+    }
+    @Override
     public long getTypeLen() {
         return 0x80003b02L;
     }
@@ -139,19 +150,8 @@ class OFOxmIcmpv6TypeMaskedVer14 implements OFOxmIcmpv6TypeMasked {
         return this;
     }
     @Override
-    public U8 getMask() {
-        return mask;
-    }
-
-    @Override
-    public OFOxmIcmpv6TypeMasked.Builder setMask(U8 mask) {
-        this.mask = mask;
-        this.maskSet = true;
-        return this;
-    }
-    @Override
-    public MatchField<U8> getMatchField() {
-        return MatchField.ICMPV6_TYPE;
+    public OFOxm<U8> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.4");
     }
 
     @Override
@@ -160,8 +160,8 @@ class OFOxmIcmpv6TypeMaskedVer14 implements OFOxmIcmpv6TypeMasked {
     }
 
     @Override
-    public OFOxm<U8> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.4");
+    public MatchField<U8> getMatchField() {
+        return MatchField.ICMPV6_TYPE;
     }
 
     @Override
@@ -197,6 +197,17 @@ class OFOxmIcmpv6TypeMaskedVer14 implements OFOxmIcmpv6TypeMasked {
         private U8 mask;
 
     @Override
+    public U8 getMask() {
+        return mask;
+    }
+
+    @Override
+    public OFOxmIcmpv6TypeMasked.Builder setMask(U8 mask) {
+        this.mask = mask;
+        this.maskSet = true;
+        return this;
+    }
+    @Override
     public long getTypeLen() {
         return 0x80003b02L;
     }
@@ -213,19 +224,8 @@ class OFOxmIcmpv6TypeMaskedVer14 implements OFOxmIcmpv6TypeMasked {
         return this;
     }
     @Override
-    public U8 getMask() {
-        return mask;
-    }
-
-    @Override
-    public OFOxmIcmpv6TypeMasked.Builder setMask(U8 mask) {
-        this.mask = mask;
-        this.maskSet = true;
-        return this;
-    }
-    @Override
-    public MatchField<U8> getMatchField() {
-        return MatchField.ICMPV6_TYPE;
+    public OFOxm<U8> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.4");
     }
 
     @Override
@@ -234,8 +234,8 @@ class OFOxmIcmpv6TypeMaskedVer14 implements OFOxmIcmpv6TypeMasked {
     }
 
     @Override
-    public OFOxm<U8> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.4");
+    public MatchField<U8> getMatchField() {
+        return MatchField.ICMPV6_TYPE;
     }
 
     @Override

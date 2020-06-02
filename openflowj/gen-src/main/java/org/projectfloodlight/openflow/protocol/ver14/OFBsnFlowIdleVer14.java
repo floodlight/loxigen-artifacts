@@ -78,18 +78,8 @@ class OFBsnFlowIdleVer14 implements OFBsnFlowIdle {
 
     // Accessors for OF message fields
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_14;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.EXPERIMENTER;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
+    public U64 getCookie() {
+        return cookie;
     }
 
     @Override
@@ -98,13 +88,8 @@ class OFBsnFlowIdleVer14 implements OFBsnFlowIdle {
     }
 
     @Override
-    public long getSubtype() {
-        return 0x28L;
-    }
-
-    @Override
-    public U64 getCookie() {
-        return cookie;
+    public Match getMatch() {
+        return match;
     }
 
     @Override
@@ -113,13 +98,28 @@ class OFBsnFlowIdleVer14 implements OFBsnFlowIdle {
     }
 
     @Override
+    public long getSubtype() {
+        return 0x28L;
+    }
+
+    @Override
     public TableId getTableId() {
         return tableId;
     }
 
     @Override
-    public Match getMatch() {
-        return match;
+    public OFType getType() {
+        return OFType.EXPERIMENTER;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_14;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
     }
 
 
@@ -148,37 +148,6 @@ class OFBsnFlowIdleVer14 implements OFBsnFlowIdle {
         }
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_14;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.EXPERIMENTER;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFBsnFlowIdle.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
-        return this;
-    }
-    @Override
-    public long getExperimenter() {
-        return 0x5c16c7L;
-    }
-
-    @Override
-    public long getSubtype() {
-        return 0x28L;
-    }
-
-    @Override
     public U64 getCookie() {
         return cookie;
     }
@@ -187,6 +156,22 @@ class OFBsnFlowIdleVer14 implements OFBsnFlowIdle {
     public OFBsnFlowIdle.Builder setCookie(U64 cookie) {
         this.cookie = cookie;
         this.cookieSet = true;
+        return this;
+    }
+    @Override
+    public long getExperimenter() {
+        return 0x5c16c7L;
+    }
+
+    @Override
+    public Match getMatch() {
+        return match;
+    }
+
+    @Override
+    public OFBsnFlowIdle.Builder setMatch(Match match) {
+        this.match = match;
+        this.matchSet = true;
         return this;
     }
     @Override
@@ -201,6 +186,11 @@ class OFBsnFlowIdleVer14 implements OFBsnFlowIdle {
         return this;
     }
     @Override
+    public long getSubtype() {
+        return 0x28L;
+    }
+
+    @Override
     public TableId getTableId() {
         return tableId;
     }
@@ -212,14 +202,24 @@ class OFBsnFlowIdleVer14 implements OFBsnFlowIdle {
         return this;
     }
     @Override
-    public Match getMatch() {
-        return match;
+    public OFType getType() {
+        return OFType.EXPERIMENTER;
     }
 
     @Override
-    public OFBsnFlowIdle.Builder setMatch(Match match) {
-        this.match = match;
-        this.matchSet = true;
+    public OFVersion getVersion() {
+        return OFVersion.OF_14;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFBsnFlowIdle.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 
@@ -264,37 +264,6 @@ class OFBsnFlowIdleVer14 implements OFBsnFlowIdle {
         private Match match;
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_14;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.EXPERIMENTER;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFBsnFlowIdle.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
-        return this;
-    }
-    @Override
-    public long getExperimenter() {
-        return 0x5c16c7L;
-    }
-
-    @Override
-    public long getSubtype() {
-        return 0x28L;
-    }
-
-    @Override
     public U64 getCookie() {
         return cookie;
     }
@@ -303,6 +272,22 @@ class OFBsnFlowIdleVer14 implements OFBsnFlowIdle {
     public OFBsnFlowIdle.Builder setCookie(U64 cookie) {
         this.cookie = cookie;
         this.cookieSet = true;
+        return this;
+    }
+    @Override
+    public long getExperimenter() {
+        return 0x5c16c7L;
+    }
+
+    @Override
+    public Match getMatch() {
+        return match;
+    }
+
+    @Override
+    public OFBsnFlowIdle.Builder setMatch(Match match) {
+        this.match = match;
+        this.matchSet = true;
         return this;
     }
     @Override
@@ -317,6 +302,11 @@ class OFBsnFlowIdleVer14 implements OFBsnFlowIdle {
         return this;
     }
     @Override
+    public long getSubtype() {
+        return 0x28L;
+    }
+
+    @Override
     public TableId getTableId() {
         return tableId;
     }
@@ -328,14 +318,24 @@ class OFBsnFlowIdleVer14 implements OFBsnFlowIdle {
         return this;
     }
     @Override
-    public Match getMatch() {
-        return match;
+    public OFType getType() {
+        return OFType.EXPERIMENTER;
     }
 
     @Override
-    public OFBsnFlowIdle.Builder setMatch(Match match) {
-        this.match = match;
-        this.matchSet = true;
+    public OFVersion getVersion() {
+        return OFVersion.OF_14;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFBsnFlowIdle.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 //

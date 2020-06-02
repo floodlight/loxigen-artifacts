@@ -29,8 +29,8 @@ import java.util.Set;
 import io.netty.buffer.ByteBuf;
 
 public interface OFPortModPropEthernet extends OFObject, OFPortModProp {
-    int getType();
     Set<OFPortFeatures> getAdvertise();
+    int getType();
     OFVersion getVersion();
 
     void writeTo(ByteBuf channelBuffer);
@@ -38,9 +38,9 @@ public interface OFPortModPropEthernet extends OFObject, OFPortModProp {
     Builder createBuilder();
     public interface Builder extends OFPortModProp.Builder {
         OFPortModPropEthernet build();
-        int getType();
         Set<OFPortFeatures> getAdvertise();
         Builder setAdvertise(Set<OFPortFeatures> advertise);
+        int getType();
         OFVersion getVersion();
     }
 }

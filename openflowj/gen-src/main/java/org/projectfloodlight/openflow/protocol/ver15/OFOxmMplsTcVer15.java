@@ -67,16 +67,6 @@ class OFOxmMplsTcVer15 implements OFOxmMplsTc {
         return value;
     }
 
-    @Override
-    public MatchField<U8> getMatchField() {
-        return MatchField.MPLS_TC;
-    }
-
-    @Override
-    public boolean isMasked() {
-        return false;
-    }
-
     public OFOxm<U8> getCanonical() {
         // exact match OXM is always canonical
         return this;
@@ -85,6 +75,16 @@ class OFOxmMplsTcVer15 implements OFOxmMplsTc {
     @Override
     public U8 getMask()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property mask not supported in version 1.5");
+    }
+
+    @Override
+    public boolean isMasked() {
+        return false;
+    }
+
+    @Override
+    public MatchField<U8> getMatchField() {
+        return MatchField.MPLS_TC;
     }
 
     @Override
@@ -126,8 +126,13 @@ class OFOxmMplsTcVer15 implements OFOxmMplsTc {
         return this;
     }
     @Override
-    public MatchField<U8> getMatchField() {
-        return MatchField.MPLS_TC;
+    public OFOxm<U8> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.5");
+    }
+
+    @Override
+    public U8 getMask()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property mask not supported in version 1.5");
     }
 
     @Override
@@ -136,13 +141,8 @@ class OFOxmMplsTcVer15 implements OFOxmMplsTc {
     }
 
     @Override
-    public OFOxm<U8> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.5");
-    }
-
-    @Override
-    public U8 getMask()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property mask not supported in version 1.5");
+    public MatchField<U8> getMatchField() {
+        return MatchField.MPLS_TC;
     }
 
     @Override
@@ -188,8 +188,13 @@ class OFOxmMplsTcVer15 implements OFOxmMplsTc {
         return this;
     }
     @Override
-    public MatchField<U8> getMatchField() {
-        return MatchField.MPLS_TC;
+    public OFOxm<U8> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.5");
+    }
+
+    @Override
+    public U8 getMask()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property mask not supported in version 1.5");
     }
 
     @Override
@@ -198,13 +203,8 @@ class OFOxmMplsTcVer15 implements OFOxmMplsTc {
     }
 
     @Override
-    public OFOxm<U8> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.5");
-    }
-
-    @Override
-    public U8 getMask()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property mask not supported in version 1.5");
+    public MatchField<U8> getMatchField() {
+        return MatchField.MPLS_TC;
     }
 
     @Override

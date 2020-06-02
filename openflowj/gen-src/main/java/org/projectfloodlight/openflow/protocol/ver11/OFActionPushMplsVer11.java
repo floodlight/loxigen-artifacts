@@ -58,13 +58,13 @@ class OFActionPushMplsVer11 implements OFActionPushMpls {
 
     // Accessors for OF message fields
     @Override
-    public OFActionType getType() {
-        return OFActionType.PUSH_MPLS;
+    public EthType getEthertype() {
+        return ethertype;
     }
 
     @Override
-    public EthType getEthertype() {
-        return ethertype;
+    public OFActionType getType() {
+        return OFActionType.PUSH_MPLS;
     }
 
     @Override
@@ -90,11 +90,6 @@ class OFActionPushMplsVer11 implements OFActionPushMpls {
         }
 
     @Override
-    public OFActionType getType() {
-        return OFActionType.PUSH_MPLS;
-    }
-
-    @Override
     public EthType getEthertype() {
         return ethertype;
     }
@@ -105,6 +100,11 @@ class OFActionPushMplsVer11 implements OFActionPushMpls {
         this.ethertypeSet = true;
         return this;
     }
+    @Override
+    public OFActionType getType() {
+        return OFActionType.PUSH_MPLS;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_11;
@@ -132,11 +132,6 @@ class OFActionPushMplsVer11 implements OFActionPushMpls {
         private EthType ethertype;
 
     @Override
-    public OFActionType getType() {
-        return OFActionType.PUSH_MPLS;
-    }
-
-    @Override
     public EthType getEthertype() {
         return ethertype;
     }
@@ -147,6 +142,11 @@ class OFActionPushMplsVer11 implements OFActionPushMpls {
         this.ethertypeSet = true;
         return this;
     }
+    @Override
+    public OFActionType getType() {
+        return OFActionType.PUSH_MPLS;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_11;

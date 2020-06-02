@@ -67,18 +67,8 @@ class OFBsnShellCommandVer10 implements OFBsnShellCommand {
 
     // Accessors for OF message fields
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_10;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.EXPERIMENTER;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
+    public byte[] getData() {
+        return data;
     }
 
     @Override
@@ -87,18 +77,28 @@ class OFBsnShellCommandVer10 implements OFBsnShellCommand {
     }
 
     @Override
-    public long getSubtype() {
-        return 0x6L;
-    }
-
-    @Override
     public long getService() {
         return service;
     }
 
     @Override
-    public byte[] getData() {
-        return data;
+    public long getSubtype() {
+        return 0x6L;
+    }
+
+    @Override
+    public OFType getType() {
+        return OFType.EXPERIMENTER;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_10;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
     }
 
 
@@ -123,34 +123,19 @@ class OFBsnShellCommandVer10 implements OFBsnShellCommand {
         }
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_10;
+    public byte[] getData() {
+        return data;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.EXPERIMENTER;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFBsnShellCommand.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
+    public OFBsnShellCommand.Builder setData(byte[] data) {
+        this.data = data;
+        this.dataSet = true;
         return this;
     }
     @Override
     public long getExperimenter() {
         return 0x5c16c7L;
-    }
-
-    @Override
-    public long getSubtype() {
-        return 0x6L;
     }
 
     @Override
@@ -165,14 +150,29 @@ class OFBsnShellCommandVer10 implements OFBsnShellCommand {
         return this;
     }
     @Override
-    public byte[] getData() {
-        return data;
+    public long getSubtype() {
+        return 0x6L;
     }
 
     @Override
-    public OFBsnShellCommand.Builder setData(byte[] data) {
-        this.data = data;
-        this.dataSet = true;
+    public OFType getType() {
+        return OFType.EXPERIMENTER;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_10;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFBsnShellCommand.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 
@@ -205,34 +205,19 @@ class OFBsnShellCommandVer10 implements OFBsnShellCommand {
         private byte[] data;
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_10;
+    public byte[] getData() {
+        return data;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.EXPERIMENTER;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFBsnShellCommand.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
+    public OFBsnShellCommand.Builder setData(byte[] data) {
+        this.data = data;
+        this.dataSet = true;
         return this;
     }
     @Override
     public long getExperimenter() {
         return 0x5c16c7L;
-    }
-
-    @Override
-    public long getSubtype() {
-        return 0x6L;
     }
 
     @Override
@@ -247,14 +232,29 @@ class OFBsnShellCommandVer10 implements OFBsnShellCommand {
         return this;
     }
     @Override
-    public byte[] getData() {
-        return data;
+    public long getSubtype() {
+        return 0x6L;
     }
 
     @Override
-    public OFBsnShellCommand.Builder setData(byte[] data) {
-        this.data = data;
-        this.dataSet = true;
+    public OFType getType() {
+        return OFType.EXPERIMENTER;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_10;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFBsnShellCommand.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 //

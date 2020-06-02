@@ -62,13 +62,13 @@ class OFHelloElemVersionbitmapVer13 implements OFHelloElemVersionbitmap {
 
     // Accessors for OF message fields
     @Override
-    public int getType() {
-        return 0x1;
+    public List<U32> getBitmaps() {
+        return bitmaps;
     }
 
     @Override
-    public List<U32> getBitmaps() {
-        return bitmaps;
+    public int getType() {
+        return 0x1;
     }
 
     @Override
@@ -94,11 +94,6 @@ class OFHelloElemVersionbitmapVer13 implements OFHelloElemVersionbitmap {
         }
 
     @Override
-    public int getType() {
-        return 0x1;
-    }
-
-    @Override
     public List<U32> getBitmaps() {
         return bitmaps;
     }
@@ -109,6 +104,11 @@ class OFHelloElemVersionbitmapVer13 implements OFHelloElemVersionbitmap {
         this.bitmapsSet = true;
         return this;
     }
+    @Override
+    public int getType() {
+        return 0x1;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_13;
@@ -136,11 +136,6 @@ class OFHelloElemVersionbitmapVer13 implements OFHelloElemVersionbitmap {
         private List<U32> bitmaps;
 
     @Override
-    public int getType() {
-        return 0x1;
-    }
-
-    @Override
     public List<U32> getBitmaps() {
         return bitmaps;
     }
@@ -151,6 +146,11 @@ class OFHelloElemVersionbitmapVer13 implements OFHelloElemVersionbitmap {
         this.bitmapsSet = true;
         return this;
     }
+    @Override
+    public int getType() {
+        return 0x1;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_13;

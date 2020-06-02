@@ -55,13 +55,13 @@ class OFBarrierRequestVer11 implements OFBarrierRequest {
 
     // Accessors for OF message fields
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_11;
+    public OFType getType() {
+        return OFType.BARRIER_REQUEST;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.BARRIER_REQUEST;
+    public OFVersion getVersion() {
+        return OFVersion.OF_11;
     }
 
     @Override
@@ -87,13 +87,13 @@ class OFBarrierRequestVer11 implements OFBarrierRequest {
         }
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_11;
+    public OFType getType() {
+        return OFType.BARRIER_REQUEST;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.BARRIER_REQUEST;
+    public OFVersion getVersion() {
+        return OFVersion.OF_11;
     }
 
     @Override
@@ -127,13 +127,13 @@ class OFBarrierRequestVer11 implements OFBarrierRequest {
         private long xid;
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_11;
+    public OFType getType() {
+        return OFType.BARRIER_REQUEST;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.BARRIER_REQUEST;
+    public OFVersion getVersion() {
+        return OFVersion.OF_11;
     }
 
     @Override

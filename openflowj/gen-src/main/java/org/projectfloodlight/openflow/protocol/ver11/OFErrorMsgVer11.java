@@ -59,12 +59,21 @@ abstract class OFErrorMsgVer11 {
                case (short) 0x2:
                    // discriminator value OFErrorType.BAD_ACTION=2 for class OFBadActionErrorMsgVer11
                    return OFBadActionErrorMsgVer11.READER.readFrom(bb);
+               case (short) 0x3:
+                   // discriminator value OFErrorType.BAD_INSTRUCTION=3 for class OFBadInstructionErrorMsgVer11
+                   return OFBadInstructionErrorMsgVer11.READER.readFrom(bb);
+               case (short) 0x4:
+                   // discriminator value OFErrorType.BAD_MATCH=4 for class OFBadMatchErrorMsgVer11
+                   return OFBadMatchErrorMsgVer11.READER.readFrom(bb);
                case (short) 0x1:
                    // discriminator value OFErrorType.BAD_REQUEST=1 for class OFBadRequestErrorMsgVer11
                    return OFBadRequestErrorMsgVer11.READER.readFrom(bb);
                case (short) 0x5:
                    // discriminator value OFErrorType.FLOW_MOD_FAILED=5 for class OFFlowModFailedErrorMsgVer11
                    return OFFlowModFailedErrorMsgVer11.READER.readFrom(bb);
+               case (short) 0x6:
+                   // discriminator value OFErrorType.GROUP_MOD_FAILED=6 for class OFGroupModFailedErrorMsgVer11
+                   return OFGroupModFailedErrorMsgVer11.READER.readFrom(bb);
                case (short) 0x0:
                    // discriminator value OFErrorType.HELLO_FAILED=0 for class OFHelloFailedErrorMsgVer11
                    return OFHelloFailedErrorMsgVer11.READER.readFrom(bb);
@@ -74,15 +83,6 @@ abstract class OFErrorMsgVer11 {
                case (short) 0x9:
                    // discriminator value OFErrorType.QUEUE_OP_FAILED=9 for class OFQueueOpFailedErrorMsgVer11
                    return OFQueueOpFailedErrorMsgVer11.READER.readFrom(bb);
-               case (short) 0x3:
-                   // discriminator value OFErrorType.BAD_INSTRUCTION=3 for class OFBadInstructionErrorMsgVer11
-                   return OFBadInstructionErrorMsgVer11.READER.readFrom(bb);
-               case (short) 0x4:
-                   // discriminator value OFErrorType.BAD_MATCH=4 for class OFBadMatchErrorMsgVer11
-                   return OFBadMatchErrorMsgVer11.READER.readFrom(bb);
-               case (short) 0x6:
-                   // discriminator value OFErrorType.GROUP_MOD_FAILED=6 for class OFGroupModFailedErrorMsgVer11
-                   return OFGroupModFailedErrorMsgVer11.READER.readFrom(bb);
                case (short) 0xa:
                    // discriminator value OFErrorType.SWITCH_CONFIG_FAILED=10 for class OFSwitchConfigFailedErrorMsgVer11
                    return OFSwitchConfigFailedErrorMsgVer11.READER.readFrom(bb);

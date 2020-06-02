@@ -61,13 +61,13 @@ class OFTableFeaturePropOxmValuesVer15 implements OFTableFeaturePropOxmValues {
 
     // Accessors for OF message fields
     @Override
-    public int getType() {
-        return 0x16;
+    public byte[] getOxmValues() {
+        return oxmValues;
     }
 
     @Override
-    public byte[] getOxmValues() {
-        return oxmValues;
+    public int getType() {
+        return 0x16;
     }
 
     @Override
@@ -93,11 +93,6 @@ class OFTableFeaturePropOxmValuesVer15 implements OFTableFeaturePropOxmValues {
         }
 
     @Override
-    public int getType() {
-        return 0x16;
-    }
-
-    @Override
     public byte[] getOxmValues() {
         return oxmValues;
     }
@@ -108,6 +103,11 @@ class OFTableFeaturePropOxmValuesVer15 implements OFTableFeaturePropOxmValues {
         this.oxmValuesSet = true;
         return this;
     }
+    @Override
+    public int getType() {
+        return 0x16;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_15;
@@ -135,11 +135,6 @@ class OFTableFeaturePropOxmValuesVer15 implements OFTableFeaturePropOxmValues {
         private byte[] oxmValues;
 
     @Override
-    public int getType() {
-        return 0x16;
-    }
-
-    @Override
     public byte[] getOxmValues() {
         return oxmValues;
     }
@@ -150,6 +145,11 @@ class OFTableFeaturePropOxmValuesVer15 implements OFTableFeaturePropOxmValues {
         this.oxmValuesSet = true;
         return this;
     }
+    @Override
+    public int getType() {
+        return 0x16;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_15;

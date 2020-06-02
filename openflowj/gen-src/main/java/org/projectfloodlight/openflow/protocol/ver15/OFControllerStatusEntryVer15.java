@@ -76,13 +76,13 @@ class OFControllerStatusEntryVer15 implements OFControllerStatusEntry {
 
     // Accessors for OF message fields
     @Override
-    public int getShortId() {
-        return shortId;
+    public OFControlChannelStatus getChannelStatus() {
+        return channelStatus;
     }
 
     @Override
-    public OFControllerRole getRole() {
-        return role;
+    public List<OFControllerStatusProp> getProperties() {
+        return properties;
     }
 
     @Override
@@ -91,13 +91,13 @@ class OFControllerStatusEntryVer15 implements OFControllerStatusEntry {
     }
 
     @Override
-    public OFControlChannelStatus getChannelStatus() {
-        return channelStatus;
+    public OFControllerRole getRole() {
+        return role;
     }
 
     @Override
-    public List<OFControllerStatusProp> getProperties() {
-        return properties;
+    public int getShortId() {
+        return shortId;
     }
 
     @Override
@@ -131,39 +131,6 @@ class OFControllerStatusEntryVer15 implements OFControllerStatusEntry {
         }
 
     @Override
-    public int getShortId() {
-        return shortId;
-    }
-
-    @Override
-    public OFControllerStatusEntry.Builder setShortId(int shortId) {
-        this.shortId = shortId;
-        this.shortIdSet = true;
-        return this;
-    }
-    @Override
-    public OFControllerRole getRole() {
-        return role;
-    }
-
-    @Override
-    public OFControllerStatusEntry.Builder setRole(OFControllerRole role) {
-        this.role = role;
-        this.roleSet = true;
-        return this;
-    }
-    @Override
-    public OFControllerStatusReason getReason() {
-        return reason;
-    }
-
-    @Override
-    public OFControllerStatusEntry.Builder setReason(OFControllerStatusReason reason) {
-        this.reason = reason;
-        this.reasonSet = true;
-        return this;
-    }
-    @Override
     public OFControlChannelStatus getChannelStatus() {
         return channelStatus;
     }
@@ -183,6 +150,39 @@ class OFControllerStatusEntryVer15 implements OFControllerStatusEntry {
     public OFControllerStatusEntry.Builder setProperties(List<OFControllerStatusProp> properties) {
         this.properties = properties;
         this.propertiesSet = true;
+        return this;
+    }
+    @Override
+    public OFControllerStatusReason getReason() {
+        return reason;
+    }
+
+    @Override
+    public OFControllerStatusEntry.Builder setReason(OFControllerStatusReason reason) {
+        this.reason = reason;
+        this.reasonSet = true;
+        return this;
+    }
+    @Override
+    public OFControllerRole getRole() {
+        return role;
+    }
+
+    @Override
+    public OFControllerStatusEntry.Builder setRole(OFControllerRole role) {
+        this.role = role;
+        this.roleSet = true;
+        return this;
+    }
+    @Override
+    public int getShortId() {
+        return shortId;
+    }
+
+    @Override
+    public OFControllerStatusEntry.Builder setShortId(int shortId) {
+        this.shortId = shortId;
+        this.shortIdSet = true;
         return this;
     }
     @Override
@@ -234,39 +234,6 @@ class OFControllerStatusEntryVer15 implements OFControllerStatusEntry {
         private List<OFControllerStatusProp> properties;
 
     @Override
-    public int getShortId() {
-        return shortId;
-    }
-
-    @Override
-    public OFControllerStatusEntry.Builder setShortId(int shortId) {
-        this.shortId = shortId;
-        this.shortIdSet = true;
-        return this;
-    }
-    @Override
-    public OFControllerRole getRole() {
-        return role;
-    }
-
-    @Override
-    public OFControllerStatusEntry.Builder setRole(OFControllerRole role) {
-        this.role = role;
-        this.roleSet = true;
-        return this;
-    }
-    @Override
-    public OFControllerStatusReason getReason() {
-        return reason;
-    }
-
-    @Override
-    public OFControllerStatusEntry.Builder setReason(OFControllerStatusReason reason) {
-        this.reason = reason;
-        this.reasonSet = true;
-        return this;
-    }
-    @Override
     public OFControlChannelStatus getChannelStatus() {
         return channelStatus;
     }
@@ -286,6 +253,39 @@ class OFControllerStatusEntryVer15 implements OFControllerStatusEntry {
     public OFControllerStatusEntry.Builder setProperties(List<OFControllerStatusProp> properties) {
         this.properties = properties;
         this.propertiesSet = true;
+        return this;
+    }
+    @Override
+    public OFControllerStatusReason getReason() {
+        return reason;
+    }
+
+    @Override
+    public OFControllerStatusEntry.Builder setReason(OFControllerStatusReason reason) {
+        this.reason = reason;
+        this.reasonSet = true;
+        return this;
+    }
+    @Override
+    public OFControllerRole getRole() {
+        return role;
+    }
+
+    @Override
+    public OFControllerStatusEntry.Builder setRole(OFControllerRole role) {
+        this.role = role;
+        this.roleSet = true;
+        return this;
+    }
+    @Override
+    public int getShortId() {
+        return shortId;
+    }
+
+    @Override
+    public OFControllerStatusEntry.Builder setShortId(int shortId) {
+        this.shortId = shortId;
+        this.shortIdSet = true;
         return this;
     }
     @Override

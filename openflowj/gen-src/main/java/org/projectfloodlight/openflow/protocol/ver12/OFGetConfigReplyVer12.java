@@ -65,8 +65,13 @@ class OFGetConfigReplyVer12 implements OFGetConfigReply {
 
     // Accessors for OF message fields
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_12;
+    public Set<OFConfigFlags> getFlags() {
+        return flags;
+    }
+
+    @Override
+    public int getMissSendLen() {
+        return missSendLen;
     }
 
     @Override
@@ -75,18 +80,13 @@ class OFGetConfigReplyVer12 implements OFGetConfigReply {
     }
 
     @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_12;
+    }
+
+    @Override
     public long getXid() {
         return xid;
-    }
-
-    @Override
-    public Set<OFConfigFlags> getFlags() {
-        return flags;
-    }
-
-    @Override
-    public int getMissSendLen() {
-        return missSendLen;
     }
 
 
@@ -111,27 +111,6 @@ class OFGetConfigReplyVer12 implements OFGetConfigReply {
         }
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_12;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.GET_CONFIG_REPLY;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFGetConfigReply.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
-        return this;
-    }
-    @Override
     public Set<OFConfigFlags> getFlags() {
         return flags;
     }
@@ -151,6 +130,27 @@ class OFGetConfigReplyVer12 implements OFGetConfigReply {
     public OFGetConfigReply.Builder setMissSendLen(int missSendLen) {
         this.missSendLen = missSendLen;
         this.missSendLenSet = true;
+        return this;
+    }
+    @Override
+    public OFType getType() {
+        return OFType.GET_CONFIG_REPLY;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_12;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFGetConfigReply.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 
@@ -183,27 +183,6 @@ class OFGetConfigReplyVer12 implements OFGetConfigReply {
         private int missSendLen;
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_12;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.GET_CONFIG_REPLY;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFGetConfigReply.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
-        return this;
-    }
-    @Override
     public Set<OFConfigFlags> getFlags() {
         return flags;
     }
@@ -223,6 +202,27 @@ class OFGetConfigReplyVer12 implements OFGetConfigReply {
     public OFGetConfigReply.Builder setMissSendLen(int missSendLen) {
         this.missSendLen = missSendLen;
         this.missSendLenSet = true;
+        return this;
+    }
+    @Override
+    public OFType getType() {
+        return OFType.GET_CONFIG_REPLY;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_12;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFGetConfigReply.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 //

@@ -30,10 +30,10 @@ import io.netty.buffer.ByteBuf;
 public interface OFOxmVlanVid extends OFObject, OFOxm<OFVlanVidMatch> {
     long getTypeLen();
     OFVlanVidMatch getValue();
-    MatchField<OFVlanVidMatch> getMatchField();
-    boolean isMasked();
     OFOxm<OFVlanVidMatch> getCanonical();
     OFVlanVidMatch getMask();
+    boolean isMasked();
+    MatchField<OFVlanVidMatch> getMatchField();
     OFVersion getVersion();
 
     void writeTo(ByteBuf channelBuffer);
@@ -44,10 +44,10 @@ public interface OFOxmVlanVid extends OFObject, OFOxm<OFVlanVidMatch> {
         long getTypeLen();
         OFVlanVidMatch getValue();
         Builder setValue(OFVlanVidMatch value);
-        MatchField<OFVlanVidMatch> getMatchField();
-        boolean isMasked();
         OFOxm<OFVlanVidMatch> getCanonical();
         OFVlanVidMatch getMask();
+        boolean isMasked();
+        MatchField<OFVlanVidMatch> getMatchField();
         OFVersion getVersion();
     }
 }

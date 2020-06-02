@@ -30,10 +30,10 @@ import io.netty.buffer.ByteBuf;
 public interface OFOxmEthType extends OFObject, OFOxm<EthType> {
     long getTypeLen();
     EthType getValue();
-    MatchField<EthType> getMatchField();
-    boolean isMasked();
     OFOxm<EthType> getCanonical();
     EthType getMask();
+    boolean isMasked();
+    MatchField<EthType> getMatchField();
     OFVersion getVersion();
 
     void writeTo(ByteBuf channelBuffer);
@@ -44,10 +44,10 @@ public interface OFOxmEthType extends OFObject, OFOxm<EthType> {
         long getTypeLen();
         EthType getValue();
         Builder setValue(EthType value);
-        MatchField<EthType> getMatchField();
-        boolean isMasked();
         OFOxm<EthType> getCanonical();
         EthType getMask();
+        boolean isMasked();
+        MatchField<EthType> getMatchField();
         OFVersion getVersion();
     }
 }

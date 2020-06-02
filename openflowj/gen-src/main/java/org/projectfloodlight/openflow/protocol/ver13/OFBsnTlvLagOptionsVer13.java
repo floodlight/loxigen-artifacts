@@ -59,13 +59,13 @@ class OFBsnTlvLagOptionsVer13 implements OFBsnTlvLagOptions {
 
     // Accessors for OF message fields
     @Override
-    public int getType() {
-        return 0xa0;
+    public Set<OFBsnLagFlag> getFlags() {
+        return flags;
     }
 
     @Override
-    public Set<OFBsnLagFlag> getFlags() {
-        return flags;
+    public int getType() {
+        return 0xa0;
     }
 
     @Override
@@ -91,11 +91,6 @@ class OFBsnTlvLagOptionsVer13 implements OFBsnTlvLagOptions {
         }
 
     @Override
-    public int getType() {
-        return 0xa0;
-    }
-
-    @Override
     public Set<OFBsnLagFlag> getFlags() {
         return flags;
     }
@@ -106,6 +101,11 @@ class OFBsnTlvLagOptionsVer13 implements OFBsnTlvLagOptions {
         this.flagsSet = true;
         return this;
     }
+    @Override
+    public int getType() {
+        return 0xa0;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_13;
@@ -133,11 +133,6 @@ class OFBsnTlvLagOptionsVer13 implements OFBsnTlvLagOptions {
         private Set<OFBsnLagFlag> flags;
 
     @Override
-    public int getType() {
-        return 0xa0;
-    }
-
-    @Override
     public Set<OFBsnLagFlag> getFlags() {
         return flags;
     }
@@ -148,6 +143,11 @@ class OFBsnTlvLagOptionsVer13 implements OFBsnTlvLagOptions {
         this.flagsSet = true;
         return this;
     }
+    @Override
+    public int getType() {
+        return 0xa0;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_13;

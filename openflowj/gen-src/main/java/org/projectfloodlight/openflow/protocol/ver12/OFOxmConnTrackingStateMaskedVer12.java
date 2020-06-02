@@ -64,6 +64,11 @@ class OFOxmConnTrackingStateMaskedVer12 implements OFOxmConnTrackingStateMasked 
 
     // Accessors for OF message fields
     @Override
+    public U32 getMask() {
+        return mask;
+    }
+
+    @Override
     public long getTypeLen() {
         return 0x1d308L;
     }
@@ -71,21 +76,6 @@ class OFOxmConnTrackingStateMaskedVer12 implements OFOxmConnTrackingStateMasked 
     @Override
     public U32 getValue() {
         return value;
-    }
-
-    @Override
-    public U32 getMask() {
-        return mask;
-    }
-
-    @Override
-    public MatchField<U32> getMatchField() {
-        return MatchField.CONN_TRACKING_STATE;
-    }
-
-    @Override
-    public boolean isMasked() {
-        return true;
     }
 
     public OFOxm<U32> getCanonical() {
@@ -96,6 +86,16 @@ class OFOxmConnTrackingStateMaskedVer12 implements OFOxmConnTrackingStateMasked 
         } else {
             return this;
         }
+    }
+
+    @Override
+    public boolean isMasked() {
+        return true;
+    }
+
+    @Override
+    public MatchField<U32> getMatchField() {
+        return MatchField.CONN_TRACKING_STATE;
     }
 
     @Override
@@ -123,6 +123,17 @@ class OFOxmConnTrackingStateMaskedVer12 implements OFOxmConnTrackingStateMasked 
         }
 
     @Override
+    public U32 getMask() {
+        return mask;
+    }
+
+    @Override
+    public OFOxmConnTrackingStateMasked.Builder setMask(U32 mask) {
+        this.mask = mask;
+        this.maskSet = true;
+        return this;
+    }
+    @Override
     public long getTypeLen() {
         return 0x1d308L;
     }
@@ -139,19 +150,8 @@ class OFOxmConnTrackingStateMaskedVer12 implements OFOxmConnTrackingStateMasked 
         return this;
     }
     @Override
-    public U32 getMask() {
-        return mask;
-    }
-
-    @Override
-    public OFOxmConnTrackingStateMasked.Builder setMask(U32 mask) {
-        this.mask = mask;
-        this.maskSet = true;
-        return this;
-    }
-    @Override
-    public MatchField<U32> getMatchField() {
-        return MatchField.CONN_TRACKING_STATE;
+    public OFOxm<U32> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.2");
     }
 
     @Override
@@ -160,8 +160,8 @@ class OFOxmConnTrackingStateMaskedVer12 implements OFOxmConnTrackingStateMasked 
     }
 
     @Override
-    public OFOxm<U32> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.2");
+    public MatchField<U32> getMatchField() {
+        return MatchField.CONN_TRACKING_STATE;
     }
 
     @Override
@@ -197,6 +197,17 @@ class OFOxmConnTrackingStateMaskedVer12 implements OFOxmConnTrackingStateMasked 
         private U32 mask;
 
     @Override
+    public U32 getMask() {
+        return mask;
+    }
+
+    @Override
+    public OFOxmConnTrackingStateMasked.Builder setMask(U32 mask) {
+        this.mask = mask;
+        this.maskSet = true;
+        return this;
+    }
+    @Override
     public long getTypeLen() {
         return 0x1d308L;
     }
@@ -213,19 +224,8 @@ class OFOxmConnTrackingStateMaskedVer12 implements OFOxmConnTrackingStateMasked 
         return this;
     }
     @Override
-    public U32 getMask() {
-        return mask;
-    }
-
-    @Override
-    public OFOxmConnTrackingStateMasked.Builder setMask(U32 mask) {
-        this.mask = mask;
-        this.maskSet = true;
-        return this;
-    }
-    @Override
-    public MatchField<U32> getMatchField() {
-        return MatchField.CONN_TRACKING_STATE;
+    public OFOxm<U32> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.2");
     }
 
     @Override
@@ -234,8 +234,8 @@ class OFOxmConnTrackingStateMaskedVer12 implements OFOxmConnTrackingStateMasked 
     }
 
     @Override
-    public OFOxm<U32> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.2");
+    public MatchField<U32> getMatchField() {
+        return MatchField.CONN_TRACKING_STATE;
     }
 
     @Override

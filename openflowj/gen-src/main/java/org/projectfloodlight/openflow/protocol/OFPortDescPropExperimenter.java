@@ -28,9 +28,9 @@ import org.projectfloodlight.openflow.exceptions.*;
 import io.netty.buffer.ByteBuf;
 
 public interface OFPortDescPropExperimenter extends OFObject, OFPortDescProp {
-    int getType();
-    long getExperimenter();
     long getExpType() throws UnsupportedOperationException;
+    long getExperimenter();
+    int getType();
     OFVersion getVersion();
 
     void writeTo(ByteBuf channelBuffer);
@@ -38,10 +38,10 @@ public interface OFPortDescPropExperimenter extends OFObject, OFPortDescProp {
     Builder createBuilder();
     public interface Builder extends OFPortDescProp.Builder {
         OFPortDescPropExperimenter build();
-        int getType();
-        long getExperimenter();
         long getExpType() throws UnsupportedOperationException;
         Builder setExpType(long expType) throws UnsupportedOperationException;
+        long getExperimenter();
+        int getType();
         OFVersion getVersion();
     }
 }

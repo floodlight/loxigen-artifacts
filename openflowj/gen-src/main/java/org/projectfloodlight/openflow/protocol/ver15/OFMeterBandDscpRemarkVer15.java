@@ -61,8 +61,13 @@ class OFMeterBandDscpRemarkVer15 implements OFMeterBandDscpRemark {
 
     // Accessors for OF message fields
     @Override
-    public int getType() {
-        return 0x2;
+    public long getBurstSize() {
+        return burstSize;
+    }
+
+    @Override
+    public short getPrecLevel() {
+        return precLevel;
     }
 
     @Override
@@ -71,13 +76,8 @@ class OFMeterBandDscpRemarkVer15 implements OFMeterBandDscpRemark {
     }
 
     @Override
-    public long getBurstSize() {
-        return burstSize;
-    }
-
-    @Override
-    public short getPrecLevel() {
-        return precLevel;
+    public int getType() {
+        return 0x2;
     }
 
     @Override
@@ -107,22 +107,6 @@ class OFMeterBandDscpRemarkVer15 implements OFMeterBandDscpRemark {
         }
 
     @Override
-    public int getType() {
-        return 0x2;
-    }
-
-    @Override
-    public long getRate() {
-        return rate;
-    }
-
-    @Override
-    public OFMeterBandDscpRemark.Builder setRate(long rate) {
-        this.rate = rate;
-        this.rateSet = true;
-        return this;
-    }
-    @Override
     public long getBurstSize() {
         return burstSize;
     }
@@ -144,6 +128,22 @@ class OFMeterBandDscpRemarkVer15 implements OFMeterBandDscpRemark {
         this.precLevelSet = true;
         return this;
     }
+    @Override
+    public long getRate() {
+        return rate;
+    }
+
+    @Override
+    public OFMeterBandDscpRemark.Builder setRate(long rate) {
+        this.rate = rate;
+        this.rateSet = true;
+        return this;
+    }
+    @Override
+    public int getType() {
+        return 0x2;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_15;
@@ -177,22 +177,6 @@ class OFMeterBandDscpRemarkVer15 implements OFMeterBandDscpRemark {
         private short precLevel;
 
     @Override
-    public int getType() {
-        return 0x2;
-    }
-
-    @Override
-    public long getRate() {
-        return rate;
-    }
-
-    @Override
-    public OFMeterBandDscpRemark.Builder setRate(long rate) {
-        this.rate = rate;
-        this.rateSet = true;
-        return this;
-    }
-    @Override
     public long getBurstSize() {
         return burstSize;
     }
@@ -214,6 +198,22 @@ class OFMeterBandDscpRemarkVer15 implements OFMeterBandDscpRemark {
         this.precLevelSet = true;
         return this;
     }
+    @Override
+    public long getRate() {
+        return rate;
+    }
+
+    @Override
+    public OFMeterBandDscpRemark.Builder setRate(long rate) {
+        this.rate = rate;
+        this.rateSet = true;
+        return this;
+    }
+    @Override
+    public int getType() {
+        return 0x2;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_15;

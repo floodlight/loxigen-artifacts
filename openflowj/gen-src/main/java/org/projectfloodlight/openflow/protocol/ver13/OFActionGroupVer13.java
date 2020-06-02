@@ -58,13 +58,13 @@ class OFActionGroupVer13 implements OFActionGroup {
 
     // Accessors for OF message fields
     @Override
-    public OFActionType getType() {
-        return OFActionType.GROUP;
+    public OFGroup getGroup() {
+        return group;
     }
 
     @Override
-    public OFGroup getGroup() {
-        return group;
+    public OFActionType getType() {
+        return OFActionType.GROUP;
     }
 
     @Override
@@ -90,11 +90,6 @@ class OFActionGroupVer13 implements OFActionGroup {
         }
 
     @Override
-    public OFActionType getType() {
-        return OFActionType.GROUP;
-    }
-
-    @Override
     public OFGroup getGroup() {
         return group;
     }
@@ -105,6 +100,11 @@ class OFActionGroupVer13 implements OFActionGroup {
         this.groupSet = true;
         return this;
     }
+    @Override
+    public OFActionType getType() {
+        return OFActionType.GROUP;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_13;
@@ -132,11 +132,6 @@ class OFActionGroupVer13 implements OFActionGroup {
         private OFGroup group;
 
     @Override
-    public OFActionType getType() {
-        return OFActionType.GROUP;
-    }
-
-    @Override
     public OFGroup getGroup() {
         return group;
     }
@@ -147,6 +142,11 @@ class OFActionGroupVer13 implements OFActionGroup {
         this.groupSet = true;
         return this;
     }
+    @Override
+    public OFActionType getType() {
+        return OFActionType.GROUP;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_13;

@@ -25,31 +25,31 @@ import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
-import java.util.Set;
 import java.util.List;
+import java.util.Set;
 import io.netty.buffer.ByteBuf;
 
 public interface OFMeterConfigStatsReply extends OFObject, OFStatsReply {
-    OFVersion getVersion();
-    OFType getType();
-    long getXid();
-    OFStatsType getStatsType();
-    Set<OFStatsReplyFlags> getFlags();
     List<OFMeterConfig> getEntries();
+    Set<OFStatsReplyFlags> getFlags();
+    OFStatsType getStatsType();
+    OFType getType();
+    OFVersion getVersion();
+    long getXid();
 
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();
     public interface Builder extends OFStatsReply.Builder {
         OFMeterConfigStatsReply build();
-        OFVersion getVersion();
-        OFType getType();
-        long getXid();
-        Builder setXid(long xid);
-        OFStatsType getStatsType();
-        Set<OFStatsReplyFlags> getFlags();
-        Builder setFlags(Set<OFStatsReplyFlags> flags);
         List<OFMeterConfig> getEntries();
         Builder setEntries(List<OFMeterConfig> entries);
+        Set<OFStatsReplyFlags> getFlags();
+        Builder setFlags(Set<OFStatsReplyFlags> flags);
+        OFStatsType getStatsType();
+        OFType getType();
+        OFVersion getVersion();
+        long getXid();
+        Builder setXid(long xid);
     }
 }

@@ -67,33 +67,8 @@ class OFBsnPduRxReplyVer12 implements OFBsnPduRxReply {
 
     // Accessors for OF message fields
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_12;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.EXPERIMENTER;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
     public long getExperimenter() {
         return 0x5c16c7L;
-    }
-
-    @Override
-    public long getSubtype() {
-        return 0x22L;
-    }
-
-    @Override
-    public long getStatus() {
-        return status;
     }
 
     @Override
@@ -104,6 +79,31 @@ class OFBsnPduRxReplyVer12 implements OFBsnPduRxReply {
     @Override
     public short getSlotNum() {
         return slotNum;
+    }
+
+    @Override
+    public long getStatus() {
+        return status;
+    }
+
+    @Override
+    public long getSubtype() {
+        return 0x22L;
+    }
+
+    @Override
+    public OFType getType() {
+        return OFType.EXPERIMENTER;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_12;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
     }
 
 
@@ -130,47 +130,10 @@ class OFBsnPduRxReplyVer12 implements OFBsnPduRxReply {
         }
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_12;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.EXPERIMENTER;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFBsnPduRxReply.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
-        return this;
-    }
-    @Override
     public long getExperimenter() {
         return 0x5c16c7L;
     }
 
-    @Override
-    public long getSubtype() {
-        return 0x22L;
-    }
-
-    @Override
-    public long getStatus() {
-        return status;
-    }
-
-    @Override
-    public OFBsnPduRxReply.Builder setStatus(long status) {
-        this.status = status;
-        this.statusSet = true;
-        return this;
-    }
     @Override
     public OFPort getPortNo() {
         return portNo;
@@ -191,6 +154,43 @@ class OFBsnPduRxReplyVer12 implements OFBsnPduRxReply {
     public OFBsnPduRxReply.Builder setSlotNum(short slotNum) {
         this.slotNum = slotNum;
         this.slotNumSet = true;
+        return this;
+    }
+    @Override
+    public long getStatus() {
+        return status;
+    }
+
+    @Override
+    public OFBsnPduRxReply.Builder setStatus(long status) {
+        this.status = status;
+        this.statusSet = true;
+        return this;
+    }
+    @Override
+    public long getSubtype() {
+        return 0x22L;
+    }
+
+    @Override
+    public OFType getType() {
+        return OFType.EXPERIMENTER;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_12;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFBsnPduRxReply.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 
@@ -227,47 +227,10 @@ class OFBsnPduRxReplyVer12 implements OFBsnPduRxReply {
         private short slotNum;
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_12;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.EXPERIMENTER;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFBsnPduRxReply.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
-        return this;
-    }
-    @Override
     public long getExperimenter() {
         return 0x5c16c7L;
     }
 
-    @Override
-    public long getSubtype() {
-        return 0x22L;
-    }
-
-    @Override
-    public long getStatus() {
-        return status;
-    }
-
-    @Override
-    public OFBsnPduRxReply.Builder setStatus(long status) {
-        this.status = status;
-        this.statusSet = true;
-        return this;
-    }
     @Override
     public OFPort getPortNo() {
         return portNo;
@@ -288,6 +251,43 @@ class OFBsnPduRxReplyVer12 implements OFBsnPduRxReply {
     public OFBsnPduRxReply.Builder setSlotNum(short slotNum) {
         this.slotNum = slotNum;
         this.slotNumSet = true;
+        return this;
+    }
+    @Override
+    public long getStatus() {
+        return status;
+    }
+
+    @Override
+    public OFBsnPduRxReply.Builder setStatus(long status) {
+        this.status = status;
+        this.statusSet = true;
+        return this;
+    }
+    @Override
+    public long getSubtype() {
+        return 0x22L;
+    }
+
+    @Override
+    public OFType getType() {
+        return OFType.EXPERIMENTER;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_12;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFBsnPduRxReply.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 //

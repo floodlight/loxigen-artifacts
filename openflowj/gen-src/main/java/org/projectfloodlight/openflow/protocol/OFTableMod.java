@@ -29,27 +29,27 @@ import java.util.List;
 import io.netty.buffer.ByteBuf;
 
 public interface OFTableMod extends OFObject, OFMessage {
-    OFVersion getVersion();
-    OFType getType();
-    long getXid();
-    TableId getTableId();
     long getConfig();
     List<OFTableModProp> getProperties() throws UnsupportedOperationException;
+    TableId getTableId();
+    OFType getType();
+    OFVersion getVersion();
+    long getXid();
 
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();
     public interface Builder extends OFMessage.Builder {
         OFTableMod build();
-        OFVersion getVersion();
-        OFType getType();
-        long getXid();
-        Builder setXid(long xid);
-        TableId getTableId();
-        Builder setTableId(TableId tableId);
         long getConfig();
         Builder setConfig(long config);
         List<OFTableModProp> getProperties() throws UnsupportedOperationException;
         Builder setProperties(List<OFTableModProp> properties) throws UnsupportedOperationException;
+        TableId getTableId();
+        Builder setTableId(TableId tableId);
+        OFType getType();
+        OFVersion getVersion();
+        long getXid();
+        Builder setXid(long xid);
     }
 }

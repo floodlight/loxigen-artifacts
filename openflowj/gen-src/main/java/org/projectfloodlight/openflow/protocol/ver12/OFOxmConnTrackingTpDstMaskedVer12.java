@@ -64,6 +64,11 @@ class OFOxmConnTrackingTpDstMaskedVer12 implements OFOxmConnTrackingTpDstMasked 
 
     // Accessors for OF message fields
     @Override
+    public TransportPort getMask() {
+        return mask;
+    }
+
+    @Override
     public long getTypeLen() {
         return 0x1fb04L;
     }
@@ -71,21 +76,6 @@ class OFOxmConnTrackingTpDstMaskedVer12 implements OFOxmConnTrackingTpDstMasked 
     @Override
     public TransportPort getValue() {
         return value;
-    }
-
-    @Override
-    public TransportPort getMask() {
-        return mask;
-    }
-
-    @Override
-    public MatchField<TransportPort> getMatchField() {
-        return MatchField.CONN_TRACKING_TP_DST;
-    }
-
-    @Override
-    public boolean isMasked() {
-        return true;
     }
 
     public OFOxm<TransportPort> getCanonical() {
@@ -96,6 +86,16 @@ class OFOxmConnTrackingTpDstMaskedVer12 implements OFOxmConnTrackingTpDstMasked 
         } else {
             return this;
         }
+    }
+
+    @Override
+    public boolean isMasked() {
+        return true;
+    }
+
+    @Override
+    public MatchField<TransportPort> getMatchField() {
+        return MatchField.CONN_TRACKING_TP_DST;
     }
 
     @Override
@@ -123,6 +123,17 @@ class OFOxmConnTrackingTpDstMaskedVer12 implements OFOxmConnTrackingTpDstMasked 
         }
 
     @Override
+    public TransportPort getMask() {
+        return mask;
+    }
+
+    @Override
+    public OFOxmConnTrackingTpDstMasked.Builder setMask(TransportPort mask) {
+        this.mask = mask;
+        this.maskSet = true;
+        return this;
+    }
+    @Override
     public long getTypeLen() {
         return 0x1fb04L;
     }
@@ -139,19 +150,8 @@ class OFOxmConnTrackingTpDstMaskedVer12 implements OFOxmConnTrackingTpDstMasked 
         return this;
     }
     @Override
-    public TransportPort getMask() {
-        return mask;
-    }
-
-    @Override
-    public OFOxmConnTrackingTpDstMasked.Builder setMask(TransportPort mask) {
-        this.mask = mask;
-        this.maskSet = true;
-        return this;
-    }
-    @Override
-    public MatchField<TransportPort> getMatchField() {
-        return MatchField.CONN_TRACKING_TP_DST;
+    public OFOxm<TransportPort> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.2");
     }
 
     @Override
@@ -160,8 +160,8 @@ class OFOxmConnTrackingTpDstMaskedVer12 implements OFOxmConnTrackingTpDstMasked 
     }
 
     @Override
-    public OFOxm<TransportPort> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.2");
+    public MatchField<TransportPort> getMatchField() {
+        return MatchField.CONN_TRACKING_TP_DST;
     }
 
     @Override
@@ -197,6 +197,17 @@ class OFOxmConnTrackingTpDstMaskedVer12 implements OFOxmConnTrackingTpDstMasked 
         private TransportPort mask;
 
     @Override
+    public TransportPort getMask() {
+        return mask;
+    }
+
+    @Override
+    public OFOxmConnTrackingTpDstMasked.Builder setMask(TransportPort mask) {
+        this.mask = mask;
+        this.maskSet = true;
+        return this;
+    }
+    @Override
     public long getTypeLen() {
         return 0x1fb04L;
     }
@@ -213,19 +224,8 @@ class OFOxmConnTrackingTpDstMaskedVer12 implements OFOxmConnTrackingTpDstMasked 
         return this;
     }
     @Override
-    public TransportPort getMask() {
-        return mask;
-    }
-
-    @Override
-    public OFOxmConnTrackingTpDstMasked.Builder setMask(TransportPort mask) {
-        this.mask = mask;
-        this.maskSet = true;
-        return this;
-    }
-    @Override
-    public MatchField<TransportPort> getMatchField() {
-        return MatchField.CONN_TRACKING_TP_DST;
+    public OFOxm<TransportPort> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.2");
     }
 
     @Override
@@ -234,8 +234,8 @@ class OFOxmConnTrackingTpDstMaskedVer12 implements OFOxmConnTrackingTpDstMasked 
     }
 
     @Override
-    public OFOxm<TransportPort> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.2");
+    public MatchField<TransportPort> getMatchField() {
+        return MatchField.CONN_TRACKING_TP_DST;
     }
 
     @Override

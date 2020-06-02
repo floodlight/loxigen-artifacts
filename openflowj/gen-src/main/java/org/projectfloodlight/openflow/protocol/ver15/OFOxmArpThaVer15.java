@@ -67,16 +67,6 @@ class OFOxmArpThaVer15 implements OFOxmArpTha {
         return value;
     }
 
-    @Override
-    public MatchField<MacAddress> getMatchField() {
-        return MatchField.ARP_THA;
-    }
-
-    @Override
-    public boolean isMasked() {
-        return false;
-    }
-
     public OFOxm<MacAddress> getCanonical() {
         // exact match OXM is always canonical
         return this;
@@ -85,6 +75,16 @@ class OFOxmArpThaVer15 implements OFOxmArpTha {
     @Override
     public MacAddress getMask()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property mask not supported in version 1.5");
+    }
+
+    @Override
+    public boolean isMasked() {
+        return false;
+    }
+
+    @Override
+    public MatchField<MacAddress> getMatchField() {
+        return MatchField.ARP_THA;
     }
 
     @Override
@@ -126,8 +126,13 @@ class OFOxmArpThaVer15 implements OFOxmArpTha {
         return this;
     }
     @Override
-    public MatchField<MacAddress> getMatchField() {
-        return MatchField.ARP_THA;
+    public OFOxm<MacAddress> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.5");
+    }
+
+    @Override
+    public MacAddress getMask()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property mask not supported in version 1.5");
     }
 
     @Override
@@ -136,13 +141,8 @@ class OFOxmArpThaVer15 implements OFOxmArpTha {
     }
 
     @Override
-    public OFOxm<MacAddress> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.5");
-    }
-
-    @Override
-    public MacAddress getMask()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property mask not supported in version 1.5");
+    public MatchField<MacAddress> getMatchField() {
+        return MatchField.ARP_THA;
     }
 
     @Override
@@ -188,8 +188,13 @@ class OFOxmArpThaVer15 implements OFOxmArpTha {
         return this;
     }
     @Override
-    public MatchField<MacAddress> getMatchField() {
-        return MatchField.ARP_THA;
+    public OFOxm<MacAddress> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.5");
+    }
+
+    @Override
+    public MacAddress getMask()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property mask not supported in version 1.5");
     }
 
     @Override
@@ -198,13 +203,8 @@ class OFOxmArpThaVer15 implements OFOxmArpTha {
     }
 
     @Override
-    public OFOxm<MacAddress> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.5");
-    }
-
-    @Override
-    public MacAddress getMask()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property mask not supported in version 1.5");
+    public MatchField<MacAddress> getMatchField() {
+        return MatchField.ARP_THA;
     }
 
     @Override

@@ -64,6 +64,11 @@ class OFOxmSctpDstMaskedVer13 implements OFOxmSctpDstMasked {
 
     // Accessors for OF message fields
     @Override
+    public TransportPort getMask() {
+        return mask;
+    }
+
+    @Override
     public long getTypeLen() {
         return 0x80002504L;
     }
@@ -71,21 +76,6 @@ class OFOxmSctpDstMaskedVer13 implements OFOxmSctpDstMasked {
     @Override
     public TransportPort getValue() {
         return value;
-    }
-
-    @Override
-    public TransportPort getMask() {
-        return mask;
-    }
-
-    @Override
-    public MatchField<TransportPort> getMatchField() {
-        return MatchField.SCTP_DST;
-    }
-
-    @Override
-    public boolean isMasked() {
-        return true;
     }
 
     public OFOxm<TransportPort> getCanonical() {
@@ -96,6 +86,16 @@ class OFOxmSctpDstMaskedVer13 implements OFOxmSctpDstMasked {
         } else {
             return this;
         }
+    }
+
+    @Override
+    public boolean isMasked() {
+        return true;
+    }
+
+    @Override
+    public MatchField<TransportPort> getMatchField() {
+        return MatchField.SCTP_DST;
     }
 
     @Override
@@ -123,6 +123,17 @@ class OFOxmSctpDstMaskedVer13 implements OFOxmSctpDstMasked {
         }
 
     @Override
+    public TransportPort getMask() {
+        return mask;
+    }
+
+    @Override
+    public OFOxmSctpDstMasked.Builder setMask(TransportPort mask) {
+        this.mask = mask;
+        this.maskSet = true;
+        return this;
+    }
+    @Override
     public long getTypeLen() {
         return 0x80002504L;
     }
@@ -139,19 +150,8 @@ class OFOxmSctpDstMaskedVer13 implements OFOxmSctpDstMasked {
         return this;
     }
     @Override
-    public TransportPort getMask() {
-        return mask;
-    }
-
-    @Override
-    public OFOxmSctpDstMasked.Builder setMask(TransportPort mask) {
-        this.mask = mask;
-        this.maskSet = true;
-        return this;
-    }
-    @Override
-    public MatchField<TransportPort> getMatchField() {
-        return MatchField.SCTP_DST;
+    public OFOxm<TransportPort> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.3");
     }
 
     @Override
@@ -160,8 +160,8 @@ class OFOxmSctpDstMaskedVer13 implements OFOxmSctpDstMasked {
     }
 
     @Override
-    public OFOxm<TransportPort> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.3");
+    public MatchField<TransportPort> getMatchField() {
+        return MatchField.SCTP_DST;
     }
 
     @Override
@@ -197,6 +197,17 @@ class OFOxmSctpDstMaskedVer13 implements OFOxmSctpDstMasked {
         private TransportPort mask;
 
     @Override
+    public TransportPort getMask() {
+        return mask;
+    }
+
+    @Override
+    public OFOxmSctpDstMasked.Builder setMask(TransportPort mask) {
+        this.mask = mask;
+        this.maskSet = true;
+        return this;
+    }
+    @Override
     public long getTypeLen() {
         return 0x80002504L;
     }
@@ -213,19 +224,8 @@ class OFOxmSctpDstMaskedVer13 implements OFOxmSctpDstMasked {
         return this;
     }
     @Override
-    public TransportPort getMask() {
-        return mask;
-    }
-
-    @Override
-    public OFOxmSctpDstMasked.Builder setMask(TransportPort mask) {
-        this.mask = mask;
-        this.maskSet = true;
-        return this;
-    }
-    @Override
-    public MatchField<TransportPort> getMatchField() {
-        return MatchField.SCTP_DST;
+    public OFOxm<TransportPort> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.3");
     }
 
     @Override
@@ -234,8 +234,8 @@ class OFOxmSctpDstMaskedVer13 implements OFOxmSctpDstMasked {
     }
 
     @Override
-    public OFOxm<TransportPort> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.3");
+    public MatchField<TransportPort> getMatchField() {
+        return MatchField.SCTP_DST;
     }
 
     @Override

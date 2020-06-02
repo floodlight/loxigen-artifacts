@@ -30,33 +30,33 @@ import java.util.List;
 import io.netty.buffer.ByteBuf;
 
 public interface OFBundleAddMsg extends OFObject, OFMessage {
-    OFVersion getVersion();
-    OFType getType();
-    long getXid();
     BundleId getBundleId();
+    OFMessage getData() throws UnsupportedOperationException;
     Set<OFBundleFlags> getFlags();
     OFMessage getMessage() throws UnsupportedOperationException;
     List<OFBundleProp> getProperties() throws UnsupportedOperationException;
-    OFMessage getData() throws UnsupportedOperationException;
+    OFType getType();
+    OFVersion getVersion();
+    long getXid();
 
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();
     public interface Builder extends OFMessage.Builder {
         OFBundleAddMsg build();
-        OFVersion getVersion();
-        OFType getType();
-        long getXid();
-        Builder setXid(long xid);
         BundleId getBundleId();
         Builder setBundleId(BundleId bundleId);
+        OFMessage getData() throws UnsupportedOperationException;
+        Builder setData(OFMessage data) throws UnsupportedOperationException;
         Set<OFBundleFlags> getFlags();
         Builder setFlags(Set<OFBundleFlags> flags);
         OFMessage getMessage() throws UnsupportedOperationException;
         Builder setMessage(OFMessage message) throws UnsupportedOperationException;
         List<OFBundleProp> getProperties() throws UnsupportedOperationException;
         Builder setProperties(List<OFBundleProp> properties) throws UnsupportedOperationException;
-        OFMessage getData() throws UnsupportedOperationException;
-        Builder setData(OFMessage data) throws UnsupportedOperationException;
+        OFType getType();
+        OFVersion getVersion();
+        long getXid();
+        Builder setXid(long xid);
     }
 }

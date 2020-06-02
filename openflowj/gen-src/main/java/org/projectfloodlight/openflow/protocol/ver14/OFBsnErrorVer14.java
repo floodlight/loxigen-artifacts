@@ -69,33 +69,8 @@ class OFBsnErrorVer14 implements OFBsnError {
 
     // Accessors for OF message fields
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_14;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.ERROR;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFErrorType getErrType() {
-        return OFErrorType.EXPERIMENTER;
-    }
-
-    @Override
-    public int getSubtype() {
-        return 0x1;
-    }
-
-    @Override
-    public long getExperimenter() {
-        return 0x5c16c7L;
+    public OFErrorCauseData getData() {
+        return data;
     }
 
     @Override
@@ -104,8 +79,33 @@ class OFBsnErrorVer14 implements OFBsnError {
     }
 
     @Override
-    public OFErrorCauseData getData() {
-        return data;
+    public OFErrorType getErrType() {
+        return OFErrorType.EXPERIMENTER;
+    }
+
+    @Override
+    public long getExperimenter() {
+        return 0x5c16c7L;
+    }
+
+    @Override
+    public int getSubtype() {
+        return 0x1;
+    }
+
+    @Override
+    public OFType getType() {
+        return OFType.ERROR;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_14;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
     }
 
 
@@ -130,45 +130,16 @@ class OFBsnErrorVer14 implements OFBsnError {
         }
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_14;
+    public OFErrorCauseData getData() {
+        return data;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.ERROR;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFBsnError.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
+    public OFBsnError.Builder setData(OFErrorCauseData data) {
+        this.data = data;
+        this.dataSet = true;
         return this;
     }
-    @Override
-    public OFErrorType getErrType() {
-        return OFErrorType.EXPERIMENTER;
-    }
-
-    @Override
-    public int getSubtype() {
-        return 0x1;
-    }
-
-    @Override
-    public OFBsnError.Builder setSubtype(int subtype) {
-            throw new UnsupportedOperationException("Property subtype is not writeable");
-    }
-    @Override
-    public long getExperimenter() {
-        return 0x5c16c7L;
-    }
-
     @Override
     public String getErrMsg() {
         return errMsg;
@@ -181,14 +152,43 @@ class OFBsnErrorVer14 implements OFBsnError {
         return this;
     }
     @Override
-    public OFErrorCauseData getData() {
-        return data;
+    public OFErrorType getErrType() {
+        return OFErrorType.EXPERIMENTER;
     }
 
     @Override
-    public OFBsnError.Builder setData(OFErrorCauseData data) {
-        this.data = data;
-        this.dataSet = true;
+    public long getExperimenter() {
+        return 0x5c16c7L;
+    }
+
+    @Override
+    public int getSubtype() {
+        return 0x1;
+    }
+
+    @Override
+    public OFBsnError.Builder setSubtype(int subtype) {
+            throw new UnsupportedOperationException("Property subtype is not writeable");
+    }
+    @Override
+    public OFType getType() {
+        return OFType.ERROR;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_14;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFBsnError.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 
@@ -223,45 +223,16 @@ class OFBsnErrorVer14 implements OFBsnError {
         private OFErrorCauseData data;
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_14;
+    public OFErrorCauseData getData() {
+        return data;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.ERROR;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFBsnError.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
+    public OFBsnError.Builder setData(OFErrorCauseData data) {
+        this.data = data;
+        this.dataSet = true;
         return this;
     }
-    @Override
-    public OFErrorType getErrType() {
-        return OFErrorType.EXPERIMENTER;
-    }
-
-    @Override
-    public int getSubtype() {
-        return 0x1;
-    }
-
-    @Override
-    public OFBsnError.Builder setSubtype(int subtype) {
-            throw new UnsupportedOperationException("Property subtype is not writeable");
-    }
-    @Override
-    public long getExperimenter() {
-        return 0x5c16c7L;
-    }
-
     @Override
     public String getErrMsg() {
         return errMsg;
@@ -274,14 +245,43 @@ class OFBsnErrorVer14 implements OFBsnError {
         return this;
     }
     @Override
-    public OFErrorCauseData getData() {
-        return data;
+    public OFErrorType getErrType() {
+        return OFErrorType.EXPERIMENTER;
     }
 
     @Override
-    public OFBsnError.Builder setData(OFErrorCauseData data) {
-        this.data = data;
-        this.dataSet = true;
+    public long getExperimenter() {
+        return 0x5c16c7L;
+    }
+
+    @Override
+    public int getSubtype() {
+        return 0x1;
+    }
+
+    @Override
+    public OFBsnError.Builder setSubtype(int subtype) {
+            throw new UnsupportedOperationException("Property subtype is not writeable");
+    }
+    @Override
+    public OFType getType() {
+        return OFType.ERROR;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_14;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFBsnError.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 //

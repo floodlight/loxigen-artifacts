@@ -58,23 +58,13 @@ class OFBsnGetMirroringRequestVer10 implements OFBsnGetMirroringRequest {
 
     // Accessors for OF message fields
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_10;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.EXPERIMENTER;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
     public long getExperimenter() {
         return 0x5c16c7L;
+    }
+
+    @Override
+    public short getReportMirrorPorts() {
+        return reportMirrorPorts;
     }
 
     @Override
@@ -83,8 +73,18 @@ class OFBsnGetMirroringRequestVer10 implements OFBsnGetMirroringRequest {
     }
 
     @Override
-    public short getReportMirrorPorts() {
-        return reportMirrorPorts;
+    public OFType getType() {
+        return OFType.EXPERIMENTER;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_10;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
     }
 
 
@@ -107,34 +107,8 @@ class OFBsnGetMirroringRequestVer10 implements OFBsnGetMirroringRequest {
         }
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_10;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.EXPERIMENTER;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFBsnGetMirroringRequest.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
-        return this;
-    }
-    @Override
     public long getExperimenter() {
         return 0x5c16c7L;
-    }
-
-    @Override
-    public long getSubtype() {
-        return 0x4L;
     }
 
     @Override
@@ -146,6 +120,32 @@ class OFBsnGetMirroringRequestVer10 implements OFBsnGetMirroringRequest {
     public OFBsnGetMirroringRequest.Builder setReportMirrorPorts(short reportMirrorPorts) {
         this.reportMirrorPorts = reportMirrorPorts;
         this.reportMirrorPortsSet = true;
+        return this;
+    }
+    @Override
+    public long getSubtype() {
+        return 0x4L;
+    }
+
+    @Override
+    public OFType getType() {
+        return OFType.EXPERIMENTER;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_10;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFBsnGetMirroringRequest.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 
@@ -172,34 +172,8 @@ class OFBsnGetMirroringRequestVer10 implements OFBsnGetMirroringRequest {
         private short reportMirrorPorts;
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_10;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.EXPERIMENTER;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFBsnGetMirroringRequest.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
-        return this;
-    }
-    @Override
     public long getExperimenter() {
         return 0x5c16c7L;
-    }
-
-    @Override
-    public long getSubtype() {
-        return 0x4L;
     }
 
     @Override
@@ -211,6 +185,32 @@ class OFBsnGetMirroringRequestVer10 implements OFBsnGetMirroringRequest {
     public OFBsnGetMirroringRequest.Builder setReportMirrorPorts(short reportMirrorPorts) {
         this.reportMirrorPorts = reportMirrorPorts;
         this.reportMirrorPortsSet = true;
+        return this;
+    }
+    @Override
+    public long getSubtype() {
+        return 0x4L;
+    }
+
+    @Override
+    public OFType getType() {
+        return OFType.EXPERIMENTER;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_10;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFBsnGetMirroringRequest.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 //

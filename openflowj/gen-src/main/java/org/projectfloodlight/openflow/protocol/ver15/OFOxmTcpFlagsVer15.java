@@ -67,16 +67,6 @@ class OFOxmTcpFlagsVer15 implements OFOxmTcpFlags {
         return value;
     }
 
-    @Override
-    public MatchField<U16> getMatchField() {
-        return MatchField.TCP_FLAGS;
-    }
-
-    @Override
-    public boolean isMasked() {
-        return false;
-    }
-
     public OFOxm<U16> getCanonical() {
         // exact match OXM is always canonical
         return this;
@@ -85,6 +75,16 @@ class OFOxmTcpFlagsVer15 implements OFOxmTcpFlags {
     @Override
     public U16 getMask()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property mask not supported in version 1.5");
+    }
+
+    @Override
+    public boolean isMasked() {
+        return false;
+    }
+
+    @Override
+    public MatchField<U16> getMatchField() {
+        return MatchField.TCP_FLAGS;
     }
 
     @Override
@@ -126,8 +126,13 @@ class OFOxmTcpFlagsVer15 implements OFOxmTcpFlags {
         return this;
     }
     @Override
-    public MatchField<U16> getMatchField() {
-        return MatchField.TCP_FLAGS;
+    public OFOxm<U16> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.5");
+    }
+
+    @Override
+    public U16 getMask()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property mask not supported in version 1.5");
     }
 
     @Override
@@ -136,13 +141,8 @@ class OFOxmTcpFlagsVer15 implements OFOxmTcpFlags {
     }
 
     @Override
-    public OFOxm<U16> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.5");
-    }
-
-    @Override
-    public U16 getMask()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property mask not supported in version 1.5");
+    public MatchField<U16> getMatchField() {
+        return MatchField.TCP_FLAGS;
     }
 
     @Override
@@ -188,8 +188,13 @@ class OFOxmTcpFlagsVer15 implements OFOxmTcpFlags {
         return this;
     }
     @Override
-    public MatchField<U16> getMatchField() {
-        return MatchField.TCP_FLAGS;
+    public OFOxm<U16> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.5");
+    }
+
+    @Override
+    public U16 getMask()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property mask not supported in version 1.5");
     }
 
     @Override
@@ -198,13 +203,8 @@ class OFOxmTcpFlagsVer15 implements OFOxmTcpFlags {
     }
 
     @Override
-    public OFOxm<U16> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.5");
-    }
-
-    @Override
-    public U16 getMask()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property mask not supported in version 1.5");
+    public MatchField<U16> getMatchField() {
+        return MatchField.TCP_FLAGS;
     }
 
     @Override

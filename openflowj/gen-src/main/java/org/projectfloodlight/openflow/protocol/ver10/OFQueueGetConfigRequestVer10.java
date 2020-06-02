@@ -61,8 +61,8 @@ class OFQueueGetConfigRequestVer10 implements OFQueueGetConfigRequest {
 
     // Accessors for OF message fields
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_10;
+    public OFPort getPort() {
+        return port;
     }
 
     @Override
@@ -71,13 +71,13 @@ class OFQueueGetConfigRequestVer10 implements OFQueueGetConfigRequest {
     }
 
     @Override
-    public long getXid() {
-        return xid;
+    public OFVersion getVersion() {
+        return OFVersion.OF_10;
     }
 
     @Override
-    public OFPort getPort() {
-        return port;
+    public long getXid() {
+        return xid;
     }
 
 
@@ -100,13 +100,24 @@ class OFQueueGetConfigRequestVer10 implements OFQueueGetConfigRequest {
         }
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_10;
+    public OFPort getPort() {
+        return port;
     }
 
     @Override
+    public OFQueueGetConfigRequest.Builder setPort(OFPort port) {
+        this.port = port;
+        this.portSet = true;
+        return this;
+    }
+    @Override
     public OFType getType() {
         return OFType.QUEUE_GET_CONFIG_REQUEST;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_10;
     }
 
     @Override
@@ -118,17 +129,6 @@ class OFQueueGetConfigRequestVer10 implements OFQueueGetConfigRequest {
     public OFQueueGetConfigRequest.Builder setXid(long xid) {
         this.xid = xid;
         this.xidSet = true;
-        return this;
-    }
-    @Override
-    public OFPort getPort() {
-        return port;
-    }
-
-    @Override
-    public OFQueueGetConfigRequest.Builder setPort(OFPort port) {
-        this.port = port;
-        this.portSet = true;
         return this;
     }
 
@@ -157,13 +157,24 @@ class OFQueueGetConfigRequestVer10 implements OFQueueGetConfigRequest {
         private OFPort port;
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_10;
+    public OFPort getPort() {
+        return port;
     }
 
     @Override
+    public OFQueueGetConfigRequest.Builder setPort(OFPort port) {
+        this.port = port;
+        this.portSet = true;
+        return this;
+    }
+    @Override
     public OFType getType() {
         return OFType.QUEUE_GET_CONFIG_REQUEST;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_10;
     }
 
     @Override
@@ -175,17 +186,6 @@ class OFQueueGetConfigRequestVer10 implements OFQueueGetConfigRequest {
     public OFQueueGetConfigRequest.Builder setXid(long xid) {
         this.xid = xid;
         this.xidSet = true;
-        return this;
-    }
-    @Override
-    public OFPort getPort() {
-        return port;
-    }
-
-    @Override
-    public OFQueueGetConfigRequest.Builder setPort(OFPort port) {
-        this.port = port;
-        this.portSet = true;
         return this;
     }
 //

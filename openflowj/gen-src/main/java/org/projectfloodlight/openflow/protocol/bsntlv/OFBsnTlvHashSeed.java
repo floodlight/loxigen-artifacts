@@ -28,9 +28,9 @@ import org.projectfloodlight.openflow.exceptions.*;
 import io.netty.buffer.ByteBuf;
 
 public interface OFBsnTlvHashSeed extends OFObject, OFBsnTlv {
-    int getType();
     long getSeed1();
     long getSeed2();
+    int getType();
     OFVersion getVersion();
 
     void writeTo(ByteBuf channelBuffer);
@@ -38,11 +38,11 @@ public interface OFBsnTlvHashSeed extends OFObject, OFBsnTlv {
     Builder createBuilder();
     public interface Builder extends OFBsnTlv.Builder {
         OFBsnTlvHashSeed build();
-        int getType();
         long getSeed1();
         Builder setSeed1(long seed1);
         long getSeed2();
         Builder setSeed2(long seed2);
+        int getType();
         OFVersion getVersion();
     }
 }

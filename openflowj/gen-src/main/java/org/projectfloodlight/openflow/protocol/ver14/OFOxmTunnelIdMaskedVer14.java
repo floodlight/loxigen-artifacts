@@ -64,6 +64,11 @@ class OFOxmTunnelIdMaskedVer14 implements OFOxmTunnelIdMasked {
 
     // Accessors for OF message fields
     @Override
+    public U64 getMask() {
+        return mask;
+    }
+
+    @Override
     public long getTypeLen() {
         return 0x80004d10L;
     }
@@ -71,21 +76,6 @@ class OFOxmTunnelIdMaskedVer14 implements OFOxmTunnelIdMasked {
     @Override
     public U64 getValue() {
         return value;
-    }
-
-    @Override
-    public U64 getMask() {
-        return mask;
-    }
-
-    @Override
-    public MatchField<U64> getMatchField() {
-        return MatchField.TUNNEL_ID;
-    }
-
-    @Override
-    public boolean isMasked() {
-        return true;
     }
 
     public OFOxm<U64> getCanonical() {
@@ -96,6 +86,16 @@ class OFOxmTunnelIdMaskedVer14 implements OFOxmTunnelIdMasked {
         } else {
             return this;
         }
+    }
+
+    @Override
+    public boolean isMasked() {
+        return true;
+    }
+
+    @Override
+    public MatchField<U64> getMatchField() {
+        return MatchField.TUNNEL_ID;
     }
 
     @Override
@@ -123,6 +123,17 @@ class OFOxmTunnelIdMaskedVer14 implements OFOxmTunnelIdMasked {
         }
 
     @Override
+    public U64 getMask() {
+        return mask;
+    }
+
+    @Override
+    public OFOxmTunnelIdMasked.Builder setMask(U64 mask) {
+        this.mask = mask;
+        this.maskSet = true;
+        return this;
+    }
+    @Override
     public long getTypeLen() {
         return 0x80004d10L;
     }
@@ -139,19 +150,8 @@ class OFOxmTunnelIdMaskedVer14 implements OFOxmTunnelIdMasked {
         return this;
     }
     @Override
-    public U64 getMask() {
-        return mask;
-    }
-
-    @Override
-    public OFOxmTunnelIdMasked.Builder setMask(U64 mask) {
-        this.mask = mask;
-        this.maskSet = true;
-        return this;
-    }
-    @Override
-    public MatchField<U64> getMatchField() {
-        return MatchField.TUNNEL_ID;
+    public OFOxm<U64> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.4");
     }
 
     @Override
@@ -160,8 +160,8 @@ class OFOxmTunnelIdMaskedVer14 implements OFOxmTunnelIdMasked {
     }
 
     @Override
-    public OFOxm<U64> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.4");
+    public MatchField<U64> getMatchField() {
+        return MatchField.TUNNEL_ID;
     }
 
     @Override
@@ -197,6 +197,17 @@ class OFOxmTunnelIdMaskedVer14 implements OFOxmTunnelIdMasked {
         private U64 mask;
 
     @Override
+    public U64 getMask() {
+        return mask;
+    }
+
+    @Override
+    public OFOxmTunnelIdMasked.Builder setMask(U64 mask) {
+        this.mask = mask;
+        this.maskSet = true;
+        return this;
+    }
+    @Override
     public long getTypeLen() {
         return 0x80004d10L;
     }
@@ -213,19 +224,8 @@ class OFOxmTunnelIdMaskedVer14 implements OFOxmTunnelIdMasked {
         return this;
     }
     @Override
-    public U64 getMask() {
-        return mask;
-    }
-
-    @Override
-    public OFOxmTunnelIdMasked.Builder setMask(U64 mask) {
-        this.mask = mask;
-        this.maskSet = true;
-        return this;
-    }
-    @Override
-    public MatchField<U64> getMatchField() {
-        return MatchField.TUNNEL_ID;
+    public OFOxm<U64> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.4");
     }
 
     @Override
@@ -234,8 +234,8 @@ class OFOxmTunnelIdMaskedVer14 implements OFOxmTunnelIdMasked {
     }
 
     @Override
-    public OFOxm<U64> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.4");
+    public MatchField<U64> getMatchField() {
+        return MatchField.TUNNEL_ID;
     }
 
     @Override

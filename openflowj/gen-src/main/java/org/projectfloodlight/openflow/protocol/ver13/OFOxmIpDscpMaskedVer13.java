@@ -64,6 +64,11 @@ class OFOxmIpDscpMaskedVer13 implements OFOxmIpDscpMasked {
 
     // Accessors for OF message fields
     @Override
+    public IpDscp getMask() {
+        return mask;
+    }
+
+    @Override
     public long getTypeLen() {
         return 0x80001102L;
     }
@@ -71,21 +76,6 @@ class OFOxmIpDscpMaskedVer13 implements OFOxmIpDscpMasked {
     @Override
     public IpDscp getValue() {
         return value;
-    }
-
-    @Override
-    public IpDscp getMask() {
-        return mask;
-    }
-
-    @Override
-    public MatchField<IpDscp> getMatchField() {
-        return MatchField.IP_DSCP;
-    }
-
-    @Override
-    public boolean isMasked() {
-        return true;
     }
 
     public OFOxm<IpDscp> getCanonical() {
@@ -96,6 +86,16 @@ class OFOxmIpDscpMaskedVer13 implements OFOxmIpDscpMasked {
         } else {
             return this;
         }
+    }
+
+    @Override
+    public boolean isMasked() {
+        return true;
+    }
+
+    @Override
+    public MatchField<IpDscp> getMatchField() {
+        return MatchField.IP_DSCP;
     }
 
     @Override
@@ -123,6 +123,17 @@ class OFOxmIpDscpMaskedVer13 implements OFOxmIpDscpMasked {
         }
 
     @Override
+    public IpDscp getMask() {
+        return mask;
+    }
+
+    @Override
+    public OFOxmIpDscpMasked.Builder setMask(IpDscp mask) {
+        this.mask = mask;
+        this.maskSet = true;
+        return this;
+    }
+    @Override
     public long getTypeLen() {
         return 0x80001102L;
     }
@@ -139,19 +150,8 @@ class OFOxmIpDscpMaskedVer13 implements OFOxmIpDscpMasked {
         return this;
     }
     @Override
-    public IpDscp getMask() {
-        return mask;
-    }
-
-    @Override
-    public OFOxmIpDscpMasked.Builder setMask(IpDscp mask) {
-        this.mask = mask;
-        this.maskSet = true;
-        return this;
-    }
-    @Override
-    public MatchField<IpDscp> getMatchField() {
-        return MatchField.IP_DSCP;
+    public OFOxm<IpDscp> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.3");
     }
 
     @Override
@@ -160,8 +160,8 @@ class OFOxmIpDscpMaskedVer13 implements OFOxmIpDscpMasked {
     }
 
     @Override
-    public OFOxm<IpDscp> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.3");
+    public MatchField<IpDscp> getMatchField() {
+        return MatchField.IP_DSCP;
     }
 
     @Override
@@ -197,6 +197,17 @@ class OFOxmIpDscpMaskedVer13 implements OFOxmIpDscpMasked {
         private IpDscp mask;
 
     @Override
+    public IpDscp getMask() {
+        return mask;
+    }
+
+    @Override
+    public OFOxmIpDscpMasked.Builder setMask(IpDscp mask) {
+        this.mask = mask;
+        this.maskSet = true;
+        return this;
+    }
+    @Override
     public long getTypeLen() {
         return 0x80001102L;
     }
@@ -213,19 +224,8 @@ class OFOxmIpDscpMaskedVer13 implements OFOxmIpDscpMasked {
         return this;
     }
     @Override
-    public IpDscp getMask() {
-        return mask;
-    }
-
-    @Override
-    public OFOxmIpDscpMasked.Builder setMask(IpDscp mask) {
-        this.mask = mask;
-        this.maskSet = true;
-        return this;
-    }
-    @Override
-    public MatchField<IpDscp> getMatchField() {
-        return MatchField.IP_DSCP;
+    public OFOxm<IpDscp> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.3");
     }
 
     @Override
@@ -234,8 +234,8 @@ class OFOxmIpDscpMaskedVer13 implements OFOxmIpDscpMasked {
     }
 
     @Override
-    public OFOxm<IpDscp> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.3");
+    public MatchField<IpDscp> getMatchField() {
+        return MatchField.IP_DSCP;
     }
 
     @Override

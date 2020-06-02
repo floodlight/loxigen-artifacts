@@ -56,8 +56,8 @@ class OFHelloVer11 implements OFHello {
 
     // Accessors for OF message fields
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_11;
+    public List<OFHelloElem> getElements()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property elements not supported in version 1.1");
     }
 
     @Override
@@ -66,13 +66,13 @@ class OFHelloVer11 implements OFHello {
     }
 
     @Override
-    public long getXid() {
-        return xid;
+    public OFVersion getVersion() {
+        return OFVersion.OF_11;
     }
 
     @Override
-    public List<OFHelloElem> getElements()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property elements not supported in version 1.1");
+    public long getXid() {
+        return xid;
     }
 
 
@@ -93,13 +93,22 @@ class OFHelloVer11 implements OFHello {
         }
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_11;
+    public List<OFHelloElem> getElements()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property elements not supported in version 1.1");
     }
 
     @Override
+    public OFHello.Builder setElements(List<OFHelloElem> elements) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property elements not supported in version 1.1");
+    }
+    @Override
     public OFType getType() {
         return OFType.HELLO;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_11;
     }
 
     @Override
@@ -112,15 +121,6 @@ class OFHelloVer11 implements OFHello {
         this.xid = xid;
         this.xidSet = true;
         return this;
-    }
-    @Override
-    public List<OFHelloElem> getElements()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property elements not supported in version 1.1");
-    }
-
-    @Override
-    public OFHello.Builder setElements(List<OFHelloElem> elements) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property elements not supported in version 1.1");
     }
 
 
@@ -142,13 +142,22 @@ class OFHelloVer11 implements OFHello {
         private long xid;
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_11;
+    public List<OFHelloElem> getElements()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property elements not supported in version 1.1");
     }
 
     @Override
+    public OFHello.Builder setElements(List<OFHelloElem> elements) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property elements not supported in version 1.1");
+    }
+    @Override
     public OFType getType() {
         return OFType.HELLO;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_11;
     }
 
     @Override
@@ -161,15 +170,6 @@ class OFHelloVer11 implements OFHello {
         this.xid = xid;
         this.xidSet = true;
         return this;
-    }
-    @Override
-    public List<OFHelloElem> getElements()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property elements not supported in version 1.1");
-    }
-
-    @Override
-    public OFHello.Builder setElements(List<OFHelloElem> elements) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property elements not supported in version 1.1");
     }
 //
         @Override

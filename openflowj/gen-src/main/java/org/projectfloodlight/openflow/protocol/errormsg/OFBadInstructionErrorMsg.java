@@ -28,26 +28,26 @@ import org.projectfloodlight.openflow.exceptions.*;
 import io.netty.buffer.ByteBuf;
 
 public interface OFBadInstructionErrorMsg extends OFObject, OFErrorMsg {
-    OFVersion getVersion();
-    OFType getType();
-    long getXid();
-    OFErrorType getErrType();
     OFBadInstructionCode getCode();
     OFErrorCauseData getData();
+    OFErrorType getErrType();
+    OFType getType();
+    OFVersion getVersion();
+    long getXid();
 
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();
     public interface Builder extends OFErrorMsg.Builder {
         OFBadInstructionErrorMsg build();
-        OFVersion getVersion();
-        OFType getType();
-        long getXid();
-        Builder setXid(long xid);
-        OFErrorType getErrType();
         OFBadInstructionCode getCode();
         Builder setCode(OFBadInstructionCode code);
         OFErrorCauseData getData();
         Builder setData(OFErrorCauseData data);
+        OFErrorType getErrType();
+        OFType getType();
+        OFVersion getVersion();
+        long getXid();
+        Builder setXid(long xid);
     }
 }

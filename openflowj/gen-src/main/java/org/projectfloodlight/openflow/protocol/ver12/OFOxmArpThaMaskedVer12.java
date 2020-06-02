@@ -64,6 +64,11 @@ class OFOxmArpThaMaskedVer12 implements OFOxmArpThaMasked {
 
     // Accessors for OF message fields
     @Override
+    public MacAddress getMask() {
+        return mask;
+    }
+
+    @Override
     public long getTypeLen() {
         return 0x8000330cL;
     }
@@ -71,21 +76,6 @@ class OFOxmArpThaMaskedVer12 implements OFOxmArpThaMasked {
     @Override
     public MacAddress getValue() {
         return value;
-    }
-
-    @Override
-    public MacAddress getMask() {
-        return mask;
-    }
-
-    @Override
-    public MatchField<MacAddress> getMatchField() {
-        return MatchField.ARP_THA;
-    }
-
-    @Override
-    public boolean isMasked() {
-        return true;
     }
 
     public OFOxm<MacAddress> getCanonical() {
@@ -96,6 +86,16 @@ class OFOxmArpThaMaskedVer12 implements OFOxmArpThaMasked {
         } else {
             return this;
         }
+    }
+
+    @Override
+    public boolean isMasked() {
+        return true;
+    }
+
+    @Override
+    public MatchField<MacAddress> getMatchField() {
+        return MatchField.ARP_THA;
     }
 
     @Override
@@ -123,6 +123,17 @@ class OFOxmArpThaMaskedVer12 implements OFOxmArpThaMasked {
         }
 
     @Override
+    public MacAddress getMask() {
+        return mask;
+    }
+
+    @Override
+    public OFOxmArpThaMasked.Builder setMask(MacAddress mask) {
+        this.mask = mask;
+        this.maskSet = true;
+        return this;
+    }
+    @Override
     public long getTypeLen() {
         return 0x8000330cL;
     }
@@ -139,19 +150,8 @@ class OFOxmArpThaMaskedVer12 implements OFOxmArpThaMasked {
         return this;
     }
     @Override
-    public MacAddress getMask() {
-        return mask;
-    }
-
-    @Override
-    public OFOxmArpThaMasked.Builder setMask(MacAddress mask) {
-        this.mask = mask;
-        this.maskSet = true;
-        return this;
-    }
-    @Override
-    public MatchField<MacAddress> getMatchField() {
-        return MatchField.ARP_THA;
+    public OFOxm<MacAddress> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.2");
     }
 
     @Override
@@ -160,8 +160,8 @@ class OFOxmArpThaMaskedVer12 implements OFOxmArpThaMasked {
     }
 
     @Override
-    public OFOxm<MacAddress> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.2");
+    public MatchField<MacAddress> getMatchField() {
+        return MatchField.ARP_THA;
     }
 
     @Override
@@ -197,6 +197,17 @@ class OFOxmArpThaMaskedVer12 implements OFOxmArpThaMasked {
         private MacAddress mask;
 
     @Override
+    public MacAddress getMask() {
+        return mask;
+    }
+
+    @Override
+    public OFOxmArpThaMasked.Builder setMask(MacAddress mask) {
+        this.mask = mask;
+        this.maskSet = true;
+        return this;
+    }
+    @Override
     public long getTypeLen() {
         return 0x8000330cL;
     }
@@ -213,19 +224,8 @@ class OFOxmArpThaMaskedVer12 implements OFOxmArpThaMasked {
         return this;
     }
     @Override
-    public MacAddress getMask() {
-        return mask;
-    }
-
-    @Override
-    public OFOxmArpThaMasked.Builder setMask(MacAddress mask) {
-        this.mask = mask;
-        this.maskSet = true;
-        return this;
-    }
-    @Override
-    public MatchField<MacAddress> getMatchField() {
-        return MatchField.ARP_THA;
+    public OFOxm<MacAddress> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.2");
     }
 
     @Override
@@ -234,8 +234,8 @@ class OFOxmArpThaMaskedVer12 implements OFOxmArpThaMasked {
     }
 
     @Override
-    public OFOxm<MacAddress> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.2");
+    public MatchField<MacAddress> getMatchField() {
+        return MatchField.ARP_THA;
     }
 
     @Override

@@ -84,28 +84,8 @@ class OFPortModVer13 implements OFPortMod {
 
     // Accessors for OF message fields
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_13;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.PORT_MOD;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFPort getPortNo() {
-        return portNo;
-    }
-
-    @Override
-    public MacAddress getHwAddr() {
-        return hwAddr;
+    public long getAdvertise() {
+        return advertise;
     }
 
     @Override
@@ -114,18 +94,38 @@ class OFPortModVer13 implements OFPortMod {
     }
 
     @Override
+    public MacAddress getHwAddr() {
+        return hwAddr;
+    }
+
+    @Override
     public Set<OFPortConfig> getMask() {
         return mask;
     }
 
     @Override
-    public long getAdvertise() {
-        return advertise;
+    public OFPort getPortNo() {
+        return portNo;
     }
 
     @Override
     public List<OFPortModProp> getProperties()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property properties not supported in version 1.3");
+    }
+
+    @Override
+    public OFType getType() {
+        return OFType.PORT_MOD;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_13;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
     }
 
 
@@ -156,46 +156,14 @@ class OFPortModVer13 implements OFPortMod {
         }
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_13;
+    public long getAdvertise() {
+        return advertise;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.PORT_MOD;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFPortMod.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
-        return this;
-    }
-    @Override
-    public OFPort getPortNo() {
-        return portNo;
-    }
-
-    @Override
-    public OFPortMod.Builder setPortNo(OFPort portNo) {
-        this.portNo = portNo;
-        this.portNoSet = true;
-        return this;
-    }
-    @Override
-    public MacAddress getHwAddr() {
-        return hwAddr;
-    }
-
-    @Override
-    public OFPortMod.Builder setHwAddr(MacAddress hwAddr) {
-        this.hwAddr = hwAddr;
-        this.hwAddrSet = true;
+    public OFPortMod.Builder setAdvertise(long advertise) {
+        this.advertise = advertise;
+        this.advertiseSet = true;
         return this;
     }
     @Override
@@ -210,6 +178,17 @@ class OFPortModVer13 implements OFPortMod {
         return this;
     }
     @Override
+    public MacAddress getHwAddr() {
+        return hwAddr;
+    }
+
+    @Override
+    public OFPortMod.Builder setHwAddr(MacAddress hwAddr) {
+        this.hwAddr = hwAddr;
+        this.hwAddrSet = true;
+        return this;
+    }
+    @Override
     public Set<OFPortConfig> getMask() {
         return mask;
     }
@@ -221,14 +200,14 @@ class OFPortModVer13 implements OFPortMod {
         return this;
     }
     @Override
-    public long getAdvertise() {
-        return advertise;
+    public OFPort getPortNo() {
+        return portNo;
     }
 
     @Override
-    public OFPortMod.Builder setAdvertise(long advertise) {
-        this.advertise = advertise;
-        this.advertiseSet = true;
+    public OFPortMod.Builder setPortNo(OFPort portNo) {
+        this.portNo = portNo;
+        this.portNoSet = true;
         return this;
     }
     @Override
@@ -239,6 +218,27 @@ class OFPortModVer13 implements OFPortMod {
     @Override
     public OFPortMod.Builder setProperties(List<OFPortModProp> properties) throws UnsupportedOperationException {
             throw new UnsupportedOperationException("Property properties not supported in version 1.3");
+    }
+    @Override
+    public OFType getType() {
+        return OFType.PORT_MOD;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_13;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFPortMod.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
+        return this;
     }
 
 
@@ -288,46 +288,14 @@ class OFPortModVer13 implements OFPortMod {
         private long advertise;
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_13;
+    public long getAdvertise() {
+        return advertise;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.PORT_MOD;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFPortMod.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
-        return this;
-    }
-    @Override
-    public OFPort getPortNo() {
-        return portNo;
-    }
-
-    @Override
-    public OFPortMod.Builder setPortNo(OFPort portNo) {
-        this.portNo = portNo;
-        this.portNoSet = true;
-        return this;
-    }
-    @Override
-    public MacAddress getHwAddr() {
-        return hwAddr;
-    }
-
-    @Override
-    public OFPortMod.Builder setHwAddr(MacAddress hwAddr) {
-        this.hwAddr = hwAddr;
-        this.hwAddrSet = true;
+    public OFPortMod.Builder setAdvertise(long advertise) {
+        this.advertise = advertise;
+        this.advertiseSet = true;
         return this;
     }
     @Override
@@ -342,6 +310,17 @@ class OFPortModVer13 implements OFPortMod {
         return this;
     }
     @Override
+    public MacAddress getHwAddr() {
+        return hwAddr;
+    }
+
+    @Override
+    public OFPortMod.Builder setHwAddr(MacAddress hwAddr) {
+        this.hwAddr = hwAddr;
+        this.hwAddrSet = true;
+        return this;
+    }
+    @Override
     public Set<OFPortConfig> getMask() {
         return mask;
     }
@@ -353,14 +332,14 @@ class OFPortModVer13 implements OFPortMod {
         return this;
     }
     @Override
-    public long getAdvertise() {
-        return advertise;
+    public OFPort getPortNo() {
+        return portNo;
     }
 
     @Override
-    public OFPortMod.Builder setAdvertise(long advertise) {
-        this.advertise = advertise;
-        this.advertiseSet = true;
+    public OFPortMod.Builder setPortNo(OFPort portNo) {
+        this.portNo = portNo;
+        this.portNoSet = true;
         return this;
     }
     @Override
@@ -371,6 +350,27 @@ class OFPortModVer13 implements OFPortMod {
     @Override
     public OFPortMod.Builder setProperties(List<OFPortModProp> properties) throws UnsupportedOperationException {
             throw new UnsupportedOperationException("Property properties not supported in version 1.3");
+    }
+    @Override
+    public OFType getType() {
+        return OFType.PORT_MOD;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_13;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFPortMod.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
+        return this;
     }
 //
         @Override

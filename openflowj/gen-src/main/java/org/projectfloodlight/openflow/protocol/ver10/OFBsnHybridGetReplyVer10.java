@@ -61,28 +61,8 @@ class OFBsnHybridGetReplyVer10 implements OFBsnHybridGetReply {
 
     // Accessors for OF message fields
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_10;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.EXPERIMENTER;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
     public long getExperimenter() {
         return 0x5c16c7L;
-    }
-
-    @Override
-    public long getSubtype() {
-        return 0x1cL;
     }
 
     @Override
@@ -93,6 +73,26 @@ class OFBsnHybridGetReplyVer10 implements OFBsnHybridGetReply {
     @Override
     public int getHybridVersion() {
         return hybridVersion;
+    }
+
+    @Override
+    public long getSubtype() {
+        return 0x1cL;
+    }
+
+    @Override
+    public OFType getType() {
+        return OFType.EXPERIMENTER;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_10;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
     }
 
 
@@ -117,34 +117,8 @@ class OFBsnHybridGetReplyVer10 implements OFBsnHybridGetReply {
         }
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_10;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.EXPERIMENTER;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFBsnHybridGetReply.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
-        return this;
-    }
-    @Override
     public long getExperimenter() {
         return 0x5c16c7L;
-    }
-
-    @Override
-    public long getSubtype() {
-        return 0x1cL;
     }
 
     @Override
@@ -167,6 +141,32 @@ class OFBsnHybridGetReplyVer10 implements OFBsnHybridGetReply {
     public OFBsnHybridGetReply.Builder setHybridVersion(int hybridVersion) {
         this.hybridVersion = hybridVersion;
         this.hybridVersionSet = true;
+        return this;
+    }
+    @Override
+    public long getSubtype() {
+        return 0x1cL;
+    }
+
+    @Override
+    public OFType getType() {
+        return OFType.EXPERIMENTER;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_10;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFBsnHybridGetReply.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 
@@ -197,34 +197,8 @@ class OFBsnHybridGetReplyVer10 implements OFBsnHybridGetReply {
         private int hybridVersion;
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_10;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.EXPERIMENTER;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFBsnHybridGetReply.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
-        return this;
-    }
-    @Override
     public long getExperimenter() {
         return 0x5c16c7L;
-    }
-
-    @Override
-    public long getSubtype() {
-        return 0x1cL;
     }
 
     @Override
@@ -247,6 +221,32 @@ class OFBsnHybridGetReplyVer10 implements OFBsnHybridGetReply {
     public OFBsnHybridGetReply.Builder setHybridVersion(int hybridVersion) {
         this.hybridVersion = hybridVersion;
         this.hybridVersionSet = true;
+        return this;
+    }
+    @Override
+    public long getSubtype() {
+        return 0x1cL;
+    }
+
+    @Override
+    public OFType getType() {
+        return OFType.EXPERIMENTER;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_10;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFBsnHybridGetReply.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 //

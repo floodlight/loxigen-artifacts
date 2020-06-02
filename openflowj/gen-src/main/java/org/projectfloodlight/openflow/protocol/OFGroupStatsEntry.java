@@ -29,13 +29,13 @@ import java.util.List;
 import io.netty.buffer.ByteBuf;
 
 public interface OFGroupStatsEntry extends OFObject {
-    OFGroup getGroup();
-    long getRefCount();
-    U64 getPacketCount();
-    U64 getByteCount();
     List<OFBucketCounter> getBucketStats();
-    long getDurationSec() throws UnsupportedOperationException;
+    U64 getByteCount();
     long getDurationNsec() throws UnsupportedOperationException;
+    long getDurationSec() throws UnsupportedOperationException;
+    OFGroup getGroup();
+    U64 getPacketCount();
+    long getRefCount();
     OFVersion getVersion();
 
     void writeTo(ByteBuf channelBuffer);
@@ -43,20 +43,20 @@ public interface OFGroupStatsEntry extends OFObject {
     Builder createBuilder();
     public interface Builder  {
         OFGroupStatsEntry build();
-        OFGroup getGroup();
-        Builder setGroup(OFGroup group);
-        long getRefCount();
-        Builder setRefCount(long refCount);
-        U64 getPacketCount();
-        Builder setPacketCount(U64 packetCount);
-        U64 getByteCount();
-        Builder setByteCount(U64 byteCount);
         List<OFBucketCounter> getBucketStats();
         Builder setBucketStats(List<OFBucketCounter> bucketStats);
-        long getDurationSec() throws UnsupportedOperationException;
-        Builder setDurationSec(long durationSec) throws UnsupportedOperationException;
+        U64 getByteCount();
+        Builder setByteCount(U64 byteCount);
         long getDurationNsec() throws UnsupportedOperationException;
         Builder setDurationNsec(long durationNsec) throws UnsupportedOperationException;
+        long getDurationSec() throws UnsupportedOperationException;
+        Builder setDurationSec(long durationSec) throws UnsupportedOperationException;
+        OFGroup getGroup();
+        Builder setGroup(OFGroup group);
+        U64 getPacketCount();
+        Builder setPacketCount(U64 packetCount);
+        long getRefCount();
+        Builder setRefCount(long refCount);
         OFVersion getVersion();
     }
 }

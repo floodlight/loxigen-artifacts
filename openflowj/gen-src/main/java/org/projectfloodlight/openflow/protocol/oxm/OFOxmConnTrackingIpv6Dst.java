@@ -30,10 +30,10 @@ import io.netty.buffer.ByteBuf;
 public interface OFOxmConnTrackingIpv6Dst extends OFObject, OFOxm<IPv6Address> {
     long getTypeLen();
     IPv6Address getValue();
-    MatchField<IPv6Address> getMatchField();
-    boolean isMasked();
     OFOxm<IPv6Address> getCanonical();
     IPv6Address getMask();
+    boolean isMasked();
+    MatchField<IPv6Address> getMatchField();
     OFVersion getVersion();
 
     void writeTo(ByteBuf channelBuffer);
@@ -44,10 +44,10 @@ public interface OFOxmConnTrackingIpv6Dst extends OFObject, OFOxm<IPv6Address> {
         long getTypeLen();
         IPv6Address getValue();
         Builder setValue(IPv6Address value);
-        MatchField<IPv6Address> getMatchField();
-        boolean isMasked();
         OFOxm<IPv6Address> getCanonical();
         IPv6Address getMask();
+        boolean isMasked();
+        MatchField<IPv6Address> getMatchField();
         OFVersion getVersion();
     }
 }

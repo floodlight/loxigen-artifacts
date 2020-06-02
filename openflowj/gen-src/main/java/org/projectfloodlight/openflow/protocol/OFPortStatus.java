@@ -28,24 +28,24 @@ import org.projectfloodlight.openflow.exceptions.*;
 import io.netty.buffer.ByteBuf;
 
 public interface OFPortStatus extends OFObject, OFMessage {
-    OFVersion getVersion();
-    OFType getType();
-    long getXid();
-    OFPortReason getReason();
     OFPortDesc getDesc();
+    OFPortReason getReason();
+    OFType getType();
+    OFVersion getVersion();
+    long getXid();
 
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();
     public interface Builder extends OFMessage.Builder {
         OFPortStatus build();
-        OFVersion getVersion();
-        OFType getType();
-        long getXid();
-        Builder setXid(long xid);
-        OFPortReason getReason();
-        Builder setReason(OFPortReason reason);
         OFPortDesc getDesc();
         Builder setDesc(OFPortDesc desc);
+        OFPortReason getReason();
+        Builder setReason(OFPortReason reason);
+        OFType getType();
+        OFVersion getVersion();
+        long getXid();
+        Builder setXid(long xid);
     }
 }

@@ -64,6 +64,11 @@ class OFOxmArpShaMaskedVer15 implements OFOxmArpShaMasked {
 
     // Accessors for OF message fields
     @Override
+    public MacAddress getMask() {
+        return mask;
+    }
+
+    @Override
     public long getTypeLen() {
         return 0x8000310cL;
     }
@@ -71,21 +76,6 @@ class OFOxmArpShaMaskedVer15 implements OFOxmArpShaMasked {
     @Override
     public MacAddress getValue() {
         return value;
-    }
-
-    @Override
-    public MacAddress getMask() {
-        return mask;
-    }
-
-    @Override
-    public MatchField<MacAddress> getMatchField() {
-        return MatchField.ARP_SHA;
-    }
-
-    @Override
-    public boolean isMasked() {
-        return true;
     }
 
     public OFOxm<MacAddress> getCanonical() {
@@ -96,6 +86,16 @@ class OFOxmArpShaMaskedVer15 implements OFOxmArpShaMasked {
         } else {
             return this;
         }
+    }
+
+    @Override
+    public boolean isMasked() {
+        return true;
+    }
+
+    @Override
+    public MatchField<MacAddress> getMatchField() {
+        return MatchField.ARP_SHA;
     }
 
     @Override
@@ -123,6 +123,17 @@ class OFOxmArpShaMaskedVer15 implements OFOxmArpShaMasked {
         }
 
     @Override
+    public MacAddress getMask() {
+        return mask;
+    }
+
+    @Override
+    public OFOxmArpShaMasked.Builder setMask(MacAddress mask) {
+        this.mask = mask;
+        this.maskSet = true;
+        return this;
+    }
+    @Override
     public long getTypeLen() {
         return 0x8000310cL;
     }
@@ -139,19 +150,8 @@ class OFOxmArpShaMaskedVer15 implements OFOxmArpShaMasked {
         return this;
     }
     @Override
-    public MacAddress getMask() {
-        return mask;
-    }
-
-    @Override
-    public OFOxmArpShaMasked.Builder setMask(MacAddress mask) {
-        this.mask = mask;
-        this.maskSet = true;
-        return this;
-    }
-    @Override
-    public MatchField<MacAddress> getMatchField() {
-        return MatchField.ARP_SHA;
+    public OFOxm<MacAddress> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.5");
     }
 
     @Override
@@ -160,8 +160,8 @@ class OFOxmArpShaMaskedVer15 implements OFOxmArpShaMasked {
     }
 
     @Override
-    public OFOxm<MacAddress> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.5");
+    public MatchField<MacAddress> getMatchField() {
+        return MatchField.ARP_SHA;
     }
 
     @Override
@@ -197,6 +197,17 @@ class OFOxmArpShaMaskedVer15 implements OFOxmArpShaMasked {
         private MacAddress mask;
 
     @Override
+    public MacAddress getMask() {
+        return mask;
+    }
+
+    @Override
+    public OFOxmArpShaMasked.Builder setMask(MacAddress mask) {
+        this.mask = mask;
+        this.maskSet = true;
+        return this;
+    }
+    @Override
     public long getTypeLen() {
         return 0x8000310cL;
     }
@@ -213,19 +224,8 @@ class OFOxmArpShaMaskedVer15 implements OFOxmArpShaMasked {
         return this;
     }
     @Override
-    public MacAddress getMask() {
-        return mask;
-    }
-
-    @Override
-    public OFOxmArpShaMasked.Builder setMask(MacAddress mask) {
-        this.mask = mask;
-        this.maskSet = true;
-        return this;
-    }
-    @Override
-    public MatchField<MacAddress> getMatchField() {
-        return MatchField.ARP_SHA;
+    public OFOxm<MacAddress> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.5");
     }
 
     @Override
@@ -234,8 +234,8 @@ class OFOxmArpShaMaskedVer15 implements OFOxmArpShaMasked {
     }
 
     @Override
-    public OFOxm<MacAddress> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.5");
+    public MatchField<MacAddress> getMatchField() {
+        return MatchField.ARP_SHA;
     }
 
     @Override

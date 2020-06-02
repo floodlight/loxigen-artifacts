@@ -29,25 +29,25 @@ import java.util.Set;
 import io.netty.buffer.ByteBuf;
 
 public interface OFBsnSetAuxCxnsRequest extends OFObject, OFBsnHeader, OFRequest<OFBsnSetAuxCxnsReply> {
-    OFVersion getVersion();
-    OFType getType();
-    long getXid();
     long getExperimenter();
-    long getSubtype();
     long getNumAux();
+    long getSubtype();
+    OFType getType();
+    OFVersion getVersion();
+    long getXid();
 
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();
     public interface Builder extends OFBsnHeader.Builder {
         OFBsnSetAuxCxnsRequest build();
-        OFVersion getVersion();
-        OFType getType();
-        long getXid();
-        Builder setXid(long xid);
         long getExperimenter();
-        long getSubtype();
         long getNumAux();
         Builder setNumAux(long numAux);
+        long getSubtype();
+        OFType getType();
+        OFVersion getVersion();
+        long getXid();
+        Builder setXid(long xid);
     }
 }

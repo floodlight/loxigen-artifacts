@@ -30,10 +30,10 @@ import io.netty.buffer.ByteBuf;
 public interface OFOxmTunnelId extends OFObject, OFOxm<U64> {
     long getTypeLen();
     U64 getValue();
-    MatchField<U64> getMatchField();
-    boolean isMasked();
     OFOxm<U64> getCanonical();
     U64 getMask();
+    boolean isMasked();
+    MatchField<U64> getMatchField();
     OFVersion getVersion();
 
     void writeTo(ByteBuf channelBuffer);
@@ -44,10 +44,10 @@ public interface OFOxmTunnelId extends OFObject, OFOxm<U64> {
         long getTypeLen();
         U64 getValue();
         Builder setValue(U64 value);
-        MatchField<U64> getMatchField();
-        boolean isMasked();
         OFOxm<U64> getCanonical();
         U64 getMask();
+        boolean isMasked();
+        MatchField<U64> getMatchField();
         OFVersion getVersion();
     }
 }

@@ -68,11 +68,6 @@ class OFBundleFeaturesPropTimeVer15 implements OFBundleFeaturesPropTime {
 
     // Accessors for OF message fields
     @Override
-    public int getType() {
-        return 0x1;
-    }
-
-    @Override
     public OFTime getSchedAccuracy() {
         return schedAccuracy;
     }
@@ -90,6 +85,11 @@ class OFBundleFeaturesPropTimeVer15 implements OFBundleFeaturesPropTime {
     @Override
     public OFTime getTimestamp() {
         return timestamp;
+    }
+
+    @Override
+    public int getType() {
+        return 0x1;
     }
 
     @Override
@@ -119,11 +119,6 @@ class OFBundleFeaturesPropTimeVer15 implements OFBundleFeaturesPropTime {
         BuilderWithParent(OFBundleFeaturesPropTimeVer15 parentMessage) {
             this.parentMessage = parentMessage;
         }
-
-    @Override
-    public int getType() {
-        return 0x1;
-    }
 
     @Override
     public OFTime getSchedAccuracy() {
@@ -169,6 +164,11 @@ class OFBundleFeaturesPropTimeVer15 implements OFBundleFeaturesPropTime {
         this.timestampSet = true;
         return this;
     }
+    @Override
+    public int getType() {
+        return 0x1;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_15;
@@ -214,11 +214,6 @@ class OFBundleFeaturesPropTimeVer15 implements OFBundleFeaturesPropTime {
         private OFTime timestamp;
 
     @Override
-    public int getType() {
-        return 0x1;
-    }
-
-    @Override
     public OFTime getSchedAccuracy() {
         return schedAccuracy;
     }
@@ -262,6 +257,11 @@ class OFBundleFeaturesPropTimeVer15 implements OFBundleFeaturesPropTime {
         this.timestampSet = true;
         return this;
     }
+    @Override
+    public int getType() {
+        return 0x1;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_15;

@@ -72,6 +72,11 @@ class OFMeterConfigVer13 implements OFMeterConfig {
 
     // Accessors for OF message fields
     @Override
+    public List<OFMeterBand> getEntries() {
+        return entries;
+    }
+
+    @Override
     public Set<OFMeterFlags> getFlags() {
         return flags;
     }
@@ -79,11 +84,6 @@ class OFMeterConfigVer13 implements OFMeterConfig {
     @Override
     public long getMeterId() {
         return meterId;
-    }
-
-    @Override
-    public List<OFMeterBand> getEntries() {
-        return entries;
     }
 
     @Override
@@ -113,6 +113,17 @@ class OFMeterConfigVer13 implements OFMeterConfig {
         }
 
     @Override
+    public List<OFMeterBand> getEntries() {
+        return entries;
+    }
+
+    @Override
+    public OFMeterConfig.Builder setEntries(List<OFMeterBand> entries) {
+        this.entries = entries;
+        this.entriesSet = true;
+        return this;
+    }
+    @Override
     public Set<OFMeterFlags> getFlags() {
         return flags;
     }
@@ -132,17 +143,6 @@ class OFMeterConfigVer13 implements OFMeterConfig {
     public OFMeterConfig.Builder setMeterId(long meterId) {
         this.meterId = meterId;
         this.meterIdSet = true;
-        return this;
-    }
-    @Override
-    public List<OFMeterBand> getEntries() {
-        return entries;
-    }
-
-    @Override
-    public OFMeterConfig.Builder setEntries(List<OFMeterBand> entries) {
-        this.entries = entries;
-        this.entriesSet = true;
         return this;
     }
     @Override
@@ -182,6 +182,17 @@ class OFMeterConfigVer13 implements OFMeterConfig {
         private List<OFMeterBand> entries;
 
     @Override
+    public List<OFMeterBand> getEntries() {
+        return entries;
+    }
+
+    @Override
+    public OFMeterConfig.Builder setEntries(List<OFMeterBand> entries) {
+        this.entries = entries;
+        this.entriesSet = true;
+        return this;
+    }
+    @Override
     public Set<OFMeterFlags> getFlags() {
         return flags;
     }
@@ -201,17 +212,6 @@ class OFMeterConfigVer13 implements OFMeterConfig {
     public OFMeterConfig.Builder setMeterId(long meterId) {
         this.meterId = meterId;
         this.meterIdSet = true;
-        return this;
-    }
-    @Override
-    public List<OFMeterBand> getEntries() {
-        return entries;
-    }
-
-    @Override
-    public OFMeterConfig.Builder setEntries(List<OFMeterBand> entries) {
-        this.entries = entries;
-        this.entriesSet = true;
         return this;
     }
     @Override

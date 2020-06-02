@@ -59,48 +59,48 @@ abstract class OFErrorMsgVer13 {
                case (short) 0x2:
                    // discriminator value OFErrorType.BAD_ACTION=2 for class OFBadActionErrorMsgVer13
                    return OFBadActionErrorMsgVer13.READER.readFrom(bb);
-               case (short) 0x1:
-                   // discriminator value OFErrorType.BAD_REQUEST=1 for class OFBadRequestErrorMsgVer13
-                   return OFBadRequestErrorMsgVer13.READER.readFrom(bb);
-               case (short) 0x5:
-                   // discriminator value OFErrorType.FLOW_MOD_FAILED=5 for class OFFlowModFailedErrorMsgVer13
-                   return OFFlowModFailedErrorMsgVer13.READER.readFrom(bb);
-               case (short) 0x0:
-                   // discriminator value OFErrorType.HELLO_FAILED=0 for class OFHelloFailedErrorMsgVer13
-                   return OFHelloFailedErrorMsgVer13.READER.readFrom(bb);
-               case (short) 0x7:
-                   // discriminator value OFErrorType.PORT_MOD_FAILED=7 for class OFPortModFailedErrorMsgVer13
-                   return OFPortModFailedErrorMsgVer13.READER.readFrom(bb);
-               case (short) 0x9:
-                   // discriminator value OFErrorType.QUEUE_OP_FAILED=9 for class OFQueueOpFailedErrorMsgVer13
-                   return OFQueueOpFailedErrorMsgVer13.READER.readFrom(bb);
                case (short) 0x3:
                    // discriminator value OFErrorType.BAD_INSTRUCTION=3 for class OFBadInstructionErrorMsgVer13
                    return OFBadInstructionErrorMsgVer13.READER.readFrom(bb);
                case (short) 0x4:
                    // discriminator value OFErrorType.BAD_MATCH=4 for class OFBadMatchErrorMsgVer13
                    return OFBadMatchErrorMsgVer13.READER.readFrom(bb);
-               case (short) 0x6:
-                   // discriminator value OFErrorType.GROUP_MOD_FAILED=6 for class OFGroupModFailedErrorMsgVer13
-                   return OFGroupModFailedErrorMsgVer13.READER.readFrom(bb);
-               case (short) 0xa:
-                   // discriminator value OFErrorType.SWITCH_CONFIG_FAILED=10 for class OFSwitchConfigFailedErrorMsgVer13
-                   return OFSwitchConfigFailedErrorMsgVer13.READER.readFrom(bb);
-               case (short) 0x8:
-                   // discriminator value OFErrorType.TABLE_MOD_FAILED=8 for class OFTableModFailedErrorMsgVer13
-                   return OFTableModFailedErrorMsgVer13.READER.readFrom(bb);
+               case (short) 0x1:
+                   // discriminator value OFErrorType.BAD_REQUEST=1 for class OFBadRequestErrorMsgVer13
+                   return OFBadRequestErrorMsgVer13.READER.readFrom(bb);
                case (short) 0xffff:
                    // discriminator value OFErrorType.EXPERIMENTER=65535 for class OFExperimenterErrorMsgVer13
                    return OFExperimenterErrorMsgVer13.READER.readFrom(bb);
-               case (short) 0xb:
-                   // discriminator value OFErrorType.ROLE_REQUEST_FAILED=11 for class OFRoleRequestFailedErrorMsgVer13
-                   return OFRoleRequestFailedErrorMsgVer13.READER.readFrom(bb);
+               case (short) 0x5:
+                   // discriminator value OFErrorType.FLOW_MOD_FAILED=5 for class OFFlowModFailedErrorMsgVer13
+                   return OFFlowModFailedErrorMsgVer13.READER.readFrom(bb);
+               case (short) 0x6:
+                   // discriminator value OFErrorType.GROUP_MOD_FAILED=6 for class OFGroupModFailedErrorMsgVer13
+                   return OFGroupModFailedErrorMsgVer13.READER.readFrom(bb);
+               case (short) 0x0:
+                   // discriminator value OFErrorType.HELLO_FAILED=0 for class OFHelloFailedErrorMsgVer13
+                   return OFHelloFailedErrorMsgVer13.READER.readFrom(bb);
                case (short) 0xc:
                    // discriminator value OFErrorType.METER_MOD_FAILED=12 for class OFMeterModFailedErrorMsgVer13
                    return OFMeterModFailedErrorMsgVer13.READER.readFrom(bb);
+               case (short) 0x7:
+                   // discriminator value OFErrorType.PORT_MOD_FAILED=7 for class OFPortModFailedErrorMsgVer13
+                   return OFPortModFailedErrorMsgVer13.READER.readFrom(bb);
+               case (short) 0x9:
+                   // discriminator value OFErrorType.QUEUE_OP_FAILED=9 for class OFQueueOpFailedErrorMsgVer13
+                   return OFQueueOpFailedErrorMsgVer13.READER.readFrom(bb);
+               case (short) 0xb:
+                   // discriminator value OFErrorType.ROLE_REQUEST_FAILED=11 for class OFRoleRequestFailedErrorMsgVer13
+                   return OFRoleRequestFailedErrorMsgVer13.READER.readFrom(bb);
+               case (short) 0xa:
+                   // discriminator value OFErrorType.SWITCH_CONFIG_FAILED=10 for class OFSwitchConfigFailedErrorMsgVer13
+                   return OFSwitchConfigFailedErrorMsgVer13.READER.readFrom(bb);
                case (short) 0xd:
                    // discriminator value OFErrorType.TABLE_FEATURES_FAILED=13 for class OFTableFeaturesFailedErrorMsgVer13
                    return OFTableFeaturesFailedErrorMsgVer13.READER.readFrom(bb);
+               case (short) 0x8:
+                   // discriminator value OFErrorType.TABLE_MOD_FAILED=8 for class OFTableModFailedErrorMsgVer13
+                   return OFTableModFailedErrorMsgVer13.READER.readFrom(bb);
                default:
                    throw new OFParseError("Unknown value for discriminator errType of class OFErrorMsgVer13: " + errType);
             }

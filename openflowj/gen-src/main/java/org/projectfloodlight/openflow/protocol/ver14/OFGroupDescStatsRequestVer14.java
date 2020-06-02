@@ -62,18 +62,13 @@ class OFGroupDescStatsRequestVer14 implements OFGroupDescStatsRequest {
 
     // Accessors for OF message fields
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_14;
+    public Set<OFStatsRequestFlags> getFlags() {
+        return flags;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.STATS_REQUEST;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
+    public OFGroup getGroup()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property group not supported in version 1.4");
     }
 
     @Override
@@ -82,13 +77,18 @@ class OFGroupDescStatsRequestVer14 implements OFGroupDescStatsRequest {
     }
 
     @Override
-    public Set<OFStatsRequestFlags> getFlags() {
-        return flags;
+    public OFType getType() {
+        return OFType.STATS_REQUEST;
     }
 
     @Override
-    public OFGroup getGroup()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property group not supported in version 1.4");
+    public OFVersion getVersion() {
+        return OFVersion.OF_14;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
     }
 
 
@@ -111,32 +111,6 @@ class OFGroupDescStatsRequestVer14 implements OFGroupDescStatsRequest {
         }
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_14;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.STATS_REQUEST;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFGroupDescStatsRequest.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
-        return this;
-    }
-    @Override
-    public OFStatsType getStatsType() {
-        return OFStatsType.GROUP_DESC;
-    }
-
-    @Override
     public Set<OFStatsRequestFlags> getFlags() {
         return flags;
     }
@@ -155,6 +129,32 @@ class OFGroupDescStatsRequestVer14 implements OFGroupDescStatsRequest {
     @Override
     public OFGroupDescStatsRequest.Builder setGroup(OFGroup group) throws UnsupportedOperationException {
             throw new UnsupportedOperationException("Property group not supported in version 1.4");
+    }
+    @Override
+    public OFStatsType getStatsType() {
+        return OFStatsType.GROUP_DESC;
+    }
+
+    @Override
+    public OFType getType() {
+        return OFType.STATS_REQUEST;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_14;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFGroupDescStatsRequest.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
+        return this;
     }
 
 
@@ -182,32 +182,6 @@ class OFGroupDescStatsRequestVer14 implements OFGroupDescStatsRequest {
         private Set<OFStatsRequestFlags> flags;
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_14;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.STATS_REQUEST;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFGroupDescStatsRequest.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
-        return this;
-    }
-    @Override
-    public OFStatsType getStatsType() {
-        return OFStatsType.GROUP_DESC;
-    }
-
-    @Override
     public Set<OFStatsRequestFlags> getFlags() {
         return flags;
     }
@@ -226,6 +200,32 @@ class OFGroupDescStatsRequestVer14 implements OFGroupDescStatsRequest {
     @Override
     public OFGroupDescStatsRequest.Builder setGroup(OFGroup group) throws UnsupportedOperationException {
             throw new UnsupportedOperationException("Property group not supported in version 1.4");
+    }
+    @Override
+    public OFStatsType getStatsType() {
+        return OFStatsType.GROUP_DESC;
+    }
+
+    @Override
+    public OFType getType() {
+        return OFType.STATS_REQUEST;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_14;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFGroupDescStatsRequest.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
+        return this;
     }
 //
         @Override

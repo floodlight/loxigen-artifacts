@@ -8,10 +8,10 @@
 
 import const
 import action
-import oxm
-import message
-import instruction
 import common
+import instruction
+import message
+import oxm
 from const import *
 from common import *
 from loxi import ProtocolError

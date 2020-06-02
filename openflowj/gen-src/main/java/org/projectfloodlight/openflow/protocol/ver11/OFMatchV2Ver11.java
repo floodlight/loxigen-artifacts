@@ -148,18 +148,13 @@ class OFMatchV2Ver11 implements OFMatchV2 {
 
     // Accessors for OF message fields
     @Override
-    public int getType() {
-        return 0x0;
+    public MacAddress getEthDst() {
+        return ethDst;
     }
 
     @Override
-    public OFPort getInPort() {
-        return inPort;
-    }
-
-    @Override
-    public int getWildcards() {
-        return wildcards;
+    public MacAddress getEthDstMask() {
+        return ethDstMask;
     }
 
     @Override
@@ -173,28 +168,13 @@ class OFMatchV2Ver11 implements OFMatchV2 {
     }
 
     @Override
-    public MacAddress getEthDst() {
-        return ethDst;
-    }
-
-    @Override
-    public MacAddress getEthDstMask() {
-        return ethDstMask;
-    }
-
-    @Override
-    public int getVlanVid() {
-        return vlanVid;
-    }
-
-    @Override
-    public short getVlanPcp() {
-        return vlanPcp;
-    }
-
-    @Override
     public int getEthType() {
         return ethType;
+    }
+
+    @Override
+    public OFPort getInPort() {
+        return inPort;
     }
 
     @Override
@@ -208,16 +188,6 @@ class OFMatchV2Ver11 implements OFMatchV2 {
     }
 
     @Override
-    public IPv4Address getIpv4Src() {
-        return ipv4Src;
-    }
-
-    @Override
-    public IPv4Address getIpv4SrcMask() {
-        return ipv4SrcMask;
-    }
-
-    @Override
     public IPv4Address getIpv4Dst() {
         return ipv4Dst;
     }
@@ -228,13 +198,23 @@ class OFMatchV2Ver11 implements OFMatchV2 {
     }
 
     @Override
-    public int getTcpSrc() {
-        return tcpSrc;
+    public IPv4Address getIpv4Src() {
+        return ipv4Src;
     }
 
     @Override
-    public int getTcpDst() {
-        return tcpDst;
+    public IPv4Address getIpv4SrcMask() {
+        return ipv4SrcMask;
+    }
+
+    @Override
+    public U64 getMetadata() {
+        return metadata;
+    }
+
+    @Override
+    public U64 getMetadataMask() {
+        return metadataMask;
     }
 
     @Override
@@ -248,13 +228,33 @@ class OFMatchV2Ver11 implements OFMatchV2 {
     }
 
     @Override
-    public U64 getMetadata() {
-        return metadata;
+    public int getTcpDst() {
+        return tcpDst;
     }
 
     @Override
-    public U64 getMetadataMask() {
-        return metadataMask;
+    public int getTcpSrc() {
+        return tcpSrc;
+    }
+
+    @Override
+    public int getType() {
+        return 0x0;
+    }
+
+    @Override
+    public short getVlanPcp() {
+        return vlanPcp;
+    }
+
+    @Override
+    public int getVlanVid() {
+        return vlanVid;
+    }
+
+    @Override
+    public int getWildcards() {
+        return wildcards;
     }
 
     @Override
@@ -369,30 +369,25 @@ class OFMatchV2Ver11 implements OFMatchV2 {
         }
 
     @Override
-    public int getType() {
-        return 0x0;
+    public MacAddress getEthDst() {
+        return ethDst;
     }
 
     @Override
-    public OFPort getInPort() {
-        return inPort;
-    }
-
-    @Override
-    public OFMatchV2.Builder setInPort(OFPort inPort) {
-        this.inPort = inPort;
-        this.inPortSet = true;
+    public OFMatchV2.Builder setEthDst(MacAddress ethDst) {
+        this.ethDst = ethDst;
+        this.ethDstSet = true;
         return this;
     }
     @Override
-    public int getWildcards() {
-        return wildcards;
+    public MacAddress getEthDstMask() {
+        return ethDstMask;
     }
 
     @Override
-    public OFMatchV2.Builder setWildcards(int wildcards) {
-        this.wildcards = wildcards;
-        this.wildcardsSet = true;
+    public OFMatchV2.Builder setEthDstMask(MacAddress ethDstMask) {
+        this.ethDstMask = ethDstMask;
+        this.ethDstMaskSet = true;
         return this;
     }
     @Override
@@ -418,50 +413,6 @@ class OFMatchV2Ver11 implements OFMatchV2 {
         return this;
     }
     @Override
-    public MacAddress getEthDst() {
-        return ethDst;
-    }
-
-    @Override
-    public OFMatchV2.Builder setEthDst(MacAddress ethDst) {
-        this.ethDst = ethDst;
-        this.ethDstSet = true;
-        return this;
-    }
-    @Override
-    public MacAddress getEthDstMask() {
-        return ethDstMask;
-    }
-
-    @Override
-    public OFMatchV2.Builder setEthDstMask(MacAddress ethDstMask) {
-        this.ethDstMask = ethDstMask;
-        this.ethDstMaskSet = true;
-        return this;
-    }
-    @Override
-    public int getVlanVid() {
-        return vlanVid;
-    }
-
-    @Override
-    public OFMatchV2.Builder setVlanVid(int vlanVid) {
-        this.vlanVid = vlanVid;
-        this.vlanVidSet = true;
-        return this;
-    }
-    @Override
-    public short getVlanPcp() {
-        return vlanPcp;
-    }
-
-    @Override
-    public OFMatchV2.Builder setVlanPcp(short vlanPcp) {
-        this.vlanPcp = vlanPcp;
-        this.vlanPcpSet = true;
-        return this;
-    }
-    @Override
     public int getEthType() {
         return ethType;
     }
@@ -470,6 +421,17 @@ class OFMatchV2Ver11 implements OFMatchV2 {
     public OFMatchV2.Builder setEthType(int ethType) {
         this.ethType = ethType;
         this.ethTypeSet = true;
+        return this;
+    }
+    @Override
+    public OFPort getInPort() {
+        return inPort;
+    }
+
+    @Override
+    public OFMatchV2.Builder setInPort(OFPort inPort) {
+        this.inPort = inPort;
+        this.inPortSet = true;
         return this;
     }
     @Override
@@ -495,28 +457,6 @@ class OFMatchV2Ver11 implements OFMatchV2 {
         return this;
     }
     @Override
-    public IPv4Address getIpv4Src() {
-        return ipv4Src;
-    }
-
-    @Override
-    public OFMatchV2.Builder setIpv4Src(IPv4Address ipv4Src) {
-        this.ipv4Src = ipv4Src;
-        this.ipv4SrcSet = true;
-        return this;
-    }
-    @Override
-    public IPv4Address getIpv4SrcMask() {
-        return ipv4SrcMask;
-    }
-
-    @Override
-    public OFMatchV2.Builder setIpv4SrcMask(IPv4Address ipv4SrcMask) {
-        this.ipv4SrcMask = ipv4SrcMask;
-        this.ipv4SrcMaskSet = true;
-        return this;
-    }
-    @Override
     public IPv4Address getIpv4Dst() {
         return ipv4Dst;
     }
@@ -539,25 +479,47 @@ class OFMatchV2Ver11 implements OFMatchV2 {
         return this;
     }
     @Override
-    public int getTcpSrc() {
-        return tcpSrc;
+    public IPv4Address getIpv4Src() {
+        return ipv4Src;
     }
 
     @Override
-    public OFMatchV2.Builder setTcpSrc(int tcpSrc) {
-        this.tcpSrc = tcpSrc;
-        this.tcpSrcSet = true;
+    public OFMatchV2.Builder setIpv4Src(IPv4Address ipv4Src) {
+        this.ipv4Src = ipv4Src;
+        this.ipv4SrcSet = true;
         return this;
     }
     @Override
-    public int getTcpDst() {
-        return tcpDst;
+    public IPv4Address getIpv4SrcMask() {
+        return ipv4SrcMask;
     }
 
     @Override
-    public OFMatchV2.Builder setTcpDst(int tcpDst) {
-        this.tcpDst = tcpDst;
-        this.tcpDstSet = true;
+    public OFMatchV2.Builder setIpv4SrcMask(IPv4Address ipv4SrcMask) {
+        this.ipv4SrcMask = ipv4SrcMask;
+        this.ipv4SrcMaskSet = true;
+        return this;
+    }
+    @Override
+    public U64 getMetadata() {
+        return metadata;
+    }
+
+    @Override
+    public OFMatchV2.Builder setMetadata(U64 metadata) {
+        this.metadata = metadata;
+        this.metadataSet = true;
+        return this;
+    }
+    @Override
+    public U64 getMetadataMask() {
+        return metadataMask;
+    }
+
+    @Override
+    public OFMatchV2.Builder setMetadataMask(U64 metadataMask) {
+        this.metadataMask = metadataMask;
+        this.metadataMaskSet = true;
         return this;
     }
     @Override
@@ -583,25 +545,63 @@ class OFMatchV2Ver11 implements OFMatchV2 {
         return this;
     }
     @Override
-    public U64 getMetadata() {
-        return metadata;
+    public int getTcpDst() {
+        return tcpDst;
     }
 
     @Override
-    public OFMatchV2.Builder setMetadata(U64 metadata) {
-        this.metadata = metadata;
-        this.metadataSet = true;
+    public OFMatchV2.Builder setTcpDst(int tcpDst) {
+        this.tcpDst = tcpDst;
+        this.tcpDstSet = true;
         return this;
     }
     @Override
-    public U64 getMetadataMask() {
-        return metadataMask;
+    public int getTcpSrc() {
+        return tcpSrc;
     }
 
     @Override
-    public OFMatchV2.Builder setMetadataMask(U64 metadataMask) {
-        this.metadataMask = metadataMask;
-        this.metadataMaskSet = true;
+    public OFMatchV2.Builder setTcpSrc(int tcpSrc) {
+        this.tcpSrc = tcpSrc;
+        this.tcpSrcSet = true;
+        return this;
+    }
+    @Override
+    public int getType() {
+        return 0x0;
+    }
+
+    @Override
+    public short getVlanPcp() {
+        return vlanPcp;
+    }
+
+    @Override
+    public OFMatchV2.Builder setVlanPcp(short vlanPcp) {
+        this.vlanPcp = vlanPcp;
+        this.vlanPcpSet = true;
+        return this;
+    }
+    @Override
+    public int getVlanVid() {
+        return vlanVid;
+    }
+
+    @Override
+    public OFMatchV2.Builder setVlanVid(int vlanVid) {
+        this.vlanVid = vlanVid;
+        this.vlanVidSet = true;
+        return this;
+    }
+    @Override
+    public int getWildcards() {
+        return wildcards;
+    }
+
+    @Override
+    public OFMatchV2.Builder setWildcards(int wildcards) {
+        this.wildcards = wildcards;
+        this.wildcardsSet = true;
         return this;
     }
     @Override
@@ -802,30 +802,25 @@ class OFMatchV2Ver11 implements OFMatchV2 {
         private U64 metadataMask;
 
     @Override
-    public int getType() {
-        return 0x0;
+    public MacAddress getEthDst() {
+        return ethDst;
     }
 
     @Override
-    public OFPort getInPort() {
-        return inPort;
-    }
-
-    @Override
-    public OFMatchV2.Builder setInPort(OFPort inPort) {
-        this.inPort = inPort;
-        this.inPortSet = true;
+    public OFMatchV2.Builder setEthDst(MacAddress ethDst) {
+        this.ethDst = ethDst;
+        this.ethDstSet = true;
         return this;
     }
     @Override
-    public int getWildcards() {
-        return wildcards;
+    public MacAddress getEthDstMask() {
+        return ethDstMask;
     }
 
     @Override
-    public OFMatchV2.Builder setWildcards(int wildcards) {
-        this.wildcards = wildcards;
-        this.wildcardsSet = true;
+    public OFMatchV2.Builder setEthDstMask(MacAddress ethDstMask) {
+        this.ethDstMask = ethDstMask;
+        this.ethDstMaskSet = true;
         return this;
     }
     @Override
@@ -851,50 +846,6 @@ class OFMatchV2Ver11 implements OFMatchV2 {
         return this;
     }
     @Override
-    public MacAddress getEthDst() {
-        return ethDst;
-    }
-
-    @Override
-    public OFMatchV2.Builder setEthDst(MacAddress ethDst) {
-        this.ethDst = ethDst;
-        this.ethDstSet = true;
-        return this;
-    }
-    @Override
-    public MacAddress getEthDstMask() {
-        return ethDstMask;
-    }
-
-    @Override
-    public OFMatchV2.Builder setEthDstMask(MacAddress ethDstMask) {
-        this.ethDstMask = ethDstMask;
-        this.ethDstMaskSet = true;
-        return this;
-    }
-    @Override
-    public int getVlanVid() {
-        return vlanVid;
-    }
-
-    @Override
-    public OFMatchV2.Builder setVlanVid(int vlanVid) {
-        this.vlanVid = vlanVid;
-        this.vlanVidSet = true;
-        return this;
-    }
-    @Override
-    public short getVlanPcp() {
-        return vlanPcp;
-    }
-
-    @Override
-    public OFMatchV2.Builder setVlanPcp(short vlanPcp) {
-        this.vlanPcp = vlanPcp;
-        this.vlanPcpSet = true;
-        return this;
-    }
-    @Override
     public int getEthType() {
         return ethType;
     }
@@ -903,6 +854,17 @@ class OFMatchV2Ver11 implements OFMatchV2 {
     public OFMatchV2.Builder setEthType(int ethType) {
         this.ethType = ethType;
         this.ethTypeSet = true;
+        return this;
+    }
+    @Override
+    public OFPort getInPort() {
+        return inPort;
+    }
+
+    @Override
+    public OFMatchV2.Builder setInPort(OFPort inPort) {
+        this.inPort = inPort;
+        this.inPortSet = true;
         return this;
     }
     @Override
@@ -928,28 +890,6 @@ class OFMatchV2Ver11 implements OFMatchV2 {
         return this;
     }
     @Override
-    public IPv4Address getIpv4Src() {
-        return ipv4Src;
-    }
-
-    @Override
-    public OFMatchV2.Builder setIpv4Src(IPv4Address ipv4Src) {
-        this.ipv4Src = ipv4Src;
-        this.ipv4SrcSet = true;
-        return this;
-    }
-    @Override
-    public IPv4Address getIpv4SrcMask() {
-        return ipv4SrcMask;
-    }
-
-    @Override
-    public OFMatchV2.Builder setIpv4SrcMask(IPv4Address ipv4SrcMask) {
-        this.ipv4SrcMask = ipv4SrcMask;
-        this.ipv4SrcMaskSet = true;
-        return this;
-    }
-    @Override
     public IPv4Address getIpv4Dst() {
         return ipv4Dst;
     }
@@ -972,25 +912,47 @@ class OFMatchV2Ver11 implements OFMatchV2 {
         return this;
     }
     @Override
-    public int getTcpSrc() {
-        return tcpSrc;
+    public IPv4Address getIpv4Src() {
+        return ipv4Src;
     }
 
     @Override
-    public OFMatchV2.Builder setTcpSrc(int tcpSrc) {
-        this.tcpSrc = tcpSrc;
-        this.tcpSrcSet = true;
+    public OFMatchV2.Builder setIpv4Src(IPv4Address ipv4Src) {
+        this.ipv4Src = ipv4Src;
+        this.ipv4SrcSet = true;
         return this;
     }
     @Override
-    public int getTcpDst() {
-        return tcpDst;
+    public IPv4Address getIpv4SrcMask() {
+        return ipv4SrcMask;
     }
 
     @Override
-    public OFMatchV2.Builder setTcpDst(int tcpDst) {
-        this.tcpDst = tcpDst;
-        this.tcpDstSet = true;
+    public OFMatchV2.Builder setIpv4SrcMask(IPv4Address ipv4SrcMask) {
+        this.ipv4SrcMask = ipv4SrcMask;
+        this.ipv4SrcMaskSet = true;
+        return this;
+    }
+    @Override
+    public U64 getMetadata() {
+        return metadata;
+    }
+
+    @Override
+    public OFMatchV2.Builder setMetadata(U64 metadata) {
+        this.metadata = metadata;
+        this.metadataSet = true;
+        return this;
+    }
+    @Override
+    public U64 getMetadataMask() {
+        return metadataMask;
+    }
+
+    @Override
+    public OFMatchV2.Builder setMetadataMask(U64 metadataMask) {
+        this.metadataMask = metadataMask;
+        this.metadataMaskSet = true;
         return this;
     }
     @Override
@@ -1016,25 +978,63 @@ class OFMatchV2Ver11 implements OFMatchV2 {
         return this;
     }
     @Override
-    public U64 getMetadata() {
-        return metadata;
+    public int getTcpDst() {
+        return tcpDst;
     }
 
     @Override
-    public OFMatchV2.Builder setMetadata(U64 metadata) {
-        this.metadata = metadata;
-        this.metadataSet = true;
+    public OFMatchV2.Builder setTcpDst(int tcpDst) {
+        this.tcpDst = tcpDst;
+        this.tcpDstSet = true;
         return this;
     }
     @Override
-    public U64 getMetadataMask() {
-        return metadataMask;
+    public int getTcpSrc() {
+        return tcpSrc;
     }
 
     @Override
-    public OFMatchV2.Builder setMetadataMask(U64 metadataMask) {
-        this.metadataMask = metadataMask;
-        this.metadataMaskSet = true;
+    public OFMatchV2.Builder setTcpSrc(int tcpSrc) {
+        this.tcpSrc = tcpSrc;
+        this.tcpSrcSet = true;
+        return this;
+    }
+    @Override
+    public int getType() {
+        return 0x0;
+    }
+
+    @Override
+    public short getVlanPcp() {
+        return vlanPcp;
+    }
+
+    @Override
+    public OFMatchV2.Builder setVlanPcp(short vlanPcp) {
+        this.vlanPcp = vlanPcp;
+        this.vlanPcpSet = true;
+        return this;
+    }
+    @Override
+    public int getVlanVid() {
+        return vlanVid;
+    }
+
+    @Override
+    public OFMatchV2.Builder setVlanVid(int vlanVid) {
+        this.vlanVid = vlanVid;
+        this.vlanVidSet = true;
+        return this;
+    }
+    @Override
+    public int getWildcards() {
+        return wildcards;
+    }
+
+    @Override
+    public OFMatchV2.Builder setWildcards(int wildcards) {
+        this.wildcards = wildcards;
+        this.wildcardsSet = true;
         return this;
     }
     @Override

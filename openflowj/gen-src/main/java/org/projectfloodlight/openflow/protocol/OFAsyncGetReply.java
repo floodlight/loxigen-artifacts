@@ -29,26 +29,26 @@ import java.util.List;
 import io.netty.buffer.ByteBuf;
 
 public interface OFAsyncGetReply extends OFObject, OFMessage {
-    OFVersion getVersion();
-    OFType getType();
-    long getXid();
+    long getFlowRemovedMaskEqualMaster() throws UnsupportedOperationException;
+    long getFlowRemovedMaskSlave() throws UnsupportedOperationException;
     long getPacketInMaskEqualMaster() throws UnsupportedOperationException;
     long getPacketInMaskSlave() throws UnsupportedOperationException;
     long getPortStatusMaskEqualMaster() throws UnsupportedOperationException;
     long getPortStatusMaskSlave() throws UnsupportedOperationException;
-    long getFlowRemovedMaskEqualMaster() throws UnsupportedOperationException;
-    long getFlowRemovedMaskSlave() throws UnsupportedOperationException;
     List<OFAsyncConfigProp> getProperties() throws UnsupportedOperationException;
+    OFType getType();
+    OFVersion getVersion();
+    long getXid();
 
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();
     public interface Builder extends OFMessage.Builder {
         OFAsyncGetReply build();
-        OFVersion getVersion();
-        OFType getType();
-        long getXid();
-        Builder setXid(long xid);
+        long getFlowRemovedMaskEqualMaster() throws UnsupportedOperationException;
+        Builder setFlowRemovedMaskEqualMaster(long flowRemovedMaskEqualMaster) throws UnsupportedOperationException;
+        long getFlowRemovedMaskSlave() throws UnsupportedOperationException;
+        Builder setFlowRemovedMaskSlave(long flowRemovedMaskSlave) throws UnsupportedOperationException;
         long getPacketInMaskEqualMaster() throws UnsupportedOperationException;
         Builder setPacketInMaskEqualMaster(long packetInMaskEqualMaster) throws UnsupportedOperationException;
         long getPacketInMaskSlave() throws UnsupportedOperationException;
@@ -57,11 +57,11 @@ public interface OFAsyncGetReply extends OFObject, OFMessage {
         Builder setPortStatusMaskEqualMaster(long portStatusMaskEqualMaster) throws UnsupportedOperationException;
         long getPortStatusMaskSlave() throws UnsupportedOperationException;
         Builder setPortStatusMaskSlave(long portStatusMaskSlave) throws UnsupportedOperationException;
-        long getFlowRemovedMaskEqualMaster() throws UnsupportedOperationException;
-        Builder setFlowRemovedMaskEqualMaster(long flowRemovedMaskEqualMaster) throws UnsupportedOperationException;
-        long getFlowRemovedMaskSlave() throws UnsupportedOperationException;
-        Builder setFlowRemovedMaskSlave(long flowRemovedMaskSlave) throws UnsupportedOperationException;
         List<OFAsyncConfigProp> getProperties() throws UnsupportedOperationException;
         Builder setProperties(List<OFAsyncConfigProp> properties) throws UnsupportedOperationException;
+        OFType getType();
+        OFVersion getVersion();
+        long getXid();
+        Builder setXid(long xid);
     }
 }

@@ -61,8 +61,8 @@ class OFActionOutputVer10 implements OFActionOutput {
 
     // Accessors for OF message fields
     @Override
-    public OFActionType getType() {
-        return OFActionType.OUTPUT;
+    public int getMaxLen() {
+        return maxLen;
     }
 
     @Override
@@ -71,8 +71,8 @@ class OFActionOutputVer10 implements OFActionOutput {
     }
 
     @Override
-    public int getMaxLen() {
-        return maxLen;
+    public OFActionType getType() {
+        return OFActionType.OUTPUT;
     }
 
     @Override
@@ -100,10 +100,16 @@ class OFActionOutputVer10 implements OFActionOutput {
         }
 
     @Override
-    public OFActionType getType() {
-        return OFActionType.OUTPUT;
+    public int getMaxLen() {
+        return maxLen;
     }
 
+    @Override
+    public OFActionOutput.Builder setMaxLen(int maxLen) {
+        this.maxLen = maxLen;
+        this.maxLenSet = true;
+        return this;
+    }
     @Override
     public OFPort getPort() {
         return port;
@@ -116,16 +122,10 @@ class OFActionOutputVer10 implements OFActionOutput {
         return this;
     }
     @Override
-    public int getMaxLen() {
-        return maxLen;
+    public OFActionType getType() {
+        return OFActionType.OUTPUT;
     }
 
-    @Override
-    public OFActionOutput.Builder setMaxLen(int maxLen) {
-        this.maxLen = maxLen;
-        this.maxLenSet = true;
-        return this;
-    }
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_10;
@@ -157,10 +157,16 @@ class OFActionOutputVer10 implements OFActionOutput {
         private int maxLen;
 
     @Override
-    public OFActionType getType() {
-        return OFActionType.OUTPUT;
+    public int getMaxLen() {
+        return maxLen;
     }
 
+    @Override
+    public OFActionOutput.Builder setMaxLen(int maxLen) {
+        this.maxLen = maxLen;
+        this.maxLenSet = true;
+        return this;
+    }
     @Override
     public OFPort getPort() {
         return port;
@@ -173,16 +179,10 @@ class OFActionOutputVer10 implements OFActionOutput {
         return this;
     }
     @Override
-    public int getMaxLen() {
-        return maxLen;
+    public OFActionType getType() {
+        return OFActionType.OUTPUT;
     }
 
-    @Override
-    public OFActionOutput.Builder setMaxLen(int maxLen) {
-        this.maxLen = maxLen;
-        this.maxLenSet = true;
-        return this;
-    }
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_10;

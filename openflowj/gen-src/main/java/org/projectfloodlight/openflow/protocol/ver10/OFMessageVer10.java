@@ -49,30 +49,24 @@ abstract class OFMessageVer10 {
             byte type = bb.readByte();
             bb.readerIndex(start);
             switch(type) {
-               case (byte) 0x11:
-                   // discriminator value OFType.STATS_REPLY=17 for class OFStatsReplyVer10
-                   return OFStatsReplyVer10.READER.readFrom(bb);
-               case (byte) 0x10:
-                   // discriminator value OFType.STATS_REQUEST=16 for class OFStatsRequestVer10
-                   return OFStatsRequestVer10.READER.readFrom(bb);
-               case (byte) 0x1:
-                   // discriminator value OFType.ERROR=1 for class OFErrorMsgVer10
-                   return OFErrorMsgVer10.READER.readFrom(bb);
                case (byte) 0x13:
                    // discriminator value OFType.BARRIER_REPLY=19 for class OFBarrierReplyVer10
                    return OFBarrierReplyVer10.READER.readFrom(bb);
                case (byte) 0x12:
                    // discriminator value OFType.BARRIER_REQUEST=18 for class OFBarrierRequestVer10
                    return OFBarrierRequestVer10.READER.readFrom(bb);
-               case (byte) 0x4:
-                   // discriminator value OFType.EXPERIMENTER=4 for class OFExperimenterVer10
-                   return OFExperimenterVer10.READER.readFrom(bb);
                case (byte) 0x3:
                    // discriminator value OFType.ECHO_REPLY=3 for class OFEchoReplyVer10
                    return OFEchoReplyVer10.READER.readFrom(bb);
                case (byte) 0x2:
                    // discriminator value OFType.ECHO_REQUEST=2 for class OFEchoRequestVer10
                    return OFEchoRequestVer10.READER.readFrom(bb);
+               case (byte) 0x1:
+                   // discriminator value OFType.ERROR=1 for class OFErrorMsgVer10
+                   return OFErrorMsgVer10.READER.readFrom(bb);
+               case (byte) 0x4:
+                   // discriminator value OFType.EXPERIMENTER=4 for class OFExperimenterVer10
+                   return OFExperimenterVer10.READER.readFrom(bb);
                case (byte) 0x6:
                    // discriminator value OFType.FEATURES_REPLY=6 for class OFFeaturesReplyVer10
                    return OFFeaturesReplyVer10.READER.readFrom(bb);
@@ -115,6 +109,12 @@ abstract class OFMessageVer10 {
                case (byte) 0x9:
                    // discriminator value OFType.SET_CONFIG=9 for class OFSetConfigVer10
                    return OFSetConfigVer10.READER.readFrom(bb);
+               case (byte) 0x11:
+                   // discriminator value OFType.STATS_REPLY=17 for class OFStatsReplyVer10
+                   return OFStatsReplyVer10.READER.readFrom(bb);
+               case (byte) 0x10:
+                   // discriminator value OFType.STATS_REQUEST=16 for class OFStatsRequestVer10
+                   return OFStatsRequestVer10.READER.readFrom(bb);
                // skip OFTableModVer10 - excluded from generation
                default:
                    throw new OFParseError("Unknown value for discriminator type of class OFMessageVer10: " + type);

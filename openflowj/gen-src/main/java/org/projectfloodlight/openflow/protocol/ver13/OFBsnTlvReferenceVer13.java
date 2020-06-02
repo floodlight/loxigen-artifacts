@@ -65,8 +65,8 @@ class OFBsnTlvReferenceVer13 implements OFBsnTlvReference {
 
     // Accessors for OF message fields
     @Override
-    public int getType() {
-        return 0x3b;
+    public List<OFBsnTlv> getKey() {
+        return key;
     }
 
     @Override
@@ -75,8 +75,8 @@ class OFBsnTlvReferenceVer13 implements OFBsnTlvReference {
     }
 
     @Override
-    public List<OFBsnTlv> getKey() {
-        return key;
+    public int getType() {
+        return 0x3b;
     }
 
     @Override
@@ -104,10 +104,16 @@ class OFBsnTlvReferenceVer13 implements OFBsnTlvReference {
         }
 
     @Override
-    public int getType() {
-        return 0x3b;
+    public List<OFBsnTlv> getKey() {
+        return key;
     }
 
+    @Override
+    public OFBsnTlvReference.Builder setKey(List<OFBsnTlv> key) {
+        this.key = key;
+        this.keySet = true;
+        return this;
+    }
     @Override
     public int getTableId() {
         return tableId;
@@ -120,16 +126,10 @@ class OFBsnTlvReferenceVer13 implements OFBsnTlvReference {
         return this;
     }
     @Override
-    public List<OFBsnTlv> getKey() {
-        return key;
+    public int getType() {
+        return 0x3b;
     }
 
-    @Override
-    public OFBsnTlvReference.Builder setKey(List<OFBsnTlv> key) {
-        this.key = key;
-        this.keySet = true;
-        return this;
-    }
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_13;
@@ -161,10 +161,16 @@ class OFBsnTlvReferenceVer13 implements OFBsnTlvReference {
         private List<OFBsnTlv> key;
 
     @Override
-    public int getType() {
-        return 0x3b;
+    public List<OFBsnTlv> getKey() {
+        return key;
     }
 
+    @Override
+    public OFBsnTlvReference.Builder setKey(List<OFBsnTlv> key) {
+        this.key = key;
+        this.keySet = true;
+        return this;
+    }
     @Override
     public int getTableId() {
         return tableId;
@@ -177,16 +183,10 @@ class OFBsnTlvReferenceVer13 implements OFBsnTlvReference {
         return this;
     }
     @Override
-    public List<OFBsnTlv> getKey() {
-        return key;
+    public int getType() {
+        return 0x3b;
     }
 
-    @Override
-    public OFBsnTlvReference.Builder setKey(List<OFBsnTlv> key) {
-        this.key = key;
-        this.keySet = true;
-        return this;
-    }
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_13;

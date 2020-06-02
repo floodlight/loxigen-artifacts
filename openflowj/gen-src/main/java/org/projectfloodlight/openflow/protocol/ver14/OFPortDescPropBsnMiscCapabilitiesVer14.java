@@ -70,18 +70,8 @@ class OFPortDescPropBsnMiscCapabilitiesVer14 implements OFPortDescPropBsnMiscCap
 
     // Accessors for OF message fields
     @Override
-    public int getType() {
-        return 0xffff;
-    }
-
-    @Override
-    public long getExperimenter() {
-        return 0x5c16c7L;
-    }
-
-    @Override
-    public long getExpType() {
-        return 0x5L;
+    public U64 getAvailable() {
+        return available;
     }
 
     @Override
@@ -90,13 +80,23 @@ class OFPortDescPropBsnMiscCapabilitiesVer14 implements OFPortDescPropBsnMiscCap
     }
 
     @Override
-    public U64 getAvailable() {
-        return available;
+    public long getExpType() {
+        return 0x5L;
+    }
+
+    @Override
+    public long getExperimenter() {
+        return 0x5c16c7L;
     }
 
     @Override
     public U64 getSupported() {
         return supported;
+    }
+
+    @Override
+    public int getType() {
+        return 0xffff;
     }
 
     @Override
@@ -126,23 +126,15 @@ class OFPortDescPropBsnMiscCapabilitiesVer14 implements OFPortDescPropBsnMiscCap
         }
 
     @Override
-    public int getType() {
-        return 0xffff;
+    public U64 getAvailable() {
+        return available;
     }
 
     @Override
-    public long getExperimenter() {
-        return 0x5c16c7L;
-    }
-
-    @Override
-    public long getExpType() {
-        return 0x5L;
-    }
-
-    @Override
-    public OFPortDescPropBsnMiscCapabilities.Builder setExpType(long expType) {
-            throw new UnsupportedOperationException("Property expType is not writeable");
+    public OFPortDescPropBsnMiscCapabilities.Builder setAvailable(U64 available) {
+        this.available = available;
+        this.availableSet = true;
+        return this;
     }
     @Override
     public U64 getCurrent() {
@@ -156,16 +148,19 @@ class OFPortDescPropBsnMiscCapabilitiesVer14 implements OFPortDescPropBsnMiscCap
         return this;
     }
     @Override
-    public U64 getAvailable() {
-        return available;
+    public long getExpType() {
+        return 0x5L;
     }
 
     @Override
-    public OFPortDescPropBsnMiscCapabilities.Builder setAvailable(U64 available) {
-        this.available = available;
-        this.availableSet = true;
-        return this;
+    public OFPortDescPropBsnMiscCapabilities.Builder setExpType(long expType) {
+            throw new UnsupportedOperationException("Property expType is not writeable");
     }
+    @Override
+    public long getExperimenter() {
+        return 0x5c16c7L;
+    }
+
     @Override
     public U64 getSupported() {
         return supported;
@@ -177,6 +172,11 @@ class OFPortDescPropBsnMiscCapabilitiesVer14 implements OFPortDescPropBsnMiscCap
         this.supportedSet = true;
         return this;
     }
+    @Override
+    public int getType() {
+        return 0xffff;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_14;
@@ -216,23 +216,15 @@ class OFPortDescPropBsnMiscCapabilitiesVer14 implements OFPortDescPropBsnMiscCap
         private U64 supported;
 
     @Override
-    public int getType() {
-        return 0xffff;
+    public U64 getAvailable() {
+        return available;
     }
 
     @Override
-    public long getExperimenter() {
-        return 0x5c16c7L;
-    }
-
-    @Override
-    public long getExpType() {
-        return 0x5L;
-    }
-
-    @Override
-    public OFPortDescPropBsnMiscCapabilities.Builder setExpType(long expType) {
-            throw new UnsupportedOperationException("Property expType is not writeable");
+    public OFPortDescPropBsnMiscCapabilities.Builder setAvailable(U64 available) {
+        this.available = available;
+        this.availableSet = true;
+        return this;
     }
     @Override
     public U64 getCurrent() {
@@ -246,16 +238,19 @@ class OFPortDescPropBsnMiscCapabilitiesVer14 implements OFPortDescPropBsnMiscCap
         return this;
     }
     @Override
-    public U64 getAvailable() {
-        return available;
+    public long getExpType() {
+        return 0x5L;
     }
 
     @Override
-    public OFPortDescPropBsnMiscCapabilities.Builder setAvailable(U64 available) {
-        this.available = available;
-        this.availableSet = true;
-        return this;
+    public OFPortDescPropBsnMiscCapabilities.Builder setExpType(long expType) {
+            throw new UnsupportedOperationException("Property expType is not writeable");
     }
+    @Override
+    public long getExperimenter() {
+        return 0x5c16c7L;
+    }
+
     @Override
     public U64 getSupported() {
         return supported;
@@ -267,6 +262,11 @@ class OFPortDescPropBsnMiscCapabilitiesVer14 implements OFPortDescPropBsnMiscCap
         this.supportedSet = true;
         return this;
     }
+    @Override
+    public int getType() {
+        return 0xffff;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_14;

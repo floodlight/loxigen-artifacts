@@ -67,16 +67,6 @@ class OFOxmIpProtoVer14 implements OFOxmIpProto {
         return value;
     }
 
-    @Override
-    public MatchField<IpProtocol> getMatchField() {
-        return MatchField.IP_PROTO;
-    }
-
-    @Override
-    public boolean isMasked() {
-        return false;
-    }
-
     public OFOxm<IpProtocol> getCanonical() {
         // exact match OXM is always canonical
         return this;
@@ -85,6 +75,16 @@ class OFOxmIpProtoVer14 implements OFOxmIpProto {
     @Override
     public IpProtocol getMask()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property mask not supported in version 1.4");
+    }
+
+    @Override
+    public boolean isMasked() {
+        return false;
+    }
+
+    @Override
+    public MatchField<IpProtocol> getMatchField() {
+        return MatchField.IP_PROTO;
     }
 
     @Override
@@ -126,8 +126,13 @@ class OFOxmIpProtoVer14 implements OFOxmIpProto {
         return this;
     }
     @Override
-    public MatchField<IpProtocol> getMatchField() {
-        return MatchField.IP_PROTO;
+    public OFOxm<IpProtocol> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.4");
+    }
+
+    @Override
+    public IpProtocol getMask()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property mask not supported in version 1.4");
     }
 
     @Override
@@ -136,13 +141,8 @@ class OFOxmIpProtoVer14 implements OFOxmIpProto {
     }
 
     @Override
-    public OFOxm<IpProtocol> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.4");
-    }
-
-    @Override
-    public IpProtocol getMask()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property mask not supported in version 1.4");
+    public MatchField<IpProtocol> getMatchField() {
+        return MatchField.IP_PROTO;
     }
 
     @Override
@@ -188,8 +188,13 @@ class OFOxmIpProtoVer14 implements OFOxmIpProto {
         return this;
     }
     @Override
-    public MatchField<IpProtocol> getMatchField() {
-        return MatchField.IP_PROTO;
+    public OFOxm<IpProtocol> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.4");
+    }
+
+    @Override
+    public IpProtocol getMask()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property mask not supported in version 1.4");
     }
 
     @Override
@@ -198,13 +203,8 @@ class OFOxmIpProtoVer14 implements OFOxmIpProto {
     }
 
     @Override
-    public OFOxm<IpProtocol> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.4");
-    }
-
-    @Override
-    public IpProtocol getMask()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property mask not supported in version 1.4");
+    public MatchField<IpProtocol> getMatchField() {
+        return MatchField.IP_PROTO;
     }
 
     @Override

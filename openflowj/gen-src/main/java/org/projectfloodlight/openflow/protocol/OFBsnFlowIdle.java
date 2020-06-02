@@ -28,34 +28,34 @@ import org.projectfloodlight.openflow.exceptions.*;
 import io.netty.buffer.ByteBuf;
 
 public interface OFBsnFlowIdle extends OFObject, OFBsnHeader {
-    OFVersion getVersion();
-    OFType getType();
-    long getXid();
-    long getExperimenter();
-    long getSubtype();
     U64 getCookie();
-    int getPriority();
-    TableId getTableId();
+    long getExperimenter();
     Match getMatch();
+    int getPriority();
+    long getSubtype();
+    TableId getTableId();
+    OFType getType();
+    OFVersion getVersion();
+    long getXid();
 
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();
     public interface Builder extends OFBsnHeader.Builder {
         OFBsnFlowIdle build();
-        OFVersion getVersion();
-        OFType getType();
-        long getXid();
-        Builder setXid(long xid);
-        long getExperimenter();
-        long getSubtype();
         U64 getCookie();
         Builder setCookie(U64 cookie);
-        int getPriority();
-        Builder setPriority(int priority);
-        TableId getTableId();
-        Builder setTableId(TableId tableId);
+        long getExperimenter();
         Match getMatch();
         Builder setMatch(Match match);
+        int getPriority();
+        Builder setPriority(int priority);
+        long getSubtype();
+        TableId getTableId();
+        Builder setTableId(TableId tableId);
+        OFType getType();
+        OFVersion getVersion();
+        long getXid();
+        Builder setXid(long xid);
     }
 }

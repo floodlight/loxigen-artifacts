@@ -55,13 +55,13 @@ class OFFeaturesRequestVer13 implements OFFeaturesRequest {
 
     // Accessors for OF message fields
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_13;
+    public OFType getType() {
+        return OFType.FEATURES_REQUEST;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.FEATURES_REQUEST;
+    public OFVersion getVersion() {
+        return OFVersion.OF_13;
     }
 
     @Override
@@ -87,13 +87,13 @@ class OFFeaturesRequestVer13 implements OFFeaturesRequest {
         }
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_13;
+    public OFType getType() {
+        return OFType.FEATURES_REQUEST;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.FEATURES_REQUEST;
+    public OFVersion getVersion() {
+        return OFVersion.OF_13;
     }
 
     @Override
@@ -127,13 +127,13 @@ class OFFeaturesRequestVer13 implements OFFeaturesRequest {
         private long xid;
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_13;
+    public OFType getType() {
+        return OFType.FEATURES_REQUEST;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.FEATURES_REQUEST;
+    public OFVersion getVersion() {
+        return OFVersion.OF_13;
     }
 
     @Override

@@ -95,68 +95,13 @@ class OFGroupFeaturesStatsReplyVer14 implements OFGroupFeaturesStatsReply {
 
     // Accessors for OF message fields
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_14;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.STATS_REPLY;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFStatsType getStatsType() {
-        return OFStatsType.GROUP_FEATURES;
-    }
-
-    @Override
-    public Set<OFStatsReplyFlags> getFlags() {
-        return flags;
-    }
-
-    @Override
-    public long getTypes() {
-        return types;
-    }
-
-    @Override
-    public Set<OFGroupCapabilities> getCapabilities() {
-        return capabilities;
-    }
-
-    @Override
-    public long getMaxGroupsAll() {
-        return maxGroupsAll;
-    }
-
-    @Override
-    public long getMaxGroupsSelect() {
-        return maxGroupsSelect;
-    }
-
-    @Override
-    public long getMaxGroupsIndirect() {
-        return maxGroupsIndirect;
-    }
-
-    @Override
-    public long getMaxGroupsFf() {
-        return maxGroupsFf;
-    }
-
-    @Override
     public long getActionsAll() {
         return actionsAll;
     }
 
     @Override
-    public long getActionsSelect() {
-        return actionsSelect;
+    public long getActionsFf() {
+        return actionsFf;
     }
 
     @Override
@@ -165,8 +110,63 @@ class OFGroupFeaturesStatsReplyVer14 implements OFGroupFeaturesStatsReply {
     }
 
     @Override
-    public long getActionsFf() {
-        return actionsFf;
+    public long getActionsSelect() {
+        return actionsSelect;
+    }
+
+    @Override
+    public Set<OFGroupCapabilities> getCapabilities() {
+        return capabilities;
+    }
+
+    @Override
+    public Set<OFStatsReplyFlags> getFlags() {
+        return flags;
+    }
+
+    @Override
+    public long getMaxGroupsAll() {
+        return maxGroupsAll;
+    }
+
+    @Override
+    public long getMaxGroupsFf() {
+        return maxGroupsFf;
+    }
+
+    @Override
+    public long getMaxGroupsIndirect() {
+        return maxGroupsIndirect;
+    }
+
+    @Override
+    public long getMaxGroupsSelect() {
+        return maxGroupsSelect;
+    }
+
+    @Override
+    public OFStatsType getStatsType() {
+        return OFStatsType.GROUP_FEATURES;
+    }
+
+    @Override
+    public OFType getType() {
+        return OFType.STATS_REPLY;
+    }
+
+    @Override
+    public long getTypes() {
+        return types;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_14;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
     }
 
 
@@ -209,109 +209,6 @@ class OFGroupFeaturesStatsReplyVer14 implements OFGroupFeaturesStatsReply {
         }
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_14;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.STATS_REPLY;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFGroupFeaturesStatsReply.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
-        return this;
-    }
-    @Override
-    public OFStatsType getStatsType() {
-        return OFStatsType.GROUP_FEATURES;
-    }
-
-    @Override
-    public Set<OFStatsReplyFlags> getFlags() {
-        return flags;
-    }
-
-    @Override
-    public OFGroupFeaturesStatsReply.Builder setFlags(Set<OFStatsReplyFlags> flags) {
-        this.flags = flags;
-        this.flagsSet = true;
-        return this;
-    }
-    @Override
-    public long getTypes() {
-        return types;
-    }
-
-    @Override
-    public OFGroupFeaturesStatsReply.Builder setTypes(long types) {
-        this.types = types;
-        this.typesSet = true;
-        return this;
-    }
-    @Override
-    public Set<OFGroupCapabilities> getCapabilities() {
-        return capabilities;
-    }
-
-    @Override
-    public OFGroupFeaturesStatsReply.Builder setCapabilities(Set<OFGroupCapabilities> capabilities) {
-        this.capabilities = capabilities;
-        this.capabilitiesSet = true;
-        return this;
-    }
-    @Override
-    public long getMaxGroupsAll() {
-        return maxGroupsAll;
-    }
-
-    @Override
-    public OFGroupFeaturesStatsReply.Builder setMaxGroupsAll(long maxGroupsAll) {
-        this.maxGroupsAll = maxGroupsAll;
-        this.maxGroupsAllSet = true;
-        return this;
-    }
-    @Override
-    public long getMaxGroupsSelect() {
-        return maxGroupsSelect;
-    }
-
-    @Override
-    public OFGroupFeaturesStatsReply.Builder setMaxGroupsSelect(long maxGroupsSelect) {
-        this.maxGroupsSelect = maxGroupsSelect;
-        this.maxGroupsSelectSet = true;
-        return this;
-    }
-    @Override
-    public long getMaxGroupsIndirect() {
-        return maxGroupsIndirect;
-    }
-
-    @Override
-    public OFGroupFeaturesStatsReply.Builder setMaxGroupsIndirect(long maxGroupsIndirect) {
-        this.maxGroupsIndirect = maxGroupsIndirect;
-        this.maxGroupsIndirectSet = true;
-        return this;
-    }
-    @Override
-    public long getMaxGroupsFf() {
-        return maxGroupsFf;
-    }
-
-    @Override
-    public OFGroupFeaturesStatsReply.Builder setMaxGroupsFf(long maxGroupsFf) {
-        this.maxGroupsFf = maxGroupsFf;
-        this.maxGroupsFfSet = true;
-        return this;
-    }
-    @Override
     public long getActionsAll() {
         return actionsAll;
     }
@@ -323,14 +220,14 @@ class OFGroupFeaturesStatsReplyVer14 implements OFGroupFeaturesStatsReply {
         return this;
     }
     @Override
-    public long getActionsSelect() {
-        return actionsSelect;
+    public long getActionsFf() {
+        return actionsFf;
     }
 
     @Override
-    public OFGroupFeaturesStatsReply.Builder setActionsSelect(long actionsSelect) {
-        this.actionsSelect = actionsSelect;
-        this.actionsSelectSet = true;
+    public OFGroupFeaturesStatsReply.Builder setActionsFf(long actionsFf) {
+        this.actionsFf = actionsFf;
+        this.actionsFfSet = true;
         return this;
     }
     @Override
@@ -345,14 +242,117 @@ class OFGroupFeaturesStatsReplyVer14 implements OFGroupFeaturesStatsReply {
         return this;
     }
     @Override
-    public long getActionsFf() {
-        return actionsFf;
+    public long getActionsSelect() {
+        return actionsSelect;
     }
 
     @Override
-    public OFGroupFeaturesStatsReply.Builder setActionsFf(long actionsFf) {
-        this.actionsFf = actionsFf;
-        this.actionsFfSet = true;
+    public OFGroupFeaturesStatsReply.Builder setActionsSelect(long actionsSelect) {
+        this.actionsSelect = actionsSelect;
+        this.actionsSelectSet = true;
+        return this;
+    }
+    @Override
+    public Set<OFGroupCapabilities> getCapabilities() {
+        return capabilities;
+    }
+
+    @Override
+    public OFGroupFeaturesStatsReply.Builder setCapabilities(Set<OFGroupCapabilities> capabilities) {
+        this.capabilities = capabilities;
+        this.capabilitiesSet = true;
+        return this;
+    }
+    @Override
+    public Set<OFStatsReplyFlags> getFlags() {
+        return flags;
+    }
+
+    @Override
+    public OFGroupFeaturesStatsReply.Builder setFlags(Set<OFStatsReplyFlags> flags) {
+        this.flags = flags;
+        this.flagsSet = true;
+        return this;
+    }
+    @Override
+    public long getMaxGroupsAll() {
+        return maxGroupsAll;
+    }
+
+    @Override
+    public OFGroupFeaturesStatsReply.Builder setMaxGroupsAll(long maxGroupsAll) {
+        this.maxGroupsAll = maxGroupsAll;
+        this.maxGroupsAllSet = true;
+        return this;
+    }
+    @Override
+    public long getMaxGroupsFf() {
+        return maxGroupsFf;
+    }
+
+    @Override
+    public OFGroupFeaturesStatsReply.Builder setMaxGroupsFf(long maxGroupsFf) {
+        this.maxGroupsFf = maxGroupsFf;
+        this.maxGroupsFfSet = true;
+        return this;
+    }
+    @Override
+    public long getMaxGroupsIndirect() {
+        return maxGroupsIndirect;
+    }
+
+    @Override
+    public OFGroupFeaturesStatsReply.Builder setMaxGroupsIndirect(long maxGroupsIndirect) {
+        this.maxGroupsIndirect = maxGroupsIndirect;
+        this.maxGroupsIndirectSet = true;
+        return this;
+    }
+    @Override
+    public long getMaxGroupsSelect() {
+        return maxGroupsSelect;
+    }
+
+    @Override
+    public OFGroupFeaturesStatsReply.Builder setMaxGroupsSelect(long maxGroupsSelect) {
+        this.maxGroupsSelect = maxGroupsSelect;
+        this.maxGroupsSelectSet = true;
+        return this;
+    }
+    @Override
+    public OFStatsType getStatsType() {
+        return OFStatsType.GROUP_FEATURES;
+    }
+
+    @Override
+    public OFType getType() {
+        return OFType.STATS_REPLY;
+    }
+
+    @Override
+    public long getTypes() {
+        return types;
+    }
+
+    @Override
+    public OFGroupFeaturesStatsReply.Builder setTypes(long types) {
+        this.types = types;
+        this.typesSet = true;
+        return this;
+    }
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_14;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFGroupFeaturesStatsReply.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 
@@ -423,109 +423,6 @@ class OFGroupFeaturesStatsReplyVer14 implements OFGroupFeaturesStatsReply {
         private long actionsFf;
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_14;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.STATS_REPLY;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFGroupFeaturesStatsReply.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
-        return this;
-    }
-    @Override
-    public OFStatsType getStatsType() {
-        return OFStatsType.GROUP_FEATURES;
-    }
-
-    @Override
-    public Set<OFStatsReplyFlags> getFlags() {
-        return flags;
-    }
-
-    @Override
-    public OFGroupFeaturesStatsReply.Builder setFlags(Set<OFStatsReplyFlags> flags) {
-        this.flags = flags;
-        this.flagsSet = true;
-        return this;
-    }
-    @Override
-    public long getTypes() {
-        return types;
-    }
-
-    @Override
-    public OFGroupFeaturesStatsReply.Builder setTypes(long types) {
-        this.types = types;
-        this.typesSet = true;
-        return this;
-    }
-    @Override
-    public Set<OFGroupCapabilities> getCapabilities() {
-        return capabilities;
-    }
-
-    @Override
-    public OFGroupFeaturesStatsReply.Builder setCapabilities(Set<OFGroupCapabilities> capabilities) {
-        this.capabilities = capabilities;
-        this.capabilitiesSet = true;
-        return this;
-    }
-    @Override
-    public long getMaxGroupsAll() {
-        return maxGroupsAll;
-    }
-
-    @Override
-    public OFGroupFeaturesStatsReply.Builder setMaxGroupsAll(long maxGroupsAll) {
-        this.maxGroupsAll = maxGroupsAll;
-        this.maxGroupsAllSet = true;
-        return this;
-    }
-    @Override
-    public long getMaxGroupsSelect() {
-        return maxGroupsSelect;
-    }
-
-    @Override
-    public OFGroupFeaturesStatsReply.Builder setMaxGroupsSelect(long maxGroupsSelect) {
-        this.maxGroupsSelect = maxGroupsSelect;
-        this.maxGroupsSelectSet = true;
-        return this;
-    }
-    @Override
-    public long getMaxGroupsIndirect() {
-        return maxGroupsIndirect;
-    }
-
-    @Override
-    public OFGroupFeaturesStatsReply.Builder setMaxGroupsIndirect(long maxGroupsIndirect) {
-        this.maxGroupsIndirect = maxGroupsIndirect;
-        this.maxGroupsIndirectSet = true;
-        return this;
-    }
-    @Override
-    public long getMaxGroupsFf() {
-        return maxGroupsFf;
-    }
-
-    @Override
-    public OFGroupFeaturesStatsReply.Builder setMaxGroupsFf(long maxGroupsFf) {
-        this.maxGroupsFf = maxGroupsFf;
-        this.maxGroupsFfSet = true;
-        return this;
-    }
-    @Override
     public long getActionsAll() {
         return actionsAll;
     }
@@ -537,14 +434,14 @@ class OFGroupFeaturesStatsReplyVer14 implements OFGroupFeaturesStatsReply {
         return this;
     }
     @Override
-    public long getActionsSelect() {
-        return actionsSelect;
+    public long getActionsFf() {
+        return actionsFf;
     }
 
     @Override
-    public OFGroupFeaturesStatsReply.Builder setActionsSelect(long actionsSelect) {
-        this.actionsSelect = actionsSelect;
-        this.actionsSelectSet = true;
+    public OFGroupFeaturesStatsReply.Builder setActionsFf(long actionsFf) {
+        this.actionsFf = actionsFf;
+        this.actionsFfSet = true;
         return this;
     }
     @Override
@@ -559,14 +456,117 @@ class OFGroupFeaturesStatsReplyVer14 implements OFGroupFeaturesStatsReply {
         return this;
     }
     @Override
-    public long getActionsFf() {
-        return actionsFf;
+    public long getActionsSelect() {
+        return actionsSelect;
     }
 
     @Override
-    public OFGroupFeaturesStatsReply.Builder setActionsFf(long actionsFf) {
-        this.actionsFf = actionsFf;
-        this.actionsFfSet = true;
+    public OFGroupFeaturesStatsReply.Builder setActionsSelect(long actionsSelect) {
+        this.actionsSelect = actionsSelect;
+        this.actionsSelectSet = true;
+        return this;
+    }
+    @Override
+    public Set<OFGroupCapabilities> getCapabilities() {
+        return capabilities;
+    }
+
+    @Override
+    public OFGroupFeaturesStatsReply.Builder setCapabilities(Set<OFGroupCapabilities> capabilities) {
+        this.capabilities = capabilities;
+        this.capabilitiesSet = true;
+        return this;
+    }
+    @Override
+    public Set<OFStatsReplyFlags> getFlags() {
+        return flags;
+    }
+
+    @Override
+    public OFGroupFeaturesStatsReply.Builder setFlags(Set<OFStatsReplyFlags> flags) {
+        this.flags = flags;
+        this.flagsSet = true;
+        return this;
+    }
+    @Override
+    public long getMaxGroupsAll() {
+        return maxGroupsAll;
+    }
+
+    @Override
+    public OFGroupFeaturesStatsReply.Builder setMaxGroupsAll(long maxGroupsAll) {
+        this.maxGroupsAll = maxGroupsAll;
+        this.maxGroupsAllSet = true;
+        return this;
+    }
+    @Override
+    public long getMaxGroupsFf() {
+        return maxGroupsFf;
+    }
+
+    @Override
+    public OFGroupFeaturesStatsReply.Builder setMaxGroupsFf(long maxGroupsFf) {
+        this.maxGroupsFf = maxGroupsFf;
+        this.maxGroupsFfSet = true;
+        return this;
+    }
+    @Override
+    public long getMaxGroupsIndirect() {
+        return maxGroupsIndirect;
+    }
+
+    @Override
+    public OFGroupFeaturesStatsReply.Builder setMaxGroupsIndirect(long maxGroupsIndirect) {
+        this.maxGroupsIndirect = maxGroupsIndirect;
+        this.maxGroupsIndirectSet = true;
+        return this;
+    }
+    @Override
+    public long getMaxGroupsSelect() {
+        return maxGroupsSelect;
+    }
+
+    @Override
+    public OFGroupFeaturesStatsReply.Builder setMaxGroupsSelect(long maxGroupsSelect) {
+        this.maxGroupsSelect = maxGroupsSelect;
+        this.maxGroupsSelectSet = true;
+        return this;
+    }
+    @Override
+    public OFStatsType getStatsType() {
+        return OFStatsType.GROUP_FEATURES;
+    }
+
+    @Override
+    public OFType getType() {
+        return OFType.STATS_REPLY;
+    }
+
+    @Override
+    public long getTypes() {
+        return types;
+    }
+
+    @Override
+    public OFGroupFeaturesStatsReply.Builder setTypes(long types) {
+        this.types = types;
+        this.typesSet = true;
+        return this;
+    }
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_14;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFGroupFeaturesStatsReply.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 //

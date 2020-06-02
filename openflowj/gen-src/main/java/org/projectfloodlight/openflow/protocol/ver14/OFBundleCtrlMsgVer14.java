@@ -78,28 +78,13 @@ class OFBundleCtrlMsgVer14 implements OFBundleCtrlMsg {
 
     // Accessors for OF message fields
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_14;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.BUNDLE_CONTROL;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
+    public OFBundleCtrlType getBundleCtrlType() {
+        return bundleCtrlType;
     }
 
     @Override
     public BundleId getBundleId() {
         return bundleId;
-    }
-
-    @Override
-    public OFBundleCtrlType getBundleCtrlType() {
-        return bundleCtrlType;
     }
 
     @Override
@@ -110,6 +95,21 @@ class OFBundleCtrlMsgVer14 implements OFBundleCtrlMsg {
     @Override
     public List<OFBundleProp> getProperties() {
         return properties;
+    }
+
+    @Override
+    public OFType getType() {
+        return OFType.BUNDLE_CONTROL;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_14;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
     }
 
 
@@ -138,24 +138,14 @@ class OFBundleCtrlMsgVer14 implements OFBundleCtrlMsg {
         }
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_14;
+    public OFBundleCtrlType getBundleCtrlType() {
+        return bundleCtrlType;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.BUNDLE_CONTROL;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFBundleCtrlMsg.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
+    public OFBundleCtrlMsg.Builder setBundleCtrlType(OFBundleCtrlType bundleCtrlType) {
+        this.bundleCtrlType = bundleCtrlType;
+        this.bundleCtrlTypeSet = true;
         return this;
     }
     @Override
@@ -167,17 +157,6 @@ class OFBundleCtrlMsgVer14 implements OFBundleCtrlMsg {
     public OFBundleCtrlMsg.Builder setBundleId(BundleId bundleId) {
         this.bundleId = bundleId;
         this.bundleIdSet = true;
-        return this;
-    }
-    @Override
-    public OFBundleCtrlType getBundleCtrlType() {
-        return bundleCtrlType;
-    }
-
-    @Override
-    public OFBundleCtrlMsg.Builder setBundleCtrlType(OFBundleCtrlType bundleCtrlType) {
-        this.bundleCtrlType = bundleCtrlType;
-        this.bundleCtrlTypeSet = true;
         return this;
     }
     @Override
@@ -200,6 +179,27 @@ class OFBundleCtrlMsgVer14 implements OFBundleCtrlMsg {
     public OFBundleCtrlMsg.Builder setProperties(List<OFBundleProp> properties) {
         this.properties = properties;
         this.propertiesSet = true;
+        return this;
+    }
+    @Override
+    public OFType getType() {
+        return OFType.BUNDLE_CONTROL;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_14;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFBundleCtrlMsg.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 
@@ -246,24 +246,14 @@ class OFBundleCtrlMsgVer14 implements OFBundleCtrlMsg {
         private List<OFBundleProp> properties;
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_14;
+    public OFBundleCtrlType getBundleCtrlType() {
+        return bundleCtrlType;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.BUNDLE_CONTROL;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFBundleCtrlMsg.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
+    public OFBundleCtrlMsg.Builder setBundleCtrlType(OFBundleCtrlType bundleCtrlType) {
+        this.bundleCtrlType = bundleCtrlType;
+        this.bundleCtrlTypeSet = true;
         return this;
     }
     @Override
@@ -275,17 +265,6 @@ class OFBundleCtrlMsgVer14 implements OFBundleCtrlMsg {
     public OFBundleCtrlMsg.Builder setBundleId(BundleId bundleId) {
         this.bundleId = bundleId;
         this.bundleIdSet = true;
-        return this;
-    }
-    @Override
-    public OFBundleCtrlType getBundleCtrlType() {
-        return bundleCtrlType;
-    }
-
-    @Override
-    public OFBundleCtrlMsg.Builder setBundleCtrlType(OFBundleCtrlType bundleCtrlType) {
-        this.bundleCtrlType = bundleCtrlType;
-        this.bundleCtrlTypeSet = true;
         return this;
     }
     @Override
@@ -308,6 +287,27 @@ class OFBundleCtrlMsgVer14 implements OFBundleCtrlMsg {
     public OFBundleCtrlMsg.Builder setProperties(List<OFBundleProp> properties) {
         this.properties = properties;
         this.propertiesSet = true;
+        return this;
+    }
+    @Override
+    public OFType getType() {
+        return OFType.BUNDLE_CONTROL;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_14;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFBundleCtrlMsg.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 //

@@ -28,12 +28,12 @@ import org.projectfloodlight.openflow.exceptions.*;
 import io.netty.buffer.ByteBuf;
 
 public interface OFOxmIpv4SrcMasked extends OFObject, OFOxm<IPv4Address> {
+    IPv4Address getMask();
     long getTypeLen();
     IPv4Address getValue();
-    IPv4Address getMask();
-    MatchField<IPv4Address> getMatchField();
-    boolean isMasked();
     OFOxm<IPv4Address> getCanonical();
+    boolean isMasked();
+    MatchField<IPv4Address> getMatchField();
     OFVersion getVersion();
 
     void writeTo(ByteBuf channelBuffer);
@@ -41,14 +41,14 @@ public interface OFOxmIpv4SrcMasked extends OFObject, OFOxm<IPv4Address> {
     Builder createBuilder();
     public interface Builder extends OFOxm.Builder<IPv4Address> {
         OFOxmIpv4SrcMasked build();
+        IPv4Address getMask();
+        Builder setMask(IPv4Address mask);
         long getTypeLen();
         IPv4Address getValue();
         Builder setValue(IPv4Address value);
-        IPv4Address getMask();
-        Builder setMask(IPv4Address mask);
-        MatchField<IPv4Address> getMatchField();
-        boolean isMasked();
         OFOxm<IPv4Address> getCanonical();
+        boolean isMasked();
+        MatchField<IPv4Address> getMatchField();
         OFVersion getVersion();
     }
 }

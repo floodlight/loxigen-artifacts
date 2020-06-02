@@ -67,16 +67,6 @@ class OFOxmInPortVer12 implements OFOxmInPort {
         return value;
     }
 
-    @Override
-    public MatchField<OFPort> getMatchField() {
-        return MatchField.IN_PORT;
-    }
-
-    @Override
-    public boolean isMasked() {
-        return false;
-    }
-
     public OFOxm<OFPort> getCanonical() {
         // exact match OXM is always canonical
         return this;
@@ -85,6 +75,16 @@ class OFOxmInPortVer12 implements OFOxmInPort {
     @Override
     public OFPort getMask()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property mask not supported in version 1.2");
+    }
+
+    @Override
+    public boolean isMasked() {
+        return false;
+    }
+
+    @Override
+    public MatchField<OFPort> getMatchField() {
+        return MatchField.IN_PORT;
     }
 
     @Override
@@ -126,8 +126,13 @@ class OFOxmInPortVer12 implements OFOxmInPort {
         return this;
     }
     @Override
-    public MatchField<OFPort> getMatchField() {
-        return MatchField.IN_PORT;
+    public OFOxm<OFPort> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.2");
+    }
+
+    @Override
+    public OFPort getMask()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property mask not supported in version 1.2");
     }
 
     @Override
@@ -136,13 +141,8 @@ class OFOxmInPortVer12 implements OFOxmInPort {
     }
 
     @Override
-    public OFOxm<OFPort> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.2");
-    }
-
-    @Override
-    public OFPort getMask()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property mask not supported in version 1.2");
+    public MatchField<OFPort> getMatchField() {
+        return MatchField.IN_PORT;
     }
 
     @Override
@@ -188,8 +188,13 @@ class OFOxmInPortVer12 implements OFOxmInPort {
         return this;
     }
     @Override
-    public MatchField<OFPort> getMatchField() {
-        return MatchField.IN_PORT;
+    public OFOxm<OFPort> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.2");
+    }
+
+    @Override
+    public OFPort getMask()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property mask not supported in version 1.2");
     }
 
     @Override
@@ -198,13 +203,8 @@ class OFOxmInPortVer12 implements OFOxmInPort {
     }
 
     @Override
-    public OFOxm<OFPort> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.2");
-    }
-
-    @Override
-    public OFPort getMask()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property mask not supported in version 1.2");
+    public MatchField<OFPort> getMatchField() {
+        return MatchField.IN_PORT;
     }
 
     @Override

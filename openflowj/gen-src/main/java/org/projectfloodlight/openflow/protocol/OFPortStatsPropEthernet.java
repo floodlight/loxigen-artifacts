@@ -28,11 +28,11 @@ import org.projectfloodlight.openflow.exceptions.*;
 import io.netty.buffer.ByteBuf;
 
 public interface OFPortStatsPropEthernet extends OFObject, OFPortStatsProp {
-    int getType();
+    U64 getCollisions();
+    U64 getRxCrcErr();
     U64 getRxFrameErr();
     U64 getRxOverErr();
-    U64 getRxCrcErr();
-    U64 getCollisions();
+    int getType();
     OFVersion getVersion();
 
     void writeTo(ByteBuf channelBuffer);
@@ -40,15 +40,15 @@ public interface OFPortStatsPropEthernet extends OFObject, OFPortStatsProp {
     Builder createBuilder();
     public interface Builder extends OFPortStatsProp.Builder {
         OFPortStatsPropEthernet build();
-        int getType();
+        U64 getCollisions();
+        Builder setCollisions(U64 collisions);
+        U64 getRxCrcErr();
+        Builder setRxCrcErr(U64 rxCrcErr);
         U64 getRxFrameErr();
         Builder setRxFrameErr(U64 rxFrameErr);
         U64 getRxOverErr();
         Builder setRxOverErr(U64 rxOverErr);
-        U64 getRxCrcErr();
-        Builder setRxCrcErr(U64 rxCrcErr);
-        U64 getCollisions();
-        Builder setCollisions(U64 collisions);
+        int getType();
         OFVersion getVersion();
     }
 }

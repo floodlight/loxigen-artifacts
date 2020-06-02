@@ -47,12 +47,12 @@ abstract class OFInstructionIdVer14 {
                case (short) 0x4:
                    // discriminator value OFInstructionType.APPLY_ACTIONS=4 for class OFInstructionIdApplyActionsVer14
                    return OFInstructionIdApplyActionsVer14.READER.readFrom(bb);
-               case (short) 0xffff:
-                   // discriminator value OFInstructionType.EXPERIMENTER=65535 for class OFInstructionIdExperimenterVer14
-                   return OFInstructionIdExperimenterVer14.READER.readFrom(bb);
                case (short) 0x5:
                    // discriminator value OFInstructionType.CLEAR_ACTIONS=5 for class OFInstructionIdClearActionsVer14
                    return OFInstructionIdClearActionsVer14.READER.readFrom(bb);
+               case (short) 0xffff:
+                   // discriminator value OFInstructionType.EXPERIMENTER=65535 for class OFInstructionIdExperimenterVer14
+                   return OFInstructionIdExperimenterVer14.READER.readFrom(bb);
                case (short) 0x1:
                    // discriminator value OFInstructionType.GOTO_TABLE=1 for class OFInstructionIdGotoTableVer14
                    return OFInstructionIdGotoTableVer14.READER.readFrom(bb);

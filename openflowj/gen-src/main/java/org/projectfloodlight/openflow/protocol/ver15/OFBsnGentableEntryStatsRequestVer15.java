@@ -75,23 +75,18 @@ class OFBsnGentableEntryStatsRequestVer15 implements OFBsnGentableEntryStatsRequ
 
     // Accessors for OF message fields
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_15;
+    public U128 getChecksum() {
+        return checksum;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.STATS_REQUEST;
+    public U128 getChecksumMask() {
+        return checksumMask;
     }
 
     @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFStatsType getStatsType() {
-        return OFStatsType.EXPERIMENTER;
+    public long getExperimenter() {
+        return 0x5c16c7L;
     }
 
     @Override
@@ -100,8 +95,8 @@ class OFBsnGentableEntryStatsRequestVer15 implements OFBsnGentableEntryStatsRequ
     }
 
     @Override
-    public long getExperimenter() {
-        return 0x5c16c7L;
+    public OFStatsType getStatsType() {
+        return OFStatsType.EXPERIMENTER;
     }
 
     @Override
@@ -115,13 +110,18 @@ class OFBsnGentableEntryStatsRequestVer15 implements OFBsnGentableEntryStatsRequ
     }
 
     @Override
-    public U128 getChecksum() {
-        return checksum;
+    public OFType getType() {
+        return OFType.STATS_REQUEST;
     }
 
     @Override
-    public U128 getChecksumMask() {
-        return checksumMask;
+    public OFVersion getVersion() {
+        return OFVersion.OF_15;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
     }
 
 
@@ -150,64 +150,6 @@ class OFBsnGentableEntryStatsRequestVer15 implements OFBsnGentableEntryStatsRequ
         }
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_15;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.STATS_REQUEST;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFBsnGentableEntryStatsRequest.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
-        return this;
-    }
-    @Override
-    public OFStatsType getStatsType() {
-        return OFStatsType.EXPERIMENTER;
-    }
-
-    @Override
-    public Set<OFStatsRequestFlags> getFlags() {
-        return flags;
-    }
-
-    @Override
-    public OFBsnGentableEntryStatsRequest.Builder setFlags(Set<OFStatsRequestFlags> flags) {
-        this.flags = flags;
-        this.flagsSet = true;
-        return this;
-    }
-    @Override
-    public long getExperimenter() {
-        return 0x5c16c7L;
-    }
-
-    @Override
-    public long getSubtype() {
-        return 0x3L;
-    }
-
-    @Override
-    public GenTableId getTableId() {
-        return tableId;
-    }
-
-    @Override
-    public OFBsnGentableEntryStatsRequest.Builder setTableId(GenTableId tableId) {
-        this.tableId = tableId;
-        this.tableIdSet = true;
-        return this;
-    }
-    @Override
     public U128 getChecksum() {
         return checksum;
     }
@@ -227,6 +169,64 @@ class OFBsnGentableEntryStatsRequestVer15 implements OFBsnGentableEntryStatsRequ
     public OFBsnGentableEntryStatsRequest.Builder setChecksumMask(U128 checksumMask) {
         this.checksumMask = checksumMask;
         this.checksumMaskSet = true;
+        return this;
+    }
+    @Override
+    public long getExperimenter() {
+        return 0x5c16c7L;
+    }
+
+    @Override
+    public Set<OFStatsRequestFlags> getFlags() {
+        return flags;
+    }
+
+    @Override
+    public OFBsnGentableEntryStatsRequest.Builder setFlags(Set<OFStatsRequestFlags> flags) {
+        this.flags = flags;
+        this.flagsSet = true;
+        return this;
+    }
+    @Override
+    public OFStatsType getStatsType() {
+        return OFStatsType.EXPERIMENTER;
+    }
+
+    @Override
+    public long getSubtype() {
+        return 0x3L;
+    }
+
+    @Override
+    public GenTableId getTableId() {
+        return tableId;
+    }
+
+    @Override
+    public OFBsnGentableEntryStatsRequest.Builder setTableId(GenTableId tableId) {
+        this.tableId = tableId;
+        this.tableIdSet = true;
+        return this;
+    }
+    @Override
+    public OFType getType() {
+        return OFType.STATS_REQUEST;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_15;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFBsnGentableEntryStatsRequest.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 
@@ -273,64 +273,6 @@ class OFBsnGentableEntryStatsRequestVer15 implements OFBsnGentableEntryStatsRequ
         private U128 checksumMask;
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_15;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.STATS_REQUEST;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFBsnGentableEntryStatsRequest.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
-        return this;
-    }
-    @Override
-    public OFStatsType getStatsType() {
-        return OFStatsType.EXPERIMENTER;
-    }
-
-    @Override
-    public Set<OFStatsRequestFlags> getFlags() {
-        return flags;
-    }
-
-    @Override
-    public OFBsnGentableEntryStatsRequest.Builder setFlags(Set<OFStatsRequestFlags> flags) {
-        this.flags = flags;
-        this.flagsSet = true;
-        return this;
-    }
-    @Override
-    public long getExperimenter() {
-        return 0x5c16c7L;
-    }
-
-    @Override
-    public long getSubtype() {
-        return 0x3L;
-    }
-
-    @Override
-    public GenTableId getTableId() {
-        return tableId;
-    }
-
-    @Override
-    public OFBsnGentableEntryStatsRequest.Builder setTableId(GenTableId tableId) {
-        this.tableId = tableId;
-        this.tableIdSet = true;
-        return this;
-    }
-    @Override
     public U128 getChecksum() {
         return checksum;
     }
@@ -350,6 +292,64 @@ class OFBsnGentableEntryStatsRequestVer15 implements OFBsnGentableEntryStatsRequ
     public OFBsnGentableEntryStatsRequest.Builder setChecksumMask(U128 checksumMask) {
         this.checksumMask = checksumMask;
         this.checksumMaskSet = true;
+        return this;
+    }
+    @Override
+    public long getExperimenter() {
+        return 0x5c16c7L;
+    }
+
+    @Override
+    public Set<OFStatsRequestFlags> getFlags() {
+        return flags;
+    }
+
+    @Override
+    public OFBsnGentableEntryStatsRequest.Builder setFlags(Set<OFStatsRequestFlags> flags) {
+        this.flags = flags;
+        this.flagsSet = true;
+        return this;
+    }
+    @Override
+    public OFStatsType getStatsType() {
+        return OFStatsType.EXPERIMENTER;
+    }
+
+    @Override
+    public long getSubtype() {
+        return 0x3L;
+    }
+
+    @Override
+    public GenTableId getTableId() {
+        return tableId;
+    }
+
+    @Override
+    public OFBsnGentableEntryStatsRequest.Builder setTableId(GenTableId tableId) {
+        this.tableId = tableId;
+        this.tableIdSet = true;
+        return this;
+    }
+    @Override
+    public OFType getType() {
+        return OFType.STATS_REQUEST;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_15;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFBsnGentableEntryStatsRequest.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 //

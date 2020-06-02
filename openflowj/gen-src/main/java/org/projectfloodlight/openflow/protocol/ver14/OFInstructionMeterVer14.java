@@ -55,13 +55,13 @@ class OFInstructionMeterVer14 implements OFInstructionMeter {
 
     // Accessors for OF message fields
     @Override
-    public OFInstructionType getType() {
-        return OFInstructionType.METER;
+    public long getMeterId() {
+        return meterId;
     }
 
     @Override
-    public long getMeterId() {
-        return meterId;
+    public OFInstructionType getType() {
+        return OFInstructionType.METER;
     }
 
     @Override
@@ -87,11 +87,6 @@ class OFInstructionMeterVer14 implements OFInstructionMeter {
         }
 
     @Override
-    public OFInstructionType getType() {
-        return OFInstructionType.METER;
-    }
-
-    @Override
     public long getMeterId() {
         return meterId;
     }
@@ -102,6 +97,11 @@ class OFInstructionMeterVer14 implements OFInstructionMeter {
         this.meterIdSet = true;
         return this;
     }
+    @Override
+    public OFInstructionType getType() {
+        return OFInstructionType.METER;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_14;
@@ -127,11 +127,6 @@ class OFInstructionMeterVer14 implements OFInstructionMeter {
         private long meterId;
 
     @Override
-    public OFInstructionType getType() {
-        return OFInstructionType.METER;
-    }
-
-    @Override
     public long getMeterId() {
         return meterId;
     }
@@ -142,6 +137,11 @@ class OFInstructionMeterVer14 implements OFInstructionMeter {
         this.meterIdSet = true;
         return this;
     }
+    @Override
+    public OFInstructionType getType() {
+        return OFInstructionType.METER;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_14;

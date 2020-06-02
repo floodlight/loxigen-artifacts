@@ -55,8 +55,13 @@ class OFBsnHybridGetRequestVer10 implements OFBsnHybridGetRequest {
 
     // Accessors for OF message fields
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_10;
+    public long getExperimenter() {
+        return 0x5c16c7L;
+    }
+
+    @Override
+    public long getSubtype() {
+        return 0x1bL;
     }
 
     @Override
@@ -65,18 +70,13 @@ class OFBsnHybridGetRequestVer10 implements OFBsnHybridGetRequest {
     }
 
     @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_10;
+    }
+
+    @Override
     public long getXid() {
         return xid;
-    }
-
-    @Override
-    public long getExperimenter() {
-        return 0x5c16c7L;
-    }
-
-    @Override
-    public long getSubtype() {
-        return 0x1bL;
     }
 
 
@@ -97,13 +97,23 @@ class OFBsnHybridGetRequestVer10 implements OFBsnHybridGetRequest {
         }
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_10;
+    public long getExperimenter() {
+        return 0x5c16c7L;
+    }
+
+    @Override
+    public long getSubtype() {
+        return 0x1bL;
     }
 
     @Override
     public OFType getType() {
         return OFType.EXPERIMENTER;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_10;
     }
 
     @Override
@@ -117,16 +127,6 @@ class OFBsnHybridGetRequestVer10 implements OFBsnHybridGetRequest {
         this.xidSet = true;
         return this;
     }
-    @Override
-    public long getExperimenter() {
-        return 0x5c16c7L;
-    }
-
-    @Override
-    public long getSubtype() {
-        return 0x1bL;
-    }
-
 
 
         @Override
@@ -147,13 +147,23 @@ class OFBsnHybridGetRequestVer10 implements OFBsnHybridGetRequest {
         private long xid;
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_10;
+    public long getExperimenter() {
+        return 0x5c16c7L;
+    }
+
+    @Override
+    public long getSubtype() {
+        return 0x1bL;
     }
 
     @Override
     public OFType getType() {
         return OFType.EXPERIMENTER;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_10;
     }
 
     @Override
@@ -167,16 +177,6 @@ class OFBsnHybridGetRequestVer10 implements OFBsnHybridGetRequest {
         this.xidSet = true;
         return this;
     }
-    @Override
-    public long getExperimenter() {
-        return 0x5c16c7L;
-    }
-
-    @Override
-    public long getSubtype() {
-        return 0x1bL;
-    }
-
 //
         @Override
         public OFBsnHybridGetRequest build() {

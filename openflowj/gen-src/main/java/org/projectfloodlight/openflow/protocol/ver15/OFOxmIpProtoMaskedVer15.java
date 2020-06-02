@@ -64,6 +64,11 @@ class OFOxmIpProtoMaskedVer15 implements OFOxmIpProtoMasked {
 
     // Accessors for OF message fields
     @Override
+    public IpProtocol getMask() {
+        return mask;
+    }
+
+    @Override
     public long getTypeLen() {
         return 0x80001502L;
     }
@@ -71,21 +76,6 @@ class OFOxmIpProtoMaskedVer15 implements OFOxmIpProtoMasked {
     @Override
     public IpProtocol getValue() {
         return value;
-    }
-
-    @Override
-    public IpProtocol getMask() {
-        return mask;
-    }
-
-    @Override
-    public MatchField<IpProtocol> getMatchField() {
-        return MatchField.IP_PROTO;
-    }
-
-    @Override
-    public boolean isMasked() {
-        return true;
     }
 
     public OFOxm<IpProtocol> getCanonical() {
@@ -96,6 +86,16 @@ class OFOxmIpProtoMaskedVer15 implements OFOxmIpProtoMasked {
         } else {
             return this;
         }
+    }
+
+    @Override
+    public boolean isMasked() {
+        return true;
+    }
+
+    @Override
+    public MatchField<IpProtocol> getMatchField() {
+        return MatchField.IP_PROTO;
     }
 
     @Override
@@ -123,6 +123,17 @@ class OFOxmIpProtoMaskedVer15 implements OFOxmIpProtoMasked {
         }
 
     @Override
+    public IpProtocol getMask() {
+        return mask;
+    }
+
+    @Override
+    public OFOxmIpProtoMasked.Builder setMask(IpProtocol mask) {
+        this.mask = mask;
+        this.maskSet = true;
+        return this;
+    }
+    @Override
     public long getTypeLen() {
         return 0x80001502L;
     }
@@ -139,19 +150,8 @@ class OFOxmIpProtoMaskedVer15 implements OFOxmIpProtoMasked {
         return this;
     }
     @Override
-    public IpProtocol getMask() {
-        return mask;
-    }
-
-    @Override
-    public OFOxmIpProtoMasked.Builder setMask(IpProtocol mask) {
-        this.mask = mask;
-        this.maskSet = true;
-        return this;
-    }
-    @Override
-    public MatchField<IpProtocol> getMatchField() {
-        return MatchField.IP_PROTO;
+    public OFOxm<IpProtocol> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.5");
     }
 
     @Override
@@ -160,8 +160,8 @@ class OFOxmIpProtoMaskedVer15 implements OFOxmIpProtoMasked {
     }
 
     @Override
-    public OFOxm<IpProtocol> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.5");
+    public MatchField<IpProtocol> getMatchField() {
+        return MatchField.IP_PROTO;
     }
 
     @Override
@@ -197,6 +197,17 @@ class OFOxmIpProtoMaskedVer15 implements OFOxmIpProtoMasked {
         private IpProtocol mask;
 
     @Override
+    public IpProtocol getMask() {
+        return mask;
+    }
+
+    @Override
+    public OFOxmIpProtoMasked.Builder setMask(IpProtocol mask) {
+        this.mask = mask;
+        this.maskSet = true;
+        return this;
+    }
+    @Override
     public long getTypeLen() {
         return 0x80001502L;
     }
@@ -213,19 +224,8 @@ class OFOxmIpProtoMaskedVer15 implements OFOxmIpProtoMasked {
         return this;
     }
     @Override
-    public IpProtocol getMask() {
-        return mask;
-    }
-
-    @Override
-    public OFOxmIpProtoMasked.Builder setMask(IpProtocol mask) {
-        this.mask = mask;
-        this.maskSet = true;
-        return this;
-    }
-    @Override
-    public MatchField<IpProtocol> getMatchField() {
-        return MatchField.IP_PROTO;
+    public OFOxm<IpProtocol> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.5");
     }
 
     @Override
@@ -234,8 +234,8 @@ class OFOxmIpProtoMaskedVer15 implements OFOxmIpProtoMasked {
     }
 
     @Override
-    public OFOxm<IpProtocol> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.5");
+    public MatchField<IpProtocol> getMatchField() {
+        return MatchField.IP_PROTO;
     }
 
     @Override

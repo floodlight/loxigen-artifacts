@@ -55,11 +55,6 @@ class OFInstructionBsnInternalPriorityVer14 implements OFInstructionBsnInternalP
 
     // Accessors for OF message fields
     @Override
-    public OFInstructionType getType() {
-        return OFInstructionType.EXPERIMENTER;
-    }
-
-    @Override
     public long getExperimenter() {
         return 0x5c16c7L;
     }
@@ -67,6 +62,11 @@ class OFInstructionBsnInternalPriorityVer14 implements OFInstructionBsnInternalP
     @Override
     public long getSubtype() {
         return 0xcL;
+    }
+
+    @Override
+    public OFInstructionType getType() {
+        return OFInstructionType.EXPERIMENTER;
     }
 
     @Override
@@ -97,11 +97,6 @@ class OFInstructionBsnInternalPriorityVer14 implements OFInstructionBsnInternalP
         }
 
     @Override
-    public OFInstructionType getType() {
-        return OFInstructionType.EXPERIMENTER;
-    }
-
-    @Override
     public long getExperimenter() {
         return 0x5c16c7L;
     }
@@ -109,6 +104,11 @@ class OFInstructionBsnInternalPriorityVer14 implements OFInstructionBsnInternalP
     @Override
     public long getSubtype() {
         return 0xcL;
+    }
+
+    @Override
+    public OFInstructionType getType() {
+        return OFInstructionType.EXPERIMENTER;
     }
 
     @Override
@@ -147,11 +147,6 @@ class OFInstructionBsnInternalPriorityVer14 implements OFInstructionBsnInternalP
         private long value;
 
     @Override
-    public OFInstructionType getType() {
-        return OFInstructionType.EXPERIMENTER;
-    }
-
-    @Override
     public long getExperimenter() {
         return 0x5c16c7L;
     }
@@ -159,6 +154,11 @@ class OFInstructionBsnInternalPriorityVer14 implements OFInstructionBsnInternalP
     @Override
     public long getSubtype() {
         return 0xcL;
+    }
+
+    @Override
+    public OFInstructionType getType() {
+        return OFInstructionType.EXPERIMENTER;
     }
 
     @Override

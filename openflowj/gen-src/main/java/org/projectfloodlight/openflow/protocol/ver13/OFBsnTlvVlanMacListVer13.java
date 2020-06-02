@@ -62,13 +62,13 @@ class OFBsnTlvVlanMacListVer13 implements OFBsnTlvVlanMacList {
 
     // Accessors for OF message fields
     @Override
-    public int getType() {
-        return 0x62;
+    public List<OFBsnVlanMac> getKey() {
+        return key;
     }
 
     @Override
-    public List<OFBsnVlanMac> getKey() {
-        return key;
+    public int getType() {
+        return 0x62;
     }
 
     @Override
@@ -94,11 +94,6 @@ class OFBsnTlvVlanMacListVer13 implements OFBsnTlvVlanMacList {
         }
 
     @Override
-    public int getType() {
-        return 0x62;
-    }
-
-    @Override
     public List<OFBsnVlanMac> getKey() {
         return key;
     }
@@ -109,6 +104,11 @@ class OFBsnTlvVlanMacListVer13 implements OFBsnTlvVlanMacList {
         this.keySet = true;
         return this;
     }
+    @Override
+    public int getType() {
+        return 0x62;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_13;
@@ -136,11 +136,6 @@ class OFBsnTlvVlanMacListVer13 implements OFBsnTlvVlanMacList {
         private List<OFBsnVlanMac> key;
 
     @Override
-    public int getType() {
-        return 0x62;
-    }
-
-    @Override
     public List<OFBsnVlanMac> getKey() {
         return key;
     }
@@ -151,6 +146,11 @@ class OFBsnTlvVlanMacListVer13 implements OFBsnTlvVlanMacList {
         this.keySet = true;
         return this;
     }
+    @Override
+    public int getType() {
+        return 0x62;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_13;

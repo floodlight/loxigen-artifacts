@@ -58,13 +58,13 @@ class OFActionSetNwSrcVer11 implements OFActionSetNwSrc {
 
     // Accessors for OF message fields
     @Override
-    public OFActionType getType() {
-        return OFActionType.SET_NW_SRC;
+    public IPv4Address getNwAddr() {
+        return nwAddr;
     }
 
     @Override
-    public IPv4Address getNwAddr() {
-        return nwAddr;
+    public OFActionType getType() {
+        return OFActionType.SET_NW_SRC;
     }
 
     @Override
@@ -90,11 +90,6 @@ class OFActionSetNwSrcVer11 implements OFActionSetNwSrc {
         }
 
     @Override
-    public OFActionType getType() {
-        return OFActionType.SET_NW_SRC;
-    }
-
-    @Override
     public IPv4Address getNwAddr() {
         return nwAddr;
     }
@@ -105,6 +100,11 @@ class OFActionSetNwSrcVer11 implements OFActionSetNwSrc {
         this.nwAddrSet = true;
         return this;
     }
+    @Override
+    public OFActionType getType() {
+        return OFActionType.SET_NW_SRC;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_11;
@@ -132,11 +132,6 @@ class OFActionSetNwSrcVer11 implements OFActionSetNwSrc {
         private IPv4Address nwAddr;
 
     @Override
-    public OFActionType getType() {
-        return OFActionType.SET_NW_SRC;
-    }
-
-    @Override
     public IPv4Address getNwAddr() {
         return nwAddr;
     }
@@ -147,6 +142,11 @@ class OFActionSetNwSrcVer11 implements OFActionSetNwSrc {
         this.nwAddrSet = true;
         return this;
     }
+    @Override
+    public OFActionType getType() {
+        return OFActionType.SET_NW_SRC;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_11;

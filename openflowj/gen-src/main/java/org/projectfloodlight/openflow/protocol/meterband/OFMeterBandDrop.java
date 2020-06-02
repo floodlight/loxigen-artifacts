@@ -28,9 +28,9 @@ import org.projectfloodlight.openflow.exceptions.*;
 import io.netty.buffer.ByteBuf;
 
 public interface OFMeterBandDrop extends OFObject, OFMeterBand {
-    int getType();
-    long getRate();
     long getBurstSize();
+    long getRate();
+    int getType();
     OFVersion getVersion();
 
     void writeTo(ByteBuf channelBuffer);
@@ -38,11 +38,11 @@ public interface OFMeterBandDrop extends OFObject, OFMeterBand {
     Builder createBuilder();
     public interface Builder extends OFMeterBand.Builder {
         OFMeterBandDrop build();
-        int getType();
-        long getRate();
-        Builder setRate(long rate);
         long getBurstSize();
         Builder setBurstSize(long burstSize);
+        long getRate();
+        Builder setRate(long rate);
+        int getType();
         OFVersion getVersion();
     }
 }

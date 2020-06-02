@@ -71,26 +71,6 @@ class OFQueueStatsRequestVer15 implements OFQueueStatsRequest {
 
     // Accessors for OF message fields
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_15;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.STATS_REQUEST;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFStatsType getStatsType() {
-        return OFStatsType.QUEUE;
-    }
-
-    @Override
     public Set<OFStatsRequestFlags> getFlags() {
         return flags;
     }
@@ -103,6 +83,26 @@ class OFQueueStatsRequestVer15 implements OFQueueStatsRequest {
     @Override
     public long getQueueId() {
         return queueId;
+    }
+
+    @Override
+    public OFStatsType getStatsType() {
+        return OFStatsType.QUEUE;
+    }
+
+    @Override
+    public OFType getType() {
+        return OFType.STATS_REQUEST;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_15;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
     }
 
 
@@ -127,32 +127,6 @@ class OFQueueStatsRequestVer15 implements OFQueueStatsRequest {
         BuilderWithParent(OFQueueStatsRequestVer15 parentMessage) {
             this.parentMessage = parentMessage;
         }
-
-    @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_15;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.STATS_REQUEST;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFQueueStatsRequest.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
-        return this;
-    }
-    @Override
-    public OFStatsType getStatsType() {
-        return OFStatsType.QUEUE;
-    }
 
     @Override
     public Set<OFStatsRequestFlags> getFlags() {
@@ -185,6 +159,32 @@ class OFQueueStatsRequestVer15 implements OFQueueStatsRequest {
     public OFQueueStatsRequest.Builder setQueueId(long queueId) {
         this.queueId = queueId;
         this.queueIdSet = true;
+        return this;
+    }
+    @Override
+    public OFStatsType getStatsType() {
+        return OFStatsType.QUEUE;
+    }
+
+    @Override
+    public OFType getType() {
+        return OFType.STATS_REQUEST;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_15;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFQueueStatsRequest.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 
@@ -223,32 +223,6 @@ class OFQueueStatsRequestVer15 implements OFQueueStatsRequest {
         private long queueId;
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_15;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.STATS_REQUEST;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFQueueStatsRequest.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
-        return this;
-    }
-    @Override
-    public OFStatsType getStatsType() {
-        return OFStatsType.QUEUE;
-    }
-
-    @Override
     public Set<OFStatsRequestFlags> getFlags() {
         return flags;
     }
@@ -279,6 +253,32 @@ class OFQueueStatsRequestVer15 implements OFQueueStatsRequest {
     public OFQueueStatsRequest.Builder setQueueId(long queueId) {
         this.queueId = queueId;
         this.queueIdSet = true;
+        return this;
+    }
+    @Override
+    public OFStatsType getStatsType() {
+        return OFStatsType.QUEUE;
+    }
+
+    @Override
+    public OFType getType() {
+        return OFType.STATS_REQUEST;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_15;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFQueueStatsRequest.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 //

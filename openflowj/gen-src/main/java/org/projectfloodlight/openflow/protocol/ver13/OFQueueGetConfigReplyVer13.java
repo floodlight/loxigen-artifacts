@@ -71,8 +71,13 @@ class OFQueueGetConfigReplyVer13 implements OFQueueGetConfigReply {
 
     // Accessors for OF message fields
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_13;
+    public OFPort getPort() {
+        return port;
+    }
+
+    @Override
+    public List<OFPacketQueue> getQueues() {
+        return queues;
     }
 
     @Override
@@ -81,18 +86,13 @@ class OFQueueGetConfigReplyVer13 implements OFQueueGetConfigReply {
     }
 
     @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_13;
+    }
+
+    @Override
     public long getXid() {
         return xid;
-    }
-
-    @Override
-    public OFPort getPort() {
-        return port;
-    }
-
-    @Override
-    public List<OFPacketQueue> getQueues() {
-        return queues;
     }
 
 
@@ -117,27 +117,6 @@ class OFQueueGetConfigReplyVer13 implements OFQueueGetConfigReply {
         }
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_13;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.QUEUE_GET_CONFIG_REPLY;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFQueueGetConfigReply.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
-        return this;
-    }
-    @Override
     public OFPort getPort() {
         return port;
     }
@@ -157,6 +136,27 @@ class OFQueueGetConfigReplyVer13 implements OFQueueGetConfigReply {
     public OFQueueGetConfigReply.Builder setQueues(List<OFPacketQueue> queues) {
         this.queues = queues;
         this.queuesSet = true;
+        return this;
+    }
+    @Override
+    public OFType getType() {
+        return OFType.QUEUE_GET_CONFIG_REPLY;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_13;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFQueueGetConfigReply.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 
@@ -191,27 +191,6 @@ class OFQueueGetConfigReplyVer13 implements OFQueueGetConfigReply {
         private List<OFPacketQueue> queues;
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_13;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.QUEUE_GET_CONFIG_REPLY;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFQueueGetConfigReply.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
-        return this;
-    }
-    @Override
     public OFPort getPort() {
         return port;
     }
@@ -231,6 +210,27 @@ class OFQueueGetConfigReplyVer13 implements OFQueueGetConfigReply {
     public OFQueueGetConfigReply.Builder setQueues(List<OFPacketQueue> queues) {
         this.queues = queues;
         this.queuesSet = true;
+        return this;
+    }
+    @Override
+    public OFType getType() {
+        return OFType.QUEUE_GET_CONFIG_REPLY;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_13;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFQueueGetConfigReply.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 //

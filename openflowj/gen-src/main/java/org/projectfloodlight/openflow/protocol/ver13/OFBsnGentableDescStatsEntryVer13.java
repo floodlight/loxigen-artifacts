@@ -65,8 +65,13 @@ class OFBsnGentableDescStatsEntryVer13 implements OFBsnGentableDescStatsEntry {
 
     // Accessors for OF message fields
     @Override
-    public GenTableId getTableId() {
-        return tableId;
+    public long getBucketsSize() {
+        return bucketsSize;
+    }
+
+    @Override
+    public long getMaxEntries() {
+        return maxEntries;
     }
 
     @Override
@@ -75,13 +80,8 @@ class OFBsnGentableDescStatsEntryVer13 implements OFBsnGentableDescStatsEntry {
     }
 
     @Override
-    public long getBucketsSize() {
-        return bucketsSize;
-    }
-
-    @Override
-    public long getMaxEntries() {
-        return maxEntries;
+    public GenTableId getTableId() {
+        return tableId;
     }
 
     @Override
@@ -113,28 +113,6 @@ class OFBsnGentableDescStatsEntryVer13 implements OFBsnGentableDescStatsEntry {
         }
 
     @Override
-    public GenTableId getTableId() {
-        return tableId;
-    }
-
-    @Override
-    public OFBsnGentableDescStatsEntry.Builder setTableId(GenTableId tableId) {
-        this.tableId = tableId;
-        this.tableIdSet = true;
-        return this;
-    }
-    @Override
-    public String getName() {
-        return name;
-    }
-
-    @Override
-    public OFBsnGentableDescStatsEntry.Builder setName(String name) {
-        this.name = name;
-        this.nameSet = true;
-        return this;
-    }
-    @Override
     public long getBucketsSize() {
         return bucketsSize;
     }
@@ -154,6 +132,28 @@ class OFBsnGentableDescStatsEntryVer13 implements OFBsnGentableDescStatsEntry {
     public OFBsnGentableDescStatsEntry.Builder setMaxEntries(long maxEntries) {
         this.maxEntries = maxEntries;
         this.maxEntriesSet = true;
+        return this;
+    }
+    @Override
+    public String getName() {
+        return name;
+    }
+
+    @Override
+    public OFBsnGentableDescStatsEntry.Builder setName(String name) {
+        this.name = name;
+        this.nameSet = true;
+        return this;
+    }
+    @Override
+    public GenTableId getTableId() {
+        return tableId;
+    }
+
+    @Override
+    public OFBsnGentableDescStatsEntry.Builder setTableId(GenTableId tableId) {
+        this.tableId = tableId;
+        this.tableIdSet = true;
         return this;
     }
     @Override
@@ -197,28 +197,6 @@ class OFBsnGentableDescStatsEntryVer13 implements OFBsnGentableDescStatsEntry {
         private long maxEntries;
 
     @Override
-    public GenTableId getTableId() {
-        return tableId;
-    }
-
-    @Override
-    public OFBsnGentableDescStatsEntry.Builder setTableId(GenTableId tableId) {
-        this.tableId = tableId;
-        this.tableIdSet = true;
-        return this;
-    }
-    @Override
-    public String getName() {
-        return name;
-    }
-
-    @Override
-    public OFBsnGentableDescStatsEntry.Builder setName(String name) {
-        this.name = name;
-        this.nameSet = true;
-        return this;
-    }
-    @Override
     public long getBucketsSize() {
         return bucketsSize;
     }
@@ -238,6 +216,28 @@ class OFBsnGentableDescStatsEntryVer13 implements OFBsnGentableDescStatsEntry {
     public OFBsnGentableDescStatsEntry.Builder setMaxEntries(long maxEntries) {
         this.maxEntries = maxEntries;
         this.maxEntriesSet = true;
+        return this;
+    }
+    @Override
+    public String getName() {
+        return name;
+    }
+
+    @Override
+    public OFBsnGentableDescStatsEntry.Builder setName(String name) {
+        this.name = name;
+        this.nameSet = true;
+        return this;
+    }
+    @Override
+    public GenTableId getTableId() {
+        return tableId;
+    }
+
+    @Override
+    public OFBsnGentableDescStatsEntry.Builder setTableId(GenTableId tableId) {
+        this.tableId = tableId;
+        this.tableIdSet = true;
         return this;
     }
     @Override

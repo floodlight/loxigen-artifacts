@@ -64,28 +64,8 @@ class OFBsnPduRxTimeoutVer11 implements OFBsnPduRxTimeout {
 
     // Accessors for OF message fields
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_11;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.EXPERIMENTER;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
     public long getExperimenter() {
         return 0x5c16c7L;
-    }
-
-    @Override
-    public long getSubtype() {
-        return 0x23L;
     }
 
     @Override
@@ -96,6 +76,26 @@ class OFBsnPduRxTimeoutVer11 implements OFBsnPduRxTimeout {
     @Override
     public short getSlotNum() {
         return slotNum;
+    }
+
+    @Override
+    public long getSubtype() {
+        return 0x23L;
+    }
+
+    @Override
+    public OFType getType() {
+        return OFType.EXPERIMENTER;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_11;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
     }
 
 
@@ -120,34 +120,8 @@ class OFBsnPduRxTimeoutVer11 implements OFBsnPduRxTimeout {
         }
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_11;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.EXPERIMENTER;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFBsnPduRxTimeout.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
-        return this;
-    }
-    @Override
     public long getExperimenter() {
         return 0x5c16c7L;
-    }
-
-    @Override
-    public long getSubtype() {
-        return 0x23L;
     }
 
     @Override
@@ -170,6 +144,32 @@ class OFBsnPduRxTimeoutVer11 implements OFBsnPduRxTimeout {
     public OFBsnPduRxTimeout.Builder setSlotNum(short slotNum) {
         this.slotNum = slotNum;
         this.slotNumSet = true;
+        return this;
+    }
+    @Override
+    public long getSubtype() {
+        return 0x23L;
+    }
+
+    @Override
+    public OFType getType() {
+        return OFType.EXPERIMENTER;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_11;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFBsnPduRxTimeout.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 
@@ -202,34 +202,8 @@ class OFBsnPduRxTimeoutVer11 implements OFBsnPduRxTimeout {
         private short slotNum;
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_11;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.EXPERIMENTER;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFBsnPduRxTimeout.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
-        return this;
-    }
-    @Override
     public long getExperimenter() {
         return 0x5c16c7L;
-    }
-
-    @Override
-    public long getSubtype() {
-        return 0x23L;
     }
 
     @Override
@@ -252,6 +226,32 @@ class OFBsnPduRxTimeoutVer11 implements OFBsnPduRxTimeout {
     public OFBsnPduRxTimeout.Builder setSlotNum(short slotNum) {
         this.slotNum = slotNum;
         this.slotNumSet = true;
+        return this;
+    }
+    @Override
+    public long getSubtype() {
+        return 0x23L;
+    }
+
+    @Override
+    public OFType getType() {
+        return OFType.EXPERIMENTER;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_11;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFBsnPduRxTimeout.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 //

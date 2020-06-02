@@ -64,6 +64,11 @@ class OFOxmArpSpaMaskedVer12 implements OFOxmArpSpaMasked {
 
     // Accessors for OF message fields
     @Override
+    public IPv4Address getMask() {
+        return mask;
+    }
+
+    @Override
     public long getTypeLen() {
         return 0x80002d08L;
     }
@@ -71,21 +76,6 @@ class OFOxmArpSpaMaskedVer12 implements OFOxmArpSpaMasked {
     @Override
     public IPv4Address getValue() {
         return value;
-    }
-
-    @Override
-    public IPv4Address getMask() {
-        return mask;
-    }
-
-    @Override
-    public MatchField<IPv4Address> getMatchField() {
-        return MatchField.ARP_SPA;
-    }
-
-    @Override
-    public boolean isMasked() {
-        return true;
     }
 
     public OFOxm<IPv4Address> getCanonical() {
@@ -96,6 +86,16 @@ class OFOxmArpSpaMaskedVer12 implements OFOxmArpSpaMasked {
         } else {
             return this;
         }
+    }
+
+    @Override
+    public boolean isMasked() {
+        return true;
+    }
+
+    @Override
+    public MatchField<IPv4Address> getMatchField() {
+        return MatchField.ARP_SPA;
     }
 
     @Override
@@ -123,6 +123,17 @@ class OFOxmArpSpaMaskedVer12 implements OFOxmArpSpaMasked {
         }
 
     @Override
+    public IPv4Address getMask() {
+        return mask;
+    }
+
+    @Override
+    public OFOxmArpSpaMasked.Builder setMask(IPv4Address mask) {
+        this.mask = mask;
+        this.maskSet = true;
+        return this;
+    }
+    @Override
     public long getTypeLen() {
         return 0x80002d08L;
     }
@@ -139,19 +150,8 @@ class OFOxmArpSpaMaskedVer12 implements OFOxmArpSpaMasked {
         return this;
     }
     @Override
-    public IPv4Address getMask() {
-        return mask;
-    }
-
-    @Override
-    public OFOxmArpSpaMasked.Builder setMask(IPv4Address mask) {
-        this.mask = mask;
-        this.maskSet = true;
-        return this;
-    }
-    @Override
-    public MatchField<IPv4Address> getMatchField() {
-        return MatchField.ARP_SPA;
+    public OFOxm<IPv4Address> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.2");
     }
 
     @Override
@@ -160,8 +160,8 @@ class OFOxmArpSpaMaskedVer12 implements OFOxmArpSpaMasked {
     }
 
     @Override
-    public OFOxm<IPv4Address> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.2");
+    public MatchField<IPv4Address> getMatchField() {
+        return MatchField.ARP_SPA;
     }
 
     @Override
@@ -197,6 +197,17 @@ class OFOxmArpSpaMaskedVer12 implements OFOxmArpSpaMasked {
         private IPv4Address mask;
 
     @Override
+    public IPv4Address getMask() {
+        return mask;
+    }
+
+    @Override
+    public OFOxmArpSpaMasked.Builder setMask(IPv4Address mask) {
+        this.mask = mask;
+        this.maskSet = true;
+        return this;
+    }
+    @Override
     public long getTypeLen() {
         return 0x80002d08L;
     }
@@ -213,19 +224,8 @@ class OFOxmArpSpaMaskedVer12 implements OFOxmArpSpaMasked {
         return this;
     }
     @Override
-    public IPv4Address getMask() {
-        return mask;
-    }
-
-    @Override
-    public OFOxmArpSpaMasked.Builder setMask(IPv4Address mask) {
-        this.mask = mask;
-        this.maskSet = true;
-        return this;
-    }
-    @Override
-    public MatchField<IPv4Address> getMatchField() {
-        return MatchField.ARP_SPA;
+    public OFOxm<IPv4Address> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.2");
     }
 
     @Override
@@ -234,8 +234,8 @@ class OFOxmArpSpaMaskedVer12 implements OFOxmArpSpaMasked {
     }
 
     @Override
-    public OFOxm<IPv4Address> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.2");
+    public MatchField<IPv4Address> getMatchField() {
+        return MatchField.ARP_SPA;
     }
 
     @Override

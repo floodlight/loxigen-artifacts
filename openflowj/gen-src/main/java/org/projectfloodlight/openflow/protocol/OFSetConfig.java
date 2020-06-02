@@ -29,24 +29,24 @@ import java.util.Set;
 import io.netty.buffer.ByteBuf;
 
 public interface OFSetConfig extends OFObject, OFMessage {
-    OFVersion getVersion();
-    OFType getType();
-    long getXid();
     Set<OFConfigFlags> getFlags();
     int getMissSendLen();
+    OFType getType();
+    OFVersion getVersion();
+    long getXid();
 
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();
     public interface Builder extends OFMessage.Builder {
         OFSetConfig build();
-        OFVersion getVersion();
-        OFType getType();
-        long getXid();
-        Builder setXid(long xid);
         Set<OFConfigFlags> getFlags();
         Builder setFlags(Set<OFConfigFlags> flags);
         int getMissSendLen();
         Builder setMissSendLen(int missSendLen);
+        OFType getType();
+        OFVersion getVersion();
+        long getXid();
+        Builder setXid(long xid);
     }
 }

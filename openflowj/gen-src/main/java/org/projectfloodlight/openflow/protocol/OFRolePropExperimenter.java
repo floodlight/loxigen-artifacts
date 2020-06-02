@@ -28,9 +28,9 @@ import org.projectfloodlight.openflow.exceptions.*;
 import io.netty.buffer.ByteBuf;
 
 public interface OFRolePropExperimenter extends OFObject, OFRoleProp {
-    int getType();
-    long getExperimenter();
     long getExpType();
+    long getExperimenter();
+    int getType();
     OFVersion getVersion();
 
     void writeTo(ByteBuf channelBuffer);
@@ -38,10 +38,10 @@ public interface OFRolePropExperimenter extends OFObject, OFRoleProp {
     Builder createBuilder();
     public interface Builder extends OFRoleProp.Builder {
         OFRolePropExperimenter build();
-        int getType();
-        long getExperimenter();
         long getExpType();
         Builder setExpType(long expType);
+        long getExperimenter();
+        int getType();
         OFVersion getVersion();
     }
 }

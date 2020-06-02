@@ -67,16 +67,6 @@ class OFOxmBsnLagIdVer14 implements OFOxmBsnLagId {
         return value;
     }
 
-    @Override
-    public MatchField<LagId> getMatchField() {
-        return MatchField.BSN_LAG_ID;
-    }
-
-    @Override
-    public boolean isMasked() {
-        return false;
-    }
-
     public OFOxm<LagId> getCanonical() {
         // exact match OXM is always canonical
         return this;
@@ -85,6 +75,16 @@ class OFOxmBsnLagIdVer14 implements OFOxmBsnLagId {
     @Override
     public LagId getMask()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property mask not supported in version 1.4");
+    }
+
+    @Override
+    public boolean isMasked() {
+        return false;
+    }
+
+    @Override
+    public MatchField<LagId> getMatchField() {
+        return MatchField.BSN_LAG_ID;
     }
 
     @Override
@@ -126,8 +126,13 @@ class OFOxmBsnLagIdVer14 implements OFOxmBsnLagId {
         return this;
     }
     @Override
-    public MatchField<LagId> getMatchField() {
-        return MatchField.BSN_LAG_ID;
+    public OFOxm<LagId> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.4");
+    }
+
+    @Override
+    public LagId getMask()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property mask not supported in version 1.4");
     }
 
     @Override
@@ -136,13 +141,8 @@ class OFOxmBsnLagIdVer14 implements OFOxmBsnLagId {
     }
 
     @Override
-    public OFOxm<LagId> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.4");
-    }
-
-    @Override
-    public LagId getMask()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property mask not supported in version 1.4");
+    public MatchField<LagId> getMatchField() {
+        return MatchField.BSN_LAG_ID;
     }
 
     @Override
@@ -188,8 +188,13 @@ class OFOxmBsnLagIdVer14 implements OFOxmBsnLagId {
         return this;
     }
     @Override
-    public MatchField<LagId> getMatchField() {
-        return MatchField.BSN_LAG_ID;
+    public OFOxm<LagId> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.4");
+    }
+
+    @Override
+    public LagId getMask()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property mask not supported in version 1.4");
     }
 
     @Override
@@ -198,13 +203,8 @@ class OFOxmBsnLagIdVer14 implements OFOxmBsnLagId {
     }
 
     @Override
-    public OFOxm<LagId> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.4");
-    }
-
-    @Override
-    public LagId getMask()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property mask not supported in version 1.4");
+    public MatchField<LagId> getMatchField() {
+        return MatchField.BSN_LAG_ID;
     }
 
     @Override

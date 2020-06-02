@@ -28,21 +28,21 @@ import org.projectfloodlight.openflow.exceptions.*;
 import io.netty.buffer.ByteBuf;
 
 public interface OFEchoRequest extends OFObject, OFMessage, OFRequest<OFEchoReply> {
-    OFVersion getVersion();
-    OFType getType();
-    long getXid();
     byte[] getData();
+    OFType getType();
+    OFVersion getVersion();
+    long getXid();
 
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();
     public interface Builder extends OFMessage.Builder {
         OFEchoRequest build();
-        OFVersion getVersion();
-        OFType getType();
-        long getXid();
-        Builder setXid(long xid);
         byte[] getData();
         Builder setData(byte[] data);
+        OFType getType();
+        OFVersion getVersion();
+        long getXid();
+        Builder setXid(long xid);
     }
 }

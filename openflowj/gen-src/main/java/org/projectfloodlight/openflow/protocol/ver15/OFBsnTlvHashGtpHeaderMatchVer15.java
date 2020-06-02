@@ -58,11 +58,6 @@ class OFBsnTlvHashGtpHeaderMatchVer15 implements OFBsnTlvHashGtpHeaderMatch {
 
     // Accessors for OF message fields
     @Override
-    public int getType() {
-        return 0x68;
-    }
-
-    @Override
     public short getFirstHeaderByte() {
         return firstHeaderByte;
     }
@@ -70,6 +65,11 @@ class OFBsnTlvHashGtpHeaderMatchVer15 implements OFBsnTlvHashGtpHeaderMatch {
     @Override
     public short getFirstHeaderMask() {
         return firstHeaderMask;
+    }
+
+    @Override
+    public int getType() {
+        return 0x68;
     }
 
     @Override
@@ -97,11 +97,6 @@ class OFBsnTlvHashGtpHeaderMatchVer15 implements OFBsnTlvHashGtpHeaderMatch {
         }
 
     @Override
-    public int getType() {
-        return 0x68;
-    }
-
-    @Override
     public short getFirstHeaderByte() {
         return firstHeaderByte;
     }
@@ -123,6 +118,11 @@ class OFBsnTlvHashGtpHeaderMatchVer15 implements OFBsnTlvHashGtpHeaderMatch {
         this.firstHeaderMaskSet = true;
         return this;
     }
+    @Override
+    public int getType() {
+        return 0x68;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_15;
@@ -152,11 +152,6 @@ class OFBsnTlvHashGtpHeaderMatchVer15 implements OFBsnTlvHashGtpHeaderMatch {
         private short firstHeaderMask;
 
     @Override
-    public int getType() {
-        return 0x68;
-    }
-
-    @Override
     public short getFirstHeaderByte() {
         return firstHeaderByte;
     }
@@ -178,6 +173,11 @@ class OFBsnTlvHashGtpHeaderMatchVer15 implements OFBsnTlvHashGtpHeaderMatch {
         this.firstHeaderMaskSet = true;
         return this;
     }
+    @Override
+    public int getType() {
+        return 0x68;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_15;

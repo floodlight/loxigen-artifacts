@@ -55,13 +55,13 @@ class OFGetConfigRequestVer10 implements OFGetConfigRequest {
 
     // Accessors for OF message fields
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_10;
+    public OFType getType() {
+        return OFType.GET_CONFIG_REQUEST;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.GET_CONFIG_REQUEST;
+    public OFVersion getVersion() {
+        return OFVersion.OF_10;
     }
 
     @Override
@@ -87,13 +87,13 @@ class OFGetConfigRequestVer10 implements OFGetConfigRequest {
         }
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_10;
+    public OFType getType() {
+        return OFType.GET_CONFIG_REQUEST;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.GET_CONFIG_REQUEST;
+    public OFVersion getVersion() {
+        return OFVersion.OF_10;
     }
 
     @Override
@@ -127,13 +127,13 @@ class OFGetConfigRequestVer10 implements OFGetConfigRequest {
         private long xid;
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_10;
+    public OFType getType() {
+        return OFType.GET_CONFIG_REQUEST;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.GET_CONFIG_REQUEST;
+    public OFVersion getVersion() {
+        return OFVersion.OF_10;
     }
 
     @Override

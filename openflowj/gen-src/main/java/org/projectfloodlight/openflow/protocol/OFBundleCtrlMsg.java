@@ -30,30 +30,30 @@ import java.util.List;
 import io.netty.buffer.ByteBuf;
 
 public interface OFBundleCtrlMsg extends OFObject, OFMessage, OFRequest<OFBundleCtrlMsg> {
-    OFVersion getVersion();
-    OFType getType();
-    long getXid();
-    BundleId getBundleId();
     OFBundleCtrlType getBundleCtrlType();
+    BundleId getBundleId();
     Set<OFBundleFlags> getFlags();
     List<OFBundleProp> getProperties();
+    OFType getType();
+    OFVersion getVersion();
+    long getXid();
 
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();
     public interface Builder extends OFMessage.Builder {
         OFBundleCtrlMsg build();
-        OFVersion getVersion();
-        OFType getType();
-        long getXid();
-        Builder setXid(long xid);
-        BundleId getBundleId();
-        Builder setBundleId(BundleId bundleId);
         OFBundleCtrlType getBundleCtrlType();
         Builder setBundleCtrlType(OFBundleCtrlType bundleCtrlType);
+        BundleId getBundleId();
+        Builder setBundleId(BundleId bundleId);
         Set<OFBundleFlags> getFlags();
         Builder setFlags(Set<OFBundleFlags> flags);
         List<OFBundleProp> getProperties();
         Builder setProperties(List<OFBundleProp> properties);
+        OFType getType();
+        OFVersion getVersion();
+        long getXid();
+        Builder setXid(long xid);
     }
 }

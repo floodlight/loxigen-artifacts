@@ -81,11 +81,6 @@ class OFBsnInterfaceVer13 implements OFBsnInterface {
     }
 
     @Override
-    public String getName() {
-        return name;
-    }
-
-    @Override
     public IPv4Address getIpv4Addr() {
         return ipv4Addr;
     }
@@ -93,6 +88,11 @@ class OFBsnInterfaceVer13 implements OFBsnInterface {
     @Override
     public IPv4Address getIpv4Netmask() {
         return ipv4Netmask;
+    }
+
+    @Override
+    public String getName() {
+        return name;
     }
 
     @Override
@@ -135,17 +135,6 @@ class OFBsnInterfaceVer13 implements OFBsnInterface {
         return this;
     }
     @Override
-    public String getName() {
-        return name;
-    }
-
-    @Override
-    public OFBsnInterface.Builder setName(String name) {
-        this.name = name;
-        this.nameSet = true;
-        return this;
-    }
-    @Override
     public IPv4Address getIpv4Addr() {
         return ipv4Addr;
     }
@@ -165,6 +154,17 @@ class OFBsnInterfaceVer13 implements OFBsnInterface {
     public OFBsnInterface.Builder setIpv4Netmask(IPv4Address ipv4Netmask) {
         this.ipv4Netmask = ipv4Netmask;
         this.ipv4NetmaskSet = true;
+        return this;
+    }
+    @Override
+    public String getName() {
+        return name;
+    }
+
+    @Override
+    public OFBsnInterface.Builder setName(String name) {
+        this.name = name;
+        this.nameSet = true;
         return this;
     }
     @Override
@@ -223,17 +223,6 @@ class OFBsnInterfaceVer13 implements OFBsnInterface {
         return this;
     }
     @Override
-    public String getName() {
-        return name;
-    }
-
-    @Override
-    public OFBsnInterface.Builder setName(String name) {
-        this.name = name;
-        this.nameSet = true;
-        return this;
-    }
-    @Override
     public IPv4Address getIpv4Addr() {
         return ipv4Addr;
     }
@@ -253,6 +242,17 @@ class OFBsnInterfaceVer13 implements OFBsnInterface {
     public OFBsnInterface.Builder setIpv4Netmask(IPv4Address ipv4Netmask) {
         this.ipv4Netmask = ipv4Netmask;
         this.ipv4NetmaskSet = true;
+        return this;
+    }
+    @Override
+    public String getName() {
+        return name;
+    }
+
+    @Override
+    public OFBsnInterface.Builder setName(String name) {
+        this.name = name;
+        this.nameSet = true;
         return this;
     }
     @Override

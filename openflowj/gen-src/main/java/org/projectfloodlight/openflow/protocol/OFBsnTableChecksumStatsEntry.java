@@ -28,8 +28,8 @@ import org.projectfloodlight.openflow.exceptions.*;
 import io.netty.buffer.ByteBuf;
 
 public interface OFBsnTableChecksumStatsEntry extends OFObject {
-    TableId getTableId();
     U64 getChecksum();
+    TableId getTableId();
     OFVersion getVersion();
 
     void writeTo(ByteBuf channelBuffer);
@@ -37,10 +37,10 @@ public interface OFBsnTableChecksumStatsEntry extends OFObject {
     Builder createBuilder();
     public interface Builder  {
         OFBsnTableChecksumStatsEntry build();
-        TableId getTableId();
-        Builder setTableId(TableId tableId);
         U64 getChecksum();
         Builder setChecksum(U64 checksum);
+        TableId getTableId();
+        Builder setTableId(TableId tableId);
         OFVersion getVersion();
     }
 }

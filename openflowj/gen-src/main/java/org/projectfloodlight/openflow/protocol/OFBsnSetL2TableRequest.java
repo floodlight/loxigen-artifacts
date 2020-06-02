@@ -29,28 +29,28 @@ import java.util.Set;
 import io.netty.buffer.ByteBuf;
 
 public interface OFBsnSetL2TableRequest extends OFObject, OFBsnHeader, OFRequest<OFBsnSetL2TableReply> {
-    OFVersion getVersion();
-    OFType getType();
-    long getXid();
     long getExperimenter();
-    long getSubtype();
     boolean isL2TableEnable();
     int getL2TablePriority();
+    long getSubtype();
+    OFType getType();
+    OFVersion getVersion();
+    long getXid();
 
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();
     public interface Builder extends OFBsnHeader.Builder {
         OFBsnSetL2TableRequest build();
-        OFVersion getVersion();
-        OFType getType();
-        long getXid();
-        Builder setXid(long xid);
         long getExperimenter();
-        long getSubtype();
         boolean isL2TableEnable();
         Builder setL2TableEnable(boolean l2TableEnable);
         int getL2TablePriority();
         Builder setL2TablePriority(int l2TablePriority);
+        long getSubtype();
+        OFType getType();
+        OFVersion getVersion();
+        long getXid();
+        Builder setXid(long xid);
     }
 }

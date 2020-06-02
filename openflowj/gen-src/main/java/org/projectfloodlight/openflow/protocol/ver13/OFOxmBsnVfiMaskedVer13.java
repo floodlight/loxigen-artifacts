@@ -64,6 +64,11 @@ class OFOxmBsnVfiMaskedVer13 implements OFOxmBsnVfiMasked {
 
     // Accessors for OF message fields
     @Override
+    public VFI getMask() {
+        return mask;
+    }
+
+    @Override
     public long getTypeLen() {
         return 0x33304L;
     }
@@ -71,21 +76,6 @@ class OFOxmBsnVfiMaskedVer13 implements OFOxmBsnVfiMasked {
     @Override
     public VFI getValue() {
         return value;
-    }
-
-    @Override
-    public VFI getMask() {
-        return mask;
-    }
-
-    @Override
-    public MatchField<VFI> getMatchField() {
-        return MatchField.BSN_VFI;
-    }
-
-    @Override
-    public boolean isMasked() {
-        return true;
     }
 
     public OFOxm<VFI> getCanonical() {
@@ -96,6 +86,16 @@ class OFOxmBsnVfiMaskedVer13 implements OFOxmBsnVfiMasked {
         } else {
             return this;
         }
+    }
+
+    @Override
+    public boolean isMasked() {
+        return true;
+    }
+
+    @Override
+    public MatchField<VFI> getMatchField() {
+        return MatchField.BSN_VFI;
     }
 
     @Override
@@ -123,6 +123,17 @@ class OFOxmBsnVfiMaskedVer13 implements OFOxmBsnVfiMasked {
         }
 
     @Override
+    public VFI getMask() {
+        return mask;
+    }
+
+    @Override
+    public OFOxmBsnVfiMasked.Builder setMask(VFI mask) {
+        this.mask = mask;
+        this.maskSet = true;
+        return this;
+    }
+    @Override
     public long getTypeLen() {
         return 0x33304L;
     }
@@ -139,19 +150,8 @@ class OFOxmBsnVfiMaskedVer13 implements OFOxmBsnVfiMasked {
         return this;
     }
     @Override
-    public VFI getMask() {
-        return mask;
-    }
-
-    @Override
-    public OFOxmBsnVfiMasked.Builder setMask(VFI mask) {
-        this.mask = mask;
-        this.maskSet = true;
-        return this;
-    }
-    @Override
-    public MatchField<VFI> getMatchField() {
-        return MatchField.BSN_VFI;
+    public OFOxm<VFI> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.3");
     }
 
     @Override
@@ -160,8 +160,8 @@ class OFOxmBsnVfiMaskedVer13 implements OFOxmBsnVfiMasked {
     }
 
     @Override
-    public OFOxm<VFI> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.3");
+    public MatchField<VFI> getMatchField() {
+        return MatchField.BSN_VFI;
     }
 
     @Override
@@ -197,6 +197,17 @@ class OFOxmBsnVfiMaskedVer13 implements OFOxmBsnVfiMasked {
         private VFI mask;
 
     @Override
+    public VFI getMask() {
+        return mask;
+    }
+
+    @Override
+    public OFOxmBsnVfiMasked.Builder setMask(VFI mask) {
+        this.mask = mask;
+        this.maskSet = true;
+        return this;
+    }
+    @Override
     public long getTypeLen() {
         return 0x33304L;
     }
@@ -213,19 +224,8 @@ class OFOxmBsnVfiMaskedVer13 implements OFOxmBsnVfiMasked {
         return this;
     }
     @Override
-    public VFI getMask() {
-        return mask;
-    }
-
-    @Override
-    public OFOxmBsnVfiMasked.Builder setMask(VFI mask) {
-        this.mask = mask;
-        this.maskSet = true;
-        return this;
-    }
-    @Override
-    public MatchField<VFI> getMatchField() {
-        return MatchField.BSN_VFI;
+    public OFOxm<VFI> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.3");
     }
 
     @Override
@@ -234,8 +234,8 @@ class OFOxmBsnVfiMaskedVer13 implements OFOxmBsnVfiMasked {
     }
 
     @Override
-    public OFOxm<VFI> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.3");
+    public MatchField<VFI> getMatchField() {
+        return MatchField.BSN_VFI;
     }
 
     @Override

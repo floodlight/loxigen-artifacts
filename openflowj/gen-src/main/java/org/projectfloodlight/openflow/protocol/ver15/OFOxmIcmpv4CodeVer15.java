@@ -67,16 +67,6 @@ class OFOxmIcmpv4CodeVer15 implements OFOxmIcmpv4Code {
         return value;
     }
 
-    @Override
-    public MatchField<ICMPv4Code> getMatchField() {
-        return MatchField.ICMPV4_CODE;
-    }
-
-    @Override
-    public boolean isMasked() {
-        return false;
-    }
-
     public OFOxm<ICMPv4Code> getCanonical() {
         // exact match OXM is always canonical
         return this;
@@ -85,6 +75,16 @@ class OFOxmIcmpv4CodeVer15 implements OFOxmIcmpv4Code {
     @Override
     public ICMPv4Code getMask()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property mask not supported in version 1.5");
+    }
+
+    @Override
+    public boolean isMasked() {
+        return false;
+    }
+
+    @Override
+    public MatchField<ICMPv4Code> getMatchField() {
+        return MatchField.ICMPV4_CODE;
     }
 
     @Override
@@ -126,8 +126,13 @@ class OFOxmIcmpv4CodeVer15 implements OFOxmIcmpv4Code {
         return this;
     }
     @Override
-    public MatchField<ICMPv4Code> getMatchField() {
-        return MatchField.ICMPV4_CODE;
+    public OFOxm<ICMPv4Code> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.5");
+    }
+
+    @Override
+    public ICMPv4Code getMask()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property mask not supported in version 1.5");
     }
 
     @Override
@@ -136,13 +141,8 @@ class OFOxmIcmpv4CodeVer15 implements OFOxmIcmpv4Code {
     }
 
     @Override
-    public OFOxm<ICMPv4Code> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.5");
-    }
-
-    @Override
-    public ICMPv4Code getMask()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property mask not supported in version 1.5");
+    public MatchField<ICMPv4Code> getMatchField() {
+        return MatchField.ICMPV4_CODE;
     }
 
     @Override
@@ -188,8 +188,13 @@ class OFOxmIcmpv4CodeVer15 implements OFOxmIcmpv4Code {
         return this;
     }
     @Override
-    public MatchField<ICMPv4Code> getMatchField() {
-        return MatchField.ICMPV4_CODE;
+    public OFOxm<ICMPv4Code> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.5");
+    }
+
+    @Override
+    public ICMPv4Code getMask()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property mask not supported in version 1.5");
     }
 
     @Override
@@ -198,13 +203,8 @@ class OFOxmIcmpv4CodeVer15 implements OFOxmIcmpv4Code {
     }
 
     @Override
-    public OFOxm<ICMPv4Code> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.5");
-    }
-
-    @Override
-    public ICMPv4Code getMask()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property mask not supported in version 1.5");
+    public MatchField<ICMPv4Code> getMatchField() {
+        return MatchField.ICMPV4_CODE;
     }
 
     @Override

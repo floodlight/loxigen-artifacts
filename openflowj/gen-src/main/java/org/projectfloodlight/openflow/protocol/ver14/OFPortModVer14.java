@@ -90,28 +90,8 @@ class OFPortModVer14 implements OFPortMod {
 
     // Accessors for OF message fields
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_14;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.PORT_MOD;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFPort getPortNo() {
-        return portNo;
-    }
-
-    @Override
-    public MacAddress getHwAddr() {
-        return hwAddr;
+    public long getAdvertise()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property advertise not supported in version 1.4");
     }
 
     @Override
@@ -120,18 +100,38 @@ class OFPortModVer14 implements OFPortMod {
     }
 
     @Override
+    public MacAddress getHwAddr() {
+        return hwAddr;
+    }
+
+    @Override
     public Set<OFPortConfig> getMask() {
         return mask;
     }
 
     @Override
-    public long getAdvertise()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property advertise not supported in version 1.4");
+    public OFPort getPortNo() {
+        return portNo;
     }
 
     @Override
     public List<OFPortModProp> getProperties() {
         return properties;
+    }
+
+    @Override
+    public OFType getType() {
+        return OFType.PORT_MOD;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_14;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
     }
 
 
@@ -162,35 +162,23 @@ class OFPortModVer14 implements OFPortMod {
         }
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_14;
+    public long getAdvertise()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property advertise not supported in version 1.4");
     }
 
     @Override
-    public OFType getType() {
-        return OFType.PORT_MOD;
+    public OFPortMod.Builder setAdvertise(long advertise) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property advertise not supported in version 1.4");
+    }
+    @Override
+    public Set<OFPortConfig> getConfig() {
+        return config;
     }
 
     @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFPortMod.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
-        return this;
-    }
-    @Override
-    public OFPort getPortNo() {
-        return portNo;
-    }
-
-    @Override
-    public OFPortMod.Builder setPortNo(OFPort portNo) {
-        this.portNo = portNo;
-        this.portNoSet = true;
+    public OFPortMod.Builder setConfig(Set<OFPortConfig> config) {
+        this.config = config;
+        this.configSet = true;
         return this;
     }
     @Override
@@ -205,17 +193,6 @@ class OFPortModVer14 implements OFPortMod {
         return this;
     }
     @Override
-    public Set<OFPortConfig> getConfig() {
-        return config;
-    }
-
-    @Override
-    public OFPortMod.Builder setConfig(Set<OFPortConfig> config) {
-        this.config = config;
-        this.configSet = true;
-        return this;
-    }
-    @Override
     public Set<OFPortConfig> getMask() {
         return mask;
     }
@@ -227,13 +204,15 @@ class OFPortModVer14 implements OFPortMod {
         return this;
     }
     @Override
-    public long getAdvertise()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property advertise not supported in version 1.4");
+    public OFPort getPortNo() {
+        return portNo;
     }
 
     @Override
-    public OFPortMod.Builder setAdvertise(long advertise) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property advertise not supported in version 1.4");
+    public OFPortMod.Builder setPortNo(OFPort portNo) {
+        this.portNo = portNo;
+        this.portNoSet = true;
+        return this;
     }
     @Override
     public List<OFPortModProp> getProperties() {
@@ -244,6 +223,27 @@ class OFPortModVer14 implements OFPortMod {
     public OFPortMod.Builder setProperties(List<OFPortModProp> properties) {
         this.properties = properties;
         this.propertiesSet = true;
+        return this;
+    }
+    @Override
+    public OFType getType() {
+        return OFType.PORT_MOD;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_14;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFPortMod.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 
@@ -296,35 +296,23 @@ class OFPortModVer14 implements OFPortMod {
         private List<OFPortModProp> properties;
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_14;
+    public long getAdvertise()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property advertise not supported in version 1.4");
     }
 
     @Override
-    public OFType getType() {
-        return OFType.PORT_MOD;
+    public OFPortMod.Builder setAdvertise(long advertise) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property advertise not supported in version 1.4");
+    }
+    @Override
+    public Set<OFPortConfig> getConfig() {
+        return config;
     }
 
     @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFPortMod.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
-        return this;
-    }
-    @Override
-    public OFPort getPortNo() {
-        return portNo;
-    }
-
-    @Override
-    public OFPortMod.Builder setPortNo(OFPort portNo) {
-        this.portNo = portNo;
-        this.portNoSet = true;
+    public OFPortMod.Builder setConfig(Set<OFPortConfig> config) {
+        this.config = config;
+        this.configSet = true;
         return this;
     }
     @Override
@@ -339,17 +327,6 @@ class OFPortModVer14 implements OFPortMod {
         return this;
     }
     @Override
-    public Set<OFPortConfig> getConfig() {
-        return config;
-    }
-
-    @Override
-    public OFPortMod.Builder setConfig(Set<OFPortConfig> config) {
-        this.config = config;
-        this.configSet = true;
-        return this;
-    }
-    @Override
     public Set<OFPortConfig> getMask() {
         return mask;
     }
@@ -361,13 +338,15 @@ class OFPortModVer14 implements OFPortMod {
         return this;
     }
     @Override
-    public long getAdvertise()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property advertise not supported in version 1.4");
+    public OFPort getPortNo() {
+        return portNo;
     }
 
     @Override
-    public OFPortMod.Builder setAdvertise(long advertise) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property advertise not supported in version 1.4");
+    public OFPortMod.Builder setPortNo(OFPort portNo) {
+        this.portNo = portNo;
+        this.portNoSet = true;
+        return this;
     }
     @Override
     public List<OFPortModProp> getProperties() {
@@ -378,6 +357,27 @@ class OFPortModVer14 implements OFPortMod {
     public OFPortMod.Builder setProperties(List<OFPortModProp> properties) {
         this.properties = properties;
         this.propertiesSet = true;
+        return this;
+    }
+    @Override
+    public OFType getType() {
+        return OFType.PORT_MOD;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_14;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFPortMod.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 //

@@ -78,23 +78,13 @@ class OFBundleAddMsgVer15 implements OFBundleAddMsg {
 
     // Accessors for OF message fields
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_15;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.BUNDLE_ADD_MESSAGE;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
     public BundleId getBundleId() {
         return bundleId;
+    }
+
+    @Override
+    public OFMessage getData()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property data not supported in version 1.5");
     }
 
     @Override
@@ -113,8 +103,18 @@ class OFBundleAddMsgVer15 implements OFBundleAddMsg {
     }
 
     @Override
-    public OFMessage getData()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property data not supported in version 1.5");
+    public OFType getType() {
+        return OFType.BUNDLE_ADD_MESSAGE;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_15;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
     }
 
 
@@ -143,27 +143,6 @@ class OFBundleAddMsgVer15 implements OFBundleAddMsg {
         }
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_15;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.BUNDLE_ADD_MESSAGE;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFBundleAddMsg.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
-        return this;
-    }
-    @Override
     public BundleId getBundleId() {
         return bundleId;
     }
@@ -173,6 +152,15 @@ class OFBundleAddMsgVer15 implements OFBundleAddMsg {
         this.bundleId = bundleId;
         this.bundleIdSet = true;
         return this;
+    }
+    @Override
+    public OFMessage getData()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property data not supported in version 1.5");
+    }
+
+    @Override
+    public OFBundleAddMsg.Builder setData(OFMessage data) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property data not supported in version 1.5");
     }
     @Override
     public Set<OFBundleFlags> getFlags() {
@@ -208,13 +196,25 @@ class OFBundleAddMsgVer15 implements OFBundleAddMsg {
         return this;
     }
     @Override
-    public OFMessage getData()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property data not supported in version 1.5");
+    public OFType getType() {
+        return OFType.BUNDLE_ADD_MESSAGE;
     }
 
     @Override
-    public OFBundleAddMsg.Builder setData(OFMessage data) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property data not supported in version 1.5");
+    public OFVersion getVersion() {
+        return OFVersion.OF_15;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFBundleAddMsg.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
+        return this;
     }
 
 
@@ -260,27 +260,6 @@ class OFBundleAddMsgVer15 implements OFBundleAddMsg {
         private List<OFBundleProp> properties;
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_15;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.BUNDLE_ADD_MESSAGE;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFBundleAddMsg.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
-        return this;
-    }
-    @Override
     public BundleId getBundleId() {
         return bundleId;
     }
@@ -290,6 +269,15 @@ class OFBundleAddMsgVer15 implements OFBundleAddMsg {
         this.bundleId = bundleId;
         this.bundleIdSet = true;
         return this;
+    }
+    @Override
+    public OFMessage getData()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property data not supported in version 1.5");
+    }
+
+    @Override
+    public OFBundleAddMsg.Builder setData(OFMessage data) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property data not supported in version 1.5");
     }
     @Override
     public Set<OFBundleFlags> getFlags() {
@@ -325,13 +313,25 @@ class OFBundleAddMsgVer15 implements OFBundleAddMsg {
         return this;
     }
     @Override
-    public OFMessage getData()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property data not supported in version 1.5");
+    public OFType getType() {
+        return OFType.BUNDLE_ADD_MESSAGE;
     }
 
     @Override
-    public OFBundleAddMsg.Builder setData(OFMessage data) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property data not supported in version 1.5");
+    public OFVersion getVersion() {
+        return OFVersion.OF_15;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFBundleAddMsg.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
+        return this;
     }
 //
         @Override

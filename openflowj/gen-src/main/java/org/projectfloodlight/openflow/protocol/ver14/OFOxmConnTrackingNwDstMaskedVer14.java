@@ -64,6 +64,11 @@ class OFOxmConnTrackingNwDstMaskedVer14 implements OFOxmConnTrackingNwDstMasked 
 
     // Accessors for OF message fields
     @Override
+    public U32 getMask() {
+        return mask;
+    }
+
+    @Override
     public long getTypeLen() {
         return 0x1f308L;
     }
@@ -71,21 +76,6 @@ class OFOxmConnTrackingNwDstMaskedVer14 implements OFOxmConnTrackingNwDstMasked 
     @Override
     public U32 getValue() {
         return value;
-    }
-
-    @Override
-    public U32 getMask() {
-        return mask;
-    }
-
-    @Override
-    public MatchField<U32> getMatchField() {
-        return MatchField.CONN_TRACKING_NW_DST;
-    }
-
-    @Override
-    public boolean isMasked() {
-        return true;
     }
 
     public OFOxm<U32> getCanonical() {
@@ -96,6 +86,16 @@ class OFOxmConnTrackingNwDstMaskedVer14 implements OFOxmConnTrackingNwDstMasked 
         } else {
             return this;
         }
+    }
+
+    @Override
+    public boolean isMasked() {
+        return true;
+    }
+
+    @Override
+    public MatchField<U32> getMatchField() {
+        return MatchField.CONN_TRACKING_NW_DST;
     }
 
     @Override
@@ -123,6 +123,17 @@ class OFOxmConnTrackingNwDstMaskedVer14 implements OFOxmConnTrackingNwDstMasked 
         }
 
     @Override
+    public U32 getMask() {
+        return mask;
+    }
+
+    @Override
+    public OFOxmConnTrackingNwDstMasked.Builder setMask(U32 mask) {
+        this.mask = mask;
+        this.maskSet = true;
+        return this;
+    }
+    @Override
     public long getTypeLen() {
         return 0x1f308L;
     }
@@ -139,19 +150,8 @@ class OFOxmConnTrackingNwDstMaskedVer14 implements OFOxmConnTrackingNwDstMasked 
         return this;
     }
     @Override
-    public U32 getMask() {
-        return mask;
-    }
-
-    @Override
-    public OFOxmConnTrackingNwDstMasked.Builder setMask(U32 mask) {
-        this.mask = mask;
-        this.maskSet = true;
-        return this;
-    }
-    @Override
-    public MatchField<U32> getMatchField() {
-        return MatchField.CONN_TRACKING_NW_DST;
+    public OFOxm<U32> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.4");
     }
 
     @Override
@@ -160,8 +160,8 @@ class OFOxmConnTrackingNwDstMaskedVer14 implements OFOxmConnTrackingNwDstMasked 
     }
 
     @Override
-    public OFOxm<U32> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.4");
+    public MatchField<U32> getMatchField() {
+        return MatchField.CONN_TRACKING_NW_DST;
     }
 
     @Override
@@ -197,6 +197,17 @@ class OFOxmConnTrackingNwDstMaskedVer14 implements OFOxmConnTrackingNwDstMasked 
         private U32 mask;
 
     @Override
+    public U32 getMask() {
+        return mask;
+    }
+
+    @Override
+    public OFOxmConnTrackingNwDstMasked.Builder setMask(U32 mask) {
+        this.mask = mask;
+        this.maskSet = true;
+        return this;
+    }
+    @Override
     public long getTypeLen() {
         return 0x1f308L;
     }
@@ -213,19 +224,8 @@ class OFOxmConnTrackingNwDstMaskedVer14 implements OFOxmConnTrackingNwDstMasked 
         return this;
     }
     @Override
-    public U32 getMask() {
-        return mask;
-    }
-
-    @Override
-    public OFOxmConnTrackingNwDstMasked.Builder setMask(U32 mask) {
-        this.mask = mask;
-        this.maskSet = true;
-        return this;
-    }
-    @Override
-    public MatchField<U32> getMatchField() {
-        return MatchField.CONN_TRACKING_NW_DST;
+    public OFOxm<U32> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.4");
     }
 
     @Override
@@ -234,8 +234,8 @@ class OFOxmConnTrackingNwDstMaskedVer14 implements OFOxmConnTrackingNwDstMasked 
     }
 
     @Override
-    public OFOxm<U32> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.4");
+    public MatchField<U32> getMatchField() {
+        return MatchField.CONN_TRACKING_NW_DST;
     }
 
     @Override

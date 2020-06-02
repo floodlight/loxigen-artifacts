@@ -59,13 +59,13 @@ class OFBsnTlvPushVlanOnIngressVer14 implements OFBsnTlvPushVlanOnIngress {
 
     // Accessors for OF message fields
     @Override
-    public int getType() {
-        return 0x80;
+    public Set<OFBsnPushVlan> getFlags() {
+        return flags;
     }
 
     @Override
-    public Set<OFBsnPushVlan> getFlags() {
-        return flags;
+    public int getType() {
+        return 0x80;
     }
 
     @Override
@@ -91,11 +91,6 @@ class OFBsnTlvPushVlanOnIngressVer14 implements OFBsnTlvPushVlanOnIngress {
         }
 
     @Override
-    public int getType() {
-        return 0x80;
-    }
-
-    @Override
     public Set<OFBsnPushVlan> getFlags() {
         return flags;
     }
@@ -106,6 +101,11 @@ class OFBsnTlvPushVlanOnIngressVer14 implements OFBsnTlvPushVlanOnIngress {
         this.flagsSet = true;
         return this;
     }
+    @Override
+    public int getType() {
+        return 0x80;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_14;
@@ -133,11 +133,6 @@ class OFBsnTlvPushVlanOnIngressVer14 implements OFBsnTlvPushVlanOnIngress {
         private Set<OFBsnPushVlan> flags;
 
     @Override
-    public int getType() {
-        return 0x80;
-    }
-
-    @Override
     public Set<OFBsnPushVlan> getFlags() {
         return flags;
     }
@@ -148,6 +143,11 @@ class OFBsnTlvPushVlanOnIngressVer14 implements OFBsnTlvPushVlanOnIngress {
         this.flagsSet = true;
         return this;
     }
+    @Override
+    public int getType() {
+        return 0x80;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_14;

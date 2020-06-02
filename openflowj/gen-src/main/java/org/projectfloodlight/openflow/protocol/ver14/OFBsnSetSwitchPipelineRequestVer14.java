@@ -61,23 +61,13 @@ class OFBsnSetSwitchPipelineRequestVer14 implements OFBsnSetSwitchPipelineReques
 
     // Accessors for OF message fields
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_14;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.EXPERIMENTER;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
     public long getExperimenter() {
         return 0x5c16c7L;
+    }
+
+    @Override
+    public String getPipeline() {
+        return pipeline;
     }
 
     @Override
@@ -86,8 +76,18 @@ class OFBsnSetSwitchPipelineRequestVer14 implements OFBsnSetSwitchPipelineReques
     }
 
     @Override
-    public String getPipeline() {
-        return pipeline;
+    public OFType getType() {
+        return OFType.EXPERIMENTER;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_14;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
     }
 
 
@@ -110,34 +110,8 @@ class OFBsnSetSwitchPipelineRequestVer14 implements OFBsnSetSwitchPipelineReques
         }
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_14;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.EXPERIMENTER;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFBsnSetSwitchPipelineRequest.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
-        return this;
-    }
-    @Override
     public long getExperimenter() {
         return 0x5c16c7L;
-    }
-
-    @Override
-    public long getSubtype() {
-        return 0x35L;
     }
 
     @Override
@@ -149,6 +123,32 @@ class OFBsnSetSwitchPipelineRequestVer14 implements OFBsnSetSwitchPipelineReques
     public OFBsnSetSwitchPipelineRequest.Builder setPipeline(String pipeline) {
         this.pipeline = pipeline;
         this.pipelineSet = true;
+        return this;
+    }
+    @Override
+    public long getSubtype() {
+        return 0x35L;
+    }
+
+    @Override
+    public OFType getType() {
+        return OFType.EXPERIMENTER;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_14;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFBsnSetSwitchPipelineRequest.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 
@@ -177,34 +177,8 @@ class OFBsnSetSwitchPipelineRequestVer14 implements OFBsnSetSwitchPipelineReques
         private String pipeline;
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_14;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.EXPERIMENTER;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFBsnSetSwitchPipelineRequest.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
-        return this;
-    }
-    @Override
     public long getExperimenter() {
         return 0x5c16c7L;
-    }
-
-    @Override
-    public long getSubtype() {
-        return 0x35L;
     }
 
     @Override
@@ -216,6 +190,32 @@ class OFBsnSetSwitchPipelineRequestVer14 implements OFBsnSetSwitchPipelineReques
     public OFBsnSetSwitchPipelineRequest.Builder setPipeline(String pipeline) {
         this.pipeline = pipeline;
         this.pipelineSet = true;
+        return this;
+    }
+    @Override
+    public long getSubtype() {
+        return 0x35L;
+    }
+
+    @Override
+    public OFType getType() {
+        return OFType.EXPERIMENTER;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_14;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFBsnSetSwitchPipelineRequest.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 //

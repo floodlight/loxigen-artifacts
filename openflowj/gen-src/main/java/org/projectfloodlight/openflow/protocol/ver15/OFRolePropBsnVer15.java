@@ -61,8 +61,8 @@ class OFRolePropBsnVer15 implements OFRolePropBsn {
 
     // Accessors for OF message fields
     @Override
-    public int getType() {
-        return 0xffff;
+    public long getExpType() {
+        return 0x37L;
     }
 
     @Override
@@ -71,13 +71,13 @@ class OFRolePropBsnVer15 implements OFRolePropBsn {
     }
 
     @Override
-    public long getExpType() {
-        return 0x37L;
+    public byte[] getExperimenterData() {
+        return experimenterData;
     }
 
     @Override
-    public byte[] getExperimenterData() {
-        return experimenterData;
+    public int getType() {
+        return 0xffff;
     }
 
     @Override
@@ -103,16 +103,6 @@ class OFRolePropBsnVer15 implements OFRolePropBsn {
         }
 
     @Override
-    public int getType() {
-        return 0xffff;
-    }
-
-    @Override
-    public long getExperimenter() {
-        return 0x5c16c7L;
-    }
-
-    @Override
     public long getExpType() {
         return 0x37L;
     }
@@ -121,6 +111,11 @@ class OFRolePropBsnVer15 implements OFRolePropBsn {
     public OFRolePropBsn.Builder setExpType(long expType) {
             throw new UnsupportedOperationException("Property expType is not writeable");
     }
+    @Override
+    public long getExperimenter() {
+        return 0x5c16c7L;
+    }
+
     @Override
     public byte[] getExperimenterData() {
         return experimenterData;
@@ -132,6 +127,11 @@ class OFRolePropBsnVer15 implements OFRolePropBsn {
         this.experimenterDataSet = true;
         return this;
     }
+    @Override
+    public int getType() {
+        return 0xffff;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_15;
@@ -159,16 +159,6 @@ class OFRolePropBsnVer15 implements OFRolePropBsn {
         private byte[] experimenterData;
 
     @Override
-    public int getType() {
-        return 0xffff;
-    }
-
-    @Override
-    public long getExperimenter() {
-        return 0x5c16c7L;
-    }
-
-    @Override
     public long getExpType() {
         return 0x37L;
     }
@@ -177,6 +167,11 @@ class OFRolePropBsnVer15 implements OFRolePropBsn {
     public OFRolePropBsn.Builder setExpType(long expType) {
             throw new UnsupportedOperationException("Property expType is not writeable");
     }
+    @Override
+    public long getExperimenter() {
+        return 0x5c16c7L;
+    }
+
     @Override
     public byte[] getExperimenterData() {
         return experimenterData;
@@ -188,6 +183,11 @@ class OFRolePropBsnVer15 implements OFRolePropBsn {
         this.experimenterDataSet = true;
         return this;
     }
+    @Override
+    public int getType() {
+        return 0xffff;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_15;

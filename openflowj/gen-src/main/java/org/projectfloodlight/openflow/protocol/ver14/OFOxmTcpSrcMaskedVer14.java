@@ -64,6 +64,11 @@ class OFOxmTcpSrcMaskedVer14 implements OFOxmTcpSrcMasked {
 
     // Accessors for OF message fields
     @Override
+    public TransportPort getMask() {
+        return mask;
+    }
+
+    @Override
     public long getTypeLen() {
         return 0x80001b04L;
     }
@@ -71,21 +76,6 @@ class OFOxmTcpSrcMaskedVer14 implements OFOxmTcpSrcMasked {
     @Override
     public TransportPort getValue() {
         return value;
-    }
-
-    @Override
-    public TransportPort getMask() {
-        return mask;
-    }
-
-    @Override
-    public MatchField<TransportPort> getMatchField() {
-        return MatchField.TCP_SRC;
-    }
-
-    @Override
-    public boolean isMasked() {
-        return true;
     }
 
     public OFOxm<TransportPort> getCanonical() {
@@ -96,6 +86,16 @@ class OFOxmTcpSrcMaskedVer14 implements OFOxmTcpSrcMasked {
         } else {
             return this;
         }
+    }
+
+    @Override
+    public boolean isMasked() {
+        return true;
+    }
+
+    @Override
+    public MatchField<TransportPort> getMatchField() {
+        return MatchField.TCP_SRC;
     }
 
     @Override
@@ -123,6 +123,17 @@ class OFOxmTcpSrcMaskedVer14 implements OFOxmTcpSrcMasked {
         }
 
     @Override
+    public TransportPort getMask() {
+        return mask;
+    }
+
+    @Override
+    public OFOxmTcpSrcMasked.Builder setMask(TransportPort mask) {
+        this.mask = mask;
+        this.maskSet = true;
+        return this;
+    }
+    @Override
     public long getTypeLen() {
         return 0x80001b04L;
     }
@@ -139,19 +150,8 @@ class OFOxmTcpSrcMaskedVer14 implements OFOxmTcpSrcMasked {
         return this;
     }
     @Override
-    public TransportPort getMask() {
-        return mask;
-    }
-
-    @Override
-    public OFOxmTcpSrcMasked.Builder setMask(TransportPort mask) {
-        this.mask = mask;
-        this.maskSet = true;
-        return this;
-    }
-    @Override
-    public MatchField<TransportPort> getMatchField() {
-        return MatchField.TCP_SRC;
+    public OFOxm<TransportPort> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.4");
     }
 
     @Override
@@ -160,8 +160,8 @@ class OFOxmTcpSrcMaskedVer14 implements OFOxmTcpSrcMasked {
     }
 
     @Override
-    public OFOxm<TransportPort> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.4");
+    public MatchField<TransportPort> getMatchField() {
+        return MatchField.TCP_SRC;
     }
 
     @Override
@@ -197,6 +197,17 @@ class OFOxmTcpSrcMaskedVer14 implements OFOxmTcpSrcMasked {
         private TransportPort mask;
 
     @Override
+    public TransportPort getMask() {
+        return mask;
+    }
+
+    @Override
+    public OFOxmTcpSrcMasked.Builder setMask(TransportPort mask) {
+        this.mask = mask;
+        this.maskSet = true;
+        return this;
+    }
+    @Override
     public long getTypeLen() {
         return 0x80001b04L;
     }
@@ -213,19 +224,8 @@ class OFOxmTcpSrcMaskedVer14 implements OFOxmTcpSrcMasked {
         return this;
     }
     @Override
-    public TransportPort getMask() {
-        return mask;
-    }
-
-    @Override
-    public OFOxmTcpSrcMasked.Builder setMask(TransportPort mask) {
-        this.mask = mask;
-        this.maskSet = true;
-        return this;
-    }
-    @Override
-    public MatchField<TransportPort> getMatchField() {
-        return MatchField.TCP_SRC;
+    public OFOxm<TransportPort> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.4");
     }
 
     @Override
@@ -234,8 +234,8 @@ class OFOxmTcpSrcMaskedVer14 implements OFOxmTcpSrcMasked {
     }
 
     @Override
-    public OFOxm<TransportPort> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.4");
+    public MatchField<TransportPort> getMatchField() {
+        return MatchField.TCP_SRC;
     }
 
     @Override

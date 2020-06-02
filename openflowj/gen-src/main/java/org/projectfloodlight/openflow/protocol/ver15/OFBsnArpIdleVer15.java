@@ -64,23 +64,13 @@ class OFBsnArpIdleVer15 implements OFBsnArpIdle {
 
     // Accessors for OF message fields
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_15;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.EXPERIMENTER;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
     public long getExperimenter() {
         return 0x5c16c7L;
+    }
+
+    @Override
+    public IPv4Address getIpv4Addr() {
+        return ipv4Addr;
     }
 
     @Override
@@ -89,13 +79,23 @@ class OFBsnArpIdleVer15 implements OFBsnArpIdle {
     }
 
     @Override
+    public OFType getType() {
+        return OFType.EXPERIMENTER;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_15;
+    }
+
+    @Override
     public int getVlanVid() {
         return vlanVid;
     }
 
     @Override
-    public IPv4Address getIpv4Addr() {
-        return ipv4Addr;
+    public long getXid() {
+        return xid;
     }
 
 
@@ -120,8 +120,24 @@ class OFBsnArpIdleVer15 implements OFBsnArpIdle {
         }
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_15;
+    public long getExperimenter() {
+        return 0x5c16c7L;
+    }
+
+    @Override
+    public IPv4Address getIpv4Addr() {
+        return ipv4Addr;
+    }
+
+    @Override
+    public OFBsnArpIdle.Builder setIpv4Addr(IPv4Address ipv4Addr) {
+        this.ipv4Addr = ipv4Addr;
+        this.ipv4AddrSet = true;
+        return this;
+    }
+    @Override
+    public long getSubtype() {
+        return 0x3cL;
     }
 
     @Override
@@ -130,24 +146,8 @@ class OFBsnArpIdleVer15 implements OFBsnArpIdle {
     }
 
     @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFBsnArpIdle.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
-        return this;
-    }
-    @Override
-    public long getExperimenter() {
-        return 0x5c16c7L;
-    }
-
-    @Override
-    public long getSubtype() {
-        return 0x3cL;
+    public OFVersion getVersion() {
+        return OFVersion.OF_15;
     }
 
     @Override
@@ -162,14 +162,14 @@ class OFBsnArpIdleVer15 implements OFBsnArpIdle {
         return this;
     }
     @Override
-    public IPv4Address getIpv4Addr() {
-        return ipv4Addr;
+    public long getXid() {
+        return xid;
     }
 
     @Override
-    public OFBsnArpIdle.Builder setIpv4Addr(IPv4Address ipv4Addr) {
-        this.ipv4Addr = ipv4Addr;
-        this.ipv4AddrSet = true;
+    public OFBsnArpIdle.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 
@@ -202,8 +202,24 @@ class OFBsnArpIdleVer15 implements OFBsnArpIdle {
         private IPv4Address ipv4Addr;
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_15;
+    public long getExperimenter() {
+        return 0x5c16c7L;
+    }
+
+    @Override
+    public IPv4Address getIpv4Addr() {
+        return ipv4Addr;
+    }
+
+    @Override
+    public OFBsnArpIdle.Builder setIpv4Addr(IPv4Address ipv4Addr) {
+        this.ipv4Addr = ipv4Addr;
+        this.ipv4AddrSet = true;
+        return this;
+    }
+    @Override
+    public long getSubtype() {
+        return 0x3cL;
     }
 
     @Override
@@ -212,24 +228,8 @@ class OFBsnArpIdleVer15 implements OFBsnArpIdle {
     }
 
     @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFBsnArpIdle.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
-        return this;
-    }
-    @Override
-    public long getExperimenter() {
-        return 0x5c16c7L;
-    }
-
-    @Override
-    public long getSubtype() {
-        return 0x3cL;
+    public OFVersion getVersion() {
+        return OFVersion.OF_15;
     }
 
     @Override
@@ -244,14 +244,14 @@ class OFBsnArpIdleVer15 implements OFBsnArpIdle {
         return this;
     }
     @Override
-    public IPv4Address getIpv4Addr() {
-        return ipv4Addr;
+    public long getXid() {
+        return xid;
     }
 
     @Override
-    public OFBsnArpIdle.Builder setIpv4Addr(IPv4Address ipv4Addr) {
-        this.ipv4Addr = ipv4Addr;
-        this.ipv4AddrSet = true;
+    public OFBsnArpIdle.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 //

@@ -61,8 +61,8 @@ class OFQueueDescPropBsnQueueNameVer15 implements OFQueueDescPropBsnQueueName {
 
     // Accessors for OF message fields
     @Override
-    public int getType() {
-        return 0xffff;
+    public long getExpType() {
+        return 0x0L;
     }
 
     @Override
@@ -71,13 +71,13 @@ class OFQueueDescPropBsnQueueNameVer15 implements OFQueueDescPropBsnQueueName {
     }
 
     @Override
-    public long getExpType() {
-        return 0x0L;
+    public byte[] getName() {
+        return name;
     }
 
     @Override
-    public byte[] getName() {
-        return name;
+    public int getType() {
+        return 0xffff;
     }
 
     @Override
@@ -103,16 +103,6 @@ class OFQueueDescPropBsnQueueNameVer15 implements OFQueueDescPropBsnQueueName {
         }
 
     @Override
-    public int getType() {
-        return 0xffff;
-    }
-
-    @Override
-    public long getExperimenter() {
-        return 0x5c16c7L;
-    }
-
-    @Override
     public long getExpType() {
         return 0x0L;
     }
@@ -121,6 +111,11 @@ class OFQueueDescPropBsnQueueNameVer15 implements OFQueueDescPropBsnQueueName {
     public OFQueueDescPropBsnQueueName.Builder setExpType(long expType) {
             throw new UnsupportedOperationException("Property expType is not writeable");
     }
+    @Override
+    public long getExperimenter() {
+        return 0x5c16c7L;
+    }
+
     @Override
     public byte[] getName() {
         return name;
@@ -132,6 +127,11 @@ class OFQueueDescPropBsnQueueNameVer15 implements OFQueueDescPropBsnQueueName {
         this.nameSet = true;
         return this;
     }
+    @Override
+    public int getType() {
+        return 0xffff;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_15;
@@ -159,16 +159,6 @@ class OFQueueDescPropBsnQueueNameVer15 implements OFQueueDescPropBsnQueueName {
         private byte[] name;
 
     @Override
-    public int getType() {
-        return 0xffff;
-    }
-
-    @Override
-    public long getExperimenter() {
-        return 0x5c16c7L;
-    }
-
-    @Override
     public long getExpType() {
         return 0x0L;
     }
@@ -177,6 +167,11 @@ class OFQueueDescPropBsnQueueNameVer15 implements OFQueueDescPropBsnQueueName {
     public OFQueueDescPropBsnQueueName.Builder setExpType(long expType) {
             throw new UnsupportedOperationException("Property expType is not writeable");
     }
+    @Override
+    public long getExperimenter() {
+        return 0x5c16c7L;
+    }
+
     @Override
     public byte[] getName() {
         return name;
@@ -188,6 +183,11 @@ class OFQueueDescPropBsnQueueNameVer15 implements OFQueueDescPropBsnQueueName {
         this.nameSet = true;
         return this;
     }
+    @Override
+    public int getType() {
+        return 0xffff;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_15;

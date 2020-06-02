@@ -30,10 +30,10 @@ import io.netty.buffer.ByteBuf;
 public interface OFOxmConnTrackingZone extends OFObject, OFOxm<U16> {
     long getTypeLen();
     U16 getValue();
-    MatchField<U16> getMatchField();
-    boolean isMasked();
     OFOxm<U16> getCanonical();
     U16 getMask();
+    boolean isMasked();
+    MatchField<U16> getMatchField();
     OFVersion getVersion();
 
     void writeTo(ByteBuf channelBuffer);
@@ -44,10 +44,10 @@ public interface OFOxmConnTrackingZone extends OFObject, OFOxm<U16> {
         long getTypeLen();
         U16 getValue();
         Builder setValue(U16 value);
-        MatchField<U16> getMatchField();
-        boolean isMasked();
         OFOxm<U16> getCanonical();
         U16 getMask();
+        boolean isMasked();
+        MatchField<U16> getMatchField();
         OFVersion getVersion();
     }
 }

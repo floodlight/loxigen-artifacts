@@ -28,9 +28,9 @@ import org.projectfloodlight.openflow.exceptions.*;
 import io.netty.buffer.ByteBuf;
 
 public interface OFBsnGentableStatsEntry extends OFObject {
-    GenTableId getTableId();
-    long getEntryCount();
     U128 getChecksum();
+    long getEntryCount();
+    GenTableId getTableId();
     OFVersion getVersion();
 
     void writeTo(ByteBuf channelBuffer);
@@ -38,12 +38,12 @@ public interface OFBsnGentableStatsEntry extends OFObject {
     Builder createBuilder();
     public interface Builder  {
         OFBsnGentableStatsEntry build();
-        GenTableId getTableId();
-        Builder setTableId(GenTableId tableId);
-        long getEntryCount();
-        Builder setEntryCount(long entryCount);
         U128 getChecksum();
         Builder setChecksum(U128 checksum);
+        long getEntryCount();
+        Builder setEntryCount(long entryCount);
+        GenTableId getTableId();
+        Builder setTableId(GenTableId tableId);
         OFVersion getVersion();
     }
 }

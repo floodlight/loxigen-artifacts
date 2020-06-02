@@ -29,11 +29,11 @@ import java.util.List;
 import io.netty.buffer.ByteBuf;
 
 public interface OFActionBsnGentable extends OFObject, OFActionBsn {
-    OFActionType getType();
     long getExperimenter();
+    List<OFBsnTlv> getKey();
     long getSubtype();
     long getTableId();
-    List<OFBsnTlv> getKey();
+    OFActionType getType();
     OFVersion getVersion();
 
     void writeTo(ByteBuf channelBuffer);
@@ -41,13 +41,13 @@ public interface OFActionBsnGentable extends OFObject, OFActionBsn {
     Builder createBuilder();
     public interface Builder extends OFActionBsn.Builder {
         OFActionBsnGentable build();
-        OFActionType getType();
         long getExperimenter();
+        List<OFBsnTlv> getKey();
+        Builder setKey(List<OFBsnTlv> key);
         long getSubtype();
         long getTableId();
         Builder setTableId(long tableId);
-        List<OFBsnTlv> getKey();
-        Builder setKey(List<OFBsnTlv> key);
+        OFActionType getType();
         OFVersion getVersion();
     }
 }

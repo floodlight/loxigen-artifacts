@@ -62,18 +62,8 @@ class OFRoleReplyVer14 implements OFRoleReply {
 
     // Accessors for OF message fields
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_14;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.ROLE_REPLY;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
+    public U64 getGenerationId() {
+        return generationId;
     }
 
     @Override
@@ -82,13 +72,23 @@ class OFRoleReplyVer14 implements OFRoleReply {
     }
 
     @Override
-    public U64 getGenerationId() {
-        return generationId;
+    public int getShortId()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property shortId not supported in version 1.4");
     }
 
     @Override
-    public int getShortId()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property shortId not supported in version 1.4");
+    public OFType getType() {
+        return OFType.ROLE_REPLY;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_14;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
     }
 
 
@@ -113,24 +113,14 @@ class OFRoleReplyVer14 implements OFRoleReply {
         }
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_14;
+    public U64 getGenerationId() {
+        return generationId;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.ROLE_REPLY;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFRoleReply.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
+    public OFRoleReply.Builder setGenerationId(U64 generationId) {
+        this.generationId = generationId;
+        this.generationIdSet = true;
         return this;
     }
     @Override
@@ -145,17 +135,6 @@ class OFRoleReplyVer14 implements OFRoleReply {
         return this;
     }
     @Override
-    public U64 getGenerationId() {
-        return generationId;
-    }
-
-    @Override
-    public OFRoleReply.Builder setGenerationId(U64 generationId) {
-        this.generationId = generationId;
-        this.generationIdSet = true;
-        return this;
-    }
-    @Override
     public int getShortId()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property shortId not supported in version 1.4");
     }
@@ -163,6 +142,27 @@ class OFRoleReplyVer14 implements OFRoleReply {
     @Override
     public OFRoleReply.Builder setShortId(int shortId) throws UnsupportedOperationException {
             throw new UnsupportedOperationException("Property shortId not supported in version 1.4");
+    }
+    @Override
+    public OFType getType() {
+        return OFType.ROLE_REPLY;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_14;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFRoleReply.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
+        return this;
     }
 
 
@@ -196,24 +196,14 @@ class OFRoleReplyVer14 implements OFRoleReply {
         private U64 generationId;
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_14;
+    public U64 getGenerationId() {
+        return generationId;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.ROLE_REPLY;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFRoleReply.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
+    public OFRoleReply.Builder setGenerationId(U64 generationId) {
+        this.generationId = generationId;
+        this.generationIdSet = true;
         return this;
     }
     @Override
@@ -228,17 +218,6 @@ class OFRoleReplyVer14 implements OFRoleReply {
         return this;
     }
     @Override
-    public U64 getGenerationId() {
-        return generationId;
-    }
-
-    @Override
-    public OFRoleReply.Builder setGenerationId(U64 generationId) {
-        this.generationId = generationId;
-        this.generationIdSet = true;
-        return this;
-    }
-    @Override
     public int getShortId()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property shortId not supported in version 1.4");
     }
@@ -246,6 +225,27 @@ class OFRoleReplyVer14 implements OFRoleReply {
     @Override
     public OFRoleReply.Builder setShortId(int shortId) throws UnsupportedOperationException {
             throw new UnsupportedOperationException("Property shortId not supported in version 1.4");
+    }
+    @Override
+    public OFType getType() {
+        return OFType.ROLE_REPLY;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_14;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFRoleReply.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
+        return this;
     }
 //
         @Override

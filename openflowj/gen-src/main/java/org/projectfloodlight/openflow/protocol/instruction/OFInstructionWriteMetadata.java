@@ -28,9 +28,9 @@ import org.projectfloodlight.openflow.exceptions.*;
 import io.netty.buffer.ByteBuf;
 
 public interface OFInstructionWriteMetadata extends OFObject, OFInstruction {
-    OFInstructionType getType();
     U64 getMetadata();
     U64 getMetadataMask();
+    OFInstructionType getType();
     OFVersion getVersion();
 
     void writeTo(ByteBuf channelBuffer);
@@ -38,11 +38,11 @@ public interface OFInstructionWriteMetadata extends OFObject, OFInstruction {
     Builder createBuilder();
     public interface Builder extends OFInstruction.Builder {
         OFInstructionWriteMetadata build();
-        OFInstructionType getType();
         U64 getMetadata();
         Builder setMetadata(U64 metadata);
         U64 getMetadataMask();
         Builder setMetadataMask(U64 metadataMask);
+        OFInstructionType getType();
         OFVersion getVersion();
     }
 }

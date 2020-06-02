@@ -55,13 +55,13 @@ class OFActionMeterVer15 implements OFActionMeter {
 
     // Accessors for OF message fields
     @Override
-    public OFActionType getType() {
-        return OFActionType.METER;
+    public long getMeterId() {
+        return meterId;
     }
 
     @Override
-    public long getMeterId() {
-        return meterId;
+    public OFActionType getType() {
+        return OFActionType.METER;
     }
 
     @Override
@@ -87,11 +87,6 @@ class OFActionMeterVer15 implements OFActionMeter {
         }
 
     @Override
-    public OFActionType getType() {
-        return OFActionType.METER;
-    }
-
-    @Override
     public long getMeterId() {
         return meterId;
     }
@@ -102,6 +97,11 @@ class OFActionMeterVer15 implements OFActionMeter {
         this.meterIdSet = true;
         return this;
     }
+    @Override
+    public OFActionType getType() {
+        return OFActionType.METER;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_15;
@@ -127,11 +127,6 @@ class OFActionMeterVer15 implements OFActionMeter {
         private long meterId;
 
     @Override
-    public OFActionType getType() {
-        return OFActionType.METER;
-    }
-
-    @Override
     public long getMeterId() {
         return meterId;
     }
@@ -142,6 +137,11 @@ class OFActionMeterVer15 implements OFActionMeter {
         this.meterIdSet = true;
         return this;
     }
+    @Override
+    public OFActionType getType() {
+        return OFActionType.METER;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_15;

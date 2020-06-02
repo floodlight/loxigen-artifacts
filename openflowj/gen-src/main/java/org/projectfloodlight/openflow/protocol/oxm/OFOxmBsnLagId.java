@@ -30,10 +30,10 @@ import io.netty.buffer.ByteBuf;
 public interface OFOxmBsnLagId extends OFObject, OFOxm<LagId> {
     long getTypeLen();
     LagId getValue();
-    MatchField<LagId> getMatchField();
-    boolean isMasked();
     OFOxm<LagId> getCanonical();
     LagId getMask();
+    boolean isMasked();
+    MatchField<LagId> getMatchField();
     OFVersion getVersion();
 
     void writeTo(ByteBuf channelBuffer);
@@ -44,10 +44,10 @@ public interface OFOxmBsnLagId extends OFObject, OFOxm<LagId> {
         long getTypeLen();
         LagId getValue();
         Builder setValue(LagId value);
-        MatchField<LagId> getMatchField();
-        boolean isMasked();
         OFOxm<LagId> getCanonical();
         LagId getMask();
+        boolean isMasked();
+        MatchField<LagId> getMatchField();
         OFVersion getVersion();
     }
 }

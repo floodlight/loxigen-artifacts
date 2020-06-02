@@ -75,13 +75,8 @@ class OFFlowLightweightStatsEntryVer15 implements OFFlowLightweightStatsEntry {
 
     // Accessors for OF message fields
     @Override
-    public TableId getTableId() {
-        return tableId;
-    }
-
-    @Override
-    public OFFlowStatsReason getReason() {
-        return reason;
+    public Match getMatch() {
+        return match;
     }
 
     @Override
@@ -90,13 +85,18 @@ class OFFlowLightweightStatsEntryVer15 implements OFFlowLightweightStatsEntry {
     }
 
     @Override
-    public Match getMatch() {
-        return match;
+    public OFFlowStatsReason getReason() {
+        return reason;
     }
 
     @Override
     public Stat getStats() {
         return stats;
+    }
+
+    @Override
+    public TableId getTableId() {
+        return tableId;
     }
 
     @Override
@@ -130,25 +130,14 @@ class OFFlowLightweightStatsEntryVer15 implements OFFlowLightweightStatsEntry {
         }
 
     @Override
-    public TableId getTableId() {
-        return tableId;
+    public Match getMatch() {
+        return match;
     }
 
     @Override
-    public OFFlowLightweightStatsEntry.Builder setTableId(TableId tableId) {
-        this.tableId = tableId;
-        this.tableIdSet = true;
-        return this;
-    }
-    @Override
-    public OFFlowStatsReason getReason() {
-        return reason;
-    }
-
-    @Override
-    public OFFlowLightweightStatsEntry.Builder setReason(OFFlowStatsReason reason) {
-        this.reason = reason;
-        this.reasonSet = true;
+    public OFFlowLightweightStatsEntry.Builder setMatch(Match match) {
+        this.match = match;
+        this.matchSet = true;
         return this;
     }
     @Override
@@ -163,14 +152,14 @@ class OFFlowLightweightStatsEntryVer15 implements OFFlowLightweightStatsEntry {
         return this;
     }
     @Override
-    public Match getMatch() {
-        return match;
+    public OFFlowStatsReason getReason() {
+        return reason;
     }
 
     @Override
-    public OFFlowLightweightStatsEntry.Builder setMatch(Match match) {
-        this.match = match;
-        this.matchSet = true;
+    public OFFlowLightweightStatsEntry.Builder setReason(OFFlowStatsReason reason) {
+        this.reason = reason;
+        this.reasonSet = true;
         return this;
     }
     @Override
@@ -182,6 +171,17 @@ class OFFlowLightweightStatsEntryVer15 implements OFFlowLightweightStatsEntry {
     public OFFlowLightweightStatsEntry.Builder setStats(Stat stats) {
         this.stats = stats;
         this.statsSet = true;
+        return this;
+    }
+    @Override
+    public TableId getTableId() {
+        return tableId;
+    }
+
+    @Override
+    public OFFlowLightweightStatsEntry.Builder setTableId(TableId tableId) {
+        this.tableId = tableId;
+        this.tableIdSet = true;
         return this;
     }
     @Override
@@ -233,25 +233,14 @@ class OFFlowLightweightStatsEntryVer15 implements OFFlowLightweightStatsEntry {
         private Stat stats;
 
     @Override
-    public TableId getTableId() {
-        return tableId;
+    public Match getMatch() {
+        return match;
     }
 
     @Override
-    public OFFlowLightweightStatsEntry.Builder setTableId(TableId tableId) {
-        this.tableId = tableId;
-        this.tableIdSet = true;
-        return this;
-    }
-    @Override
-    public OFFlowStatsReason getReason() {
-        return reason;
-    }
-
-    @Override
-    public OFFlowLightweightStatsEntry.Builder setReason(OFFlowStatsReason reason) {
-        this.reason = reason;
-        this.reasonSet = true;
+    public OFFlowLightweightStatsEntry.Builder setMatch(Match match) {
+        this.match = match;
+        this.matchSet = true;
         return this;
     }
     @Override
@@ -266,14 +255,14 @@ class OFFlowLightweightStatsEntryVer15 implements OFFlowLightweightStatsEntry {
         return this;
     }
     @Override
-    public Match getMatch() {
-        return match;
+    public OFFlowStatsReason getReason() {
+        return reason;
     }
 
     @Override
-    public OFFlowLightweightStatsEntry.Builder setMatch(Match match) {
-        this.match = match;
-        this.matchSet = true;
+    public OFFlowLightweightStatsEntry.Builder setReason(OFFlowStatsReason reason) {
+        this.reason = reason;
+        this.reasonSet = true;
         return this;
     }
     @Override
@@ -285,6 +274,17 @@ class OFFlowLightweightStatsEntryVer15 implements OFFlowLightweightStatsEntry {
     public OFFlowLightweightStatsEntry.Builder setStats(Stat stats) {
         this.stats = stats;
         this.statsSet = true;
+        return this;
+    }
+    @Override
+    public TableId getTableId() {
+        return tableId;
+    }
+
+    @Override
+    public OFFlowLightweightStatsEntry.Builder setTableId(TableId tableId) {
+        this.tableId = tableId;
+        this.tableIdSet = true;
         return this;
     }
     @Override

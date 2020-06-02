@@ -28,10 +28,10 @@ import org.projectfloodlight.openflow.exceptions.*;
 import io.netty.buffer.ByteBuf;
 
 public interface OFBsnTlvHashGtpPortMatch extends OFObject, OFBsnTlv {
-    int getType();
+    int getDstPort();
     OFBsnHashGtpPortMatch getMatch();
     int getSrcPort();
-    int getDstPort();
+    int getType();
     OFVersion getVersion();
 
     void writeTo(ByteBuf channelBuffer);
@@ -39,13 +39,13 @@ public interface OFBsnTlvHashGtpPortMatch extends OFObject, OFBsnTlv {
     Builder createBuilder();
     public interface Builder extends OFBsnTlv.Builder {
         OFBsnTlvHashGtpPortMatch build();
-        int getType();
+        int getDstPort();
+        Builder setDstPort(int dstPort);
         OFBsnHashGtpPortMatch getMatch();
         Builder setMatch(OFBsnHashGtpPortMatch match);
         int getSrcPort();
         Builder setSrcPort(int srcPort);
-        int getDstPort();
-        Builder setDstPort(int dstPort);
+        int getType();
         OFVersion getVersion();
     }
 }

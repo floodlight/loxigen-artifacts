@@ -59,33 +59,24 @@ abstract class OFStatsRequestVer13 {
                case (short) 0x2:
                    // discriminator value OFStatsType.AGGREGATE=2 for class OFAggregateStatsRequestVer13
                    return OFAggregateStatsRequestVer13.READER.readFrom(bb);
-               case (short) 0xffff:
-                   // discriminator value OFStatsType.EXPERIMENTER=65535 for class OFExperimenterStatsRequestVer13
-                   return OFExperimenterStatsRequestVer13.READER.readFrom(bb);
                case (short) 0x0:
                    // discriminator value OFStatsType.DESC=0 for class OFDescStatsRequestVer13
                    return OFDescStatsRequestVer13.READER.readFrom(bb);
+               case (short) 0xffff:
+                   // discriminator value OFStatsType.EXPERIMENTER=65535 for class OFExperimenterStatsRequestVer13
+                   return OFExperimenterStatsRequestVer13.READER.readFrom(bb);
                case (short) 0x1:
                    // discriminator value OFStatsType.FLOW=1 for class OFFlowStatsRequestVer13
                    return OFFlowStatsRequestVer13.READER.readFrom(bb);
-               case (short) 0x4:
-                   // discriminator value OFStatsType.PORT=4 for class OFPortStatsRequestVer13
-                   return OFPortStatsRequestVer13.READER.readFrom(bb);
-               case (short) 0x5:
-                   // discriminator value OFStatsType.QUEUE=5 for class OFQueueStatsRequestVer13
-                   return OFQueueStatsRequestVer13.READER.readFrom(bb);
-               case (short) 0x3:
-                   // discriminator value OFStatsType.TABLE=3 for class OFTableStatsRequestVer13
-                   return OFTableStatsRequestVer13.READER.readFrom(bb);
                case (short) 0x7:
                    // discriminator value OFStatsType.GROUP_DESC=7 for class OFGroupDescStatsRequestVer13
                    return OFGroupDescStatsRequestVer13.READER.readFrom(bb);
-               case (short) 0x6:
-                   // discriminator value OFStatsType.GROUP=6 for class OFGroupStatsRequestVer13
-                   return OFGroupStatsRequestVer13.READER.readFrom(bb);
                case (short) 0x8:
                    // discriminator value OFStatsType.GROUP_FEATURES=8 for class OFGroupFeaturesStatsRequestVer13
                    return OFGroupFeaturesStatsRequestVer13.READER.readFrom(bb);
+               case (short) 0x6:
+                   // discriminator value OFStatsType.GROUP=6 for class OFGroupStatsRequestVer13
+                   return OFGroupStatsRequestVer13.READER.readFrom(bb);
                case (short) 0xa:
                    // discriminator value OFStatsType.METER_CONFIG=10 for class OFMeterConfigStatsRequestVer13
                    return OFMeterConfigStatsRequestVer13.READER.readFrom(bb);
@@ -98,9 +89,18 @@ abstract class OFStatsRequestVer13 {
                case (short) 0xd:
                    // discriminator value OFStatsType.PORT_DESC=13 for class OFPortDescStatsRequestVer13
                    return OFPortDescStatsRequestVer13.READER.readFrom(bb);
+               case (short) 0x4:
+                   // discriminator value OFStatsType.PORT=4 for class OFPortStatsRequestVer13
+                   return OFPortStatsRequestVer13.READER.readFrom(bb);
+               case (short) 0x5:
+                   // discriminator value OFStatsType.QUEUE=5 for class OFQueueStatsRequestVer13
+                   return OFQueueStatsRequestVer13.READER.readFrom(bb);
                case (short) 0xc:
                    // discriminator value OFStatsType.TABLE_FEATURES=12 for class OFTableFeaturesStatsRequestVer13
                    return OFTableFeaturesStatsRequestVer13.READER.readFrom(bb);
+               case (short) 0x3:
+                   // discriminator value OFStatsType.TABLE=3 for class OFTableStatsRequestVer13
+                   return OFTableStatsRequestVer13.READER.readFrom(bb);
                default:
                    throw new OFParseError("Unknown value for discriminator statsType of class OFStatsRequestVer13: " + statsType);
             }

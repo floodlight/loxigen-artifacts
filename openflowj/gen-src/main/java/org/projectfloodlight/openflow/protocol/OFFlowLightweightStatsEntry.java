@@ -28,11 +28,11 @@ import org.projectfloodlight.openflow.exceptions.*;
 import io.netty.buffer.ByteBuf;
 
 public interface OFFlowLightweightStatsEntry extends OFObject {
-    TableId getTableId();
-    OFFlowStatsReason getReason();
-    int getPriority();
     Match getMatch();
+    int getPriority();
+    OFFlowStatsReason getReason();
     Stat getStats();
+    TableId getTableId();
     OFVersion getVersion();
 
     void writeTo(ByteBuf channelBuffer);
@@ -40,16 +40,16 @@ public interface OFFlowLightweightStatsEntry extends OFObject {
     Builder createBuilder();
     public interface Builder  {
         OFFlowLightweightStatsEntry build();
-        TableId getTableId();
-        Builder setTableId(TableId tableId);
-        OFFlowStatsReason getReason();
-        Builder setReason(OFFlowStatsReason reason);
-        int getPriority();
-        Builder setPriority(int priority);
         Match getMatch();
         Builder setMatch(Match match);
+        int getPriority();
+        Builder setPriority(int priority);
+        OFFlowStatsReason getReason();
+        Builder setReason(OFFlowStatsReason reason);
         Stat getStats();
         Builder setStats(Stat stats);
+        TableId getTableId();
+        Builder setTableId(TableId tableId);
         OFVersion getVersion();
     }
 }

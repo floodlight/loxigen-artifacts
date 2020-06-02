@@ -29,8 +29,8 @@ import java.util.List;
 import io.netty.buffer.ByteBuf;
 
 public interface OFHelloElemVersionbitmap extends OFObject, OFHelloElem {
-    int getType();
     List<U32> getBitmaps();
+    int getType();
     OFVersion getVersion();
 
     void writeTo(ByteBuf channelBuffer);
@@ -38,9 +38,9 @@ public interface OFHelloElemVersionbitmap extends OFObject, OFHelloElem {
     Builder createBuilder();
     public interface Builder extends OFHelloElem.Builder {
         OFHelloElemVersionbitmap build();
-        int getType();
         List<U32> getBitmaps();
         Builder setBitmaps(List<U32> bitmaps);
+        int getType();
         OFVersion getVersion();
     }
 }

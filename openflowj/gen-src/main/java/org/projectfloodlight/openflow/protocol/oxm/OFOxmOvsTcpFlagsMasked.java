@@ -28,13 +28,13 @@ import org.projectfloodlight.openflow.exceptions.*;
 import io.netty.buffer.ByteBuf;
 
 public interface OFOxmOvsTcpFlagsMasked extends OFObject, OFOxm<U16> {
-    long getTypeLen();
     long getExperimenterId();
-    U16 getValue();
     U16 getMask();
-    MatchField<U16> getMatchField();
-    boolean isMasked();
+    long getTypeLen();
+    U16 getValue();
     OFOxm<U16> getCanonical();
+    boolean isMasked();
+    MatchField<U16> getMatchField();
     OFVersion getVersion();
 
     void writeTo(ByteBuf channelBuffer);
@@ -42,15 +42,15 @@ public interface OFOxmOvsTcpFlagsMasked extends OFObject, OFOxm<U16> {
     Builder createBuilder();
     public interface Builder extends OFOxm.Builder<U16> {
         OFOxmOvsTcpFlagsMasked build();
-        long getTypeLen();
         long getExperimenterId();
-        U16 getValue();
-        Builder setValue(U16 value);
         U16 getMask();
         Builder setMask(U16 mask);
-        MatchField<U16> getMatchField();
-        boolean isMasked();
+        long getTypeLen();
+        U16 getValue();
+        Builder setValue(U16 value);
         OFOxm<U16> getCanonical();
+        boolean isMasked();
+        MatchField<U16> getMatchField();
         OFVersion getVersion();
     }
 }

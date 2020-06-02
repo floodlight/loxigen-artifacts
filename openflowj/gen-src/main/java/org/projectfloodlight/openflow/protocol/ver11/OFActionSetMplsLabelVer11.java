@@ -55,13 +55,13 @@ class OFActionSetMplsLabelVer11 implements OFActionSetMplsLabel {
 
     // Accessors for OF message fields
     @Override
-    public OFActionType getType() {
-        return OFActionType.SET_MPLS_LABEL;
+    public long getMplsLabel() {
+        return mplsLabel;
     }
 
     @Override
-    public long getMplsLabel() {
-        return mplsLabel;
+    public OFActionType getType() {
+        return OFActionType.SET_MPLS_LABEL;
     }
 
     @Override
@@ -87,11 +87,6 @@ class OFActionSetMplsLabelVer11 implements OFActionSetMplsLabel {
         }
 
     @Override
-    public OFActionType getType() {
-        return OFActionType.SET_MPLS_LABEL;
-    }
-
-    @Override
     public long getMplsLabel() {
         return mplsLabel;
     }
@@ -102,6 +97,11 @@ class OFActionSetMplsLabelVer11 implements OFActionSetMplsLabel {
         this.mplsLabelSet = true;
         return this;
     }
+    @Override
+    public OFActionType getType() {
+        return OFActionType.SET_MPLS_LABEL;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_11;
@@ -127,11 +127,6 @@ class OFActionSetMplsLabelVer11 implements OFActionSetMplsLabel {
         private long mplsLabel;
 
     @Override
-    public OFActionType getType() {
-        return OFActionType.SET_MPLS_LABEL;
-    }
-
-    @Override
     public long getMplsLabel() {
         return mplsLabel;
     }
@@ -142,6 +137,11 @@ class OFActionSetMplsLabelVer11 implements OFActionSetMplsLabel {
         this.mplsLabelSet = true;
         return this;
     }
+    @Override
+    public OFActionType getType() {
+        return OFActionType.SET_MPLS_LABEL;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_11;

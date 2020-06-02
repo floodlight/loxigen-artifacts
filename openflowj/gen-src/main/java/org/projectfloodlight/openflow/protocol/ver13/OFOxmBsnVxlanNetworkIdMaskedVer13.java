@@ -64,6 +64,11 @@ class OFOxmBsnVxlanNetworkIdMaskedVer13 implements OFOxmBsnVxlanNetworkIdMasked 
 
     // Accessors for OF message fields
     @Override
+    public VxlanNI getMask() {
+        return mask;
+    }
+
+    @Override
     public long getTypeLen() {
         return 0x32b08L;
     }
@@ -71,21 +76,6 @@ class OFOxmBsnVxlanNetworkIdMaskedVer13 implements OFOxmBsnVxlanNetworkIdMasked 
     @Override
     public VxlanNI getValue() {
         return value;
-    }
-
-    @Override
-    public VxlanNI getMask() {
-        return mask;
-    }
-
-    @Override
-    public MatchField<VxlanNI> getMatchField() {
-        return MatchField.BSN_VXLAN_NETWORK_ID;
-    }
-
-    @Override
-    public boolean isMasked() {
-        return true;
     }
 
     public OFOxm<VxlanNI> getCanonical() {
@@ -96,6 +86,16 @@ class OFOxmBsnVxlanNetworkIdMaskedVer13 implements OFOxmBsnVxlanNetworkIdMasked 
         } else {
             return this;
         }
+    }
+
+    @Override
+    public boolean isMasked() {
+        return true;
+    }
+
+    @Override
+    public MatchField<VxlanNI> getMatchField() {
+        return MatchField.BSN_VXLAN_NETWORK_ID;
     }
 
     @Override
@@ -123,6 +123,17 @@ class OFOxmBsnVxlanNetworkIdMaskedVer13 implements OFOxmBsnVxlanNetworkIdMasked 
         }
 
     @Override
+    public VxlanNI getMask() {
+        return mask;
+    }
+
+    @Override
+    public OFOxmBsnVxlanNetworkIdMasked.Builder setMask(VxlanNI mask) {
+        this.mask = mask;
+        this.maskSet = true;
+        return this;
+    }
+    @Override
     public long getTypeLen() {
         return 0x32b08L;
     }
@@ -139,19 +150,8 @@ class OFOxmBsnVxlanNetworkIdMaskedVer13 implements OFOxmBsnVxlanNetworkIdMasked 
         return this;
     }
     @Override
-    public VxlanNI getMask() {
-        return mask;
-    }
-
-    @Override
-    public OFOxmBsnVxlanNetworkIdMasked.Builder setMask(VxlanNI mask) {
-        this.mask = mask;
-        this.maskSet = true;
-        return this;
-    }
-    @Override
-    public MatchField<VxlanNI> getMatchField() {
-        return MatchField.BSN_VXLAN_NETWORK_ID;
+    public OFOxm<VxlanNI> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.3");
     }
 
     @Override
@@ -160,8 +160,8 @@ class OFOxmBsnVxlanNetworkIdMaskedVer13 implements OFOxmBsnVxlanNetworkIdMasked 
     }
 
     @Override
-    public OFOxm<VxlanNI> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.3");
+    public MatchField<VxlanNI> getMatchField() {
+        return MatchField.BSN_VXLAN_NETWORK_ID;
     }
 
     @Override
@@ -197,6 +197,17 @@ class OFOxmBsnVxlanNetworkIdMaskedVer13 implements OFOxmBsnVxlanNetworkIdMasked 
         private VxlanNI mask;
 
     @Override
+    public VxlanNI getMask() {
+        return mask;
+    }
+
+    @Override
+    public OFOxmBsnVxlanNetworkIdMasked.Builder setMask(VxlanNI mask) {
+        this.mask = mask;
+        this.maskSet = true;
+        return this;
+    }
+    @Override
     public long getTypeLen() {
         return 0x32b08L;
     }
@@ -213,19 +224,8 @@ class OFOxmBsnVxlanNetworkIdMaskedVer13 implements OFOxmBsnVxlanNetworkIdMasked 
         return this;
     }
     @Override
-    public VxlanNI getMask() {
-        return mask;
-    }
-
-    @Override
-    public OFOxmBsnVxlanNetworkIdMasked.Builder setMask(VxlanNI mask) {
-        this.mask = mask;
-        this.maskSet = true;
-        return this;
-    }
-    @Override
-    public MatchField<VxlanNI> getMatchField() {
-        return MatchField.BSN_VXLAN_NETWORK_ID;
+    public OFOxm<VxlanNI> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.3");
     }
 
     @Override
@@ -234,8 +234,8 @@ class OFOxmBsnVxlanNetworkIdMaskedVer13 implements OFOxmBsnVxlanNetworkIdMasked 
     }
 
     @Override
-    public OFOxm<VxlanNI> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.3");
+    public MatchField<VxlanNI> getMatchField() {
+        return MatchField.BSN_VXLAN_NETWORK_ID;
     }
 
     @Override

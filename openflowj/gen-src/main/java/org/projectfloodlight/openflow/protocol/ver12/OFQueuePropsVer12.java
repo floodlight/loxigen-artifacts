@@ -33,20 +33,20 @@ public class OFQueuePropsVer12 implements OFQueueProps {
 
 
 
-    public OFQueuePropMinRate.Builder buildMinRate() {
-        return new OFQueuePropMinRateVer12.Builder();
-    }
-    public OFQueuePropMinRate minRate(int rate) {
-        return new OFQueuePropMinRateVer12(
-                rate
-                    );
-    }
-
     public OFQueuePropMaxRate.Builder buildMaxRate() {
         return new OFQueuePropMaxRateVer12.Builder();
     }
     public OFQueuePropMaxRate maxRate(int rate) {
         return new OFQueuePropMaxRateVer12(
+                rate
+                    );
+    }
+
+    public OFQueuePropMinRate.Builder buildMinRate() {
+        return new OFQueuePropMinRateVer12.Builder();
+    }
+    public OFQueuePropMinRate minRate(int rate) {
+        return new OFQueuePropMinRateVer12(
                 rate
                     );
     }

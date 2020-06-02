@@ -52,11 +52,6 @@ class OFInstructionIdBsnDenyVer13 implements OFInstructionIdBsnDeny {
 
     // Accessors for OF message fields
     @Override
-    public OFInstructionType getType() {
-        return OFInstructionType.EXPERIMENTER;
-    }
-
-    @Override
     public long getExperimenter() {
         return 0x5c16c7L;
     }
@@ -64,6 +59,11 @@ class OFInstructionIdBsnDenyVer13 implements OFInstructionIdBsnDeny {
     @Override
     public long getSubtype() {
         return 0x5L;
+    }
+
+    @Override
+    public OFInstructionType getType() {
+        return OFInstructionType.EXPERIMENTER;
     }
 
     @Override

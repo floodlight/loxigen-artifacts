@@ -100,48 +100,8 @@ class OFFlowStatsEntryVer15 implements OFFlowStatsEntry {
 
     // Accessors for OF message fields
     @Override
-    public TableId getTableId() {
-        return tableId;
-    }
-
-    @Override
-    public long getDurationSec()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property durationSec not supported in version 1.5");
-    }
-
-    @Override
-    public long getDurationNsec()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property durationNsec not supported in version 1.5");
-    }
-
-    @Override
-    public int getPriority() {
-        return priority;
-    }
-
-    @Override
-    public int getIdleTimeout() {
-        return idleTimeout;
-    }
-
-    @Override
-    public int getHardTimeout() {
-        return hardTimeout;
-    }
-
-    @Override
-    public Set<OFFlowModFlags> getFlags() {
-        return flags;
-    }
-
-    @Override
-    public U64 getCookie() {
-        return cookie;
-    }
-
-    @Override
-    public U64 getPacketCount()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property packetCount not supported in version 1.5");
+    public List<OFAction> getActions()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property actions not supported in version 1.5");
     }
 
     @Override
@@ -150,18 +110,33 @@ class OFFlowStatsEntryVer15 implements OFFlowStatsEntry {
     }
 
     @Override
-    public Match getMatch() {
-        return match;
+    public U64 getCookie() {
+        return cookie;
     }
 
     @Override
-    public List<OFInstruction> getInstructions() {
-        return instructions;
+    public long getDurationNsec()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property durationNsec not supported in version 1.5");
     }
 
     @Override
-    public List<OFAction> getActions()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property actions not supported in version 1.5");
+    public long getDurationSec()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property durationSec not supported in version 1.5");
+    }
+
+    @Override
+    public Set<OFFlowModFlags> getFlags() {
+        return flags;
+    }
+
+    @Override
+    public int getHardTimeout() {
+        return hardTimeout;
+    }
+
+    @Override
+    public int getIdleTimeout() {
+        return idleTimeout;
     }
 
     @Override
@@ -170,8 +145,33 @@ class OFFlowStatsEntryVer15 implements OFFlowStatsEntry {
     }
 
     @Override
+    public List<OFInstruction> getInstructions() {
+        return instructions;
+    }
+
+    @Override
+    public Match getMatch() {
+        return match;
+    }
+
+    @Override
+    public U64 getPacketCount()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property packetCount not supported in version 1.5");
+    }
+
+    @Override
+    public int getPriority() {
+        return priority;
+    }
+
+    @Override
     public Stat getStats() {
         return stats;
+    }
+
+    @Override
+    public TableId getTableId() {
+        return tableId;
     }
 
     @Override
@@ -215,24 +215,33 @@ class OFFlowStatsEntryVer15 implements OFFlowStatsEntry {
         }
 
     @Override
-    public TableId getTableId() {
-        return tableId;
+    public List<OFAction> getActions()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property actions not supported in version 1.5");
     }
 
     @Override
-    public OFFlowStatsEntry.Builder setTableId(TableId tableId) {
-        this.tableId = tableId;
-        this.tableIdSet = true;
+    public OFFlowStatsEntry.Builder setActions(List<OFAction> actions) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property actions not supported in version 1.5");
+    }
+    @Override
+    public U64 getByteCount()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property byteCount not supported in version 1.5");
+    }
+
+    @Override
+    public OFFlowStatsEntry.Builder setByteCount(U64 byteCount) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property byteCount not supported in version 1.5");
+    }
+    @Override
+    public U64 getCookie() {
+        return cookie;
+    }
+
+    @Override
+    public OFFlowStatsEntry.Builder setCookie(U64 cookie) {
+        this.cookie = cookie;
+        this.cookieSet = true;
         return this;
-    }
-    @Override
-    public long getDurationSec()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property durationSec not supported in version 1.5");
-    }
-
-    @Override
-    public OFFlowStatsEntry.Builder setDurationSec(long durationSec) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property durationSec not supported in version 1.5");
     }
     @Override
     public long getDurationNsec()throws UnsupportedOperationException {
@@ -244,25 +253,23 @@ class OFFlowStatsEntryVer15 implements OFFlowStatsEntry {
             throw new UnsupportedOperationException("Property durationNsec not supported in version 1.5");
     }
     @Override
-    public int getPriority() {
-        return priority;
+    public long getDurationSec()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property durationSec not supported in version 1.5");
     }
 
     @Override
-    public OFFlowStatsEntry.Builder setPriority(int priority) {
-        this.priority = priority;
-        this.prioritySet = true;
-        return this;
+    public OFFlowStatsEntry.Builder setDurationSec(long durationSec) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property durationSec not supported in version 1.5");
     }
     @Override
-    public int getIdleTimeout() {
-        return idleTimeout;
+    public Set<OFFlowModFlags> getFlags() {
+        return flags;
     }
 
     @Override
-    public OFFlowStatsEntry.Builder setIdleTimeout(int idleTimeout) {
-        this.idleTimeout = idleTimeout;
-        this.idleTimeoutSet = true;
+    public OFFlowStatsEntry.Builder setFlags(Set<OFFlowModFlags> flags) {
+        this.flags = flags;
+        this.flagsSet = true;
         return this;
     }
     @Override
@@ -277,54 +284,25 @@ class OFFlowStatsEntryVer15 implements OFFlowStatsEntry {
         return this;
     }
     @Override
-    public Set<OFFlowModFlags> getFlags() {
-        return flags;
+    public int getIdleTimeout() {
+        return idleTimeout;
     }
 
     @Override
-    public OFFlowStatsEntry.Builder setFlags(Set<OFFlowModFlags> flags) {
-        this.flags = flags;
-        this.flagsSet = true;
+    public OFFlowStatsEntry.Builder setIdleTimeout(int idleTimeout) {
+        this.idleTimeout = idleTimeout;
+        this.idleTimeoutSet = true;
         return this;
     }
     @Override
-    public U64 getCookie() {
-        return cookie;
+    public int getImportance() {
+        return importance;
     }
 
     @Override
-    public OFFlowStatsEntry.Builder setCookie(U64 cookie) {
-        this.cookie = cookie;
-        this.cookieSet = true;
-        return this;
-    }
-    @Override
-    public U64 getPacketCount()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property packetCount not supported in version 1.5");
-    }
-
-    @Override
-    public OFFlowStatsEntry.Builder setPacketCount(U64 packetCount) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property packetCount not supported in version 1.5");
-    }
-    @Override
-    public U64 getByteCount()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property byteCount not supported in version 1.5");
-    }
-
-    @Override
-    public OFFlowStatsEntry.Builder setByteCount(U64 byteCount) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property byteCount not supported in version 1.5");
-    }
-    @Override
-    public Match getMatch() {
-        return match;
-    }
-
-    @Override
-    public OFFlowStatsEntry.Builder setMatch(Match match) {
-        this.match = match;
-        this.matchSet = true;
+    public OFFlowStatsEntry.Builder setImportance(int importance) {
+        this.importance = importance;
+        this.importanceSet = true;
         return this;
     }
     @Override
@@ -339,23 +317,34 @@ class OFFlowStatsEntryVer15 implements OFFlowStatsEntry {
         return this;
     }
     @Override
-    public List<OFAction> getActions()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property actions not supported in version 1.5");
+    public Match getMatch() {
+        return match;
     }
 
     @Override
-    public OFFlowStatsEntry.Builder setActions(List<OFAction> actions) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property actions not supported in version 1.5");
+    public OFFlowStatsEntry.Builder setMatch(Match match) {
+        this.match = match;
+        this.matchSet = true;
+        return this;
     }
     @Override
-    public int getImportance() {
-        return importance;
+    public U64 getPacketCount()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property packetCount not supported in version 1.5");
     }
 
     @Override
-    public OFFlowStatsEntry.Builder setImportance(int importance) {
-        this.importance = importance;
-        this.importanceSet = true;
+    public OFFlowStatsEntry.Builder setPacketCount(U64 packetCount) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property packetCount not supported in version 1.5");
+    }
+    @Override
+    public int getPriority() {
+        return priority;
+    }
+
+    @Override
+    public OFFlowStatsEntry.Builder setPriority(int priority) {
+        this.priority = priority;
+        this.prioritySet = true;
         return this;
     }
     @Override
@@ -367,6 +356,17 @@ class OFFlowStatsEntryVer15 implements OFFlowStatsEntry {
     public OFFlowStatsEntry.Builder setStats(Stat stats) {
         this.stats = stats;
         this.statsSet = true;
+        return this;
+    }
+    @Override
+    public TableId getTableId() {
+        return tableId;
+    }
+
+    @Override
+    public OFFlowStatsEntry.Builder setTableId(TableId tableId) {
+        this.tableId = tableId;
+        this.tableIdSet = true;
         return this;
     }
     @Override
@@ -442,24 +442,33 @@ class OFFlowStatsEntryVer15 implements OFFlowStatsEntry {
         private List<OFInstruction> instructions;
 
     @Override
-    public TableId getTableId() {
-        return tableId;
+    public List<OFAction> getActions()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property actions not supported in version 1.5");
     }
 
     @Override
-    public OFFlowStatsEntry.Builder setTableId(TableId tableId) {
-        this.tableId = tableId;
-        this.tableIdSet = true;
+    public OFFlowStatsEntry.Builder setActions(List<OFAction> actions) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property actions not supported in version 1.5");
+    }
+    @Override
+    public U64 getByteCount()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property byteCount not supported in version 1.5");
+    }
+
+    @Override
+    public OFFlowStatsEntry.Builder setByteCount(U64 byteCount) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property byteCount not supported in version 1.5");
+    }
+    @Override
+    public U64 getCookie() {
+        return cookie;
+    }
+
+    @Override
+    public OFFlowStatsEntry.Builder setCookie(U64 cookie) {
+        this.cookie = cookie;
+        this.cookieSet = true;
         return this;
-    }
-    @Override
-    public long getDurationSec()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property durationSec not supported in version 1.5");
-    }
-
-    @Override
-    public OFFlowStatsEntry.Builder setDurationSec(long durationSec) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property durationSec not supported in version 1.5");
     }
     @Override
     public long getDurationNsec()throws UnsupportedOperationException {
@@ -471,25 +480,23 @@ class OFFlowStatsEntryVer15 implements OFFlowStatsEntry {
             throw new UnsupportedOperationException("Property durationNsec not supported in version 1.5");
     }
     @Override
-    public int getPriority() {
-        return priority;
+    public long getDurationSec()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property durationSec not supported in version 1.5");
     }
 
     @Override
-    public OFFlowStatsEntry.Builder setPriority(int priority) {
-        this.priority = priority;
-        this.prioritySet = true;
-        return this;
+    public OFFlowStatsEntry.Builder setDurationSec(long durationSec) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property durationSec not supported in version 1.5");
     }
     @Override
-    public int getIdleTimeout() {
-        return idleTimeout;
+    public Set<OFFlowModFlags> getFlags() {
+        return flags;
     }
 
     @Override
-    public OFFlowStatsEntry.Builder setIdleTimeout(int idleTimeout) {
-        this.idleTimeout = idleTimeout;
-        this.idleTimeoutSet = true;
+    public OFFlowStatsEntry.Builder setFlags(Set<OFFlowModFlags> flags) {
+        this.flags = flags;
+        this.flagsSet = true;
         return this;
     }
     @Override
@@ -504,54 +511,25 @@ class OFFlowStatsEntryVer15 implements OFFlowStatsEntry {
         return this;
     }
     @Override
-    public Set<OFFlowModFlags> getFlags() {
-        return flags;
+    public int getIdleTimeout() {
+        return idleTimeout;
     }
 
     @Override
-    public OFFlowStatsEntry.Builder setFlags(Set<OFFlowModFlags> flags) {
-        this.flags = flags;
-        this.flagsSet = true;
+    public OFFlowStatsEntry.Builder setIdleTimeout(int idleTimeout) {
+        this.idleTimeout = idleTimeout;
+        this.idleTimeoutSet = true;
         return this;
     }
     @Override
-    public U64 getCookie() {
-        return cookie;
+    public int getImportance() {
+        return importance;
     }
 
     @Override
-    public OFFlowStatsEntry.Builder setCookie(U64 cookie) {
-        this.cookie = cookie;
-        this.cookieSet = true;
-        return this;
-    }
-    @Override
-    public U64 getPacketCount()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property packetCount not supported in version 1.5");
-    }
-
-    @Override
-    public OFFlowStatsEntry.Builder setPacketCount(U64 packetCount) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property packetCount not supported in version 1.5");
-    }
-    @Override
-    public U64 getByteCount()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property byteCount not supported in version 1.5");
-    }
-
-    @Override
-    public OFFlowStatsEntry.Builder setByteCount(U64 byteCount) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property byteCount not supported in version 1.5");
-    }
-    @Override
-    public Match getMatch() {
-        return match;
-    }
-
-    @Override
-    public OFFlowStatsEntry.Builder setMatch(Match match) {
-        this.match = match;
-        this.matchSet = true;
+    public OFFlowStatsEntry.Builder setImportance(int importance) {
+        this.importance = importance;
+        this.importanceSet = true;
         return this;
     }
     @Override
@@ -566,23 +544,34 @@ class OFFlowStatsEntryVer15 implements OFFlowStatsEntry {
         return this;
     }
     @Override
-    public List<OFAction> getActions()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property actions not supported in version 1.5");
+    public Match getMatch() {
+        return match;
     }
 
     @Override
-    public OFFlowStatsEntry.Builder setActions(List<OFAction> actions) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property actions not supported in version 1.5");
+    public OFFlowStatsEntry.Builder setMatch(Match match) {
+        this.match = match;
+        this.matchSet = true;
+        return this;
     }
     @Override
-    public int getImportance() {
-        return importance;
+    public U64 getPacketCount()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property packetCount not supported in version 1.5");
     }
 
     @Override
-    public OFFlowStatsEntry.Builder setImportance(int importance) {
-        this.importance = importance;
-        this.importanceSet = true;
+    public OFFlowStatsEntry.Builder setPacketCount(U64 packetCount) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property packetCount not supported in version 1.5");
+    }
+    @Override
+    public int getPriority() {
+        return priority;
+    }
+
+    @Override
+    public OFFlowStatsEntry.Builder setPriority(int priority) {
+        this.priority = priority;
+        this.prioritySet = true;
         return this;
     }
     @Override
@@ -594,6 +583,17 @@ class OFFlowStatsEntryVer15 implements OFFlowStatsEntry {
     public OFFlowStatsEntry.Builder setStats(Stat stats) {
         this.stats = stats;
         this.statsSet = true;
+        return this;
+    }
+    @Override
+    public TableId getTableId() {
+        return tableId;
+    }
+
+    @Override
+    public OFFlowStatsEntry.Builder setTableId(TableId tableId) {
+        this.tableId = tableId;
+        this.tableIdSet = true;
         return this;
     }
     @Override

@@ -55,8 +55,8 @@ class OFActionBsnSetTunnelDstVer12 implements OFActionBsnSetTunnelDst {
 
     // Accessors for OF message fields
     @Override
-    public OFActionType getType() {
-        return OFActionType.EXPERIMENTER;
+    public long getDst() {
+        return dst;
     }
 
     @Override
@@ -70,8 +70,8 @@ class OFActionBsnSetTunnelDstVer12 implements OFActionBsnSetTunnelDst {
     }
 
     @Override
-    public long getDst() {
-        return dst;
+    public OFActionType getType() {
+        return OFActionType.EXPERIMENTER;
     }
 
     @Override
@@ -97,10 +97,16 @@ class OFActionBsnSetTunnelDstVer12 implements OFActionBsnSetTunnelDst {
         }
 
     @Override
-    public OFActionType getType() {
-        return OFActionType.EXPERIMENTER;
+    public long getDst() {
+        return dst;
     }
 
+    @Override
+    public OFActionBsnSetTunnelDst.Builder setDst(long dst) {
+        this.dst = dst;
+        this.dstSet = true;
+        return this;
+    }
     @Override
     public long getExperimenter() {
         return 0x5c16c7L;
@@ -112,16 +118,10 @@ class OFActionBsnSetTunnelDstVer12 implements OFActionBsnSetTunnelDst {
     }
 
     @Override
-    public long getDst() {
-        return dst;
+    public OFActionType getType() {
+        return OFActionType.EXPERIMENTER;
     }
 
-    @Override
-    public OFActionBsnSetTunnelDst.Builder setDst(long dst) {
-        this.dst = dst;
-        this.dstSet = true;
-        return this;
-    }
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_12;
@@ -147,10 +147,16 @@ class OFActionBsnSetTunnelDstVer12 implements OFActionBsnSetTunnelDst {
         private long dst;
 
     @Override
-    public OFActionType getType() {
-        return OFActionType.EXPERIMENTER;
+    public long getDst() {
+        return dst;
     }
 
+    @Override
+    public OFActionBsnSetTunnelDst.Builder setDst(long dst) {
+        this.dst = dst;
+        this.dstSet = true;
+        return this;
+    }
     @Override
     public long getExperimenter() {
         return 0x5c16c7L;
@@ -162,16 +168,10 @@ class OFActionBsnSetTunnelDstVer12 implements OFActionBsnSetTunnelDst {
     }
 
     @Override
-    public long getDst() {
-        return dst;
+    public OFActionType getType() {
+        return OFActionType.EXPERIMENTER;
     }
 
-    @Override
-    public OFActionBsnSetTunnelDst.Builder setDst(long dst) {
-        this.dst = dst;
-        this.dstSet = true;
-        return this;
-    }
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_12;

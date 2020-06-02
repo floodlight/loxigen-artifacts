@@ -25,8 +25,8 @@ import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
-import java.util.Set;
 import java.util.List;
+import java.util.Set;
 
 
 public class OFActionsVer12 implements OFActions {
@@ -44,6 +44,13 @@ public class OFActionsVer12 implements OFActions {
                     );
     }
 
+    public OFActionBsnGentable.Builder buildBsnGentable() {
+        throw new UnsupportedOperationException("OFActionBsnGentable not supported in version 1.2");
+    }
+    public OFActionBsnGentable bsnGentable(long tableId, List<OFBsnTlv> key) {
+        throw new UnsupportedOperationException("OFActionBsnGentable not supported in version 1.2");
+    }
+
     public OFActionBsnMirror.Builder buildBsnMirror() {
         return new OFActionBsnMirrorVer12.Builder();
     }
@@ -57,11 +64,43 @@ public class OFActionsVer12 implements OFActions {
                     );
     }
 
+    public OFActionCopyTtlIn copyTtlIn() {
+        return OFActionCopyTtlInVer12.INSTANCE;
+    }
+
+    public OFActionCopyTtlOut copyTtlOut() {
+        return OFActionCopyTtlOutVer12.INSTANCE;
+    }
+
+    public OFActionDecMplsTtl decMplsTtl() {
+        return OFActionDecMplsTtlVer12.INSTANCE;
+    }
+
+    public OFActionDecNwTtl decNwTtl() {
+        return OFActionDecNwTtlVer12.INSTANCE;
+    }
+
     public OFActionEnqueue.Builder buildEnqueue() {
         throw new UnsupportedOperationException("OFActionEnqueue not supported in version 1.2");
     }
     public OFActionEnqueue enqueue(OFPort port, long queueId) {
         throw new UnsupportedOperationException("OFActionEnqueue not supported in version 1.2");
+    }
+
+    public OFActionGroup.Builder buildGroup() {
+        return new OFActionGroupVer12.Builder();
+    }
+    public OFActionGroup group(OFGroup group) {
+        return new OFActionGroupVer12(
+                group
+                    );
+    }
+
+    public OFActionMeter.Builder buildMeter() {
+        throw new UnsupportedOperationException("OFActionMeter not supported in version 1.2");
+    }
+    public OFActionMeter meter(long meterId) {
+        throw new UnsupportedOperationException("OFActionMeter not supported in version 1.2");
     }
 
     public OFActionNiciraDecTtl niciraDecTtl() {
@@ -75,6 +114,48 @@ public class OFActionsVer12 implements OFActions {
         return new OFActionOutputVer12(
                 port,
                       maxLen
+                    );
+    }
+
+    public OFActionPopMpls.Builder buildPopMpls() {
+        return new OFActionPopMplsVer12.Builder();
+    }
+    public OFActionPopMpls popMpls(EthType ethertype) {
+        return new OFActionPopMplsVer12(
+                ethertype
+                    );
+    }
+
+    public OFActionPopPbb popPbb() {
+        throw new UnsupportedOperationException("OFActionPopPbb not supported in version 1.2");
+    }
+
+    public OFActionPopVlan popVlan() {
+        return OFActionPopVlanVer12.INSTANCE;
+    }
+
+    public OFActionPushMpls.Builder buildPushMpls() {
+        return new OFActionPushMplsVer12.Builder();
+    }
+    public OFActionPushMpls pushMpls(EthType ethertype) {
+        return new OFActionPushMplsVer12(
+                ethertype
+                    );
+    }
+
+    public OFActionPushPbb.Builder buildPushPbb() {
+        throw new UnsupportedOperationException("OFActionPushPbb not supported in version 1.2");
+    }
+    public OFActionPushPbb pushPbb(EthType ethertype) {
+        throw new UnsupportedOperationException("OFActionPushPbb not supported in version 1.2");
+    }
+
+    public OFActionPushVlan.Builder buildPushVlan() {
+        return new OFActionPushVlanVer12.Builder();
+    }
+    public OFActionPushVlan pushVlan(EthType ethertype) {
+        return new OFActionPushVlanVer12(
+                ethertype
                     );
     }
 
@@ -92,11 +173,50 @@ public class OFActionsVer12 implements OFActions {
         throw new UnsupportedOperationException("OFActionSetDlSrc not supported in version 1.2");
     }
 
+    public OFActionSetField.Builder buildSetField() {
+        return new OFActionSetFieldVer12.Builder();
+    }
+    public OFActionSetField setField(OFOxm<?> field) {
+        return new OFActionSetFieldVer12(
+                field
+                    );
+    }
+
+    public OFActionSetMplsLabel.Builder buildSetMplsLabel() {
+        throw new UnsupportedOperationException("OFActionSetMplsLabel not supported in version 1.2");
+    }
+    public OFActionSetMplsLabel setMplsLabel(long mplsLabel) {
+        throw new UnsupportedOperationException("OFActionSetMplsLabel not supported in version 1.2");
+    }
+
+    public OFActionSetMplsTc.Builder buildSetMplsTc() {
+        throw new UnsupportedOperationException("OFActionSetMplsTc not supported in version 1.2");
+    }
+    public OFActionSetMplsTc setMplsTc(short mplsTc) {
+        throw new UnsupportedOperationException("OFActionSetMplsTc not supported in version 1.2");
+    }
+
+    public OFActionSetMplsTtl.Builder buildSetMplsTtl() {
+        return new OFActionSetMplsTtlVer12.Builder();
+    }
+    public OFActionSetMplsTtl setMplsTtl(short mplsTtl) {
+        return new OFActionSetMplsTtlVer12(
+                mplsTtl
+                    );
+    }
+
     public OFActionSetNwDst.Builder buildSetNwDst() {
         throw new UnsupportedOperationException("OFActionSetNwDst not supported in version 1.2");
     }
     public OFActionSetNwDst setNwDst(IPv4Address nwAddr) {
         throw new UnsupportedOperationException("OFActionSetNwDst not supported in version 1.2");
+    }
+
+    public OFActionSetNwEcn.Builder buildSetNwEcn() {
+        throw new UnsupportedOperationException("OFActionSetNwEcn not supported in version 1.2");
+    }
+    public OFActionSetNwEcn setNwEcn(IpEcn nwEcn) {
+        throw new UnsupportedOperationException("OFActionSetNwEcn not supported in version 1.2");
     }
 
     public OFActionSetNwSrc.Builder buildSetNwSrc() {
@@ -111,6 +231,24 @@ public class OFActionsVer12 implements OFActions {
     }
     public OFActionSetNwTos setNwTos(short nwTos) {
         throw new UnsupportedOperationException("OFActionSetNwTos not supported in version 1.2");
+    }
+
+    public OFActionSetNwTtl.Builder buildSetNwTtl() {
+        return new OFActionSetNwTtlVer12.Builder();
+    }
+    public OFActionSetNwTtl setNwTtl(short nwTtl) {
+        return new OFActionSetNwTtlVer12(
+                nwTtl
+                    );
+    }
+
+    public OFActionSetQueue.Builder buildSetQueue() {
+        return new OFActionSetQueueVer12.Builder();
+    }
+    public OFActionSetQueue setQueue(long queueId) {
+        return new OFActionSetQueueVer12(
+                queueId
+                    );
     }
 
     public OFActionSetTpDst.Builder buildSetTpDst() {
@@ -143,144 +281,6 @@ public class OFActionsVer12 implements OFActions {
 
     public OFActionStripVlan stripVlan() {
         throw new UnsupportedOperationException("OFActionStripVlan not supported in version 1.2");
-    }
-
-    public OFActionCopyTtlIn copyTtlIn() {
-        return OFActionCopyTtlInVer12.INSTANCE;
-    }
-
-    public OFActionCopyTtlOut copyTtlOut() {
-        return OFActionCopyTtlOutVer12.INSTANCE;
-    }
-
-    public OFActionDecMplsTtl decMplsTtl() {
-        return OFActionDecMplsTtlVer12.INSTANCE;
-    }
-
-    public OFActionDecNwTtl decNwTtl() {
-        return OFActionDecNwTtlVer12.INSTANCE;
-    }
-
-    public OFActionGroup.Builder buildGroup() {
-        return new OFActionGroupVer12.Builder();
-    }
-    public OFActionGroup group(OFGroup group) {
-        return new OFActionGroupVer12(
-                group
-                    );
-    }
-
-    public OFActionPopMpls.Builder buildPopMpls() {
-        return new OFActionPopMplsVer12.Builder();
-    }
-    public OFActionPopMpls popMpls(EthType ethertype) {
-        return new OFActionPopMplsVer12(
-                ethertype
-                    );
-    }
-
-    public OFActionPopVlan popVlan() {
-        return OFActionPopVlanVer12.INSTANCE;
-    }
-
-    public OFActionPushMpls.Builder buildPushMpls() {
-        return new OFActionPushMplsVer12.Builder();
-    }
-    public OFActionPushMpls pushMpls(EthType ethertype) {
-        return new OFActionPushMplsVer12(
-                ethertype
-                    );
-    }
-
-    public OFActionPushVlan.Builder buildPushVlan() {
-        return new OFActionPushVlanVer12.Builder();
-    }
-    public OFActionPushVlan pushVlan(EthType ethertype) {
-        return new OFActionPushVlanVer12(
-                ethertype
-                    );
-    }
-
-    public OFActionSetMplsLabel.Builder buildSetMplsLabel() {
-        throw new UnsupportedOperationException("OFActionSetMplsLabel not supported in version 1.2");
-    }
-    public OFActionSetMplsLabel setMplsLabel(long mplsLabel) {
-        throw new UnsupportedOperationException("OFActionSetMplsLabel not supported in version 1.2");
-    }
-
-    public OFActionSetMplsTc.Builder buildSetMplsTc() {
-        throw new UnsupportedOperationException("OFActionSetMplsTc not supported in version 1.2");
-    }
-    public OFActionSetMplsTc setMplsTc(short mplsTc) {
-        throw new UnsupportedOperationException("OFActionSetMplsTc not supported in version 1.2");
-    }
-
-    public OFActionSetMplsTtl.Builder buildSetMplsTtl() {
-        return new OFActionSetMplsTtlVer12.Builder();
-    }
-    public OFActionSetMplsTtl setMplsTtl(short mplsTtl) {
-        return new OFActionSetMplsTtlVer12(
-                mplsTtl
-                    );
-    }
-
-    public OFActionSetNwEcn.Builder buildSetNwEcn() {
-        throw new UnsupportedOperationException("OFActionSetNwEcn not supported in version 1.2");
-    }
-    public OFActionSetNwEcn setNwEcn(IpEcn nwEcn) {
-        throw new UnsupportedOperationException("OFActionSetNwEcn not supported in version 1.2");
-    }
-
-    public OFActionSetNwTtl.Builder buildSetNwTtl() {
-        return new OFActionSetNwTtlVer12.Builder();
-    }
-    public OFActionSetNwTtl setNwTtl(short nwTtl) {
-        return new OFActionSetNwTtlVer12(
-                nwTtl
-                    );
-    }
-
-    public OFActionSetQueue.Builder buildSetQueue() {
-        return new OFActionSetQueueVer12.Builder();
-    }
-    public OFActionSetQueue setQueue(long queueId) {
-        return new OFActionSetQueueVer12(
-                queueId
-                    );
-    }
-
-    public OFActionSetField.Builder buildSetField() {
-        return new OFActionSetFieldVer12.Builder();
-    }
-    public OFActionSetField setField(OFOxm<?> field) {
-        return new OFActionSetFieldVer12(
-                field
-                    );
-    }
-
-    public OFActionBsnGentable.Builder buildBsnGentable() {
-        throw new UnsupportedOperationException("OFActionBsnGentable not supported in version 1.2");
-    }
-    public OFActionBsnGentable bsnGentable(long tableId, List<OFBsnTlv> key) {
-        throw new UnsupportedOperationException("OFActionBsnGentable not supported in version 1.2");
-    }
-
-    public OFActionPopPbb popPbb() {
-        throw new UnsupportedOperationException("OFActionPopPbb not supported in version 1.2");
-    }
-
-    public OFActionPushPbb.Builder buildPushPbb() {
-        throw new UnsupportedOperationException("OFActionPushPbb not supported in version 1.2");
-    }
-    public OFActionPushPbb pushPbb(EthType ethertype) {
-        throw new UnsupportedOperationException("OFActionPushPbb not supported in version 1.2");
-    }
-
-    public OFActionMeter.Builder buildMeter() {
-        throw new UnsupportedOperationException("OFActionMeter not supported in version 1.2");
-    }
-    public OFActionMeter meter(long meterId) {
-        throw new UnsupportedOperationException("OFActionMeter not supported in version 1.2");
     }
 
     public OFMessageReader<OFAction> getReader() {

@@ -28,12 +28,12 @@ import org.projectfloodlight.openflow.exceptions.*;
 import io.netty.buffer.ByteBuf;
 
 public interface OFOxmBsnUdf0Masked extends OFObject, OFOxm<UDF> {
+    UDF getMask();
     long getTypeLen();
     UDF getValue();
-    UDF getMask();
-    MatchField<UDF> getMatchField();
-    boolean isMasked();
     OFOxm<UDF> getCanonical();
+    boolean isMasked();
+    MatchField<UDF> getMatchField();
     OFVersion getVersion();
 
     void writeTo(ByteBuf channelBuffer);
@@ -41,14 +41,14 @@ public interface OFOxmBsnUdf0Masked extends OFObject, OFOxm<UDF> {
     Builder createBuilder();
     public interface Builder extends OFOxm.Builder<UDF> {
         OFOxmBsnUdf0Masked build();
+        UDF getMask();
+        Builder setMask(UDF mask);
         long getTypeLen();
         UDF getValue();
         Builder setValue(UDF value);
-        UDF getMask();
-        Builder setMask(UDF mask);
-        MatchField<UDF> getMatchField();
-        boolean isMasked();
         OFOxm<UDF> getCanonical();
+        boolean isMasked();
+        MatchField<UDF> getMatchField();
         OFVersion getVersion();
     }
 }

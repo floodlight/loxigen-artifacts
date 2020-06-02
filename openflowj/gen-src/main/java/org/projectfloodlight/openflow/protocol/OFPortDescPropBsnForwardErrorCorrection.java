@@ -28,11 +28,11 @@ import org.projectfloodlight.openflow.exceptions.*;
 import io.netty.buffer.ByteBuf;
 
 public interface OFPortDescPropBsnForwardErrorCorrection extends OFObject, OFPortDescPropBsn {
-    int getType();
-    long getExperimenter();
-    long getExpType();
     OFBsnFecConfigState getConfigured();
     long getEnabled();
+    long getExpType();
+    long getExperimenter();
+    int getType();
     OFVersion getVersion();
 
     void writeTo(ByteBuf channelBuffer);
@@ -40,14 +40,14 @@ public interface OFPortDescPropBsnForwardErrorCorrection extends OFObject, OFPor
     Builder createBuilder();
     public interface Builder extends OFPortDescPropBsn.Builder {
         OFPortDescPropBsnForwardErrorCorrection build();
-        int getType();
-        long getExperimenter();
-        long getExpType();
-        Builder setExpType(long expType);
         OFBsnFecConfigState getConfigured();
         Builder setConfigured(OFBsnFecConfigState configured);
         long getEnabled();
         Builder setEnabled(long enabled);
+        long getExpType();
+        Builder setExpType(long expType);
+        long getExperimenter();
+        int getType();
         OFVersion getVersion();
     }
 }

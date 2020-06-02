@@ -29,35 +29,35 @@ import java.util.List;
 import io.netty.buffer.ByteBuf;
 
 public interface OFGroupRemoveBucket extends OFObject, OFGroupMod {
-    OFVersion getVersion();
-    OFType getType();
-    long getXid();
-    OFGroupModCommand getCommand();
-    OFGroupType getGroupType();
-    OFGroup getGroup();
-    OFGroupBucket getCommandBucketId();
     List<OFBucket> getBuckets();
+    OFGroupModCommand getCommand();
+    OFGroupBucket getCommandBucketId();
+    OFGroup getGroup();
+    OFGroupType getGroupType();
     List<OFGroupProp> getProperties();
+    OFType getType();
+    OFVersion getVersion();
+    long getXid();
 
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();
     public interface Builder extends OFGroupMod.Builder {
         OFGroupRemoveBucket build();
-        OFVersion getVersion();
-        OFType getType();
-        long getXid();
-        Builder setXid(long xid);
-        OFGroupModCommand getCommand();
-        OFGroupType getGroupType();
-        Builder setGroupType(OFGroupType groupType);
-        OFGroup getGroup();
-        Builder setGroup(OFGroup group);
-        OFGroupBucket getCommandBucketId();
-        Builder setCommandBucketId(OFGroupBucket commandBucketId);
         List<OFBucket> getBuckets();
         Builder setBuckets(List<OFBucket> buckets);
+        OFGroupModCommand getCommand();
+        OFGroupBucket getCommandBucketId();
+        Builder setCommandBucketId(OFGroupBucket commandBucketId);
+        OFGroup getGroup();
+        Builder setGroup(OFGroup group);
+        OFGroupType getGroupType();
+        Builder setGroupType(OFGroupType groupType);
         List<OFGroupProp> getProperties();
         Builder setProperties(List<OFGroupProp> properties);
+        OFType getType();
+        OFVersion getVersion();
+        long getXid();
+        Builder setXid(long xid);
     }
 }

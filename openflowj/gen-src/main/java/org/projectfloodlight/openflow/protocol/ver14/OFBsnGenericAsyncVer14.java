@@ -71,28 +71,8 @@ class OFBsnGenericAsyncVer14 implements OFBsnGenericAsync {
 
     // Accessors for OF message fields
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_14;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.EXPERIMENTER;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
     public long getExperimenter() {
         return 0x5c16c7L;
-    }
-
-    @Override
-    public long getSubtype() {
-        return 0x44L;
     }
 
     @Override
@@ -101,8 +81,28 @@ class OFBsnGenericAsyncVer14 implements OFBsnGenericAsync {
     }
 
     @Override
+    public long getSubtype() {
+        return 0x44L;
+    }
+
+    @Override
     public List<OFBsnTlv> getTlvs() {
         return tlvs;
+    }
+
+    @Override
+    public OFType getType() {
+        return OFType.EXPERIMENTER;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_14;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
     }
 
 
@@ -127,34 +127,8 @@ class OFBsnGenericAsyncVer14 implements OFBsnGenericAsync {
         }
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_14;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.EXPERIMENTER;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFBsnGenericAsync.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
-        return this;
-    }
-    @Override
     public long getExperimenter() {
         return 0x5c16c7L;
-    }
-
-    @Override
-    public long getSubtype() {
-        return 0x44L;
     }
 
     @Override
@@ -169,6 +143,11 @@ class OFBsnGenericAsyncVer14 implements OFBsnGenericAsync {
         return this;
     }
     @Override
+    public long getSubtype() {
+        return 0x44L;
+    }
+
+    @Override
     public List<OFBsnTlv> getTlvs() {
         return tlvs;
     }
@@ -177,6 +156,27 @@ class OFBsnGenericAsyncVer14 implements OFBsnGenericAsync {
     public OFBsnGenericAsync.Builder setTlvs(List<OFBsnTlv> tlvs) {
         this.tlvs = tlvs;
         this.tlvsSet = true;
+        return this;
+    }
+    @Override
+    public OFType getType() {
+        return OFType.EXPERIMENTER;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_14;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFBsnGenericAsync.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 
@@ -211,34 +211,8 @@ class OFBsnGenericAsyncVer14 implements OFBsnGenericAsync {
         private List<OFBsnTlv> tlvs;
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_14;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.EXPERIMENTER;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFBsnGenericAsync.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
-        return this;
-    }
-    @Override
     public long getExperimenter() {
         return 0x5c16c7L;
-    }
-
-    @Override
-    public long getSubtype() {
-        return 0x44L;
     }
 
     @Override
@@ -253,6 +227,11 @@ class OFBsnGenericAsyncVer14 implements OFBsnGenericAsync {
         return this;
     }
     @Override
+    public long getSubtype() {
+        return 0x44L;
+    }
+
+    @Override
     public List<OFBsnTlv> getTlvs() {
         return tlvs;
     }
@@ -261,6 +240,27 @@ class OFBsnGenericAsyncVer14 implements OFBsnGenericAsync {
     public OFBsnGenericAsync.Builder setTlvs(List<OFBsnTlv> tlvs) {
         this.tlvs = tlvs;
         this.tlvsSet = true;
+        return this;
+    }
+    @Override
+    public OFType getType() {
+        return OFType.EXPERIMENTER;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_14;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFBsnGenericAsync.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 //

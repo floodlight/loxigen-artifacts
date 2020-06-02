@@ -58,18 +58,13 @@ class OFPortDescPropBsnBreakoutVer14 implements OFPortDescPropBsnBreakout {
 
     // Accessors for OF message fields
     @Override
-    public int getType() {
-        return 0xffff;
+    public long getExpType() {
+        return 0x3L;
     }
 
     @Override
     public long getExperimenter() {
         return 0x5c16c7L;
-    }
-
-    @Override
-    public long getExpType() {
-        return 0x3L;
     }
 
     @Override
@@ -80,6 +75,11 @@ class OFPortDescPropBsnBreakoutVer14 implements OFPortDescPropBsnBreakout {
     @Override
     public int getSubInterfaceSpeedGbps() {
         return subInterfaceSpeedGbps;
+    }
+
+    @Override
+    public int getType() {
+        return 0xffff;
     }
 
     @Override
@@ -107,16 +107,6 @@ class OFPortDescPropBsnBreakoutVer14 implements OFPortDescPropBsnBreakout {
         }
 
     @Override
-    public int getType() {
-        return 0xffff;
-    }
-
-    @Override
-    public long getExperimenter() {
-        return 0x5c16c7L;
-    }
-
-    @Override
     public long getExpType() {
         return 0x3L;
     }
@@ -125,6 +115,11 @@ class OFPortDescPropBsnBreakoutVer14 implements OFPortDescPropBsnBreakout {
     public OFPortDescPropBsnBreakout.Builder setExpType(long expType) {
             throw new UnsupportedOperationException("Property expType is not writeable");
     }
+    @Override
+    public long getExperimenter() {
+        return 0x5c16c7L;
+    }
+
     @Override
     public int getSubInterfaceCount() {
         return subInterfaceCount;
@@ -147,6 +142,11 @@ class OFPortDescPropBsnBreakoutVer14 implements OFPortDescPropBsnBreakout {
         this.subInterfaceSpeedGbpsSet = true;
         return this;
     }
+    @Override
+    public int getType() {
+        return 0xffff;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_14;
@@ -176,16 +176,6 @@ class OFPortDescPropBsnBreakoutVer14 implements OFPortDescPropBsnBreakout {
         private int subInterfaceSpeedGbps;
 
     @Override
-    public int getType() {
-        return 0xffff;
-    }
-
-    @Override
-    public long getExperimenter() {
-        return 0x5c16c7L;
-    }
-
-    @Override
     public long getExpType() {
         return 0x3L;
     }
@@ -194,6 +184,11 @@ class OFPortDescPropBsnBreakoutVer14 implements OFPortDescPropBsnBreakout {
     public OFPortDescPropBsnBreakout.Builder setExpType(long expType) {
             throw new UnsupportedOperationException("Property expType is not writeable");
     }
+    @Override
+    public long getExperimenter() {
+        return 0x5c16c7L;
+    }
+
     @Override
     public int getSubInterfaceCount() {
         return subInterfaceCount;
@@ -216,6 +211,11 @@ class OFPortDescPropBsnBreakoutVer14 implements OFPortDescPropBsnBreakout {
         this.subInterfaceSpeedGbpsSet = true;
         return this;
     }
+    @Override
+    public int getType() {
+        return 0xffff;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_14;

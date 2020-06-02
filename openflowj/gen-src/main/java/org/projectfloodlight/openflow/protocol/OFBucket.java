@@ -29,12 +29,12 @@ import java.util.List;
 import io.netty.buffer.ByteBuf;
 
 public interface OFBucket extends OFObject {
-    int getWeight() throws UnsupportedOperationException;
-    OFPort getWatchPort() throws UnsupportedOperationException;
-    OFGroup getWatchGroup() throws UnsupportedOperationException;
     List<OFAction> getActions();
     OFGroupBucket getBucketId() throws UnsupportedOperationException;
     List<OFGroupBucketProp> getProperties() throws UnsupportedOperationException;
+    OFGroup getWatchGroup() throws UnsupportedOperationException;
+    OFPort getWatchPort() throws UnsupportedOperationException;
+    int getWeight() throws UnsupportedOperationException;
     OFVersion getVersion();
 
     void writeTo(ByteBuf channelBuffer);
@@ -42,18 +42,18 @@ public interface OFBucket extends OFObject {
     Builder createBuilder();
     public interface Builder  {
         OFBucket build();
-        int getWeight() throws UnsupportedOperationException;
-        Builder setWeight(int weight) throws UnsupportedOperationException;
-        OFPort getWatchPort() throws UnsupportedOperationException;
-        Builder setWatchPort(OFPort watchPort) throws UnsupportedOperationException;
-        OFGroup getWatchGroup() throws UnsupportedOperationException;
-        Builder setWatchGroup(OFGroup watchGroup) throws UnsupportedOperationException;
         List<OFAction> getActions();
         Builder setActions(List<OFAction> actions);
         OFGroupBucket getBucketId() throws UnsupportedOperationException;
         Builder setBucketId(OFGroupBucket bucketId) throws UnsupportedOperationException;
         List<OFGroupBucketProp> getProperties() throws UnsupportedOperationException;
         Builder setProperties(List<OFGroupBucketProp> properties) throws UnsupportedOperationException;
+        OFGroup getWatchGroup() throws UnsupportedOperationException;
+        Builder setWatchGroup(OFGroup watchGroup) throws UnsupportedOperationException;
+        OFPort getWatchPort() throws UnsupportedOperationException;
+        Builder setWatchPort(OFPort watchPort) throws UnsupportedOperationException;
+        int getWeight() throws UnsupportedOperationException;
+        Builder setWeight(int weight) throws UnsupportedOperationException;
         OFVersion getVersion();
     }
 }

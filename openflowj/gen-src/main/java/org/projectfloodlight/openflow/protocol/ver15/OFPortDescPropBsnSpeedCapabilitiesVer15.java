@@ -70,18 +70,8 @@ class OFPortDescPropBsnSpeedCapabilitiesVer15 implements OFPortDescPropBsnSpeedC
 
     // Accessors for OF message fields
     @Override
-    public int getType() {
-        return 0xffff;
-    }
-
-    @Override
-    public long getExperimenter() {
-        return 0x5c16c7L;
-    }
-
-    @Override
-    public long getExpType() {
-        return 0x4L;
+    public U64 getAvailable() {
+        return available;
     }
 
     @Override
@@ -90,13 +80,23 @@ class OFPortDescPropBsnSpeedCapabilitiesVer15 implements OFPortDescPropBsnSpeedC
     }
 
     @Override
-    public U64 getAvailable() {
-        return available;
+    public long getExpType() {
+        return 0x4L;
+    }
+
+    @Override
+    public long getExperimenter() {
+        return 0x5c16c7L;
     }
 
     @Override
     public U64 getSupported() {
         return supported;
+    }
+
+    @Override
+    public int getType() {
+        return 0xffff;
     }
 
     @Override
@@ -126,23 +126,15 @@ class OFPortDescPropBsnSpeedCapabilitiesVer15 implements OFPortDescPropBsnSpeedC
         }
 
     @Override
-    public int getType() {
-        return 0xffff;
+    public U64 getAvailable() {
+        return available;
     }
 
     @Override
-    public long getExperimenter() {
-        return 0x5c16c7L;
-    }
-
-    @Override
-    public long getExpType() {
-        return 0x4L;
-    }
-
-    @Override
-    public OFPortDescPropBsnSpeedCapabilities.Builder setExpType(long expType) {
-            throw new UnsupportedOperationException("Property expType is not writeable");
+    public OFPortDescPropBsnSpeedCapabilities.Builder setAvailable(U64 available) {
+        this.available = available;
+        this.availableSet = true;
+        return this;
     }
     @Override
     public U64 getCurrent() {
@@ -156,16 +148,19 @@ class OFPortDescPropBsnSpeedCapabilitiesVer15 implements OFPortDescPropBsnSpeedC
         return this;
     }
     @Override
-    public U64 getAvailable() {
-        return available;
+    public long getExpType() {
+        return 0x4L;
     }
 
     @Override
-    public OFPortDescPropBsnSpeedCapabilities.Builder setAvailable(U64 available) {
-        this.available = available;
-        this.availableSet = true;
-        return this;
+    public OFPortDescPropBsnSpeedCapabilities.Builder setExpType(long expType) {
+            throw new UnsupportedOperationException("Property expType is not writeable");
     }
+    @Override
+    public long getExperimenter() {
+        return 0x5c16c7L;
+    }
+
     @Override
     public U64 getSupported() {
         return supported;
@@ -177,6 +172,11 @@ class OFPortDescPropBsnSpeedCapabilitiesVer15 implements OFPortDescPropBsnSpeedC
         this.supportedSet = true;
         return this;
     }
+    @Override
+    public int getType() {
+        return 0xffff;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_15;
@@ -216,23 +216,15 @@ class OFPortDescPropBsnSpeedCapabilitiesVer15 implements OFPortDescPropBsnSpeedC
         private U64 supported;
 
     @Override
-    public int getType() {
-        return 0xffff;
+    public U64 getAvailable() {
+        return available;
     }
 
     @Override
-    public long getExperimenter() {
-        return 0x5c16c7L;
-    }
-
-    @Override
-    public long getExpType() {
-        return 0x4L;
-    }
-
-    @Override
-    public OFPortDescPropBsnSpeedCapabilities.Builder setExpType(long expType) {
-            throw new UnsupportedOperationException("Property expType is not writeable");
+    public OFPortDescPropBsnSpeedCapabilities.Builder setAvailable(U64 available) {
+        this.available = available;
+        this.availableSet = true;
+        return this;
     }
     @Override
     public U64 getCurrent() {
@@ -246,16 +238,19 @@ class OFPortDescPropBsnSpeedCapabilitiesVer15 implements OFPortDescPropBsnSpeedC
         return this;
     }
     @Override
-    public U64 getAvailable() {
-        return available;
+    public long getExpType() {
+        return 0x4L;
     }
 
     @Override
-    public OFPortDescPropBsnSpeedCapabilities.Builder setAvailable(U64 available) {
-        this.available = available;
-        this.availableSet = true;
-        return this;
+    public OFPortDescPropBsnSpeedCapabilities.Builder setExpType(long expType) {
+            throw new UnsupportedOperationException("Property expType is not writeable");
     }
+    @Override
+    public long getExperimenter() {
+        return 0x5c16c7L;
+    }
+
     @Override
     public U64 getSupported() {
         return supported;
@@ -267,6 +262,11 @@ class OFPortDescPropBsnSpeedCapabilitiesVer15 implements OFPortDescPropBsnSpeedC
         this.supportedSet = true;
         return this;
     }
+    @Override
+    public int getType() {
+        return 0xffff;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_15;

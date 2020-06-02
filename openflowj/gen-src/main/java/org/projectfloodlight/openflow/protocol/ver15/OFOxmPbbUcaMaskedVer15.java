@@ -64,6 +64,11 @@ class OFOxmPbbUcaMaskedVer15 implements OFOxmPbbUcaMasked {
 
     // Accessors for OF message fields
     @Override
+    public OFBooleanValue getMask() {
+        return mask;
+    }
+
+    @Override
     public long getTypeLen() {
         return 0x80005302L;
     }
@@ -71,21 +76,6 @@ class OFOxmPbbUcaMaskedVer15 implements OFOxmPbbUcaMasked {
     @Override
     public OFBooleanValue getValue() {
         return value;
-    }
-
-    @Override
-    public OFBooleanValue getMask() {
-        return mask;
-    }
-
-    @Override
-    public MatchField<OFBooleanValue> getMatchField() {
-        return MatchField.PBB_UCA;
-    }
-
-    @Override
-    public boolean isMasked() {
-        return true;
     }
 
     public OFOxm<OFBooleanValue> getCanonical() {
@@ -96,6 +86,16 @@ class OFOxmPbbUcaMaskedVer15 implements OFOxmPbbUcaMasked {
         } else {
             return this;
         }
+    }
+
+    @Override
+    public boolean isMasked() {
+        return true;
+    }
+
+    @Override
+    public MatchField<OFBooleanValue> getMatchField() {
+        return MatchField.PBB_UCA;
     }
 
     @Override
@@ -123,6 +123,17 @@ class OFOxmPbbUcaMaskedVer15 implements OFOxmPbbUcaMasked {
         }
 
     @Override
+    public OFBooleanValue getMask() {
+        return mask;
+    }
+
+    @Override
+    public OFOxmPbbUcaMasked.Builder setMask(OFBooleanValue mask) {
+        this.mask = mask;
+        this.maskSet = true;
+        return this;
+    }
+    @Override
     public long getTypeLen() {
         return 0x80005302L;
     }
@@ -139,19 +150,8 @@ class OFOxmPbbUcaMaskedVer15 implements OFOxmPbbUcaMasked {
         return this;
     }
     @Override
-    public OFBooleanValue getMask() {
-        return mask;
-    }
-
-    @Override
-    public OFOxmPbbUcaMasked.Builder setMask(OFBooleanValue mask) {
-        this.mask = mask;
-        this.maskSet = true;
-        return this;
-    }
-    @Override
-    public MatchField<OFBooleanValue> getMatchField() {
-        return MatchField.PBB_UCA;
+    public OFOxm<OFBooleanValue> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.5");
     }
 
     @Override
@@ -160,8 +160,8 @@ class OFOxmPbbUcaMaskedVer15 implements OFOxmPbbUcaMasked {
     }
 
     @Override
-    public OFOxm<OFBooleanValue> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.5");
+    public MatchField<OFBooleanValue> getMatchField() {
+        return MatchField.PBB_UCA;
     }
 
     @Override
@@ -197,6 +197,17 @@ class OFOxmPbbUcaMaskedVer15 implements OFOxmPbbUcaMasked {
         private OFBooleanValue mask;
 
     @Override
+    public OFBooleanValue getMask() {
+        return mask;
+    }
+
+    @Override
+    public OFOxmPbbUcaMasked.Builder setMask(OFBooleanValue mask) {
+        this.mask = mask;
+        this.maskSet = true;
+        return this;
+    }
+    @Override
     public long getTypeLen() {
         return 0x80005302L;
     }
@@ -213,19 +224,8 @@ class OFOxmPbbUcaMaskedVer15 implements OFOxmPbbUcaMasked {
         return this;
     }
     @Override
-    public OFBooleanValue getMask() {
-        return mask;
-    }
-
-    @Override
-    public OFOxmPbbUcaMasked.Builder setMask(OFBooleanValue mask) {
-        this.mask = mask;
-        this.maskSet = true;
-        return this;
-    }
-    @Override
-    public MatchField<OFBooleanValue> getMatchField() {
-        return MatchField.PBB_UCA;
+    public OFOxm<OFBooleanValue> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.5");
     }
 
     @Override
@@ -234,8 +234,8 @@ class OFOxmPbbUcaMaskedVer15 implements OFOxmPbbUcaMasked {
     }
 
     @Override
-    public OFOxm<OFBooleanValue> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.5");
+    public MatchField<OFBooleanValue> getMatchField() {
+        return MatchField.PBB_UCA;
     }
 
     @Override

@@ -30,8 +30,8 @@ import io.netty.buffer.ByteBuf;
 
 public interface OFQueueDesc extends OFObject {
     long getPortNo();
-    long getQueueId();
     List<OFQueueDescProp> getProperties();
+    long getQueueId();
     OFVersion getVersion();
 
     void writeTo(ByteBuf channelBuffer);
@@ -41,10 +41,10 @@ public interface OFQueueDesc extends OFObject {
         OFQueueDesc build();
         long getPortNo();
         Builder setPortNo(long portNo);
-        long getQueueId();
-        Builder setQueueId(long queueId);
         List<OFQueueDescProp> getProperties();
         Builder setProperties(List<OFQueueDescProp> properties);
+        long getQueueId();
+        Builder setQueueId(long queueId);
         OFVersion getVersion();
     }
 }

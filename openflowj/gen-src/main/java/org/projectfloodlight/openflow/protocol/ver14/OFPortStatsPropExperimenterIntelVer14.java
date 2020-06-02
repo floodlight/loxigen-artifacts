@@ -178,8 +178,8 @@ class OFPortStatsPropExperimenterIntelVer14 implements OFPortStatsPropExperiment
 
     // Accessors for OF message fields
     @Override
-    public int getType() {
-        return 0xffff;
+    public long getExpType() {
+        return 0x1L;
     }
 
     @Override
@@ -188,23 +188,23 @@ class OFPortStatsPropExperimenterIntelVer14 implements OFPortStatsPropExperiment
     }
 
     @Override
-    public long getExpType() {
-        return 0x1L;
-    }
-
-    @Override
-    public U64 getRx1To64Packets() {
-        return rx1To64Packets;
-    }
-
-    @Override
-    public U64 getRx65To127Packets() {
-        return rx65To127Packets;
+    public U64 getRx1024To1522Packets() {
+        return rx1024To1522Packets;
     }
 
     @Override
     public U64 getRx128To255Packets() {
         return rx128To255Packets;
+    }
+
+    @Override
+    public U64 getRx1523ToMaxPackets() {
+        return rx1523ToMaxPackets;
+    }
+
+    @Override
+    public U64 getRx1To64Packets() {
+        return rx1To64Packets;
     }
 
     @Override
@@ -218,28 +218,53 @@ class OFPortStatsPropExperimenterIntelVer14 implements OFPortStatsPropExperiment
     }
 
     @Override
-    public U64 getRx1024To1522Packets() {
-        return rx1024To1522Packets;
+    public U64 getRx65To127Packets() {
+        return rx65To127Packets;
     }
 
     @Override
-    public U64 getRx1523ToMaxPackets() {
-        return rx1523ToMaxPackets;
+    public U64 getRxBroadcastPackets() {
+        return rxBroadcastPackets;
     }
 
     @Override
-    public U64 getTx1To64Packets() {
-        return tx1To64Packets;
+    public U64 getRxFragmentedErrors() {
+        return rxFragmentedErrors;
     }
 
     @Override
-    public U64 getTx65To127Packets() {
-        return tx65To127Packets;
+    public U64 getRxJabberErrors() {
+        return rxJabberErrors;
+    }
+
+    @Override
+    public U64 getRxOversizeErrors() {
+        return rxOversizeErrors;
+    }
+
+    @Override
+    public U64 getRxUndersizedErrors() {
+        return rxUndersizedErrors;
+    }
+
+    @Override
+    public U64 getTx1024To1522Packets() {
+        return tx1024To1522Packets;
     }
 
     @Override
     public U64 getTx128To255Packets() {
         return tx128To255Packets;
+    }
+
+    @Override
+    public U64 getTx1523ToMaxPackets() {
+        return tx1523ToMaxPackets;
+    }
+
+    @Override
+    public U64 getTx1To64Packets() {
+        return tx1To64Packets;
     }
 
     @Override
@@ -253,23 +278,8 @@ class OFPortStatsPropExperimenterIntelVer14 implements OFPortStatsPropExperiment
     }
 
     @Override
-    public U64 getTx1024To1522Packets() {
-        return tx1024To1522Packets;
-    }
-
-    @Override
-    public U64 getTx1523ToMaxPackets() {
-        return tx1523ToMaxPackets;
-    }
-
-    @Override
-    public U64 getTxMulticastPackets() {
-        return txMulticastPackets;
-    }
-
-    @Override
-    public U64 getRxBroadcastPackets() {
-        return rxBroadcastPackets;
+    public U64 getTx65To127Packets() {
+        return tx65To127Packets;
     }
 
     @Override
@@ -278,23 +288,13 @@ class OFPortStatsPropExperimenterIntelVer14 implements OFPortStatsPropExperiment
     }
 
     @Override
-    public U64 getRxUndersizedErrors() {
-        return rxUndersizedErrors;
+    public U64 getTxMulticastPackets() {
+        return txMulticastPackets;
     }
 
     @Override
-    public U64 getRxOversizeErrors() {
-        return rxOversizeErrors;
-    }
-
-    @Override
-    public U64 getRxFragmentedErrors() {
-        return rxFragmentedErrors;
-    }
-
-    @Override
-    public U64 getRxJabberErrors() {
-        return rxJabberErrors;
+    public int getType() {
+        return 0xffff;
     }
 
     @Override
@@ -360,16 +360,6 @@ class OFPortStatsPropExperimenterIntelVer14 implements OFPortStatsPropExperiment
         }
 
     @Override
-    public int getType() {
-        return 0xffff;
-    }
-
-    @Override
-    public long getExperimenter() {
-        return 0xaa01L;
-    }
-
-    @Override
     public long getExpType() {
         return 0x1L;
     }
@@ -379,25 +369,19 @@ class OFPortStatsPropExperimenterIntelVer14 implements OFPortStatsPropExperiment
             throw new UnsupportedOperationException("Property expType is not writeable");
     }
     @Override
-    public U64 getRx1To64Packets() {
-        return rx1To64Packets;
+    public long getExperimenter() {
+        return 0xaa01L;
     }
 
     @Override
-    public OFPortStatsPropExperimenterIntel.Builder setRx1To64Packets(U64 rx1To64Packets) {
-        this.rx1To64Packets = rx1To64Packets;
-        this.rx1To64PacketsSet = true;
-        return this;
-    }
-    @Override
-    public U64 getRx65To127Packets() {
-        return rx65To127Packets;
+    public U64 getRx1024To1522Packets() {
+        return rx1024To1522Packets;
     }
 
     @Override
-    public OFPortStatsPropExperimenterIntel.Builder setRx65To127Packets(U64 rx65To127Packets) {
-        this.rx65To127Packets = rx65To127Packets;
-        this.rx65To127PacketsSet = true;
+    public OFPortStatsPropExperimenterIntel.Builder setRx1024To1522Packets(U64 rx1024To1522Packets) {
+        this.rx1024To1522Packets = rx1024To1522Packets;
+        this.rx1024To1522PacketsSet = true;
         return this;
     }
     @Override
@@ -409,6 +393,28 @@ class OFPortStatsPropExperimenterIntelVer14 implements OFPortStatsPropExperiment
     public OFPortStatsPropExperimenterIntel.Builder setRx128To255Packets(U64 rx128To255Packets) {
         this.rx128To255Packets = rx128To255Packets;
         this.rx128To255PacketsSet = true;
+        return this;
+    }
+    @Override
+    public U64 getRx1523ToMaxPackets() {
+        return rx1523ToMaxPackets;
+    }
+
+    @Override
+    public OFPortStatsPropExperimenterIntel.Builder setRx1523ToMaxPackets(U64 rx1523ToMaxPackets) {
+        this.rx1523ToMaxPackets = rx1523ToMaxPackets;
+        this.rx1523ToMaxPacketsSet = true;
+        return this;
+    }
+    @Override
+    public U64 getRx1To64Packets() {
+        return rx1To64Packets;
+    }
+
+    @Override
+    public OFPortStatsPropExperimenterIntel.Builder setRx1To64Packets(U64 rx1To64Packets) {
+        this.rx1To64Packets = rx1To64Packets;
+        this.rx1To64PacketsSet = true;
         return this;
     }
     @Override
@@ -434,47 +440,80 @@ class OFPortStatsPropExperimenterIntelVer14 implements OFPortStatsPropExperiment
         return this;
     }
     @Override
-    public U64 getRx1024To1522Packets() {
-        return rx1024To1522Packets;
+    public U64 getRx65To127Packets() {
+        return rx65To127Packets;
     }
 
     @Override
-    public OFPortStatsPropExperimenterIntel.Builder setRx1024To1522Packets(U64 rx1024To1522Packets) {
-        this.rx1024To1522Packets = rx1024To1522Packets;
-        this.rx1024To1522PacketsSet = true;
+    public OFPortStatsPropExperimenterIntel.Builder setRx65To127Packets(U64 rx65To127Packets) {
+        this.rx65To127Packets = rx65To127Packets;
+        this.rx65To127PacketsSet = true;
         return this;
     }
     @Override
-    public U64 getRx1523ToMaxPackets() {
-        return rx1523ToMaxPackets;
+    public U64 getRxBroadcastPackets() {
+        return rxBroadcastPackets;
     }
 
     @Override
-    public OFPortStatsPropExperimenterIntel.Builder setRx1523ToMaxPackets(U64 rx1523ToMaxPackets) {
-        this.rx1523ToMaxPackets = rx1523ToMaxPackets;
-        this.rx1523ToMaxPacketsSet = true;
+    public OFPortStatsPropExperimenterIntel.Builder setRxBroadcastPackets(U64 rxBroadcastPackets) {
+        this.rxBroadcastPackets = rxBroadcastPackets;
+        this.rxBroadcastPacketsSet = true;
         return this;
     }
     @Override
-    public U64 getTx1To64Packets() {
-        return tx1To64Packets;
+    public U64 getRxFragmentedErrors() {
+        return rxFragmentedErrors;
     }
 
     @Override
-    public OFPortStatsPropExperimenterIntel.Builder setTx1To64Packets(U64 tx1To64Packets) {
-        this.tx1To64Packets = tx1To64Packets;
-        this.tx1To64PacketsSet = true;
+    public OFPortStatsPropExperimenterIntel.Builder setRxFragmentedErrors(U64 rxFragmentedErrors) {
+        this.rxFragmentedErrors = rxFragmentedErrors;
+        this.rxFragmentedErrorsSet = true;
         return this;
     }
     @Override
-    public U64 getTx65To127Packets() {
-        return tx65To127Packets;
+    public U64 getRxJabberErrors() {
+        return rxJabberErrors;
     }
 
     @Override
-    public OFPortStatsPropExperimenterIntel.Builder setTx65To127Packets(U64 tx65To127Packets) {
-        this.tx65To127Packets = tx65To127Packets;
-        this.tx65To127PacketsSet = true;
+    public OFPortStatsPropExperimenterIntel.Builder setRxJabberErrors(U64 rxJabberErrors) {
+        this.rxJabberErrors = rxJabberErrors;
+        this.rxJabberErrorsSet = true;
+        return this;
+    }
+    @Override
+    public U64 getRxOversizeErrors() {
+        return rxOversizeErrors;
+    }
+
+    @Override
+    public OFPortStatsPropExperimenterIntel.Builder setRxOversizeErrors(U64 rxOversizeErrors) {
+        this.rxOversizeErrors = rxOversizeErrors;
+        this.rxOversizeErrorsSet = true;
+        return this;
+    }
+    @Override
+    public U64 getRxUndersizedErrors() {
+        return rxUndersizedErrors;
+    }
+
+    @Override
+    public OFPortStatsPropExperimenterIntel.Builder setRxUndersizedErrors(U64 rxUndersizedErrors) {
+        this.rxUndersizedErrors = rxUndersizedErrors;
+        this.rxUndersizedErrorsSet = true;
+        return this;
+    }
+    @Override
+    public U64 getTx1024To1522Packets() {
+        return tx1024To1522Packets;
+    }
+
+    @Override
+    public OFPortStatsPropExperimenterIntel.Builder setTx1024To1522Packets(U64 tx1024To1522Packets) {
+        this.tx1024To1522Packets = tx1024To1522Packets;
+        this.tx1024To1522PacketsSet = true;
         return this;
     }
     @Override
@@ -486,6 +525,28 @@ class OFPortStatsPropExperimenterIntelVer14 implements OFPortStatsPropExperiment
     public OFPortStatsPropExperimenterIntel.Builder setTx128To255Packets(U64 tx128To255Packets) {
         this.tx128To255Packets = tx128To255Packets;
         this.tx128To255PacketsSet = true;
+        return this;
+    }
+    @Override
+    public U64 getTx1523ToMaxPackets() {
+        return tx1523ToMaxPackets;
+    }
+
+    @Override
+    public OFPortStatsPropExperimenterIntel.Builder setTx1523ToMaxPackets(U64 tx1523ToMaxPackets) {
+        this.tx1523ToMaxPackets = tx1523ToMaxPackets;
+        this.tx1523ToMaxPacketsSet = true;
+        return this;
+    }
+    @Override
+    public U64 getTx1To64Packets() {
+        return tx1To64Packets;
+    }
+
+    @Override
+    public OFPortStatsPropExperimenterIntel.Builder setTx1To64Packets(U64 tx1To64Packets) {
+        this.tx1To64Packets = tx1To64Packets;
+        this.tx1To64PacketsSet = true;
         return this;
     }
     @Override
@@ -511,47 +572,14 @@ class OFPortStatsPropExperimenterIntelVer14 implements OFPortStatsPropExperiment
         return this;
     }
     @Override
-    public U64 getTx1024To1522Packets() {
-        return tx1024To1522Packets;
+    public U64 getTx65To127Packets() {
+        return tx65To127Packets;
     }
 
     @Override
-    public OFPortStatsPropExperimenterIntel.Builder setTx1024To1522Packets(U64 tx1024To1522Packets) {
-        this.tx1024To1522Packets = tx1024To1522Packets;
-        this.tx1024To1522PacketsSet = true;
-        return this;
-    }
-    @Override
-    public U64 getTx1523ToMaxPackets() {
-        return tx1523ToMaxPackets;
-    }
-
-    @Override
-    public OFPortStatsPropExperimenterIntel.Builder setTx1523ToMaxPackets(U64 tx1523ToMaxPackets) {
-        this.tx1523ToMaxPackets = tx1523ToMaxPackets;
-        this.tx1523ToMaxPacketsSet = true;
-        return this;
-    }
-    @Override
-    public U64 getTxMulticastPackets() {
-        return txMulticastPackets;
-    }
-
-    @Override
-    public OFPortStatsPropExperimenterIntel.Builder setTxMulticastPackets(U64 txMulticastPackets) {
-        this.txMulticastPackets = txMulticastPackets;
-        this.txMulticastPacketsSet = true;
-        return this;
-    }
-    @Override
-    public U64 getRxBroadcastPackets() {
-        return rxBroadcastPackets;
-    }
-
-    @Override
-    public OFPortStatsPropExperimenterIntel.Builder setRxBroadcastPackets(U64 rxBroadcastPackets) {
-        this.rxBroadcastPackets = rxBroadcastPackets;
-        this.rxBroadcastPacketsSet = true;
+    public OFPortStatsPropExperimenterIntel.Builder setTx65To127Packets(U64 tx65To127Packets) {
+        this.tx65To127Packets = tx65To127Packets;
+        this.tx65To127PacketsSet = true;
         return this;
     }
     @Override
@@ -566,49 +594,21 @@ class OFPortStatsPropExperimenterIntelVer14 implements OFPortStatsPropExperiment
         return this;
     }
     @Override
-    public U64 getRxUndersizedErrors() {
-        return rxUndersizedErrors;
+    public U64 getTxMulticastPackets() {
+        return txMulticastPackets;
     }
 
     @Override
-    public OFPortStatsPropExperimenterIntel.Builder setRxUndersizedErrors(U64 rxUndersizedErrors) {
-        this.rxUndersizedErrors = rxUndersizedErrors;
-        this.rxUndersizedErrorsSet = true;
+    public OFPortStatsPropExperimenterIntel.Builder setTxMulticastPackets(U64 txMulticastPackets) {
+        this.txMulticastPackets = txMulticastPackets;
+        this.txMulticastPacketsSet = true;
         return this;
     }
     @Override
-    public U64 getRxOversizeErrors() {
-        return rxOversizeErrors;
+    public int getType() {
+        return 0xffff;
     }
 
-    @Override
-    public OFPortStatsPropExperimenterIntel.Builder setRxOversizeErrors(U64 rxOversizeErrors) {
-        this.rxOversizeErrors = rxOversizeErrors;
-        this.rxOversizeErrorsSet = true;
-        return this;
-    }
-    @Override
-    public U64 getRxFragmentedErrors() {
-        return rxFragmentedErrors;
-    }
-
-    @Override
-    public OFPortStatsPropExperimenterIntel.Builder setRxFragmentedErrors(U64 rxFragmentedErrors) {
-        this.rxFragmentedErrors = rxFragmentedErrors;
-        this.rxFragmentedErrorsSet = true;
-        return this;
-    }
-    @Override
-    public U64 getRxJabberErrors() {
-        return rxJabberErrors;
-    }
-
-    @Override
-    public OFPortStatsPropExperimenterIntel.Builder setRxJabberErrors(U64 rxJabberErrors) {
-        this.rxJabberErrors = rxJabberErrors;
-        this.rxJabberErrorsSet = true;
-        return this;
-    }
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_14;
@@ -756,16 +756,6 @@ class OFPortStatsPropExperimenterIntelVer14 implements OFPortStatsPropExperiment
         private U64 rxJabberErrors;
 
     @Override
-    public int getType() {
-        return 0xffff;
-    }
-
-    @Override
-    public long getExperimenter() {
-        return 0xaa01L;
-    }
-
-    @Override
     public long getExpType() {
         return 0x1L;
     }
@@ -775,25 +765,19 @@ class OFPortStatsPropExperimenterIntelVer14 implements OFPortStatsPropExperiment
             throw new UnsupportedOperationException("Property expType is not writeable");
     }
     @Override
-    public U64 getRx1To64Packets() {
-        return rx1To64Packets;
+    public long getExperimenter() {
+        return 0xaa01L;
     }
 
     @Override
-    public OFPortStatsPropExperimenterIntel.Builder setRx1To64Packets(U64 rx1To64Packets) {
-        this.rx1To64Packets = rx1To64Packets;
-        this.rx1To64PacketsSet = true;
-        return this;
-    }
-    @Override
-    public U64 getRx65To127Packets() {
-        return rx65To127Packets;
+    public U64 getRx1024To1522Packets() {
+        return rx1024To1522Packets;
     }
 
     @Override
-    public OFPortStatsPropExperimenterIntel.Builder setRx65To127Packets(U64 rx65To127Packets) {
-        this.rx65To127Packets = rx65To127Packets;
-        this.rx65To127PacketsSet = true;
+    public OFPortStatsPropExperimenterIntel.Builder setRx1024To1522Packets(U64 rx1024To1522Packets) {
+        this.rx1024To1522Packets = rx1024To1522Packets;
+        this.rx1024To1522PacketsSet = true;
         return this;
     }
     @Override
@@ -805,6 +789,28 @@ class OFPortStatsPropExperimenterIntelVer14 implements OFPortStatsPropExperiment
     public OFPortStatsPropExperimenterIntel.Builder setRx128To255Packets(U64 rx128To255Packets) {
         this.rx128To255Packets = rx128To255Packets;
         this.rx128To255PacketsSet = true;
+        return this;
+    }
+    @Override
+    public U64 getRx1523ToMaxPackets() {
+        return rx1523ToMaxPackets;
+    }
+
+    @Override
+    public OFPortStatsPropExperimenterIntel.Builder setRx1523ToMaxPackets(U64 rx1523ToMaxPackets) {
+        this.rx1523ToMaxPackets = rx1523ToMaxPackets;
+        this.rx1523ToMaxPacketsSet = true;
+        return this;
+    }
+    @Override
+    public U64 getRx1To64Packets() {
+        return rx1To64Packets;
+    }
+
+    @Override
+    public OFPortStatsPropExperimenterIntel.Builder setRx1To64Packets(U64 rx1To64Packets) {
+        this.rx1To64Packets = rx1To64Packets;
+        this.rx1To64PacketsSet = true;
         return this;
     }
     @Override
@@ -830,47 +836,80 @@ class OFPortStatsPropExperimenterIntelVer14 implements OFPortStatsPropExperiment
         return this;
     }
     @Override
-    public U64 getRx1024To1522Packets() {
-        return rx1024To1522Packets;
+    public U64 getRx65To127Packets() {
+        return rx65To127Packets;
     }
 
     @Override
-    public OFPortStatsPropExperimenterIntel.Builder setRx1024To1522Packets(U64 rx1024To1522Packets) {
-        this.rx1024To1522Packets = rx1024To1522Packets;
-        this.rx1024To1522PacketsSet = true;
+    public OFPortStatsPropExperimenterIntel.Builder setRx65To127Packets(U64 rx65To127Packets) {
+        this.rx65To127Packets = rx65To127Packets;
+        this.rx65To127PacketsSet = true;
         return this;
     }
     @Override
-    public U64 getRx1523ToMaxPackets() {
-        return rx1523ToMaxPackets;
+    public U64 getRxBroadcastPackets() {
+        return rxBroadcastPackets;
     }
 
     @Override
-    public OFPortStatsPropExperimenterIntel.Builder setRx1523ToMaxPackets(U64 rx1523ToMaxPackets) {
-        this.rx1523ToMaxPackets = rx1523ToMaxPackets;
-        this.rx1523ToMaxPacketsSet = true;
+    public OFPortStatsPropExperimenterIntel.Builder setRxBroadcastPackets(U64 rxBroadcastPackets) {
+        this.rxBroadcastPackets = rxBroadcastPackets;
+        this.rxBroadcastPacketsSet = true;
         return this;
     }
     @Override
-    public U64 getTx1To64Packets() {
-        return tx1To64Packets;
+    public U64 getRxFragmentedErrors() {
+        return rxFragmentedErrors;
     }
 
     @Override
-    public OFPortStatsPropExperimenterIntel.Builder setTx1To64Packets(U64 tx1To64Packets) {
-        this.tx1To64Packets = tx1To64Packets;
-        this.tx1To64PacketsSet = true;
+    public OFPortStatsPropExperimenterIntel.Builder setRxFragmentedErrors(U64 rxFragmentedErrors) {
+        this.rxFragmentedErrors = rxFragmentedErrors;
+        this.rxFragmentedErrorsSet = true;
         return this;
     }
     @Override
-    public U64 getTx65To127Packets() {
-        return tx65To127Packets;
+    public U64 getRxJabberErrors() {
+        return rxJabberErrors;
     }
 
     @Override
-    public OFPortStatsPropExperimenterIntel.Builder setTx65To127Packets(U64 tx65To127Packets) {
-        this.tx65To127Packets = tx65To127Packets;
-        this.tx65To127PacketsSet = true;
+    public OFPortStatsPropExperimenterIntel.Builder setRxJabberErrors(U64 rxJabberErrors) {
+        this.rxJabberErrors = rxJabberErrors;
+        this.rxJabberErrorsSet = true;
+        return this;
+    }
+    @Override
+    public U64 getRxOversizeErrors() {
+        return rxOversizeErrors;
+    }
+
+    @Override
+    public OFPortStatsPropExperimenterIntel.Builder setRxOversizeErrors(U64 rxOversizeErrors) {
+        this.rxOversizeErrors = rxOversizeErrors;
+        this.rxOversizeErrorsSet = true;
+        return this;
+    }
+    @Override
+    public U64 getRxUndersizedErrors() {
+        return rxUndersizedErrors;
+    }
+
+    @Override
+    public OFPortStatsPropExperimenterIntel.Builder setRxUndersizedErrors(U64 rxUndersizedErrors) {
+        this.rxUndersizedErrors = rxUndersizedErrors;
+        this.rxUndersizedErrorsSet = true;
+        return this;
+    }
+    @Override
+    public U64 getTx1024To1522Packets() {
+        return tx1024To1522Packets;
+    }
+
+    @Override
+    public OFPortStatsPropExperimenterIntel.Builder setTx1024To1522Packets(U64 tx1024To1522Packets) {
+        this.tx1024To1522Packets = tx1024To1522Packets;
+        this.tx1024To1522PacketsSet = true;
         return this;
     }
     @Override
@@ -882,6 +921,28 @@ class OFPortStatsPropExperimenterIntelVer14 implements OFPortStatsPropExperiment
     public OFPortStatsPropExperimenterIntel.Builder setTx128To255Packets(U64 tx128To255Packets) {
         this.tx128To255Packets = tx128To255Packets;
         this.tx128To255PacketsSet = true;
+        return this;
+    }
+    @Override
+    public U64 getTx1523ToMaxPackets() {
+        return tx1523ToMaxPackets;
+    }
+
+    @Override
+    public OFPortStatsPropExperimenterIntel.Builder setTx1523ToMaxPackets(U64 tx1523ToMaxPackets) {
+        this.tx1523ToMaxPackets = tx1523ToMaxPackets;
+        this.tx1523ToMaxPacketsSet = true;
+        return this;
+    }
+    @Override
+    public U64 getTx1To64Packets() {
+        return tx1To64Packets;
+    }
+
+    @Override
+    public OFPortStatsPropExperimenterIntel.Builder setTx1To64Packets(U64 tx1To64Packets) {
+        this.tx1To64Packets = tx1To64Packets;
+        this.tx1To64PacketsSet = true;
         return this;
     }
     @Override
@@ -907,47 +968,14 @@ class OFPortStatsPropExperimenterIntelVer14 implements OFPortStatsPropExperiment
         return this;
     }
     @Override
-    public U64 getTx1024To1522Packets() {
-        return tx1024To1522Packets;
+    public U64 getTx65To127Packets() {
+        return tx65To127Packets;
     }
 
     @Override
-    public OFPortStatsPropExperimenterIntel.Builder setTx1024To1522Packets(U64 tx1024To1522Packets) {
-        this.tx1024To1522Packets = tx1024To1522Packets;
-        this.tx1024To1522PacketsSet = true;
-        return this;
-    }
-    @Override
-    public U64 getTx1523ToMaxPackets() {
-        return tx1523ToMaxPackets;
-    }
-
-    @Override
-    public OFPortStatsPropExperimenterIntel.Builder setTx1523ToMaxPackets(U64 tx1523ToMaxPackets) {
-        this.tx1523ToMaxPackets = tx1523ToMaxPackets;
-        this.tx1523ToMaxPacketsSet = true;
-        return this;
-    }
-    @Override
-    public U64 getTxMulticastPackets() {
-        return txMulticastPackets;
-    }
-
-    @Override
-    public OFPortStatsPropExperimenterIntel.Builder setTxMulticastPackets(U64 txMulticastPackets) {
-        this.txMulticastPackets = txMulticastPackets;
-        this.txMulticastPacketsSet = true;
-        return this;
-    }
-    @Override
-    public U64 getRxBroadcastPackets() {
-        return rxBroadcastPackets;
-    }
-
-    @Override
-    public OFPortStatsPropExperimenterIntel.Builder setRxBroadcastPackets(U64 rxBroadcastPackets) {
-        this.rxBroadcastPackets = rxBroadcastPackets;
-        this.rxBroadcastPacketsSet = true;
+    public OFPortStatsPropExperimenterIntel.Builder setTx65To127Packets(U64 tx65To127Packets) {
+        this.tx65To127Packets = tx65To127Packets;
+        this.tx65To127PacketsSet = true;
         return this;
     }
     @Override
@@ -962,49 +990,21 @@ class OFPortStatsPropExperimenterIntelVer14 implements OFPortStatsPropExperiment
         return this;
     }
     @Override
-    public U64 getRxUndersizedErrors() {
-        return rxUndersizedErrors;
+    public U64 getTxMulticastPackets() {
+        return txMulticastPackets;
     }
 
     @Override
-    public OFPortStatsPropExperimenterIntel.Builder setRxUndersizedErrors(U64 rxUndersizedErrors) {
-        this.rxUndersizedErrors = rxUndersizedErrors;
-        this.rxUndersizedErrorsSet = true;
+    public OFPortStatsPropExperimenterIntel.Builder setTxMulticastPackets(U64 txMulticastPackets) {
+        this.txMulticastPackets = txMulticastPackets;
+        this.txMulticastPacketsSet = true;
         return this;
     }
     @Override
-    public U64 getRxOversizeErrors() {
-        return rxOversizeErrors;
+    public int getType() {
+        return 0xffff;
     }
 
-    @Override
-    public OFPortStatsPropExperimenterIntel.Builder setRxOversizeErrors(U64 rxOversizeErrors) {
-        this.rxOversizeErrors = rxOversizeErrors;
-        this.rxOversizeErrorsSet = true;
-        return this;
-    }
-    @Override
-    public U64 getRxFragmentedErrors() {
-        return rxFragmentedErrors;
-    }
-
-    @Override
-    public OFPortStatsPropExperimenterIntel.Builder setRxFragmentedErrors(U64 rxFragmentedErrors) {
-        this.rxFragmentedErrors = rxFragmentedErrors;
-        this.rxFragmentedErrorsSet = true;
-        return this;
-    }
-    @Override
-    public U64 getRxJabberErrors() {
-        return rxJabberErrors;
-    }
-
-    @Override
-    public OFPortStatsPropExperimenterIntel.Builder setRxJabberErrors(U64 rxJabberErrors) {
-        this.rxJabberErrors = rxJabberErrors;
-        this.rxJabberErrorsSet = true;
-        return this;
-    }
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_14;

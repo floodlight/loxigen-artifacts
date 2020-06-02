@@ -59,15 +59,24 @@ abstract class OFStatsRequestVer12 {
                case (short) 0x2:
                    // discriminator value OFStatsType.AGGREGATE=2 for class OFAggregateStatsRequestVer12
                    return OFAggregateStatsRequestVer12.READER.readFrom(bb);
-               case (short) 0xffff:
-                   // discriminator value OFStatsType.EXPERIMENTER=65535 for class OFExperimenterStatsRequestVer12
-                   return OFExperimenterStatsRequestVer12.READER.readFrom(bb);
                case (short) 0x0:
                    // discriminator value OFStatsType.DESC=0 for class OFDescStatsRequestVer12
                    return OFDescStatsRequestVer12.READER.readFrom(bb);
+               case (short) 0xffff:
+                   // discriminator value OFStatsType.EXPERIMENTER=65535 for class OFExperimenterStatsRequestVer12
+                   return OFExperimenterStatsRequestVer12.READER.readFrom(bb);
                case (short) 0x1:
                    // discriminator value OFStatsType.FLOW=1 for class OFFlowStatsRequestVer12
                    return OFFlowStatsRequestVer12.READER.readFrom(bb);
+               case (short) 0x7:
+                   // discriminator value OFStatsType.GROUP_DESC=7 for class OFGroupDescStatsRequestVer12
+                   return OFGroupDescStatsRequestVer12.READER.readFrom(bb);
+               case (short) 0x8:
+                   // discriminator value OFStatsType.GROUP_FEATURES=8 for class OFGroupFeaturesStatsRequestVer12
+                   return OFGroupFeaturesStatsRequestVer12.READER.readFrom(bb);
+               case (short) 0x6:
+                   // discriminator value OFStatsType.GROUP=6 for class OFGroupStatsRequestVer12
+                   return OFGroupStatsRequestVer12.READER.readFrom(bb);
                case (short) 0x4:
                    // discriminator value OFStatsType.PORT=4 for class OFPortStatsRequestVer12
                    return OFPortStatsRequestVer12.READER.readFrom(bb);
@@ -77,15 +86,6 @@ abstract class OFStatsRequestVer12 {
                case (short) 0x3:
                    // discriminator value OFStatsType.TABLE=3 for class OFTableStatsRequestVer12
                    return OFTableStatsRequestVer12.READER.readFrom(bb);
-               case (short) 0x7:
-                   // discriminator value OFStatsType.GROUP_DESC=7 for class OFGroupDescStatsRequestVer12
-                   return OFGroupDescStatsRequestVer12.READER.readFrom(bb);
-               case (short) 0x6:
-                   // discriminator value OFStatsType.GROUP=6 for class OFGroupStatsRequestVer12
-                   return OFGroupStatsRequestVer12.READER.readFrom(bb);
-               case (short) 0x8:
-                   // discriminator value OFStatsType.GROUP_FEATURES=8 for class OFGroupFeaturesStatsRequestVer12
-                   return OFGroupFeaturesStatsRequestVer12.READER.readFrom(bb);
                default:
                    throw new OFParseError("Unknown value for discriminator statsType of class OFStatsRequestVer12: " + statsType);
             }

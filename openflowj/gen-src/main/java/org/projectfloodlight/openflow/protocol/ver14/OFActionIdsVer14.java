@@ -70,6 +70,10 @@ public class OFActionIdsVer14 implements OFActionIds {
         return OFActionIdGroupVer14.INSTANCE;
     }
 
+    public OFActionIdMeter meter() {
+        throw new UnsupportedOperationException("OFActionIdMeter not supported in version 1.4");
+    }
+
     public OFActionIdNiciraDecTtl niciraDecTtl() {
         return OFActionIdNiciraDecTtlVer14.INSTANCE;
     }
@@ -116,10 +120,6 @@ public class OFActionIdsVer14 implements OFActionIds {
 
     public OFActionIdSetQueue setQueue() {
         return OFActionIdSetQueueVer14.INSTANCE;
-    }
-
-    public OFActionIdMeter meter() {
-        throw new UnsupportedOperationException("OFActionIdMeter not supported in version 1.4");
     }
 
     public OFMessageReader<OFActionId> getReader() {

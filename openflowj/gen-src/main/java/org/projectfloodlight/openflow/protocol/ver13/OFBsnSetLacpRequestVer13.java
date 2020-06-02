@@ -82,53 +82,8 @@ class OFBsnSetLacpRequestVer13 implements OFBsnSetLacpRequest {
 
     // Accessors for OF message fields
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_13;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.EXPERIMENTER;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public long getExperimenter() {
-        return 0x5c16c7L;
-    }
-
-    @Override
-    public long getSubtype() {
-        return 0x29L;
-    }
-
-    @Override
-    public short getEnabled() {
-        return enabled;
-    }
-
-    @Override
-    public OFPort getPortNo() {
-        return portNo;
-    }
-
-    @Override
-    public int getActorSysPriority() {
-        return actorSysPriority;
-    }
-
-    @Override
-    public MacAddress getActorSysMac() {
-        return actorSysMac;
-    }
-
-    @Override
-    public int getActorPortPriority() {
-        return actorPortPriority;
+    public int getActorKey() {
+        return actorKey;
     }
 
     @Override
@@ -137,8 +92,53 @@ class OFBsnSetLacpRequestVer13 implements OFBsnSetLacpRequest {
     }
 
     @Override
-    public int getActorKey() {
-        return actorKey;
+    public int getActorPortPriority() {
+        return actorPortPriority;
+    }
+
+    @Override
+    public MacAddress getActorSysMac() {
+        return actorSysMac;
+    }
+
+    @Override
+    public int getActorSysPriority() {
+        return actorSysPriority;
+    }
+
+    @Override
+    public short getEnabled() {
+        return enabled;
+    }
+
+    @Override
+    public long getExperimenter() {
+        return 0x5c16c7L;
+    }
+
+    @Override
+    public OFPort getPortNo() {
+        return portNo;
+    }
+
+    @Override
+    public long getSubtype() {
+        return 0x29L;
+    }
+
+    @Override
+    public OFType getType() {
+        return OFType.EXPERIMENTER;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_13;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
     }
 
 
@@ -173,89 +173,14 @@ class OFBsnSetLacpRequestVer13 implements OFBsnSetLacpRequest {
         }
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_13;
+    public int getActorKey() {
+        return actorKey;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.EXPERIMENTER;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFBsnSetLacpRequest.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
-        return this;
-    }
-    @Override
-    public long getExperimenter() {
-        return 0x5c16c7L;
-    }
-
-    @Override
-    public long getSubtype() {
-        return 0x29L;
-    }
-
-    @Override
-    public short getEnabled() {
-        return enabled;
-    }
-
-    @Override
-    public OFBsnSetLacpRequest.Builder setEnabled(short enabled) {
-        this.enabled = enabled;
-        this.enabledSet = true;
-        return this;
-    }
-    @Override
-    public OFPort getPortNo() {
-        return portNo;
-    }
-
-    @Override
-    public OFBsnSetLacpRequest.Builder setPortNo(OFPort portNo) {
-        this.portNo = portNo;
-        this.portNoSet = true;
-        return this;
-    }
-    @Override
-    public int getActorSysPriority() {
-        return actorSysPriority;
-    }
-
-    @Override
-    public OFBsnSetLacpRequest.Builder setActorSysPriority(int actorSysPriority) {
-        this.actorSysPriority = actorSysPriority;
-        this.actorSysPrioritySet = true;
-        return this;
-    }
-    @Override
-    public MacAddress getActorSysMac() {
-        return actorSysMac;
-    }
-
-    @Override
-    public OFBsnSetLacpRequest.Builder setActorSysMac(MacAddress actorSysMac) {
-        this.actorSysMac = actorSysMac;
-        this.actorSysMacSet = true;
-        return this;
-    }
-    @Override
-    public int getActorPortPriority() {
-        return actorPortPriority;
-    }
-
-    @Override
-    public OFBsnSetLacpRequest.Builder setActorPortPriority(int actorPortPriority) {
-        this.actorPortPriority = actorPortPriority;
-        this.actorPortPrioritySet = true;
+    public OFBsnSetLacpRequest.Builder setActorKey(int actorKey) {
+        this.actorKey = actorKey;
+        this.actorKeySet = true;
         return this;
     }
     @Override
@@ -270,14 +195,89 @@ class OFBsnSetLacpRequestVer13 implements OFBsnSetLacpRequest {
         return this;
     }
     @Override
-    public int getActorKey() {
-        return actorKey;
+    public int getActorPortPriority() {
+        return actorPortPriority;
     }
 
     @Override
-    public OFBsnSetLacpRequest.Builder setActorKey(int actorKey) {
-        this.actorKey = actorKey;
-        this.actorKeySet = true;
+    public OFBsnSetLacpRequest.Builder setActorPortPriority(int actorPortPriority) {
+        this.actorPortPriority = actorPortPriority;
+        this.actorPortPrioritySet = true;
+        return this;
+    }
+    @Override
+    public MacAddress getActorSysMac() {
+        return actorSysMac;
+    }
+
+    @Override
+    public OFBsnSetLacpRequest.Builder setActorSysMac(MacAddress actorSysMac) {
+        this.actorSysMac = actorSysMac;
+        this.actorSysMacSet = true;
+        return this;
+    }
+    @Override
+    public int getActorSysPriority() {
+        return actorSysPriority;
+    }
+
+    @Override
+    public OFBsnSetLacpRequest.Builder setActorSysPriority(int actorSysPriority) {
+        this.actorSysPriority = actorSysPriority;
+        this.actorSysPrioritySet = true;
+        return this;
+    }
+    @Override
+    public short getEnabled() {
+        return enabled;
+    }
+
+    @Override
+    public OFBsnSetLacpRequest.Builder setEnabled(short enabled) {
+        this.enabled = enabled;
+        this.enabledSet = true;
+        return this;
+    }
+    @Override
+    public long getExperimenter() {
+        return 0x5c16c7L;
+    }
+
+    @Override
+    public OFPort getPortNo() {
+        return portNo;
+    }
+
+    @Override
+    public OFBsnSetLacpRequest.Builder setPortNo(OFPort portNo) {
+        this.portNo = portNo;
+        this.portNoSet = true;
+        return this;
+    }
+    @Override
+    public long getSubtype() {
+        return 0x29L;
+    }
+
+    @Override
+    public OFType getType() {
+        return OFType.EXPERIMENTER;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_13;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFBsnSetLacpRequest.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 
@@ -332,89 +332,14 @@ class OFBsnSetLacpRequestVer13 implements OFBsnSetLacpRequest {
         private int actorKey;
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_13;
+    public int getActorKey() {
+        return actorKey;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.EXPERIMENTER;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFBsnSetLacpRequest.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
-        return this;
-    }
-    @Override
-    public long getExperimenter() {
-        return 0x5c16c7L;
-    }
-
-    @Override
-    public long getSubtype() {
-        return 0x29L;
-    }
-
-    @Override
-    public short getEnabled() {
-        return enabled;
-    }
-
-    @Override
-    public OFBsnSetLacpRequest.Builder setEnabled(short enabled) {
-        this.enabled = enabled;
-        this.enabledSet = true;
-        return this;
-    }
-    @Override
-    public OFPort getPortNo() {
-        return portNo;
-    }
-
-    @Override
-    public OFBsnSetLacpRequest.Builder setPortNo(OFPort portNo) {
-        this.portNo = portNo;
-        this.portNoSet = true;
-        return this;
-    }
-    @Override
-    public int getActorSysPriority() {
-        return actorSysPriority;
-    }
-
-    @Override
-    public OFBsnSetLacpRequest.Builder setActorSysPriority(int actorSysPriority) {
-        this.actorSysPriority = actorSysPriority;
-        this.actorSysPrioritySet = true;
-        return this;
-    }
-    @Override
-    public MacAddress getActorSysMac() {
-        return actorSysMac;
-    }
-
-    @Override
-    public OFBsnSetLacpRequest.Builder setActorSysMac(MacAddress actorSysMac) {
-        this.actorSysMac = actorSysMac;
-        this.actorSysMacSet = true;
-        return this;
-    }
-    @Override
-    public int getActorPortPriority() {
-        return actorPortPriority;
-    }
-
-    @Override
-    public OFBsnSetLacpRequest.Builder setActorPortPriority(int actorPortPriority) {
-        this.actorPortPriority = actorPortPriority;
-        this.actorPortPrioritySet = true;
+    public OFBsnSetLacpRequest.Builder setActorKey(int actorKey) {
+        this.actorKey = actorKey;
+        this.actorKeySet = true;
         return this;
     }
     @Override
@@ -429,14 +354,89 @@ class OFBsnSetLacpRequestVer13 implements OFBsnSetLacpRequest {
         return this;
     }
     @Override
-    public int getActorKey() {
-        return actorKey;
+    public int getActorPortPriority() {
+        return actorPortPriority;
     }
 
     @Override
-    public OFBsnSetLacpRequest.Builder setActorKey(int actorKey) {
-        this.actorKey = actorKey;
-        this.actorKeySet = true;
+    public OFBsnSetLacpRequest.Builder setActorPortPriority(int actorPortPriority) {
+        this.actorPortPriority = actorPortPriority;
+        this.actorPortPrioritySet = true;
+        return this;
+    }
+    @Override
+    public MacAddress getActorSysMac() {
+        return actorSysMac;
+    }
+
+    @Override
+    public OFBsnSetLacpRequest.Builder setActorSysMac(MacAddress actorSysMac) {
+        this.actorSysMac = actorSysMac;
+        this.actorSysMacSet = true;
+        return this;
+    }
+    @Override
+    public int getActorSysPriority() {
+        return actorSysPriority;
+    }
+
+    @Override
+    public OFBsnSetLacpRequest.Builder setActorSysPriority(int actorSysPriority) {
+        this.actorSysPriority = actorSysPriority;
+        this.actorSysPrioritySet = true;
+        return this;
+    }
+    @Override
+    public short getEnabled() {
+        return enabled;
+    }
+
+    @Override
+    public OFBsnSetLacpRequest.Builder setEnabled(short enabled) {
+        this.enabled = enabled;
+        this.enabledSet = true;
+        return this;
+    }
+    @Override
+    public long getExperimenter() {
+        return 0x5c16c7L;
+    }
+
+    @Override
+    public OFPort getPortNo() {
+        return portNo;
+    }
+
+    @Override
+    public OFBsnSetLacpRequest.Builder setPortNo(OFPort portNo) {
+        this.portNo = portNo;
+        this.portNoSet = true;
+        return this;
+    }
+    @Override
+    public long getSubtype() {
+        return 0x29L;
+    }
+
+    @Override
+    public OFType getType() {
+        return OFType.EXPERIMENTER;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_13;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFBsnSetLacpRequest.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 //

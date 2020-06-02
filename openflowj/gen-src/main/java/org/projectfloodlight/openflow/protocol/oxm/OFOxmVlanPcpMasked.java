@@ -28,12 +28,12 @@ import org.projectfloodlight.openflow.exceptions.*;
 import io.netty.buffer.ByteBuf;
 
 public interface OFOxmVlanPcpMasked extends OFObject, OFOxm<VlanPcp> {
+    VlanPcp getMask();
     long getTypeLen();
     VlanPcp getValue();
-    VlanPcp getMask();
-    MatchField<VlanPcp> getMatchField();
-    boolean isMasked();
     OFOxm<VlanPcp> getCanonical();
+    boolean isMasked();
+    MatchField<VlanPcp> getMatchField();
     OFVersion getVersion();
 
     void writeTo(ByteBuf channelBuffer);
@@ -41,14 +41,14 @@ public interface OFOxmVlanPcpMasked extends OFObject, OFOxm<VlanPcp> {
     Builder createBuilder();
     public interface Builder extends OFOxm.Builder<VlanPcp> {
         OFOxmVlanPcpMasked build();
+        VlanPcp getMask();
+        Builder setMask(VlanPcp mask);
         long getTypeLen();
         VlanPcp getValue();
         Builder setValue(VlanPcp value);
-        VlanPcp getMask();
-        Builder setMask(VlanPcp mask);
-        MatchField<VlanPcp> getMatchField();
-        boolean isMasked();
         OFOxm<VlanPcp> getCanonical();
+        boolean isMasked();
+        MatchField<VlanPcp> getMatchField();
         OFVersion getVersion();
     }
 }

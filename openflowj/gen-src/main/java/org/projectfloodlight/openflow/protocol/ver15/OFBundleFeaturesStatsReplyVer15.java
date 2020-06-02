@@ -78,23 +78,8 @@ class OFBundleFeaturesStatsReplyVer15 implements OFBundleFeaturesStatsReply {
 
     // Accessors for OF message fields
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_15;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.STATS_REPLY;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFStatsType getStatsType() {
-        return OFStatsType.BUNDLE_FEATURES;
+    public Set<OFBundleFeatureFlags> getCapabilities() {
+        return capabilities;
     }
 
     @Override
@@ -103,13 +88,28 @@ class OFBundleFeaturesStatsReplyVer15 implements OFBundleFeaturesStatsReply {
     }
 
     @Override
-    public Set<OFBundleFeatureFlags> getCapabilities() {
-        return capabilities;
+    public List<OFBundleFeaturesProp> getProperties() {
+        return properties;
     }
 
     @Override
-    public List<OFBundleFeaturesProp> getProperties() {
-        return properties;
+    public OFStatsType getStatsType() {
+        return OFStatsType.BUNDLE_FEATURES;
+    }
+
+    @Override
+    public OFType getType() {
+        return OFType.STATS_REPLY;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_15;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
     }
 
 
@@ -136,31 +136,16 @@ class OFBundleFeaturesStatsReplyVer15 implements OFBundleFeaturesStatsReply {
         }
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_15;
+    public Set<OFBundleFeatureFlags> getCapabilities() {
+        return capabilities;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.STATS_REPLY;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFBundleFeaturesStatsReply.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
+    public OFBundleFeaturesStatsReply.Builder setCapabilities(Set<OFBundleFeatureFlags> capabilities) {
+        this.capabilities = capabilities;
+        this.capabilitiesSet = true;
         return this;
     }
-    @Override
-    public OFStatsType getStatsType() {
-        return OFStatsType.BUNDLE_FEATURES;
-    }
-
     @Override
     public Set<OFStatsReplyFlags> getFlags() {
         return flags;
@@ -173,17 +158,6 @@ class OFBundleFeaturesStatsReplyVer15 implements OFBundleFeaturesStatsReply {
         return this;
     }
     @Override
-    public Set<OFBundleFeatureFlags> getCapabilities() {
-        return capabilities;
-    }
-
-    @Override
-    public OFBundleFeaturesStatsReply.Builder setCapabilities(Set<OFBundleFeatureFlags> capabilities) {
-        this.capabilities = capabilities;
-        this.capabilitiesSet = true;
-        return this;
-    }
-    @Override
     public List<OFBundleFeaturesProp> getProperties() {
         return properties;
     }
@@ -192,6 +166,32 @@ class OFBundleFeaturesStatsReplyVer15 implements OFBundleFeaturesStatsReply {
     public OFBundleFeaturesStatsReply.Builder setProperties(List<OFBundleFeaturesProp> properties) {
         this.properties = properties;
         this.propertiesSet = true;
+        return this;
+    }
+    @Override
+    public OFStatsType getStatsType() {
+        return OFStatsType.BUNDLE_FEATURES;
+    }
+
+    @Override
+    public OFType getType() {
+        return OFType.STATS_REPLY;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_15;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFBundleFeaturesStatsReply.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 
@@ -232,31 +232,16 @@ class OFBundleFeaturesStatsReplyVer15 implements OFBundleFeaturesStatsReply {
         private List<OFBundleFeaturesProp> properties;
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_15;
+    public Set<OFBundleFeatureFlags> getCapabilities() {
+        return capabilities;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.STATS_REPLY;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFBundleFeaturesStatsReply.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
+    public OFBundleFeaturesStatsReply.Builder setCapabilities(Set<OFBundleFeatureFlags> capabilities) {
+        this.capabilities = capabilities;
+        this.capabilitiesSet = true;
         return this;
     }
-    @Override
-    public OFStatsType getStatsType() {
-        return OFStatsType.BUNDLE_FEATURES;
-    }
-
     @Override
     public Set<OFStatsReplyFlags> getFlags() {
         return flags;
@@ -269,17 +254,6 @@ class OFBundleFeaturesStatsReplyVer15 implements OFBundleFeaturesStatsReply {
         return this;
     }
     @Override
-    public Set<OFBundleFeatureFlags> getCapabilities() {
-        return capabilities;
-    }
-
-    @Override
-    public OFBundleFeaturesStatsReply.Builder setCapabilities(Set<OFBundleFeatureFlags> capabilities) {
-        this.capabilities = capabilities;
-        this.capabilitiesSet = true;
-        return this;
-    }
-    @Override
     public List<OFBundleFeaturesProp> getProperties() {
         return properties;
     }
@@ -288,6 +262,32 @@ class OFBundleFeaturesStatsReplyVer15 implements OFBundleFeaturesStatsReply {
     public OFBundleFeaturesStatsReply.Builder setProperties(List<OFBundleFeaturesProp> properties) {
         this.properties = properties;
         this.propertiesSet = true;
+        return this;
+    }
+    @Override
+    public OFStatsType getStatsType() {
+        return OFStatsType.BUNDLE_FEATURES;
+    }
+
+    @Override
+    public OFType getType() {
+        return OFType.STATS_REPLY;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_15;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFBundleFeaturesStatsReply.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 //

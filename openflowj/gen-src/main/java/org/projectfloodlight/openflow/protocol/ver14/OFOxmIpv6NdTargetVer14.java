@@ -67,16 +67,6 @@ class OFOxmIpv6NdTargetVer14 implements OFOxmIpv6NdTarget {
         return value;
     }
 
-    @Override
-    public MatchField<IPv6Address> getMatchField() {
-        return MatchField.IPV6_ND_TARGET;
-    }
-
-    @Override
-    public boolean isMasked() {
-        return false;
-    }
-
     public OFOxm<IPv6Address> getCanonical() {
         // exact match OXM is always canonical
         return this;
@@ -85,6 +75,16 @@ class OFOxmIpv6NdTargetVer14 implements OFOxmIpv6NdTarget {
     @Override
     public IPv6Address getMask()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property mask not supported in version 1.4");
+    }
+
+    @Override
+    public boolean isMasked() {
+        return false;
+    }
+
+    @Override
+    public MatchField<IPv6Address> getMatchField() {
+        return MatchField.IPV6_ND_TARGET;
     }
 
     @Override
@@ -126,8 +126,13 @@ class OFOxmIpv6NdTargetVer14 implements OFOxmIpv6NdTarget {
         return this;
     }
     @Override
-    public MatchField<IPv6Address> getMatchField() {
-        return MatchField.IPV6_ND_TARGET;
+    public OFOxm<IPv6Address> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.4");
+    }
+
+    @Override
+    public IPv6Address getMask()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property mask not supported in version 1.4");
     }
 
     @Override
@@ -136,13 +141,8 @@ class OFOxmIpv6NdTargetVer14 implements OFOxmIpv6NdTarget {
     }
 
     @Override
-    public OFOxm<IPv6Address> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.4");
-    }
-
-    @Override
-    public IPv6Address getMask()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property mask not supported in version 1.4");
+    public MatchField<IPv6Address> getMatchField() {
+        return MatchField.IPV6_ND_TARGET;
     }
 
     @Override
@@ -188,8 +188,13 @@ class OFOxmIpv6NdTargetVer14 implements OFOxmIpv6NdTarget {
         return this;
     }
     @Override
-    public MatchField<IPv6Address> getMatchField() {
-        return MatchField.IPV6_ND_TARGET;
+    public OFOxm<IPv6Address> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.4");
+    }
+
+    @Override
+    public IPv6Address getMask()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property mask not supported in version 1.4");
     }
 
     @Override
@@ -198,13 +203,8 @@ class OFOxmIpv6NdTargetVer14 implements OFOxmIpv6NdTarget {
     }
 
     @Override
-    public OFOxm<IPv6Address> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.4");
-    }
-
-    @Override
-    public IPv6Address getMask()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property mask not supported in version 1.4");
+    public MatchField<IPv6Address> getMatchField() {
+        return MatchField.IPV6_ND_TARGET;
     }
 
     @Override

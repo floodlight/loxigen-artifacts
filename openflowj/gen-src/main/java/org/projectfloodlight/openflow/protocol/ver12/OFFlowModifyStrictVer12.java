@@ -123,86 +123,6 @@ class OFFlowModifyStrictVer12 implements OFFlowModifyStrict {
     }
 
     // Accessors for OF message fields
-    @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_12;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.FLOW_MOD;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public U64 getCookie() {
-        return cookie;
-    }
-
-    @Override
-    public U64 getCookieMask() {
-        return cookieMask;
-    }
-
-    @Override
-    public TableId getTableId() {
-        return tableId;
-    }
-
-    @Override
-    public OFFlowModCommand getCommand() {
-        return OFFlowModCommand.MODIFY_STRICT;
-    }
-
-    @Override
-    public int getIdleTimeout() {
-        return idleTimeout;
-    }
-
-    @Override
-    public int getHardTimeout() {
-        return hardTimeout;
-    }
-
-    @Override
-    public int getPriority() {
-        return priority;
-    }
-
-    @Override
-    public OFBufferId getBufferId() {
-        return bufferId;
-    }
-
-    @Override
-    public OFPort getOutPort() {
-        return outPort;
-    }
-
-    @Override
-    public OFGroup getOutGroup() {
-        return outGroup;
-    }
-
-    @Override
-    public Set<OFFlowModFlags> getFlags() {
-        return flags;
-    }
-
-    @Override
-    public Match getMatch() {
-        return match;
-    }
-
-    @Override
-    public List<OFInstruction> getInstructions() {
-        return instructions;
-    }
-
 
     @Override
     public List<OFAction> getActions()throws UnsupportedOperationException {
@@ -216,8 +136,88 @@ class OFFlowModifyStrictVer12 implements OFFlowModifyStrict {
     }
 
     @Override
+    public OFBufferId getBufferId() {
+        return bufferId;
+    }
+
+    @Override
+    public OFFlowModCommand getCommand() {
+        return OFFlowModCommand.MODIFY_STRICT;
+    }
+
+    @Override
+    public U64 getCookie() {
+        return cookie;
+    }
+
+    @Override
+    public U64 getCookieMask() {
+        return cookieMask;
+    }
+
+    @Override
+    public Set<OFFlowModFlags> getFlags() {
+        return flags;
+    }
+
+    @Override
+    public int getHardTimeout() {
+        return hardTimeout;
+    }
+
+    @Override
+    public int getIdleTimeout() {
+        return idleTimeout;
+    }
+
+    @Override
     public int getImportance()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property importance not supported in version 1.2");
+    }
+
+    @Override
+    public List<OFInstruction> getInstructions() {
+        return instructions;
+    }
+
+    @Override
+    public Match getMatch() {
+        return match;
+    }
+
+    @Override
+    public OFGroup getOutGroup() {
+        return outGroup;
+    }
+
+    @Override
+    public OFPort getOutPort() {
+        return outPort;
+    }
+
+    @Override
+    public int getPriority() {
+        return priority;
+    }
+
+    @Override
+    public TableId getTableId() {
+        return tableId;
+    }
+
+    @Override
+    public OFType getType() {
+        return OFType.FLOW_MOD;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_12;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
     }
 
 
@@ -261,164 +261,6 @@ class OFFlowModifyStrictVer12 implements OFFlowModifyStrict {
             this.parentMessage = parentMessage;
         }
 
-    @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_12;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.FLOW_MOD;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFFlowModifyStrict.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
-        return this;
-    }
-    @Override
-    public U64 getCookie() {
-        return cookie;
-    }
-
-    @Override
-    public OFFlowModifyStrict.Builder setCookie(U64 cookie) {
-        this.cookie = cookie;
-        this.cookieSet = true;
-        return this;
-    }
-    @Override
-    public U64 getCookieMask() {
-        return cookieMask;
-    }
-
-    @Override
-    public OFFlowModifyStrict.Builder setCookieMask(U64 cookieMask) {
-        this.cookieMask = cookieMask;
-        this.cookieMaskSet = true;
-        return this;
-    }
-    @Override
-    public TableId getTableId() {
-        return tableId;
-    }
-
-    @Override
-    public OFFlowModifyStrict.Builder setTableId(TableId tableId) {
-        this.tableId = tableId;
-        this.tableIdSet = true;
-        return this;
-    }
-    @Override
-    public OFFlowModCommand getCommand() {
-        return OFFlowModCommand.MODIFY_STRICT;
-    }
-
-    @Override
-    public int getIdleTimeout() {
-        return idleTimeout;
-    }
-
-    @Override
-    public OFFlowModifyStrict.Builder setIdleTimeout(int idleTimeout) {
-        this.idleTimeout = idleTimeout;
-        this.idleTimeoutSet = true;
-        return this;
-    }
-    @Override
-    public int getHardTimeout() {
-        return hardTimeout;
-    }
-
-    @Override
-    public OFFlowModifyStrict.Builder setHardTimeout(int hardTimeout) {
-        this.hardTimeout = hardTimeout;
-        this.hardTimeoutSet = true;
-        return this;
-    }
-    @Override
-    public int getPriority() {
-        return priority;
-    }
-
-    @Override
-    public OFFlowModifyStrict.Builder setPriority(int priority) {
-        this.priority = priority;
-        this.prioritySet = true;
-        return this;
-    }
-    @Override
-    public OFBufferId getBufferId() {
-        return bufferId;
-    }
-
-    @Override
-    public OFFlowModifyStrict.Builder setBufferId(OFBufferId bufferId) {
-        this.bufferId = bufferId;
-        this.bufferIdSet = true;
-        return this;
-    }
-    @Override
-    public OFPort getOutPort() {
-        return outPort;
-    }
-
-    @Override
-    public OFFlowModifyStrict.Builder setOutPort(OFPort outPort) {
-        this.outPort = outPort;
-        this.outPortSet = true;
-        return this;
-    }
-    @Override
-    public OFGroup getOutGroup() {
-        return outGroup;
-    }
-
-    @Override
-    public OFFlowModifyStrict.Builder setOutGroup(OFGroup outGroup) {
-        this.outGroup = outGroup;
-        this.outGroupSet = true;
-        return this;
-    }
-    @Override
-    public Set<OFFlowModFlags> getFlags() {
-        return flags;
-    }
-
-    @Override
-    public OFFlowModifyStrict.Builder setFlags(Set<OFFlowModFlags> flags) {
-        this.flags = flags;
-        this.flagsSet = true;
-        return this;
-    }
-    @Override
-    public Match getMatch() {
-        return match;
-    }
-
-    @Override
-    public OFFlowModifyStrict.Builder setMatch(Match match) {
-        this.match = match;
-        this.matchSet = true;
-        return this;
-    }
-    @Override
-    public List<OFInstruction> getInstructions() {
-        return instructions;
-    }
-
-    @Override
-    public OFFlowModifyStrict.Builder setInstructions(List<OFInstruction> instructions) {
-        this.instructions = instructions;
-        this.instructionsSet = true;
-        return this;
-    }
 
     @Override
     public List<OFAction> getActions()throws UnsupportedOperationException {
@@ -444,6 +286,77 @@ class OFFlowModifyStrictVer12 implements OFFlowModifyStrict {
     }
 
     @Override
+    public OFBufferId getBufferId() {
+        return bufferId;
+    }
+
+    @Override
+    public OFFlowModifyStrict.Builder setBufferId(OFBufferId bufferId) {
+        this.bufferId = bufferId;
+        this.bufferIdSet = true;
+        return this;
+    }
+    @Override
+    public OFFlowModCommand getCommand() {
+        return OFFlowModCommand.MODIFY_STRICT;
+    }
+
+    @Override
+    public U64 getCookie() {
+        return cookie;
+    }
+
+    @Override
+    public OFFlowModifyStrict.Builder setCookie(U64 cookie) {
+        this.cookie = cookie;
+        this.cookieSet = true;
+        return this;
+    }
+    @Override
+    public U64 getCookieMask() {
+        return cookieMask;
+    }
+
+    @Override
+    public OFFlowModifyStrict.Builder setCookieMask(U64 cookieMask) {
+        this.cookieMask = cookieMask;
+        this.cookieMaskSet = true;
+        return this;
+    }
+    @Override
+    public Set<OFFlowModFlags> getFlags() {
+        return flags;
+    }
+
+    @Override
+    public OFFlowModifyStrict.Builder setFlags(Set<OFFlowModFlags> flags) {
+        this.flags = flags;
+        this.flagsSet = true;
+        return this;
+    }
+    @Override
+    public int getHardTimeout() {
+        return hardTimeout;
+    }
+
+    @Override
+    public OFFlowModifyStrict.Builder setHardTimeout(int hardTimeout) {
+        this.hardTimeout = hardTimeout;
+        this.hardTimeoutSet = true;
+        return this;
+    }
+    @Override
+    public int getIdleTimeout() {
+        return idleTimeout;
+    }
+
+    @Override
+    public OFFlowModifyStrict.Builder setIdleTimeout(int idleTimeout) {
+        this.idleTimeout = idleTimeout;
+        this.idleTimeoutSet = true;
+        return this;
+    }
+    @Override
     public int getImportance()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property importance not supported in version 1.2");
     }
@@ -451,6 +364,93 @@ class OFFlowModifyStrictVer12 implements OFFlowModifyStrict {
     @Override
     public OFFlowModifyStrict.Builder setImportance(int importance) throws UnsupportedOperationException {
             throw new UnsupportedOperationException("Property importance not supported in version 1.2");
+    }
+    @Override
+    public List<OFInstruction> getInstructions() {
+        return instructions;
+    }
+
+    @Override
+    public OFFlowModifyStrict.Builder setInstructions(List<OFInstruction> instructions) {
+        this.instructions = instructions;
+        this.instructionsSet = true;
+        return this;
+    }
+    @Override
+    public Match getMatch() {
+        return match;
+    }
+
+    @Override
+    public OFFlowModifyStrict.Builder setMatch(Match match) {
+        this.match = match;
+        this.matchSet = true;
+        return this;
+    }
+    @Override
+    public OFGroup getOutGroup() {
+        return outGroup;
+    }
+
+    @Override
+    public OFFlowModifyStrict.Builder setOutGroup(OFGroup outGroup) {
+        this.outGroup = outGroup;
+        this.outGroupSet = true;
+        return this;
+    }
+    @Override
+    public OFPort getOutPort() {
+        return outPort;
+    }
+
+    @Override
+    public OFFlowModifyStrict.Builder setOutPort(OFPort outPort) {
+        this.outPort = outPort;
+        this.outPortSet = true;
+        return this;
+    }
+    @Override
+    public int getPriority() {
+        return priority;
+    }
+
+    @Override
+    public OFFlowModifyStrict.Builder setPriority(int priority) {
+        this.priority = priority;
+        this.prioritySet = true;
+        return this;
+    }
+    @Override
+    public TableId getTableId() {
+        return tableId;
+    }
+
+    @Override
+    public OFFlowModifyStrict.Builder setTableId(TableId tableId) {
+        this.tableId = tableId;
+        this.tableIdSet = true;
+        return this;
+    }
+    @Override
+    public OFType getType() {
+        return OFType.FLOW_MOD;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_12;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFFlowModifyStrict.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
+        return this;
     }
 
 
@@ -537,164 +537,6 @@ class OFFlowModifyStrictVer12 implements OFFlowModifyStrict {
         private boolean instructionsSet;
         private List<OFInstruction> instructions;
 
-    @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_12;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.FLOW_MOD;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFFlowModifyStrict.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
-        return this;
-    }
-    @Override
-    public U64 getCookie() {
-        return cookie;
-    }
-
-    @Override
-    public OFFlowModifyStrict.Builder setCookie(U64 cookie) {
-        this.cookie = cookie;
-        this.cookieSet = true;
-        return this;
-    }
-    @Override
-    public U64 getCookieMask() {
-        return cookieMask;
-    }
-
-    @Override
-    public OFFlowModifyStrict.Builder setCookieMask(U64 cookieMask) {
-        this.cookieMask = cookieMask;
-        this.cookieMaskSet = true;
-        return this;
-    }
-    @Override
-    public TableId getTableId() {
-        return tableId;
-    }
-
-    @Override
-    public OFFlowModifyStrict.Builder setTableId(TableId tableId) {
-        this.tableId = tableId;
-        this.tableIdSet = true;
-        return this;
-    }
-    @Override
-    public OFFlowModCommand getCommand() {
-        return OFFlowModCommand.MODIFY_STRICT;
-    }
-
-    @Override
-    public int getIdleTimeout() {
-        return idleTimeout;
-    }
-
-    @Override
-    public OFFlowModifyStrict.Builder setIdleTimeout(int idleTimeout) {
-        this.idleTimeout = idleTimeout;
-        this.idleTimeoutSet = true;
-        return this;
-    }
-    @Override
-    public int getHardTimeout() {
-        return hardTimeout;
-    }
-
-    @Override
-    public OFFlowModifyStrict.Builder setHardTimeout(int hardTimeout) {
-        this.hardTimeout = hardTimeout;
-        this.hardTimeoutSet = true;
-        return this;
-    }
-    @Override
-    public int getPriority() {
-        return priority;
-    }
-
-    @Override
-    public OFFlowModifyStrict.Builder setPriority(int priority) {
-        this.priority = priority;
-        this.prioritySet = true;
-        return this;
-    }
-    @Override
-    public OFBufferId getBufferId() {
-        return bufferId;
-    }
-
-    @Override
-    public OFFlowModifyStrict.Builder setBufferId(OFBufferId bufferId) {
-        this.bufferId = bufferId;
-        this.bufferIdSet = true;
-        return this;
-    }
-    @Override
-    public OFPort getOutPort() {
-        return outPort;
-    }
-
-    @Override
-    public OFFlowModifyStrict.Builder setOutPort(OFPort outPort) {
-        this.outPort = outPort;
-        this.outPortSet = true;
-        return this;
-    }
-    @Override
-    public OFGroup getOutGroup() {
-        return outGroup;
-    }
-
-    @Override
-    public OFFlowModifyStrict.Builder setOutGroup(OFGroup outGroup) {
-        this.outGroup = outGroup;
-        this.outGroupSet = true;
-        return this;
-    }
-    @Override
-    public Set<OFFlowModFlags> getFlags() {
-        return flags;
-    }
-
-    @Override
-    public OFFlowModifyStrict.Builder setFlags(Set<OFFlowModFlags> flags) {
-        this.flags = flags;
-        this.flagsSet = true;
-        return this;
-    }
-    @Override
-    public Match getMatch() {
-        return match;
-    }
-
-    @Override
-    public OFFlowModifyStrict.Builder setMatch(Match match) {
-        this.match = match;
-        this.matchSet = true;
-        return this;
-    }
-    @Override
-    public List<OFInstruction> getInstructions() {
-        return instructions;
-    }
-
-    @Override
-    public OFFlowModifyStrict.Builder setInstructions(List<OFInstruction> instructions) {
-        this.instructions = instructions;
-        this.instructionsSet = true;
-        return this;
-    }
 
     @Override
     public List<OFAction> getActions()throws UnsupportedOperationException {
@@ -720,6 +562,77 @@ class OFFlowModifyStrictVer12 implements OFFlowModifyStrict {
     }
 
     @Override
+    public OFBufferId getBufferId() {
+        return bufferId;
+    }
+
+    @Override
+    public OFFlowModifyStrict.Builder setBufferId(OFBufferId bufferId) {
+        this.bufferId = bufferId;
+        this.bufferIdSet = true;
+        return this;
+    }
+    @Override
+    public OFFlowModCommand getCommand() {
+        return OFFlowModCommand.MODIFY_STRICT;
+    }
+
+    @Override
+    public U64 getCookie() {
+        return cookie;
+    }
+
+    @Override
+    public OFFlowModifyStrict.Builder setCookie(U64 cookie) {
+        this.cookie = cookie;
+        this.cookieSet = true;
+        return this;
+    }
+    @Override
+    public U64 getCookieMask() {
+        return cookieMask;
+    }
+
+    @Override
+    public OFFlowModifyStrict.Builder setCookieMask(U64 cookieMask) {
+        this.cookieMask = cookieMask;
+        this.cookieMaskSet = true;
+        return this;
+    }
+    @Override
+    public Set<OFFlowModFlags> getFlags() {
+        return flags;
+    }
+
+    @Override
+    public OFFlowModifyStrict.Builder setFlags(Set<OFFlowModFlags> flags) {
+        this.flags = flags;
+        this.flagsSet = true;
+        return this;
+    }
+    @Override
+    public int getHardTimeout() {
+        return hardTimeout;
+    }
+
+    @Override
+    public OFFlowModifyStrict.Builder setHardTimeout(int hardTimeout) {
+        this.hardTimeout = hardTimeout;
+        this.hardTimeoutSet = true;
+        return this;
+    }
+    @Override
+    public int getIdleTimeout() {
+        return idleTimeout;
+    }
+
+    @Override
+    public OFFlowModifyStrict.Builder setIdleTimeout(int idleTimeout) {
+        this.idleTimeout = idleTimeout;
+        this.idleTimeoutSet = true;
+        return this;
+    }
+    @Override
     public int getImportance()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property importance not supported in version 1.2");
     }
@@ -727,6 +640,93 @@ class OFFlowModifyStrictVer12 implements OFFlowModifyStrict {
     @Override
     public OFFlowModifyStrict.Builder setImportance(int importance) throws UnsupportedOperationException {
             throw new UnsupportedOperationException("Property importance not supported in version 1.2");
+    }
+    @Override
+    public List<OFInstruction> getInstructions() {
+        return instructions;
+    }
+
+    @Override
+    public OFFlowModifyStrict.Builder setInstructions(List<OFInstruction> instructions) {
+        this.instructions = instructions;
+        this.instructionsSet = true;
+        return this;
+    }
+    @Override
+    public Match getMatch() {
+        return match;
+    }
+
+    @Override
+    public OFFlowModifyStrict.Builder setMatch(Match match) {
+        this.match = match;
+        this.matchSet = true;
+        return this;
+    }
+    @Override
+    public OFGroup getOutGroup() {
+        return outGroup;
+    }
+
+    @Override
+    public OFFlowModifyStrict.Builder setOutGroup(OFGroup outGroup) {
+        this.outGroup = outGroup;
+        this.outGroupSet = true;
+        return this;
+    }
+    @Override
+    public OFPort getOutPort() {
+        return outPort;
+    }
+
+    @Override
+    public OFFlowModifyStrict.Builder setOutPort(OFPort outPort) {
+        this.outPort = outPort;
+        this.outPortSet = true;
+        return this;
+    }
+    @Override
+    public int getPriority() {
+        return priority;
+    }
+
+    @Override
+    public OFFlowModifyStrict.Builder setPriority(int priority) {
+        this.priority = priority;
+        this.prioritySet = true;
+        return this;
+    }
+    @Override
+    public TableId getTableId() {
+        return tableId;
+    }
+
+    @Override
+    public OFFlowModifyStrict.Builder setTableId(TableId tableId) {
+        this.tableId = tableId;
+        this.tableIdSet = true;
+        return this;
+    }
+    @Override
+    public OFType getType() {
+        return OFType.FLOW_MOD;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_12;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFFlowModifyStrict.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
+        return this;
     }
 //
         @Override

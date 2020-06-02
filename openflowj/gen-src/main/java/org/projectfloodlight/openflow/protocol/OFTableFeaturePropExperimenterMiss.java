@@ -28,10 +28,10 @@ import org.projectfloodlight.openflow.exceptions.*;
 import io.netty.buffer.ByteBuf;
 
 public interface OFTableFeaturePropExperimenterMiss extends OFObject, OFTableFeatureProp {
-    int getType();
     long getExperimenter();
-    long getSubtype();
     byte[] getExperimenterData() throws UnsupportedOperationException;
+    long getSubtype();
+    int getType();
     OFVersion getVersion();
 
     void writeTo(ByteBuf channelBuffer);
@@ -39,12 +39,12 @@ public interface OFTableFeaturePropExperimenterMiss extends OFObject, OFTableFea
     Builder createBuilder();
     public interface Builder extends OFTableFeatureProp.Builder {
         OFTableFeaturePropExperimenterMiss build();
-        int getType();
         long getExperimenter();
-        long getSubtype();
-        Builder setSubtype(long subtype);
         byte[] getExperimenterData() throws UnsupportedOperationException;
         Builder setExperimenterData(byte[] experimenterData) throws UnsupportedOperationException;
+        long getSubtype();
+        Builder setSubtype(long subtype);
+        int getType();
         OFVersion getVersion();
     }
 }

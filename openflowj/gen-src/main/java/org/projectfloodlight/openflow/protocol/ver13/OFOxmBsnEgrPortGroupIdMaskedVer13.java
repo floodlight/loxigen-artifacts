@@ -64,6 +64,11 @@ class OFOxmBsnEgrPortGroupIdMaskedVer13 implements OFOxmBsnEgrPortGroupIdMasked 
 
     // Accessors for OF message fields
     @Override
+    public ClassId getMask() {
+        return mask;
+    }
+
+    @Override
     public long getTypeLen() {
         return 0x30f08L;
     }
@@ -71,21 +76,6 @@ class OFOxmBsnEgrPortGroupIdMaskedVer13 implements OFOxmBsnEgrPortGroupIdMasked 
     @Override
     public ClassId getValue() {
         return value;
-    }
-
-    @Override
-    public ClassId getMask() {
-        return mask;
-    }
-
-    @Override
-    public MatchField<ClassId> getMatchField() {
-        return MatchField.BSN_EGR_PORT_GROUP_ID;
-    }
-
-    @Override
-    public boolean isMasked() {
-        return true;
     }
 
     public OFOxm<ClassId> getCanonical() {
@@ -96,6 +86,16 @@ class OFOxmBsnEgrPortGroupIdMaskedVer13 implements OFOxmBsnEgrPortGroupIdMasked 
         } else {
             return this;
         }
+    }
+
+    @Override
+    public boolean isMasked() {
+        return true;
+    }
+
+    @Override
+    public MatchField<ClassId> getMatchField() {
+        return MatchField.BSN_EGR_PORT_GROUP_ID;
     }
 
     @Override
@@ -123,6 +123,17 @@ class OFOxmBsnEgrPortGroupIdMaskedVer13 implements OFOxmBsnEgrPortGroupIdMasked 
         }
 
     @Override
+    public ClassId getMask() {
+        return mask;
+    }
+
+    @Override
+    public OFOxmBsnEgrPortGroupIdMasked.Builder setMask(ClassId mask) {
+        this.mask = mask;
+        this.maskSet = true;
+        return this;
+    }
+    @Override
     public long getTypeLen() {
         return 0x30f08L;
     }
@@ -139,19 +150,8 @@ class OFOxmBsnEgrPortGroupIdMaskedVer13 implements OFOxmBsnEgrPortGroupIdMasked 
         return this;
     }
     @Override
-    public ClassId getMask() {
-        return mask;
-    }
-
-    @Override
-    public OFOxmBsnEgrPortGroupIdMasked.Builder setMask(ClassId mask) {
-        this.mask = mask;
-        this.maskSet = true;
-        return this;
-    }
-    @Override
-    public MatchField<ClassId> getMatchField() {
-        return MatchField.BSN_EGR_PORT_GROUP_ID;
+    public OFOxm<ClassId> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.3");
     }
 
     @Override
@@ -160,8 +160,8 @@ class OFOxmBsnEgrPortGroupIdMaskedVer13 implements OFOxmBsnEgrPortGroupIdMasked 
     }
 
     @Override
-    public OFOxm<ClassId> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.3");
+    public MatchField<ClassId> getMatchField() {
+        return MatchField.BSN_EGR_PORT_GROUP_ID;
     }
 
     @Override
@@ -197,6 +197,17 @@ class OFOxmBsnEgrPortGroupIdMaskedVer13 implements OFOxmBsnEgrPortGroupIdMasked 
         private ClassId mask;
 
     @Override
+    public ClassId getMask() {
+        return mask;
+    }
+
+    @Override
+    public OFOxmBsnEgrPortGroupIdMasked.Builder setMask(ClassId mask) {
+        this.mask = mask;
+        this.maskSet = true;
+        return this;
+    }
+    @Override
     public long getTypeLen() {
         return 0x30f08L;
     }
@@ -213,19 +224,8 @@ class OFOxmBsnEgrPortGroupIdMaskedVer13 implements OFOxmBsnEgrPortGroupIdMasked 
         return this;
     }
     @Override
-    public ClassId getMask() {
-        return mask;
-    }
-
-    @Override
-    public OFOxmBsnEgrPortGroupIdMasked.Builder setMask(ClassId mask) {
-        this.mask = mask;
-        this.maskSet = true;
-        return this;
-    }
-    @Override
-    public MatchField<ClassId> getMatchField() {
-        return MatchField.BSN_EGR_PORT_GROUP_ID;
+    public OFOxm<ClassId> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.3");
     }
 
     @Override
@@ -234,8 +234,8 @@ class OFOxmBsnEgrPortGroupIdMaskedVer13 implements OFOxmBsnEgrPortGroupIdMasked 
     }
 
     @Override
-    public OFOxm<ClassId> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.3");
+    public MatchField<ClassId> getMatchField() {
+        return MatchField.BSN_EGR_PORT_GROUP_ID;
     }
 
     @Override

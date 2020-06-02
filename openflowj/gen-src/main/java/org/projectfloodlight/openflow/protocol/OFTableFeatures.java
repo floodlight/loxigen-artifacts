@@ -25,21 +25,21 @@ import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
-import java.util.List;
 import java.util.Set;
+import java.util.List;
 import io.netty.buffer.ByteBuf;
 
 public interface OFTableFeatures extends OFObject {
-    TableId getTableId();
-    String getName();
+    Set<OFTableConfig> getCapabilities() throws UnsupportedOperationException;
+    OFTableFeaturesCommand getCommand() throws UnsupportedOperationException;
+    long getConfig() throws UnsupportedOperationException;
+    Set<OFTableFeatureFlag> getFeatures() throws UnsupportedOperationException;
+    long getMaxEntries();
     U64 getMetadataMatch();
     U64 getMetadataWrite();
-    long getConfig() throws UnsupportedOperationException;
-    long getMaxEntries();
+    String getName();
     List<OFTableFeatureProp> getProperties();
-    OFTableFeaturesCommand getCommand() throws UnsupportedOperationException;
-    Set<OFTableFeatureFlag> getFeatures() throws UnsupportedOperationException;
-    Set<OFTableConfig> getCapabilities() throws UnsupportedOperationException;
+    TableId getTableId();
     OFVersion getVersion();
 
     void writeTo(ByteBuf channelBuffer);
@@ -47,26 +47,26 @@ public interface OFTableFeatures extends OFObject {
     Builder createBuilder();
     public interface Builder  {
         OFTableFeatures build();
-        TableId getTableId();
-        Builder setTableId(TableId tableId);
-        String getName();
-        Builder setName(String name);
+        Set<OFTableConfig> getCapabilities() throws UnsupportedOperationException;
+        Builder setCapabilities(Set<OFTableConfig> capabilities) throws UnsupportedOperationException;
+        OFTableFeaturesCommand getCommand() throws UnsupportedOperationException;
+        Builder setCommand(OFTableFeaturesCommand command) throws UnsupportedOperationException;
+        long getConfig() throws UnsupportedOperationException;
+        Builder setConfig(long config) throws UnsupportedOperationException;
+        Set<OFTableFeatureFlag> getFeatures() throws UnsupportedOperationException;
+        Builder setFeatures(Set<OFTableFeatureFlag> features) throws UnsupportedOperationException;
+        long getMaxEntries();
+        Builder setMaxEntries(long maxEntries);
         U64 getMetadataMatch();
         Builder setMetadataMatch(U64 metadataMatch);
         U64 getMetadataWrite();
         Builder setMetadataWrite(U64 metadataWrite);
-        long getConfig() throws UnsupportedOperationException;
-        Builder setConfig(long config) throws UnsupportedOperationException;
-        long getMaxEntries();
-        Builder setMaxEntries(long maxEntries);
+        String getName();
+        Builder setName(String name);
         List<OFTableFeatureProp> getProperties();
         Builder setProperties(List<OFTableFeatureProp> properties);
-        OFTableFeaturesCommand getCommand() throws UnsupportedOperationException;
-        Builder setCommand(OFTableFeaturesCommand command) throws UnsupportedOperationException;
-        Set<OFTableFeatureFlag> getFeatures() throws UnsupportedOperationException;
-        Builder setFeatures(Set<OFTableFeatureFlag> features) throws UnsupportedOperationException;
-        Set<OFTableConfig> getCapabilities() throws UnsupportedOperationException;
-        Builder setCapabilities(Set<OFTableConfig> capabilities) throws UnsupportedOperationException;
+        TableId getTableId();
+        Builder setTableId(TableId tableId);
         OFVersion getVersion();
     }
 }

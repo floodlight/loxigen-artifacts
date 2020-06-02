@@ -28,13 +28,13 @@ import org.projectfloodlight.openflow.exceptions.*;
 import io.netty.buffer.ByteBuf;
 
 public interface OFPortDescPropEthernet extends OFObject, OFPortDescProp {
-    int getType();
-    long getCurr();
     long getAdvertised();
-    long getSupported();
-    long getPeer();
+    long getCurr();
     long getCurrSpeed();
     long getMaxSpeed();
+    long getPeer();
+    long getSupported();
+    int getType();
     OFVersion getVersion();
 
     void writeTo(ByteBuf channelBuffer);
@@ -42,19 +42,19 @@ public interface OFPortDescPropEthernet extends OFObject, OFPortDescProp {
     Builder createBuilder();
     public interface Builder extends OFPortDescProp.Builder {
         OFPortDescPropEthernet build();
-        int getType();
-        long getCurr();
-        Builder setCurr(long curr);
         long getAdvertised();
         Builder setAdvertised(long advertised);
-        long getSupported();
-        Builder setSupported(long supported);
-        long getPeer();
-        Builder setPeer(long peer);
+        long getCurr();
+        Builder setCurr(long curr);
         long getCurrSpeed();
         Builder setCurrSpeed(long currSpeed);
         long getMaxSpeed();
         Builder setMaxSpeed(long maxSpeed);
+        long getPeer();
+        Builder setPeer(long peer);
+        long getSupported();
+        Builder setSupported(long supported);
+        int getType();
         OFVersion getVersion();
     }
 }

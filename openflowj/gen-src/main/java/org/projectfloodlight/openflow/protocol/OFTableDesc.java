@@ -30,9 +30,9 @@ import java.util.List;
 import io.netty.buffer.ByteBuf;
 
 public interface OFTableDesc extends OFObject {
-    TableId getTableId();
     Set<OFTableConfig> getConfig();
     List<OFTableModProp> getProperties() throws UnsupportedOperationException;
+    TableId getTableId();
     OFVersion getVersion();
 
     void writeTo(ByteBuf channelBuffer);
@@ -40,12 +40,12 @@ public interface OFTableDesc extends OFObject {
     Builder createBuilder();
     public interface Builder  {
         OFTableDesc build();
-        TableId getTableId();
-        Builder setTableId(TableId tableId);
         Set<OFTableConfig> getConfig();
         Builder setConfig(Set<OFTableConfig> config);
         List<OFTableModProp> getProperties() throws UnsupportedOperationException;
         Builder setProperties(List<OFTableModProp> properties) throws UnsupportedOperationException;
+        TableId getTableId();
+        Builder setTableId(TableId tableId);
         OFVersion getVersion();
     }
 }

@@ -72,23 +72,8 @@ class OFMeterConfigStatsReplyVer14 implements OFMeterConfigStatsReply {
 
     // Accessors for OF message fields
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_14;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.STATS_REPLY;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFStatsType getStatsType() {
-        return OFStatsType.METER_CONFIG;
+    public List<OFMeterConfig> getEntries() {
+        return entries;
     }
 
     @Override
@@ -97,8 +82,23 @@ class OFMeterConfigStatsReplyVer14 implements OFMeterConfigStatsReply {
     }
 
     @Override
-    public List<OFMeterConfig> getEntries() {
-        return entries;
+    public OFStatsType getStatsType() {
+        return OFStatsType.METER_CONFIG;
+    }
+
+    @Override
+    public OFType getType() {
+        return OFType.STATS_REPLY;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_14;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
     }
 
 
@@ -123,31 +123,16 @@ class OFMeterConfigStatsReplyVer14 implements OFMeterConfigStatsReply {
         }
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_14;
+    public List<OFMeterConfig> getEntries() {
+        return entries;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.STATS_REPLY;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFMeterConfigStatsReply.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
+    public OFMeterConfigStatsReply.Builder setEntries(List<OFMeterConfig> entries) {
+        this.entries = entries;
+        this.entriesSet = true;
         return this;
     }
-    @Override
-    public OFStatsType getStatsType() {
-        return OFStatsType.METER_CONFIG;
-    }
-
     @Override
     public Set<OFStatsReplyFlags> getFlags() {
         return flags;
@@ -160,14 +145,29 @@ class OFMeterConfigStatsReplyVer14 implements OFMeterConfigStatsReply {
         return this;
     }
     @Override
-    public List<OFMeterConfig> getEntries() {
-        return entries;
+    public OFStatsType getStatsType() {
+        return OFStatsType.METER_CONFIG;
     }
 
     @Override
-    public OFMeterConfigStatsReply.Builder setEntries(List<OFMeterConfig> entries) {
-        this.entries = entries;
-        this.entriesSet = true;
+    public OFType getType() {
+        return OFType.STATS_REPLY;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_14;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFMeterConfigStatsReply.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 
@@ -202,31 +202,16 @@ class OFMeterConfigStatsReplyVer14 implements OFMeterConfigStatsReply {
         private List<OFMeterConfig> entries;
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_14;
+    public List<OFMeterConfig> getEntries() {
+        return entries;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.STATS_REPLY;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFMeterConfigStatsReply.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
+    public OFMeterConfigStatsReply.Builder setEntries(List<OFMeterConfig> entries) {
+        this.entries = entries;
+        this.entriesSet = true;
         return this;
     }
-    @Override
-    public OFStatsType getStatsType() {
-        return OFStatsType.METER_CONFIG;
-    }
-
     @Override
     public Set<OFStatsReplyFlags> getFlags() {
         return flags;
@@ -239,14 +224,29 @@ class OFMeterConfigStatsReplyVer14 implements OFMeterConfigStatsReply {
         return this;
     }
     @Override
-    public List<OFMeterConfig> getEntries() {
-        return entries;
+    public OFStatsType getStatsType() {
+        return OFStatsType.METER_CONFIG;
     }
 
     @Override
-    public OFMeterConfigStatsReply.Builder setEntries(List<OFMeterConfig> entries) {
-        this.entries = entries;
-        this.entriesSet = true;
+    public OFType getType() {
+        return OFType.STATS_REPLY;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_14;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFMeterConfigStatsReply.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 //

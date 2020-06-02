@@ -28,19 +28,19 @@ import org.projectfloodlight.openflow.exceptions.*;
 import io.netty.buffer.ByteBuf;
 
 public interface OFMatchV1 extends OFObject, Match {
-    int getWildcards();
-    OFPort getInPort();
-    MacAddress getEthSrc();
     MacAddress getEthDst();
-    OFVlanVidMatch getVlanVid();
-    VlanPcp getVlanPcp();
+    MacAddress getEthSrc();
     EthType getEthType();
+    OFPort getInPort();
     IpDscp getIpDscp();
     IpProtocol getIpProto();
-    IPv4Address getIpv4Src();
     IPv4Address getIpv4Dst();
-    TransportPort getTcpSrc();
+    IPv4Address getIpv4Src();
     TransportPort getTcpDst();
+    TransportPort getTcpSrc();
+    VlanPcp getVlanPcp();
+    OFVlanVidMatch getVlanVid();
+    int getWildcards();
     OFVersion getVersion();
 
     void writeTo(ByteBuf channelBuffer);
@@ -48,32 +48,32 @@ public interface OFMatchV1 extends OFObject, Match {
     Builder createBuilder();
     public interface Builder extends Match.Builder {
         OFMatchV1 build();
-        int getWildcards();
-        Builder setWildcards(int wildcards);
-        OFPort getInPort();
-        Builder setInPort(OFPort inPort);
-        MacAddress getEthSrc();
-        Builder setEthSrc(MacAddress ethSrc);
         MacAddress getEthDst();
         Builder setEthDst(MacAddress ethDst);
-        OFVlanVidMatch getVlanVid();
-        Builder setVlanVid(OFVlanVidMatch vlanVid);
-        VlanPcp getVlanPcp();
-        Builder setVlanPcp(VlanPcp vlanPcp);
+        MacAddress getEthSrc();
+        Builder setEthSrc(MacAddress ethSrc);
         EthType getEthType();
         Builder setEthType(EthType ethType);
+        OFPort getInPort();
+        Builder setInPort(OFPort inPort);
         IpDscp getIpDscp();
         Builder setIpDscp(IpDscp ipDscp);
         IpProtocol getIpProto();
         Builder setIpProto(IpProtocol ipProto);
-        IPv4Address getIpv4Src();
-        Builder setIpv4Src(IPv4Address ipv4Src);
         IPv4Address getIpv4Dst();
         Builder setIpv4Dst(IPv4Address ipv4Dst);
-        TransportPort getTcpSrc();
-        Builder setTcpSrc(TransportPort tcpSrc);
+        IPv4Address getIpv4Src();
+        Builder setIpv4Src(IPv4Address ipv4Src);
         TransportPort getTcpDst();
         Builder setTcpDst(TransportPort tcpDst);
+        TransportPort getTcpSrc();
+        Builder setTcpSrc(TransportPort tcpSrc);
+        VlanPcp getVlanPcp();
+        Builder setVlanPcp(VlanPcp vlanPcp);
+        OFVlanVidMatch getVlanVid();
+        Builder setVlanVid(OFVlanVidMatch vlanVid);
+        int getWildcards();
+        Builder setWildcards(int wildcards);
         OFVersion getVersion();
     }
 }

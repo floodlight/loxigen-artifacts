@@ -63,18 +63,8 @@ class OFPortStatusVer14 implements OFPortStatus {
 
     // Accessors for OF message fields
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_14;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.PORT_STATUS;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
+    public OFPortDesc getDesc() {
+        return desc;
     }
 
     @Override
@@ -83,8 +73,18 @@ class OFPortStatusVer14 implements OFPortStatus {
     }
 
     @Override
-    public OFPortDesc getDesc() {
-        return desc;
+    public OFType getType() {
+        return OFType.PORT_STATUS;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_14;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
     }
 
 
@@ -109,24 +109,14 @@ class OFPortStatusVer14 implements OFPortStatus {
         }
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_14;
+    public OFPortDesc getDesc() {
+        return desc;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.PORT_STATUS;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFPortStatus.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
+    public OFPortStatus.Builder setDesc(OFPortDesc desc) {
+        this.desc = desc;
+        this.descSet = true;
         return this;
     }
     @Override
@@ -141,14 +131,24 @@ class OFPortStatusVer14 implements OFPortStatus {
         return this;
     }
     @Override
-    public OFPortDesc getDesc() {
-        return desc;
+    public OFType getType() {
+        return OFType.PORT_STATUS;
     }
 
     @Override
-    public OFPortStatus.Builder setDesc(OFPortDesc desc) {
-        this.desc = desc;
-        this.descSet = true;
+    public OFVersion getVersion() {
+        return OFVersion.OF_14;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFPortStatus.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 
@@ -183,24 +183,14 @@ class OFPortStatusVer14 implements OFPortStatus {
         private OFPortDesc desc;
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_14;
+    public OFPortDesc getDesc() {
+        return desc;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.PORT_STATUS;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFPortStatus.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
+    public OFPortStatus.Builder setDesc(OFPortDesc desc) {
+        this.desc = desc;
+        this.descSet = true;
         return this;
     }
     @Override
@@ -215,14 +205,24 @@ class OFPortStatusVer14 implements OFPortStatus {
         return this;
     }
     @Override
-    public OFPortDesc getDesc() {
-        return desc;
+    public OFType getType() {
+        return OFType.PORT_STATUS;
     }
 
     @Override
-    public OFPortStatus.Builder setDesc(OFPortDesc desc) {
-        this.desc = desc;
-        this.descSet = true;
+    public OFVersion getVersion() {
+        return OFVersion.OF_14;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFPortStatus.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 //

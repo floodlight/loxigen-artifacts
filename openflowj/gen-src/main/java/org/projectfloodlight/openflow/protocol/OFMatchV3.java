@@ -29,8 +29,8 @@ import java.util.List;
 import io.netty.buffer.ByteBuf;
 
 public interface OFMatchV3 extends OFObject, Match {
-    int getType();
     OFOxmList getOxmList();
+    int getType();
     OFVersion getVersion();
 
     void writeTo(ByteBuf channelBuffer);
@@ -38,9 +38,9 @@ public interface OFMatchV3 extends OFObject, Match {
     Builder createBuilder();
     public interface Builder extends Match.Builder {
         OFMatchV3 build();
-        int getType();
         OFOxmList getOxmList();
         Builder setOxmList(OFOxmList oxmList);
+        int getType();
         OFVersion getVersion();
     }
 }

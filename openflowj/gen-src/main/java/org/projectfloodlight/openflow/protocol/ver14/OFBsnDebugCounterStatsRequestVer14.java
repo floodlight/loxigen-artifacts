@@ -62,23 +62,8 @@ class OFBsnDebugCounterStatsRequestVer14 implements OFBsnDebugCounterStatsReques
 
     // Accessors for OF message fields
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_14;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.STATS_REQUEST;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFStatsType getStatsType() {
-        return OFStatsType.EXPERIMENTER;
+    public long getExperimenter() {
+        return 0x5c16c7L;
     }
 
     @Override
@@ -87,13 +72,28 @@ class OFBsnDebugCounterStatsRequestVer14 implements OFBsnDebugCounterStatsReques
     }
 
     @Override
-    public long getExperimenter() {
-        return 0x5c16c7L;
+    public OFStatsType getStatsType() {
+        return OFStatsType.EXPERIMENTER;
     }
 
     @Override
     public long getSubtype() {
         return 0xcL;
+    }
+
+    @Override
+    public OFType getType() {
+        return OFType.STATS_REQUEST;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_14;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
     }
 
 
@@ -116,29 +116,8 @@ class OFBsnDebugCounterStatsRequestVer14 implements OFBsnDebugCounterStatsReques
         }
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_14;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.STATS_REQUEST;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFBsnDebugCounterStatsRequest.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
-        return this;
-    }
-    @Override
-    public OFStatsType getStatsType() {
-        return OFStatsType.EXPERIMENTER;
+    public long getExperimenter() {
+        return 0x5c16c7L;
     }
 
     @Override
@@ -153,8 +132,8 @@ class OFBsnDebugCounterStatsRequestVer14 implements OFBsnDebugCounterStatsReques
         return this;
     }
     @Override
-    public long getExperimenter() {
-        return 0x5c16c7L;
+    public OFStatsType getStatsType() {
+        return OFStatsType.EXPERIMENTER;
     }
 
     @Override
@@ -162,6 +141,27 @@ class OFBsnDebugCounterStatsRequestVer14 implements OFBsnDebugCounterStatsReques
         return 0xcL;
     }
 
+    @Override
+    public OFType getType() {
+        return OFType.STATS_REQUEST;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_14;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFBsnDebugCounterStatsRequest.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
+        return this;
+    }
 
 
         @Override
@@ -188,29 +188,8 @@ class OFBsnDebugCounterStatsRequestVer14 implements OFBsnDebugCounterStatsReques
         private Set<OFStatsRequestFlags> flags;
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_14;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.STATS_REQUEST;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFBsnDebugCounterStatsRequest.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
-        return this;
-    }
-    @Override
-    public OFStatsType getStatsType() {
-        return OFStatsType.EXPERIMENTER;
+    public long getExperimenter() {
+        return 0x5c16c7L;
     }
 
     @Override
@@ -225,8 +204,8 @@ class OFBsnDebugCounterStatsRequestVer14 implements OFBsnDebugCounterStatsReques
         return this;
     }
     @Override
-    public long getExperimenter() {
-        return 0x5c16c7L;
+    public OFStatsType getStatsType() {
+        return OFStatsType.EXPERIMENTER;
     }
 
     @Override
@@ -234,6 +213,27 @@ class OFBsnDebugCounterStatsRequestVer14 implements OFBsnDebugCounterStatsReques
         return 0xcL;
     }
 
+    @Override
+    public OFType getType() {
+        return OFType.STATS_REQUEST;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_14;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFBsnDebugCounterStatsRequest.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
+        return this;
+    }
 //
         @Override
         public OFBsnDebugCounterStatsRequest build() {

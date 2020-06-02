@@ -29,41 +29,41 @@ import java.util.Set;
 import io.netty.buffer.ByteBuf;
 
 public interface OFFlowStatsRequest extends OFObject, OFStatsRequest<OFFlowStatsReply>, OFRequest<OFFlowStatsReply> {
-    OFVersion getVersion();
-    OFType getType();
-    long getXid();
-    OFStatsType getStatsType();
-    Set<OFStatsRequestFlags> getFlags();
-    TableId getTableId();
-    OFPort getOutPort();
-    OFGroup getOutGroup() throws UnsupportedOperationException;
     U64 getCookie() throws UnsupportedOperationException;
     U64 getCookieMask() throws UnsupportedOperationException;
+    Set<OFStatsRequestFlags> getFlags();
     Match getMatch();
+    OFGroup getOutGroup() throws UnsupportedOperationException;
+    OFPort getOutPort();
+    OFStatsType getStatsType();
+    TableId getTableId();
+    OFType getType();
+    OFVersion getVersion();
+    long getXid();
 
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();
     public interface Builder extends OFStatsRequest.Builder<OFFlowStatsReply> {
         OFFlowStatsRequest build();
-        OFVersion getVersion();
-        OFType getType();
-        long getXid();
-        Builder setXid(long xid);
-        OFStatsType getStatsType();
-        Set<OFStatsRequestFlags> getFlags();
-        Builder setFlags(Set<OFStatsRequestFlags> flags);
-        TableId getTableId();
-        Builder setTableId(TableId tableId);
-        OFPort getOutPort();
-        Builder setOutPort(OFPort outPort);
-        OFGroup getOutGroup() throws UnsupportedOperationException;
-        Builder setOutGroup(OFGroup outGroup) throws UnsupportedOperationException;
         U64 getCookie() throws UnsupportedOperationException;
         Builder setCookie(U64 cookie) throws UnsupportedOperationException;
         U64 getCookieMask() throws UnsupportedOperationException;
         Builder setCookieMask(U64 cookieMask) throws UnsupportedOperationException;
+        Set<OFStatsRequestFlags> getFlags();
+        Builder setFlags(Set<OFStatsRequestFlags> flags);
         Match getMatch();
         Builder setMatch(Match match);
+        OFGroup getOutGroup() throws UnsupportedOperationException;
+        Builder setOutGroup(OFGroup outGroup) throws UnsupportedOperationException;
+        OFPort getOutPort();
+        Builder setOutPort(OFPort outPort);
+        OFStatsType getStatsType();
+        TableId getTableId();
+        Builder setTableId(TableId tableId);
+        OFType getType();
+        OFVersion getVersion();
+        long getXid();
+        Builder setXid(long xid);
     }
 }

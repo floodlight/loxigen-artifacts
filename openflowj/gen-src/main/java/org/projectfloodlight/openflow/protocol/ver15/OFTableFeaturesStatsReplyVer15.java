@@ -72,23 +72,8 @@ class OFTableFeaturesStatsReplyVer15 implements OFTableFeaturesStatsReply {
 
     // Accessors for OF message fields
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_15;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.STATS_REPLY;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFStatsType getStatsType() {
-        return OFStatsType.TABLE_FEATURES;
+    public List<OFTableFeatures> getEntries() {
+        return entries;
     }
 
     @Override
@@ -97,8 +82,23 @@ class OFTableFeaturesStatsReplyVer15 implements OFTableFeaturesStatsReply {
     }
 
     @Override
-    public List<OFTableFeatures> getEntries() {
-        return entries;
+    public OFStatsType getStatsType() {
+        return OFStatsType.TABLE_FEATURES;
+    }
+
+    @Override
+    public OFType getType() {
+        return OFType.STATS_REPLY;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_15;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
     }
 
 
@@ -123,31 +123,16 @@ class OFTableFeaturesStatsReplyVer15 implements OFTableFeaturesStatsReply {
         }
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_15;
+    public List<OFTableFeatures> getEntries() {
+        return entries;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.STATS_REPLY;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFTableFeaturesStatsReply.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
+    public OFTableFeaturesStatsReply.Builder setEntries(List<OFTableFeatures> entries) {
+        this.entries = entries;
+        this.entriesSet = true;
         return this;
     }
-    @Override
-    public OFStatsType getStatsType() {
-        return OFStatsType.TABLE_FEATURES;
-    }
-
     @Override
     public Set<OFStatsReplyFlags> getFlags() {
         return flags;
@@ -160,14 +145,29 @@ class OFTableFeaturesStatsReplyVer15 implements OFTableFeaturesStatsReply {
         return this;
     }
     @Override
-    public List<OFTableFeatures> getEntries() {
-        return entries;
+    public OFStatsType getStatsType() {
+        return OFStatsType.TABLE_FEATURES;
     }
 
     @Override
-    public OFTableFeaturesStatsReply.Builder setEntries(List<OFTableFeatures> entries) {
-        this.entries = entries;
-        this.entriesSet = true;
+    public OFType getType() {
+        return OFType.STATS_REPLY;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_15;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFTableFeaturesStatsReply.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 
@@ -202,31 +202,16 @@ class OFTableFeaturesStatsReplyVer15 implements OFTableFeaturesStatsReply {
         private List<OFTableFeatures> entries;
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_15;
+    public List<OFTableFeatures> getEntries() {
+        return entries;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.STATS_REPLY;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFTableFeaturesStatsReply.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
+    public OFTableFeaturesStatsReply.Builder setEntries(List<OFTableFeatures> entries) {
+        this.entries = entries;
+        this.entriesSet = true;
         return this;
     }
-    @Override
-    public OFStatsType getStatsType() {
-        return OFStatsType.TABLE_FEATURES;
-    }
-
     @Override
     public Set<OFStatsReplyFlags> getFlags() {
         return flags;
@@ -239,14 +224,29 @@ class OFTableFeaturesStatsReplyVer15 implements OFTableFeaturesStatsReply {
         return this;
     }
     @Override
-    public List<OFTableFeatures> getEntries() {
-        return entries;
+    public OFStatsType getStatsType() {
+        return OFStatsType.TABLE_FEATURES;
     }
 
     @Override
-    public OFTableFeaturesStatsReply.Builder setEntries(List<OFTableFeatures> entries) {
-        this.entries = entries;
-        this.entriesSet = true;
+    public OFType getType() {
+        return OFType.STATS_REPLY;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_15;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFTableFeaturesStatsReply.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 //

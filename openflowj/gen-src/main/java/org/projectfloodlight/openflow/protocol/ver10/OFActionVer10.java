@@ -45,12 +45,12 @@ abstract class OFActionVer10 {
             short type = bb.readShort();
             bb.readerIndex(start);
             switch(type) {
-               case (short) 0xffff:
-                   // discriminator value OFActionType.EXPERIMENTER=65535 for class OFActionExperimenterVer10
-                   return OFActionExperimenterVer10.READER.readFrom(bb);
                case (short) 0xb:
                    // discriminator value OFActionType.ENQUEUE=11 for class OFActionEnqueueVer10
                    return OFActionEnqueueVer10.READER.readFrom(bb);
+               case (short) 0xffff:
+                   // discriminator value OFActionType.EXPERIMENTER=65535 for class OFActionExperimenterVer10
+                   return OFActionExperimenterVer10.READER.readFrom(bb);
                case (short) 0x0:
                    // discriminator value OFActionType.OUTPUT=0 for class OFActionOutputVer10
                    return OFActionOutputVer10.READER.readFrom(bb);

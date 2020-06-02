@@ -58,21 +58,6 @@ class OFBsnVlanCounterClearVer14 implements OFBsnVlanCounterClear {
 
     // Accessors for OF message fields
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_14;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.EXPERIMENTER;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
     public long getExperimenter() {
         return 0x5c16c7L;
     }
@@ -83,8 +68,23 @@ class OFBsnVlanCounterClearVer14 implements OFBsnVlanCounterClear {
     }
 
     @Override
+    public OFType getType() {
+        return OFType.EXPERIMENTER;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_14;
+    }
+
+    @Override
     public int getVlanVid() {
         return vlanVid;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
     }
 
 
@@ -107,8 +107,13 @@ class OFBsnVlanCounterClearVer14 implements OFBsnVlanCounterClear {
         }
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_14;
+    public long getExperimenter() {
+        return 0x5c16c7L;
+    }
+
+    @Override
+    public long getSubtype() {
+        return 0x46L;
     }
 
     @Override
@@ -117,24 +122,8 @@ class OFBsnVlanCounterClearVer14 implements OFBsnVlanCounterClear {
     }
 
     @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFBsnVlanCounterClear.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
-        return this;
-    }
-    @Override
-    public long getExperimenter() {
-        return 0x5c16c7L;
-    }
-
-    @Override
-    public long getSubtype() {
-        return 0x46L;
+    public OFVersion getVersion() {
+        return OFVersion.OF_14;
     }
 
     @Override
@@ -146,6 +135,17 @@ class OFBsnVlanCounterClearVer14 implements OFBsnVlanCounterClear {
     public OFBsnVlanCounterClear.Builder setVlanVid(int vlanVid) {
         this.vlanVid = vlanVid;
         this.vlanVidSet = true;
+        return this;
+    }
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFBsnVlanCounterClear.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 
@@ -172,8 +172,13 @@ class OFBsnVlanCounterClearVer14 implements OFBsnVlanCounterClear {
         private int vlanVid;
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_14;
+    public long getExperimenter() {
+        return 0x5c16c7L;
+    }
+
+    @Override
+    public long getSubtype() {
+        return 0x46L;
     }
 
     @Override
@@ -182,24 +187,8 @@ class OFBsnVlanCounterClearVer14 implements OFBsnVlanCounterClear {
     }
 
     @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFBsnVlanCounterClear.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
-        return this;
-    }
-    @Override
-    public long getExperimenter() {
-        return 0x5c16c7L;
-    }
-
-    @Override
-    public long getSubtype() {
-        return 0x46L;
+    public OFVersion getVersion() {
+        return OFVersion.OF_14;
     }
 
     @Override
@@ -211,6 +200,17 @@ class OFBsnVlanCounterClearVer14 implements OFBsnVlanCounterClear {
     public OFBsnVlanCounterClear.Builder setVlanVid(int vlanVid) {
         this.vlanVid = vlanVid;
         this.vlanVidSet = true;
+        return this;
+    }
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFBsnVlanCounterClear.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 //

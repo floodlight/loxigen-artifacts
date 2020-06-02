@@ -55,13 +55,13 @@ class OFAsyncConfigPropPacketInMasterVer14 implements OFAsyncConfigPropPacketInM
 
     // Accessors for OF message fields
     @Override
-    public int getType() {
-        return 0x1;
+    public long getMask() {
+        return mask;
     }
 
     @Override
-    public long getMask() {
-        return mask;
+    public int getType() {
+        return 0x1;
     }
 
     @Override
@@ -87,11 +87,6 @@ class OFAsyncConfigPropPacketInMasterVer14 implements OFAsyncConfigPropPacketInM
         }
 
     @Override
-    public int getType() {
-        return 0x1;
-    }
-
-    @Override
     public long getMask() {
         return mask;
     }
@@ -102,6 +97,11 @@ class OFAsyncConfigPropPacketInMasterVer14 implements OFAsyncConfigPropPacketInM
         this.maskSet = true;
         return this;
     }
+    @Override
+    public int getType() {
+        return 0x1;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_14;
@@ -127,11 +127,6 @@ class OFAsyncConfigPropPacketInMasterVer14 implements OFAsyncConfigPropPacketInM
         private long mask;
 
     @Override
-    public int getType() {
-        return 0x1;
-    }
-
-    @Override
     public long getMask() {
         return mask;
     }
@@ -142,6 +137,11 @@ class OFAsyncConfigPropPacketInMasterVer14 implements OFAsyncConfigPropPacketInM
         this.maskSet = true;
         return this;
     }
+    @Override
+    public int getType() {
+        return 0x1;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_14;

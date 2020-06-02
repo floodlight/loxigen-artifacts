@@ -28,9 +28,9 @@ import org.projectfloodlight.openflow.exceptions.*;
 import io.netty.buffer.ByteBuf;
 
 public interface OFBsnTlvHashGtpHeaderMatch extends OFObject, OFBsnTlv {
-    int getType();
     short getFirstHeaderByte();
     short getFirstHeaderMask();
+    int getType();
     OFVersion getVersion();
 
     void writeTo(ByteBuf channelBuffer);
@@ -38,11 +38,11 @@ public interface OFBsnTlvHashGtpHeaderMatch extends OFObject, OFBsnTlv {
     Builder createBuilder();
     public interface Builder extends OFBsnTlv.Builder {
         OFBsnTlvHashGtpHeaderMatch build();
-        int getType();
         short getFirstHeaderByte();
         Builder setFirstHeaderByte(short firstHeaderByte);
         short getFirstHeaderMask();
         Builder setFirstHeaderMask(short firstHeaderMask);
+        int getType();
         OFVersion getVersion();
     }
 }

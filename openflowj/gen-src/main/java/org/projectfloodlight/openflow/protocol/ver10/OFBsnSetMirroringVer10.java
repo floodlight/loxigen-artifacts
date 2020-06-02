@@ -58,23 +58,13 @@ class OFBsnSetMirroringVer10 implements OFBsnSetMirroring {
 
     // Accessors for OF message fields
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_10;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.EXPERIMENTER;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
     public long getExperimenter() {
         return 0x5c16c7L;
+    }
+
+    @Override
+    public short getReportMirrorPorts() {
+        return reportMirrorPorts;
     }
 
     @Override
@@ -83,8 +73,18 @@ class OFBsnSetMirroringVer10 implements OFBsnSetMirroring {
     }
 
     @Override
-    public short getReportMirrorPorts() {
-        return reportMirrorPorts;
+    public OFType getType() {
+        return OFType.EXPERIMENTER;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_10;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
     }
 
 
@@ -107,34 +107,8 @@ class OFBsnSetMirroringVer10 implements OFBsnSetMirroring {
         }
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_10;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.EXPERIMENTER;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFBsnSetMirroring.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
-        return this;
-    }
-    @Override
     public long getExperimenter() {
         return 0x5c16c7L;
-    }
-
-    @Override
-    public long getSubtype() {
-        return 0x3L;
     }
 
     @Override
@@ -146,6 +120,32 @@ class OFBsnSetMirroringVer10 implements OFBsnSetMirroring {
     public OFBsnSetMirroring.Builder setReportMirrorPorts(short reportMirrorPorts) {
         this.reportMirrorPorts = reportMirrorPorts;
         this.reportMirrorPortsSet = true;
+        return this;
+    }
+    @Override
+    public long getSubtype() {
+        return 0x3L;
+    }
+
+    @Override
+    public OFType getType() {
+        return OFType.EXPERIMENTER;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_10;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFBsnSetMirroring.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 
@@ -172,34 +172,8 @@ class OFBsnSetMirroringVer10 implements OFBsnSetMirroring {
         private short reportMirrorPorts;
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_10;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.EXPERIMENTER;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFBsnSetMirroring.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
-        return this;
-    }
-    @Override
     public long getExperimenter() {
         return 0x5c16c7L;
-    }
-
-    @Override
-    public long getSubtype() {
-        return 0x3L;
     }
 
     @Override
@@ -211,6 +185,32 @@ class OFBsnSetMirroringVer10 implements OFBsnSetMirroring {
     public OFBsnSetMirroring.Builder setReportMirrorPorts(short reportMirrorPorts) {
         this.reportMirrorPorts = reportMirrorPorts;
         this.reportMirrorPortsSet = true;
+        return this;
+    }
+    @Override
+    public long getSubtype() {
+        return 0x3L;
+    }
+
+    @Override
+    public OFType getType() {
+        return OFType.EXPERIMENTER;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_10;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFBsnSetMirroring.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 //

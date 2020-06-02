@@ -67,16 +67,6 @@ class OFOxmArpTpaVer15 implements OFOxmArpTpa {
         return value;
     }
 
-    @Override
-    public MatchField<IPv4Address> getMatchField() {
-        return MatchField.ARP_TPA;
-    }
-
-    @Override
-    public boolean isMasked() {
-        return false;
-    }
-
     public OFOxm<IPv4Address> getCanonical() {
         // exact match OXM is always canonical
         return this;
@@ -85,6 +75,16 @@ class OFOxmArpTpaVer15 implements OFOxmArpTpa {
     @Override
     public IPv4Address getMask()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property mask not supported in version 1.5");
+    }
+
+    @Override
+    public boolean isMasked() {
+        return false;
+    }
+
+    @Override
+    public MatchField<IPv4Address> getMatchField() {
+        return MatchField.ARP_TPA;
     }
 
     @Override
@@ -126,8 +126,13 @@ class OFOxmArpTpaVer15 implements OFOxmArpTpa {
         return this;
     }
     @Override
-    public MatchField<IPv4Address> getMatchField() {
-        return MatchField.ARP_TPA;
+    public OFOxm<IPv4Address> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.5");
+    }
+
+    @Override
+    public IPv4Address getMask()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property mask not supported in version 1.5");
     }
 
     @Override
@@ -136,13 +141,8 @@ class OFOxmArpTpaVer15 implements OFOxmArpTpa {
     }
 
     @Override
-    public OFOxm<IPv4Address> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.5");
-    }
-
-    @Override
-    public IPv4Address getMask()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property mask not supported in version 1.5");
+    public MatchField<IPv4Address> getMatchField() {
+        return MatchField.ARP_TPA;
     }
 
     @Override
@@ -188,8 +188,13 @@ class OFOxmArpTpaVer15 implements OFOxmArpTpa {
         return this;
     }
     @Override
-    public MatchField<IPv4Address> getMatchField() {
-        return MatchField.ARP_TPA;
+    public OFOxm<IPv4Address> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.5");
+    }
+
+    @Override
+    public IPv4Address getMask()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property mask not supported in version 1.5");
     }
 
     @Override
@@ -198,13 +203,8 @@ class OFOxmArpTpaVer15 implements OFOxmArpTpa {
     }
 
     @Override
-    public OFOxm<IPv4Address> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.5");
-    }
-
-    @Override
-    public IPv4Address getMask()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property mask not supported in version 1.5");
+    public MatchField<IPv4Address> getMatchField() {
+        return MatchField.ARP_TPA;
     }
 
     @Override

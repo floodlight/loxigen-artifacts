@@ -70,8 +70,8 @@ class OFActionCopyFieldVer15 implements OFActionCopyField {
 
     // Accessors for OF message fields
     @Override
-    public int getType() {
-        return 0x1c;
+    public int getDstOffset() {
+        return dstOffset;
     }
 
     @Override
@@ -80,18 +80,18 @@ class OFActionCopyFieldVer15 implements OFActionCopyField {
     }
 
     @Override
+    public OFOxmList getOxmIds() {
+        return oxmIds;
+    }
+
+    @Override
     public int getSrcOffset() {
         return srcOffset;
     }
 
     @Override
-    public int getDstOffset() {
-        return dstOffset;
-    }
-
-    @Override
-    public OFOxmList getOxmIds() {
-        return oxmIds;
+    public int getType() {
+        return 0x1c;
     }
 
     @Override
@@ -123,10 +123,16 @@ class OFActionCopyFieldVer15 implements OFActionCopyField {
         }
 
     @Override
-    public int getType() {
-        return 0x1c;
+    public int getDstOffset() {
+        return dstOffset;
     }
 
+    @Override
+    public OFActionCopyField.Builder setDstOffset(int dstOffset) {
+        this.dstOffset = dstOffset;
+        this.dstOffsetSet = true;
+        return this;
+    }
     @Override
     public int getNBits() {
         return nBits;
@@ -136,6 +142,17 @@ class OFActionCopyFieldVer15 implements OFActionCopyField {
     public OFActionCopyField.Builder setNBits(int nBits) {
         this.nBits = nBits;
         this.nBitsSet = true;
+        return this;
+    }
+    @Override
+    public OFOxmList getOxmIds() {
+        return oxmIds;
+    }
+
+    @Override
+    public OFActionCopyField.Builder setOxmIds(OFOxmList oxmIds) {
+        this.oxmIds = oxmIds;
+        this.oxmIdsSet = true;
         return this;
     }
     @Override
@@ -150,27 +167,10 @@ class OFActionCopyFieldVer15 implements OFActionCopyField {
         return this;
     }
     @Override
-    public int getDstOffset() {
-        return dstOffset;
+    public int getType() {
+        return 0x1c;
     }
 
-    @Override
-    public OFActionCopyField.Builder setDstOffset(int dstOffset) {
-        this.dstOffset = dstOffset;
-        this.dstOffsetSet = true;
-        return this;
-    }
-    @Override
-    public OFOxmList getOxmIds() {
-        return oxmIds;
-    }
-
-    @Override
-    public OFActionCopyField.Builder setOxmIds(OFOxmList oxmIds) {
-        this.oxmIds = oxmIds;
-        this.oxmIdsSet = true;
-        return this;
-    }
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_15;
@@ -210,10 +210,16 @@ class OFActionCopyFieldVer15 implements OFActionCopyField {
         private OFOxmList oxmIds;
 
     @Override
-    public int getType() {
-        return 0x1c;
+    public int getDstOffset() {
+        return dstOffset;
     }
 
+    @Override
+    public OFActionCopyField.Builder setDstOffset(int dstOffset) {
+        this.dstOffset = dstOffset;
+        this.dstOffsetSet = true;
+        return this;
+    }
     @Override
     public int getNBits() {
         return nBits;
@@ -223,6 +229,17 @@ class OFActionCopyFieldVer15 implements OFActionCopyField {
     public OFActionCopyField.Builder setNBits(int nBits) {
         this.nBits = nBits;
         this.nBitsSet = true;
+        return this;
+    }
+    @Override
+    public OFOxmList getOxmIds() {
+        return oxmIds;
+    }
+
+    @Override
+    public OFActionCopyField.Builder setOxmIds(OFOxmList oxmIds) {
+        this.oxmIds = oxmIds;
+        this.oxmIdsSet = true;
         return this;
     }
     @Override
@@ -237,27 +254,10 @@ class OFActionCopyFieldVer15 implements OFActionCopyField {
         return this;
     }
     @Override
-    public int getDstOffset() {
-        return dstOffset;
+    public int getType() {
+        return 0x1c;
     }
 
-    @Override
-    public OFActionCopyField.Builder setDstOffset(int dstOffset) {
-        this.dstOffset = dstOffset;
-        this.dstOffsetSet = true;
-        return this;
-    }
-    @Override
-    public OFOxmList getOxmIds() {
-        return oxmIds;
-    }
-
-    @Override
-    public OFActionCopyField.Builder setOxmIds(OFOxmList oxmIds) {
-        this.oxmIds = oxmIds;
-        this.oxmIdsSet = true;
-        return this;
-    }
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_15;

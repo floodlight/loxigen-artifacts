@@ -92,13 +92,28 @@ class OFTableFeaturesVer13 implements OFTableFeatures {
 
     // Accessors for OF message fields
     @Override
-    public TableId getTableId() {
-        return tableId;
+    public Set<OFTableConfig> getCapabilities()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property capabilities not supported in version 1.3");
     }
 
     @Override
-    public String getName() {
-        return name;
+    public OFTableFeaturesCommand getCommand()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property command not supported in version 1.3");
+    }
+
+    @Override
+    public long getConfig() {
+        return config;
+    }
+
+    @Override
+    public Set<OFTableFeatureFlag> getFeatures()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property features not supported in version 1.3");
+    }
+
+    @Override
+    public long getMaxEntries() {
+        return maxEntries;
     }
 
     @Override
@@ -112,13 +127,8 @@ class OFTableFeaturesVer13 implements OFTableFeatures {
     }
 
     @Override
-    public long getConfig() {
-        return config;
-    }
-
-    @Override
-    public long getMaxEntries() {
-        return maxEntries;
+    public String getName() {
+        return name;
     }
 
     @Override
@@ -127,18 +137,8 @@ class OFTableFeaturesVer13 implements OFTableFeatures {
     }
 
     @Override
-    public OFTableFeaturesCommand getCommand()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property command not supported in version 1.3");
-    }
-
-    @Override
-    public Set<OFTableFeatureFlag> getFeatures()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property features not supported in version 1.3");
-    }
-
-    @Override
-    public Set<OFTableConfig> getCapabilities()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property capabilities not supported in version 1.3");
+    public TableId getTableId() {
+        return tableId;
     }
 
     @Override
@@ -176,25 +176,52 @@ class OFTableFeaturesVer13 implements OFTableFeatures {
         }
 
     @Override
-    public TableId getTableId() {
-        return tableId;
+    public Set<OFTableConfig> getCapabilities()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property capabilities not supported in version 1.3");
     }
 
     @Override
-    public OFTableFeatures.Builder setTableId(TableId tableId) {
-        this.tableId = tableId;
-        this.tableIdSet = true;
+    public OFTableFeatures.Builder setCapabilities(Set<OFTableConfig> capabilities) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property capabilities not supported in version 1.3");
+    }
+    @Override
+    public OFTableFeaturesCommand getCommand()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property command not supported in version 1.3");
+    }
+
+    @Override
+    public OFTableFeatures.Builder setCommand(OFTableFeaturesCommand command) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property command not supported in version 1.3");
+    }
+    @Override
+    public long getConfig() {
+        return config;
+    }
+
+    @Override
+    public OFTableFeatures.Builder setConfig(long config) {
+        this.config = config;
+        this.configSet = true;
         return this;
     }
     @Override
-    public String getName() {
-        return name;
+    public Set<OFTableFeatureFlag> getFeatures()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property features not supported in version 1.3");
     }
 
     @Override
-    public OFTableFeatures.Builder setName(String name) {
-        this.name = name;
-        this.nameSet = true;
+    public OFTableFeatures.Builder setFeatures(Set<OFTableFeatureFlag> features) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property features not supported in version 1.3");
+    }
+    @Override
+    public long getMaxEntries() {
+        return maxEntries;
+    }
+
+    @Override
+    public OFTableFeatures.Builder setMaxEntries(long maxEntries) {
+        this.maxEntries = maxEntries;
+        this.maxEntriesSet = true;
         return this;
     }
     @Override
@@ -220,25 +247,14 @@ class OFTableFeaturesVer13 implements OFTableFeatures {
         return this;
     }
     @Override
-    public long getConfig() {
-        return config;
+    public String getName() {
+        return name;
     }
 
     @Override
-    public OFTableFeatures.Builder setConfig(long config) {
-        this.config = config;
-        this.configSet = true;
-        return this;
-    }
-    @Override
-    public long getMaxEntries() {
-        return maxEntries;
-    }
-
-    @Override
-    public OFTableFeatures.Builder setMaxEntries(long maxEntries) {
-        this.maxEntries = maxEntries;
-        this.maxEntriesSet = true;
+    public OFTableFeatures.Builder setName(String name) {
+        this.name = name;
+        this.nameSet = true;
         return this;
     }
     @Override
@@ -253,31 +269,15 @@ class OFTableFeaturesVer13 implements OFTableFeatures {
         return this;
     }
     @Override
-    public OFTableFeaturesCommand getCommand()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property command not supported in version 1.3");
+    public TableId getTableId() {
+        return tableId;
     }
 
     @Override
-    public OFTableFeatures.Builder setCommand(OFTableFeaturesCommand command) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property command not supported in version 1.3");
-    }
-    @Override
-    public Set<OFTableFeatureFlag> getFeatures()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property features not supported in version 1.3");
-    }
-
-    @Override
-    public OFTableFeatures.Builder setFeatures(Set<OFTableFeatureFlag> features) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property features not supported in version 1.3");
-    }
-    @Override
-    public Set<OFTableConfig> getCapabilities()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property capabilities not supported in version 1.3");
-    }
-
-    @Override
-    public OFTableFeatures.Builder setCapabilities(Set<OFTableConfig> capabilities) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property capabilities not supported in version 1.3");
+    public OFTableFeatures.Builder setTableId(TableId tableId) {
+        this.tableId = tableId;
+        this.tableIdSet = true;
+        return this;
     }
     @Override
     public OFVersion getVersion() {
@@ -338,25 +338,52 @@ class OFTableFeaturesVer13 implements OFTableFeatures {
         private List<OFTableFeatureProp> properties;
 
     @Override
-    public TableId getTableId() {
-        return tableId;
+    public Set<OFTableConfig> getCapabilities()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property capabilities not supported in version 1.3");
     }
 
     @Override
-    public OFTableFeatures.Builder setTableId(TableId tableId) {
-        this.tableId = tableId;
-        this.tableIdSet = true;
+    public OFTableFeatures.Builder setCapabilities(Set<OFTableConfig> capabilities) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property capabilities not supported in version 1.3");
+    }
+    @Override
+    public OFTableFeaturesCommand getCommand()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property command not supported in version 1.3");
+    }
+
+    @Override
+    public OFTableFeatures.Builder setCommand(OFTableFeaturesCommand command) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property command not supported in version 1.3");
+    }
+    @Override
+    public long getConfig() {
+        return config;
+    }
+
+    @Override
+    public OFTableFeatures.Builder setConfig(long config) {
+        this.config = config;
+        this.configSet = true;
         return this;
     }
     @Override
-    public String getName() {
-        return name;
+    public Set<OFTableFeatureFlag> getFeatures()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property features not supported in version 1.3");
     }
 
     @Override
-    public OFTableFeatures.Builder setName(String name) {
-        this.name = name;
-        this.nameSet = true;
+    public OFTableFeatures.Builder setFeatures(Set<OFTableFeatureFlag> features) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property features not supported in version 1.3");
+    }
+    @Override
+    public long getMaxEntries() {
+        return maxEntries;
+    }
+
+    @Override
+    public OFTableFeatures.Builder setMaxEntries(long maxEntries) {
+        this.maxEntries = maxEntries;
+        this.maxEntriesSet = true;
         return this;
     }
     @Override
@@ -382,25 +409,14 @@ class OFTableFeaturesVer13 implements OFTableFeatures {
         return this;
     }
     @Override
-    public long getConfig() {
-        return config;
+    public String getName() {
+        return name;
     }
 
     @Override
-    public OFTableFeatures.Builder setConfig(long config) {
-        this.config = config;
-        this.configSet = true;
-        return this;
-    }
-    @Override
-    public long getMaxEntries() {
-        return maxEntries;
-    }
-
-    @Override
-    public OFTableFeatures.Builder setMaxEntries(long maxEntries) {
-        this.maxEntries = maxEntries;
-        this.maxEntriesSet = true;
+    public OFTableFeatures.Builder setName(String name) {
+        this.name = name;
+        this.nameSet = true;
         return this;
     }
     @Override
@@ -415,31 +431,15 @@ class OFTableFeaturesVer13 implements OFTableFeatures {
         return this;
     }
     @Override
-    public OFTableFeaturesCommand getCommand()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property command not supported in version 1.3");
+    public TableId getTableId() {
+        return tableId;
     }
 
     @Override
-    public OFTableFeatures.Builder setCommand(OFTableFeaturesCommand command) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property command not supported in version 1.3");
-    }
-    @Override
-    public Set<OFTableFeatureFlag> getFeatures()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property features not supported in version 1.3");
-    }
-
-    @Override
-    public OFTableFeatures.Builder setFeatures(Set<OFTableFeatureFlag> features) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property features not supported in version 1.3");
-    }
-    @Override
-    public Set<OFTableConfig> getCapabilities()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property capabilities not supported in version 1.3");
-    }
-
-    @Override
-    public OFTableFeatures.Builder setCapabilities(Set<OFTableConfig> capabilities) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property capabilities not supported in version 1.3");
+    public OFTableFeatures.Builder setTableId(TableId tableId) {
+        this.tableId = tableId;
+        this.tableIdSet = true;
+        return this;
     }
     @Override
     public OFVersion getVersion() {

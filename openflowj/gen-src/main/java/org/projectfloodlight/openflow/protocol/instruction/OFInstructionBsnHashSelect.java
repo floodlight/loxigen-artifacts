@@ -29,10 +29,10 @@ import java.util.Set;
 import io.netty.buffer.ByteBuf;
 
 public interface OFInstructionBsnHashSelect extends OFObject, OFInstructionBsn {
-    OFInstructionType getType();
     long getExperimenter();
-    long getSubtype();
     Set<OFBsnHashSelectFlags> getFlags();
+    long getSubtype();
+    OFInstructionType getType();
     OFVersion getVersion();
 
     void writeTo(ByteBuf channelBuffer);
@@ -40,11 +40,11 @@ public interface OFInstructionBsnHashSelect extends OFObject, OFInstructionBsn {
     Builder createBuilder();
     public interface Builder extends OFInstructionBsn.Builder {
         OFInstructionBsnHashSelect build();
-        OFInstructionType getType();
         long getExperimenter();
-        long getSubtype();
         Set<OFBsnHashSelectFlags> getFlags();
         Builder setFlags(Set<OFBsnHashSelectFlags> flags);
+        long getSubtype();
+        OFInstructionType getType();
         OFVersion getVersion();
     }
 }

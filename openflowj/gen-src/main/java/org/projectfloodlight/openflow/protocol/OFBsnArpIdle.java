@@ -28,28 +28,28 @@ import org.projectfloodlight.openflow.exceptions.*;
 import io.netty.buffer.ByteBuf;
 
 public interface OFBsnArpIdle extends OFObject, OFBsnHeader {
-    OFVersion getVersion();
-    OFType getType();
-    long getXid();
     long getExperimenter();
-    long getSubtype();
-    int getVlanVid();
     IPv4Address getIpv4Addr();
+    long getSubtype();
+    OFType getType();
+    OFVersion getVersion();
+    int getVlanVid();
+    long getXid();
 
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();
     public interface Builder extends OFBsnHeader.Builder {
         OFBsnArpIdle build();
-        OFVersion getVersion();
-        OFType getType();
-        long getXid();
-        Builder setXid(long xid);
         long getExperimenter();
-        long getSubtype();
-        int getVlanVid();
-        Builder setVlanVid(int vlanVid);
         IPv4Address getIpv4Addr();
         Builder setIpv4Addr(IPv4Address ipv4Addr);
+        long getSubtype();
+        OFType getType();
+        OFVersion getVersion();
+        int getVlanVid();
+        Builder setVlanVid(int vlanVid);
+        long getXid();
+        Builder setXid(long xid);
     }
 }

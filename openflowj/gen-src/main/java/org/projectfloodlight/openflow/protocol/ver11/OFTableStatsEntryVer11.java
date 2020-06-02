@@ -98,48 +98,8 @@ class OFTableStatsEntryVer11 implements OFTableStatsEntry {
 
     // Accessors for OF message fields
     @Override
-    public TableId getTableId() {
-        return tableId;
-    }
-
-    @Override
     public long getActiveCount() {
         return activeCount;
-    }
-
-    @Override
-    public U64 getLookupCount() {
-        return lookupCount;
-    }
-
-    @Override
-    public U64 getMatchedCount() {
-        return matchedCount;
-    }
-
-    @Override
-    public String getName() {
-        return name;
-    }
-
-    @Override
-    public int getWildcards() {
-        return wildcards;
-    }
-
-    @Override
-    public long getMaxEntries() {
-        return maxEntries;
-    }
-
-    @Override
-    public OFMatchBmap getMatch() {
-        return match;
-    }
-
-    @Override
-    public long getWriteActions() {
-        return writeActions;
     }
 
     @Override
@@ -148,13 +108,38 @@ class OFTableStatsEntryVer11 implements OFTableStatsEntry {
     }
 
     @Override
-    public U64 getWriteSetfields()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property writeSetfields not supported in version 1.1");
+    public U64 getApplySetfields()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property applySetfields not supported in version 1.1");
     }
 
     @Override
-    public U64 getApplySetfields()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property applySetfields not supported in version 1.1");
+    public long getConfig() {
+        return config;
+    }
+
+    @Override
+    public long getInstructions() {
+        return instructions;
+    }
+
+    @Override
+    public U64 getLookupCount() {
+        return lookupCount;
+    }
+
+    @Override
+    public OFMatchBmap getMatch() {
+        return match;
+    }
+
+    @Override
+    public U64 getMatchedCount() {
+        return matchedCount;
+    }
+
+    @Override
+    public long getMaxEntries() {
+        return maxEntries;
     }
 
     @Override
@@ -168,13 +153,28 @@ class OFTableStatsEntryVer11 implements OFTableStatsEntry {
     }
 
     @Override
-    public long getInstructions() {
-        return instructions;
+    public String getName() {
+        return name;
     }
 
     @Override
-    public long getConfig() {
-        return config;
+    public TableId getTableId() {
+        return tableId;
+    }
+
+    @Override
+    public int getWildcards() {
+        return wildcards;
+    }
+
+    @Override
+    public long getWriteActions() {
+        return writeActions;
+    }
+
+    @Override
+    public U64 getWriteSetfields()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property writeSetfields not supported in version 1.1");
     }
 
     @Override
@@ -222,17 +222,6 @@ class OFTableStatsEntryVer11 implements OFTableStatsEntry {
         }
 
     @Override
-    public TableId getTableId() {
-        return tableId;
-    }
-
-    @Override
-    public OFTableStatsEntry.Builder setTableId(TableId tableId) {
-        this.tableId = tableId;
-        this.tableIdSet = true;
-        return this;
-    }
-    @Override
     public long getActiveCount() {
         return activeCount;
     }
@@ -241,83 +230,6 @@ class OFTableStatsEntryVer11 implements OFTableStatsEntry {
     public OFTableStatsEntry.Builder setActiveCount(long activeCount) {
         this.activeCount = activeCount;
         this.activeCountSet = true;
-        return this;
-    }
-    @Override
-    public U64 getLookupCount() {
-        return lookupCount;
-    }
-
-    @Override
-    public OFTableStatsEntry.Builder setLookupCount(U64 lookupCount) {
-        this.lookupCount = lookupCount;
-        this.lookupCountSet = true;
-        return this;
-    }
-    @Override
-    public U64 getMatchedCount() {
-        return matchedCount;
-    }
-
-    @Override
-    public OFTableStatsEntry.Builder setMatchedCount(U64 matchedCount) {
-        this.matchedCount = matchedCount;
-        this.matchedCountSet = true;
-        return this;
-    }
-    @Override
-    public String getName() {
-        return name;
-    }
-
-    @Override
-    public OFTableStatsEntry.Builder setName(String name) {
-        this.name = name;
-        this.nameSet = true;
-        return this;
-    }
-    @Override
-    public int getWildcards() {
-        return wildcards;
-    }
-
-    @Override
-    public OFTableStatsEntry.Builder setWildcards(int wildcards) {
-        this.wildcards = wildcards;
-        this.wildcardsSet = true;
-        return this;
-    }
-    @Override
-    public long getMaxEntries() {
-        return maxEntries;
-    }
-
-    @Override
-    public OFTableStatsEntry.Builder setMaxEntries(long maxEntries) {
-        this.maxEntries = maxEntries;
-        this.maxEntriesSet = true;
-        return this;
-    }
-    @Override
-    public OFMatchBmap getMatch() {
-        return match;
-    }
-
-    @Override
-    public OFTableStatsEntry.Builder setMatch(OFMatchBmap match) {
-        this.match = match;
-        this.matchSet = true;
-        return this;
-    }
-    @Override
-    public long getWriteActions() {
-        return writeActions;
-    }
-
-    @Override
-    public OFTableStatsEntry.Builder setWriteActions(long writeActions) {
-        this.writeActions = writeActions;
-        this.writeActionsSet = true;
         return this;
     }
     @Override
@@ -332,15 +244,6 @@ class OFTableStatsEntryVer11 implements OFTableStatsEntry {
         return this;
     }
     @Override
-    public U64 getWriteSetfields()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property writeSetfields not supported in version 1.1");
-    }
-
-    @Override
-    public OFTableStatsEntry.Builder setWriteSetfields(U64 writeSetfields) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property writeSetfields not supported in version 1.1");
-    }
-    @Override
     public U64 getApplySetfields()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property applySetfields not supported in version 1.1");
     }
@@ -348,6 +251,72 @@ class OFTableStatsEntryVer11 implements OFTableStatsEntry {
     @Override
     public OFTableStatsEntry.Builder setApplySetfields(U64 applySetfields) throws UnsupportedOperationException {
             throw new UnsupportedOperationException("Property applySetfields not supported in version 1.1");
+    }
+    @Override
+    public long getConfig() {
+        return config;
+    }
+
+    @Override
+    public OFTableStatsEntry.Builder setConfig(long config) {
+        this.config = config;
+        this.configSet = true;
+        return this;
+    }
+    @Override
+    public long getInstructions() {
+        return instructions;
+    }
+
+    @Override
+    public OFTableStatsEntry.Builder setInstructions(long instructions) {
+        this.instructions = instructions;
+        this.instructionsSet = true;
+        return this;
+    }
+    @Override
+    public U64 getLookupCount() {
+        return lookupCount;
+    }
+
+    @Override
+    public OFTableStatsEntry.Builder setLookupCount(U64 lookupCount) {
+        this.lookupCount = lookupCount;
+        this.lookupCountSet = true;
+        return this;
+    }
+    @Override
+    public OFMatchBmap getMatch() {
+        return match;
+    }
+
+    @Override
+    public OFTableStatsEntry.Builder setMatch(OFMatchBmap match) {
+        this.match = match;
+        this.matchSet = true;
+        return this;
+    }
+    @Override
+    public U64 getMatchedCount() {
+        return matchedCount;
+    }
+
+    @Override
+    public OFTableStatsEntry.Builder setMatchedCount(U64 matchedCount) {
+        this.matchedCount = matchedCount;
+        this.matchedCountSet = true;
+        return this;
+    }
+    @Override
+    public long getMaxEntries() {
+        return maxEntries;
+    }
+
+    @Override
+    public OFTableStatsEntry.Builder setMaxEntries(long maxEntries) {
+        this.maxEntries = maxEntries;
+        this.maxEntriesSet = true;
+        return this;
     }
     @Override
     public U64 getMetadataMatch()throws UnsupportedOperationException {
@@ -368,26 +337,57 @@ class OFTableStatsEntryVer11 implements OFTableStatsEntry {
             throw new UnsupportedOperationException("Property metadataWrite not supported in version 1.1");
     }
     @Override
-    public long getInstructions() {
-        return instructions;
+    public String getName() {
+        return name;
     }
 
     @Override
-    public OFTableStatsEntry.Builder setInstructions(long instructions) {
-        this.instructions = instructions;
-        this.instructionsSet = true;
+    public OFTableStatsEntry.Builder setName(String name) {
+        this.name = name;
+        this.nameSet = true;
         return this;
     }
     @Override
-    public long getConfig() {
-        return config;
+    public TableId getTableId() {
+        return tableId;
     }
 
     @Override
-    public OFTableStatsEntry.Builder setConfig(long config) {
-        this.config = config;
-        this.configSet = true;
+    public OFTableStatsEntry.Builder setTableId(TableId tableId) {
+        this.tableId = tableId;
+        this.tableIdSet = true;
         return this;
+    }
+    @Override
+    public int getWildcards() {
+        return wildcards;
+    }
+
+    @Override
+    public OFTableStatsEntry.Builder setWildcards(int wildcards) {
+        this.wildcards = wildcards;
+        this.wildcardsSet = true;
+        return this;
+    }
+    @Override
+    public long getWriteActions() {
+        return writeActions;
+    }
+
+    @Override
+    public OFTableStatsEntry.Builder setWriteActions(long writeActions) {
+        this.writeActions = writeActions;
+        this.writeActionsSet = true;
+        return this;
+    }
+    @Override
+    public U64 getWriteSetfields()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property writeSetfields not supported in version 1.1");
+    }
+
+    @Override
+    public OFTableStatsEntry.Builder setWriteSetfields(U64 writeSetfields) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property writeSetfields not supported in version 1.1");
     }
     @Override
     public OFVersion getVersion() {
@@ -468,17 +468,6 @@ class OFTableStatsEntryVer11 implements OFTableStatsEntry {
         private U64 matchedCount;
 
     @Override
-    public TableId getTableId() {
-        return tableId;
-    }
-
-    @Override
-    public OFTableStatsEntry.Builder setTableId(TableId tableId) {
-        this.tableId = tableId;
-        this.tableIdSet = true;
-        return this;
-    }
-    @Override
     public long getActiveCount() {
         return activeCount;
     }
@@ -487,83 +476,6 @@ class OFTableStatsEntryVer11 implements OFTableStatsEntry {
     public OFTableStatsEntry.Builder setActiveCount(long activeCount) {
         this.activeCount = activeCount;
         this.activeCountSet = true;
-        return this;
-    }
-    @Override
-    public U64 getLookupCount() {
-        return lookupCount;
-    }
-
-    @Override
-    public OFTableStatsEntry.Builder setLookupCount(U64 lookupCount) {
-        this.lookupCount = lookupCount;
-        this.lookupCountSet = true;
-        return this;
-    }
-    @Override
-    public U64 getMatchedCount() {
-        return matchedCount;
-    }
-
-    @Override
-    public OFTableStatsEntry.Builder setMatchedCount(U64 matchedCount) {
-        this.matchedCount = matchedCount;
-        this.matchedCountSet = true;
-        return this;
-    }
-    @Override
-    public String getName() {
-        return name;
-    }
-
-    @Override
-    public OFTableStatsEntry.Builder setName(String name) {
-        this.name = name;
-        this.nameSet = true;
-        return this;
-    }
-    @Override
-    public int getWildcards() {
-        return wildcards;
-    }
-
-    @Override
-    public OFTableStatsEntry.Builder setWildcards(int wildcards) {
-        this.wildcards = wildcards;
-        this.wildcardsSet = true;
-        return this;
-    }
-    @Override
-    public long getMaxEntries() {
-        return maxEntries;
-    }
-
-    @Override
-    public OFTableStatsEntry.Builder setMaxEntries(long maxEntries) {
-        this.maxEntries = maxEntries;
-        this.maxEntriesSet = true;
-        return this;
-    }
-    @Override
-    public OFMatchBmap getMatch() {
-        return match;
-    }
-
-    @Override
-    public OFTableStatsEntry.Builder setMatch(OFMatchBmap match) {
-        this.match = match;
-        this.matchSet = true;
-        return this;
-    }
-    @Override
-    public long getWriteActions() {
-        return writeActions;
-    }
-
-    @Override
-    public OFTableStatsEntry.Builder setWriteActions(long writeActions) {
-        this.writeActions = writeActions;
-        this.writeActionsSet = true;
         return this;
     }
     @Override
@@ -578,15 +490,6 @@ class OFTableStatsEntryVer11 implements OFTableStatsEntry {
         return this;
     }
     @Override
-    public U64 getWriteSetfields()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property writeSetfields not supported in version 1.1");
-    }
-
-    @Override
-    public OFTableStatsEntry.Builder setWriteSetfields(U64 writeSetfields) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property writeSetfields not supported in version 1.1");
-    }
-    @Override
     public U64 getApplySetfields()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property applySetfields not supported in version 1.1");
     }
@@ -594,6 +497,72 @@ class OFTableStatsEntryVer11 implements OFTableStatsEntry {
     @Override
     public OFTableStatsEntry.Builder setApplySetfields(U64 applySetfields) throws UnsupportedOperationException {
             throw new UnsupportedOperationException("Property applySetfields not supported in version 1.1");
+    }
+    @Override
+    public long getConfig() {
+        return config;
+    }
+
+    @Override
+    public OFTableStatsEntry.Builder setConfig(long config) {
+        this.config = config;
+        this.configSet = true;
+        return this;
+    }
+    @Override
+    public long getInstructions() {
+        return instructions;
+    }
+
+    @Override
+    public OFTableStatsEntry.Builder setInstructions(long instructions) {
+        this.instructions = instructions;
+        this.instructionsSet = true;
+        return this;
+    }
+    @Override
+    public U64 getLookupCount() {
+        return lookupCount;
+    }
+
+    @Override
+    public OFTableStatsEntry.Builder setLookupCount(U64 lookupCount) {
+        this.lookupCount = lookupCount;
+        this.lookupCountSet = true;
+        return this;
+    }
+    @Override
+    public OFMatchBmap getMatch() {
+        return match;
+    }
+
+    @Override
+    public OFTableStatsEntry.Builder setMatch(OFMatchBmap match) {
+        this.match = match;
+        this.matchSet = true;
+        return this;
+    }
+    @Override
+    public U64 getMatchedCount() {
+        return matchedCount;
+    }
+
+    @Override
+    public OFTableStatsEntry.Builder setMatchedCount(U64 matchedCount) {
+        this.matchedCount = matchedCount;
+        this.matchedCountSet = true;
+        return this;
+    }
+    @Override
+    public long getMaxEntries() {
+        return maxEntries;
+    }
+
+    @Override
+    public OFTableStatsEntry.Builder setMaxEntries(long maxEntries) {
+        this.maxEntries = maxEntries;
+        this.maxEntriesSet = true;
+        return this;
     }
     @Override
     public U64 getMetadataMatch()throws UnsupportedOperationException {
@@ -614,26 +583,57 @@ class OFTableStatsEntryVer11 implements OFTableStatsEntry {
             throw new UnsupportedOperationException("Property metadataWrite not supported in version 1.1");
     }
     @Override
-    public long getInstructions() {
-        return instructions;
+    public String getName() {
+        return name;
     }
 
     @Override
-    public OFTableStatsEntry.Builder setInstructions(long instructions) {
-        this.instructions = instructions;
-        this.instructionsSet = true;
+    public OFTableStatsEntry.Builder setName(String name) {
+        this.name = name;
+        this.nameSet = true;
         return this;
     }
     @Override
-    public long getConfig() {
-        return config;
+    public TableId getTableId() {
+        return tableId;
     }
 
     @Override
-    public OFTableStatsEntry.Builder setConfig(long config) {
-        this.config = config;
-        this.configSet = true;
+    public OFTableStatsEntry.Builder setTableId(TableId tableId) {
+        this.tableId = tableId;
+        this.tableIdSet = true;
         return this;
+    }
+    @Override
+    public int getWildcards() {
+        return wildcards;
+    }
+
+    @Override
+    public OFTableStatsEntry.Builder setWildcards(int wildcards) {
+        this.wildcards = wildcards;
+        this.wildcardsSet = true;
+        return this;
+    }
+    @Override
+    public long getWriteActions() {
+        return writeActions;
+    }
+
+    @Override
+    public OFTableStatsEntry.Builder setWriteActions(long writeActions) {
+        this.writeActions = writeActions;
+        this.writeActionsSet = true;
+        return this;
+    }
+    @Override
+    public U64 getWriteSetfields()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property writeSetfields not supported in version 1.1");
+    }
+
+    @Override
+    public OFTableStatsEntry.Builder setWriteSetfields(U64 writeSetfields) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property writeSetfields not supported in version 1.1");
     }
     @Override
     public OFVersion getVersion() {

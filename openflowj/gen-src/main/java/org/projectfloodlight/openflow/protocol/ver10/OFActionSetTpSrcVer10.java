@@ -58,13 +58,13 @@ class OFActionSetTpSrcVer10 implements OFActionSetTpSrc {
 
     // Accessors for OF message fields
     @Override
-    public OFActionType getType() {
-        return OFActionType.SET_TP_SRC;
+    public TransportPort getTpPort() {
+        return tpPort;
     }
 
     @Override
-    public TransportPort getTpPort() {
-        return tpPort;
+    public OFActionType getType() {
+        return OFActionType.SET_TP_SRC;
     }
 
     @Override
@@ -90,11 +90,6 @@ class OFActionSetTpSrcVer10 implements OFActionSetTpSrc {
         }
 
     @Override
-    public OFActionType getType() {
-        return OFActionType.SET_TP_SRC;
-    }
-
-    @Override
     public TransportPort getTpPort() {
         return tpPort;
     }
@@ -105,6 +100,11 @@ class OFActionSetTpSrcVer10 implements OFActionSetTpSrc {
         this.tpPortSet = true;
         return this;
     }
+    @Override
+    public OFActionType getType() {
+        return OFActionType.SET_TP_SRC;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_10;
@@ -132,11 +132,6 @@ class OFActionSetTpSrcVer10 implements OFActionSetTpSrc {
         private TransportPort tpPort;
 
     @Override
-    public OFActionType getType() {
-        return OFActionType.SET_TP_SRC;
-    }
-
-    @Override
     public TransportPort getTpPort() {
         return tpPort;
     }
@@ -147,6 +142,11 @@ class OFActionSetTpSrcVer10 implements OFActionSetTpSrc {
         this.tpPortSet = true;
         return this;
     }
+    @Override
+    public OFActionType getType() {
+        return OFActionType.SET_TP_SRC;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_10;

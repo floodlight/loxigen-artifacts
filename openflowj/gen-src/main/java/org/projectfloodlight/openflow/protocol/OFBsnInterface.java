@@ -29,9 +29,9 @@ import io.netty.buffer.ByteBuf;
 
 public interface OFBsnInterface extends OFObject {
     MacAddress getHwAddr();
-    String getName();
     IPv4Address getIpv4Addr();
     IPv4Address getIpv4Netmask();
+    String getName();
     OFVersion getVersion();
 
     void writeTo(ByteBuf channelBuffer);
@@ -41,12 +41,12 @@ public interface OFBsnInterface extends OFObject {
         OFBsnInterface build();
         MacAddress getHwAddr();
         Builder setHwAddr(MacAddress hwAddr);
-        String getName();
-        Builder setName(String name);
         IPv4Address getIpv4Addr();
         Builder setIpv4Addr(IPv4Address ipv4Addr);
         IPv4Address getIpv4Netmask();
         Builder setIpv4Netmask(IPv4Address ipv4Netmask);
+        String getName();
+        Builder setName(String name);
         OFVersion getVersion();
     }
 }

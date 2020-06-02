@@ -29,38 +29,38 @@ import java.util.Set;
 import io.netty.buffer.ByteBuf;
 
 public interface OFDescStatsReply extends OFObject, OFStatsReply {
-    OFVersion getVersion();
-    OFType getType();
-    long getXid();
-    OFStatsType getStatsType();
-    Set<OFStatsReplyFlags> getFlags();
-    String getMfrDesc();
-    String getHwDesc();
-    String getSwDesc();
-    String getSerialNum();
     String getDpDesc();
+    Set<OFStatsReplyFlags> getFlags();
+    String getHwDesc();
+    String getMfrDesc();
+    String getSerialNum();
+    OFStatsType getStatsType();
+    String getSwDesc();
+    OFType getType();
+    OFVersion getVersion();
+    long getXid();
 
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();
     public interface Builder extends OFStatsReply.Builder {
         OFDescStatsReply build();
-        OFVersion getVersion();
-        OFType getType();
-        long getXid();
-        Builder setXid(long xid);
-        OFStatsType getStatsType();
-        Set<OFStatsReplyFlags> getFlags();
-        Builder setFlags(Set<OFStatsReplyFlags> flags);
-        String getMfrDesc();
-        Builder setMfrDesc(String mfrDesc);
-        String getHwDesc();
-        Builder setHwDesc(String hwDesc);
-        String getSwDesc();
-        Builder setSwDesc(String swDesc);
-        String getSerialNum();
-        Builder setSerialNum(String serialNum);
         String getDpDesc();
         Builder setDpDesc(String dpDesc);
+        Set<OFStatsReplyFlags> getFlags();
+        Builder setFlags(Set<OFStatsReplyFlags> flags);
+        String getHwDesc();
+        Builder setHwDesc(String hwDesc);
+        String getMfrDesc();
+        Builder setMfrDesc(String mfrDesc);
+        String getSerialNum();
+        Builder setSerialNum(String serialNum);
+        OFStatsType getStatsType();
+        String getSwDesc();
+        Builder setSwDesc(String swDesc);
+        OFType getType();
+        OFVersion getVersion();
+        long getXid();
+        Builder setXid(long xid);
     }
 }

@@ -67,16 +67,6 @@ class OFOxmConnTrackingNwProtoVer13 implements OFOxmConnTrackingNwProto {
         return value;
     }
 
-    @Override
-    public MatchField<U8> getMatchField() {
-        return MatchField.CONN_TRACKING_NW_PROTO;
-    }
-
-    @Override
-    public boolean isMasked() {
-        return false;
-    }
-
     public OFOxm<U8> getCanonical() {
         // exact match OXM is always canonical
         return this;
@@ -85,6 +75,16 @@ class OFOxmConnTrackingNwProtoVer13 implements OFOxmConnTrackingNwProto {
     @Override
     public U8 getMask()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property mask not supported in version 1.3");
+    }
+
+    @Override
+    public boolean isMasked() {
+        return false;
+    }
+
+    @Override
+    public MatchField<U8> getMatchField() {
+        return MatchField.CONN_TRACKING_NW_PROTO;
     }
 
     @Override
@@ -126,8 +126,13 @@ class OFOxmConnTrackingNwProtoVer13 implements OFOxmConnTrackingNwProto {
         return this;
     }
     @Override
-    public MatchField<U8> getMatchField() {
-        return MatchField.CONN_TRACKING_NW_PROTO;
+    public OFOxm<U8> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.3");
+    }
+
+    @Override
+    public U8 getMask()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property mask not supported in version 1.3");
     }
 
     @Override
@@ -136,13 +141,8 @@ class OFOxmConnTrackingNwProtoVer13 implements OFOxmConnTrackingNwProto {
     }
 
     @Override
-    public OFOxm<U8> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.3");
-    }
-
-    @Override
-    public U8 getMask()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property mask not supported in version 1.3");
+    public MatchField<U8> getMatchField() {
+        return MatchField.CONN_TRACKING_NW_PROTO;
     }
 
     @Override
@@ -188,8 +188,13 @@ class OFOxmConnTrackingNwProtoVer13 implements OFOxmConnTrackingNwProto {
         return this;
     }
     @Override
-    public MatchField<U8> getMatchField() {
-        return MatchField.CONN_TRACKING_NW_PROTO;
+    public OFOxm<U8> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.3");
+    }
+
+    @Override
+    public U8 getMask()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property mask not supported in version 1.3");
     }
 
     @Override
@@ -198,13 +203,8 @@ class OFOxmConnTrackingNwProtoVer13 implements OFOxmConnTrackingNwProto {
     }
 
     @Override
-    public OFOxm<U8> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.3");
-    }
-
-    @Override
-    public U8 getMask()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property mask not supported in version 1.3");
+    public MatchField<U8> getMatchField() {
+        return MatchField.CONN_TRACKING_NW_PROTO;
     }
 
     @Override

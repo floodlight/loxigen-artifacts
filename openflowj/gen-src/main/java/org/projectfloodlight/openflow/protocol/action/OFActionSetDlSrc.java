@@ -29,8 +29,8 @@ import java.util.Set;
 import io.netty.buffer.ByteBuf;
 
 public interface OFActionSetDlSrc extends OFObject, OFAction {
-    OFActionType getType();
     MacAddress getDlAddr();
+    OFActionType getType();
     OFVersion getVersion();
 
     void writeTo(ByteBuf channelBuffer);
@@ -38,9 +38,9 @@ public interface OFActionSetDlSrc extends OFObject, OFAction {
     Builder createBuilder();
     public interface Builder extends OFAction.Builder {
         OFActionSetDlSrc build();
-        OFActionType getType();
         MacAddress getDlAddr();
         Builder setDlAddr(MacAddress dlAddr);
+        OFActionType getType();
         OFVersion getVersion();
     }
 }

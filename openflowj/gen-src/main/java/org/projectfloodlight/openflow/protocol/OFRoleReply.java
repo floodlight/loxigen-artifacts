@@ -28,27 +28,27 @@ import org.projectfloodlight.openflow.exceptions.*;
 import io.netty.buffer.ByteBuf;
 
 public interface OFRoleReply extends OFObject, OFMessage {
-    OFVersion getVersion();
-    OFType getType();
-    long getXid();
-    OFControllerRole getRole();
     U64 getGenerationId();
+    OFControllerRole getRole();
     int getShortId() throws UnsupportedOperationException;
+    OFType getType();
+    OFVersion getVersion();
+    long getXid();
 
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();
     public interface Builder extends OFMessage.Builder {
         OFRoleReply build();
-        OFVersion getVersion();
-        OFType getType();
-        long getXid();
-        Builder setXid(long xid);
-        OFControllerRole getRole();
-        Builder setRole(OFControllerRole role);
         U64 getGenerationId();
         Builder setGenerationId(U64 generationId);
+        OFControllerRole getRole();
+        Builder setRole(OFControllerRole role);
         int getShortId() throws UnsupportedOperationException;
         Builder setShortId(int shortId) throws UnsupportedOperationException;
+        OFType getType();
+        OFVersion getVersion();
+        long getXid();
+        Builder setXid(long xid);
     }
 }

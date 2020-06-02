@@ -70,11 +70,6 @@ class OFMeterFeaturesVer15 implements OFMeterFeatures {
 
     // Accessors for OF message fields
     @Override
-    public long getMaxMeter() {
-        return maxMeter;
-    }
-
-    @Override
     public long getBandTypes() {
         return bandTypes;
     }
@@ -82,6 +77,11 @@ class OFMeterFeaturesVer15 implements OFMeterFeatures {
     @Override
     public long getCapabilities() {
         return capabilities;
+    }
+
+    @Override
+    public long getFeatures() {
+        return features;
     }
 
     @Override
@@ -95,8 +95,8 @@ class OFMeterFeaturesVer15 implements OFMeterFeatures {
     }
 
     @Override
-    public long getFeatures() {
-        return features;
+    public long getMaxMeter() {
+        return maxMeter;
     }
 
     @Override
@@ -132,17 +132,6 @@ class OFMeterFeaturesVer15 implements OFMeterFeatures {
         }
 
     @Override
-    public long getMaxMeter() {
-        return maxMeter;
-    }
-
-    @Override
-    public OFMeterFeatures.Builder setMaxMeter(long maxMeter) {
-        this.maxMeter = maxMeter;
-        this.maxMeterSet = true;
-        return this;
-    }
-    @Override
     public long getBandTypes() {
         return bandTypes;
     }
@@ -162,6 +151,17 @@ class OFMeterFeaturesVer15 implements OFMeterFeatures {
     public OFMeterFeatures.Builder setCapabilities(long capabilities) {
         this.capabilities = capabilities;
         this.capabilitiesSet = true;
+        return this;
+    }
+    @Override
+    public long getFeatures() {
+        return features;
+    }
+
+    @Override
+    public OFMeterFeatures.Builder setFeatures(long features) {
+        this.features = features;
+        this.featuresSet = true;
         return this;
     }
     @Override
@@ -187,14 +187,14 @@ class OFMeterFeaturesVer15 implements OFMeterFeatures {
         return this;
     }
     @Override
-    public long getFeatures() {
-        return features;
+    public long getMaxMeter() {
+        return maxMeter;
     }
 
     @Override
-    public OFMeterFeatures.Builder setFeatures(long features) {
-        this.features = features;
-        this.featuresSet = true;
+    public OFMeterFeatures.Builder setMaxMeter(long maxMeter) {
+        this.maxMeter = maxMeter;
+        this.maxMeterSet = true;
         return this;
     }
     @Override
@@ -242,17 +242,6 @@ class OFMeterFeaturesVer15 implements OFMeterFeatures {
         private long features;
 
     @Override
-    public long getMaxMeter() {
-        return maxMeter;
-    }
-
-    @Override
-    public OFMeterFeatures.Builder setMaxMeter(long maxMeter) {
-        this.maxMeter = maxMeter;
-        this.maxMeterSet = true;
-        return this;
-    }
-    @Override
     public long getBandTypes() {
         return bandTypes;
     }
@@ -272,6 +261,17 @@ class OFMeterFeaturesVer15 implements OFMeterFeatures {
     public OFMeterFeatures.Builder setCapabilities(long capabilities) {
         this.capabilities = capabilities;
         this.capabilitiesSet = true;
+        return this;
+    }
+    @Override
+    public long getFeatures() {
+        return features;
+    }
+
+    @Override
+    public OFMeterFeatures.Builder setFeatures(long features) {
+        this.features = features;
+        this.featuresSet = true;
         return this;
     }
     @Override
@@ -297,14 +297,14 @@ class OFMeterFeaturesVer15 implements OFMeterFeatures {
         return this;
     }
     @Override
-    public long getFeatures() {
-        return features;
+    public long getMaxMeter() {
+        return maxMeter;
     }
 
     @Override
-    public OFMeterFeatures.Builder setFeatures(long features) {
-        this.features = features;
-        this.featuresSet = true;
+    public OFMeterFeatures.Builder setMaxMeter(long maxMeter) {
+        this.maxMeter = maxMeter;
+        this.maxMeterSet = true;
         return this;
     }
     @Override

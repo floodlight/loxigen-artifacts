@@ -29,28 +29,28 @@ import java.util.Set;
 import io.netty.buffer.ByteBuf;
 
 public interface OFBsnFlowIdleEnableSetReply extends OFObject, OFBsnHeader {
-    OFVersion getVersion();
-    OFType getType();
-    long getXid();
-    long getExperimenter();
-    long getSubtype();
     long getEnable();
+    long getExperimenter();
     long getStatus();
+    long getSubtype();
+    OFType getType();
+    OFVersion getVersion();
+    long getXid();
 
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();
     public interface Builder extends OFBsnHeader.Builder {
         OFBsnFlowIdleEnableSetReply build();
-        OFVersion getVersion();
-        OFType getType();
-        long getXid();
-        Builder setXid(long xid);
-        long getExperimenter();
-        long getSubtype();
         long getEnable();
         Builder setEnable(long enable);
+        long getExperimenter();
         long getStatus();
         Builder setStatus(long status);
+        long getSubtype();
+        OFType getType();
+        OFVersion getVersion();
+        long getXid();
+        Builder setXid(long xid);
     }
 }

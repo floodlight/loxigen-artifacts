@@ -29,41 +29,41 @@ import java.util.Set;
 import io.netty.buffer.ByteBuf;
 
 public interface OFFlowLightweightStatsRequest extends OFObject, OFStatsRequest<OFFlowLightweightStatsReply>, OFRequest<OFFlowLightweightStatsReply> {
-    OFVersion getVersion();
-    OFType getType();
-    long getXid();
-    OFStatsType getStatsType();
-    Set<OFStatsRequestFlags> getFlags();
-    TableId getTableId();
-    OFPort getOutPort();
-    OFGroup getOutGroup();
     U64 getCookie();
     U64 getCookieMask();
+    Set<OFStatsRequestFlags> getFlags();
     Match getMatch();
+    OFGroup getOutGroup();
+    OFPort getOutPort();
+    OFStatsType getStatsType();
+    TableId getTableId();
+    OFType getType();
+    OFVersion getVersion();
+    long getXid();
 
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();
     public interface Builder extends OFStatsRequest.Builder<OFFlowLightweightStatsReply> {
         OFFlowLightweightStatsRequest build();
-        OFVersion getVersion();
-        OFType getType();
-        long getXid();
-        Builder setXid(long xid);
-        OFStatsType getStatsType();
-        Set<OFStatsRequestFlags> getFlags();
-        Builder setFlags(Set<OFStatsRequestFlags> flags);
-        TableId getTableId();
-        Builder setTableId(TableId tableId);
-        OFPort getOutPort();
-        Builder setOutPort(OFPort outPort);
-        OFGroup getOutGroup();
-        Builder setOutGroup(OFGroup outGroup);
         U64 getCookie();
         Builder setCookie(U64 cookie);
         U64 getCookieMask();
         Builder setCookieMask(U64 cookieMask);
+        Set<OFStatsRequestFlags> getFlags();
+        Builder setFlags(Set<OFStatsRequestFlags> flags);
         Match getMatch();
         Builder setMatch(Match match);
+        OFGroup getOutGroup();
+        Builder setOutGroup(OFGroup outGroup);
+        OFPort getOutPort();
+        Builder setOutPort(OFPort outPort);
+        OFStatsType getStatsType();
+        TableId getTableId();
+        Builder setTableId(TableId tableId);
+        OFType getType();
+        OFVersion getVersion();
+        long getXid();
+        Builder setXid(long xid);
     }
 }

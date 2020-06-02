@@ -58,13 +58,13 @@ class OFActionSetDlSrcVer10 implements OFActionSetDlSrc {
 
     // Accessors for OF message fields
     @Override
-    public OFActionType getType() {
-        return OFActionType.SET_DL_SRC;
+    public MacAddress getDlAddr() {
+        return dlAddr;
     }
 
     @Override
-    public MacAddress getDlAddr() {
-        return dlAddr;
+    public OFActionType getType() {
+        return OFActionType.SET_DL_SRC;
     }
 
     @Override
@@ -90,11 +90,6 @@ class OFActionSetDlSrcVer10 implements OFActionSetDlSrc {
         }
 
     @Override
-    public OFActionType getType() {
-        return OFActionType.SET_DL_SRC;
-    }
-
-    @Override
     public MacAddress getDlAddr() {
         return dlAddr;
     }
@@ -105,6 +100,11 @@ class OFActionSetDlSrcVer10 implements OFActionSetDlSrc {
         this.dlAddrSet = true;
         return this;
     }
+    @Override
+    public OFActionType getType() {
+        return OFActionType.SET_DL_SRC;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_10;
@@ -132,11 +132,6 @@ class OFActionSetDlSrcVer10 implements OFActionSetDlSrc {
         private MacAddress dlAddr;
 
     @Override
-    public OFActionType getType() {
-        return OFActionType.SET_DL_SRC;
-    }
-
-    @Override
     public MacAddress getDlAddr() {
         return dlAddr;
     }
@@ -147,6 +142,11 @@ class OFActionSetDlSrcVer10 implements OFActionSetDlSrc {
         this.dlAddrSet = true;
         return this;
     }
+    @Override
+    public OFActionType getType() {
+        return OFActionType.SET_DL_SRC;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_10;

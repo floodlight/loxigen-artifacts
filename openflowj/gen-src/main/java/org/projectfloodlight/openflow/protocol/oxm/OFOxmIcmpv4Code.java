@@ -30,10 +30,10 @@ import io.netty.buffer.ByteBuf;
 public interface OFOxmIcmpv4Code extends OFObject, OFOxm<ICMPv4Code> {
     long getTypeLen();
     ICMPv4Code getValue();
-    MatchField<ICMPv4Code> getMatchField();
-    boolean isMasked();
     OFOxm<ICMPv4Code> getCanonical();
     ICMPv4Code getMask();
+    boolean isMasked();
+    MatchField<ICMPv4Code> getMatchField();
     OFVersion getVersion();
 
     void writeTo(ByteBuf channelBuffer);
@@ -44,10 +44,10 @@ public interface OFOxmIcmpv4Code extends OFObject, OFOxm<ICMPv4Code> {
         long getTypeLen();
         ICMPv4Code getValue();
         Builder setValue(ICMPv4Code value);
-        MatchField<ICMPv4Code> getMatchField();
-        boolean isMasked();
         OFOxm<ICMPv4Code> getCanonical();
         ICMPv4Code getMask();
+        boolean isMasked();
+        MatchField<ICMPv4Code> getMatchField();
         OFVersion getVersion();
     }
 }

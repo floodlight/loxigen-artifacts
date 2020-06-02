@@ -67,16 +67,6 @@ class OFOxmConnTrackingMarkVer13 implements OFOxmConnTrackingMark {
         return value;
     }
 
-    @Override
-    public MatchField<U32> getMatchField() {
-        return MatchField.CONN_TRACKING_MARK;
-    }
-
-    @Override
-    public boolean isMasked() {
-        return false;
-    }
-
     public OFOxm<U32> getCanonical() {
         // exact match OXM is always canonical
         return this;
@@ -85,6 +75,16 @@ class OFOxmConnTrackingMarkVer13 implements OFOxmConnTrackingMark {
     @Override
     public U32 getMask()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property mask not supported in version 1.3");
+    }
+
+    @Override
+    public boolean isMasked() {
+        return false;
+    }
+
+    @Override
+    public MatchField<U32> getMatchField() {
+        return MatchField.CONN_TRACKING_MARK;
     }
 
     @Override
@@ -126,8 +126,13 @@ class OFOxmConnTrackingMarkVer13 implements OFOxmConnTrackingMark {
         return this;
     }
     @Override
-    public MatchField<U32> getMatchField() {
-        return MatchField.CONN_TRACKING_MARK;
+    public OFOxm<U32> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.3");
+    }
+
+    @Override
+    public U32 getMask()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property mask not supported in version 1.3");
     }
 
     @Override
@@ -136,13 +141,8 @@ class OFOxmConnTrackingMarkVer13 implements OFOxmConnTrackingMark {
     }
 
     @Override
-    public OFOxm<U32> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.3");
-    }
-
-    @Override
-    public U32 getMask()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property mask not supported in version 1.3");
+    public MatchField<U32> getMatchField() {
+        return MatchField.CONN_TRACKING_MARK;
     }
 
     @Override
@@ -188,8 +188,13 @@ class OFOxmConnTrackingMarkVer13 implements OFOxmConnTrackingMark {
         return this;
     }
     @Override
-    public MatchField<U32> getMatchField() {
-        return MatchField.CONN_TRACKING_MARK;
+    public OFOxm<U32> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.3");
+    }
+
+    @Override
+    public U32 getMask()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property mask not supported in version 1.3");
     }
 
     @Override
@@ -198,13 +203,8 @@ class OFOxmConnTrackingMarkVer13 implements OFOxmConnTrackingMark {
     }
 
     @Override
-    public OFOxm<U32> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.3");
-    }
-
-    @Override
-    public U32 getMask()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property mask not supported in version 1.3");
+    public MatchField<U32> getMatchField() {
+        return MatchField.CONN_TRACKING_MARK;
     }
 
     @Override

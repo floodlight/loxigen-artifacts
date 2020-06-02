@@ -58,13 +58,13 @@ class OFActionSetNwDstVer10 implements OFActionSetNwDst {
 
     // Accessors for OF message fields
     @Override
-    public OFActionType getType() {
-        return OFActionType.SET_NW_DST;
+    public IPv4Address getNwAddr() {
+        return nwAddr;
     }
 
     @Override
-    public IPv4Address getNwAddr() {
-        return nwAddr;
+    public OFActionType getType() {
+        return OFActionType.SET_NW_DST;
     }
 
     @Override
@@ -90,11 +90,6 @@ class OFActionSetNwDstVer10 implements OFActionSetNwDst {
         }
 
     @Override
-    public OFActionType getType() {
-        return OFActionType.SET_NW_DST;
-    }
-
-    @Override
     public IPv4Address getNwAddr() {
         return nwAddr;
     }
@@ -105,6 +100,11 @@ class OFActionSetNwDstVer10 implements OFActionSetNwDst {
         this.nwAddrSet = true;
         return this;
     }
+    @Override
+    public OFActionType getType() {
+        return OFActionType.SET_NW_DST;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_10;
@@ -132,11 +132,6 @@ class OFActionSetNwDstVer10 implements OFActionSetNwDst {
         private IPv4Address nwAddr;
 
     @Override
-    public OFActionType getType() {
-        return OFActionType.SET_NW_DST;
-    }
-
-    @Override
     public IPv4Address getNwAddr() {
         return nwAddr;
     }
@@ -147,6 +142,11 @@ class OFActionSetNwDstVer10 implements OFActionSetNwDst {
         this.nwAddrSet = true;
         return this;
     }
+    @Override
+    public OFActionType getType() {
+        return OFActionType.SET_NW_DST;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_10;

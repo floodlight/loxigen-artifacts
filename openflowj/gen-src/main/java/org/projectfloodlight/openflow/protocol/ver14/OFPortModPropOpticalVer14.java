@@ -67,23 +67,18 @@ class OFPortModPropOpticalVer14 implements OFPortModPropOptical {
 
     // Accessors for OF message fields
     @Override
-    public int getType() {
-        return 0x1;
-    }
-
-    @Override
     public long getConfigure() {
         return configure;
     }
 
     @Override
-    public long getFreqLdma() {
-        return freqLdma;
+    public long getFlOffset() {
+        return flOffset;
     }
 
     @Override
-    public long getFlOffset() {
-        return flOffset;
+    public long getFreqLdma() {
+        return freqLdma;
     }
 
     @Override
@@ -94,6 +89,11 @@ class OFPortModPropOpticalVer14 implements OFPortModPropOptical {
     @Override
     public long getTxPwr() {
         return txPwr;
+    }
+
+    @Override
+    public int getType() {
+        return 0x1;
     }
 
     @Override
@@ -127,11 +127,6 @@ class OFPortModPropOpticalVer14 implements OFPortModPropOptical {
         }
 
     @Override
-    public int getType() {
-        return 0x1;
-    }
-
-    @Override
     public long getConfigure() {
         return configure;
     }
@@ -143,17 +138,6 @@ class OFPortModPropOpticalVer14 implements OFPortModPropOptical {
         return this;
     }
     @Override
-    public long getFreqLdma() {
-        return freqLdma;
-    }
-
-    @Override
-    public OFPortModPropOptical.Builder setFreqLdma(long freqLdma) {
-        this.freqLdma = freqLdma;
-        this.freqLdmaSet = true;
-        return this;
-    }
-    @Override
     public long getFlOffset() {
         return flOffset;
     }
@@ -162,6 +146,17 @@ class OFPortModPropOpticalVer14 implements OFPortModPropOptical {
     public OFPortModPropOptical.Builder setFlOffset(long flOffset) {
         this.flOffset = flOffset;
         this.flOffsetSet = true;
+        return this;
+    }
+    @Override
+    public long getFreqLdma() {
+        return freqLdma;
+    }
+
+    @Override
+    public OFPortModPropOptical.Builder setFreqLdma(long freqLdma) {
+        this.freqLdma = freqLdma;
+        this.freqLdmaSet = true;
         return this;
     }
     @Override
@@ -186,6 +181,11 @@ class OFPortModPropOpticalVer14 implements OFPortModPropOptical {
         this.txPwrSet = true;
         return this;
     }
+    @Override
+    public int getType() {
+        return 0x1;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_14;
@@ -227,11 +227,6 @@ class OFPortModPropOpticalVer14 implements OFPortModPropOptical {
         private long txPwr;
 
     @Override
-    public int getType() {
-        return 0x1;
-    }
-
-    @Override
     public long getConfigure() {
         return configure;
     }
@@ -243,17 +238,6 @@ class OFPortModPropOpticalVer14 implements OFPortModPropOptical {
         return this;
     }
     @Override
-    public long getFreqLdma() {
-        return freqLdma;
-    }
-
-    @Override
-    public OFPortModPropOptical.Builder setFreqLdma(long freqLdma) {
-        this.freqLdma = freqLdma;
-        this.freqLdmaSet = true;
-        return this;
-    }
-    @Override
     public long getFlOffset() {
         return flOffset;
     }
@@ -262,6 +246,17 @@ class OFPortModPropOpticalVer14 implements OFPortModPropOptical {
     public OFPortModPropOptical.Builder setFlOffset(long flOffset) {
         this.flOffset = flOffset;
         this.flOffsetSet = true;
+        return this;
+    }
+    @Override
+    public long getFreqLdma() {
+        return freqLdma;
+    }
+
+    @Override
+    public OFPortModPropOptical.Builder setFreqLdma(long freqLdma) {
+        this.freqLdma = freqLdma;
+        this.freqLdmaSet = true;
         return this;
     }
     @Override
@@ -286,6 +281,11 @@ class OFPortModPropOpticalVer14 implements OFPortModPropOptical {
         this.txPwrSet = true;
         return this;
     }
+    @Override
+    public int getType() {
+        return 0x1;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_14;

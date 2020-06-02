@@ -64,18 +64,8 @@ class OFBsnTableSetBucketsSizeVer14 implements OFBsnTableSetBucketsSize {
 
     // Accessors for OF message fields
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_14;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.EXPERIMENTER;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
+    public long getBucketsSize() {
+        return bucketsSize;
     }
 
     @Override
@@ -94,8 +84,18 @@ class OFBsnTableSetBucketsSizeVer14 implements OFBsnTableSetBucketsSize {
     }
 
     @Override
-    public long getBucketsSize() {
-        return bucketsSize;
+    public OFType getType() {
+        return OFType.EXPERIMENTER;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_14;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
     }
 
 
@@ -120,24 +120,14 @@ class OFBsnTableSetBucketsSizeVer14 implements OFBsnTableSetBucketsSize {
         }
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_14;
+    public long getBucketsSize() {
+        return bucketsSize;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.EXPERIMENTER;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFBsnTableSetBucketsSize.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
+    public OFBsnTableSetBucketsSize.Builder setBucketsSize(long bucketsSize) {
+        this.bucketsSize = bucketsSize;
+        this.bucketsSizeSet = true;
         return this;
     }
     @Override
@@ -162,14 +152,24 @@ class OFBsnTableSetBucketsSizeVer14 implements OFBsnTableSetBucketsSize {
         return this;
     }
     @Override
-    public long getBucketsSize() {
-        return bucketsSize;
+    public OFType getType() {
+        return OFType.EXPERIMENTER;
     }
 
     @Override
-    public OFBsnTableSetBucketsSize.Builder setBucketsSize(long bucketsSize) {
-        this.bucketsSize = bucketsSize;
-        this.bucketsSizeSet = true;
+    public OFVersion getVersion() {
+        return OFVersion.OF_14;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFBsnTableSetBucketsSize.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 
@@ -202,24 +202,14 @@ class OFBsnTableSetBucketsSizeVer14 implements OFBsnTableSetBucketsSize {
         private long bucketsSize;
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_14;
+    public long getBucketsSize() {
+        return bucketsSize;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.EXPERIMENTER;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFBsnTableSetBucketsSize.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
+    public OFBsnTableSetBucketsSize.Builder setBucketsSize(long bucketsSize) {
+        this.bucketsSize = bucketsSize;
+        this.bucketsSizeSet = true;
         return this;
     }
     @Override
@@ -244,14 +234,24 @@ class OFBsnTableSetBucketsSizeVer14 implements OFBsnTableSetBucketsSize {
         return this;
     }
     @Override
-    public long getBucketsSize() {
-        return bucketsSize;
+    public OFType getType() {
+        return OFType.EXPERIMENTER;
     }
 
     @Override
-    public OFBsnTableSetBucketsSize.Builder setBucketsSize(long bucketsSize) {
-        this.bucketsSize = bucketsSize;
-        this.bucketsSizeSet = true;
+    public OFVersion getVersion() {
+        return OFVersion.OF_14;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFBsnTableSetBucketsSize.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 //

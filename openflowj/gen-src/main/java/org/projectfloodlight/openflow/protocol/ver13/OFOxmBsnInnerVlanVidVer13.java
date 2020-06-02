@@ -67,16 +67,6 @@ class OFOxmBsnInnerVlanVidVer13 implements OFOxmBsnInnerVlanVid {
         return value;
     }
 
-    @Override
-    public MatchField<OFVlanVidMatch> getMatchField() {
-        return MatchField.BSN_INNER_VLAN_VID;
-    }
-
-    @Override
-    public boolean isMasked() {
-        return false;
-    }
-
     public OFOxm<OFVlanVidMatch> getCanonical() {
         // exact match OXM is always canonical
         return this;
@@ -85,6 +75,16 @@ class OFOxmBsnInnerVlanVidVer13 implements OFOxmBsnInnerVlanVid {
     @Override
     public OFVlanVidMatch getMask()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property mask not supported in version 1.3");
+    }
+
+    @Override
+    public boolean isMasked() {
+        return false;
+    }
+
+    @Override
+    public MatchField<OFVlanVidMatch> getMatchField() {
+        return MatchField.BSN_INNER_VLAN_VID;
     }
 
     @Override
@@ -126,8 +126,13 @@ class OFOxmBsnInnerVlanVidVer13 implements OFOxmBsnInnerVlanVid {
         return this;
     }
     @Override
-    public MatchField<OFVlanVidMatch> getMatchField() {
-        return MatchField.BSN_INNER_VLAN_VID;
+    public OFOxm<OFVlanVidMatch> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.3");
+    }
+
+    @Override
+    public OFVlanVidMatch getMask()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property mask not supported in version 1.3");
     }
 
     @Override
@@ -136,13 +141,8 @@ class OFOxmBsnInnerVlanVidVer13 implements OFOxmBsnInnerVlanVid {
     }
 
     @Override
-    public OFOxm<OFVlanVidMatch> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.3");
-    }
-
-    @Override
-    public OFVlanVidMatch getMask()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property mask not supported in version 1.3");
+    public MatchField<OFVlanVidMatch> getMatchField() {
+        return MatchField.BSN_INNER_VLAN_VID;
     }
 
     @Override
@@ -188,8 +188,13 @@ class OFOxmBsnInnerVlanVidVer13 implements OFOxmBsnInnerVlanVid {
         return this;
     }
     @Override
-    public MatchField<OFVlanVidMatch> getMatchField() {
-        return MatchField.BSN_INNER_VLAN_VID;
+    public OFOxm<OFVlanVidMatch> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.3");
+    }
+
+    @Override
+    public OFVlanVidMatch getMask()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property mask not supported in version 1.3");
     }
 
     @Override
@@ -198,13 +203,8 @@ class OFOxmBsnInnerVlanVidVer13 implements OFOxmBsnInnerVlanVid {
     }
 
     @Override
-    public OFOxm<OFVlanVidMatch> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.3");
-    }
-
-    @Override
-    public OFVlanVidMatch getMask()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property mask not supported in version 1.3");
+    public MatchField<OFVlanVidMatch> getMatchField() {
+        return MatchField.BSN_INNER_VLAN_VID;
     }
 
     @Override

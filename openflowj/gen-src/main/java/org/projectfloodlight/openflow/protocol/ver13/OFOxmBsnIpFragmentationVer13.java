@@ -67,16 +67,6 @@ class OFOxmBsnIpFragmentationVer13 implements OFOxmBsnIpFragmentation {
         return value;
     }
 
-    @Override
-    public MatchField<OFBooleanValue> getMatchField() {
-        return MatchField.BSN_IP_FRAGMENTATION;
-    }
-
-    @Override
-    public boolean isMasked() {
-        return false;
-    }
-
     public OFOxm<OFBooleanValue> getCanonical() {
         // exact match OXM is always canonical
         return this;
@@ -85,6 +75,16 @@ class OFOxmBsnIpFragmentationVer13 implements OFOxmBsnIpFragmentation {
     @Override
     public OFBooleanValue getMask()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property mask not supported in version 1.3");
+    }
+
+    @Override
+    public boolean isMasked() {
+        return false;
+    }
+
+    @Override
+    public MatchField<OFBooleanValue> getMatchField() {
+        return MatchField.BSN_IP_FRAGMENTATION;
     }
 
     @Override
@@ -126,8 +126,13 @@ class OFOxmBsnIpFragmentationVer13 implements OFOxmBsnIpFragmentation {
         return this;
     }
     @Override
-    public MatchField<OFBooleanValue> getMatchField() {
-        return MatchField.BSN_IP_FRAGMENTATION;
+    public OFOxm<OFBooleanValue> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.3");
+    }
+
+    @Override
+    public OFBooleanValue getMask()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property mask not supported in version 1.3");
     }
 
     @Override
@@ -136,13 +141,8 @@ class OFOxmBsnIpFragmentationVer13 implements OFOxmBsnIpFragmentation {
     }
 
     @Override
-    public OFOxm<OFBooleanValue> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.3");
-    }
-
-    @Override
-    public OFBooleanValue getMask()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property mask not supported in version 1.3");
+    public MatchField<OFBooleanValue> getMatchField() {
+        return MatchField.BSN_IP_FRAGMENTATION;
     }
 
     @Override
@@ -188,8 +188,13 @@ class OFOxmBsnIpFragmentationVer13 implements OFOxmBsnIpFragmentation {
         return this;
     }
     @Override
-    public MatchField<OFBooleanValue> getMatchField() {
-        return MatchField.BSN_IP_FRAGMENTATION;
+    public OFOxm<OFBooleanValue> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.3");
+    }
+
+    @Override
+    public OFBooleanValue getMask()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property mask not supported in version 1.3");
     }
 
     @Override
@@ -198,13 +203,8 @@ class OFOxmBsnIpFragmentationVer13 implements OFOxmBsnIpFragmentation {
     }
 
     @Override
-    public OFOxm<OFBooleanValue> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.3");
-    }
-
-    @Override
-    public OFBooleanValue getMask()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property mask not supported in version 1.3");
+    public MatchField<OFBooleanValue> getMatchField() {
+        return MatchField.BSN_IP_FRAGMENTATION;
     }
 
     @Override

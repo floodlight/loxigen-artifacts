@@ -61,18 +61,8 @@ class OFBsnFlowIdleEnableSetReplyVer13 implements OFBsnFlowIdleEnableSetReply {
 
     // Accessors for OF message fields
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_13;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.EXPERIMENTER;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
+    public long getEnable() {
+        return enable;
     }
 
     @Override
@@ -81,18 +71,28 @@ class OFBsnFlowIdleEnableSetReplyVer13 implements OFBsnFlowIdleEnableSetReply {
     }
 
     @Override
+    public long getStatus() {
+        return status;
+    }
+
+    @Override
     public long getSubtype() {
         return 0x25L;
     }
 
     @Override
-    public long getEnable() {
-        return enable;
+    public OFType getType() {
+        return OFType.EXPERIMENTER;
     }
 
     @Override
-    public long getStatus() {
-        return status;
+    public OFVersion getVersion() {
+        return OFVersion.OF_13;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
     }
 
 
@@ -117,37 +117,6 @@ class OFBsnFlowIdleEnableSetReplyVer13 implements OFBsnFlowIdleEnableSetReply {
         }
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_13;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.EXPERIMENTER;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFBsnFlowIdleEnableSetReply.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
-        return this;
-    }
-    @Override
-    public long getExperimenter() {
-        return 0x5c16c7L;
-    }
-
-    @Override
-    public long getSubtype() {
-        return 0x25L;
-    }
-
-    @Override
     public long getEnable() {
         return enable;
     }
@@ -159,6 +128,11 @@ class OFBsnFlowIdleEnableSetReplyVer13 implements OFBsnFlowIdleEnableSetReply {
         return this;
     }
     @Override
+    public long getExperimenter() {
+        return 0x5c16c7L;
+    }
+
+    @Override
     public long getStatus() {
         return status;
     }
@@ -167,6 +141,32 @@ class OFBsnFlowIdleEnableSetReplyVer13 implements OFBsnFlowIdleEnableSetReply {
     public OFBsnFlowIdleEnableSetReply.Builder setStatus(long status) {
         this.status = status;
         this.statusSet = true;
+        return this;
+    }
+    @Override
+    public long getSubtype() {
+        return 0x25L;
+    }
+
+    @Override
+    public OFType getType() {
+        return OFType.EXPERIMENTER;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_13;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFBsnFlowIdleEnableSetReply.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 
@@ -197,37 +197,6 @@ class OFBsnFlowIdleEnableSetReplyVer13 implements OFBsnFlowIdleEnableSetReply {
         private long status;
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_13;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.EXPERIMENTER;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFBsnFlowIdleEnableSetReply.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
-        return this;
-    }
-    @Override
-    public long getExperimenter() {
-        return 0x5c16c7L;
-    }
-
-    @Override
-    public long getSubtype() {
-        return 0x25L;
-    }
-
-    @Override
     public long getEnable() {
         return enable;
     }
@@ -239,6 +208,11 @@ class OFBsnFlowIdleEnableSetReplyVer13 implements OFBsnFlowIdleEnableSetReply {
         return this;
     }
     @Override
+    public long getExperimenter() {
+        return 0x5c16c7L;
+    }
+
+    @Override
     public long getStatus() {
         return status;
     }
@@ -247,6 +221,32 @@ class OFBsnFlowIdleEnableSetReplyVer13 implements OFBsnFlowIdleEnableSetReply {
     public OFBsnFlowIdleEnableSetReply.Builder setStatus(long status) {
         this.status = status;
         this.statusSet = true;
+        return this;
+    }
+    @Override
+    public long getSubtype() {
+        return 0x25L;
+    }
+
+    @Override
+    public OFType getType() {
+        return OFType.EXPERIMENTER;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_13;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFBsnFlowIdleEnableSetReply.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 //

@@ -28,12 +28,12 @@ import org.projectfloodlight.openflow.exceptions.*;
 import io.netty.buffer.ByteBuf;
 
 public interface OFOxmIcmpv4CodeMasked extends OFObject, OFOxm<ICMPv4Code> {
+    ICMPv4Code getMask();
     long getTypeLen();
     ICMPv4Code getValue();
-    ICMPv4Code getMask();
-    MatchField<ICMPv4Code> getMatchField();
-    boolean isMasked();
     OFOxm<ICMPv4Code> getCanonical();
+    boolean isMasked();
+    MatchField<ICMPv4Code> getMatchField();
     OFVersion getVersion();
 
     void writeTo(ByteBuf channelBuffer);
@@ -41,14 +41,14 @@ public interface OFOxmIcmpv4CodeMasked extends OFObject, OFOxm<ICMPv4Code> {
     Builder createBuilder();
     public interface Builder extends OFOxm.Builder<ICMPv4Code> {
         OFOxmIcmpv4CodeMasked build();
+        ICMPv4Code getMask();
+        Builder setMask(ICMPv4Code mask);
         long getTypeLen();
         ICMPv4Code getValue();
         Builder setValue(ICMPv4Code value);
-        ICMPv4Code getMask();
-        Builder setMask(ICMPv4Code mask);
-        MatchField<ICMPv4Code> getMatchField();
-        boolean isMasked();
         OFOxm<ICMPv4Code> getCanonical();
+        boolean isMasked();
+        MatchField<ICMPv4Code> getMatchField();
         OFVersion getVersion();
     }
 }

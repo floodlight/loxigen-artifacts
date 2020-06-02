@@ -28,9 +28,9 @@ import org.projectfloodlight.openflow.exceptions.*;
 import io.netty.buffer.ByteBuf;
 
 public interface OFActionNicira extends OFObject, OFActionExperimenter {
-    OFActionType getType();
     long getExperimenter();
     int getSubtype();
+    OFActionType getType();
     OFVersion getVersion();
 
     void writeTo(ByteBuf channelBuffer);
@@ -38,9 +38,9 @@ public interface OFActionNicira extends OFObject, OFActionExperimenter {
     Builder createBuilder();
     public interface Builder extends OFActionExperimenter.Builder {
         OFActionNicira build();
-        OFActionType getType();
         long getExperimenter();
         int getSubtype();
+        OFActionType getType();
         OFVersion getVersion();
     }
 }

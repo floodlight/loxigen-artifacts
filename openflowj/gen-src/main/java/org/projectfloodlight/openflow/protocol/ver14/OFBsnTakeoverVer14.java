@@ -55,8 +55,13 @@ class OFBsnTakeoverVer14 implements OFBsnTakeover {
 
     // Accessors for OF message fields
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_14;
+    public long getExperimenter() {
+        return 0x5c16c7L;
+    }
+
+    @Override
+    public long getSubtype() {
+        return 0x45L;
     }
 
     @Override
@@ -65,18 +70,13 @@ class OFBsnTakeoverVer14 implements OFBsnTakeover {
     }
 
     @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_14;
+    }
+
+    @Override
     public long getXid() {
         return xid;
-    }
-
-    @Override
-    public long getExperimenter() {
-        return 0x5c16c7L;
-    }
-
-    @Override
-    public long getSubtype() {
-        return 0x45L;
     }
 
 
@@ -97,13 +97,23 @@ class OFBsnTakeoverVer14 implements OFBsnTakeover {
         }
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_14;
+    public long getExperimenter() {
+        return 0x5c16c7L;
+    }
+
+    @Override
+    public long getSubtype() {
+        return 0x45L;
     }
 
     @Override
     public OFType getType() {
         return OFType.EXPERIMENTER;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_14;
     }
 
     @Override
@@ -117,16 +127,6 @@ class OFBsnTakeoverVer14 implements OFBsnTakeover {
         this.xidSet = true;
         return this;
     }
-    @Override
-    public long getExperimenter() {
-        return 0x5c16c7L;
-    }
-
-    @Override
-    public long getSubtype() {
-        return 0x45L;
-    }
-
 
 
         @Override
@@ -147,13 +147,23 @@ class OFBsnTakeoverVer14 implements OFBsnTakeover {
         private long xid;
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_14;
+    public long getExperimenter() {
+        return 0x5c16c7L;
+    }
+
+    @Override
+    public long getSubtype() {
+        return 0x45L;
     }
 
     @Override
     public OFType getType() {
         return OFType.EXPERIMENTER;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_14;
     }
 
     @Override
@@ -167,16 +177,6 @@ class OFBsnTakeoverVer14 implements OFBsnTakeover {
         this.xidSet = true;
         return this;
     }
-    @Override
-    public long getExperimenter() {
-        return 0x5c16c7L;
-    }
-
-    @Override
-    public long getSubtype() {
-        return 0x45L;
-    }
-
 //
         @Override
         public OFBsnTakeover build() {

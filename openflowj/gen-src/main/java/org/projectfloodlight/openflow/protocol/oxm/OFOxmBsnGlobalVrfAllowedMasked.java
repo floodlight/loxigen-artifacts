@@ -28,12 +28,12 @@ import org.projectfloodlight.openflow.exceptions.*;
 import io.netty.buffer.ByteBuf;
 
 public interface OFOxmBsnGlobalVrfAllowedMasked extends OFObject, OFOxm<OFBooleanValue> {
+    OFBooleanValue getMask();
     long getTypeLen();
     OFBooleanValue getValue();
-    OFBooleanValue getMask();
-    MatchField<OFBooleanValue> getMatchField();
-    boolean isMasked();
     OFOxm<OFBooleanValue> getCanonical();
+    boolean isMasked();
+    MatchField<OFBooleanValue> getMatchField();
     OFVersion getVersion();
 
     void writeTo(ByteBuf channelBuffer);
@@ -41,14 +41,14 @@ public interface OFOxmBsnGlobalVrfAllowedMasked extends OFObject, OFOxm<OFBoolea
     Builder createBuilder();
     public interface Builder extends OFOxm.Builder<OFBooleanValue> {
         OFOxmBsnGlobalVrfAllowedMasked build();
+        OFBooleanValue getMask();
+        Builder setMask(OFBooleanValue mask);
         long getTypeLen();
         OFBooleanValue getValue();
         Builder setValue(OFBooleanValue value);
-        OFBooleanValue getMask();
-        Builder setMask(OFBooleanValue mask);
-        MatchField<OFBooleanValue> getMatchField();
-        boolean isMasked();
         OFOxm<OFBooleanValue> getCanonical();
+        boolean isMasked();
+        MatchField<OFBooleanValue> getMatchField();
         OFVersion getVersion();
     }
 }

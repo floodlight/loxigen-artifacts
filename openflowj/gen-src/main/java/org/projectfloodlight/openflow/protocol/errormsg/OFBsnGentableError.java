@@ -28,37 +28,37 @@ import org.projectfloodlight.openflow.exceptions.*;
 import io.netty.buffer.ByteBuf;
 
 public interface OFBsnGentableError extends OFObject, OFBsnBaseError {
-    OFVersion getVersion();
-    OFType getType();
-    long getXid();
-    OFErrorType getErrType();
-    int getSubtype();
-    long getExperimenter();
-    OFBsnGentableErrorCode getErrorCode();
-    GenTableId getTableId();
-    String getErrMsg();
     OFErrorCauseData getData();
+    String getErrMsg();
+    OFErrorType getErrType();
+    OFBsnGentableErrorCode getErrorCode();
+    long getExperimenter();
+    int getSubtype();
+    GenTableId getTableId();
+    OFType getType();
+    OFVersion getVersion();
+    long getXid();
 
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();
     public interface Builder extends OFBsnBaseError.Builder {
         OFBsnGentableError build();
-        OFVersion getVersion();
-        OFType getType();
-        long getXid();
-        Builder setXid(long xid);
-        OFErrorType getErrType();
-        int getSubtype();
-        Builder setSubtype(int subtype);
-        long getExperimenter();
-        OFBsnGentableErrorCode getErrorCode();
-        Builder setErrorCode(OFBsnGentableErrorCode errorCode);
-        GenTableId getTableId();
-        Builder setTableId(GenTableId tableId);
-        String getErrMsg();
-        Builder setErrMsg(String errMsg);
         OFErrorCauseData getData();
         Builder setData(OFErrorCauseData data);
+        String getErrMsg();
+        Builder setErrMsg(String errMsg);
+        OFErrorType getErrType();
+        OFBsnGentableErrorCode getErrorCode();
+        Builder setErrorCode(OFBsnGentableErrorCode errorCode);
+        long getExperimenter();
+        int getSubtype();
+        Builder setSubtype(int subtype);
+        GenTableId getTableId();
+        Builder setTableId(GenTableId tableId);
+        OFType getType();
+        OFVersion getVersion();
+        long getXid();
+        Builder setXid(long xid);
     }
 }

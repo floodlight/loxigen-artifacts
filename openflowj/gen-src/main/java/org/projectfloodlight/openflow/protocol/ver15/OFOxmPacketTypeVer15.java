@@ -62,16 +62,6 @@ class OFOxmPacketTypeVer15 implements OFOxmPacketType {
         return value;
     }
 
-    @Override
-    public MatchField<PacketType> getMatchField() {
-        return MatchField.PACKET_TYPE;
-    }
-
-    @Override
-    public boolean isMasked() {
-        return false;
-    }
-
     public OFOxm<PacketType> getCanonical() {
         // exact match OXM is always canonical
         return this;
@@ -80,6 +70,16 @@ class OFOxmPacketTypeVer15 implements OFOxmPacketType {
     @Override
     public PacketType getMask()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property mask not supported in version 1.5");
+    }
+
+    @Override
+    public boolean isMasked() {
+        return false;
+    }
+
+    @Override
+    public MatchField<PacketType> getMatchField() {
+        return MatchField.PACKET_TYPE;
     }
 
     @Override
@@ -121,8 +121,13 @@ class OFOxmPacketTypeVer15 implements OFOxmPacketType {
         return this;
     }
     @Override
-    public MatchField<PacketType> getMatchField() {
-        return MatchField.PACKET_TYPE;
+    public OFOxm<PacketType> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.5");
+    }
+
+    @Override
+    public PacketType getMask()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property mask not supported in version 1.5");
     }
 
     @Override
@@ -131,13 +136,8 @@ class OFOxmPacketTypeVer15 implements OFOxmPacketType {
     }
 
     @Override
-    public OFOxm<PacketType> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.5");
-    }
-
-    @Override
-    public PacketType getMask()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property mask not supported in version 1.5");
+    public MatchField<PacketType> getMatchField() {
+        return MatchField.PACKET_TYPE;
     }
 
     @Override
@@ -183,8 +183,13 @@ class OFOxmPacketTypeVer15 implements OFOxmPacketType {
         return this;
     }
     @Override
-    public MatchField<PacketType> getMatchField() {
-        return MatchField.PACKET_TYPE;
+    public OFOxm<PacketType> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.5");
+    }
+
+    @Override
+    public PacketType getMask()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property mask not supported in version 1.5");
     }
 
     @Override
@@ -193,13 +198,8 @@ class OFOxmPacketTypeVer15 implements OFOxmPacketType {
     }
 
     @Override
-    public OFOxm<PacketType> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.5");
-    }
-
-    @Override
-    public PacketType getMask()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property mask not supported in version 1.5");
+    public MatchField<PacketType> getMatchField() {
+        return MatchField.PACKET_TYPE;
     }
 
     @Override

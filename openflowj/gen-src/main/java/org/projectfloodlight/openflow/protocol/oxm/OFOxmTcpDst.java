@@ -30,10 +30,10 @@ import io.netty.buffer.ByteBuf;
 public interface OFOxmTcpDst extends OFObject, OFOxm<TransportPort> {
     long getTypeLen();
     TransportPort getValue();
-    MatchField<TransportPort> getMatchField();
-    boolean isMasked();
     OFOxm<TransportPort> getCanonical();
     TransportPort getMask();
+    boolean isMasked();
+    MatchField<TransportPort> getMatchField();
     OFVersion getVersion();
 
     void writeTo(ByteBuf channelBuffer);
@@ -44,10 +44,10 @@ public interface OFOxmTcpDst extends OFObject, OFOxm<TransportPort> {
         long getTypeLen();
         TransportPort getValue();
         Builder setValue(TransportPort value);
-        MatchField<TransportPort> getMatchField();
-        boolean isMasked();
         OFOxm<TransportPort> getCanonical();
         TransportPort getMask();
+        boolean isMasked();
+        MatchField<TransportPort> getMatchField();
         OFVersion getVersion();
     }
 }

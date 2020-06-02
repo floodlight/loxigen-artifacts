@@ -44,15 +44,15 @@ abstract class OFQueuePropVer12 {
             short type = bb.readShort();
             bb.readerIndex(start);
             switch(type) {
-               case (short) 0x1:
-                   // discriminator value 0x1=0x1 for class OFQueuePropMinRateVer12
-                   return OFQueuePropMinRateVer12.READER.readFrom(bb);
                case (short) 0xffff:
                    // discriminator value 0xffff=0xffff for class OFQueuePropExperimenterVer12
                    return OFQueuePropExperimenterVer12.READER.readFrom(bb);
                case (short) 0x2:
                    // discriminator value 0x2=0x2 for class OFQueuePropMaxRateVer12
                    return OFQueuePropMaxRateVer12.READER.readFrom(bb);
+               case (short) 0x1:
+                   // discriminator value 0x1=0x1 for class OFQueuePropMinRateVer12
+                   return OFQueuePropMinRateVer12.READER.readFrom(bb);
                default:
                    throw new OFParseError("Unknown value for discriminator type of class OFQueuePropVer12: " + type);
             }

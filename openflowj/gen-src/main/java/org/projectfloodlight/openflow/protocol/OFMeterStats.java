@@ -29,13 +29,13 @@ import java.util.List;
 import io.netty.buffer.ByteBuf;
 
 public interface OFMeterStats extends OFObject {
-    long getMeterId();
-    long getFlowCount() throws UnsupportedOperationException;
-    U64 getPacketInCount();
-    U64 getByteInCount();
-    long getDurationSec();
-    long getDurationNsec();
     List<OFMeterBandStats> getBandStats();
+    U64 getByteInCount();
+    long getDurationNsec();
+    long getDurationSec();
+    long getFlowCount() throws UnsupportedOperationException;
+    long getMeterId();
+    U64 getPacketInCount();
     long getRefCount() throws UnsupportedOperationException;
     OFVersion getVersion();
 
@@ -44,20 +44,20 @@ public interface OFMeterStats extends OFObject {
     Builder createBuilder();
     public interface Builder  {
         OFMeterStats build();
-        long getMeterId();
-        Builder setMeterId(long meterId);
-        long getFlowCount() throws UnsupportedOperationException;
-        Builder setFlowCount(long flowCount) throws UnsupportedOperationException;
-        U64 getPacketInCount();
-        Builder setPacketInCount(U64 packetInCount);
-        U64 getByteInCount();
-        Builder setByteInCount(U64 byteInCount);
-        long getDurationSec();
-        Builder setDurationSec(long durationSec);
-        long getDurationNsec();
-        Builder setDurationNsec(long durationNsec);
         List<OFMeterBandStats> getBandStats();
         Builder setBandStats(List<OFMeterBandStats> bandStats);
+        U64 getByteInCount();
+        Builder setByteInCount(U64 byteInCount);
+        long getDurationNsec();
+        Builder setDurationNsec(long durationNsec);
+        long getDurationSec();
+        Builder setDurationSec(long durationSec);
+        long getFlowCount() throws UnsupportedOperationException;
+        Builder setFlowCount(long flowCount) throws UnsupportedOperationException;
+        long getMeterId();
+        Builder setMeterId(long meterId);
+        U64 getPacketInCount();
+        Builder setPacketInCount(U64 packetInCount);
         long getRefCount() throws UnsupportedOperationException;
         Builder setRefCount(long refCount) throws UnsupportedOperationException;
         OFVersion getVersion();

@@ -47,24 +47,24 @@ abstract class OFInstructionIdVer15 {
                case (short) 0x4:
                    // discriminator value OFInstructionType.APPLY_ACTIONS=4 for class OFInstructionIdApplyActionsVer15
                    return OFInstructionIdApplyActionsVer15.READER.readFrom(bb);
-               case (short) 0xffff:
-                   // discriminator value OFInstructionType.EXPERIMENTER=65535 for class OFInstructionIdExperimenterVer15
-                   return OFInstructionIdExperimenterVer15.READER.readFrom(bb);
                case (short) 0x5:
                    // discriminator value OFInstructionType.CLEAR_ACTIONS=5 for class OFInstructionIdClearActionsVer15
                    return OFInstructionIdClearActionsVer15.READER.readFrom(bb);
+               case (short) 0xffff:
+                   // discriminator value OFInstructionType.EXPERIMENTER=65535 for class OFInstructionIdExperimenterVer15
+                   return OFInstructionIdExperimenterVer15.READER.readFrom(bb);
                case (short) 0x1:
                    // discriminator value OFInstructionType.GOTO_TABLE=1 for class OFInstructionIdGotoTableVer15
                    return OFInstructionIdGotoTableVer15.READER.readFrom(bb);
+               case (short) 0x7:
+                   // discriminator value OFInstructionType.STAT_TRIGGER=7 for class OFInstructionIdStatTriggerVer15
+                   return OFInstructionIdStatTriggerVer15.READER.readFrom(bb);
                case (short) 0x3:
                    // discriminator value OFInstructionType.WRITE_ACTIONS=3 for class OFInstructionIdWriteActionsVer15
                    return OFInstructionIdWriteActionsVer15.READER.readFrom(bb);
                case (short) 0x2:
                    // discriminator value OFInstructionType.WRITE_METADATA=2 for class OFInstructionIdWriteMetadataVer15
                    return OFInstructionIdWriteMetadataVer15.READER.readFrom(bb);
-               case (short) 0x7:
-                   // discriminator value OFInstructionType.STAT_TRIGGER=7 for class OFInstructionIdStatTriggerVer15
-                   return OFInstructionIdStatTriggerVer15.READER.readFrom(bb);
                default:
                    throw new OFParseError("Unknown value for discriminator type of class OFInstructionIdVer15: " + type);
             }

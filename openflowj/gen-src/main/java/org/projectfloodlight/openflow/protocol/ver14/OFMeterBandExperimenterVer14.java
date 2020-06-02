@@ -61,8 +61,13 @@ class OFMeterBandExperimenterVer14 implements OFMeterBandExperimenter {
 
     // Accessors for OF message fields
     @Override
-    public int getType() {
-        return 0xffff;
+    public long getBurstSize() {
+        return burstSize;
+    }
+
+    @Override
+    public long getExperimenter() {
+        return experimenter;
     }
 
     @Override
@@ -71,13 +76,8 @@ class OFMeterBandExperimenterVer14 implements OFMeterBandExperimenter {
     }
 
     @Override
-    public long getBurstSize() {
-        return burstSize;
-    }
-
-    @Override
-    public long getExperimenter() {
-        return experimenter;
+    public int getType() {
+        return 0xffff;
     }
 
     @Override
@@ -107,22 +107,6 @@ class OFMeterBandExperimenterVer14 implements OFMeterBandExperimenter {
         }
 
     @Override
-    public int getType() {
-        return 0xffff;
-    }
-
-    @Override
-    public long getRate() {
-        return rate;
-    }
-
-    @Override
-    public OFMeterBandExperimenter.Builder setRate(long rate) {
-        this.rate = rate;
-        this.rateSet = true;
-        return this;
-    }
-    @Override
     public long getBurstSize() {
         return burstSize;
     }
@@ -144,6 +128,22 @@ class OFMeterBandExperimenterVer14 implements OFMeterBandExperimenter {
         this.experimenterSet = true;
         return this;
     }
+    @Override
+    public long getRate() {
+        return rate;
+    }
+
+    @Override
+    public OFMeterBandExperimenter.Builder setRate(long rate) {
+        this.rate = rate;
+        this.rateSet = true;
+        return this;
+    }
+    @Override
+    public int getType() {
+        return 0xffff;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_14;
@@ -177,22 +177,6 @@ class OFMeterBandExperimenterVer14 implements OFMeterBandExperimenter {
         private long experimenter;
 
     @Override
-    public int getType() {
-        return 0xffff;
-    }
-
-    @Override
-    public long getRate() {
-        return rate;
-    }
-
-    @Override
-    public OFMeterBandExperimenter.Builder setRate(long rate) {
-        this.rate = rate;
-        this.rateSet = true;
-        return this;
-    }
-    @Override
     public long getBurstSize() {
         return burstSize;
     }
@@ -214,6 +198,22 @@ class OFMeterBandExperimenterVer14 implements OFMeterBandExperimenter {
         this.experimenterSet = true;
         return this;
     }
+    @Override
+    public long getRate() {
+        return rate;
+    }
+
+    @Override
+    public OFMeterBandExperimenter.Builder setRate(long rate) {
+        this.rate = rate;
+        this.rateSet = true;
+        return this;
+    }
+    @Override
+    public int getType() {
+        return 0xffff;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_14;

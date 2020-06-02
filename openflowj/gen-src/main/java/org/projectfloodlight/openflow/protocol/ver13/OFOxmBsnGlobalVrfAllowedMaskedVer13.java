@@ -64,6 +64,11 @@ class OFOxmBsnGlobalVrfAllowedMaskedVer13 implements OFOxmBsnGlobalVrfAllowedMas
 
     // Accessors for OF message fields
     @Override
+    public OFBooleanValue getMask() {
+        return mask;
+    }
+
+    @Override
     public long getTypeLen() {
         return 0x30702L;
     }
@@ -71,21 +76,6 @@ class OFOxmBsnGlobalVrfAllowedMaskedVer13 implements OFOxmBsnGlobalVrfAllowedMas
     @Override
     public OFBooleanValue getValue() {
         return value;
-    }
-
-    @Override
-    public OFBooleanValue getMask() {
-        return mask;
-    }
-
-    @Override
-    public MatchField<OFBooleanValue> getMatchField() {
-        return MatchField.BSN_GLOBAL_VRF_ALLOWED;
-    }
-
-    @Override
-    public boolean isMasked() {
-        return true;
     }
 
     public OFOxm<OFBooleanValue> getCanonical() {
@@ -96,6 +86,16 @@ class OFOxmBsnGlobalVrfAllowedMaskedVer13 implements OFOxmBsnGlobalVrfAllowedMas
         } else {
             return this;
         }
+    }
+
+    @Override
+    public boolean isMasked() {
+        return true;
+    }
+
+    @Override
+    public MatchField<OFBooleanValue> getMatchField() {
+        return MatchField.BSN_GLOBAL_VRF_ALLOWED;
     }
 
     @Override
@@ -123,6 +123,17 @@ class OFOxmBsnGlobalVrfAllowedMaskedVer13 implements OFOxmBsnGlobalVrfAllowedMas
         }
 
     @Override
+    public OFBooleanValue getMask() {
+        return mask;
+    }
+
+    @Override
+    public OFOxmBsnGlobalVrfAllowedMasked.Builder setMask(OFBooleanValue mask) {
+        this.mask = mask;
+        this.maskSet = true;
+        return this;
+    }
+    @Override
     public long getTypeLen() {
         return 0x30702L;
     }
@@ -139,19 +150,8 @@ class OFOxmBsnGlobalVrfAllowedMaskedVer13 implements OFOxmBsnGlobalVrfAllowedMas
         return this;
     }
     @Override
-    public OFBooleanValue getMask() {
-        return mask;
-    }
-
-    @Override
-    public OFOxmBsnGlobalVrfAllowedMasked.Builder setMask(OFBooleanValue mask) {
-        this.mask = mask;
-        this.maskSet = true;
-        return this;
-    }
-    @Override
-    public MatchField<OFBooleanValue> getMatchField() {
-        return MatchField.BSN_GLOBAL_VRF_ALLOWED;
+    public OFOxm<OFBooleanValue> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.3");
     }
 
     @Override
@@ -160,8 +160,8 @@ class OFOxmBsnGlobalVrfAllowedMaskedVer13 implements OFOxmBsnGlobalVrfAllowedMas
     }
 
     @Override
-    public OFOxm<OFBooleanValue> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.3");
+    public MatchField<OFBooleanValue> getMatchField() {
+        return MatchField.BSN_GLOBAL_VRF_ALLOWED;
     }
 
     @Override
@@ -197,6 +197,17 @@ class OFOxmBsnGlobalVrfAllowedMaskedVer13 implements OFOxmBsnGlobalVrfAllowedMas
         private OFBooleanValue mask;
 
     @Override
+    public OFBooleanValue getMask() {
+        return mask;
+    }
+
+    @Override
+    public OFOxmBsnGlobalVrfAllowedMasked.Builder setMask(OFBooleanValue mask) {
+        this.mask = mask;
+        this.maskSet = true;
+        return this;
+    }
+    @Override
     public long getTypeLen() {
         return 0x30702L;
     }
@@ -213,19 +224,8 @@ class OFOxmBsnGlobalVrfAllowedMaskedVer13 implements OFOxmBsnGlobalVrfAllowedMas
         return this;
     }
     @Override
-    public OFBooleanValue getMask() {
-        return mask;
-    }
-
-    @Override
-    public OFOxmBsnGlobalVrfAllowedMasked.Builder setMask(OFBooleanValue mask) {
-        this.mask = mask;
-        this.maskSet = true;
-        return this;
-    }
-    @Override
-    public MatchField<OFBooleanValue> getMatchField() {
-        return MatchField.BSN_GLOBAL_VRF_ALLOWED;
+    public OFOxm<OFBooleanValue> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.3");
     }
 
     @Override
@@ -234,8 +234,8 @@ class OFOxmBsnGlobalVrfAllowedMaskedVer13 implements OFOxmBsnGlobalVrfAllowedMas
     }
 
     @Override
-    public OFOxm<OFBooleanValue> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.3");
+    public MatchField<OFBooleanValue> getMatchField() {
+        return MatchField.BSN_GLOBAL_VRF_ALLOWED;
     }
 
     @Override

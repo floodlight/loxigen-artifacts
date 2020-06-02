@@ -28,16 +28,16 @@ import org.projectfloodlight.openflow.exceptions.*;
 import io.netty.buffer.ByteBuf;
 
 public interface OFPortDescPropOptical extends OFObject, OFPortDescProp {
-    int getType();
-    long getSupported();
-    long getTxMinFreqLmda();
-    long getTxMaxFreqLmda();
-    long getTxGridFreqLmda();
-    long getRxMinFreqLmda();
-    long getRxMaxFreqLmda();
     long getRxGridFreqLmda();
-    long getTxPwrMin();
+    long getRxMaxFreqLmda();
+    long getRxMinFreqLmda();
+    long getSupported();
+    long getTxGridFreqLmda();
+    long getTxMaxFreqLmda();
+    long getTxMinFreqLmda();
     long getTxPwrMax();
+    long getTxPwrMin();
+    int getType();
     OFVersion getVersion();
 
     void writeTo(ByteBuf channelBuffer);
@@ -45,25 +45,25 @@ public interface OFPortDescPropOptical extends OFObject, OFPortDescProp {
     Builder createBuilder();
     public interface Builder extends OFPortDescProp.Builder {
         OFPortDescPropOptical build();
-        int getType();
-        long getSupported();
-        Builder setSupported(long supported);
-        long getTxMinFreqLmda();
-        Builder setTxMinFreqLmda(long txMinFreqLmda);
-        long getTxMaxFreqLmda();
-        Builder setTxMaxFreqLmda(long txMaxFreqLmda);
-        long getTxGridFreqLmda();
-        Builder setTxGridFreqLmda(long txGridFreqLmda);
-        long getRxMinFreqLmda();
-        Builder setRxMinFreqLmda(long rxMinFreqLmda);
-        long getRxMaxFreqLmda();
-        Builder setRxMaxFreqLmda(long rxMaxFreqLmda);
         long getRxGridFreqLmda();
         Builder setRxGridFreqLmda(long rxGridFreqLmda);
-        long getTxPwrMin();
-        Builder setTxPwrMin(long txPwrMin);
+        long getRxMaxFreqLmda();
+        Builder setRxMaxFreqLmda(long rxMaxFreqLmda);
+        long getRxMinFreqLmda();
+        Builder setRxMinFreqLmda(long rxMinFreqLmda);
+        long getSupported();
+        Builder setSupported(long supported);
+        long getTxGridFreqLmda();
+        Builder setTxGridFreqLmda(long txGridFreqLmda);
+        long getTxMaxFreqLmda();
+        Builder setTxMaxFreqLmda(long txMaxFreqLmda);
+        long getTxMinFreqLmda();
+        Builder setTxMinFreqLmda(long txMinFreqLmda);
         long getTxPwrMax();
         Builder setTxPwrMax(long txPwrMax);
+        long getTxPwrMin();
+        Builder setTxPwrMin(long txPwrMin);
+        int getType();
         OFVersion getVersion();
     }
 }

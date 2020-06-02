@@ -55,13 +55,13 @@ class OFActionSetQueueVer14 implements OFActionSetQueue {
 
     // Accessors for OF message fields
     @Override
-    public OFActionType getType() {
-        return OFActionType.SET_QUEUE;
+    public long getQueueId() {
+        return queueId;
     }
 
     @Override
-    public long getQueueId() {
-        return queueId;
+    public OFActionType getType() {
+        return OFActionType.SET_QUEUE;
     }
 
     @Override
@@ -87,11 +87,6 @@ class OFActionSetQueueVer14 implements OFActionSetQueue {
         }
 
     @Override
-    public OFActionType getType() {
-        return OFActionType.SET_QUEUE;
-    }
-
-    @Override
     public long getQueueId() {
         return queueId;
     }
@@ -102,6 +97,11 @@ class OFActionSetQueueVer14 implements OFActionSetQueue {
         this.queueIdSet = true;
         return this;
     }
+    @Override
+    public OFActionType getType() {
+        return OFActionType.SET_QUEUE;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_14;
@@ -127,11 +127,6 @@ class OFActionSetQueueVer14 implements OFActionSetQueue {
         private long queueId;
 
     @Override
-    public OFActionType getType() {
-        return OFActionType.SET_QUEUE;
-    }
-
-    @Override
     public long getQueueId() {
         return queueId;
     }
@@ -142,6 +137,11 @@ class OFActionSetQueueVer14 implements OFActionSetQueue {
         this.queueIdSet = true;
         return this;
     }
+    @Override
+    public OFActionType getType() {
+        return OFActionType.SET_QUEUE;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_14;

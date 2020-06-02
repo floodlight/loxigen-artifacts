@@ -71,11 +71,6 @@ class OFPacketQueueVer15 implements OFPacketQueue {
 
     // Accessors for OF message fields
     @Override
-    public long getQueueId() {
-        return queueId;
-    }
-
-    @Override
     public OFPort getPort() {
         return port;
     }
@@ -83,6 +78,11 @@ class OFPacketQueueVer15 implements OFPacketQueue {
     @Override
     public List<OFQueueProp> getProperties() {
         return properties;
+    }
+
+    @Override
+    public long getQueueId() {
+        return queueId;
     }
 
     @Override
@@ -112,17 +112,6 @@ class OFPacketQueueVer15 implements OFPacketQueue {
         }
 
     @Override
-    public long getQueueId() {
-        return queueId;
-    }
-
-    @Override
-    public OFPacketQueue.Builder setQueueId(long queueId) {
-        this.queueId = queueId;
-        this.queueIdSet = true;
-        return this;
-    }
-    @Override
     public OFPort getPort() {
         return port;
     }
@@ -142,6 +131,17 @@ class OFPacketQueueVer15 implements OFPacketQueue {
     public OFPacketQueue.Builder setProperties(List<OFQueueProp> properties) {
         this.properties = properties;
         this.propertiesSet = true;
+        return this;
+    }
+    @Override
+    public long getQueueId() {
+        return queueId;
+    }
+
+    @Override
+    public OFPacketQueue.Builder setQueueId(long queueId) {
+        this.queueId = queueId;
+        this.queueIdSet = true;
         return this;
     }
     @Override
@@ -181,17 +181,6 @@ class OFPacketQueueVer15 implements OFPacketQueue {
         private List<OFQueueProp> properties;
 
     @Override
-    public long getQueueId() {
-        return queueId;
-    }
-
-    @Override
-    public OFPacketQueue.Builder setQueueId(long queueId) {
-        this.queueId = queueId;
-        this.queueIdSet = true;
-        return this;
-    }
-    @Override
     public OFPort getPort() {
         return port;
     }
@@ -211,6 +200,17 @@ class OFPacketQueueVer15 implements OFPacketQueue {
     public OFPacketQueue.Builder setProperties(List<OFQueueProp> properties) {
         this.properties = properties;
         this.propertiesSet = true;
+        return this;
+    }
+    @Override
+    public long getQueueId() {
+        return queueId;
+    }
+
+    @Override
+    public OFPacketQueue.Builder setQueueId(long queueId) {
+        this.queueId = queueId;
+        this.queueIdSet = true;
         return this;
     }
     @Override

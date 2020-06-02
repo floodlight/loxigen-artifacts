@@ -62,18 +62,13 @@ class OFPortDescStatsRequestVer14 implements OFPortDescStatsRequest {
 
     // Accessors for OF message fields
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_14;
+    public Set<OFStatsRequestFlags> getFlags() {
+        return flags;
     }
 
     @Override
-    public OFType getType() {
-        return OFType.STATS_REQUEST;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
+    public OFPort getPortNo()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property portNo not supported in version 1.4");
     }
 
     @Override
@@ -82,13 +77,18 @@ class OFPortDescStatsRequestVer14 implements OFPortDescStatsRequest {
     }
 
     @Override
-    public Set<OFStatsRequestFlags> getFlags() {
-        return flags;
+    public OFType getType() {
+        return OFType.STATS_REQUEST;
     }
 
     @Override
-    public OFPort getPortNo()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property portNo not supported in version 1.4");
+    public OFVersion getVersion() {
+        return OFVersion.OF_14;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
     }
 
 
@@ -111,32 +111,6 @@ class OFPortDescStatsRequestVer14 implements OFPortDescStatsRequest {
         }
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_14;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.STATS_REQUEST;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFPortDescStatsRequest.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
-        return this;
-    }
-    @Override
-    public OFStatsType getStatsType() {
-        return OFStatsType.PORT_DESC;
-    }
-
-    @Override
     public Set<OFStatsRequestFlags> getFlags() {
         return flags;
     }
@@ -155,6 +129,32 @@ class OFPortDescStatsRequestVer14 implements OFPortDescStatsRequest {
     @Override
     public OFPortDescStatsRequest.Builder setPortNo(OFPort portNo) throws UnsupportedOperationException {
             throw new UnsupportedOperationException("Property portNo not supported in version 1.4");
+    }
+    @Override
+    public OFStatsType getStatsType() {
+        return OFStatsType.PORT_DESC;
+    }
+
+    @Override
+    public OFType getType() {
+        return OFType.STATS_REQUEST;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_14;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFPortDescStatsRequest.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
+        return this;
     }
 
 
@@ -182,32 +182,6 @@ class OFPortDescStatsRequestVer14 implements OFPortDescStatsRequest {
         private Set<OFStatsRequestFlags> flags;
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_14;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.STATS_REQUEST;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFPortDescStatsRequest.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
-        return this;
-    }
-    @Override
-    public OFStatsType getStatsType() {
-        return OFStatsType.PORT_DESC;
-    }
-
-    @Override
     public Set<OFStatsRequestFlags> getFlags() {
         return flags;
     }
@@ -226,6 +200,32 @@ class OFPortDescStatsRequestVer14 implements OFPortDescStatsRequest {
     @Override
     public OFPortDescStatsRequest.Builder setPortNo(OFPort portNo) throws UnsupportedOperationException {
             throw new UnsupportedOperationException("Property portNo not supported in version 1.4");
+    }
+    @Override
+    public OFStatsType getStatsType() {
+        return OFStatsType.PORT_DESC;
+    }
+
+    @Override
+    public OFType getType() {
+        return OFType.STATS_REQUEST;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_14;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFPortDescStatsRequest.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
+        return this;
     }
 //
         @Override

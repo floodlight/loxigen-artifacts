@@ -61,13 +61,13 @@ class OFBsnVlanMacVer13 implements OFBsnVlanMac {
 
     // Accessors for OF message fields
     @Override
-    public int getVlanVid() {
-        return vlanVid;
+    public MacAddress getMac() {
+        return mac;
     }
 
     @Override
-    public MacAddress getMac() {
-        return mac;
+    public int getVlanVid() {
+        return vlanVid;
     }
 
     @Override
@@ -95,17 +95,6 @@ class OFBsnVlanMacVer13 implements OFBsnVlanMac {
         }
 
     @Override
-    public int getVlanVid() {
-        return vlanVid;
-    }
-
-    @Override
-    public OFBsnVlanMac.Builder setVlanVid(int vlanVid) {
-        this.vlanVid = vlanVid;
-        this.vlanVidSet = true;
-        return this;
-    }
-    @Override
     public MacAddress getMac() {
         return mac;
     }
@@ -114,6 +103,17 @@ class OFBsnVlanMacVer13 implements OFBsnVlanMac {
     public OFBsnVlanMac.Builder setMac(MacAddress mac) {
         this.mac = mac;
         this.macSet = true;
+        return this;
+    }
+    @Override
+    public int getVlanVid() {
+        return vlanVid;
+    }
+
+    @Override
+    public OFBsnVlanMac.Builder setVlanVid(int vlanVid) {
+        this.vlanVid = vlanVid;
+        this.vlanVidSet = true;
         return this;
     }
     @Override
@@ -147,17 +147,6 @@ class OFBsnVlanMacVer13 implements OFBsnVlanMac {
         private MacAddress mac;
 
     @Override
-    public int getVlanVid() {
-        return vlanVid;
-    }
-
-    @Override
-    public OFBsnVlanMac.Builder setVlanVid(int vlanVid) {
-        this.vlanVid = vlanVid;
-        this.vlanVidSet = true;
-        return this;
-    }
-    @Override
     public MacAddress getMac() {
         return mac;
     }
@@ -166,6 +155,17 @@ class OFBsnVlanMacVer13 implements OFBsnVlanMac {
     public OFBsnVlanMac.Builder setMac(MacAddress mac) {
         this.mac = mac;
         this.macSet = true;
+        return this;
+    }
+    @Override
+    public int getVlanVid() {
+        return vlanVid;
+    }
+
+    @Override
+    public OFBsnVlanMac.Builder setVlanVid(int vlanVid) {
+        this.vlanVid = vlanVid;
+        this.vlanVidSet = true;
         return this;
     }
     @Override

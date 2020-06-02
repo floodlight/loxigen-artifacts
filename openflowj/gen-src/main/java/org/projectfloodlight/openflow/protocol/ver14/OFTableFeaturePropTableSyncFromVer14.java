@@ -62,13 +62,13 @@ class OFTableFeaturePropTableSyncFromVer14 implements OFTableFeaturePropTableSyn
 
     // Accessors for OF message fields
     @Override
-    public int getType() {
-        return 0x10;
+    public List<U8> getTableIds() {
+        return tableIds;
     }
 
     @Override
-    public List<U8> getTableIds() {
-        return tableIds;
+    public int getType() {
+        return 0x10;
     }
 
     @Override
@@ -94,11 +94,6 @@ class OFTableFeaturePropTableSyncFromVer14 implements OFTableFeaturePropTableSyn
         }
 
     @Override
-    public int getType() {
-        return 0x10;
-    }
-
-    @Override
     public List<U8> getTableIds() {
         return tableIds;
     }
@@ -109,6 +104,11 @@ class OFTableFeaturePropTableSyncFromVer14 implements OFTableFeaturePropTableSyn
         this.tableIdsSet = true;
         return this;
     }
+    @Override
+    public int getType() {
+        return 0x10;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_14;
@@ -136,11 +136,6 @@ class OFTableFeaturePropTableSyncFromVer14 implements OFTableFeaturePropTableSyn
         private List<U8> tableIds;
 
     @Override
-    public int getType() {
-        return 0x10;
-    }
-
-    @Override
     public List<U8> getTableIds() {
         return tableIds;
     }
@@ -151,6 +146,11 @@ class OFTableFeaturePropTableSyncFromVer14 implements OFTableFeaturePropTableSyn
         this.tableIdsSet = true;
         return this;
     }
+    @Override
+    public int getType() {
+        return 0x10;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_14;

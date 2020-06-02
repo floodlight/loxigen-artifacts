@@ -29,8 +29,8 @@ import java.util.List;
 import io.netty.buffer.ByteBuf;
 
 public interface OFTableFeaturePropApplyCopyfield extends OFObject, OFTableFeatureProp {
-    int getType();
     List<U32> getOxmIds();
+    int getType();
     OFVersion getVersion();
 
     void writeTo(ByteBuf channelBuffer);
@@ -38,9 +38,9 @@ public interface OFTableFeaturePropApplyCopyfield extends OFObject, OFTableFeatu
     Builder createBuilder();
     public interface Builder extends OFTableFeatureProp.Builder {
         OFTableFeaturePropApplyCopyfield build();
-        int getType();
         List<U32> getOxmIds();
         Builder setOxmIds(List<U32> oxmIds);
+        int getType();
         OFVersion getVersion();
     }
 }

@@ -30,33 +30,33 @@ import java.util.List;
 import io.netty.buffer.ByteBuf;
 
 public interface OFBsnGenericStatsRequest extends OFObject, OFBsnStatsRequest<OFBsnGenericStatsReply>, OFRequest<OFBsnGenericStatsReply> {
-    OFVersion getVersion();
-    OFType getType();
-    long getXid();
-    OFStatsType getStatsType();
-    Set<OFStatsRequestFlags> getFlags();
     long getExperimenter();
-    long getSubtype();
+    Set<OFStatsRequestFlags> getFlags();
     String getName();
+    OFStatsType getStatsType();
+    long getSubtype();
     List<OFBsnTlv> getTlvs();
+    OFType getType();
+    OFVersion getVersion();
+    long getXid();
 
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();
     public interface Builder extends OFBsnStatsRequest.Builder<OFBsnGenericStatsReply> {
         OFBsnGenericStatsRequest build();
-        OFVersion getVersion();
-        OFType getType();
-        long getXid();
-        Builder setXid(long xid);
-        OFStatsType getStatsType();
+        long getExperimenter();
         Set<OFStatsRequestFlags> getFlags();
         Builder setFlags(Set<OFStatsRequestFlags> flags);
-        long getExperimenter();
-        long getSubtype();
         String getName();
         Builder setName(String name);
+        OFStatsType getStatsType();
+        long getSubtype();
         List<OFBsnTlv> getTlvs();
         Builder setTlvs(List<OFBsnTlv> tlvs);
+        OFType getType();
+        OFVersion getVersion();
+        long getXid();
+        Builder setXid(long xid);
     }
 }

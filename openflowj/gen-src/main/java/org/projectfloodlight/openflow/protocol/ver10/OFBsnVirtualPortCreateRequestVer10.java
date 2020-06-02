@@ -58,21 +58,6 @@ class OFBsnVirtualPortCreateRequestVer10 implements OFBsnVirtualPortCreateReques
 
     // Accessors for OF message fields
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_10;
-    }
-
-    @Override
-    public OFType getType() {
-        return OFType.EXPERIMENTER;
-    }
-
-    @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
     public long getExperimenter() {
         return 0x5c16c7L;
     }
@@ -83,8 +68,23 @@ class OFBsnVirtualPortCreateRequestVer10 implements OFBsnVirtualPortCreateReques
     }
 
     @Override
+    public OFType getType() {
+        return OFType.EXPERIMENTER;
+    }
+
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_10;
+    }
+
+    @Override
     public OFBsnVport getVport() {
         return vport;
+    }
+
+    @Override
+    public long getXid() {
+        return xid;
     }
 
 
@@ -107,8 +107,13 @@ class OFBsnVirtualPortCreateRequestVer10 implements OFBsnVirtualPortCreateReques
         }
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_10;
+    public long getExperimenter() {
+        return 0x5c16c7L;
+    }
+
+    @Override
+    public long getSubtype() {
+        return 0xfL;
     }
 
     @Override
@@ -117,24 +122,8 @@ class OFBsnVirtualPortCreateRequestVer10 implements OFBsnVirtualPortCreateReques
     }
 
     @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFBsnVirtualPortCreateRequest.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
-        return this;
-    }
-    @Override
-    public long getExperimenter() {
-        return 0x5c16c7L;
-    }
-
-    @Override
-    public long getSubtype() {
-        return 0xfL;
+    public OFVersion getVersion() {
+        return OFVersion.OF_10;
     }
 
     @Override
@@ -146,6 +135,17 @@ class OFBsnVirtualPortCreateRequestVer10 implements OFBsnVirtualPortCreateReques
     public OFBsnVirtualPortCreateRequest.Builder setVport(OFBsnVport vport) {
         this.vport = vport;
         this.vportSet = true;
+        return this;
+    }
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFBsnVirtualPortCreateRequest.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 
@@ -174,8 +174,13 @@ class OFBsnVirtualPortCreateRequestVer10 implements OFBsnVirtualPortCreateReques
         private OFBsnVport vport;
 
     @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_10;
+    public long getExperimenter() {
+        return 0x5c16c7L;
+    }
+
+    @Override
+    public long getSubtype() {
+        return 0xfL;
     }
 
     @Override
@@ -184,24 +189,8 @@ class OFBsnVirtualPortCreateRequestVer10 implements OFBsnVirtualPortCreateReques
     }
 
     @Override
-    public long getXid() {
-        return xid;
-    }
-
-    @Override
-    public OFBsnVirtualPortCreateRequest.Builder setXid(long xid) {
-        this.xid = xid;
-        this.xidSet = true;
-        return this;
-    }
-    @Override
-    public long getExperimenter() {
-        return 0x5c16c7L;
-    }
-
-    @Override
-    public long getSubtype() {
-        return 0xfL;
+    public OFVersion getVersion() {
+        return OFVersion.OF_10;
     }
 
     @Override
@@ -213,6 +202,17 @@ class OFBsnVirtualPortCreateRequestVer10 implements OFBsnVirtualPortCreateReques
     public OFBsnVirtualPortCreateRequest.Builder setVport(OFBsnVport vport) {
         this.vport = vport;
         this.vportSet = true;
+        return this;
+    }
+    @Override
+    public long getXid() {
+        return xid;
+    }
+
+    @Override
+    public OFBsnVirtualPortCreateRequest.Builder setXid(long xid) {
+        this.xid = xid;
+        this.xidSet = true;
         return this;
     }
 //

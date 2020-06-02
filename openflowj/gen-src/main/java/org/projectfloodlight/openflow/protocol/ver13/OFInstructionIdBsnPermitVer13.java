@@ -52,11 +52,6 @@ class OFInstructionIdBsnPermitVer13 implements OFInstructionIdBsnPermit {
 
     // Accessors for OF message fields
     @Override
-    public OFInstructionType getType() {
-        return OFInstructionType.EXPERIMENTER;
-    }
-
-    @Override
     public long getExperimenter() {
         return 0x5c16c7L;
     }
@@ -64,6 +59,11 @@ class OFInstructionIdBsnPermitVer13 implements OFInstructionIdBsnPermit {
     @Override
     public long getSubtype() {
         return 0x4L;
+    }
+
+    @Override
+    public OFInstructionType getType() {
+        return OFInstructionType.EXPERIMENTER;
     }
 
     @Override

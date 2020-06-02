@@ -30,10 +30,10 @@ import io.netty.buffer.ByteBuf;
 public interface OFOxmIpDscp extends OFObject, OFOxm<IpDscp> {
     long getTypeLen();
     IpDscp getValue();
-    MatchField<IpDscp> getMatchField();
-    boolean isMasked();
     OFOxm<IpDscp> getCanonical();
     IpDscp getMask();
+    boolean isMasked();
+    MatchField<IpDscp> getMatchField();
     OFVersion getVersion();
 
     void writeTo(ByteBuf channelBuffer);
@@ -44,10 +44,10 @@ public interface OFOxmIpDscp extends OFObject, OFOxm<IpDscp> {
         long getTypeLen();
         IpDscp getValue();
         Builder setValue(IpDscp value);
-        MatchField<IpDscp> getMatchField();
-        boolean isMasked();
         OFOxm<IpDscp> getCanonical();
         IpDscp getMask();
+        boolean isMasked();
+        MatchField<IpDscp> getMatchField();
         OFVersion getVersion();
     }
 }

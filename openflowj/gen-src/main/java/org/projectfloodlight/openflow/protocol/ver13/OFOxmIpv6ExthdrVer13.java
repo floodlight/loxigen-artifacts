@@ -67,16 +67,6 @@ class OFOxmIpv6ExthdrVer13 implements OFOxmIpv6Exthdr {
         return value;
     }
 
-    @Override
-    public MatchField<U16> getMatchField() {
-        return MatchField.IPV6_EXTHDR;
-    }
-
-    @Override
-    public boolean isMasked() {
-        return false;
-    }
-
     public OFOxm<U16> getCanonical() {
         // exact match OXM is always canonical
         return this;
@@ -85,6 +75,16 @@ class OFOxmIpv6ExthdrVer13 implements OFOxmIpv6Exthdr {
     @Override
     public U16 getMask()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property mask not supported in version 1.3");
+    }
+
+    @Override
+    public boolean isMasked() {
+        return false;
+    }
+
+    @Override
+    public MatchField<U16> getMatchField() {
+        return MatchField.IPV6_EXTHDR;
     }
 
     @Override
@@ -126,8 +126,13 @@ class OFOxmIpv6ExthdrVer13 implements OFOxmIpv6Exthdr {
         return this;
     }
     @Override
-    public MatchField<U16> getMatchField() {
-        return MatchField.IPV6_EXTHDR;
+    public OFOxm<U16> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.3");
+    }
+
+    @Override
+    public U16 getMask()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property mask not supported in version 1.3");
     }
 
     @Override
@@ -136,13 +141,8 @@ class OFOxmIpv6ExthdrVer13 implements OFOxmIpv6Exthdr {
     }
 
     @Override
-    public OFOxm<U16> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.3");
-    }
-
-    @Override
-    public U16 getMask()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property mask not supported in version 1.3");
+    public MatchField<U16> getMatchField() {
+        return MatchField.IPV6_EXTHDR;
     }
 
     @Override
@@ -188,8 +188,13 @@ class OFOxmIpv6ExthdrVer13 implements OFOxmIpv6Exthdr {
         return this;
     }
     @Override
-    public MatchField<U16> getMatchField() {
-        return MatchField.IPV6_EXTHDR;
+    public OFOxm<U16> getCanonical()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property canonical not supported in version 1.3");
+    }
+
+    @Override
+    public U16 getMask()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property mask not supported in version 1.3");
     }
 
     @Override
@@ -198,13 +203,8 @@ class OFOxmIpv6ExthdrVer13 implements OFOxmIpv6Exthdr {
     }
 
     @Override
-    public OFOxm<U16> getCanonical()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property canonical not supported in version 1.3");
-    }
-
-    @Override
-    public U16 getMask()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property mask not supported in version 1.3");
+    public MatchField<U16> getMatchField() {
+        return MatchField.IPV6_EXTHDR;
     }
 
     @Override

@@ -28,9 +28,9 @@ import org.projectfloodlight.openflow.exceptions.*;
 import io.netty.buffer.ByteBuf;
 
 public interface OFBsnTlvIpv6Prefix extends OFObject, OFBsnTlv {
+    short getPrefixLength();
     int getType();
     IPv6Address getValue();
-    short getPrefixLength();
     OFVersion getVersion();
 
     void writeTo(ByteBuf channelBuffer);
@@ -38,11 +38,11 @@ public interface OFBsnTlvIpv6Prefix extends OFObject, OFBsnTlv {
     Builder createBuilder();
     public interface Builder extends OFBsnTlv.Builder {
         OFBsnTlvIpv6Prefix build();
+        short getPrefixLength();
+        Builder setPrefixLength(short prefixLength);
         int getType();
         IPv6Address getValue();
         Builder setValue(IPv6Address value);
-        short getPrefixLength();
-        Builder setPrefixLength(short prefixLength);
         OFVersion getVersion();
     }
 }

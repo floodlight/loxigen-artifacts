@@ -62,13 +62,13 @@ class OFTableFeaturePropWriteSetfieldVer15 implements OFTableFeaturePropWriteSet
 
     // Accessors for OF message fields
     @Override
-    public int getType() {
-        return 0xc;
+    public List<U32> getOxmIds() {
+        return oxmIds;
     }
 
     @Override
-    public List<U32> getOxmIds() {
-        return oxmIds;
+    public int getType() {
+        return 0xc;
     }
 
     @Override
@@ -94,11 +94,6 @@ class OFTableFeaturePropWriteSetfieldVer15 implements OFTableFeaturePropWriteSet
         }
 
     @Override
-    public int getType() {
-        return 0xc;
-    }
-
-    @Override
     public List<U32> getOxmIds() {
         return oxmIds;
     }
@@ -109,6 +104,11 @@ class OFTableFeaturePropWriteSetfieldVer15 implements OFTableFeaturePropWriteSet
         this.oxmIdsSet = true;
         return this;
     }
+    @Override
+    public int getType() {
+        return 0xc;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_15;
@@ -136,11 +136,6 @@ class OFTableFeaturePropWriteSetfieldVer15 implements OFTableFeaturePropWriteSet
         private List<U32> oxmIds;
 
     @Override
-    public int getType() {
-        return 0xc;
-    }
-
-    @Override
     public List<U32> getOxmIds() {
         return oxmIds;
     }
@@ -151,6 +146,11 @@ class OFTableFeaturePropWriteSetfieldVer15 implements OFTableFeaturePropWriteSet
         this.oxmIdsSet = true;
         return this;
     }
+    @Override
+    public int getType() {
+        return 0xc;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_15;

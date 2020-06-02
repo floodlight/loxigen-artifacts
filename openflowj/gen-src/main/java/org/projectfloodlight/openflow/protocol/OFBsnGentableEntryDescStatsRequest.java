@@ -29,36 +29,36 @@ import java.util.Set;
 import io.netty.buffer.ByteBuf;
 
 public interface OFBsnGentableEntryDescStatsRequest extends OFObject, OFBsnStatsRequest<OFBsnGentableEntryDescStatsReply>, OFRequest<OFBsnGentableEntryDescStatsReply> {
-    OFVersion getVersion();
-    OFType getType();
-    long getXid();
-    OFStatsType getStatsType();
-    Set<OFStatsRequestFlags> getFlags();
-    long getExperimenter();
-    long getSubtype();
-    GenTableId getTableId();
     U128 getChecksum();
     U128 getChecksumMask();
+    long getExperimenter();
+    Set<OFStatsRequestFlags> getFlags();
+    OFStatsType getStatsType();
+    long getSubtype();
+    GenTableId getTableId();
+    OFType getType();
+    OFVersion getVersion();
+    long getXid();
 
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();
     public interface Builder extends OFBsnStatsRequest.Builder<OFBsnGentableEntryDescStatsReply> {
         OFBsnGentableEntryDescStatsRequest build();
-        OFVersion getVersion();
-        OFType getType();
-        long getXid();
-        Builder setXid(long xid);
-        OFStatsType getStatsType();
-        Set<OFStatsRequestFlags> getFlags();
-        Builder setFlags(Set<OFStatsRequestFlags> flags);
-        long getExperimenter();
-        long getSubtype();
-        GenTableId getTableId();
-        Builder setTableId(GenTableId tableId);
         U128 getChecksum();
         Builder setChecksum(U128 checksum);
         U128 getChecksumMask();
         Builder setChecksumMask(U128 checksumMask);
+        long getExperimenter();
+        Set<OFStatsRequestFlags> getFlags();
+        Builder setFlags(Set<OFStatsRequestFlags> flags);
+        OFStatsType getStatsType();
+        long getSubtype();
+        GenTableId getTableId();
+        Builder setTableId(GenTableId tableId);
+        OFType getType();
+        OFVersion getVersion();
+        long getXid();
+        Builder setXid(long xid);
     }
 }

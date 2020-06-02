@@ -55,13 +55,13 @@ class OFAsyncConfigPropTableStatusSlaveVer15 implements OFAsyncConfigPropTableSt
 
     // Accessors for OF message fields
     @Override
-    public int getType() {
-        return 0x8;
+    public long getMask() {
+        return mask;
     }
 
     @Override
-    public long getMask() {
-        return mask;
+    public int getType() {
+        return 0x8;
     }
 
     @Override
@@ -87,11 +87,6 @@ class OFAsyncConfigPropTableStatusSlaveVer15 implements OFAsyncConfigPropTableSt
         }
 
     @Override
-    public int getType() {
-        return 0x8;
-    }
-
-    @Override
     public long getMask() {
         return mask;
     }
@@ -102,6 +97,11 @@ class OFAsyncConfigPropTableStatusSlaveVer15 implements OFAsyncConfigPropTableSt
         this.maskSet = true;
         return this;
     }
+    @Override
+    public int getType() {
+        return 0x8;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_15;
@@ -127,11 +127,6 @@ class OFAsyncConfigPropTableStatusSlaveVer15 implements OFAsyncConfigPropTableSt
         private long mask;
 
     @Override
-    public int getType() {
-        return 0x8;
-    }
-
-    @Override
     public long getMask() {
         return mask;
     }
@@ -142,6 +137,11 @@ class OFAsyncConfigPropTableStatusSlaveVer15 implements OFAsyncConfigPropTableSt
         this.maskSet = true;
         return this;
     }
+    @Override
+    public int getType() {
+        return 0x8;
+    }
+
     @Override
     public OFVersion getVersion() {
         return OFVersion.OF_15;

@@ -28,12 +28,12 @@ import org.projectfloodlight.openflow.exceptions.*;
 import io.netty.buffer.ByteBuf;
 
 public interface OFActionBsnMirror extends OFObject, OFActionBsn {
-    OFActionType getType();
+    short getCopyStage();
+    OFPort getDestPort();
     long getExperimenter();
     long getSubtype();
-    OFPort getDestPort();
+    OFActionType getType();
     long getVlanTag();
-    short getCopyStage();
     OFVersion getVersion();
 
     void writeTo(ByteBuf channelBuffer);
@@ -41,15 +41,15 @@ public interface OFActionBsnMirror extends OFObject, OFActionBsn {
     Builder createBuilder();
     public interface Builder extends OFActionBsn.Builder {
         OFActionBsnMirror build();
-        OFActionType getType();
-        long getExperimenter();
-        long getSubtype();
-        OFPort getDestPort();
-        Builder setDestPort(OFPort destPort);
-        long getVlanTag();
-        Builder setVlanTag(long vlanTag);
         short getCopyStage();
         Builder setCopyStage(short copyStage);
+        OFPort getDestPort();
+        Builder setDestPort(OFPort destPort);
+        long getExperimenter();
+        long getSubtype();
+        OFActionType getType();
+        long getVlanTag();
+        Builder setVlanTag(long vlanTag);
         OFVersion getVersion();
     }
 }

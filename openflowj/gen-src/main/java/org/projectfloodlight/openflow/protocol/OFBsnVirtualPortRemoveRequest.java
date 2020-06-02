@@ -28,25 +28,25 @@ import org.projectfloodlight.openflow.exceptions.*;
 import io.netty.buffer.ByteBuf;
 
 public interface OFBsnVirtualPortRemoveRequest extends OFObject, OFBsnHeader, OFRequest<OFBsnVirtualPortRemoveReply> {
-    OFVersion getVersion();
-    OFType getType();
-    long getXid();
     long getExperimenter();
     long getSubtype();
+    OFType getType();
+    OFVersion getVersion();
     long getVportNo();
+    long getXid();
 
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();
     public interface Builder extends OFBsnHeader.Builder {
         OFBsnVirtualPortRemoveRequest build();
-        OFVersion getVersion();
-        OFType getType();
-        long getXid();
-        Builder setXid(long xid);
         long getExperimenter();
         long getSubtype();
+        OFType getType();
+        OFVersion getVersion();
         long getVportNo();
         Builder setVportNo(long vportNo);
+        long getXid();
+        Builder setXid(long xid);
     }
 }

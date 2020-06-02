@@ -49,30 +49,42 @@ abstract class OFMessageVer15 {
             byte type = bb.readByte();
             bb.readerIndex(start);
             switch(type) {
-               case (byte) 0x13:
-                   // discriminator value OFType.STATS_REPLY=19 for class OFStatsReplyVer15
-                   return OFStatsReplyVer15.READER.readFrom(bb);
-               case (byte) 0x12:
-                   // discriminator value OFType.STATS_REQUEST=18 for class OFStatsRequestVer15
-                   return OFStatsRequestVer15.READER.readFrom(bb);
-               case (byte) 0x1:
-                   // discriminator value OFType.ERROR=1 for class OFErrorMsgVer15
-                   return OFErrorMsgVer15.READER.readFrom(bb);
+               case (byte) 0x1b:
+                   // discriminator value OFType.GET_ASYNC_REPLY=27 for class OFAsyncGetReplyVer15
+                   return OFAsyncGetReplyVer15.READER.readFrom(bb);
+               case (byte) 0x1a:
+                   // discriminator value OFType.GET_ASYNC_REQUEST=26 for class OFAsyncGetRequestVer15
+                   return OFAsyncGetRequestVer15.READER.readFrom(bb);
+               case (byte) 0x1c:
+                   // discriminator value OFType.SET_ASYNC=28 for class OFAsyncSetVer15
+                   return OFAsyncSetVer15.READER.readFrom(bb);
                case (byte) 0x15:
                    // discriminator value OFType.BARRIER_REPLY=21 for class OFBarrierReplyVer15
                    return OFBarrierReplyVer15.READER.readFrom(bb);
                case (byte) 0x14:
                    // discriminator value OFType.BARRIER_REQUEST=20 for class OFBarrierRequestVer15
                    return OFBarrierRequestVer15.READER.readFrom(bb);
-               case (byte) 0x4:
-                   // discriminator value OFType.EXPERIMENTER=4 for class OFExperimenterVer15
-                   return OFExperimenterVer15.READER.readFrom(bb);
+               case (byte) 0x22:
+                   // discriminator value OFType.BUNDLE_ADD_MESSAGE=34 for class OFBundleAddMsgVer15
+                   return OFBundleAddMsgVer15.READER.readFrom(bb);
+               case (byte) 0x21:
+                   // discriminator value OFType.BUNDLE_CONTROL=33 for class OFBundleCtrlMsgVer15
+                   return OFBundleCtrlMsgVer15.READER.readFrom(bb);
+               case (byte) 0x23:
+                   // discriminator value OFType.CONTROLLER_STATUS=35 for class OFControllerStatusVer15
+                   return OFControllerStatusVer15.READER.readFrom(bb);
                case (byte) 0x3:
                    // discriminator value OFType.ECHO_REPLY=3 for class OFEchoReplyVer15
                    return OFEchoReplyVer15.READER.readFrom(bb);
                case (byte) 0x2:
                    // discriminator value OFType.ECHO_REQUEST=2 for class OFEchoRequestVer15
                    return OFEchoRequestVer15.READER.readFrom(bb);
+               case (byte) 0x1:
+                   // discriminator value OFType.ERROR=1 for class OFErrorMsgVer15
+                   return OFErrorMsgVer15.READER.readFrom(bb);
+               case (byte) 0x4:
+                   // discriminator value OFType.EXPERIMENTER=4 for class OFExperimenterVer15
+                   return OFExperimenterVer15.READER.readFrom(bb);
                case (byte) 0x6:
                    // discriminator value OFType.FEATURES_REPLY=6 for class OFFeaturesReplyVer15
                    return OFFeaturesReplyVer15.READER.readFrom(bb);
@@ -91,9 +103,15 @@ abstract class OFMessageVer15 {
                case (byte) 0x7:
                    // discriminator value OFType.GET_CONFIG_REQUEST=7 for class OFGetConfigRequestVer15
                    return OFGetConfigRequestVer15.READER.readFrom(bb);
+               case (byte) 0xf:
+                   // discriminator value OFType.GROUP_MOD=15 for class OFGroupModVer15
+                   return OFGroupModVer15.READER.readFrom(bb);
                case (byte) 0x0:
                    // discriminator value OFType.HELLO=0 for class OFHelloVer15
                    return OFHelloVer15.READER.readFrom(bb);
+               case (byte) 0x1d:
+                   // discriminator value OFType.METER_MOD=29 for class OFMeterModVer15
+                   return OFMeterModVer15.READER.readFrom(bb);
                case (byte) 0xa:
                    // discriminator value OFType.PACKET_IN=10 for class OFPacketInVer15
                    return OFPacketInVer15.READER.readFrom(bb);
@@ -106,51 +124,33 @@ abstract class OFMessageVer15 {
                case (byte) 0xc:
                    // discriminator value OFType.PORT_STATUS=12 for class OFPortStatusVer15
                    return OFPortStatusVer15.READER.readFrom(bb);
-               case (byte) 0x9:
-                   // discriminator value OFType.SET_CONFIG=9 for class OFSetConfigVer15
-                   return OFSetConfigVer15.READER.readFrom(bb);
-               case (byte) 0x11:
-                   // discriminator value OFType.TABLE_MOD=17 for class OFTableModVer15
-                   return OFTableModVer15.READER.readFrom(bb);
-               case (byte) 0xf:
-                   // discriminator value OFType.GROUP_MOD=15 for class OFGroupModVer15
-                   return OFGroupModVer15.READER.readFrom(bb);
+               case (byte) 0x20:
+                   // discriminator value OFType.REQUESTFORWARD=32 for class OFRequestforwardVer15
+                   return OFRequestforwardVer15.READER.readFrom(bb);
                case (byte) 0x19:
                    // discriminator value OFType.ROLE_REPLY=25 for class OFRoleReplyVer15
                    return OFRoleReplyVer15.READER.readFrom(bb);
                case (byte) 0x18:
                    // discriminator value OFType.ROLE_REQUEST=24 for class OFRoleRequestVer15
                    return OFRoleRequestVer15.READER.readFrom(bb);
-               case (byte) 0x1b:
-                   // discriminator value OFType.GET_ASYNC_REPLY=27 for class OFAsyncGetReplyVer15
-                   return OFAsyncGetReplyVer15.READER.readFrom(bb);
-               case (byte) 0x1a:
-                   // discriminator value OFType.GET_ASYNC_REQUEST=26 for class OFAsyncGetRequestVer15
-                   return OFAsyncGetRequestVer15.READER.readFrom(bb);
-               case (byte) 0x1c:
-                   // discriminator value OFType.SET_ASYNC=28 for class OFAsyncSetVer15
-                   return OFAsyncSetVer15.READER.readFrom(bb);
-               case (byte) 0x1d:
-                   // discriminator value OFType.METER_MOD=29 for class OFMeterModVer15
-                   return OFMeterModVer15.READER.readFrom(bb);
-               case (byte) 0x22:
-                   // discriminator value OFType.BUNDLE_ADD_MESSAGE=34 for class OFBundleAddMsgVer15
-                   return OFBundleAddMsgVer15.READER.readFrom(bb);
-               case (byte) 0x21:
-                   // discriminator value OFType.BUNDLE_CONTROL=33 for class OFBundleCtrlMsgVer15
-                   return OFBundleCtrlMsgVer15.READER.readFrom(bb);
-               case (byte) 0x20:
-                   // discriminator value OFType.REQUESTFORWARD=32 for class OFRequestforwardVer15
-                   return OFRequestforwardVer15.READER.readFrom(bb);
                case (byte) 0x1e:
                    // discriminator value OFType.ROLE_STATUS=30 for class OFRoleStatusVer15
                    return OFRoleStatusVer15.READER.readFrom(bb);
+               case (byte) 0x9:
+                   // discriminator value OFType.SET_CONFIG=9 for class OFSetConfigVer15
+                   return OFSetConfigVer15.READER.readFrom(bb);
+               case (byte) 0x13:
+                   // discriminator value OFType.STATS_REPLY=19 for class OFStatsReplyVer15
+                   return OFStatsReplyVer15.READER.readFrom(bb);
+               case (byte) 0x12:
+                   // discriminator value OFType.STATS_REQUEST=18 for class OFStatsRequestVer15
+                   return OFStatsRequestVer15.READER.readFrom(bb);
+               case (byte) 0x11:
+                   // discriminator value OFType.TABLE_MOD=17 for class OFTableModVer15
+                   return OFTableModVer15.READER.readFrom(bb);
                case (byte) 0x1f:
                    // discriminator value OFType.TABLE_STATUS=31 for class OFTableStatusVer15
                    return OFTableStatusVer15.READER.readFrom(bb);
-               case (byte) 0x23:
-                   // discriminator value OFType.CONTROLLER_STATUS=35 for class OFControllerStatusVer15
-                   return OFControllerStatusVer15.READER.readFrom(bb);
                default:
                    throw new OFParseError("Unknown value for discriminator type of class OFMessageVer15: " + type);
             }
