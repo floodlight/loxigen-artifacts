@@ -73,11 +73,6 @@ class OFRequestforwardVer15 implements OFRequestforward {
     }
 
     @Override
-    public OFMessage getRequest() {
-        return request;
-    }
-
-    @Override
     public long getRole()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property role not supported in version 1.5");
     }
@@ -85,6 +80,11 @@ class OFRequestforwardVer15 implements OFRequestforward {
     @Override
     public byte[] getData()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property data not supported in version 1.5");
+    }
+
+    @Override
+    public OFMessage getRequest() {
+        return request;
     }
 
 
@@ -128,17 +128,6 @@ class OFRequestforwardVer15 implements OFRequestforward {
         return this;
     }
     @Override
-    public OFMessage getRequest() {
-        return request;
-    }
-
-    @Override
-    public OFRequestforward.Builder setRequest(OFMessage request) {
-        this.request = request;
-        this.requestSet = true;
-        return this;
-    }
-    @Override
     public long getRole()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property role not supported in version 1.5");
     }
@@ -155,6 +144,17 @@ class OFRequestforwardVer15 implements OFRequestforward {
     @Override
     public OFRequestforward.Builder setData(byte[] data) throws UnsupportedOperationException {
             throw new UnsupportedOperationException("Property data not supported in version 1.5");
+    }
+    @Override
+    public OFMessage getRequest() {
+        return request;
+    }
+
+    @Override
+    public OFRequestforward.Builder setRequest(OFMessage request) {
+        this.request = request;
+        this.requestSet = true;
+        return this;
     }
 
 
@@ -203,17 +203,6 @@ class OFRequestforwardVer15 implements OFRequestforward {
         return this;
     }
     @Override
-    public OFMessage getRequest() {
-        return request;
-    }
-
-    @Override
-    public OFRequestforward.Builder setRequest(OFMessage request) {
-        this.request = request;
-        this.requestSet = true;
-        return this;
-    }
-    @Override
     public long getRole()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property role not supported in version 1.5");
     }
@@ -230,6 +219,17 @@ class OFRequestforwardVer15 implements OFRequestforward {
     @Override
     public OFRequestforward.Builder setData(byte[] data) throws UnsupportedOperationException {
             throw new UnsupportedOperationException("Property data not supported in version 1.5");
+    }
+    @Override
+    public OFMessage getRequest() {
+        return request;
+    }
+
+    @Override
+    public OFRequestforward.Builder setRequest(OFMessage request) {
+        this.request = request;
+        this.requestSet = true;
+        return this;
     }
 //
         @Override

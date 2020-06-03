@@ -142,18 +142,13 @@ class OFFlowModifyStrictVer15 implements OFFlowModifyStrict {
     }
 
     @Override
+    public Match getMatch() {
+        return match;
+    }
+
+    @Override
     public U64 getCookie() {
         return cookie;
-    }
-
-    @Override
-    public U64 getCookieMask() {
-        return cookieMask;
-    }
-
-    @Override
-    public TableId getTableId() {
-        return tableId;
     }
 
     @Override
@@ -187,23 +182,8 @@ class OFFlowModifyStrictVer15 implements OFFlowModifyStrict {
     }
 
     @Override
-    public OFGroup getOutGroup() {
-        return outGroup;
-    }
-
-    @Override
     public Set<OFFlowModFlags> getFlags() {
         return flags;
-    }
-
-    @Override
-    public Match getMatch() {
-        return match;
-    }
-
-    @Override
-    public List<OFInstruction> getInstructions() {
-        return instructions;
     }
 
 
@@ -216,6 +196,26 @@ class OFFlowModifyStrictVer15 implements OFFlowModifyStrict {
             }
         }
         return Collections.emptyList();
+    }
+
+    @Override
+    public U64 getCookieMask() {
+        return cookieMask;
+    }
+
+    @Override
+    public TableId getTableId() {
+        return tableId;
+    }
+
+    @Override
+    public OFGroup getOutGroup() {
+        return outGroup;
+    }
+
+    @Override
+    public List<OFInstruction> getInstructions() {
+        return instructions;
     }
 
     @Override
@@ -288,6 +288,17 @@ class OFFlowModifyStrictVer15 implements OFFlowModifyStrict {
         return this;
     }
     @Override
+    public Match getMatch() {
+        return match;
+    }
+
+    @Override
+    public OFFlowModifyStrict.Builder setMatch(Match match) {
+        this.match = match;
+        this.matchSet = true;
+        return this;
+    }
+    @Override
     public U64 getCookie() {
         return cookie;
     }
@@ -296,28 +307,6 @@ class OFFlowModifyStrictVer15 implements OFFlowModifyStrict {
     public OFFlowModifyStrict.Builder setCookie(U64 cookie) {
         this.cookie = cookie;
         this.cookieSet = true;
-        return this;
-    }
-    @Override
-    public U64 getCookieMask() {
-        return cookieMask;
-    }
-
-    @Override
-    public OFFlowModifyStrict.Builder setCookieMask(U64 cookieMask) {
-        this.cookieMask = cookieMask;
-        this.cookieMaskSet = true;
-        return this;
-    }
-    @Override
-    public TableId getTableId() {
-        return tableId;
-    }
-
-    @Override
-    public OFFlowModifyStrict.Builder setTableId(TableId tableId) {
-        this.tableId = tableId;
-        this.tableIdSet = true;
         return this;
     }
     @Override
@@ -381,17 +370,6 @@ class OFFlowModifyStrictVer15 implements OFFlowModifyStrict {
         return this;
     }
     @Override
-    public OFGroup getOutGroup() {
-        return outGroup;
-    }
-
-    @Override
-    public OFFlowModifyStrict.Builder setOutGroup(OFGroup outGroup) {
-        this.outGroup = outGroup;
-        this.outGroupSet = true;
-        return this;
-    }
-    @Override
     public Set<OFFlowModFlags> getFlags() {
         return flags;
     }
@@ -400,28 +378,6 @@ class OFFlowModifyStrictVer15 implements OFFlowModifyStrict {
     public OFFlowModifyStrict.Builder setFlags(Set<OFFlowModFlags> flags) {
         this.flags = flags;
         this.flagsSet = true;
-        return this;
-    }
-    @Override
-    public Match getMatch() {
-        return match;
-    }
-
-    @Override
-    public OFFlowModifyStrict.Builder setMatch(Match match) {
-        this.match = match;
-        this.matchSet = true;
-        return this;
-    }
-    @Override
-    public List<OFInstruction> getInstructions() {
-        return instructions;
-    }
-
-    @Override
-    public OFFlowModifyStrict.Builder setInstructions(List<OFInstruction> instructions) {
-        this.instructions = instructions;
-        this.instructionsSet = true;
         return this;
     }
 
@@ -448,6 +404,50 @@ class OFFlowModifyStrictVer15 implements OFFlowModifyStrict {
         return this;
     }
 
+    @Override
+    public U64 getCookieMask() {
+        return cookieMask;
+    }
+
+    @Override
+    public OFFlowModifyStrict.Builder setCookieMask(U64 cookieMask) {
+        this.cookieMask = cookieMask;
+        this.cookieMaskSet = true;
+        return this;
+    }
+    @Override
+    public TableId getTableId() {
+        return tableId;
+    }
+
+    @Override
+    public OFFlowModifyStrict.Builder setTableId(TableId tableId) {
+        this.tableId = tableId;
+        this.tableIdSet = true;
+        return this;
+    }
+    @Override
+    public OFGroup getOutGroup() {
+        return outGroup;
+    }
+
+    @Override
+    public OFFlowModifyStrict.Builder setOutGroup(OFGroup outGroup) {
+        this.outGroup = outGroup;
+        this.outGroupSet = true;
+        return this;
+    }
+    @Override
+    public List<OFInstruction> getInstructions() {
+        return instructions;
+    }
+
+    @Override
+    public OFFlowModifyStrict.Builder setInstructions(List<OFInstruction> instructions) {
+        this.instructions = instructions;
+        this.instructionsSet = true;
+        return this;
+    }
     @Override
     public int getImportance() {
         return importance;
@@ -570,6 +570,17 @@ class OFFlowModifyStrictVer15 implements OFFlowModifyStrict {
         return this;
     }
     @Override
+    public Match getMatch() {
+        return match;
+    }
+
+    @Override
+    public OFFlowModifyStrict.Builder setMatch(Match match) {
+        this.match = match;
+        this.matchSet = true;
+        return this;
+    }
+    @Override
     public U64 getCookie() {
         return cookie;
     }
@@ -578,28 +589,6 @@ class OFFlowModifyStrictVer15 implements OFFlowModifyStrict {
     public OFFlowModifyStrict.Builder setCookie(U64 cookie) {
         this.cookie = cookie;
         this.cookieSet = true;
-        return this;
-    }
-    @Override
-    public U64 getCookieMask() {
-        return cookieMask;
-    }
-
-    @Override
-    public OFFlowModifyStrict.Builder setCookieMask(U64 cookieMask) {
-        this.cookieMask = cookieMask;
-        this.cookieMaskSet = true;
-        return this;
-    }
-    @Override
-    public TableId getTableId() {
-        return tableId;
-    }
-
-    @Override
-    public OFFlowModifyStrict.Builder setTableId(TableId tableId) {
-        this.tableId = tableId;
-        this.tableIdSet = true;
         return this;
     }
     @Override
@@ -663,17 +652,6 @@ class OFFlowModifyStrictVer15 implements OFFlowModifyStrict {
         return this;
     }
     @Override
-    public OFGroup getOutGroup() {
-        return outGroup;
-    }
-
-    @Override
-    public OFFlowModifyStrict.Builder setOutGroup(OFGroup outGroup) {
-        this.outGroup = outGroup;
-        this.outGroupSet = true;
-        return this;
-    }
-    @Override
     public Set<OFFlowModFlags> getFlags() {
         return flags;
     }
@@ -682,28 +660,6 @@ class OFFlowModifyStrictVer15 implements OFFlowModifyStrict {
     public OFFlowModifyStrict.Builder setFlags(Set<OFFlowModFlags> flags) {
         this.flags = flags;
         this.flagsSet = true;
-        return this;
-    }
-    @Override
-    public Match getMatch() {
-        return match;
-    }
-
-    @Override
-    public OFFlowModifyStrict.Builder setMatch(Match match) {
-        this.match = match;
-        this.matchSet = true;
-        return this;
-    }
-    @Override
-    public List<OFInstruction> getInstructions() {
-        return instructions;
-    }
-
-    @Override
-    public OFFlowModifyStrict.Builder setInstructions(List<OFInstruction> instructions) {
-        this.instructions = instructions;
-        this.instructionsSet = true;
         return this;
     }
 
@@ -730,6 +686,50 @@ class OFFlowModifyStrictVer15 implements OFFlowModifyStrict {
         return this;
     }
 
+    @Override
+    public U64 getCookieMask() {
+        return cookieMask;
+    }
+
+    @Override
+    public OFFlowModifyStrict.Builder setCookieMask(U64 cookieMask) {
+        this.cookieMask = cookieMask;
+        this.cookieMaskSet = true;
+        return this;
+    }
+    @Override
+    public TableId getTableId() {
+        return tableId;
+    }
+
+    @Override
+    public OFFlowModifyStrict.Builder setTableId(TableId tableId) {
+        this.tableId = tableId;
+        this.tableIdSet = true;
+        return this;
+    }
+    @Override
+    public OFGroup getOutGroup() {
+        return outGroup;
+    }
+
+    @Override
+    public OFFlowModifyStrict.Builder setOutGroup(OFGroup outGroup) {
+        this.outGroup = outGroup;
+        this.outGroupSet = true;
+        return this;
+    }
+    @Override
+    public List<OFInstruction> getInstructions() {
+        return instructions;
+    }
+
+    @Override
+    public OFFlowModifyStrict.Builder setInstructions(List<OFInstruction> instructions) {
+        this.instructions = instructions;
+        this.instructionsSet = true;
+        return this;
+    }
     @Override
     public int getImportance() {
         return importance;

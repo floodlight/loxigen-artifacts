@@ -103,21 +103,6 @@ class OFTableStatsEntryVer11 implements OFTableStatsEntry {
     }
 
     @Override
-    public long getActiveCount() {
-        return activeCount;
-    }
-
-    @Override
-    public U64 getLookupCount() {
-        return lookupCount;
-    }
-
-    @Override
-    public U64 getMatchedCount() {
-        return matchedCount;
-    }
-
-    @Override
     public String getName() {
         return name;
     }
@@ -133,8 +118,28 @@ class OFTableStatsEntryVer11 implements OFTableStatsEntry {
     }
 
     @Override
+    public long getActiveCount() {
+        return activeCount;
+    }
+
+    @Override
+    public U64 getLookupCount() {
+        return lookupCount;
+    }
+
+    @Override
+    public U64 getMatchedCount() {
+        return matchedCount;
+    }
+
+    @Override
     public OFMatchBmap getMatch() {
         return match;
+    }
+
+    @Override
+    public long getInstructions() {
+        return instructions;
     }
 
     @Override
@@ -145,6 +150,11 @@ class OFTableStatsEntryVer11 implements OFTableStatsEntry {
     @Override
     public long getApplyActions() {
         return applyActions;
+    }
+
+    @Override
+    public long getConfig() {
+        return config;
     }
 
     @Override
@@ -165,16 +175,6 @@ class OFTableStatsEntryVer11 implements OFTableStatsEntry {
     @Override
     public U64 getMetadataWrite()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property metadataWrite not supported in version 1.1");
-    }
-
-    @Override
-    public long getInstructions() {
-        return instructions;
-    }
-
-    @Override
-    public long getConfig() {
-        return config;
     }
 
     @Override
@@ -233,39 +233,6 @@ class OFTableStatsEntryVer11 implements OFTableStatsEntry {
         return this;
     }
     @Override
-    public long getActiveCount() {
-        return activeCount;
-    }
-
-    @Override
-    public OFTableStatsEntry.Builder setActiveCount(long activeCount) {
-        this.activeCount = activeCount;
-        this.activeCountSet = true;
-        return this;
-    }
-    @Override
-    public U64 getLookupCount() {
-        return lookupCount;
-    }
-
-    @Override
-    public OFTableStatsEntry.Builder setLookupCount(U64 lookupCount) {
-        this.lookupCount = lookupCount;
-        this.lookupCountSet = true;
-        return this;
-    }
-    @Override
-    public U64 getMatchedCount() {
-        return matchedCount;
-    }
-
-    @Override
-    public OFTableStatsEntry.Builder setMatchedCount(U64 matchedCount) {
-        this.matchedCount = matchedCount;
-        this.matchedCountSet = true;
-        return this;
-    }
-    @Override
     public String getName() {
         return name;
     }
@@ -299,6 +266,39 @@ class OFTableStatsEntryVer11 implements OFTableStatsEntry {
         return this;
     }
     @Override
+    public long getActiveCount() {
+        return activeCount;
+    }
+
+    @Override
+    public OFTableStatsEntry.Builder setActiveCount(long activeCount) {
+        this.activeCount = activeCount;
+        this.activeCountSet = true;
+        return this;
+    }
+    @Override
+    public U64 getLookupCount() {
+        return lookupCount;
+    }
+
+    @Override
+    public OFTableStatsEntry.Builder setLookupCount(U64 lookupCount) {
+        this.lookupCount = lookupCount;
+        this.lookupCountSet = true;
+        return this;
+    }
+    @Override
+    public U64 getMatchedCount() {
+        return matchedCount;
+    }
+
+    @Override
+    public OFTableStatsEntry.Builder setMatchedCount(U64 matchedCount) {
+        this.matchedCount = matchedCount;
+        this.matchedCountSet = true;
+        return this;
+    }
+    @Override
     public OFMatchBmap getMatch() {
         return match;
     }
@@ -307,6 +307,17 @@ class OFTableStatsEntryVer11 implements OFTableStatsEntry {
     public OFTableStatsEntry.Builder setMatch(OFMatchBmap match) {
         this.match = match;
         this.matchSet = true;
+        return this;
+    }
+    @Override
+    public long getInstructions() {
+        return instructions;
+    }
+
+    @Override
+    public OFTableStatsEntry.Builder setInstructions(long instructions) {
+        this.instructions = instructions;
+        this.instructionsSet = true;
         return this;
     }
     @Override
@@ -329,6 +340,17 @@ class OFTableStatsEntryVer11 implements OFTableStatsEntry {
     public OFTableStatsEntry.Builder setApplyActions(long applyActions) {
         this.applyActions = applyActions;
         this.applyActionsSet = true;
+        return this;
+    }
+    @Override
+    public long getConfig() {
+        return config;
+    }
+
+    @Override
+    public OFTableStatsEntry.Builder setConfig(long config) {
+        this.config = config;
+        this.configSet = true;
         return this;
     }
     @Override
@@ -366,28 +388,6 @@ class OFTableStatsEntryVer11 implements OFTableStatsEntry {
     @Override
     public OFTableStatsEntry.Builder setMetadataWrite(U64 metadataWrite) throws UnsupportedOperationException {
             throw new UnsupportedOperationException("Property metadataWrite not supported in version 1.1");
-    }
-    @Override
-    public long getInstructions() {
-        return instructions;
-    }
-
-    @Override
-    public OFTableStatsEntry.Builder setInstructions(long instructions) {
-        this.instructions = instructions;
-        this.instructionsSet = true;
-        return this;
-    }
-    @Override
-    public long getConfig() {
-        return config;
-    }
-
-    @Override
-    public OFTableStatsEntry.Builder setConfig(long config) {
-        this.config = config;
-        this.configSet = true;
-        return this;
     }
     @Override
     public OFVersion getVersion() {
@@ -479,39 +479,6 @@ class OFTableStatsEntryVer11 implements OFTableStatsEntry {
         return this;
     }
     @Override
-    public long getActiveCount() {
-        return activeCount;
-    }
-
-    @Override
-    public OFTableStatsEntry.Builder setActiveCount(long activeCount) {
-        this.activeCount = activeCount;
-        this.activeCountSet = true;
-        return this;
-    }
-    @Override
-    public U64 getLookupCount() {
-        return lookupCount;
-    }
-
-    @Override
-    public OFTableStatsEntry.Builder setLookupCount(U64 lookupCount) {
-        this.lookupCount = lookupCount;
-        this.lookupCountSet = true;
-        return this;
-    }
-    @Override
-    public U64 getMatchedCount() {
-        return matchedCount;
-    }
-
-    @Override
-    public OFTableStatsEntry.Builder setMatchedCount(U64 matchedCount) {
-        this.matchedCount = matchedCount;
-        this.matchedCountSet = true;
-        return this;
-    }
-    @Override
     public String getName() {
         return name;
     }
@@ -545,6 +512,39 @@ class OFTableStatsEntryVer11 implements OFTableStatsEntry {
         return this;
     }
     @Override
+    public long getActiveCount() {
+        return activeCount;
+    }
+
+    @Override
+    public OFTableStatsEntry.Builder setActiveCount(long activeCount) {
+        this.activeCount = activeCount;
+        this.activeCountSet = true;
+        return this;
+    }
+    @Override
+    public U64 getLookupCount() {
+        return lookupCount;
+    }
+
+    @Override
+    public OFTableStatsEntry.Builder setLookupCount(U64 lookupCount) {
+        this.lookupCount = lookupCount;
+        this.lookupCountSet = true;
+        return this;
+    }
+    @Override
+    public U64 getMatchedCount() {
+        return matchedCount;
+    }
+
+    @Override
+    public OFTableStatsEntry.Builder setMatchedCount(U64 matchedCount) {
+        this.matchedCount = matchedCount;
+        this.matchedCountSet = true;
+        return this;
+    }
+    @Override
     public OFMatchBmap getMatch() {
         return match;
     }
@@ -553,6 +553,17 @@ class OFTableStatsEntryVer11 implements OFTableStatsEntry {
     public OFTableStatsEntry.Builder setMatch(OFMatchBmap match) {
         this.match = match;
         this.matchSet = true;
+        return this;
+    }
+    @Override
+    public long getInstructions() {
+        return instructions;
+    }
+
+    @Override
+    public OFTableStatsEntry.Builder setInstructions(long instructions) {
+        this.instructions = instructions;
+        this.instructionsSet = true;
         return this;
     }
     @Override
@@ -575,6 +586,17 @@ class OFTableStatsEntryVer11 implements OFTableStatsEntry {
     public OFTableStatsEntry.Builder setApplyActions(long applyActions) {
         this.applyActions = applyActions;
         this.applyActionsSet = true;
+        return this;
+    }
+    @Override
+    public long getConfig() {
+        return config;
+    }
+
+    @Override
+    public OFTableStatsEntry.Builder setConfig(long config) {
+        this.config = config;
+        this.configSet = true;
         return this;
     }
     @Override
@@ -612,28 +634,6 @@ class OFTableStatsEntryVer11 implements OFTableStatsEntry {
     @Override
     public OFTableStatsEntry.Builder setMetadataWrite(U64 metadataWrite) throws UnsupportedOperationException {
             throw new UnsupportedOperationException("Property metadataWrite not supported in version 1.1");
-    }
-    @Override
-    public long getInstructions() {
-        return instructions;
-    }
-
-    @Override
-    public OFTableStatsEntry.Builder setInstructions(long instructions) {
-        this.instructions = instructions;
-        this.instructionsSet = true;
-        return this;
-    }
-    @Override
-    public long getConfig() {
-        return config;
-    }
-
-    @Override
-    public OFTableStatsEntry.Builder setConfig(long config) {
-        this.config = config;
-        this.configSet = true;
-        return this;
     }
     @Override
     public OFVersion getVersion() {

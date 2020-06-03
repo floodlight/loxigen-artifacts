@@ -34,12 +34,12 @@ public interface OFFlowStatsRequest extends OFObject, OFStatsRequest<OFFlowStats
     long getXid();
     OFStatsType getStatsType();
     Set<OFStatsRequestFlags> getFlags();
+    Match getMatch();
     TableId getTableId();
     OFPort getOutPort();
     OFGroup getOutGroup() throws UnsupportedOperationException;
     U64 getCookie() throws UnsupportedOperationException;
     U64 getCookieMask() throws UnsupportedOperationException;
-    Match getMatch();
 
     void writeTo(ByteBuf channelBuffer);
 
@@ -53,6 +53,8 @@ public interface OFFlowStatsRequest extends OFObject, OFStatsRequest<OFFlowStats
         OFStatsType getStatsType();
         Set<OFStatsRequestFlags> getFlags();
         Builder setFlags(Set<OFStatsRequestFlags> flags);
+        Match getMatch();
+        Builder setMatch(Match match);
         TableId getTableId();
         Builder setTableId(TableId tableId);
         OFPort getOutPort();
@@ -63,7 +65,5 @@ public interface OFFlowStatsRequest extends OFObject, OFStatsRequest<OFFlowStats
         Builder setCookie(U64 cookie) throws UnsupportedOperationException;
         U64 getCookieMask() throws UnsupportedOperationException;
         Builder setCookieMask(U64 cookieMask) throws UnsupportedOperationException;
-        Match getMatch();
-        Builder setMatch(Match match);
     }
 }
