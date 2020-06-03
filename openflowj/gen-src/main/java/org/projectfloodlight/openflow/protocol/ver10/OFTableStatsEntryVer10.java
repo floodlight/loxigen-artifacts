@@ -90,21 +90,6 @@ class OFTableStatsEntryVer10 implements OFTableStatsEntry {
     }
 
     @Override
-    public long getActiveCount() {
-        return activeCount;
-    }
-
-    @Override
-    public U64 getLookupCount() {
-        return lookupCount;
-    }
-
-    @Override
-    public U64 getMatchedCount() {
-        return matchedCount;
-    }
-
-    @Override
     public String getName() {
         return name;
     }
@@ -120,8 +105,28 @@ class OFTableStatsEntryVer10 implements OFTableStatsEntry {
     }
 
     @Override
+    public long getActiveCount() {
+        return activeCount;
+    }
+
+    @Override
+    public U64 getLookupCount() {
+        return lookupCount;
+    }
+
+    @Override
+    public U64 getMatchedCount() {
+        return matchedCount;
+    }
+
+    @Override
     public OFMatchBmap getMatch()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property match not supported in version 1.0");
+    }
+
+    @Override
+    public long getInstructions()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property instructions not supported in version 1.0");
     }
 
     @Override
@@ -132,6 +137,11 @@ class OFTableStatsEntryVer10 implements OFTableStatsEntry {
     @Override
     public long getApplyActions()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property applyActions not supported in version 1.0");
+    }
+
+    @Override
+    public long getConfig()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property config not supported in version 1.0");
     }
 
     @Override
@@ -152,16 +162,6 @@ class OFTableStatsEntryVer10 implements OFTableStatsEntry {
     @Override
     public U64 getMetadataWrite()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property metadataWrite not supported in version 1.0");
-    }
-
-    @Override
-    public long getInstructions()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property instructions not supported in version 1.0");
-    }
-
-    @Override
-    public long getConfig()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property config not supported in version 1.0");
     }
 
     @Override
@@ -210,39 +210,6 @@ class OFTableStatsEntryVer10 implements OFTableStatsEntry {
         return this;
     }
     @Override
-    public long getActiveCount() {
-        return activeCount;
-    }
-
-    @Override
-    public OFTableStatsEntry.Builder setActiveCount(long activeCount) {
-        this.activeCount = activeCount;
-        this.activeCountSet = true;
-        return this;
-    }
-    @Override
-    public U64 getLookupCount() {
-        return lookupCount;
-    }
-
-    @Override
-    public OFTableStatsEntry.Builder setLookupCount(U64 lookupCount) {
-        this.lookupCount = lookupCount;
-        this.lookupCountSet = true;
-        return this;
-    }
-    @Override
-    public U64 getMatchedCount() {
-        return matchedCount;
-    }
-
-    @Override
-    public OFTableStatsEntry.Builder setMatchedCount(U64 matchedCount) {
-        this.matchedCount = matchedCount;
-        this.matchedCountSet = true;
-        return this;
-    }
-    @Override
     public String getName() {
         return name;
     }
@@ -276,6 +243,39 @@ class OFTableStatsEntryVer10 implements OFTableStatsEntry {
         return this;
     }
     @Override
+    public long getActiveCount() {
+        return activeCount;
+    }
+
+    @Override
+    public OFTableStatsEntry.Builder setActiveCount(long activeCount) {
+        this.activeCount = activeCount;
+        this.activeCountSet = true;
+        return this;
+    }
+    @Override
+    public U64 getLookupCount() {
+        return lookupCount;
+    }
+
+    @Override
+    public OFTableStatsEntry.Builder setLookupCount(U64 lookupCount) {
+        this.lookupCount = lookupCount;
+        this.lookupCountSet = true;
+        return this;
+    }
+    @Override
+    public U64 getMatchedCount() {
+        return matchedCount;
+    }
+
+    @Override
+    public OFTableStatsEntry.Builder setMatchedCount(U64 matchedCount) {
+        this.matchedCount = matchedCount;
+        this.matchedCountSet = true;
+        return this;
+    }
+    @Override
     public OFMatchBmap getMatch()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property match not supported in version 1.0");
     }
@@ -283,6 +283,15 @@ class OFTableStatsEntryVer10 implements OFTableStatsEntry {
     @Override
     public OFTableStatsEntry.Builder setMatch(OFMatchBmap match) throws UnsupportedOperationException {
             throw new UnsupportedOperationException("Property match not supported in version 1.0");
+    }
+    @Override
+    public long getInstructions()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property instructions not supported in version 1.0");
+    }
+
+    @Override
+    public OFTableStatsEntry.Builder setInstructions(long instructions) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property instructions not supported in version 1.0");
     }
     @Override
     public long getWriteActions()throws UnsupportedOperationException {
@@ -301,6 +310,15 @@ class OFTableStatsEntryVer10 implements OFTableStatsEntry {
     @Override
     public OFTableStatsEntry.Builder setApplyActions(long applyActions) throws UnsupportedOperationException {
             throw new UnsupportedOperationException("Property applyActions not supported in version 1.0");
+    }
+    @Override
+    public long getConfig()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property config not supported in version 1.0");
+    }
+
+    @Override
+    public OFTableStatsEntry.Builder setConfig(long config) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property config not supported in version 1.0");
     }
     @Override
     public U64 getWriteSetfields()throws UnsupportedOperationException {
@@ -337,24 +355,6 @@ class OFTableStatsEntryVer10 implements OFTableStatsEntry {
     @Override
     public OFTableStatsEntry.Builder setMetadataWrite(U64 metadataWrite) throws UnsupportedOperationException {
             throw new UnsupportedOperationException("Property metadataWrite not supported in version 1.0");
-    }
-    @Override
-    public long getInstructions()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property instructions not supported in version 1.0");
-    }
-
-    @Override
-    public OFTableStatsEntry.Builder setInstructions(long instructions) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property instructions not supported in version 1.0");
-    }
-    @Override
-    public long getConfig()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property config not supported in version 1.0");
-    }
-
-    @Override
-    public OFTableStatsEntry.Builder setConfig(long config) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property config not supported in version 1.0");
     }
     @Override
     public OFVersion getVersion() {
@@ -424,39 +424,6 @@ class OFTableStatsEntryVer10 implements OFTableStatsEntry {
         return this;
     }
     @Override
-    public long getActiveCount() {
-        return activeCount;
-    }
-
-    @Override
-    public OFTableStatsEntry.Builder setActiveCount(long activeCount) {
-        this.activeCount = activeCount;
-        this.activeCountSet = true;
-        return this;
-    }
-    @Override
-    public U64 getLookupCount() {
-        return lookupCount;
-    }
-
-    @Override
-    public OFTableStatsEntry.Builder setLookupCount(U64 lookupCount) {
-        this.lookupCount = lookupCount;
-        this.lookupCountSet = true;
-        return this;
-    }
-    @Override
-    public U64 getMatchedCount() {
-        return matchedCount;
-    }
-
-    @Override
-    public OFTableStatsEntry.Builder setMatchedCount(U64 matchedCount) {
-        this.matchedCount = matchedCount;
-        this.matchedCountSet = true;
-        return this;
-    }
-    @Override
     public String getName() {
         return name;
     }
@@ -490,6 +457,39 @@ class OFTableStatsEntryVer10 implements OFTableStatsEntry {
         return this;
     }
     @Override
+    public long getActiveCount() {
+        return activeCount;
+    }
+
+    @Override
+    public OFTableStatsEntry.Builder setActiveCount(long activeCount) {
+        this.activeCount = activeCount;
+        this.activeCountSet = true;
+        return this;
+    }
+    @Override
+    public U64 getLookupCount() {
+        return lookupCount;
+    }
+
+    @Override
+    public OFTableStatsEntry.Builder setLookupCount(U64 lookupCount) {
+        this.lookupCount = lookupCount;
+        this.lookupCountSet = true;
+        return this;
+    }
+    @Override
+    public U64 getMatchedCount() {
+        return matchedCount;
+    }
+
+    @Override
+    public OFTableStatsEntry.Builder setMatchedCount(U64 matchedCount) {
+        this.matchedCount = matchedCount;
+        this.matchedCountSet = true;
+        return this;
+    }
+    @Override
     public OFMatchBmap getMatch()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property match not supported in version 1.0");
     }
@@ -497,6 +497,15 @@ class OFTableStatsEntryVer10 implements OFTableStatsEntry {
     @Override
     public OFTableStatsEntry.Builder setMatch(OFMatchBmap match) throws UnsupportedOperationException {
             throw new UnsupportedOperationException("Property match not supported in version 1.0");
+    }
+    @Override
+    public long getInstructions()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property instructions not supported in version 1.0");
+    }
+
+    @Override
+    public OFTableStatsEntry.Builder setInstructions(long instructions) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property instructions not supported in version 1.0");
     }
     @Override
     public long getWriteActions()throws UnsupportedOperationException {
@@ -515,6 +524,15 @@ class OFTableStatsEntryVer10 implements OFTableStatsEntry {
     @Override
     public OFTableStatsEntry.Builder setApplyActions(long applyActions) throws UnsupportedOperationException {
             throw new UnsupportedOperationException("Property applyActions not supported in version 1.0");
+    }
+    @Override
+    public long getConfig()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property config not supported in version 1.0");
+    }
+
+    @Override
+    public OFTableStatsEntry.Builder setConfig(long config) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property config not supported in version 1.0");
     }
     @Override
     public U64 getWriteSetfields()throws UnsupportedOperationException {
@@ -551,24 +569,6 @@ class OFTableStatsEntryVer10 implements OFTableStatsEntry {
     @Override
     public OFTableStatsEntry.Builder setMetadataWrite(U64 metadataWrite) throws UnsupportedOperationException {
             throw new UnsupportedOperationException("Property metadataWrite not supported in version 1.0");
-    }
-    @Override
-    public long getInstructions()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property instructions not supported in version 1.0");
-    }
-
-    @Override
-    public OFTableStatsEntry.Builder setInstructions(long instructions) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property instructions not supported in version 1.0");
-    }
-    @Override
-    public long getConfig()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property config not supported in version 1.0");
-    }
-
-    @Override
-    public OFTableStatsEntry.Builder setConfig(long config) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property config not supported in version 1.0");
     }
     @Override
     public OFVersion getVersion() {

@@ -78,6 +78,11 @@ class OFTableStatusVer15 implements OFTableStatus {
     }
 
     @Override
+    public long getRole()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property role not supported in version 1.5");
+    }
+
+    @Override
     public OFTableReason getReason() {
         return reason;
     }
@@ -85,11 +90,6 @@ class OFTableStatusVer15 implements OFTableStatus {
     @Override
     public OFTableDesc getTable() {
         return table;
-    }
-
-    @Override
-    public long getRole()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property role not supported in version 1.5");
     }
 
 
@@ -135,6 +135,15 @@ class OFTableStatusVer15 implements OFTableStatus {
         return this;
     }
     @Override
+    public long getRole()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property role not supported in version 1.5");
+    }
+
+    @Override
+    public OFTableStatus.Builder setRole(long role) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property role not supported in version 1.5");
+    }
+    @Override
     public OFTableReason getReason() {
         return reason;
     }
@@ -155,15 +164,6 @@ class OFTableStatusVer15 implements OFTableStatus {
         this.table = table;
         this.tableSet = true;
         return this;
-    }
-    @Override
-    public long getRole()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property role not supported in version 1.5");
-    }
-
-    @Override
-    public OFTableStatus.Builder setRole(long role) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property role not supported in version 1.5");
     }
 
 
@@ -218,6 +218,15 @@ class OFTableStatusVer15 implements OFTableStatus {
         return this;
     }
     @Override
+    public long getRole()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property role not supported in version 1.5");
+    }
+
+    @Override
+    public OFTableStatus.Builder setRole(long role) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property role not supported in version 1.5");
+    }
+    @Override
     public OFTableReason getReason() {
         return reason;
     }
@@ -238,15 +247,6 @@ class OFTableStatusVer15 implements OFTableStatus {
         this.table = table;
         this.tableSet = true;
         return this;
-    }
-    @Override
-    public long getRole()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property role not supported in version 1.5");
-    }
-
-    @Override
-    public OFTableStatus.Builder setRole(long role) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property role not supported in version 1.5");
     }
 //
         @Override

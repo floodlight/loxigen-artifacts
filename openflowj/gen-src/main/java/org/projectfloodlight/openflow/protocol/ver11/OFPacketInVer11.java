@@ -117,23 +117,13 @@ class OFPacketInVer11 implements OFPacketIn {
     }
 
     @Override
+    public OFPort getInPort() {
+        return inPort;
+    }
+
+    @Override
     public OFPacketInReason getReason() {
         return reason;
-    }
-
-    @Override
-    public TableId getTableId() {
-        return tableId;
-    }
-
-    @Override
-    public U64 getCookie()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property cookie not supported in version 1.1");
-    }
-
-    @Override
-    public Match getMatch()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property match not supported in version 1.1");
     }
 
     @Override
@@ -142,13 +132,23 @@ class OFPacketInVer11 implements OFPacketIn {
     }
 
     @Override
-    public OFPort getInPort() {
-        return inPort;
+    public OFPort getInPhyPort() {
+        return inPhyPort;
     }
 
     @Override
-    public OFPort getInPhyPort() {
-        return inPhyPort;
+    public TableId getTableId() {
+        return tableId;
+    }
+
+    @Override
+    public Match getMatch()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property match not supported in version 1.1");
+    }
+
+    @Override
+    public U64 getCookie()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property cookie not supported in version 1.1");
     }
 
 
@@ -226,6 +226,17 @@ class OFPacketInVer11 implements OFPacketIn {
         return this;
     }
     @Override
+    public OFPort getInPort() {
+        return inPort;
+    }
+
+    @Override
+    public OFPacketIn.Builder setInPort(OFPort inPort) {
+        this.inPort = inPort;
+        this.inPortSet = true;
+        return this;
+    }
+    @Override
     public OFPacketInReason getReason() {
         return reason;
     }
@@ -234,6 +245,28 @@ class OFPacketInVer11 implements OFPacketIn {
     public OFPacketIn.Builder setReason(OFPacketInReason reason) {
         this.reason = reason;
         this.reasonSet = true;
+        return this;
+    }
+    @Override
+    public byte[] getData() {
+        return data;
+    }
+
+    @Override
+    public OFPacketIn.Builder setData(byte[] data) {
+        this.data = data;
+        this.dataSet = true;
+        return this;
+    }
+    @Override
+    public OFPort getInPhyPort() {
+        return inPhyPort;
+    }
+
+    @Override
+    public OFPacketIn.Builder setInPhyPort(OFPort inPhyPort) {
+        this.inPhyPort = inPhyPort;
+        this.inPhyPortSet = true;
         return this;
     }
     @Override
@@ -248,15 +281,6 @@ class OFPacketInVer11 implements OFPacketIn {
         return this;
     }
     @Override
-    public U64 getCookie()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property cookie not supported in version 1.1");
-    }
-
-    @Override
-    public OFPacketIn.Builder setCookie(U64 cookie) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property cookie not supported in version 1.1");
-    }
-    @Override
     public Match getMatch()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property match not supported in version 1.1");
     }
@@ -266,37 +290,13 @@ class OFPacketInVer11 implements OFPacketIn {
             throw new UnsupportedOperationException("Property match not supported in version 1.1");
     }
     @Override
-    public byte[] getData() {
-        return data;
+    public U64 getCookie()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property cookie not supported in version 1.1");
     }
 
     @Override
-    public OFPacketIn.Builder setData(byte[] data) {
-        this.data = data;
-        this.dataSet = true;
-        return this;
-    }
-    @Override
-    public OFPort getInPort() {
-        return inPort;
-    }
-
-    @Override
-    public OFPacketIn.Builder setInPort(OFPort inPort) {
-        this.inPort = inPort;
-        this.inPortSet = true;
-        return this;
-    }
-    @Override
-    public OFPort getInPhyPort() {
-        return inPhyPort;
-    }
-
-    @Override
-    public OFPacketIn.Builder setInPhyPort(OFPort inPhyPort) {
-        this.inPhyPort = inPhyPort;
-        this.inPhyPortSet = true;
-        return this;
+    public OFPacketIn.Builder setCookie(U64 cookie) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property cookie not supported in version 1.1");
     }
 
 
@@ -401,6 +401,17 @@ class OFPacketInVer11 implements OFPacketIn {
         return this;
     }
     @Override
+    public OFPort getInPort() {
+        return inPort;
+    }
+
+    @Override
+    public OFPacketIn.Builder setInPort(OFPort inPort) {
+        this.inPort = inPort;
+        this.inPortSet = true;
+        return this;
+    }
+    @Override
     public OFPacketInReason getReason() {
         return reason;
     }
@@ -409,6 +420,28 @@ class OFPacketInVer11 implements OFPacketIn {
     public OFPacketIn.Builder setReason(OFPacketInReason reason) {
         this.reason = reason;
         this.reasonSet = true;
+        return this;
+    }
+    @Override
+    public byte[] getData() {
+        return data;
+    }
+
+    @Override
+    public OFPacketIn.Builder setData(byte[] data) {
+        this.data = data;
+        this.dataSet = true;
+        return this;
+    }
+    @Override
+    public OFPort getInPhyPort() {
+        return inPhyPort;
+    }
+
+    @Override
+    public OFPacketIn.Builder setInPhyPort(OFPort inPhyPort) {
+        this.inPhyPort = inPhyPort;
+        this.inPhyPortSet = true;
         return this;
     }
     @Override
@@ -423,15 +456,6 @@ class OFPacketInVer11 implements OFPacketIn {
         return this;
     }
     @Override
-    public U64 getCookie()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property cookie not supported in version 1.1");
-    }
-
-    @Override
-    public OFPacketIn.Builder setCookie(U64 cookie) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property cookie not supported in version 1.1");
-    }
-    @Override
     public Match getMatch()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property match not supported in version 1.1");
     }
@@ -441,37 +465,13 @@ class OFPacketInVer11 implements OFPacketIn {
             throw new UnsupportedOperationException("Property match not supported in version 1.1");
     }
     @Override
-    public byte[] getData() {
-        return data;
+    public U64 getCookie()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property cookie not supported in version 1.1");
     }
 
     @Override
-    public OFPacketIn.Builder setData(byte[] data) {
-        this.data = data;
-        this.dataSet = true;
-        return this;
-    }
-    @Override
-    public OFPort getInPort() {
-        return inPort;
-    }
-
-    @Override
-    public OFPacketIn.Builder setInPort(OFPort inPort) {
-        this.inPort = inPort;
-        this.inPortSet = true;
-        return this;
-    }
-    @Override
-    public OFPort getInPhyPort() {
-        return inPhyPort;
-    }
-
-    @Override
-    public OFPacketIn.Builder setInPhyPort(OFPort inPhyPort) {
-        this.inPhyPort = inPhyPort;
-        this.inPhyPortSet = true;
-        return this;
+    public OFPacketIn.Builder setCookie(U64 cookie) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property cookie not supported in version 1.1");
     }
 //
         @Override

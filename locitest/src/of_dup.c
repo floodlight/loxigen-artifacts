@@ -3016,68 +3016,68 @@ of_action_OF_VERSION_1_0_dup(
     of_object_t *src)
 {
 
-    if (src->object_id == OF_ACTION_NICIRA_DEC_TTL) {
-        return of_action_nicira_dec_ttl_OF_VERSION_1_0_dup(src);
-    }
-
-    if (src->object_id == OF_ACTION_SET_DL_SRC) {
-        return of_action_set_dl_src_OF_VERSION_1_0_dup(src);
-    }
-
-    if (src->object_id == OF_ACTION_SET_VLAN_VID) {
-        return of_action_set_vlan_vid_OF_VERSION_1_0_dup(src);
-    }
-
-    if (src->object_id == OF_ACTION_SET_VLAN_PCP) {
-        return of_action_set_vlan_pcp_OF_VERSION_1_0_dup(src);
-    }
-
-    if (src->object_id == OF_ACTION_OUTPUT) {
-        return of_action_output_OF_VERSION_1_0_dup(src);
-    }
-
-    if (src->object_id == OF_ACTION_SET_DL_DST) {
-        return of_action_set_dl_dst_OF_VERSION_1_0_dup(src);
-    }
-
-    if (src->object_id == OF_ACTION_BSN_SET_TUNNEL_DST) {
-        return of_action_bsn_set_tunnel_dst_OF_VERSION_1_0_dup(src);
-    }
-
-    if (src->object_id == OF_ACTION_ENQUEUE) {
-        return of_action_enqueue_OF_VERSION_1_0_dup(src);
-    }
-
-    if (src->object_id == OF_ACTION_SET_NW_TOS) {
-        return of_action_set_nw_tos_OF_VERSION_1_0_dup(src);
-    }
-
-    if (src->object_id == OF_ACTION_BSN_MIRROR) {
-        return of_action_bsn_mirror_OF_VERSION_1_0_dup(src);
-    }
-
-    if (src->object_id == OF_ACTION_SET_TP_SRC) {
-        return of_action_set_tp_src_OF_VERSION_1_0_dup(src);
-    }
-
     if (src->object_id == OF_ACTION_SET_NW_DST) {
         return of_action_set_nw_dst_OF_VERSION_1_0_dup(src);
-    }
-
-    if (src->object_id == OF_ACTION_BSN_CHECKSUM) {
-        return of_action_bsn_checksum_OF_VERSION_1_0_dup(src);
-    }
-
-    if (src->object_id == OF_ACTION_SET_TP_DST) {
-        return of_action_set_tp_dst_OF_VERSION_1_0_dup(src);
     }
 
     if (src->object_id == OF_ACTION_STRIP_VLAN) {
         return of_action_strip_vlan_OF_VERSION_1_0_dup(src);
     }
 
+    if (src->object_id == OF_ACTION_BSN_CHECKSUM) {
+        return of_action_bsn_checksum_OF_VERSION_1_0_dup(src);
+    }
+
+    if (src->object_id == OF_ACTION_OUTPUT) {
+        return of_action_output_OF_VERSION_1_0_dup(src);
+    }
+
+    if (src->object_id == OF_ACTION_SET_TP_SRC) {
+        return of_action_set_tp_src_OF_VERSION_1_0_dup(src);
+    }
+
+    if (src->object_id == OF_ACTION_SET_DL_SRC) {
+        return of_action_set_dl_src_OF_VERSION_1_0_dup(src);
+    }
+
+    if (src->object_id == OF_ACTION_SET_VLAN_PCP) {
+        return of_action_set_vlan_pcp_OF_VERSION_1_0_dup(src);
+    }
+
+    if (src->object_id == OF_ACTION_SET_NW_TOS) {
+        return of_action_set_nw_tos_OF_VERSION_1_0_dup(src);
+    }
+
+    if (src->object_id == OF_ACTION_SET_DL_DST) {
+        return of_action_set_dl_dst_OF_VERSION_1_0_dup(src);
+    }
+
     if (src->object_id == OF_ACTION_SET_NW_SRC) {
         return of_action_set_nw_src_OF_VERSION_1_0_dup(src);
+    }
+
+    if (src->object_id == OF_ACTION_SET_VLAN_VID) {
+        return of_action_set_vlan_vid_OF_VERSION_1_0_dup(src);
+    }
+
+    if (src->object_id == OF_ACTION_NICIRA_DEC_TTL) {
+        return of_action_nicira_dec_ttl_OF_VERSION_1_0_dup(src);
+    }
+
+    if (src->object_id == OF_ACTION_ENQUEUE) {
+        return of_action_enqueue_OF_VERSION_1_0_dup(src);
+    }
+
+    if (src->object_id == OF_ACTION_SET_TP_DST) {
+        return of_action_set_tp_dst_OF_VERSION_1_0_dup(src);
+    }
+
+    if (src->object_id == OF_ACTION_BSN_SET_TUNNEL_DST) {
+        return of_action_bsn_set_tunnel_dst_OF_VERSION_1_0_dup(src);
+    }
+
+    if (src->object_id == OF_ACTION_BSN_MIRROR) {
+        return of_action_bsn_mirror_OF_VERSION_1_0_dup(src);
     }
 
     return NULL;
@@ -3565,12 +3565,12 @@ of_bsn_vport_OF_VERSION_1_0_dup(
     of_object_t *src)
 {
 
-    if (src->object_id == OF_BSN_VPORT_Q_IN_Q) {
-        return of_bsn_vport_q_in_q_OF_VERSION_1_0_dup(src);
-    }
-
     if (src->object_id == OF_BSN_VPORT_L2GRE) {
         return of_bsn_vport_l2gre_OF_VERSION_1_0_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_VPORT_Q_IN_Q) {
+        return of_bsn_vport_q_in_q_OF_VERSION_1_0_dup(src);
     }
 
     return NULL;
@@ -7411,92 +7411,8 @@ of_action_OF_VERSION_1_1_dup(
     of_object_t *src)
 {
 
-    if (src->object_id == OF_ACTION_SET_MPLS_LABEL) {
-        return of_action_set_mpls_label_OF_VERSION_1_1_dup(src);
-    }
-
-    if (src->object_id == OF_ACTION_NICIRA_DEC_TTL) {
-        return of_action_nicira_dec_ttl_OF_VERSION_1_1_dup(src);
-    }
-
-    if (src->object_id == OF_ACTION_SET_DL_SRC) {
-        return of_action_set_dl_src_OF_VERSION_1_1_dup(src);
-    }
-
-    if (src->object_id == OF_ACTION_SET_VLAN_VID) {
-        return of_action_set_vlan_vid_OF_VERSION_1_1_dup(src);
-    }
-
-    if (src->object_id == OF_ACTION_POP_MPLS) {
-        return of_action_pop_mpls_OF_VERSION_1_1_dup(src);
-    }
-
-    if (src->object_id == OF_ACTION_COPY_TTL_IN) {
-        return of_action_copy_ttl_in_OF_VERSION_1_1_dup(src);
-    }
-
-    if (src->object_id == OF_ACTION_SET_VLAN_PCP) {
-        return of_action_set_vlan_pcp_OF_VERSION_1_1_dup(src);
-    }
-
-    if (src->object_id == OF_ACTION_OUTPUT) {
-        return of_action_output_OF_VERSION_1_1_dup(src);
-    }
-
-    if (src->object_id == OF_ACTION_SET_DL_DST) {
-        return of_action_set_dl_dst_OF_VERSION_1_1_dup(src);
-    }
-
-    if (src->object_id == OF_ACTION_SET_QUEUE) {
-        return of_action_set_queue_OF_VERSION_1_1_dup(src);
-    }
-
-    if (src->object_id == OF_ACTION_DEC_NW_TTL) {
-        return of_action_dec_nw_ttl_OF_VERSION_1_1_dup(src);
-    }
-
-    if (src->object_id == OF_ACTION_POP_VLAN) {
-        return of_action_pop_vlan_OF_VERSION_1_1_dup(src);
-    }
-
-    if (src->object_id == OF_ACTION_SET_MPLS_TC) {
-        return of_action_set_mpls_tc_OF_VERSION_1_1_dup(src);
-    }
-
-    if (src->object_id == OF_ACTION_PUSH_VLAN) {
-        return of_action_push_vlan_OF_VERSION_1_1_dup(src);
-    }
-
-    if (src->object_id == OF_ACTION_DEC_MPLS_TTL) {
-        return of_action_dec_mpls_ttl_OF_VERSION_1_1_dup(src);
-    }
-
-    if (src->object_id == OF_ACTION_BSN_SET_TUNNEL_DST) {
-        return of_action_bsn_set_tunnel_dst_OF_VERSION_1_1_dup(src);
-    }
-
     if (src->object_id == OF_ACTION_SET_NW_TTL) {
         return of_action_set_nw_ttl_OF_VERSION_1_1_dup(src);
-    }
-
-    if (src->object_id == OF_ACTION_SET_NW_TOS) {
-        return of_action_set_nw_tos_OF_VERSION_1_1_dup(src);
-    }
-
-    if (src->object_id == OF_ACTION_BSN_MIRROR) {
-        return of_action_bsn_mirror_OF_VERSION_1_1_dup(src);
-    }
-
-    if (src->object_id == OF_ACTION_GROUP) {
-        return of_action_group_OF_VERSION_1_1_dup(src);
-    }
-
-    if (src->object_id == OF_ACTION_PUSH_MPLS) {
-        return of_action_push_mpls_OF_VERSION_1_1_dup(src);
-    }
-
-    if (src->object_id == OF_ACTION_SET_TP_SRC) {
-        return of_action_set_tp_src_OF_VERSION_1_1_dup(src);
     }
 
     if (src->object_id == OF_ACTION_SET_NW_DST) {
@@ -7507,24 +7423,108 @@ of_action_OF_VERSION_1_1_dup(
         return of_action_copy_ttl_out_OF_VERSION_1_1_dup(src);
     }
 
+    if (src->object_id == OF_ACTION_GROUP) {
+        return of_action_group_OF_VERSION_1_1_dup(src);
+    }
+
     if (src->object_id == OF_ACTION_BSN_CHECKSUM) {
         return of_action_bsn_checksum_OF_VERSION_1_1_dup(src);
     }
 
-    if (src->object_id == OF_ACTION_SET_TP_DST) {
-        return of_action_set_tp_dst_OF_VERSION_1_1_dup(src);
+    if (src->object_id == OF_ACTION_COPY_TTL_IN) {
+        return of_action_copy_ttl_in_OF_VERSION_1_1_dup(src);
     }
 
-    if (src->object_id == OF_ACTION_SET_NW_ECN) {
-        return of_action_set_nw_ecn_OF_VERSION_1_1_dup(src);
+    if (src->object_id == OF_ACTION_OUTPUT) {
+        return of_action_output_OF_VERSION_1_1_dup(src);
+    }
+
+    if (src->object_id == OF_ACTION_SET_TP_SRC) {
+        return of_action_set_tp_src_OF_VERSION_1_1_dup(src);
+    }
+
+    if (src->object_id == OF_ACTION_DEC_NW_TTL) {
+        return of_action_dec_nw_ttl_OF_VERSION_1_1_dup(src);
+    }
+
+    if (src->object_id == OF_ACTION_DEC_MPLS_TTL) {
+        return of_action_dec_mpls_ttl_OF_VERSION_1_1_dup(src);
+    }
+
+    if (src->object_id == OF_ACTION_SET_DL_SRC) {
+        return of_action_set_dl_src_OF_VERSION_1_1_dup(src);
+    }
+
+    if (src->object_id == OF_ACTION_POP_VLAN) {
+        return of_action_pop_vlan_OF_VERSION_1_1_dup(src);
+    }
+
+    if (src->object_id == OF_ACTION_SET_VLAN_PCP) {
+        return of_action_set_vlan_pcp_OF_VERSION_1_1_dup(src);
     }
 
     if (src->object_id == OF_ACTION_SET_MPLS_TTL) {
         return of_action_set_mpls_ttl_OF_VERSION_1_1_dup(src);
     }
 
+    if (src->object_id == OF_ACTION_SET_NW_TOS) {
+        return of_action_set_nw_tos_OF_VERSION_1_1_dup(src);
+    }
+
+    if (src->object_id == OF_ACTION_POP_MPLS) {
+        return of_action_pop_mpls_OF_VERSION_1_1_dup(src);
+    }
+
+    if (src->object_id == OF_ACTION_SET_DL_DST) {
+        return of_action_set_dl_dst_OF_VERSION_1_1_dup(src);
+    }
+
     if (src->object_id == OF_ACTION_SET_NW_SRC) {
         return of_action_set_nw_src_OF_VERSION_1_1_dup(src);
+    }
+
+    if (src->object_id == OF_ACTION_SET_VLAN_VID) {
+        return of_action_set_vlan_vid_OF_VERSION_1_1_dup(src);
+    }
+
+    if (src->object_id == OF_ACTION_NICIRA_DEC_TTL) {
+        return of_action_nicira_dec_ttl_OF_VERSION_1_1_dup(src);
+    }
+
+    if (src->object_id == OF_ACTION_SET_MPLS_LABEL) {
+        return of_action_set_mpls_label_OF_VERSION_1_1_dup(src);
+    }
+
+    if (src->object_id == OF_ACTION_SET_QUEUE) {
+        return of_action_set_queue_OF_VERSION_1_1_dup(src);
+    }
+
+    if (src->object_id == OF_ACTION_SET_MPLS_TC) {
+        return of_action_set_mpls_tc_OF_VERSION_1_1_dup(src);
+    }
+
+    if (src->object_id == OF_ACTION_PUSH_MPLS) {
+        return of_action_push_mpls_OF_VERSION_1_1_dup(src);
+    }
+
+    if (src->object_id == OF_ACTION_PUSH_VLAN) {
+        return of_action_push_vlan_OF_VERSION_1_1_dup(src);
+    }
+
+    if (src->object_id == OF_ACTION_SET_NW_ECN) {
+        return of_action_set_nw_ecn_OF_VERSION_1_1_dup(src);
+    }
+
+    if (src->object_id == OF_ACTION_SET_TP_DST) {
+        return of_action_set_tp_dst_OF_VERSION_1_1_dup(src);
+    }
+
+    if (src->object_id == OF_ACTION_BSN_SET_TUNNEL_DST) {
+        return of_action_bsn_set_tunnel_dst_OF_VERSION_1_1_dup(src);
+    }
+
+    if (src->object_id == OF_ACTION_BSN_MIRROR) {
+        return of_action_bsn_mirror_OF_VERSION_1_1_dup(src);
     }
 
     return NULL;
@@ -8317,12 +8317,12 @@ of_bsn_vport_OF_VERSION_1_1_dup(
     of_object_t *src)
 {
 
-    if (src->object_id == OF_BSN_VPORT_Q_IN_Q) {
-        return of_bsn_vport_q_in_q_OF_VERSION_1_1_dup(src);
-    }
-
     if (src->object_id == OF_BSN_VPORT_L2GRE) {
         return of_bsn_vport_l2gre_OF_VERSION_1_1_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_VPORT_Q_IN_Q) {
+        return of_bsn_vport_q_in_q_OF_VERSION_1_1_dup(src);
     }
 
     return NULL;
@@ -8678,24 +8678,24 @@ of_instruction_OF_VERSION_1_1_dup(
     of_object_t *src)
 {
 
-    if (src->object_id == OF_INSTRUCTION_APPLY_ACTIONS) {
-        return of_instruction_apply_actions_OF_VERSION_1_1_dup(src);
+    if (src->object_id == OF_INSTRUCTION_WRITE_METADATA) {
+        return of_instruction_write_metadata_OF_VERSION_1_1_dup(src);
     }
 
     if (src->object_id == OF_INSTRUCTION_CLEAR_ACTIONS) {
         return of_instruction_clear_actions_OF_VERSION_1_1_dup(src);
     }
 
+    if (src->object_id == OF_INSTRUCTION_WRITE_ACTIONS) {
+        return of_instruction_write_actions_OF_VERSION_1_1_dup(src);
+    }
+
     if (src->object_id == OF_INSTRUCTION_GOTO_TABLE) {
         return of_instruction_goto_table_OF_VERSION_1_1_dup(src);
     }
 
-    if (src->object_id == OF_INSTRUCTION_WRITE_METADATA) {
-        return of_instruction_write_metadata_OF_VERSION_1_1_dup(src);
-    }
-
-    if (src->object_id == OF_INSTRUCTION_WRITE_ACTIONS) {
-        return of_instruction_write_actions_OF_VERSION_1_1_dup(src);
+    if (src->object_id == OF_INSTRUCTION_APPLY_ACTIONS) {
+        return of_instruction_apply_actions_OF_VERSION_1_1_dup(src);
     }
 
     return NULL;
@@ -12907,12 +12907,20 @@ of_action_OF_VERSION_1_2_dup(
     of_object_t *src)
 {
 
-    if (src->object_id == OF_ACTION_NICIRA_DEC_TTL) {
-        return of_action_nicira_dec_ttl_OF_VERSION_1_2_dup(src);
+    if (src->object_id == OF_ACTION_SET_NW_TTL) {
+        return of_action_set_nw_ttl_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->object_id == OF_ACTION_POP_MPLS) {
-        return of_action_pop_mpls_OF_VERSION_1_2_dup(src);
+    if (src->object_id == OF_ACTION_COPY_TTL_OUT) {
+        return of_action_copy_ttl_out_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_ACTION_GROUP) {
+        return of_action_group_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_ACTION_BSN_CHECKSUM) {
+        return of_action_bsn_checksum_OF_VERSION_1_2_dup(src);
     }
 
     if (src->object_id == OF_ACTION_COPY_TTL_IN) {
@@ -12923,60 +12931,52 @@ of_action_OF_VERSION_1_2_dup(
         return of_action_output_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->object_id == OF_ACTION_SET_FIELD) {
-        return of_action_set_field_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_ACTION_SET_QUEUE) {
-        return of_action_set_queue_OF_VERSION_1_2_dup(src);
-    }
-
     if (src->object_id == OF_ACTION_DEC_NW_TTL) {
         return of_action_dec_nw_ttl_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_ACTION_POP_VLAN) {
-        return of_action_pop_vlan_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_ACTION_PUSH_VLAN) {
-        return of_action_push_vlan_OF_VERSION_1_2_dup(src);
     }
 
     if (src->object_id == OF_ACTION_DEC_MPLS_TTL) {
         return of_action_dec_mpls_ttl_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->object_id == OF_ACTION_BSN_SET_TUNNEL_DST) {
-        return of_action_bsn_set_tunnel_dst_OF_VERSION_1_2_dup(src);
+    if (src->object_id == OF_ACTION_POP_VLAN) {
+        return of_action_pop_vlan_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->object_id == OF_ACTION_SET_NW_TTL) {
-        return of_action_set_nw_ttl_OF_VERSION_1_2_dup(src);
+    if (src->object_id == OF_ACTION_SET_MPLS_TTL) {
+        return of_action_set_mpls_ttl_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->object_id == OF_ACTION_BSN_MIRROR) {
-        return of_action_bsn_mirror_OF_VERSION_1_2_dup(src);
+    if (src->object_id == OF_ACTION_POP_MPLS) {
+        return of_action_pop_mpls_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->object_id == OF_ACTION_GROUP) {
-        return of_action_group_OF_VERSION_1_2_dup(src);
+    if (src->object_id == OF_ACTION_SET_FIELD) {
+        return of_action_set_field_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_ACTION_NICIRA_DEC_TTL) {
+        return of_action_nicira_dec_ttl_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_ACTION_SET_QUEUE) {
+        return of_action_set_queue_OF_VERSION_1_2_dup(src);
     }
 
     if (src->object_id == OF_ACTION_PUSH_MPLS) {
         return of_action_push_mpls_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->object_id == OF_ACTION_COPY_TTL_OUT) {
-        return of_action_copy_ttl_out_OF_VERSION_1_2_dup(src);
+    if (src->object_id == OF_ACTION_PUSH_VLAN) {
+        return of_action_push_vlan_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->object_id == OF_ACTION_BSN_CHECKSUM) {
-        return of_action_bsn_checksum_OF_VERSION_1_2_dup(src);
+    if (src->object_id == OF_ACTION_BSN_SET_TUNNEL_DST) {
+        return of_action_bsn_set_tunnel_dst_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->object_id == OF_ACTION_SET_MPLS_TTL) {
-        return of_action_set_mpls_ttl_OF_VERSION_1_2_dup(src);
+    if (src->object_id == OF_ACTION_BSN_MIRROR) {
+        return of_action_bsn_mirror_OF_VERSION_1_2_dup(src);
     }
 
     return NULL;
@@ -13503,12 +13503,12 @@ of_bsn_vport_OF_VERSION_1_2_dup(
     of_object_t *src)
 {
 
-    if (src->object_id == OF_BSN_VPORT_Q_IN_Q) {
-        return of_bsn_vport_q_in_q_OF_VERSION_1_2_dup(src);
-    }
-
     if (src->object_id == OF_BSN_VPORT_L2GRE) {
         return of_bsn_vport_l2gre_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_VPORT_Q_IN_Q) {
+        return of_bsn_vport_q_in_q_OF_VERSION_1_2_dup(src);
     }
 
     return NULL;
@@ -13864,24 +13864,24 @@ of_instruction_OF_VERSION_1_2_dup(
     of_object_t *src)
 {
 
-    if (src->object_id == OF_INSTRUCTION_APPLY_ACTIONS) {
-        return of_instruction_apply_actions_OF_VERSION_1_2_dup(src);
+    if (src->object_id == OF_INSTRUCTION_WRITE_METADATA) {
+        return of_instruction_write_metadata_OF_VERSION_1_2_dup(src);
     }
 
     if (src->object_id == OF_INSTRUCTION_CLEAR_ACTIONS) {
         return of_instruction_clear_actions_OF_VERSION_1_2_dup(src);
     }
 
+    if (src->object_id == OF_INSTRUCTION_WRITE_ACTIONS) {
+        return of_instruction_write_actions_OF_VERSION_1_2_dup(src);
+    }
+
     if (src->object_id == OF_INSTRUCTION_GOTO_TABLE) {
         return of_instruction_goto_table_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->object_id == OF_INSTRUCTION_WRITE_METADATA) {
-        return of_instruction_write_metadata_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_INSTRUCTION_WRITE_ACTIONS) {
-        return of_instruction_write_actions_OF_VERSION_1_2_dup(src);
+    if (src->object_id == OF_INSTRUCTION_APPLY_ACTIONS) {
+        return of_instruction_apply_actions_OF_VERSION_1_2_dup(src);
     }
 
     return NULL;
@@ -14075,352 +14075,20 @@ of_oxm_OF_VERSION_1_2_dup(
     of_object_t *src)
 {
 
-    if (src->object_id == OF_OXM_IN_PORT_MASKED) {
-        return of_oxm_in_port_masked_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_IPV6_ND_TARGET) {
-        return of_oxm_ipv6_nd_target_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_IP_FRAGMENTATION_MASKED) {
-        return of_oxm_bsn_ip_fragmentation_masked_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_L3_DST_CLASS_ID_MASKED) {
-        return of_oxm_bsn_l3_dst_class_id_masked_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_VLAN_VID_MASKED) {
-        return of_oxm_vlan_vid_masked_OF_VERSION_1_2_dup(src);
+    if (src->object_id == OF_OXM_IP_PROTO_MASKED) {
+        return of_oxm_ip_proto_masked_OF_VERSION_1_2_dup(src);
     }
 
     if (src->object_id == OF_OXM_IN_PHY_PORT) {
         return of_oxm_in_phy_port_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->object_id == OF_OXM_SCTP_DST_MASKED) {
-        return of_oxm_sctp_dst_masked_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_EGR_PORT_GROUP_ID) {
-        return of_oxm_bsn_egr_port_group_id_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_L2_CACHE_HIT) {
-        return of_oxm_bsn_l2_cache_hit_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_ICMPV6_CODE_MASKED) {
-        return of_oxm_icmpv6_code_masked_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_IN_PHY_PORT_MASKED) {
-        return of_oxm_in_phy_port_masked_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_LAG_ID) {
-        return of_oxm_bsn_lag_id_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_ICMPV4_CODE) {
-        return of_oxm_icmpv4_code_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_UDF2_MASKED) {
-        return of_oxm_bsn_udf2_masked_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_UDF4_MASKED) {
-        return of_oxm_bsn_udf4_masked_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_IPV6_FLABEL) {
-        return of_oxm_ipv6_flabel_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_ICMPV4_TYPE) {
-        return of_oxm_icmpv4_type_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_UDP_DST) {
-        return of_oxm_udp_dst_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_CONN_TRACKING_STATE) {
-        return of_oxm_conn_tracking_state_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_L3_SRC_CLASS_ID) {
-        return of_oxm_bsn_l3_src_class_id_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_CONN_TRACKING_IPV6_SRC_MASKED) {
-        return of_oxm_conn_tracking_ipv6_src_masked_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_ETH_TYPE) {
-        return of_oxm_eth_type_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_ETH_DST) {
-        return of_oxm_eth_dst_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_VLAN_PCP) {
-        return of_oxm_vlan_pcp_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_CONN_TRACKING_NW_PROTO_MASKED) {
-        return of_oxm_conn_tracking_nw_proto_masked_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_IPV6_ND_TLL) {
-        return of_oxm_ipv6_nd_tll_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_IPV6_ND_TARGET_MASKED) {
-        return of_oxm_ipv6_nd_target_masked_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_ARP_OP) {
-        return of_oxm_arp_op_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_INGRESS_PORT_GROUP_ID) {
-        return of_oxm_bsn_ingress_port_group_id_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_CONN_TRACKING_NW_DST_MASKED) {
-        return of_oxm_conn_tracking_nw_dst_masked_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_IPV6_ND_SLL_MASKED) {
-        return of_oxm_ipv6_nd_sll_masked_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_ICMPV6_TYPE) {
-        return of_oxm_icmpv6_type_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_ARP_THA_MASKED) {
-        return of_oxm_arp_tha_masked_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_ETH_DST_MASKED) {
-        return of_oxm_eth_dst_masked_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_VLAN_PCP_MASKED) {
-        return of_oxm_vlan_pcp_masked_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_ETH_TYPE_MASKED) {
-        return of_oxm_eth_type_masked_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_ARP_SHA) {
-        return of_oxm_arp_sha_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_TCP_DST) {
-        return of_oxm_tcp_dst_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_UDF6) {
-        return of_oxm_bsn_udf6_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_IP_ECN_MASKED) {
-        return of_oxm_ip_ecn_masked_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_CONN_TRACKING_TP_DST) {
-        return of_oxm_conn_tracking_tp_dst_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_METADATA_MASKED) {
-        return of_oxm_metadata_masked_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_ICMPV6_TYPE_MASKED) {
-        return of_oxm_icmpv6_type_masked_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_GLOBAL_VRF_ALLOWED_MASKED) {
-        return of_oxm_bsn_global_vrf_allowed_masked_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_GLOBAL_VRF_ALLOWED) {
-        return of_oxm_bsn_global_vrf_allowed_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_SCTP_SRC) {
-        return of_oxm_sctp_src_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_IN_PORTS_512_MASKED) {
-        return of_oxm_bsn_in_ports_512_masked_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_UDP_SRC) {
-        return of_oxm_udp_src_OF_VERSION_1_2_dup(src);
-    }
-
     if (src->object_id == OF_OXM_BSN_L3_DST_CLASS_ID) {
         return of_oxm_bsn_l3_dst_class_id_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->object_id == OF_OXM_BSN_L3_INTERFACE_CLASS_ID_MASKED) {
-        return of_oxm_bsn_l3_interface_class_id_masked_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_CONN_TRACKING_TP_SRC) {
-        return of_oxm_conn_tracking_tp_src_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_CONN_TRACKING_IPV6_DST_MASKED) {
-        return of_oxm_conn_tracking_ipv6_dst_masked_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_L3_INTERFACE_CLASS_ID) {
-        return of_oxm_bsn_l3_interface_class_id_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_ARP_SPA_MASKED) {
-        return of_oxm_arp_spa_masked_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_IP_PROTO_MASKED) {
-        return of_oxm_ip_proto_masked_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_TCP_FLAGS) {
-        return of_oxm_bsn_tcp_flags_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_ARP_SHA_MASKED) {
-        return of_oxm_arp_sha_masked_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_IN_PORTS_128) {
-        return of_oxm_bsn_in_ports_128_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_L3_SRC_CLASS_ID_MASKED) {
-        return of_oxm_bsn_l3_src_class_id_masked_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_SCTP_DST) {
-        return of_oxm_sctp_dst_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_TUNNEL_IPV4_SRC) {
-        return of_oxm_tunnel_ipv4_src_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_UDF5_MASKED) {
-        return of_oxm_bsn_udf5_masked_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_ICMPV4_TYPE_MASKED) {
-        return of_oxm_icmpv4_type_masked_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_IPV6_ND_TLL_MASKED) {
-        return of_oxm_ipv6_nd_tll_masked_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_ICMPV4_CODE_MASKED) {
-        return of_oxm_icmpv4_code_masked_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_OVS_TCP_FLAGS_MASKED) {
-        return of_oxm_ovs_tcp_flags_masked_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_CONN_TRACKING_STATE_MASKED) {
-        return of_oxm_conn_tracking_state_masked_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_CONN_TRACKING_NW_DST) {
-        return of_oxm_conn_tracking_nw_dst_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_CONN_TRACKING_MARK_MASKED) {
-        return of_oxm_conn_tracking_mark_masked_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_UDF3_MASKED) {
-        return of_oxm_bsn_udf3_masked_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_IN_PORTS_128_MASKED) {
-        return of_oxm_bsn_in_ports_128_masked_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_TUNNEL_IPV4_DST) {
-        return of_oxm_tunnel_ipv4_dst_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_IPV4_SRC_MASKED) {
-        return of_oxm_ipv4_src_masked_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_CONN_TRACKING_TP_DST_MASKED) {
-        return of_oxm_conn_tracking_tp_dst_masked_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_IPV4_SRC) {
-        return of_oxm_ipv4_src_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_UDF5) {
-        return of_oxm_bsn_udf5_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_UDF4) {
-        return of_oxm_bsn_udf4_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_UDF7) {
-        return of_oxm_bsn_udf7_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_TCP_FLAGS_MASKED) {
-        return of_oxm_bsn_tcp_flags_masked_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_UDF1) {
-        return of_oxm_bsn_udf1_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_UDF0) {
-        return of_oxm_bsn_udf0_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_UDF3) {
-        return of_oxm_bsn_udf3_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_UDF2) {
-        return of_oxm_bsn_udf2_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_ICMPV6_CODE) {
-        return of_oxm_icmpv6_code_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_IP_DSCP_MASKED) {
-        return of_oxm_ip_dscp_masked_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_MPLS_LABEL) {
-        return of_oxm_mpls_label_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_IN_PORT) {
-        return of_oxm_in_port_OF_VERSION_1_2_dup(src);
+    if (src->object_id == OF_OXM_CONN_TRACKING_NW_PROTO) {
+        return of_oxm_conn_tracking_nw_proto_OF_VERSION_1_2_dup(src);
     }
 
     if (src->object_id == OF_OXM_CONN_TRACKING_ZONE_MASKED) {
@@ -14431,224 +14099,556 @@ of_oxm_OF_VERSION_1_2_dup(
         return of_oxm_bsn_udf7_masked_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->object_id == OF_OXM_BSN_UDF1_MASKED) {
-        return of_oxm_bsn_udf1_masked_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_VRF_MASKED) {
-        return of_oxm_bsn_vrf_masked_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_TCP_SRC) {
-        return of_oxm_tcp_src_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_CONN_TRACKING_TP_SRC_MASKED) {
-        return of_oxm_conn_tracking_tp_src_masked_OF_VERSION_1_2_dup(src);
+    if (src->object_id == OF_OXM_IPV6_ND_TLL_MASKED) {
+        return of_oxm_ipv6_nd_tll_masked_OF_VERSION_1_2_dup(src);
     }
 
     if (src->object_id == OF_OXM_UDP_SRC_MASKED) {
         return of_oxm_udp_src_masked_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->object_id == OF_OXM_IP_ECN) {
-        return of_oxm_ip_ecn_OF_VERSION_1_2_dup(src);
+    if (src->object_id == OF_OXM_BSN_IN_PORTS_128) {
+        return of_oxm_bsn_in_ports_128_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->object_id == OF_OXM_ETH_SRC) {
-        return of_oxm_eth_src_OF_VERSION_1_2_dup(src);
+    if (src->object_id == OF_OXM_BSN_UDF4) {
+        return of_oxm_bsn_udf4_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->object_id == OF_OXM_IPV6_DST) {
-        return of_oxm_ipv6_dst_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_ETH_SRC_MASKED) {
-        return of_oxm_eth_src_masked_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_CONN_TRACKING_LABEL) {
-        return of_oxm_conn_tracking_label_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_CONN_TRACKING_IPV6_SRC) {
-        return of_oxm_conn_tracking_ipv6_src_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_VRF) {
-        return of_oxm_bsn_vrf_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_IPV4_DST) {
-        return of_oxm_ipv4_dst_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_IP_FRAGMENTATION) {
-        return of_oxm_bsn_ip_fragmentation_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_IPV6_SRC_MASKED) {
-        return of_oxm_ipv6_src_masked_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_CONN_TRACKING_IPV6_DST) {
-        return of_oxm_conn_tracking_ipv6_dst_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_IP_DSCP) {
-        return of_oxm_ip_dscp_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_CONN_TRACKING_ZONE) {
-        return of_oxm_conn_tracking_zone_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_IPV6_ND_SLL) {
-        return of_oxm_ipv6_nd_sll_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_IPV6_FLABEL_MASKED) {
-        return of_oxm_ipv6_flabel_masked_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_CONN_TRACKING_NW_SRC_MASKED) {
-        return of_oxm_conn_tracking_nw_src_masked_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_CONN_TRACKING_NW_SRC) {
-        return of_oxm_conn_tracking_nw_src_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_MPLS_TC_MASKED) {
-        return of_oxm_mpls_tc_masked_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_CONN_TRACKING_MARK) {
-        return of_oxm_conn_tracking_mark_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_TCP_DST_MASKED) {
-        return of_oxm_tcp_dst_masked_OF_VERSION_1_2_dup(src);
+    if (src->object_id == OF_OXM_BSN_UDF5) {
+        return of_oxm_bsn_udf5_OF_VERSION_1_2_dup(src);
     }
 
     if (src->object_id == OF_OXM_BSN_UDF6_MASKED) {
         return of_oxm_bsn_udf6_masked_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->object_id == OF_OXM_SCTP_SRC_MASKED) {
-        return of_oxm_sctp_src_masked_OF_VERSION_1_2_dup(src);
+    if (src->object_id == OF_OXM_ICMPV4_CODE_MASKED) {
+        return of_oxm_icmpv4_code_masked_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->object_id == OF_OXM_CONN_TRACKING_NW_PROTO) {
-        return of_oxm_conn_tracking_nw_proto_OF_VERSION_1_2_dup(src);
+    if (src->object_id == OF_OXM_MPLS_LABEL) {
+        return of_oxm_mpls_label_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->object_id == OF_OXM_BSN_LAG_ID_MASKED) {
-        return of_oxm_bsn_lag_id_masked_OF_VERSION_1_2_dup(src);
+    if (src->object_id == OF_OXM_IPV6_DST) {
+        return of_oxm_ipv6_dst_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->object_id == OF_OXM_BSN_L2_CACHE_HIT_MASKED) {
-        return of_oxm_bsn_l2_cache_hit_masked_OF_VERSION_1_2_dup(src);
+    if (src->object_id == OF_OXM_CONN_TRACKING_NW_DST) {
+        return of_oxm_conn_tracking_nw_dst_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->object_id == OF_OXM_IP_PROTO) {
-        return of_oxm_ip_proto_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_IN_PORTS_512) {
-        return of_oxm_bsn_in_ports_512_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_IPV6_SRC) {
-        return of_oxm_ipv6_src_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_UDP_DST_MASKED) {
-        return of_oxm_udp_dst_masked_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_ARP_SPA) {
-        return of_oxm_arp_spa_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_ARP_OP_MASKED) {
-        return of_oxm_arp_op_masked_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_TUNNEL_IPV4_SRC_MASKED) {
-        return of_oxm_tunnel_ipv4_src_masked_OF_VERSION_1_2_dup(src);
+    if (src->object_id == OF_OXM_CONN_TRACKING_ZONE) {
+        return of_oxm_conn_tracking_zone_OF_VERSION_1_2_dup(src);
     }
 
     if (src->object_id == OF_OXM_TUNNEL_IPV4_DST_MASKED) {
         return of_oxm_tunnel_ipv4_dst_masked_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->object_id == OF_OXM_VLAN_VID) {
-        return of_oxm_vlan_vid_OF_VERSION_1_2_dup(src);
+    if (src->object_id == OF_OXM_ARP_OP) {
+        return of_oxm_arp_op_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->object_id == OF_OXM_BSN_EGR_PORT_GROUP_ID_MASKED) {
-        return of_oxm_bsn_egr_port_group_id_masked_OF_VERSION_1_2_dup(src);
+    if (src->object_id == OF_OXM_IP_PROTO) {
+        return of_oxm_ip_proto_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->object_id == OF_OXM_TCP_SRC_MASKED) {
-        return of_oxm_tcp_src_masked_OF_VERSION_1_2_dup(src);
+    if (src->object_id == OF_OXM_BSN_INGRESS_PORT_GROUP_ID) {
+        return of_oxm_bsn_ingress_port_group_id_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->object_id == OF_OXM_BSN_INGRESS_PORT_GROUP_ID_MASKED) {
-        return of_oxm_bsn_ingress_port_group_id_masked_OF_VERSION_1_2_dup(src);
+    if (src->object_id == OF_OXM_BSN_L3_INTERFACE_CLASS_ID_MASKED) {
+        return of_oxm_bsn_l3_interface_class_id_masked_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->object_id == OF_OXM_IPV6_DST_MASKED) {
-        return of_oxm_ipv6_dst_masked_OF_VERSION_1_2_dup(src);
+    if (src->object_id == OF_OXM_IPV6_ND_SLL) {
+        return of_oxm_ipv6_nd_sll_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->object_id == OF_OXM_METADATA) {
-        return of_oxm_metadata_OF_VERSION_1_2_dup(src);
+    if (src->object_id == OF_OXM_UDP_SRC) {
+        return of_oxm_udp_src_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->object_id == OF_OXM_OVS_TCP_FLAGS) {
-        return of_oxm_ovs_tcp_flags_OF_VERSION_1_2_dup(src);
+    if (src->object_id == OF_OXM_SCTP_DST_MASKED) {
+        return of_oxm_sctp_dst_masked_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->object_id == OF_OXM_BSN_UDF0_MASKED) {
-        return of_oxm_bsn_udf0_masked_OF_VERSION_1_2_dup(src);
+    if (src->object_id == OF_OXM_UDP_DST_MASKED) {
+        return of_oxm_udp_dst_masked_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->object_id == OF_OXM_CONN_TRACKING_LABEL_MASKED) {
-        return of_oxm_conn_tracking_label_masked_OF_VERSION_1_2_dup(src);
+    if (src->object_id == OF_OXM_CONN_TRACKING_MARK) {
+        return of_oxm_conn_tracking_mark_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->object_id == OF_OXM_ARP_TPA_MASKED) {
-        return of_oxm_arp_tpa_masked_OF_VERSION_1_2_dup(src);
+    if (src->object_id == OF_OXM_BSN_TCP_FLAGS) {
+        return of_oxm_bsn_tcp_flags_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->object_id == OF_OXM_BSN_VLAN_XLATE_PORT_GROUP_ID) {
-        return of_oxm_bsn_vlan_xlate_port_group_id_OF_VERSION_1_2_dup(src);
+    if (src->object_id == OF_OXM_BSN_EGR_PORT_GROUP_ID) {
+        return of_oxm_bsn_egr_port_group_id_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->object_id == OF_OXM_BSN_VLAN_XLATE_PORT_GROUP_ID_MASKED) {
-        return of_oxm_bsn_vlan_xlate_port_group_id_masked_OF_VERSION_1_2_dup(src);
+    if (src->object_id == OF_OXM_BSN_GLOBAL_VRF_ALLOWED) {
+        return of_oxm_bsn_global_vrf_allowed_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->object_id == OF_OXM_ARP_THA) {
-        return of_oxm_arp_tha_OF_VERSION_1_2_dup(src);
+    if (src->object_id == OF_OXM_IPV6_SRC_MASKED) {
+        return of_oxm_ipv6_src_masked_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->object_id == OF_OXM_MPLS_TC) {
-        return of_oxm_mpls_tc_OF_VERSION_1_2_dup(src);
+    if (src->object_id == OF_OXM_TCP_SRC) {
+        return of_oxm_tcp_src_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->object_id == OF_OXM_ARP_TPA) {
-        return of_oxm_arp_tpa_OF_VERSION_1_2_dup(src);
+    if (src->object_id == OF_OXM_IPV6_ND_TLL) {
+        return of_oxm_ipv6_nd_tll_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_IP_DSCP_MASKED) {
+        return of_oxm_ip_dscp_masked_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_ICMPV4_TYPE_MASKED) {
+        return of_oxm_icmpv4_type_masked_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_VLAN_PCP) {
+        return of_oxm_vlan_pcp_OF_VERSION_1_2_dup(src);
     }
 
     if (src->object_id == OF_OXM_IPV4_DST_MASKED) {
         return of_oxm_ipv4_dst_masked_OF_VERSION_1_2_dup(src);
     }
 
+    if (src->object_id == OF_OXM_CONN_TRACKING_NW_SRC) {
+        return of_oxm_conn_tracking_nw_src_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_BSN_LAG_ID_MASKED) {
+        return of_oxm_bsn_lag_id_masked_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_ARP_SHA) {
+        return of_oxm_arp_sha_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_SCTP_SRC) {
+        return of_oxm_sctp_src_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_ARP_TPA) {
+        return of_oxm_arp_tpa_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_ETH_SRC_MASKED) {
+        return of_oxm_eth_src_masked_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_BSN_L3_SRC_CLASS_ID) {
+        return of_oxm_bsn_l3_src_class_id_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_ETH_TYPE) {
+        return of_oxm_eth_type_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_BSN_EGR_PORT_GROUP_ID_MASKED) {
+        return of_oxm_bsn_egr_port_group_id_masked_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_IPV6_SRC) {
+        return of_oxm_ipv6_src_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_IN_PORT) {
+        return of_oxm_in_port_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_BSN_LAG_ID) {
+        return of_oxm_bsn_lag_id_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_OVS_TCP_FLAGS) {
+        return of_oxm_ovs_tcp_flags_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_IPV6_ND_TARGET) {
+        return of_oxm_ipv6_nd_target_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_CONN_TRACKING_TP_SRC) {
+        return of_oxm_conn_tracking_tp_src_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_ICMPV6_TYPE_MASKED) {
+        return of_oxm_icmpv6_type_masked_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_BSN_IN_PORTS_512_MASKED) {
+        return of_oxm_bsn_in_ports_512_masked_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_ICMPV6_CODE_MASKED) {
+        return of_oxm_icmpv6_code_masked_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_ETH_TYPE_MASKED) {
+        return of_oxm_eth_type_masked_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_BSN_VLAN_XLATE_PORT_GROUP_ID) {
+        return of_oxm_bsn_vlan_xlate_port_group_id_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_BSN_VRF) {
+        return of_oxm_bsn_vrf_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_IPV6_ND_TARGET_MASKED) {
+        return of_oxm_ipv6_nd_target_masked_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_VLAN_VID) {
+        return of_oxm_vlan_vid_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_IP_ECN_MASKED) {
+        return of_oxm_ip_ecn_masked_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_BSN_UDF0) {
+        return of_oxm_bsn_udf0_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_ARP_SPA_MASKED) {
+        return of_oxm_arp_spa_masked_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_CONN_TRACKING_LABEL_MASKED) {
+        return of_oxm_conn_tracking_label_masked_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_ICMPV4_TYPE) {
+        return of_oxm_icmpv4_type_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_BSN_L3_SRC_CLASS_ID_MASKED) {
+        return of_oxm_bsn_l3_src_class_id_masked_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_SCTP_SRC_MASKED) {
+        return of_oxm_sctp_src_masked_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_TCP_SRC_MASKED) {
+        return of_oxm_tcp_src_masked_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_IPV6_FLABEL_MASKED) {
+        return of_oxm_ipv6_flabel_masked_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_VLAN_VID_MASKED) {
+        return of_oxm_vlan_vid_masked_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_BSN_GLOBAL_VRF_ALLOWED_MASKED) {
+        return of_oxm_bsn_global_vrf_allowed_masked_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_TCP_DST) {
+        return of_oxm_tcp_dst_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_BSN_UDF4_MASKED) {
+        return of_oxm_bsn_udf4_masked_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_BSN_VLAN_XLATE_PORT_GROUP_ID_MASKED) {
+        return of_oxm_bsn_vlan_xlate_port_group_id_masked_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_ARP_TPA_MASKED) {
+        return of_oxm_arp_tpa_masked_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_CONN_TRACKING_MARK_MASKED) {
+        return of_oxm_conn_tracking_mark_masked_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_ARP_OP_MASKED) {
+        return of_oxm_arp_op_masked_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_ARP_THA) {
+        return of_oxm_arp_tha_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_OVS_TCP_FLAGS_MASKED) {
+        return of_oxm_ovs_tcp_flags_masked_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_BSN_INGRESS_PORT_GROUP_ID_MASKED) {
+        return of_oxm_bsn_ingress_port_group_id_masked_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_CONN_TRACKING_IPV6_SRC) {
+        return of_oxm_conn_tracking_ipv6_src_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_CONN_TRACKING_IPV6_SRC_MASKED) {
+        return of_oxm_conn_tracking_ipv6_src_masked_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_CONN_TRACKING_IPV6_DST_MASKED) {
+        return of_oxm_conn_tracking_ipv6_dst_masked_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_BSN_L2_CACHE_HIT_MASKED) {
+        return of_oxm_bsn_l2_cache_hit_masked_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_BSN_UDF5_MASKED) {
+        return of_oxm_bsn_udf5_masked_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_IPV6_DST_MASKED) {
+        return of_oxm_ipv6_dst_masked_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_BSN_UDF6) {
+        return of_oxm_bsn_udf6_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_METADATA) {
+        return of_oxm_metadata_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_ARP_THA_MASKED) {
+        return of_oxm_arp_tha_masked_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_BSN_L3_INTERFACE_CLASS_ID) {
+        return of_oxm_bsn_l3_interface_class_id_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_BSN_L3_DST_CLASS_ID_MASKED) {
+        return of_oxm_bsn_l3_dst_class_id_masked_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_ARP_SPA) {
+        return of_oxm_arp_spa_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_TUNNEL_IPV4_SRC) {
+        return of_oxm_tunnel_ipv4_src_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_ICMPV6_TYPE) {
+        return of_oxm_icmpv6_type_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_ICMPV6_CODE) {
+        return of_oxm_icmpv6_code_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_BSN_UDF3) {
+        return of_oxm_bsn_udf3_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_UDP_DST) {
+        return of_oxm_udp_dst_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_ETH_DST) {
+        return of_oxm_eth_dst_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_TUNNEL_IPV4_SRC_MASKED) {
+        return of_oxm_tunnel_ipv4_src_masked_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_MPLS_TC) {
+        return of_oxm_mpls_tc_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_IPV6_ND_SLL_MASKED) {
+        return of_oxm_ipv6_nd_sll_masked_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_ARP_SHA_MASKED) {
+        return of_oxm_arp_sha_masked_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_TCP_DST_MASKED) {
+        return of_oxm_tcp_dst_masked_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_BSN_IN_PORTS_512) {
+        return of_oxm_bsn_in_ports_512_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_SCTP_DST) {
+        return of_oxm_sctp_dst_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_CONN_TRACKING_LABEL) {
+        return of_oxm_conn_tracking_label_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_IN_PORT_MASKED) {
+        return of_oxm_in_port_masked_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_BSN_IP_FRAGMENTATION) {
+        return of_oxm_bsn_ip_fragmentation_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_IPV4_SRC) {
+        return of_oxm_ipv4_src_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_BSN_UDF7) {
+        return of_oxm_bsn_udf7_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_IPV6_FLABEL) {
+        return of_oxm_ipv6_flabel_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_VLAN_PCP_MASKED) {
+        return of_oxm_vlan_pcp_masked_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_BSN_IP_FRAGMENTATION_MASKED) {
+        return of_oxm_bsn_ip_fragmentation_masked_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_BSN_TCP_FLAGS_MASKED) {
+        return of_oxm_bsn_tcp_flags_masked_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_BSN_L2_CACHE_HIT) {
+        return of_oxm_bsn_l2_cache_hit_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_CONN_TRACKING_TP_SRC_MASKED) {
+        return of_oxm_conn_tracking_tp_src_masked_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_IPV4_SRC_MASKED) {
+        return of_oxm_ipv4_src_masked_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_BSN_IN_PORTS_128_MASKED) {
+        return of_oxm_bsn_in_ports_128_masked_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_TUNNEL_IPV4_DST) {
+        return of_oxm_tunnel_ipv4_dst_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_BSN_UDF3_MASKED) {
+        return of_oxm_bsn_udf3_masked_OF_VERSION_1_2_dup(src);
+    }
+
     if (src->object_id == OF_OXM_MPLS_LABEL_MASKED) {
         return of_oxm_mpls_label_masked_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_METADATA_MASKED) {
+        return of_oxm_metadata_masked_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_CONN_TRACKING_STATE) {
+        return of_oxm_conn_tracking_state_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_BSN_UDF1) {
+        return of_oxm_bsn_udf1_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_BSN_UDF2_MASKED) {
+        return of_oxm_bsn_udf2_masked_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_BSN_VRF_MASKED) {
+        return of_oxm_bsn_vrf_masked_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_CONN_TRACKING_STATE_MASKED) {
+        return of_oxm_conn_tracking_state_masked_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_BSN_UDF1_MASKED) {
+        return of_oxm_bsn_udf1_masked_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_CONN_TRACKING_TP_DST_MASKED) {
+        return of_oxm_conn_tracking_tp_dst_masked_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_ETH_DST_MASKED) {
+        return of_oxm_eth_dst_masked_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_IN_PHY_PORT_MASKED) {
+        return of_oxm_in_phy_port_masked_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_CONN_TRACKING_IPV6_DST) {
+        return of_oxm_conn_tracking_ipv6_dst_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_IPV4_DST) {
+        return of_oxm_ipv4_dst_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_ETH_SRC) {
+        return of_oxm_eth_src_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_MPLS_TC_MASKED) {
+        return of_oxm_mpls_tc_masked_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_CONN_TRACKING_NW_PROTO_MASKED) {
+        return of_oxm_conn_tracking_nw_proto_masked_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_IP_DSCP) {
+        return of_oxm_ip_dscp_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_BSN_UDF0_MASKED) {
+        return of_oxm_bsn_udf0_masked_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_CONN_TRACKING_NW_DST_MASKED) {
+        return of_oxm_conn_tracking_nw_dst_masked_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_CONN_TRACKING_NW_SRC_MASKED) {
+        return of_oxm_conn_tracking_nw_src_masked_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_CONN_TRACKING_TP_DST) {
+        return of_oxm_conn_tracking_tp_dst_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_IP_ECN) {
+        return of_oxm_ip_ecn_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_ICMPV4_CODE) {
+        return of_oxm_icmpv4_code_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_BSN_UDF2) {
+        return of_oxm_bsn_udf2_OF_VERSION_1_2_dup(src);
     }
 
     return NULL;
@@ -25861,16 +25861,20 @@ of_action_OF_VERSION_1_3_dup(
     of_object_t *src)
 {
 
-    if (src->object_id == OF_ACTION_NICIRA_DEC_TTL) {
-        return of_action_nicira_dec_ttl_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_ACTION_SET_NW_TTL) {
+        return of_action_set_nw_ttl_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_ACTION_POP_PBB) {
-        return of_action_pop_pbb_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_ACTION_COPY_TTL_OUT) {
+        return of_action_copy_ttl_out_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_ACTION_POP_MPLS) {
-        return of_action_pop_mpls_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_ACTION_GROUP) {
+        return of_action_group_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_ACTION_BSN_CHECKSUM) {
+        return of_action_bsn_checksum_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_ACTION_COPY_TTL_IN) {
@@ -25881,36 +25885,56 @@ of_action_OF_VERSION_1_3_dup(
         return of_action_output_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_ACTION_SET_FIELD) {
-        return of_action_set_field_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_ACTION_SET_QUEUE) {
-        return of_action_set_queue_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_ACTION_PUSH_PBB) {
+        return of_action_push_pbb_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_ACTION_DEC_NW_TTL) {
         return of_action_dec_nw_ttl_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_ACTION_POP_VLAN) {
-        return of_action_pop_vlan_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_ACTION_PUSH_VLAN) {
-        return of_action_push_vlan_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_ACTION_POP_PBB) {
+        return of_action_pop_pbb_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_ACTION_DEC_MPLS_TTL) {
         return of_action_dec_mpls_ttl_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_ACTION_BSN_SET_TUNNEL_DST) {
-        return of_action_bsn_set_tunnel_dst_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_ACTION_POP_VLAN) {
+        return of_action_pop_vlan_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_ACTION_SET_NW_TTL) {
-        return of_action_set_nw_ttl_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_ACTION_SET_MPLS_TTL) {
+        return of_action_set_mpls_ttl_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_ACTION_POP_MPLS) {
+        return of_action_pop_mpls_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_ACTION_SET_FIELD) {
+        return of_action_set_field_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_ACTION_NICIRA_DEC_TTL) {
+        return of_action_nicira_dec_ttl_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_ACTION_SET_QUEUE) {
+        return of_action_set_queue_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_ACTION_PUSH_MPLS) {
+        return of_action_push_mpls_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_ACTION_PUSH_VLAN) {
+        return of_action_push_vlan_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_ACTION_BSN_SET_TUNNEL_DST) {
+        return of_action_bsn_set_tunnel_dst_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_ACTION_BSN_GENTABLE) {
@@ -25919,30 +25943,6 @@ of_action_OF_VERSION_1_3_dup(
 
     if (src->object_id == OF_ACTION_BSN_MIRROR) {
         return of_action_bsn_mirror_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_ACTION_GROUP) {
-        return of_action_group_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_ACTION_PUSH_MPLS) {
-        return of_action_push_mpls_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_ACTION_COPY_TTL_OUT) {
-        return of_action_copy_ttl_out_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_ACTION_BSN_CHECKSUM) {
-        return of_action_bsn_checksum_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_ACTION_PUSH_PBB) {
-        return of_action_push_pbb_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_ACTION_SET_MPLS_TTL) {
-        return of_action_set_mpls_ttl_OF_VERSION_1_3_dup(src);
     }
 
     return NULL;
@@ -26214,88 +26214,88 @@ of_action_id_OF_VERSION_1_3_dup(
     of_object_t *src)
 {
 
-    if (src->object_id == OF_ACTION_ID_BSN_SET_TUNNEL_DST) {
-        return of_action_id_bsn_set_tunnel_dst_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_ACTION_ID_BSN_CHECKSUM) {
-        return of_action_id_bsn_checksum_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_ACTION_ID_GROUP) {
-        return of_action_id_group_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_ACTION_ID_PUSH_VLAN) {
-        return of_action_id_push_vlan_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_ACTION_ID_POP_PBB) {
-        return of_action_id_pop_pbb_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_ACTION_ID_BSN_MIRROR) {
-        return of_action_id_bsn_mirror_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_ACTION_ID_PUSH_MPLS) {
-        return of_action_id_push_mpls_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_ACTION_ID_DEC_MPLS_TTL) {
-        return of_action_id_dec_mpls_ttl_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_ACTION_ID_SET_FIELD) {
-        return of_action_id_set_field_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_ACTION_ID_OUTPUT) {
-        return of_action_id_output_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_ACTION_ID_NICIRA_DEC_TTL) {
-        return of_action_id_nicira_dec_ttl_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_ACTION_ID_COPY_TTL_OUT) {
-        return of_action_id_copy_ttl_out_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_ACTION_ID_SET_QUEUE) {
-        return of_action_id_set_queue_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_ACTION_ID_COPY_TTL_IN) {
-        return of_action_id_copy_ttl_in_OF_VERSION_1_3_dup(src);
-    }
-
     if (src->object_id == OF_ACTION_ID_BSN_GENTABLE) {
         return of_action_id_bsn_gentable_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_ACTION_ID_POP_MPLS) {
-        return of_action_id_pop_mpls_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_ACTION_ID_PUSH_PBB) {
-        return of_action_id_push_pbb_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_ACTION_ID_POP_VLAN) {
-        return of_action_id_pop_vlan_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_ACTION_ID_SET_MPLS_TTL) {
         return of_action_id_set_mpls_ttl_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_ACTION_ID_DEC_NW_TTL) {
-        return of_action_id_dec_nw_ttl_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_ACTION_ID_SET_QUEUE) {
+        return of_action_id_set_queue_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_ACTION_ID_POP_VLAN) {
+        return of_action_id_pop_vlan_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_ACTION_ID_PUSH_MPLS) {
+        return of_action_id_push_mpls_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_ACTION_ID_BSN_SET_TUNNEL_DST) {
+        return of_action_id_bsn_set_tunnel_dst_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_ACTION_ID_BSN_MIRROR) {
+        return of_action_id_bsn_mirror_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_ACTION_ID_POP_MPLS) {
+        return of_action_id_pop_mpls_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_ACTION_ID_POP_PBB) {
+        return of_action_id_pop_pbb_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_ACTION_ID_SET_NW_TTL) {
         return of_action_id_set_nw_ttl_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_ACTION_ID_OUTPUT) {
+        return of_action_id_output_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_ACTION_ID_GROUP) {
+        return of_action_id_group_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_ACTION_ID_COPY_TTL_IN) {
+        return of_action_id_copy_ttl_in_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_ACTION_ID_NICIRA_DEC_TTL) {
+        return of_action_id_nicira_dec_ttl_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_ACTION_ID_DEC_MPLS_TTL) {
+        return of_action_id_dec_mpls_ttl_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_ACTION_ID_PUSH_PBB) {
+        return of_action_id_push_pbb_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_ACTION_ID_BSN_CHECKSUM) {
+        return of_action_id_bsn_checksum_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_ACTION_ID_SET_FIELD) {
+        return of_action_id_set_field_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_ACTION_ID_DEC_NW_TTL) {
+        return of_action_id_dec_nw_ttl_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_ACTION_ID_PUSH_VLAN) {
+        return of_action_id_push_vlan_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_ACTION_ID_COPY_TTL_OUT) {
+        return of_action_id_copy_ttl_out_OF_VERSION_1_3_dup(src);
     }
 
     return NULL;
@@ -27630,828 +27630,828 @@ of_bsn_tlv_OF_VERSION_1_3_dup(
     of_object_t *src)
 {
 
-    if (src->object_id == OF_BSN_TLV_IFP_CLASS_ID) {
-        return of_bsn_tlv_ifp_class_id_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_ICMPV6_TYPE) {
-        return of_bsn_tlv_icmpv6_type_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_CONVERGENCE_STATUS) {
-        return of_bsn_tlv_convergence_status_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_DROP) {
-        return of_bsn_tlv_drop_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_ARP_TPA) {
-        return of_bsn_tlv_arp_tpa_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_MISS_PACKETS) {
-        return of_bsn_tlv_miss_packets_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_CIRCUIT_ID) {
-        return of_bsn_tlv_circuit_id_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_MPLS_SEQUENCED) {
-        return of_bsn_tlv_mpls_sequenced_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_PORT_USAGE) {
-        return of_bsn_tlv_port_usage_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_IDENTIFIER) {
-        return of_bsn_tlv_identifier_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_IP_TUNNEL_TYPE) {
-        return of_bsn_tlv_ip_tunnel_type_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_ACTOR_SYSTEM_MAC) {
-        return of_bsn_tlv_actor_system_mac_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_REQUEST_PACKETS) {
-        return of_bsn_tlv_request_packets_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_ANCHOR) {
-        return of_bsn_tlv_anchor_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_PARTNER_PORT_NUM) {
-        return of_bsn_tlv_partner_port_num_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_UINT64_LIST) {
-        return of_bsn_tlv_uint64_list_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_STRIP_VLAN_ON_EGRESS) {
-        return of_bsn_tlv_strip_vlan_on_egress_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_L3_INTERFACE_CLASS_ID) {
-        return of_bsn_tlv_l3_interface_class_id_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_BROADCAST_RATE) {
-        return of_bsn_tlv_broadcast_rate_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_ROUTING_PARAM) {
-        return of_bsn_tlv_routing_param_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_NEXT_HOP_IPV4) {
-        return of_bsn_tlv_next_hop_ipv4_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_BFD_STATE) {
-        return of_bsn_tlv_bfd_state_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_UDF_LENGTH) {
-        return of_bsn_tlv_udf_length_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_LR_ALL_ENABLED) {
-        return of_bsn_tlv_lr_all_enabled_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_LOOPBACK_PORT) {
-        return of_bsn_tlv_loopback_port_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_HASH_GTP_HEADER_MATCH) {
-        return of_bsn_tlv_hash_gtp_header_match_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_NO_NS_RESPONSE) {
-        return of_bsn_tlv_no_ns_response_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_EXTERNAL_NETMASK) {
-        return of_bsn_tlv_external_netmask_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_RATE_UNIT) {
-        return of_bsn_tlv_rate_unit_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_FLOW_CLASSIFY) {
-        return of_bsn_tlv_flow_classify_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_ECN) {
-        return of_bsn_tlv_ecn_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_VLAN_VID) {
-        return of_bsn_tlv_vlan_vid_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_L2_CACHE_HIT) {
-        return of_bsn_tlv_l2_cache_hit_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_HASH_ALGORITHM) {
-        return of_bsn_tlv_hash_algorithm_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_IP_FRAGMENTATION) {
-        return of_bsn_tlv_ip_fragmentation_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_INTERNAL_MAC) {
-        return of_bsn_tlv_internal_mac_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_HEADER_SIZE) {
-        return of_bsn_tlv_header_size_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_VFI) {
-        return of_bsn_tlv_vfi_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_PARTNER_SYSTEM_PRIORITY) {
-        return of_bsn_tlv_partner_system_priority_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_IPV4) {
-        return of_bsn_tlv_ipv4_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_LAG_OPTIONS) {
-        return of_bsn_tlv_lag_options_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_UINT32) {
-        return of_bsn_tlv_uint32_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_FORWARD_ERROR_CORRECTION) {
-        return of_bsn_tlv_forward_error_correction_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_STATUS) {
-        return of_bsn_tlv_status_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_ETH_SRC) {
-        return of_bsn_tlv_eth_src_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_IPV6) {
-        return of_bsn_tlv_ipv6_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_ACTOR_PORT_NUM) {
-        return of_bsn_tlv_actor_port_num_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_EGRESS_ONLY) {
-        return of_bsn_tlv_egress_only_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_LOSSLESS) {
-        return of_bsn_tlv_lossless_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_KNOWN_MULTICAST_RATE) {
-        return of_bsn_tlv_known_multicast_rate_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_ANALYTICS) {
-        return of_bsn_tlv_analytics_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_UDF_CAPABILITY) {
-        return of_bsn_tlv_udf_capability_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_IPV4_NETMASK) {
-        return of_bsn_tlv_ipv4_netmask_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_L3_DST_CLASS_ID) {
-        return of_bsn_tlv_l3_dst_class_id_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_REPLY_PACKETS) {
-        return of_bsn_tlv_reply_packets_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_HASH_GTP_PORT_MATCH) {
-        return of_bsn_tlv_hash_gtp_port_match_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_FABRIC_PORT_ROLE) {
-        return of_bsn_tlv_fabric_port_role_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_CPU_LAG) {
-        return of_bsn_tlv_cpu_lag_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_DNS_ANALYTICS) {
-        return of_bsn_tlv_dns_analytics_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_GENERATION_ID) {
-        return of_bsn_tlv_generation_id_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_LOOPBACK_MODE) {
-        return of_bsn_tlv_loopback_mode_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_QUEUE_WEIGHT) {
-        return of_bsn_tlv_queue_weight_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_TUNNEL_CAPABILITY) {
-        return of_bsn_tlv_tunnel_capability_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_EGRESS_PORT_GROUP_ID) {
-        return of_bsn_tlv_egress_port_group_id_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_TCP_SRC) {
-        return of_bsn_tlv_tcp_src_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_FAIL_COUNT) {
-        return of_bsn_tlv_fail_count_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_MPLS_LABEL) {
-        return of_bsn_tlv_mpls_label_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_RX_BYTES) {
-        return of_bsn_tlv_rx_bytes_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_BFD_ENDPOINT) {
-        return of_bsn_tlv_bfd_endpoint_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_RX_PACKETS) {
-        return of_bsn_tlv_rx_packets_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_TCP_FLAGS) {
-        return of_bsn_tlv_tcp_flags_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_OUTER_SRC_MAC) {
-        return of_bsn_tlv_outer_src_mac_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_HASH_SEED) {
-        return of_bsn_tlv_hash_seed_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_ENCAP) {
-        return of_bsn_tlv_encap_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_EXTERNAL_IP) {
-        return of_bsn_tlv_external_ip_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_EXTERNAL_GATEWAY_MAC) {
-        return of_bsn_tlv_external_gateway_mac_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_ACTOR_SYSTEM_PRIORITY) {
-        return of_bsn_tlv_actor_system_priority_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_IGMP_SNOOPING) {
-        return of_bsn_tlv_igmp_snooping_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_PORT_SPEED_GBPS) {
-        return of_bsn_tlv_port_speed_gbps_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_INGRESS_PORT_GROUP_ID) {
-        return of_bsn_tlv_ingress_port_group_id_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_EXTERNAL_MAC) {
-        return of_bsn_tlv_external_mac_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_NEGATE) {
-        return of_bsn_tlv_negate_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_ICMPV6_CHKSUM) {
-        return of_bsn_tlv_icmpv6_chksum_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_INNER_VLAN_VID) {
-        return of_bsn_tlv_inner_vlan_vid_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_DROP_CONTROL) {
-        return of_bsn_tlv_drop_control_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_IP_PROTO) {
-        return of_bsn_tlv_ip_proto_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_PIM_DR) {
-        return of_bsn_tlv_pim_dr_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_ACTOR_STATE) {
-        return of_bsn_tlv_actor_state_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_OPTICS_ALWAYS_ENABLED) {
-        return of_bsn_tlv_optics_always_enabled_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_TX_PACKETS) {
-        return of_bsn_tlv_tx_packets_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_USER_CONFIGURED) {
-        return of_bsn_tlv_user_configured_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_SCTP_DST) {
-        return of_bsn_tlv_sctp_dst_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_NO_ARP_RESPONSE) {
-        return of_bsn_tlv_no_arp_response_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_UDF_ID) {
-        return of_bsn_tlv_udf_id_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_FLOW_IDENTIFIER) {
-        return of_bsn_tlv_flow_identifier_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_REDUNDANT_MGMT) {
-        return of_bsn_tlv_redundant_mgmt_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_PARTNER_SYSTEM_MAC) {
-        return of_bsn_tlv_partner_system_mac_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_DISABLE_SRC_MAC_CHECK) {
-        return of_bsn_tlv_disable_src_mac_check_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_ENHANCED_HASH_CAPABILITY) {
-        return of_bsn_tlv_enhanced_hash_capability_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_RECORD_PACKETS) {
-        return of_bsn_tlv_record_packets_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_INTERNAL_GATEWAY_MAC) {
-        return of_bsn_tlv_internal_gateway_mac_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_ARP_SPA) {
-        return of_bsn_tlv_arp_spa_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_ETH_TYPE) {
-        return of_bsn_tlv_eth_type_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_SET_LOOPBACK_MODE) {
-        return of_bsn_tlv_set_loopback_mode_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_PORT) {
-        return of_bsn_tlv_port_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_TIMESTAMP) {
-        return of_bsn_tlv_timestamp_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_MAC_MASK) {
-        return of_bsn_tlv_mac_mask_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_PIM_HELLO_FLOOD) {
-        return of_bsn_tlv_pim_hello_flood_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_ACTOR_KEY) {
-        return of_bsn_tlv_actor_key_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_VPN_KEY) {
-        return of_bsn_tlv_vpn_key_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_STRIP_MPLS_L3_ON_INGRESS) {
-        return of_bsn_tlv_strip_mpls_l3_on_ingress_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_NEXTHOP_TYPE_VXLAN) {
-        return of_bsn_tlv_nexthop_type_vxlan_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_MCG_TYPE_VXLAN) {
-        return of_bsn_tlv_mcg_type_vxlan_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_DECAP) {
-        return of_bsn_tlv_decap_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_MULTIPLIER) {
-        return of_bsn_tlv_multiplier_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_DATA) {
-        return of_bsn_tlv_data_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_VLAN_VID_MASK) {
-        return of_bsn_tlv_vlan_vid_mask_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_QOS_PRIORITY) {
-        return of_bsn_tlv_qos_priority_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_ACTIVE) {
-        return of_bsn_tlv_active_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_VIRTUAL) {
-        return of_bsn_tlv_virtual_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_SCTP_SRC) {
-        return of_bsn_tlv_sctp_src_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_BROADCAST_QUERY_TIMEOUT) {
-        return of_bsn_tlv_broadcast_query_timeout_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_NAME) {
-        return of_bsn_tlv_name_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_TCP_DST) {
-        return of_bsn_tlv_tcp_dst_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_OFFSET) {
-        return of_bsn_tlv_offset_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_IDLE_TIME) {
-        return of_bsn_tlv_idle_time_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_IDLE_NOTIFICATION) {
-        return of_bsn_tlv_idle_notification_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_L2_MULTICAST_LOOKUP) {
-        return of_bsn_tlv_l2_multicast_lookup_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_HASH_PACKET_TYPE) {
-        return of_bsn_tlv_hash_packet_type_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_NEXT_HOP_MAC) {
-        return of_bsn_tlv_next_hop_mac_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_UNICAST_RATE) {
-        return of_bsn_tlv_unicast_rate_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_UDF_OFFSET) {
-        return of_bsn_tlv_udf_offset_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_FLOW_CLASSIFIER) {
-        return of_bsn_tlv_flow_classifier_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_ACTOR_PORT_PRIORITY) {
-        return of_bsn_tlv_actor_port_priority_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_APPLY_PACKETS) {
-        return of_bsn_tlv_apply_packets_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_IPV6_SRC) {
-        return of_bsn_tlv_ipv6_src_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_BSN_TLV_QUEUE_ID) {
+        return of_bsn_tlv_queue_id_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_BSN_TLV_USE_PACKET_STATE) {
         return of_bsn_tlv_use_packet_state_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_BSN_TLV_UDP_SRC) {
-        return of_bsn_tlv_udp_src_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_BSN_TLV_UNKNOWN_MULTICAST_RATE) {
+        return of_bsn_tlv_unknown_multicast_rate_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_BSN_TLV_STRIP_MPLS_L2_ON_INGRESS) {
-        return of_bsn_tlv_strip_mpls_l2_on_ingress_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_BSN_TLV_QOS_PRIORITY) {
+        return of_bsn_tlv_qos_priority_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_BSN_TLV_REST_SERVER) {
-        return of_bsn_tlv_rest_server_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_BSN_TLV_INTERNAL_GATEWAY_MAC) {
+        return of_bsn_tlv_internal_gateway_mac_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_BSN_TLV_ICMP_TYPE) {
-        return of_bsn_tlv_icmp_type_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_BSN_TLV_UINT64_LIST) {
+        return of_bsn_tlv_uint64_list_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_BSN_TLV_IPV6_PREFIX) {
-        return of_bsn_tlv_ipv6_prefix_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_BSN_TLV_ENHANCED_HASH_CAPABILITY) {
+        return of_bsn_tlv_enhanced_hash_capability_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_BSN_TLV_QUEUE_ID) {
-        return of_bsn_tlv_queue_id_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_BSN_TLV_BFD_STATE) {
+        return of_bsn_tlv_bfd_state_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_BSN_TLV_PDUA_RX_INSTANCE) {
-        return of_bsn_tlv_pdua_rx_instance_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_BSN_TLV_VLAN_VID) {
+        return of_bsn_tlv_vlan_vid_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_BSN_TLV_HASH_TYPE) {
-        return of_bsn_tlv_hash_type_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_BSN_TLV_ARP_TPA) {
+        return of_bsn_tlv_arp_tpa_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_BSN_TLV_MULTICAST_INTERFACE_ID) {
-        return of_bsn_tlv_multicast_interface_id_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_BSN_TLV_LOSSLESS) {
+        return of_bsn_tlv_lossless_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_BSN_TLV_EXTERNAL_GATEWAY_IP) {
-        return of_bsn_tlv_external_gateway_ip_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_BSN_TLV_NEXTHOP_TYPE_VXLAN) {
+        return of_bsn_tlv_nexthop_type_vxlan_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_BSN_TLV_ICMP_ID) {
-        return of_bsn_tlv_icmp_id_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_PARTNER_PORT_PRIORITY) {
-        return of_bsn_tlv_partner_port_priority_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_TTL) {
-        return of_bsn_tlv_ttl_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_FLOOD) {
-        return of_bsn_tlv_flood_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_ETH_DST) {
-        return of_bsn_tlv_eth_dst_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_DATA_MASK) {
-        return of_bsn_tlv_data_mask_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_SAMPLING_RATE) {
-        return of_bsn_tlv_sampling_rate_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_MAC) {
-        return of_bsn_tlv_mac_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_EGRESS_SAMPLING_RATE) {
-        return of_bsn_tlv_egress_sampling_rate_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_SUB_AGENT_ID) {
-        return of_bsn_tlv_sub_agent_id_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_RATE_LIMIT) {
-        return of_bsn_tlv_rate_limit_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_MULTICAST_PACKET) {
-        return of_bsn_tlv_multicast_packet_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_TX_BYTES) {
-        return of_bsn_tlv_tx_bytes_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_AUTO_NEGOTIATION) {
-        return of_bsn_tlv_auto_negotiation_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_IPV4_DST) {
-        return of_bsn_tlv_ipv4_dst_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_ICMPV6_CODE) {
-        return of_bsn_tlv_icmpv6_code_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_PASSIVE) {
-        return of_bsn_tlv_passive_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_FORCE_LINK_UP) {
-        return of_bsn_tlv_force_link_up_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_URI_SCHEME) {
-        return of_bsn_tlv_uri_scheme_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_UDF_ANCHOR) {
-        return of_bsn_tlv_udf_anchor_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_PORT_VXLAN_MODE) {
-        return of_bsn_tlv_port_vxlan_mode_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_HASH_PACKET_FIELD) {
-        return of_bsn_tlv_hash_packet_field_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_BSN_TLV_ACTOR_KEY) {
+        return of_bsn_tlv_actor_key_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_BSN_TLV_MPLS_CONTROL_WORD) {
         return of_bsn_tlv_mpls_control_word_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_BSN_TLV_L3_SRC_CLASS_ID) {
-        return of_bsn_tlv_l3_src_class_id_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_L3) {
-        return of_bsn_tlv_l3_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_DSCP) {
-        return of_bsn_tlv_dscp_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_UNKNOWN_MULTICAST_RATE) {
-        return of_bsn_tlv_unknown_multicast_rate_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_IPV4_SRC) {
-        return of_bsn_tlv_ipv4_src_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_UNICAST_QUERY_TIMEOUT) {
-        return of_bsn_tlv_unicast_query_timeout_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_PARTNER_KEY) {
-        return of_bsn_tlv_partner_key_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_UPGRADE) {
-        return of_bsn_tlv_upgrade_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_DISABLE_XMIT) {
-        return of_bsn_tlv_disable_xmit_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_VFP_CLASS_ID) {
-        return of_bsn_tlv_vfp_class_id_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_UDP_DST) {
-        return of_bsn_tlv_udp_dst_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_LINK_UP) {
-        return of_bsn_tlv_link_up_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_VRF) {
-        return of_bsn_tlv_vrf_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_INTERVAL) {
-        return of_bsn_tlv_interval_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_VNI) {
-        return of_bsn_tlv_vni_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_PORT_MODE) {
-        return of_bsn_tlv_port_mode_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_IDLE_TIMEOUT) {
-        return of_bsn_tlv_idle_timeout_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_CRC_ENABLED) {
-        return of_bsn_tlv_crc_enabled_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_NDP_OFFLOAD) {
-        return of_bsn_tlv_ndp_offload_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_BSN_TLV_MPLS_LABEL) {
+        return of_bsn_tlv_mpls_label_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_BSN_TLV_PARENT_PORT) {
         return of_bsn_tlv_parent_port_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_BSN_TLV_VXLAN_EGRESS_LAG) {
-        return of_bsn_tlv_vxlan_egress_lag_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_BSN_TLV_FORWARD_ERROR_CORRECTION) {
+        return of_bsn_tlv_forward_error_correction_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_BSN_TLV_PARTNER_STATE) {
-        return of_bsn_tlv_partner_state_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_PRIORITY) {
-        return of_bsn_tlv_priority_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_VLAN_PCP) {
-        return of_bsn_tlv_vlan_pcp_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_SRC_MAC_CML) {
-        return of_bsn_tlv_src_mac_cml_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_PRESERVE_VLAN) {
-        return of_bsn_tlv_preserve_vlan_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_IPV6_DST) {
-        return of_bsn_tlv_ipv6_dst_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_ICMP_CODE) {
-        return of_bsn_tlv_icmp_code_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_NDP_STATIC) {
-        return of_bsn_tlv_ndp_static_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_BSN_TLV_HASH_GTP_HEADER_MATCH) {
+        return of_bsn_tlv_hash_gtp_header_match_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_BSN_TLV_REFERENCE) {
         return of_bsn_tlv_reference_OF_VERSION_1_3_dup(src);
     }
 
+    if (src->object_id == OF_BSN_TLV_STRIP_VLAN_ON_EGRESS) {
+        return of_bsn_tlv_strip_vlan_on_egress_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_TCP_DST) {
+        return of_bsn_tlv_tcp_dst_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_PARTNER_SYSTEM_MAC) {
+        return of_bsn_tlv_partner_system_mac_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_EXTERNAL_NETMASK) {
+        return of_bsn_tlv_external_netmask_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_INNER_VLAN_VID) {
+        return of_bsn_tlv_inner_vlan_vid_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_L3) {
+        return of_bsn_tlv_l3_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_EGRESS_ONLY) {
+        return of_bsn_tlv_egress_only_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_LINK_UP) {
+        return of_bsn_tlv_link_up_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_L3_DST_CLASS_ID) {
+        return of_bsn_tlv_l3_dst_class_id_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_RECORD_PACKETS) {
+        return of_bsn_tlv_record_packets_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_CRC_ENABLED) {
+        return of_bsn_tlv_crc_enabled_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_RATE_LIMIT) {
+        return of_bsn_tlv_rate_limit_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_VPN_KEY) {
+        return of_bsn_tlv_vpn_key_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_LAG_OPTIONS) {
+        return of_bsn_tlv_lag_options_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_PRIORITY) {
+        return of_bsn_tlv_priority_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_IPV4_NETMASK) {
+        return of_bsn_tlv_ipv4_netmask_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_PORT) {
+        return of_bsn_tlv_port_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_HASH_GTP_PORT_MATCH) {
+        return of_bsn_tlv_hash_gtp_port_match_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_ARP_SPA) {
+        return of_bsn_tlv_arp_spa_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_SET_LOOPBACK_MODE) {
+        return of_bsn_tlv_set_loopback_mode_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_ECN) {
+        return of_bsn_tlv_ecn_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_HASH_SEED) {
+        return of_bsn_tlv_hash_seed_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_GENERATION_ID) {
+        return of_bsn_tlv_generation_id_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_ACTIVE) {
+        return of_bsn_tlv_active_OF_VERSION_1_3_dup(src);
+    }
+
     if (src->object_id == OF_BSN_TLV_BUCKET) {
         return of_bsn_tlv_bucket_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_EXTERNAL_GATEWAY_MAC) {
+        return of_bsn_tlv_external_gateway_mac_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_STRIP_MPLS_L2_ON_INGRESS) {
+        return of_bsn_tlv_strip_mpls_l2_on_ingress_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_FLOW_CLASSIFY) {
+        return of_bsn_tlv_flow_classify_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_IPV4_SRC) {
+        return of_bsn_tlv_ipv4_src_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_RX_BYTES) {
+        return of_bsn_tlv_rx_bytes_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_LR_ALL_ENABLED) {
+        return of_bsn_tlv_lr_all_enabled_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_ENCAP) {
+        return of_bsn_tlv_encap_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_PARTNER_SYSTEM_PRIORITY) {
+        return of_bsn_tlv_partner_system_priority_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_ANALYTICS) {
+        return of_bsn_tlv_analytics_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_ACTOR_PORT_PRIORITY) {
+        return of_bsn_tlv_actor_port_priority_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_IPV4) {
+        return of_bsn_tlv_ipv4_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_MULTICAST_INTERFACE_ID) {
+        return of_bsn_tlv_multicast_interface_id_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_FABRIC_PORT_ROLE) {
+        return of_bsn_tlv_fabric_port_role_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_DNS_ANALYTICS) {
+        return of_bsn_tlv_dns_analytics_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_PARTNER_STATE) {
+        return of_bsn_tlv_partner_state_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_VLAN_VID_MASK) {
+        return of_bsn_tlv_vlan_vid_mask_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_IP_PROTO) {
+        return of_bsn_tlv_ip_proto_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_ROUTING_PARAM) {
+        return of_bsn_tlv_routing_param_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_LOOPBACK_MODE) {
+        return of_bsn_tlv_loopback_mode_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_ICMP_ID) {
+        return of_bsn_tlv_icmp_id_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_PASSIVE) {
+        return of_bsn_tlv_passive_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_L3_SRC_CLASS_ID) {
+        return of_bsn_tlv_l3_src_class_id_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_IPV4_DST) {
+        return of_bsn_tlv_ipv4_dst_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_UDP_DST) {
+        return of_bsn_tlv_udp_dst_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_EGRESS_PORT_GROUP_ID) {
+        return of_bsn_tlv_egress_port_group_id_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_IDLE_TIME) {
+        return of_bsn_tlv_idle_time_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_IPV6_SRC) {
+        return of_bsn_tlv_ipv6_src_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_DATA) {
+        return of_bsn_tlv_data_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_NAME) {
+        return of_bsn_tlv_name_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_DSCP) {
+        return of_bsn_tlv_dscp_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_UDF_ANCHOR) {
+        return of_bsn_tlv_udf_anchor_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_NO_ARP_RESPONSE) {
+        return of_bsn_tlv_no_arp_response_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_ACTOR_SYSTEM_PRIORITY) {
+        return of_bsn_tlv_actor_system_priority_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_IP_FRAGMENTATION) {
+        return of_bsn_tlv_ip_fragmentation_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_PDUA_RX_INSTANCE) {
+        return of_bsn_tlv_pdua_rx_instance_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_MPLS_SEQUENCED) {
+        return of_bsn_tlv_mpls_sequenced_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_FLOOD) {
+        return of_bsn_tlv_flood_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_EGRESS_SAMPLING_RATE) {
+        return of_bsn_tlv_egress_sampling_rate_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_ICMPV6_CHKSUM) {
+        return of_bsn_tlv_icmpv6_chksum_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_FLOW_CLASSIFIER) {
+        return of_bsn_tlv_flow_classifier_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_NDP_OFFLOAD) {
+        return of_bsn_tlv_ndp_offload_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_SCTP_SRC) {
+        return of_bsn_tlv_sctp_src_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_UDF_LENGTH) {
+        return of_bsn_tlv_udf_length_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_UNICAST_RATE) {
+        return of_bsn_tlv_unicast_rate_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_CONVERGENCE_STATUS) {
+        return of_bsn_tlv_convergence_status_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_UINT32) {
+        return of_bsn_tlv_uint32_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_PARTNER_PORT_PRIORITY) {
+        return of_bsn_tlv_partner_port_priority_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_VFP_CLASS_ID) {
+        return of_bsn_tlv_vfp_class_id_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_SAMPLING_RATE) {
+        return of_bsn_tlv_sampling_rate_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_UDP_SRC) {
+        return of_bsn_tlv_udp_src_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_VFI) {
+        return of_bsn_tlv_vfi_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_APPLY_PACKETS) {
+        return of_bsn_tlv_apply_packets_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_L2_CACHE_HIT) {
+        return of_bsn_tlv_l2_cache_hit_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_BSN_TLV_PUSH_VLAN_ON_INGRESS) {
         return of_bsn_tlv_push_vlan_on_ingress_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_BSN_TLV_PUSH_VLAN_ON_EGRESS) {
-        return of_bsn_tlv_push_vlan_on_egress_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_BSN_TLV_IPV6_DST) {
+        return of_bsn_tlv_ipv6_dst_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_PIM_DR) {
+        return of_bsn_tlv_pim_dr_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_L3_INTERFACE_CLASS_ID) {
+        return of_bsn_tlv_l3_interface_class_id_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_L2_MULTICAST_LOOKUP) {
+        return of_bsn_tlv_l2_multicast_lookup_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_OPTICS_ALWAYS_ENABLED) {
+        return of_bsn_tlv_optics_always_enabled_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_CIRCUIT_ID) {
+        return of_bsn_tlv_circuit_id_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_NEXT_HOP_IPV4) {
+        return of_bsn_tlv_next_hop_ipv4_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_BFD_ENDPOINT) {
+        return of_bsn_tlv_bfd_endpoint_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_MISS_PACKETS) {
+        return of_bsn_tlv_miss_packets_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_VRF) {
+        return of_bsn_tlv_vrf_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_MULTICAST_PACKET) {
+        return of_bsn_tlv_multicast_packet_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_BSN_TLV_APPLY_BYTES) {
         return of_bsn_tlv_apply_bytes_OF_VERSION_1_3_dup(src);
     }
 
+    if (src->object_id == OF_BSN_TLV_ICMPV6_CODE) {
+        return of_bsn_tlv_icmpv6_code_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_DROP_CONTROL) {
+        return of_bsn_tlv_drop_control_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_IFP_CLASS_ID) {
+        return of_bsn_tlv_ifp_class_id_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_IDENTIFIER) {
+        return of_bsn_tlv_identifier_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_ETH_DST) {
+        return of_bsn_tlv_eth_dst_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_QUEUE_WEIGHT) {
+        return of_bsn_tlv_queue_weight_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_NEXT_HOP_MAC) {
+        return of_bsn_tlv_next_hop_mac_OF_VERSION_1_3_dup(src);
+    }
+
     if (src->object_id == OF_BSN_TLV_UNTAGGED) {
         return of_bsn_tlv_untagged_OF_VERSION_1_3_dup(src);
     }
 
+    if (src->object_id == OF_BSN_TLV_HEADER_SIZE) {
+        return of_bsn_tlv_header_size_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_PORT_SPEED_GBPS) {
+        return of_bsn_tlv_port_speed_gbps_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_STRIP_MPLS_L3_ON_INGRESS) {
+        return of_bsn_tlv_strip_mpls_l3_on_ingress_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_IPV6_PREFIX) {
+        return of_bsn_tlv_ipv6_prefix_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_INGRESS_PORT_GROUP_ID) {
+        return of_bsn_tlv_ingress_port_group_id_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_VXLAN_EGRESS_LAG) {
+        return of_bsn_tlv_vxlan_egress_lag_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_ICMPV6_TYPE) {
+        return of_bsn_tlv_icmpv6_type_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_PORT_USAGE) {
+        return of_bsn_tlv_port_usage_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_OFFSET) {
+        return of_bsn_tlv_offset_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_UDF_OFFSET) {
+        return of_bsn_tlv_udf_offset_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_DECAP) {
+        return of_bsn_tlv_decap_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_VNI) {
+        return of_bsn_tlv_vni_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_SUB_AGENT_ID) {
+        return of_bsn_tlv_sub_agent_id_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_CPU_LAG) {
+        return of_bsn_tlv_cpu_lag_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_DISABLE_SRC_MAC_CHECK) {
+        return of_bsn_tlv_disable_src_mac_check_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_VLAN_PCP) {
+        return of_bsn_tlv_vlan_pcp_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_EXTERNAL_MAC) {
+        return of_bsn_tlv_external_mac_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_PIM_HELLO_FLOOD) {
+        return of_bsn_tlv_pim_hello_flood_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_TUNNEL_CAPABILITY) {
+        return of_bsn_tlv_tunnel_capability_OF_VERSION_1_3_dup(src);
+    }
+
     if (src->object_id == OF_BSN_TLV_VLAN_MAC_LIST) {
         return of_bsn_tlv_vlan_mac_list_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_TX_PACKETS) {
+        return of_bsn_tlv_tx_packets_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_ICMP_TYPE) {
+        return of_bsn_tlv_icmp_type_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_MAC) {
+        return of_bsn_tlv_mac_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_RATE_UNIT) {
+        return of_bsn_tlv_rate_unit_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_SCTP_DST) {
+        return of_bsn_tlv_sctp_dst_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_SRC_MAC_CML) {
+        return of_bsn_tlv_src_mac_cml_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_URI_SCHEME) {
+        return of_bsn_tlv_uri_scheme_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_PARTNER_PORT_NUM) {
+        return of_bsn_tlv_partner_port_num_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_RX_PACKETS) {
+        return of_bsn_tlv_rx_packets_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_ETH_SRC) {
+        return of_bsn_tlv_eth_src_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_HASH_ALGORITHM) {
+        return of_bsn_tlv_hash_algorithm_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_REPLY_PACKETS) {
+        return of_bsn_tlv_reply_packets_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_OUTER_SRC_MAC) {
+        return of_bsn_tlv_outer_src_mac_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_EXTERNAL_GATEWAY_IP) {
+        return of_bsn_tlv_external_gateway_ip_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_VIRTUAL) {
+        return of_bsn_tlv_virtual_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_TCP_SRC) {
+        return of_bsn_tlv_tcp_src_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_FLOW_IDENTIFIER) {
+        return of_bsn_tlv_flow_identifier_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_PARTNER_KEY) {
+        return of_bsn_tlv_partner_key_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_PORT_VXLAN_MODE) {
+        return of_bsn_tlv_port_vxlan_mode_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_FAIL_COUNT) {
+        return of_bsn_tlv_fail_count_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_ACTOR_STATE) {
+        return of_bsn_tlv_actor_state_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_DISABLE_XMIT) {
+        return of_bsn_tlv_disable_xmit_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_IP_TUNNEL_TYPE) {
+        return of_bsn_tlv_ip_tunnel_type_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_USER_CONFIGURED) {
+        return of_bsn_tlv_user_configured_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_IDLE_NOTIFICATION) {
+        return of_bsn_tlv_idle_notification_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_KNOWN_MULTICAST_RATE) {
+        return of_bsn_tlv_known_multicast_rate_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_MULTIPLIER) {
+        return of_bsn_tlv_multiplier_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_TTL) {
+        return of_bsn_tlv_ttl_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_TCP_FLAGS) {
+        return of_bsn_tlv_tcp_flags_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_ICMP_CODE) {
+        return of_bsn_tlv_icmp_code_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_INTERNAL_MAC) {
+        return of_bsn_tlv_internal_mac_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_NDP_STATIC) {
+        return of_bsn_tlv_ndp_static_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_HASH_PACKET_FIELD) {
+        return of_bsn_tlv_hash_packet_field_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_ACTOR_PORT_NUM) {
+        return of_bsn_tlv_actor_port_num_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_REQUEST_PACKETS) {
+        return of_bsn_tlv_request_packets_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_ACTOR_SYSTEM_MAC) {
+        return of_bsn_tlv_actor_system_mac_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_HASH_TYPE) {
+        return of_bsn_tlv_hash_type_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_IDLE_TIMEOUT) {
+        return of_bsn_tlv_idle_timeout_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_REST_SERVER) {
+        return of_bsn_tlv_rest_server_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_MAC_MASK) {
+        return of_bsn_tlv_mac_mask_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_HASH_PACKET_TYPE) {
+        return of_bsn_tlv_hash_packet_type_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_DATA_MASK) {
+        return of_bsn_tlv_data_mask_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_AUTO_NEGOTIATION) {
+        return of_bsn_tlv_auto_negotiation_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_ANCHOR) {
+        return of_bsn_tlv_anchor_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_NEGATE) {
+        return of_bsn_tlv_negate_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_PORT_MODE) {
+        return of_bsn_tlv_port_mode_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_BROADCAST_RATE) {
+        return of_bsn_tlv_broadcast_rate_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_BROADCAST_QUERY_TIMEOUT) {
+        return of_bsn_tlv_broadcast_query_timeout_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_EXTERNAL_IP) {
+        return of_bsn_tlv_external_ip_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_STATUS) {
+        return of_bsn_tlv_status_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_INTERVAL) {
+        return of_bsn_tlv_interval_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_ETH_TYPE) {
+        return of_bsn_tlv_eth_type_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_PRESERVE_VLAN) {
+        return of_bsn_tlv_preserve_vlan_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_REDUNDANT_MGMT) {
+        return of_bsn_tlv_redundant_mgmt_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_UNICAST_QUERY_TIMEOUT) {
+        return of_bsn_tlv_unicast_query_timeout_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_FORCE_LINK_UP) {
+        return of_bsn_tlv_force_link_up_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_IGMP_SNOOPING) {
+        return of_bsn_tlv_igmp_snooping_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_IPV6) {
+        return of_bsn_tlv_ipv6_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_TX_BYTES) {
+        return of_bsn_tlv_tx_bytes_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_MCG_TYPE_VXLAN) {
+        return of_bsn_tlv_mcg_type_vxlan_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_NO_NS_RESPONSE) {
+        return of_bsn_tlv_no_ns_response_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_TIMESTAMP) {
+        return of_bsn_tlv_timestamp_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_UDF_ID) {
+        return of_bsn_tlv_udf_id_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_DROP) {
+        return of_bsn_tlv_drop_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_PUSH_VLAN_ON_EGRESS) {
+        return of_bsn_tlv_push_vlan_on_egress_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_UPGRADE) {
+        return of_bsn_tlv_upgrade_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_LOOPBACK_PORT) {
+        return of_bsn_tlv_loopback_port_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_UDF_CAPABILITY) {
+        return of_bsn_tlv_udf_capability_OF_VERSION_1_3_dup(src);
     }
 
     return NULL;
@@ -33571,12 +33571,12 @@ of_bsn_vport_OF_VERSION_1_3_dup(
     of_object_t *src)
 {
 
-    if (src->object_id == OF_BSN_VPORT_Q_IN_Q) {
-        return of_bsn_vport_q_in_q_OF_VERSION_1_3_dup(src);
-    }
-
     if (src->object_id == OF_BSN_VPORT_L2GRE) {
         return of_bsn_vport_l2gre_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_VPORT_Q_IN_Q) {
+        return of_bsn_vport_q_in_q_OF_VERSION_1_3_dup(src);
     }
 
     return NULL;
@@ -34032,96 +34032,96 @@ of_instruction_OF_VERSION_1_3_dup(
     of_object_t *src)
 {
 
-    if (src->object_id == OF_INSTRUCTION_APPLY_ACTIONS) {
-        return of_instruction_apply_actions_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_INSTRUCTION_BSN_PACKET_OF_DEATH) {
-        return of_instruction_bsn_packet_of_death_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_INSTRUCTION_BSN_PERMIT) {
-        return of_instruction_bsn_permit_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_INSTRUCTION_BSN_PRIORITIZE_PDUS) {
-        return of_instruction_bsn_prioritize_pdus_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_INSTRUCTION_BSN_DISABLE_L3) {
-        return of_instruction_bsn_disable_l3_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_INSTRUCTION_BSN_DIRECTED_BROADCAST) {
-        return of_instruction_bsn_directed_broadcast_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_INSTRUCTION_BSN_DENY) {
-        return of_instruction_bsn_deny_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_INSTRUCTION_CLEAR_ACTIONS) {
-        return of_instruction_clear_actions_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_INSTRUCTION_BSN_ARP_OFFLOAD) {
-        return of_instruction_bsn_arp_offload_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_INSTRUCTION_GOTO_TABLE) {
-        return of_instruction_goto_table_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_INSTRUCTION_BSN_SPAN_DESTINATION) {
-        return of_instruction_bsn_span_destination_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_INSTRUCTION_WRITE_METADATA) {
-        return of_instruction_write_metadata_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_INSTRUCTION_BSN_INTERNAL_PRIORITY) {
-        return of_instruction_bsn_internal_priority_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_INSTRUCTION_BSN_HASH_SELECT) {
-        return of_instruction_bsn_hash_select_OF_VERSION_1_3_dup(src);
-    }
-
     if (src->object_id == OF_INSTRUCTION_BSN_DHCP_OFFLOAD) {
         return of_instruction_bsn_dhcp_offload_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_INSTRUCTION_BSN_AUTO_NEGOTIATION) {
-        return of_instruction_bsn_auto_negotiation_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_INSTRUCTION_BSN_REQUIRE_VLAN_XLATE) {
         return of_instruction_bsn_require_vlan_xlate_OF_VERSION_1_3_dup(src);
     }
 
+    if (src->object_id == OF_INSTRUCTION_BSN_PERMIT) {
+        return of_instruction_bsn_permit_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_INSTRUCTION_BSN_ARP_OFFLOAD) {
+        return of_instruction_bsn_arp_offload_OF_VERSION_1_3_dup(src);
+    }
+
     if (src->object_id == OF_INSTRUCTION_METER) {
         return of_instruction_meter_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_INSTRUCTION_WRITE_METADATA) {
+        return of_instruction_write_metadata_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_INSTRUCTION_BSN_HASH_SELECT) {
+        return of_instruction_bsn_hash_select_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_INSTRUCTION_BSN_INTERNAL_PRIORITY) {
+        return of_instruction_bsn_internal_priority_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_INSTRUCTION_BSN_AUTO_NEGOTIATION) {
+        return of_instruction_bsn_auto_negotiation_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_INSTRUCTION_BSN_PRIORITIZE_PDUS) {
+        return of_instruction_bsn_prioritize_pdus_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_INSTRUCTION_CLEAR_ACTIONS) {
+        return of_instruction_clear_actions_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_INSTRUCTION_BSN_SPAN_DESTINATION) {
+        return of_instruction_bsn_span_destination_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_INSTRUCTION_BSN_DISABLE_L3) {
+        return of_instruction_bsn_disable_l3_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_INSTRUCTION_BSN_DENY) {
+        return of_instruction_bsn_deny_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_INSTRUCTION_BSN_DISABLE_SPLIT_HORIZON_CHECK) {
+        return of_instruction_bsn_disable_split_horizon_check_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_INSTRUCTION_BSN_PACKET_OF_DEATH) {
+        return of_instruction_bsn_packet_of_death_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_INSTRUCTION_BSN_NDP_OFFLOAD) {
         return of_instruction_bsn_ndp_offload_OF_VERSION_1_3_dup(src);
     }
 
+    if (src->object_id == OF_INSTRUCTION_WRITE_ACTIONS) {
+        return of_instruction_write_actions_OF_VERSION_1_3_dup(src);
+    }
+
     if (src->object_id == OF_INSTRUCTION_BSN_DISABLE_VLAN_COUNTERS) {
         return of_instruction_bsn_disable_vlan_counters_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_INSTRUCTION_GOTO_TABLE) {
+        return of_instruction_goto_table_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_INSTRUCTION_BSN_DISABLE_SRC_MAC_CHECK) {
         return of_instruction_bsn_disable_src_mac_check_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_INSTRUCTION_WRITE_ACTIONS) {
-        return of_instruction_write_actions_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_INSTRUCTION_APPLY_ACTIONS) {
+        return of_instruction_apply_actions_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_INSTRUCTION_BSN_DISABLE_SPLIT_HORIZON_CHECK) {
-        return of_instruction_bsn_disable_split_horizon_check_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_INSTRUCTION_BSN_DIRECTED_BROADCAST) {
+        return of_instruction_bsn_directed_broadcast_OF_VERSION_1_3_dup(src);
     }
 
     return NULL;
@@ -34701,52 +34701,68 @@ of_instruction_id_OF_VERSION_1_3_dup(
     of_object_t *src)
 {
 
+    if (src->object_id == OF_INSTRUCTION_ID_WRITE_ACTIONS) {
+        return of_instruction_id_write_actions_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_INSTRUCTION_ID_GOTO_TABLE) {
+        return of_instruction_id_goto_table_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_INSTRUCTION_ID_CLEAR_ACTIONS) {
+        return of_instruction_id_clear_actions_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_INSTRUCTION_ID_BSN_PERMIT) {
+        return of_instruction_id_bsn_permit_OF_VERSION_1_3_dup(src);
+    }
+
     if (src->object_id == OF_INSTRUCTION_ID_BSN_NDP_OFFLOAD) {
         return of_instruction_id_bsn_ndp_offload_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_INSTRUCTION_ID_BSN_INTERNAL_PRIORITY) {
-        return of_instruction_id_bsn_internal_priority_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_INSTRUCTION_ID_BSN_AUTO_NEGOTIATION) {
-        return of_instruction_id_bsn_auto_negotiation_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_INSTRUCTION_ID_METER) {
-        return of_instruction_id_meter_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_INSTRUCTION_ID_BSN_DHCP_OFFLOAD) {
         return of_instruction_id_bsn_dhcp_offload_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_INSTRUCTION_ID_BSN_REQUIRE_VLAN_XLATE) {
-        return of_instruction_id_bsn_require_vlan_xlate_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_INSTRUCTION_ID_BSN_HASH_SELECT) {
-        return of_instruction_id_bsn_hash_select_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_INSTRUCTION_ID_BSN_PACKET_OF_DEATH) {
+        return of_instruction_id_bsn_packet_of_death_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_INSTRUCTION_ID_BSN_DISABLE_VLAN_COUNTERS) {
         return of_instruction_id_bsn_disable_vlan_counters_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_INSTRUCTION_ID_WRITE_ACTIONS) {
-        return of_instruction_id_write_actions_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_INSTRUCTION_ID_BSN_HASH_SELECT) {
+        return of_instruction_id_bsn_hash_select_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_INSTRUCTION_ID_BSN_DISABLE_SRC_MAC_CHECK) {
-        return of_instruction_id_bsn_disable_src_mac_check_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_INSTRUCTION_ID_WRITE_METADATA) {
+        return of_instruction_id_write_metadata_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_INSTRUCTION_ID_BSN_AUTO_NEGOTIATION) {
+        return of_instruction_id_bsn_auto_negotiation_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_INSTRUCTION_ID_BSN_DISABLE_L3) {
+        return of_instruction_id_bsn_disable_l3_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_INSTRUCTION_ID_METER) {
+        return of_instruction_id_meter_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_INSTRUCTION_ID_APPLY_ACTIONS) {
         return of_instruction_id_apply_actions_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_INSTRUCTION_ID_BSN_PACKET_OF_DEATH) {
-        return of_instruction_id_bsn_packet_of_death_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_INSTRUCTION_ID_BSN_REQUIRE_VLAN_XLATE) {
+        return of_instruction_id_bsn_require_vlan_xlate_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_INSTRUCTION_ID_BSN_SPAN_DESTINATION) {
+        return of_instruction_id_bsn_span_destination_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_INSTRUCTION_ID_BSN_DISABLE_SPLIT_HORIZON_CHECK) {
@@ -34757,40 +34773,24 @@ of_instruction_id_OF_VERSION_1_3_dup(
         return of_instruction_id_bsn_arp_offload_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_INSTRUCTION_ID_BSN_PRIORITIZE_PDUS) {
-        return of_instruction_id_bsn_prioritize_pdus_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_INSTRUCTION_ID_BSN_DISABLE_SRC_MAC_CHECK) {
+        return of_instruction_id_bsn_disable_src_mac_check_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_INSTRUCTION_ID_BSN_DIRECTED_BROADCAST) {
         return of_instruction_id_bsn_directed_broadcast_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_INSTRUCTION_ID_BSN_PERMIT) {
-        return of_instruction_id_bsn_permit_OF_VERSION_1_3_dup(src);
-    }
-
     if (src->object_id == OF_INSTRUCTION_ID_BSN_DENY) {
         return of_instruction_id_bsn_deny_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_INSTRUCTION_ID_WRITE_METADATA) {
-        return of_instruction_id_write_metadata_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_INSTRUCTION_ID_BSN_PRIORITIZE_PDUS) {
+        return of_instruction_id_bsn_prioritize_pdus_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_INSTRUCTION_ID_CLEAR_ACTIONS) {
-        return of_instruction_id_clear_actions_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_INSTRUCTION_ID_GOTO_TABLE) {
-        return of_instruction_id_goto_table_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_INSTRUCTION_ID_BSN_DISABLE_L3) {
-        return of_instruction_id_bsn_disable_l3_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_INSTRUCTION_ID_BSN_SPAN_DESTINATION) {
-        return of_instruction_id_bsn_span_destination_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_INSTRUCTION_ID_BSN_INTERNAL_PRIORITY) {
+        return of_instruction_id_bsn_internal_priority_OF_VERSION_1_3_dup(src);
     }
 
     return NULL;
@@ -35531,12 +35531,12 @@ of_meter_band_OF_VERSION_1_3_dup(
     of_object_t *src)
 {
 
-    if (src->object_id == OF_METER_BAND_DROP) {
-        return of_meter_band_drop_OF_VERSION_1_3_dup(src);
-    }
-
     if (src->object_id == OF_METER_BAND_DSCP_REMARK) {
         return of_meter_band_dscp_remark_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_METER_BAND_DROP) {
+        return of_meter_band_drop_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_METER_BAND_EXPERIMENTER) {
@@ -35811,392 +35811,28 @@ of_oxm_OF_VERSION_1_3_dup(
     of_object_t *src)
 {
 
-    if (src->object_id == OF_OXM_IN_PORT_MASKED) {
-        return of_oxm_in_port_masked_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_IPV6_EXTHDR_MASKED) {
-        return of_oxm_ipv6_exthdr_masked_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_IPV6_ND_TARGET) {
-        return of_oxm_ipv6_nd_target_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_IP_FRAGMENTATION_MASKED) {
-        return of_oxm_bsn_ip_fragmentation_masked_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_L3_DST_CLASS_ID_MASKED) {
-        return of_oxm_bsn_l3_dst_class_id_masked_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_VLAN_VID_MASKED) {
-        return of_oxm_vlan_vid_masked_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_MPLS_BOS_MASKED) {
-        return of_oxm_mpls_bos_masked_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_IN_PHY_PORT) {
-        return of_oxm_in_phy_port_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_SCTP_DST_MASKED) {
-        return of_oxm_sctp_dst_masked_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_EGR_PORT_GROUP_ID) {
-        return of_oxm_bsn_egr_port_group_id_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_VFI_MASKED) {
-        return of_oxm_bsn_vfi_masked_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_INNER_VLAN_VID) {
-        return of_oxm_bsn_inner_vlan_vid_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_L2_CACHE_HIT) {
-        return of_oxm_bsn_l2_cache_hit_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_ICMPV6_CODE_MASKED) {
-        return of_oxm_icmpv6_code_masked_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_IN_PHY_PORT_MASKED) {
-        return of_oxm_in_phy_port_masked_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_LAG_ID) {
-        return of_oxm_bsn_lag_id_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_ICMPV4_CODE) {
-        return of_oxm_icmpv4_code_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_UDF2_MASKED) {
-        return of_oxm_bsn_udf2_masked_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_UDF4_MASKED) {
-        return of_oxm_bsn_udf4_masked_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_IPV6_FLABEL) {
-        return of_oxm_ipv6_flabel_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_ICMPV4_TYPE) {
-        return of_oxm_icmpv4_type_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_UDP_DST) {
-        return of_oxm_udp_dst_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_CONN_TRACKING_STATE) {
-        return of_oxm_conn_tracking_state_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_L3_SRC_CLASS_ID) {
-        return of_oxm_bsn_l3_src_class_id_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_CONN_TRACKING_IPV6_SRC_MASKED) {
-        return of_oxm_conn_tracking_ipv6_src_masked_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_ETH_TYPE) {
-        return of_oxm_eth_type_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_ETH_DST) {
-        return of_oxm_eth_dst_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_VLAN_PCP) {
-        return of_oxm_vlan_pcp_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_CONN_TRACKING_NW_PROTO_MASKED) {
-        return of_oxm_conn_tracking_nw_proto_masked_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_IPV6_ND_TLL) {
-        return of_oxm_ipv6_nd_tll_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_IPV6_ND_TARGET_MASKED) {
-        return of_oxm_ipv6_nd_target_masked_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_ARP_OP) {
-        return of_oxm_arp_op_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_INGRESS_PORT_GROUP_ID) {
-        return of_oxm_bsn_ingress_port_group_id_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_CONN_TRACKING_NW_DST_MASKED) {
-        return of_oxm_conn_tracking_nw_dst_masked_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_IPV6_ND_SLL_MASKED) {
-        return of_oxm_ipv6_nd_sll_masked_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_ICMPV6_TYPE) {
-        return of_oxm_icmpv6_type_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_ARP_THA_MASKED) {
-        return of_oxm_arp_tha_masked_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_ETH_DST_MASKED) {
-        return of_oxm_eth_dst_masked_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_VLAN_PCP_MASKED) {
-        return of_oxm_vlan_pcp_masked_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_ETH_TYPE_MASKED) {
-        return of_oxm_eth_type_masked_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_ARP_SHA) {
-        return of_oxm_arp_sha_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_TCP_DST) {
-        return of_oxm_tcp_dst_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_UDF6) {
-        return of_oxm_bsn_udf6_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_IP_ECN_MASKED) {
-        return of_oxm_ip_ecn_masked_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_CONN_TRACKING_TP_DST) {
-        return of_oxm_conn_tracking_tp_dst_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_METADATA_MASKED) {
-        return of_oxm_metadata_masked_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_ICMPV6_TYPE_MASKED) {
-        return of_oxm_icmpv6_type_masked_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_GLOBAL_VRF_ALLOWED_MASKED) {
-        return of_oxm_bsn_global_vrf_allowed_masked_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_GLOBAL_VRF_ALLOWED) {
-        return of_oxm_bsn_global_vrf_allowed_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_SCTP_SRC) {
-        return of_oxm_sctp_src_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_IN_PORTS_512_MASKED) {
-        return of_oxm_bsn_in_ports_512_masked_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_UDP_SRC) {
-        return of_oxm_udp_src_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_L3_DST_CLASS_ID) {
-        return of_oxm_bsn_l3_dst_class_id_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_L3_INTERFACE_CLASS_ID_MASKED) {
-        return of_oxm_bsn_l3_interface_class_id_masked_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_CONN_TRACKING_TP_SRC) {
-        return of_oxm_conn_tracking_tp_src_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_CONN_TRACKING_IPV6_DST_MASKED) {
-        return of_oxm_conn_tracking_ipv6_dst_masked_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_L3_INTERFACE_CLASS_ID) {
-        return of_oxm_bsn_l3_interface_class_id_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_ARP_SPA_MASKED) {
-        return of_oxm_arp_spa_masked_OF_VERSION_1_3_dup(src);
-    }
-
     if (src->object_id == OF_OXM_IP_PROTO_MASKED) {
         return of_oxm_ip_proto_masked_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_TCP_FLAGS) {
-        return of_oxm_bsn_tcp_flags_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_ARP_SHA_MASKED) {
-        return of_oxm_arp_sha_masked_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_IN_PORTS_128) {
-        return of_oxm_bsn_in_ports_128_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_L3_SRC_CLASS_ID_MASKED) {
-        return of_oxm_bsn_l3_src_class_id_masked_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_SCTP_DST) {
-        return of_oxm_sctp_dst_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_TUNNEL_IPV4_SRC) {
-        return of_oxm_tunnel_ipv4_src_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_UDF5_MASKED) {
-        return of_oxm_bsn_udf5_masked_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_ICMPV4_TYPE_MASKED) {
-        return of_oxm_icmpv4_type_masked_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_IPV6_ND_TLL_MASKED) {
-        return of_oxm_ipv6_nd_tll_masked_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_ICMPV4_CODE_MASKED) {
-        return of_oxm_icmpv4_code_masked_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_OVS_TCP_FLAGS_MASKED) {
-        return of_oxm_ovs_tcp_flags_masked_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_CONN_TRACKING_STATE_MASKED) {
-        return of_oxm_conn_tracking_state_masked_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_CONN_TRACKING_NW_DST) {
-        return of_oxm_conn_tracking_nw_dst_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_CONN_TRACKING_MARK_MASKED) {
-        return of_oxm_conn_tracking_mark_masked_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_UDF3_MASKED) {
-        return of_oxm_bsn_udf3_masked_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_IN_PORTS_128_MASKED) {
-        return of_oxm_bsn_in_ports_128_masked_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_OXM_BSN_INNER_ETH_SRC) {
         return of_oxm_bsn_inner_eth_src_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_OXM_TUNNEL_IPV4_DST) {
-        return of_oxm_tunnel_ipv4_dst_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_OXM_IN_PHY_PORT) {
+        return of_oxm_in_phy_port_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_OXM_IPV4_SRC_MASKED) {
-        return of_oxm_ipv4_src_masked_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_OXM_BSN_L3_DST_CLASS_ID) {
+        return of_oxm_bsn_l3_dst_class_id_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_OXM_BSN_VXLAN_NETWORK_ID_MASKED) {
-        return of_oxm_bsn_vxlan_network_id_masked_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_CONN_TRACKING_TP_DST_MASKED) {
-        return of_oxm_conn_tracking_tp_dst_masked_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_INNER_ETH_DST) {
-        return of_oxm_bsn_inner_eth_dst_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_IPV4_SRC) {
-        return of_oxm_ipv4_src_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_OXM_CONN_TRACKING_NW_PROTO) {
+        return of_oxm_conn_tracking_nw_proto_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_OXM_BSN_INNER_ETH_SRC_MASKED) {
         return of_oxm_bsn_inner_eth_src_masked_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_UDF5) {
-        return of_oxm_bsn_udf5_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_UDF4) {
-        return of_oxm_bsn_udf4_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_UDF7) {
-        return of_oxm_bsn_udf7_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_TCP_FLAGS_MASKED) {
-        return of_oxm_bsn_tcp_flags_masked_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_UDF1) {
-        return of_oxm_bsn_udf1_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_UDF0) {
-        return of_oxm_bsn_udf0_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_UDF3) {
-        return of_oxm_bsn_udf3_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_UDF2) {
-        return of_oxm_bsn_udf2_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_ICMPV6_CODE) {
-        return of_oxm_icmpv6_code_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_IP_DSCP_MASKED) {
-        return of_oxm_ip_dscp_masked_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_MPLS_LABEL) {
-        return of_oxm_mpls_label_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_INNER_VLAN_VID_MASKED) {
-        return of_oxm_bsn_inner_vlan_vid_masked_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_INNER_ETH_DST_MASKED) {
-        return of_oxm_bsn_inner_eth_dst_masked_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_IN_PORT) {
-        return of_oxm_in_port_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_OXM_CONN_TRACKING_ZONE_MASKED) {
@@ -36207,248 +35843,612 @@ of_oxm_OF_VERSION_1_3_dup(
         return of_oxm_bsn_udf7_masked_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_OXM_BSN_UDF1_MASKED) {
-        return of_oxm_bsn_udf1_masked_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_VRF_MASKED) {
-        return of_oxm_bsn_vrf_masked_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_TCP_SRC) {
-        return of_oxm_tcp_src_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_CONN_TRACKING_TP_SRC_MASKED) {
-        return of_oxm_conn_tracking_tp_src_masked_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_OXM_IPV6_ND_TLL_MASKED) {
+        return of_oxm_ipv6_nd_tll_masked_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_OXM_UDP_SRC_MASKED) {
         return of_oxm_udp_src_masked_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_OXM_IP_ECN) {
-        return of_oxm_ip_ecn_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_OXM_BSN_IN_PORTS_128) {
+        return of_oxm_bsn_in_ports_128_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_OXM_ETH_SRC) {
-        return of_oxm_eth_src_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_OXM_BSN_UDF4) {
+        return of_oxm_bsn_udf4_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_OXM_IPV6_DST) {
-        return of_oxm_ipv6_dst_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_ETH_SRC_MASKED) {
-        return of_oxm_eth_src_masked_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_CONN_TRACKING_LABEL) {
-        return of_oxm_conn_tracking_label_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_CONN_TRACKING_IPV6_SRC) {
-        return of_oxm_conn_tracking_ipv6_src_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_VRF) {
-        return of_oxm_bsn_vrf_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_IPV4_DST) {
-        return of_oxm_ipv4_dst_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_IP_FRAGMENTATION) {
-        return of_oxm_bsn_ip_fragmentation_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_IPV6_SRC_MASKED) {
-        return of_oxm_ipv6_src_masked_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_CONN_TRACKING_IPV6_DST) {
-        return of_oxm_conn_tracking_ipv6_dst_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_IP_DSCP) {
-        return of_oxm_ip_dscp_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_CONN_TRACKING_ZONE) {
-        return of_oxm_conn_tracking_zone_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_IPV6_ND_SLL) {
-        return of_oxm_ipv6_nd_sll_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_IPV6_FLABEL_MASKED) {
-        return of_oxm_ipv6_flabel_masked_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_CONN_TRACKING_NW_SRC_MASKED) {
-        return of_oxm_conn_tracking_nw_src_masked_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_CONN_TRACKING_NW_SRC) {
-        return of_oxm_conn_tracking_nw_src_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_MPLS_TC_MASKED) {
-        return of_oxm_mpls_tc_masked_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_CONN_TRACKING_MARK) {
-        return of_oxm_conn_tracking_mark_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_TCP_DST_MASKED) {
-        return of_oxm_tcp_dst_masked_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_OXM_BSN_UDF5) {
+        return of_oxm_bsn_udf5_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_OXM_BSN_UDF6_MASKED) {
         return of_oxm_bsn_udf6_masked_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_OXM_SCTP_SRC_MASKED) {
-        return of_oxm_sctp_src_masked_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_CONN_TRACKING_NW_PROTO) {
-        return of_oxm_conn_tracking_nw_proto_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_LAG_ID_MASKED) {
-        return of_oxm_bsn_lag_id_masked_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_L2_CACHE_HIT_MASKED) {
-        return of_oxm_bsn_l2_cache_hit_masked_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_IP_PROTO) {
-        return of_oxm_ip_proto_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_IN_PORTS_512) {
-        return of_oxm_bsn_in_ports_512_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_IPV6_SRC) {
-        return of_oxm_ipv6_src_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_UDP_DST_MASKED) {
-        return of_oxm_udp_dst_masked_OF_VERSION_1_3_dup(src);
-    }
-
     if (src->object_id == OF_OXM_BSN_VFI) {
         return of_oxm_bsn_vfi_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_OXM_ARP_SPA) {
-        return of_oxm_arp_spa_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_OXM_ICMPV4_CODE_MASKED) {
+        return of_oxm_icmpv4_code_masked_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_OXM_ARP_OP_MASKED) {
-        return of_oxm_arp_op_masked_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_OXM_MPLS_LABEL) {
+        return of_oxm_mpls_label_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_OXM_TUNNEL_ID_MASKED) {
-        return of_oxm_tunnel_id_masked_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_OXM_IPV6_DST) {
+        return of_oxm_ipv6_dst_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_OXM_TUNNEL_IPV4_SRC_MASKED) {
-        return of_oxm_tunnel_ipv4_src_masked_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_OXM_CONN_TRACKING_NW_DST) {
+        return of_oxm_conn_tracking_nw_dst_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_CONN_TRACKING_ZONE) {
+        return of_oxm_conn_tracking_zone_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_OXM_TUNNEL_IPV4_DST_MASKED) {
         return of_oxm_tunnel_ipv4_dst_masked_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_OXM_VLAN_VID) {
-        return of_oxm_vlan_vid_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_OXM_ARP_OP) {
+        return of_oxm_arp_op_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_OXM_MPLS_BOS) {
-        return of_oxm_mpls_bos_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_OXM_IP_PROTO) {
+        return of_oxm_ip_proto_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_OXM_BSN_EGR_PORT_GROUP_ID_MASKED) {
-        return of_oxm_bsn_egr_port_group_id_masked_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_OXM_BSN_INGRESS_PORT_GROUP_ID) {
+        return of_oxm_bsn_ingress_port_group_id_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_OXM_TCP_SRC_MASKED) {
-        return of_oxm_tcp_src_masked_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_OXM_BSN_L3_INTERFACE_CLASS_ID_MASKED) {
+        return of_oxm_bsn_l3_interface_class_id_masked_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_OXM_BSN_INGRESS_PORT_GROUP_ID_MASKED) {
-        return of_oxm_bsn_ingress_port_group_id_masked_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_OXM_IPV6_ND_SLL) {
+        return of_oxm_ipv6_nd_sll_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_OXM_IPV6_DST_MASKED) {
-        return of_oxm_ipv6_dst_masked_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_OXM_UDP_SRC) {
+        return of_oxm_udp_src_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_OXM_TUNNEL_ID) {
-        return of_oxm_tunnel_id_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_OXM_SCTP_DST_MASKED) {
+        return of_oxm_sctp_dst_masked_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_OXM_METADATA) {
-        return of_oxm_metadata_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_OXM_UDP_DST_MASKED) {
+        return of_oxm_udp_dst_masked_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_OXM_OVS_TCP_FLAGS) {
-        return of_oxm_ovs_tcp_flags_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_OXM_CONN_TRACKING_MARK) {
+        return of_oxm_conn_tracking_mark_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_OXM_BSN_UDF0_MASKED) {
-        return of_oxm_bsn_udf0_masked_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_OXM_BSN_TCP_FLAGS) {
+        return of_oxm_bsn_tcp_flags_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_OXM_CONN_TRACKING_LABEL_MASKED) {
-        return of_oxm_conn_tracking_label_masked_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_OXM_BSN_EGR_PORT_GROUP_ID) {
+        return of_oxm_bsn_egr_port_group_id_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_OXM_ARP_TPA_MASKED) {
-        return of_oxm_arp_tpa_masked_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_OXM_BSN_GLOBAL_VRF_ALLOWED) {
+        return of_oxm_bsn_global_vrf_allowed_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_OXM_BSN_VLAN_XLATE_PORT_GROUP_ID) {
-        return of_oxm_bsn_vlan_xlate_port_group_id_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_OXM_IPV6_SRC_MASKED) {
+        return of_oxm_ipv6_src_masked_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_OXM_BSN_VLAN_XLATE_PORT_GROUP_ID_MASKED) {
-        return of_oxm_bsn_vlan_xlate_port_group_id_masked_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_OXM_TCP_SRC) {
+        return of_oxm_tcp_src_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_OXM_ARP_THA) {
-        return of_oxm_arp_tha_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_OXM_IPV6_ND_TLL) {
+        return of_oxm_ipv6_nd_tll_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_OXM_MPLS_TC) {
-        return of_oxm_mpls_tc_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_OXM_IP_DSCP_MASKED) {
+        return of_oxm_ip_dscp_masked_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_OXM_BSN_VXLAN_NETWORK_ID) {
-        return of_oxm_bsn_vxlan_network_id_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_OXM_ICMPV4_TYPE_MASKED) {
+        return of_oxm_icmpv4_type_masked_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_OXM_ARP_TPA) {
-        return of_oxm_arp_tpa_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_OXM_VLAN_PCP) {
+        return of_oxm_vlan_pcp_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_BSN_INNER_VLAN_VID_MASKED) {
+        return of_oxm_bsn_inner_vlan_vid_masked_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_OXM_IPV4_DST_MASKED) {
         return of_oxm_ipv4_dst_masked_OF_VERSION_1_3_dup(src);
     }
 
+    if (src->object_id == OF_OXM_CONN_TRACKING_NW_SRC) {
+        return of_oxm_conn_tracking_nw_src_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_BSN_LAG_ID_MASKED) {
+        return of_oxm_bsn_lag_id_masked_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_MPLS_BOS) {
+        return of_oxm_mpls_bos_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_ARP_SHA) {
+        return of_oxm_arp_sha_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_SCTP_SRC) {
+        return of_oxm_sctp_src_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_ARP_TPA) {
+        return of_oxm_arp_tpa_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_ETH_SRC_MASKED) {
+        return of_oxm_eth_src_masked_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_BSN_L3_SRC_CLASS_ID) {
+        return of_oxm_bsn_l3_src_class_id_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_ETH_TYPE) {
+        return of_oxm_eth_type_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_BSN_EGR_PORT_GROUP_ID_MASKED) {
+        return of_oxm_bsn_egr_port_group_id_masked_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_IPV6_SRC) {
+        return of_oxm_ipv6_src_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_IN_PORT) {
+        return of_oxm_in_port_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_BSN_LAG_ID) {
+        return of_oxm_bsn_lag_id_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_TUNNEL_ID) {
+        return of_oxm_tunnel_id_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_MPLS_BOS_MASKED) {
+        return of_oxm_mpls_bos_masked_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_OVS_TCP_FLAGS) {
+        return of_oxm_ovs_tcp_flags_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_IPV6_ND_TARGET) {
+        return of_oxm_ipv6_nd_target_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_CONN_TRACKING_TP_SRC) {
+        return of_oxm_conn_tracking_tp_src_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_ICMPV6_TYPE_MASKED) {
+        return of_oxm_icmpv6_type_masked_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_BSN_IN_PORTS_512_MASKED) {
+        return of_oxm_bsn_in_ports_512_masked_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_ICMPV6_CODE_MASKED) {
+        return of_oxm_icmpv6_code_masked_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_ETH_TYPE_MASKED) {
+        return of_oxm_eth_type_masked_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_IPV6_EXTHDR_MASKED) {
+        return of_oxm_ipv6_exthdr_masked_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_BSN_VLAN_XLATE_PORT_GROUP_ID) {
+        return of_oxm_bsn_vlan_xlate_port_group_id_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_BSN_VRF) {
+        return of_oxm_bsn_vrf_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_IPV6_ND_TARGET_MASKED) {
+        return of_oxm_ipv6_nd_target_masked_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_VLAN_VID) {
+        return of_oxm_vlan_vid_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_IP_ECN_MASKED) {
+        return of_oxm_ip_ecn_masked_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_BSN_UDF0) {
+        return of_oxm_bsn_udf0_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_ARP_SPA_MASKED) {
+        return of_oxm_arp_spa_masked_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_CONN_TRACKING_LABEL_MASKED) {
+        return of_oxm_conn_tracking_label_masked_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_ICMPV4_TYPE) {
+        return of_oxm_icmpv4_type_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_BSN_L3_SRC_CLASS_ID_MASKED) {
+        return of_oxm_bsn_l3_src_class_id_masked_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_SCTP_SRC_MASKED) {
+        return of_oxm_sctp_src_masked_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_TCP_SRC_MASKED) {
+        return of_oxm_tcp_src_masked_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_BSN_VFI_MASKED) {
+        return of_oxm_bsn_vfi_masked_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_IPV6_FLABEL_MASKED) {
+        return of_oxm_ipv6_flabel_masked_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_VLAN_VID_MASKED) {
+        return of_oxm_vlan_vid_masked_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_BSN_GLOBAL_VRF_ALLOWED_MASKED) {
+        return of_oxm_bsn_global_vrf_allowed_masked_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_TCP_DST) {
+        return of_oxm_tcp_dst_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_BSN_UDF4_MASKED) {
+        return of_oxm_bsn_udf4_masked_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_BSN_VLAN_XLATE_PORT_GROUP_ID_MASKED) {
+        return of_oxm_bsn_vlan_xlate_port_group_id_masked_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_ARP_TPA_MASKED) {
+        return of_oxm_arp_tpa_masked_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_CONN_TRACKING_MARK_MASKED) {
+        return of_oxm_conn_tracking_mark_masked_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_TUNNEL_ID_MASKED) {
+        return of_oxm_tunnel_id_masked_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_ARP_OP_MASKED) {
+        return of_oxm_arp_op_masked_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_ARP_THA) {
+        return of_oxm_arp_tha_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_OVS_TCP_FLAGS_MASKED) {
+        return of_oxm_ovs_tcp_flags_masked_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_BSN_INGRESS_PORT_GROUP_ID_MASKED) {
+        return of_oxm_bsn_ingress_port_group_id_masked_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_CONN_TRACKING_IPV6_SRC) {
+        return of_oxm_conn_tracking_ipv6_src_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_CONN_TRACKING_IPV6_SRC_MASKED) {
+        return of_oxm_conn_tracking_ipv6_src_masked_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_CONN_TRACKING_IPV6_DST_MASKED) {
+        return of_oxm_conn_tracking_ipv6_dst_masked_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_BSN_L2_CACHE_HIT_MASKED) {
+        return of_oxm_bsn_l2_cache_hit_masked_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_BSN_INNER_VLAN_VID) {
+        return of_oxm_bsn_inner_vlan_vid_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_BSN_UDF5_MASKED) {
+        return of_oxm_bsn_udf5_masked_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_IPV6_DST_MASKED) {
+        return of_oxm_ipv6_dst_masked_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_BSN_UDF6) {
+        return of_oxm_bsn_udf6_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_METADATA) {
+        return of_oxm_metadata_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_ARP_THA_MASKED) {
+        return of_oxm_arp_tha_masked_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_BSN_VXLAN_NETWORK_ID) {
+        return of_oxm_bsn_vxlan_network_id_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_BSN_L3_INTERFACE_CLASS_ID) {
+        return of_oxm_bsn_l3_interface_class_id_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_BSN_L3_DST_CLASS_ID_MASKED) {
+        return of_oxm_bsn_l3_dst_class_id_masked_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_ARP_SPA) {
+        return of_oxm_arp_spa_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_TUNNEL_IPV4_SRC) {
+        return of_oxm_tunnel_ipv4_src_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_ICMPV6_TYPE) {
+        return of_oxm_icmpv6_type_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_ICMPV6_CODE) {
+        return of_oxm_icmpv6_code_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_BSN_UDF3) {
+        return of_oxm_bsn_udf3_OF_VERSION_1_3_dup(src);
+    }
+
     if (src->object_id == OF_OXM_IPV6_EXTHDR) {
         return of_oxm_ipv6_exthdr_OF_VERSION_1_3_dup(src);
     }
 
+    if (src->object_id == OF_OXM_UDP_DST) {
+        return of_oxm_udp_dst_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_ETH_DST) {
+        return of_oxm_eth_dst_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_BSN_VXLAN_NETWORK_ID_MASKED) {
+        return of_oxm_bsn_vxlan_network_id_masked_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_TUNNEL_IPV4_SRC_MASKED) {
+        return of_oxm_tunnel_ipv4_src_masked_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_MPLS_TC) {
+        return of_oxm_mpls_tc_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_IPV6_ND_SLL_MASKED) {
+        return of_oxm_ipv6_nd_sll_masked_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_ARP_SHA_MASKED) {
+        return of_oxm_arp_sha_masked_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_TCP_DST_MASKED) {
+        return of_oxm_tcp_dst_masked_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_BSN_IN_PORTS_512) {
+        return of_oxm_bsn_in_ports_512_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_BSN_INNER_ETH_DST) {
+        return of_oxm_bsn_inner_eth_dst_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_SCTP_DST) {
+        return of_oxm_sctp_dst_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_CONN_TRACKING_LABEL) {
+        return of_oxm_conn_tracking_label_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_IN_PORT_MASKED) {
+        return of_oxm_in_port_masked_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_BSN_IP_FRAGMENTATION) {
+        return of_oxm_bsn_ip_fragmentation_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_IPV4_SRC) {
+        return of_oxm_ipv4_src_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_BSN_UDF7) {
+        return of_oxm_bsn_udf7_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_IPV6_FLABEL) {
+        return of_oxm_ipv6_flabel_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_VLAN_PCP_MASKED) {
+        return of_oxm_vlan_pcp_masked_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_BSN_IP_FRAGMENTATION_MASKED) {
+        return of_oxm_bsn_ip_fragmentation_masked_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_BSN_TCP_FLAGS_MASKED) {
+        return of_oxm_bsn_tcp_flags_masked_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_BSN_L2_CACHE_HIT) {
+        return of_oxm_bsn_l2_cache_hit_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_CONN_TRACKING_TP_SRC_MASKED) {
+        return of_oxm_conn_tracking_tp_src_masked_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_IPV4_SRC_MASKED) {
+        return of_oxm_ipv4_src_masked_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_BSN_IN_PORTS_128_MASKED) {
+        return of_oxm_bsn_in_ports_128_masked_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_TUNNEL_IPV4_DST) {
+        return of_oxm_tunnel_ipv4_dst_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_BSN_UDF3_MASKED) {
+        return of_oxm_bsn_udf3_masked_OF_VERSION_1_3_dup(src);
+    }
+
     if (src->object_id == OF_OXM_MPLS_LABEL_MASKED) {
         return of_oxm_mpls_label_masked_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_METADATA_MASKED) {
+        return of_oxm_metadata_masked_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_CONN_TRACKING_STATE) {
+        return of_oxm_conn_tracking_state_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_BSN_UDF1) {
+        return of_oxm_bsn_udf1_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_BSN_UDF2_MASKED) {
+        return of_oxm_bsn_udf2_masked_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_BSN_VRF_MASKED) {
+        return of_oxm_bsn_vrf_masked_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_CONN_TRACKING_STATE_MASKED) {
+        return of_oxm_conn_tracking_state_masked_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_BSN_UDF1_MASKED) {
+        return of_oxm_bsn_udf1_masked_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_CONN_TRACKING_TP_DST_MASKED) {
+        return of_oxm_conn_tracking_tp_dst_masked_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_ETH_DST_MASKED) {
+        return of_oxm_eth_dst_masked_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_IN_PHY_PORT_MASKED) {
+        return of_oxm_in_phy_port_masked_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_CONN_TRACKING_IPV6_DST) {
+        return of_oxm_conn_tracking_ipv6_dst_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_IPV4_DST) {
+        return of_oxm_ipv4_dst_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_ETH_SRC) {
+        return of_oxm_eth_src_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_MPLS_TC_MASKED) {
+        return of_oxm_mpls_tc_masked_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_CONN_TRACKING_NW_PROTO_MASKED) {
+        return of_oxm_conn_tracking_nw_proto_masked_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_IP_DSCP) {
+        return of_oxm_ip_dscp_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_BSN_UDF0_MASKED) {
+        return of_oxm_bsn_udf0_masked_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_CONN_TRACKING_NW_DST_MASKED) {
+        return of_oxm_conn_tracking_nw_dst_masked_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_CONN_TRACKING_NW_SRC_MASKED) {
+        return of_oxm_conn_tracking_nw_src_masked_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_CONN_TRACKING_TP_DST) {
+        return of_oxm_conn_tracking_tp_dst_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_BSN_INNER_ETH_DST_MASKED) {
+        return of_oxm_bsn_inner_eth_dst_masked_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_IP_ECN) {
+        return of_oxm_ip_ecn_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_ICMPV4_CODE) {
+        return of_oxm_icmpv4_code_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_BSN_UDF2) {
+        return of_oxm_bsn_udf2_OF_VERSION_1_3_dup(src);
     }
 
     return NULL;
@@ -41001,44 +41001,52 @@ of_table_feature_prop_OF_VERSION_1_3_dup(
     of_object_t *src)
 {
 
-    if (src->object_id == OF_TABLE_FEATURE_PROP_WRITE_SETFIELD_MISS) {
-        return of_table_feature_prop_write_setfield_miss_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_TABLE_FEATURE_PROP_APPLY_ACTIONS) {
-        return of_table_feature_prop_apply_actions_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_TABLE_FEATURE_PROP_INSTRUCTIONS) {
+        return of_table_feature_prop_instructions_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_TABLE_FEATURE_PROP_NEXT_TABLES) {
         return of_table_feature_prop_next_tables_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_TABLE_FEATURE_PROP_APPLY_SETFIELD_MISS) {
-        return of_table_feature_prop_apply_setfield_miss_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_TABLE_FEATURE_PROP_WRITE_ACTIONS) {
-        return of_table_feature_prop_write_actions_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_TABLE_FEATURE_PROP_INSTRUCTIONS_MISS) {
-        return of_table_feature_prop_instructions_miss_OF_VERSION_1_3_dup(src);
-    }
-
     if (src->object_id == OF_TABLE_FEATURE_PROP_WILDCARDS) {
         return of_table_feature_prop_wildcards_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_TABLE_FEATURE_PROP_INSTRUCTIONS) {
-        return of_table_feature_prop_instructions_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_TABLE_FEATURE_PROP_APPLY_ACTIONS) {
+        return of_table_feature_prop_apply_actions_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_TABLE_FEATURE_PROP_WRITE_SETFIELD) {
         return of_table_feature_prop_write_setfield_OF_VERSION_1_3_dup(src);
     }
 
+    if (src->object_id == OF_TABLE_FEATURE_PROP_NEXT_TABLES_MISS) {
+        return of_table_feature_prop_next_tables_miss_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_TABLE_FEATURE_PROP_WRITE_ACTIONS) {
+        return of_table_feature_prop_write_actions_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_TABLE_FEATURE_PROP_WRITE_ACTIONS_MISS) {
+        return of_table_feature_prop_write_actions_miss_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_TABLE_FEATURE_PROP_WRITE_SETFIELD_MISS) {
+        return of_table_feature_prop_write_setfield_miss_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_TABLE_FEATURE_PROP_INSTRUCTIONS_MISS) {
+        return of_table_feature_prop_instructions_miss_OF_VERSION_1_3_dup(src);
+    }
+
     if (src->object_id == OF_TABLE_FEATURE_PROP_APPLY_SETFIELD) {
         return of_table_feature_prop_apply_setfield_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_TABLE_FEATURE_PROP_APPLY_SETFIELD_MISS) {
+        return of_table_feature_prop_apply_setfield_miss_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_TABLE_FEATURE_PROP_APPLY_ACTIONS_MISS) {
@@ -41047,14 +41055,6 @@ of_table_feature_prop_OF_VERSION_1_3_dup(
 
     if (src->object_id == OF_TABLE_FEATURE_PROP_MATCH) {
         return of_table_feature_prop_match_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_TABLE_FEATURE_PROP_NEXT_TABLES_MISS) {
-        return of_table_feature_prop_next_tables_miss_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_TABLE_FEATURE_PROP_WRITE_ACTIONS_MISS) {
-        return of_table_feature_prop_write_actions_miss_OF_VERSION_1_3_dup(src);
     }
 
     return NULL;
@@ -50303,16 +50303,20 @@ of_action_OF_VERSION_1_4_dup(
     of_object_t *src)
 {
 
-    if (src->object_id == OF_ACTION_NICIRA_DEC_TTL) {
-        return of_action_nicira_dec_ttl_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_ACTION_SET_NW_TTL) {
+        return of_action_set_nw_ttl_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_ACTION_POP_PBB) {
-        return of_action_pop_pbb_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_ACTION_COPY_TTL_OUT) {
+        return of_action_copy_ttl_out_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_ACTION_POP_MPLS) {
-        return of_action_pop_mpls_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_ACTION_GROUP) {
+        return of_action_group_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_ACTION_BSN_CHECKSUM) {
+        return of_action_bsn_checksum_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_ACTION_COPY_TTL_IN) {
@@ -50323,36 +50327,56 @@ of_action_OF_VERSION_1_4_dup(
         return of_action_output_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_ACTION_SET_FIELD) {
-        return of_action_set_field_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_ACTION_SET_QUEUE) {
-        return of_action_set_queue_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_ACTION_PUSH_PBB) {
+        return of_action_push_pbb_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_ACTION_DEC_NW_TTL) {
         return of_action_dec_nw_ttl_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_ACTION_POP_VLAN) {
-        return of_action_pop_vlan_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_ACTION_PUSH_VLAN) {
-        return of_action_push_vlan_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_ACTION_POP_PBB) {
+        return of_action_pop_pbb_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_ACTION_DEC_MPLS_TTL) {
         return of_action_dec_mpls_ttl_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_ACTION_BSN_SET_TUNNEL_DST) {
-        return of_action_bsn_set_tunnel_dst_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_ACTION_POP_VLAN) {
+        return of_action_pop_vlan_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_ACTION_SET_NW_TTL) {
-        return of_action_set_nw_ttl_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_ACTION_SET_MPLS_TTL) {
+        return of_action_set_mpls_ttl_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_ACTION_POP_MPLS) {
+        return of_action_pop_mpls_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_ACTION_SET_FIELD) {
+        return of_action_set_field_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_ACTION_NICIRA_DEC_TTL) {
+        return of_action_nicira_dec_ttl_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_ACTION_SET_QUEUE) {
+        return of_action_set_queue_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_ACTION_PUSH_MPLS) {
+        return of_action_push_mpls_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_ACTION_PUSH_VLAN) {
+        return of_action_push_vlan_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_ACTION_BSN_SET_TUNNEL_DST) {
+        return of_action_bsn_set_tunnel_dst_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_ACTION_BSN_GENTABLE) {
@@ -50361,30 +50385,6 @@ of_action_OF_VERSION_1_4_dup(
 
     if (src->object_id == OF_ACTION_BSN_MIRROR) {
         return of_action_bsn_mirror_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_ACTION_GROUP) {
-        return of_action_group_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_ACTION_PUSH_MPLS) {
-        return of_action_push_mpls_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_ACTION_COPY_TTL_OUT) {
-        return of_action_copy_ttl_out_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_ACTION_BSN_CHECKSUM) {
-        return of_action_bsn_checksum_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_ACTION_PUSH_PBB) {
-        return of_action_push_pbb_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_ACTION_SET_MPLS_TTL) {
-        return of_action_set_mpls_ttl_OF_VERSION_1_4_dup(src);
     }
 
     return NULL;
@@ -50656,88 +50656,88 @@ of_action_id_OF_VERSION_1_4_dup(
     of_object_t *src)
 {
 
-    if (src->object_id == OF_ACTION_ID_BSN_SET_TUNNEL_DST) {
-        return of_action_id_bsn_set_tunnel_dst_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_ACTION_ID_BSN_CHECKSUM) {
-        return of_action_id_bsn_checksum_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_ACTION_ID_GROUP) {
-        return of_action_id_group_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_ACTION_ID_PUSH_VLAN) {
-        return of_action_id_push_vlan_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_ACTION_ID_POP_PBB) {
-        return of_action_id_pop_pbb_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_ACTION_ID_BSN_MIRROR) {
-        return of_action_id_bsn_mirror_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_ACTION_ID_PUSH_MPLS) {
-        return of_action_id_push_mpls_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_ACTION_ID_DEC_MPLS_TTL) {
-        return of_action_id_dec_mpls_ttl_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_ACTION_ID_SET_FIELD) {
-        return of_action_id_set_field_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_ACTION_ID_OUTPUT) {
-        return of_action_id_output_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_ACTION_ID_NICIRA_DEC_TTL) {
-        return of_action_id_nicira_dec_ttl_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_ACTION_ID_COPY_TTL_OUT) {
-        return of_action_id_copy_ttl_out_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_ACTION_ID_SET_QUEUE) {
-        return of_action_id_set_queue_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_ACTION_ID_COPY_TTL_IN) {
-        return of_action_id_copy_ttl_in_OF_VERSION_1_4_dup(src);
-    }
-
     if (src->object_id == OF_ACTION_ID_BSN_GENTABLE) {
         return of_action_id_bsn_gentable_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_ACTION_ID_POP_MPLS) {
-        return of_action_id_pop_mpls_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_ACTION_ID_PUSH_PBB) {
-        return of_action_id_push_pbb_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_ACTION_ID_POP_VLAN) {
-        return of_action_id_pop_vlan_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_ACTION_ID_SET_MPLS_TTL) {
         return of_action_id_set_mpls_ttl_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_ACTION_ID_DEC_NW_TTL) {
-        return of_action_id_dec_nw_ttl_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_ACTION_ID_SET_QUEUE) {
+        return of_action_id_set_queue_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_ACTION_ID_POP_VLAN) {
+        return of_action_id_pop_vlan_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_ACTION_ID_PUSH_MPLS) {
+        return of_action_id_push_mpls_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_ACTION_ID_BSN_SET_TUNNEL_DST) {
+        return of_action_id_bsn_set_tunnel_dst_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_ACTION_ID_BSN_MIRROR) {
+        return of_action_id_bsn_mirror_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_ACTION_ID_POP_MPLS) {
+        return of_action_id_pop_mpls_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_ACTION_ID_POP_PBB) {
+        return of_action_id_pop_pbb_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_ACTION_ID_SET_NW_TTL) {
         return of_action_id_set_nw_ttl_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_ACTION_ID_OUTPUT) {
+        return of_action_id_output_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_ACTION_ID_GROUP) {
+        return of_action_id_group_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_ACTION_ID_COPY_TTL_IN) {
+        return of_action_id_copy_ttl_in_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_ACTION_ID_NICIRA_DEC_TTL) {
+        return of_action_id_nicira_dec_ttl_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_ACTION_ID_DEC_MPLS_TTL) {
+        return of_action_id_dec_mpls_ttl_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_ACTION_ID_PUSH_PBB) {
+        return of_action_id_push_pbb_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_ACTION_ID_BSN_CHECKSUM) {
+        return of_action_id_bsn_checksum_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_ACTION_ID_SET_FIELD) {
+        return of_action_id_set_field_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_ACTION_ID_DEC_NW_TTL) {
+        return of_action_id_dec_nw_ttl_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_ACTION_ID_PUSH_VLAN) {
+        return of_action_id_push_vlan_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_ACTION_ID_COPY_TTL_OUT) {
+        return of_action_id_copy_ttl_out_OF_VERSION_1_4_dup(src);
     }
 
     return NULL;
@@ -51541,40 +51541,36 @@ of_async_config_prop_OF_VERSION_1_4_dup(
     of_object_t *src)
 {
 
-    if (src->object_id == OF_ASYNC_CONFIG_PROP_ROLE_STATUS_SLAVE) {
-        return of_async_config_prop_role_status_slave_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_ASYNC_CONFIG_PROP_PORT_STATUS_MASTER) {
+        return of_async_config_prop_port_status_master_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_ASYNC_CONFIG_PROP_PACKET_IN_SLAVE) {
-        return of_async_config_prop_packet_in_slave_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_ASYNC_CONFIG_PROP_REQUESTFORWARD_SLAVE) {
-        return of_async_config_prop_requestforward_slave_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_ASYNC_CONFIG_PROP_PACKET_IN_MASTER) {
-        return of_async_config_prop_packet_in_master_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_ASYNC_CONFIG_PROP_FLOW_REMOVED_SLAVE) {
+        return of_async_config_prop_flow_removed_slave_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_ASYNC_CONFIG_PROP_FLOW_REMOVED_MASTER) {
         return of_async_config_prop_flow_removed_master_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_ASYNC_CONFIG_PROP_EXPERIMENTER_SLAVE) {
-        return of_async_config_prop_experimenter_slave_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_ASYNC_CONFIG_PROP_EXPERIMENTER_MASTER) {
-        return of_async_config_prop_experimenter_master_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_ASYNC_CONFIG_PROP_REQUESTFORWARD_SLAVE) {
+        return of_async_config_prop_requestforward_slave_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_ASYNC_CONFIG_PROP_TABLE_STATUS_SLAVE) {
         return of_async_config_prop_table_status_slave_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_ASYNC_CONFIG_PROP_PORT_STATUS_MASTER) {
-        return of_async_config_prop_port_status_master_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_ASYNC_CONFIG_PROP_EXPERIMENTER_MASTER) {
+        return of_async_config_prop_experimenter_master_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_ASYNC_CONFIG_PROP_TABLE_STATUS_MASTER) {
+        return of_async_config_prop_table_status_master_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_ASYNC_CONFIG_PROP_ROLE_STATUS_SLAVE) {
+        return of_async_config_prop_role_status_slave_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_ASYNC_CONFIG_PROP_ROLE_STATUS_MASTER) {
@@ -51585,12 +51581,16 @@ of_async_config_prop_OF_VERSION_1_4_dup(
         return of_async_config_prop_port_status_slave_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_ASYNC_CONFIG_PROP_TABLE_STATUS_MASTER) {
-        return of_async_config_prop_table_status_master_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_ASYNC_CONFIG_PROP_PACKET_IN_MASTER) {
+        return of_async_config_prop_packet_in_master_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_ASYNC_CONFIG_PROP_FLOW_REMOVED_SLAVE) {
-        return of_async_config_prop_flow_removed_slave_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_ASYNC_CONFIG_PROP_EXPERIMENTER_SLAVE) {
+        return of_async_config_prop_experimenter_slave_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_ASYNC_CONFIG_PROP_PACKET_IN_SLAVE) {
+        return of_async_config_prop_packet_in_slave_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_ASYNC_CONFIG_PROP_REQUESTFORWARD_MASTER) {
@@ -52485,828 +52485,828 @@ of_bsn_tlv_OF_VERSION_1_4_dup(
     of_object_t *src)
 {
 
-    if (src->object_id == OF_BSN_TLV_IFP_CLASS_ID) {
-        return of_bsn_tlv_ifp_class_id_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_ICMPV6_TYPE) {
-        return of_bsn_tlv_icmpv6_type_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_CONVERGENCE_STATUS) {
-        return of_bsn_tlv_convergence_status_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_DROP) {
-        return of_bsn_tlv_drop_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_ARP_TPA) {
-        return of_bsn_tlv_arp_tpa_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_MISS_PACKETS) {
-        return of_bsn_tlv_miss_packets_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_CIRCUIT_ID) {
-        return of_bsn_tlv_circuit_id_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_MPLS_SEQUENCED) {
-        return of_bsn_tlv_mpls_sequenced_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_PORT_USAGE) {
-        return of_bsn_tlv_port_usage_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_IDENTIFIER) {
-        return of_bsn_tlv_identifier_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_IP_TUNNEL_TYPE) {
-        return of_bsn_tlv_ip_tunnel_type_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_ACTOR_SYSTEM_MAC) {
-        return of_bsn_tlv_actor_system_mac_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_REQUEST_PACKETS) {
-        return of_bsn_tlv_request_packets_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_ANCHOR) {
-        return of_bsn_tlv_anchor_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_PARTNER_PORT_NUM) {
-        return of_bsn_tlv_partner_port_num_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_UINT64_LIST) {
-        return of_bsn_tlv_uint64_list_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_STRIP_VLAN_ON_EGRESS) {
-        return of_bsn_tlv_strip_vlan_on_egress_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_L3_INTERFACE_CLASS_ID) {
-        return of_bsn_tlv_l3_interface_class_id_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_BROADCAST_RATE) {
-        return of_bsn_tlv_broadcast_rate_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_ROUTING_PARAM) {
-        return of_bsn_tlv_routing_param_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_NEXT_HOP_IPV4) {
-        return of_bsn_tlv_next_hop_ipv4_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_BFD_STATE) {
-        return of_bsn_tlv_bfd_state_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_UDF_LENGTH) {
-        return of_bsn_tlv_udf_length_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_LR_ALL_ENABLED) {
-        return of_bsn_tlv_lr_all_enabled_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_LOOPBACK_PORT) {
-        return of_bsn_tlv_loopback_port_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_HASH_GTP_HEADER_MATCH) {
-        return of_bsn_tlv_hash_gtp_header_match_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_NO_NS_RESPONSE) {
-        return of_bsn_tlv_no_ns_response_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_EXTERNAL_NETMASK) {
-        return of_bsn_tlv_external_netmask_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_RATE_UNIT) {
-        return of_bsn_tlv_rate_unit_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_FLOW_CLASSIFY) {
-        return of_bsn_tlv_flow_classify_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_ECN) {
-        return of_bsn_tlv_ecn_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_VLAN_VID) {
-        return of_bsn_tlv_vlan_vid_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_L2_CACHE_HIT) {
-        return of_bsn_tlv_l2_cache_hit_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_HASH_ALGORITHM) {
-        return of_bsn_tlv_hash_algorithm_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_IP_FRAGMENTATION) {
-        return of_bsn_tlv_ip_fragmentation_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_INTERNAL_MAC) {
-        return of_bsn_tlv_internal_mac_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_HEADER_SIZE) {
-        return of_bsn_tlv_header_size_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_VFI) {
-        return of_bsn_tlv_vfi_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_PARTNER_SYSTEM_PRIORITY) {
-        return of_bsn_tlv_partner_system_priority_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_IPV4) {
-        return of_bsn_tlv_ipv4_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_LAG_OPTIONS) {
-        return of_bsn_tlv_lag_options_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_UINT32) {
-        return of_bsn_tlv_uint32_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_FORWARD_ERROR_CORRECTION) {
-        return of_bsn_tlv_forward_error_correction_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_STATUS) {
-        return of_bsn_tlv_status_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_ETH_SRC) {
-        return of_bsn_tlv_eth_src_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_IPV6) {
-        return of_bsn_tlv_ipv6_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_ACTOR_PORT_NUM) {
-        return of_bsn_tlv_actor_port_num_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_EGRESS_ONLY) {
-        return of_bsn_tlv_egress_only_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_LOSSLESS) {
-        return of_bsn_tlv_lossless_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_KNOWN_MULTICAST_RATE) {
-        return of_bsn_tlv_known_multicast_rate_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_ANALYTICS) {
-        return of_bsn_tlv_analytics_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_UDF_CAPABILITY) {
-        return of_bsn_tlv_udf_capability_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_IPV4_NETMASK) {
-        return of_bsn_tlv_ipv4_netmask_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_L3_DST_CLASS_ID) {
-        return of_bsn_tlv_l3_dst_class_id_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_REPLY_PACKETS) {
-        return of_bsn_tlv_reply_packets_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_HASH_GTP_PORT_MATCH) {
-        return of_bsn_tlv_hash_gtp_port_match_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_FABRIC_PORT_ROLE) {
-        return of_bsn_tlv_fabric_port_role_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_CPU_LAG) {
-        return of_bsn_tlv_cpu_lag_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_DNS_ANALYTICS) {
-        return of_bsn_tlv_dns_analytics_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_GENERATION_ID) {
-        return of_bsn_tlv_generation_id_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_LOOPBACK_MODE) {
-        return of_bsn_tlv_loopback_mode_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_QUEUE_WEIGHT) {
-        return of_bsn_tlv_queue_weight_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_TUNNEL_CAPABILITY) {
-        return of_bsn_tlv_tunnel_capability_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_EGRESS_PORT_GROUP_ID) {
-        return of_bsn_tlv_egress_port_group_id_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_TCP_SRC) {
-        return of_bsn_tlv_tcp_src_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_FAIL_COUNT) {
-        return of_bsn_tlv_fail_count_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_MPLS_LABEL) {
-        return of_bsn_tlv_mpls_label_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_RX_BYTES) {
-        return of_bsn_tlv_rx_bytes_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_BFD_ENDPOINT) {
-        return of_bsn_tlv_bfd_endpoint_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_RX_PACKETS) {
-        return of_bsn_tlv_rx_packets_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_TCP_FLAGS) {
-        return of_bsn_tlv_tcp_flags_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_OUTER_SRC_MAC) {
-        return of_bsn_tlv_outer_src_mac_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_HASH_SEED) {
-        return of_bsn_tlv_hash_seed_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_ENCAP) {
-        return of_bsn_tlv_encap_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_EXTERNAL_IP) {
-        return of_bsn_tlv_external_ip_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_EXTERNAL_GATEWAY_MAC) {
-        return of_bsn_tlv_external_gateway_mac_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_ACTOR_SYSTEM_PRIORITY) {
-        return of_bsn_tlv_actor_system_priority_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_IGMP_SNOOPING) {
-        return of_bsn_tlv_igmp_snooping_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_PORT_SPEED_GBPS) {
-        return of_bsn_tlv_port_speed_gbps_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_INGRESS_PORT_GROUP_ID) {
-        return of_bsn_tlv_ingress_port_group_id_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_EXTERNAL_MAC) {
-        return of_bsn_tlv_external_mac_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_NEGATE) {
-        return of_bsn_tlv_negate_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_ICMPV6_CHKSUM) {
-        return of_bsn_tlv_icmpv6_chksum_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_INNER_VLAN_VID) {
-        return of_bsn_tlv_inner_vlan_vid_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_DROP_CONTROL) {
-        return of_bsn_tlv_drop_control_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_IP_PROTO) {
-        return of_bsn_tlv_ip_proto_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_PIM_DR) {
-        return of_bsn_tlv_pim_dr_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_ACTOR_STATE) {
-        return of_bsn_tlv_actor_state_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_OPTICS_ALWAYS_ENABLED) {
-        return of_bsn_tlv_optics_always_enabled_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_TX_PACKETS) {
-        return of_bsn_tlv_tx_packets_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_USER_CONFIGURED) {
-        return of_bsn_tlv_user_configured_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_SCTP_DST) {
-        return of_bsn_tlv_sctp_dst_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_NO_ARP_RESPONSE) {
-        return of_bsn_tlv_no_arp_response_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_UDF_ID) {
-        return of_bsn_tlv_udf_id_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_FLOW_IDENTIFIER) {
-        return of_bsn_tlv_flow_identifier_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_REDUNDANT_MGMT) {
-        return of_bsn_tlv_redundant_mgmt_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_PARTNER_SYSTEM_MAC) {
-        return of_bsn_tlv_partner_system_mac_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_DISABLE_SRC_MAC_CHECK) {
-        return of_bsn_tlv_disable_src_mac_check_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_ENHANCED_HASH_CAPABILITY) {
-        return of_bsn_tlv_enhanced_hash_capability_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_RECORD_PACKETS) {
-        return of_bsn_tlv_record_packets_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_INTERNAL_GATEWAY_MAC) {
-        return of_bsn_tlv_internal_gateway_mac_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_ARP_SPA) {
-        return of_bsn_tlv_arp_spa_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_ETH_TYPE) {
-        return of_bsn_tlv_eth_type_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_SET_LOOPBACK_MODE) {
-        return of_bsn_tlv_set_loopback_mode_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_PORT) {
-        return of_bsn_tlv_port_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_TIMESTAMP) {
-        return of_bsn_tlv_timestamp_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_MAC_MASK) {
-        return of_bsn_tlv_mac_mask_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_PIM_HELLO_FLOOD) {
-        return of_bsn_tlv_pim_hello_flood_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_ACTOR_KEY) {
-        return of_bsn_tlv_actor_key_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_VPN_KEY) {
-        return of_bsn_tlv_vpn_key_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_STRIP_MPLS_L3_ON_INGRESS) {
-        return of_bsn_tlv_strip_mpls_l3_on_ingress_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_NEXTHOP_TYPE_VXLAN) {
-        return of_bsn_tlv_nexthop_type_vxlan_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_MCG_TYPE_VXLAN) {
-        return of_bsn_tlv_mcg_type_vxlan_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_DECAP) {
-        return of_bsn_tlv_decap_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_MULTIPLIER) {
-        return of_bsn_tlv_multiplier_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_DATA) {
-        return of_bsn_tlv_data_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_VLAN_VID_MASK) {
-        return of_bsn_tlv_vlan_vid_mask_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_QOS_PRIORITY) {
-        return of_bsn_tlv_qos_priority_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_ACTIVE) {
-        return of_bsn_tlv_active_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_VIRTUAL) {
-        return of_bsn_tlv_virtual_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_SCTP_SRC) {
-        return of_bsn_tlv_sctp_src_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_BROADCAST_QUERY_TIMEOUT) {
-        return of_bsn_tlv_broadcast_query_timeout_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_NAME) {
-        return of_bsn_tlv_name_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_TCP_DST) {
-        return of_bsn_tlv_tcp_dst_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_OFFSET) {
-        return of_bsn_tlv_offset_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_IDLE_TIME) {
-        return of_bsn_tlv_idle_time_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_IDLE_NOTIFICATION) {
-        return of_bsn_tlv_idle_notification_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_L2_MULTICAST_LOOKUP) {
-        return of_bsn_tlv_l2_multicast_lookup_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_HASH_PACKET_TYPE) {
-        return of_bsn_tlv_hash_packet_type_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_NEXT_HOP_MAC) {
-        return of_bsn_tlv_next_hop_mac_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_UNICAST_RATE) {
-        return of_bsn_tlv_unicast_rate_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_UDF_OFFSET) {
-        return of_bsn_tlv_udf_offset_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_FLOW_CLASSIFIER) {
-        return of_bsn_tlv_flow_classifier_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_ACTOR_PORT_PRIORITY) {
-        return of_bsn_tlv_actor_port_priority_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_APPLY_PACKETS) {
-        return of_bsn_tlv_apply_packets_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_IPV6_SRC) {
-        return of_bsn_tlv_ipv6_src_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_BSN_TLV_QUEUE_ID) {
+        return of_bsn_tlv_queue_id_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_BSN_TLV_USE_PACKET_STATE) {
         return of_bsn_tlv_use_packet_state_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_BSN_TLV_UDP_SRC) {
-        return of_bsn_tlv_udp_src_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_BSN_TLV_UNKNOWN_MULTICAST_RATE) {
+        return of_bsn_tlv_unknown_multicast_rate_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_BSN_TLV_STRIP_MPLS_L2_ON_INGRESS) {
-        return of_bsn_tlv_strip_mpls_l2_on_ingress_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_BSN_TLV_QOS_PRIORITY) {
+        return of_bsn_tlv_qos_priority_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_BSN_TLV_REST_SERVER) {
-        return of_bsn_tlv_rest_server_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_BSN_TLV_INTERNAL_GATEWAY_MAC) {
+        return of_bsn_tlv_internal_gateway_mac_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_BSN_TLV_ICMP_TYPE) {
-        return of_bsn_tlv_icmp_type_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_BSN_TLV_UINT64_LIST) {
+        return of_bsn_tlv_uint64_list_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_BSN_TLV_IPV6_PREFIX) {
-        return of_bsn_tlv_ipv6_prefix_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_BSN_TLV_ENHANCED_HASH_CAPABILITY) {
+        return of_bsn_tlv_enhanced_hash_capability_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_BSN_TLV_QUEUE_ID) {
-        return of_bsn_tlv_queue_id_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_BSN_TLV_BFD_STATE) {
+        return of_bsn_tlv_bfd_state_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_BSN_TLV_PDUA_RX_INSTANCE) {
-        return of_bsn_tlv_pdua_rx_instance_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_BSN_TLV_VLAN_VID) {
+        return of_bsn_tlv_vlan_vid_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_BSN_TLV_HASH_TYPE) {
-        return of_bsn_tlv_hash_type_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_BSN_TLV_ARP_TPA) {
+        return of_bsn_tlv_arp_tpa_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_BSN_TLV_MULTICAST_INTERFACE_ID) {
-        return of_bsn_tlv_multicast_interface_id_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_BSN_TLV_LOSSLESS) {
+        return of_bsn_tlv_lossless_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_BSN_TLV_EXTERNAL_GATEWAY_IP) {
-        return of_bsn_tlv_external_gateway_ip_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_BSN_TLV_NEXTHOP_TYPE_VXLAN) {
+        return of_bsn_tlv_nexthop_type_vxlan_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_BSN_TLV_ICMP_ID) {
-        return of_bsn_tlv_icmp_id_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_PARTNER_PORT_PRIORITY) {
-        return of_bsn_tlv_partner_port_priority_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_TTL) {
-        return of_bsn_tlv_ttl_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_FLOOD) {
-        return of_bsn_tlv_flood_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_ETH_DST) {
-        return of_bsn_tlv_eth_dst_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_DATA_MASK) {
-        return of_bsn_tlv_data_mask_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_SAMPLING_RATE) {
-        return of_bsn_tlv_sampling_rate_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_MAC) {
-        return of_bsn_tlv_mac_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_EGRESS_SAMPLING_RATE) {
-        return of_bsn_tlv_egress_sampling_rate_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_SUB_AGENT_ID) {
-        return of_bsn_tlv_sub_agent_id_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_RATE_LIMIT) {
-        return of_bsn_tlv_rate_limit_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_MULTICAST_PACKET) {
-        return of_bsn_tlv_multicast_packet_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_TX_BYTES) {
-        return of_bsn_tlv_tx_bytes_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_AUTO_NEGOTIATION) {
-        return of_bsn_tlv_auto_negotiation_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_IPV4_DST) {
-        return of_bsn_tlv_ipv4_dst_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_ICMPV6_CODE) {
-        return of_bsn_tlv_icmpv6_code_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_PASSIVE) {
-        return of_bsn_tlv_passive_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_FORCE_LINK_UP) {
-        return of_bsn_tlv_force_link_up_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_URI_SCHEME) {
-        return of_bsn_tlv_uri_scheme_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_UDF_ANCHOR) {
-        return of_bsn_tlv_udf_anchor_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_PORT_VXLAN_MODE) {
-        return of_bsn_tlv_port_vxlan_mode_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_HASH_PACKET_FIELD) {
-        return of_bsn_tlv_hash_packet_field_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_BSN_TLV_ACTOR_KEY) {
+        return of_bsn_tlv_actor_key_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_BSN_TLV_MPLS_CONTROL_WORD) {
         return of_bsn_tlv_mpls_control_word_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_BSN_TLV_L3_SRC_CLASS_ID) {
-        return of_bsn_tlv_l3_src_class_id_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_L3) {
-        return of_bsn_tlv_l3_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_DSCP) {
-        return of_bsn_tlv_dscp_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_UNKNOWN_MULTICAST_RATE) {
-        return of_bsn_tlv_unknown_multicast_rate_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_IPV4_SRC) {
-        return of_bsn_tlv_ipv4_src_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_UNICAST_QUERY_TIMEOUT) {
-        return of_bsn_tlv_unicast_query_timeout_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_PARTNER_KEY) {
-        return of_bsn_tlv_partner_key_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_UPGRADE) {
-        return of_bsn_tlv_upgrade_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_DISABLE_XMIT) {
-        return of_bsn_tlv_disable_xmit_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_VFP_CLASS_ID) {
-        return of_bsn_tlv_vfp_class_id_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_UDP_DST) {
-        return of_bsn_tlv_udp_dst_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_LINK_UP) {
-        return of_bsn_tlv_link_up_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_VRF) {
-        return of_bsn_tlv_vrf_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_INTERVAL) {
-        return of_bsn_tlv_interval_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_VNI) {
-        return of_bsn_tlv_vni_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_PORT_MODE) {
-        return of_bsn_tlv_port_mode_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_IDLE_TIMEOUT) {
-        return of_bsn_tlv_idle_timeout_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_CRC_ENABLED) {
-        return of_bsn_tlv_crc_enabled_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_NDP_OFFLOAD) {
-        return of_bsn_tlv_ndp_offload_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_BSN_TLV_MPLS_LABEL) {
+        return of_bsn_tlv_mpls_label_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_BSN_TLV_PARENT_PORT) {
         return of_bsn_tlv_parent_port_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_BSN_TLV_VXLAN_EGRESS_LAG) {
-        return of_bsn_tlv_vxlan_egress_lag_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_BSN_TLV_FORWARD_ERROR_CORRECTION) {
+        return of_bsn_tlv_forward_error_correction_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_BSN_TLV_PARTNER_STATE) {
-        return of_bsn_tlv_partner_state_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_PRIORITY) {
-        return of_bsn_tlv_priority_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_VLAN_PCP) {
-        return of_bsn_tlv_vlan_pcp_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_SRC_MAC_CML) {
-        return of_bsn_tlv_src_mac_cml_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_PRESERVE_VLAN) {
-        return of_bsn_tlv_preserve_vlan_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_IPV6_DST) {
-        return of_bsn_tlv_ipv6_dst_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_ICMP_CODE) {
-        return of_bsn_tlv_icmp_code_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_NDP_STATIC) {
-        return of_bsn_tlv_ndp_static_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_BSN_TLV_HASH_GTP_HEADER_MATCH) {
+        return of_bsn_tlv_hash_gtp_header_match_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_BSN_TLV_REFERENCE) {
         return of_bsn_tlv_reference_OF_VERSION_1_4_dup(src);
     }
 
+    if (src->object_id == OF_BSN_TLV_STRIP_VLAN_ON_EGRESS) {
+        return of_bsn_tlv_strip_vlan_on_egress_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_TCP_DST) {
+        return of_bsn_tlv_tcp_dst_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_PARTNER_SYSTEM_MAC) {
+        return of_bsn_tlv_partner_system_mac_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_EXTERNAL_NETMASK) {
+        return of_bsn_tlv_external_netmask_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_INNER_VLAN_VID) {
+        return of_bsn_tlv_inner_vlan_vid_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_L3) {
+        return of_bsn_tlv_l3_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_EGRESS_ONLY) {
+        return of_bsn_tlv_egress_only_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_LINK_UP) {
+        return of_bsn_tlv_link_up_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_L3_DST_CLASS_ID) {
+        return of_bsn_tlv_l3_dst_class_id_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_RECORD_PACKETS) {
+        return of_bsn_tlv_record_packets_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_CRC_ENABLED) {
+        return of_bsn_tlv_crc_enabled_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_RATE_LIMIT) {
+        return of_bsn_tlv_rate_limit_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_VPN_KEY) {
+        return of_bsn_tlv_vpn_key_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_LAG_OPTIONS) {
+        return of_bsn_tlv_lag_options_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_PRIORITY) {
+        return of_bsn_tlv_priority_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_IPV4_NETMASK) {
+        return of_bsn_tlv_ipv4_netmask_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_PORT) {
+        return of_bsn_tlv_port_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_HASH_GTP_PORT_MATCH) {
+        return of_bsn_tlv_hash_gtp_port_match_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_ARP_SPA) {
+        return of_bsn_tlv_arp_spa_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_SET_LOOPBACK_MODE) {
+        return of_bsn_tlv_set_loopback_mode_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_ECN) {
+        return of_bsn_tlv_ecn_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_HASH_SEED) {
+        return of_bsn_tlv_hash_seed_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_GENERATION_ID) {
+        return of_bsn_tlv_generation_id_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_ACTIVE) {
+        return of_bsn_tlv_active_OF_VERSION_1_4_dup(src);
+    }
+
     if (src->object_id == OF_BSN_TLV_BUCKET) {
         return of_bsn_tlv_bucket_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_EXTERNAL_GATEWAY_MAC) {
+        return of_bsn_tlv_external_gateway_mac_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_STRIP_MPLS_L2_ON_INGRESS) {
+        return of_bsn_tlv_strip_mpls_l2_on_ingress_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_FLOW_CLASSIFY) {
+        return of_bsn_tlv_flow_classify_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_IPV4_SRC) {
+        return of_bsn_tlv_ipv4_src_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_RX_BYTES) {
+        return of_bsn_tlv_rx_bytes_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_LR_ALL_ENABLED) {
+        return of_bsn_tlv_lr_all_enabled_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_ENCAP) {
+        return of_bsn_tlv_encap_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_PARTNER_SYSTEM_PRIORITY) {
+        return of_bsn_tlv_partner_system_priority_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_ANALYTICS) {
+        return of_bsn_tlv_analytics_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_ACTOR_PORT_PRIORITY) {
+        return of_bsn_tlv_actor_port_priority_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_IPV4) {
+        return of_bsn_tlv_ipv4_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_MULTICAST_INTERFACE_ID) {
+        return of_bsn_tlv_multicast_interface_id_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_FABRIC_PORT_ROLE) {
+        return of_bsn_tlv_fabric_port_role_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_DNS_ANALYTICS) {
+        return of_bsn_tlv_dns_analytics_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_PARTNER_STATE) {
+        return of_bsn_tlv_partner_state_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_VLAN_VID_MASK) {
+        return of_bsn_tlv_vlan_vid_mask_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_IP_PROTO) {
+        return of_bsn_tlv_ip_proto_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_ROUTING_PARAM) {
+        return of_bsn_tlv_routing_param_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_LOOPBACK_MODE) {
+        return of_bsn_tlv_loopback_mode_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_ICMP_ID) {
+        return of_bsn_tlv_icmp_id_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_PASSIVE) {
+        return of_bsn_tlv_passive_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_L3_SRC_CLASS_ID) {
+        return of_bsn_tlv_l3_src_class_id_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_IPV4_DST) {
+        return of_bsn_tlv_ipv4_dst_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_UDP_DST) {
+        return of_bsn_tlv_udp_dst_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_EGRESS_PORT_GROUP_ID) {
+        return of_bsn_tlv_egress_port_group_id_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_IDLE_TIME) {
+        return of_bsn_tlv_idle_time_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_IPV6_SRC) {
+        return of_bsn_tlv_ipv6_src_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_DATA) {
+        return of_bsn_tlv_data_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_NAME) {
+        return of_bsn_tlv_name_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_DSCP) {
+        return of_bsn_tlv_dscp_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_UDF_ANCHOR) {
+        return of_bsn_tlv_udf_anchor_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_NO_ARP_RESPONSE) {
+        return of_bsn_tlv_no_arp_response_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_ACTOR_SYSTEM_PRIORITY) {
+        return of_bsn_tlv_actor_system_priority_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_IP_FRAGMENTATION) {
+        return of_bsn_tlv_ip_fragmentation_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_PDUA_RX_INSTANCE) {
+        return of_bsn_tlv_pdua_rx_instance_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_MPLS_SEQUENCED) {
+        return of_bsn_tlv_mpls_sequenced_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_FLOOD) {
+        return of_bsn_tlv_flood_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_EGRESS_SAMPLING_RATE) {
+        return of_bsn_tlv_egress_sampling_rate_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_ICMPV6_CHKSUM) {
+        return of_bsn_tlv_icmpv6_chksum_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_FLOW_CLASSIFIER) {
+        return of_bsn_tlv_flow_classifier_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_NDP_OFFLOAD) {
+        return of_bsn_tlv_ndp_offload_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_SCTP_SRC) {
+        return of_bsn_tlv_sctp_src_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_UDF_LENGTH) {
+        return of_bsn_tlv_udf_length_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_UNICAST_RATE) {
+        return of_bsn_tlv_unicast_rate_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_CONVERGENCE_STATUS) {
+        return of_bsn_tlv_convergence_status_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_UINT32) {
+        return of_bsn_tlv_uint32_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_PARTNER_PORT_PRIORITY) {
+        return of_bsn_tlv_partner_port_priority_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_VFP_CLASS_ID) {
+        return of_bsn_tlv_vfp_class_id_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_SAMPLING_RATE) {
+        return of_bsn_tlv_sampling_rate_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_UDP_SRC) {
+        return of_bsn_tlv_udp_src_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_VFI) {
+        return of_bsn_tlv_vfi_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_APPLY_PACKETS) {
+        return of_bsn_tlv_apply_packets_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_L2_CACHE_HIT) {
+        return of_bsn_tlv_l2_cache_hit_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_BSN_TLV_PUSH_VLAN_ON_INGRESS) {
         return of_bsn_tlv_push_vlan_on_ingress_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_BSN_TLV_PUSH_VLAN_ON_EGRESS) {
-        return of_bsn_tlv_push_vlan_on_egress_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_BSN_TLV_IPV6_DST) {
+        return of_bsn_tlv_ipv6_dst_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_PIM_DR) {
+        return of_bsn_tlv_pim_dr_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_L3_INTERFACE_CLASS_ID) {
+        return of_bsn_tlv_l3_interface_class_id_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_L2_MULTICAST_LOOKUP) {
+        return of_bsn_tlv_l2_multicast_lookup_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_OPTICS_ALWAYS_ENABLED) {
+        return of_bsn_tlv_optics_always_enabled_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_CIRCUIT_ID) {
+        return of_bsn_tlv_circuit_id_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_NEXT_HOP_IPV4) {
+        return of_bsn_tlv_next_hop_ipv4_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_BFD_ENDPOINT) {
+        return of_bsn_tlv_bfd_endpoint_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_MISS_PACKETS) {
+        return of_bsn_tlv_miss_packets_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_VRF) {
+        return of_bsn_tlv_vrf_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_MULTICAST_PACKET) {
+        return of_bsn_tlv_multicast_packet_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_BSN_TLV_APPLY_BYTES) {
         return of_bsn_tlv_apply_bytes_OF_VERSION_1_4_dup(src);
     }
 
+    if (src->object_id == OF_BSN_TLV_ICMPV6_CODE) {
+        return of_bsn_tlv_icmpv6_code_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_DROP_CONTROL) {
+        return of_bsn_tlv_drop_control_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_IFP_CLASS_ID) {
+        return of_bsn_tlv_ifp_class_id_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_IDENTIFIER) {
+        return of_bsn_tlv_identifier_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_ETH_DST) {
+        return of_bsn_tlv_eth_dst_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_QUEUE_WEIGHT) {
+        return of_bsn_tlv_queue_weight_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_NEXT_HOP_MAC) {
+        return of_bsn_tlv_next_hop_mac_OF_VERSION_1_4_dup(src);
+    }
+
     if (src->object_id == OF_BSN_TLV_UNTAGGED) {
         return of_bsn_tlv_untagged_OF_VERSION_1_4_dup(src);
     }
 
+    if (src->object_id == OF_BSN_TLV_HEADER_SIZE) {
+        return of_bsn_tlv_header_size_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_PORT_SPEED_GBPS) {
+        return of_bsn_tlv_port_speed_gbps_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_STRIP_MPLS_L3_ON_INGRESS) {
+        return of_bsn_tlv_strip_mpls_l3_on_ingress_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_IPV6_PREFIX) {
+        return of_bsn_tlv_ipv6_prefix_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_INGRESS_PORT_GROUP_ID) {
+        return of_bsn_tlv_ingress_port_group_id_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_VXLAN_EGRESS_LAG) {
+        return of_bsn_tlv_vxlan_egress_lag_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_ICMPV6_TYPE) {
+        return of_bsn_tlv_icmpv6_type_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_PORT_USAGE) {
+        return of_bsn_tlv_port_usage_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_OFFSET) {
+        return of_bsn_tlv_offset_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_UDF_OFFSET) {
+        return of_bsn_tlv_udf_offset_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_DECAP) {
+        return of_bsn_tlv_decap_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_VNI) {
+        return of_bsn_tlv_vni_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_SUB_AGENT_ID) {
+        return of_bsn_tlv_sub_agent_id_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_CPU_LAG) {
+        return of_bsn_tlv_cpu_lag_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_DISABLE_SRC_MAC_CHECK) {
+        return of_bsn_tlv_disable_src_mac_check_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_VLAN_PCP) {
+        return of_bsn_tlv_vlan_pcp_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_EXTERNAL_MAC) {
+        return of_bsn_tlv_external_mac_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_PIM_HELLO_FLOOD) {
+        return of_bsn_tlv_pim_hello_flood_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_TUNNEL_CAPABILITY) {
+        return of_bsn_tlv_tunnel_capability_OF_VERSION_1_4_dup(src);
+    }
+
     if (src->object_id == OF_BSN_TLV_VLAN_MAC_LIST) {
         return of_bsn_tlv_vlan_mac_list_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_TX_PACKETS) {
+        return of_bsn_tlv_tx_packets_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_ICMP_TYPE) {
+        return of_bsn_tlv_icmp_type_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_MAC) {
+        return of_bsn_tlv_mac_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_RATE_UNIT) {
+        return of_bsn_tlv_rate_unit_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_SCTP_DST) {
+        return of_bsn_tlv_sctp_dst_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_SRC_MAC_CML) {
+        return of_bsn_tlv_src_mac_cml_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_URI_SCHEME) {
+        return of_bsn_tlv_uri_scheme_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_PARTNER_PORT_NUM) {
+        return of_bsn_tlv_partner_port_num_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_RX_PACKETS) {
+        return of_bsn_tlv_rx_packets_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_ETH_SRC) {
+        return of_bsn_tlv_eth_src_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_HASH_ALGORITHM) {
+        return of_bsn_tlv_hash_algorithm_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_REPLY_PACKETS) {
+        return of_bsn_tlv_reply_packets_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_OUTER_SRC_MAC) {
+        return of_bsn_tlv_outer_src_mac_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_EXTERNAL_GATEWAY_IP) {
+        return of_bsn_tlv_external_gateway_ip_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_VIRTUAL) {
+        return of_bsn_tlv_virtual_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_TCP_SRC) {
+        return of_bsn_tlv_tcp_src_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_FLOW_IDENTIFIER) {
+        return of_bsn_tlv_flow_identifier_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_PARTNER_KEY) {
+        return of_bsn_tlv_partner_key_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_PORT_VXLAN_MODE) {
+        return of_bsn_tlv_port_vxlan_mode_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_FAIL_COUNT) {
+        return of_bsn_tlv_fail_count_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_ACTOR_STATE) {
+        return of_bsn_tlv_actor_state_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_DISABLE_XMIT) {
+        return of_bsn_tlv_disable_xmit_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_IP_TUNNEL_TYPE) {
+        return of_bsn_tlv_ip_tunnel_type_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_USER_CONFIGURED) {
+        return of_bsn_tlv_user_configured_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_IDLE_NOTIFICATION) {
+        return of_bsn_tlv_idle_notification_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_KNOWN_MULTICAST_RATE) {
+        return of_bsn_tlv_known_multicast_rate_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_MULTIPLIER) {
+        return of_bsn_tlv_multiplier_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_TTL) {
+        return of_bsn_tlv_ttl_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_TCP_FLAGS) {
+        return of_bsn_tlv_tcp_flags_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_ICMP_CODE) {
+        return of_bsn_tlv_icmp_code_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_INTERNAL_MAC) {
+        return of_bsn_tlv_internal_mac_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_NDP_STATIC) {
+        return of_bsn_tlv_ndp_static_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_HASH_PACKET_FIELD) {
+        return of_bsn_tlv_hash_packet_field_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_ACTOR_PORT_NUM) {
+        return of_bsn_tlv_actor_port_num_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_REQUEST_PACKETS) {
+        return of_bsn_tlv_request_packets_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_ACTOR_SYSTEM_MAC) {
+        return of_bsn_tlv_actor_system_mac_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_HASH_TYPE) {
+        return of_bsn_tlv_hash_type_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_IDLE_TIMEOUT) {
+        return of_bsn_tlv_idle_timeout_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_REST_SERVER) {
+        return of_bsn_tlv_rest_server_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_MAC_MASK) {
+        return of_bsn_tlv_mac_mask_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_HASH_PACKET_TYPE) {
+        return of_bsn_tlv_hash_packet_type_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_DATA_MASK) {
+        return of_bsn_tlv_data_mask_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_AUTO_NEGOTIATION) {
+        return of_bsn_tlv_auto_negotiation_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_ANCHOR) {
+        return of_bsn_tlv_anchor_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_NEGATE) {
+        return of_bsn_tlv_negate_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_PORT_MODE) {
+        return of_bsn_tlv_port_mode_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_BROADCAST_RATE) {
+        return of_bsn_tlv_broadcast_rate_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_BROADCAST_QUERY_TIMEOUT) {
+        return of_bsn_tlv_broadcast_query_timeout_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_EXTERNAL_IP) {
+        return of_bsn_tlv_external_ip_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_STATUS) {
+        return of_bsn_tlv_status_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_INTERVAL) {
+        return of_bsn_tlv_interval_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_ETH_TYPE) {
+        return of_bsn_tlv_eth_type_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_PRESERVE_VLAN) {
+        return of_bsn_tlv_preserve_vlan_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_REDUNDANT_MGMT) {
+        return of_bsn_tlv_redundant_mgmt_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_UNICAST_QUERY_TIMEOUT) {
+        return of_bsn_tlv_unicast_query_timeout_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_FORCE_LINK_UP) {
+        return of_bsn_tlv_force_link_up_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_IGMP_SNOOPING) {
+        return of_bsn_tlv_igmp_snooping_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_IPV6) {
+        return of_bsn_tlv_ipv6_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_TX_BYTES) {
+        return of_bsn_tlv_tx_bytes_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_MCG_TYPE_VXLAN) {
+        return of_bsn_tlv_mcg_type_vxlan_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_NO_NS_RESPONSE) {
+        return of_bsn_tlv_no_ns_response_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_TIMESTAMP) {
+        return of_bsn_tlv_timestamp_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_UDF_ID) {
+        return of_bsn_tlv_udf_id_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_DROP) {
+        return of_bsn_tlv_drop_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_PUSH_VLAN_ON_EGRESS) {
+        return of_bsn_tlv_push_vlan_on_egress_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_UPGRADE) {
+        return of_bsn_tlv_upgrade_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_LOOPBACK_PORT) {
+        return of_bsn_tlv_loopback_port_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_UDF_CAPABILITY) {
+        return of_bsn_tlv_udf_capability_OF_VERSION_1_4_dup(src);
     }
 
     return NULL;
@@ -58426,12 +58426,12 @@ of_bsn_vport_OF_VERSION_1_4_dup(
     of_object_t *src)
 {
 
-    if (src->object_id == OF_BSN_VPORT_Q_IN_Q) {
-        return of_bsn_vport_q_in_q_OF_VERSION_1_4_dup(src);
-    }
-
     if (src->object_id == OF_BSN_VPORT_L2GRE) {
         return of_bsn_vport_l2gre_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_VPORT_Q_IN_Q) {
+        return of_bsn_vport_q_in_q_OF_VERSION_1_4_dup(src);
     }
 
     return NULL;
@@ -58905,92 +58905,92 @@ of_instruction_OF_VERSION_1_4_dup(
     of_object_t *src)
 {
 
-    if (src->object_id == OF_INSTRUCTION_APPLY_ACTIONS) {
-        return of_instruction_apply_actions_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_INSTRUCTION_BSN_PACKET_OF_DEATH) {
-        return of_instruction_bsn_packet_of_death_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_INSTRUCTION_BSN_PERMIT) {
-        return of_instruction_bsn_permit_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_INSTRUCTION_BSN_PRIORITIZE_PDUS) {
-        return of_instruction_bsn_prioritize_pdus_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_INSTRUCTION_BSN_DISABLE_L3) {
-        return of_instruction_bsn_disable_l3_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_INSTRUCTION_BSN_DIRECTED_BROADCAST) {
-        return of_instruction_bsn_directed_broadcast_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_INSTRUCTION_BSN_DENY) {
-        return of_instruction_bsn_deny_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_INSTRUCTION_CLEAR_ACTIONS) {
-        return of_instruction_clear_actions_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_INSTRUCTION_BSN_ARP_OFFLOAD) {
-        return of_instruction_bsn_arp_offload_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_INSTRUCTION_GOTO_TABLE) {
-        return of_instruction_goto_table_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_INSTRUCTION_BSN_SPAN_DESTINATION) {
-        return of_instruction_bsn_span_destination_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_INSTRUCTION_WRITE_METADATA) {
-        return of_instruction_write_metadata_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_INSTRUCTION_BSN_INTERNAL_PRIORITY) {
-        return of_instruction_bsn_internal_priority_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_INSTRUCTION_BSN_HASH_SELECT) {
-        return of_instruction_bsn_hash_select_OF_VERSION_1_4_dup(src);
-    }
-
     if (src->object_id == OF_INSTRUCTION_BSN_DHCP_OFFLOAD) {
         return of_instruction_bsn_dhcp_offload_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_INSTRUCTION_BSN_AUTO_NEGOTIATION) {
-        return of_instruction_bsn_auto_negotiation_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_INSTRUCTION_BSN_REQUIRE_VLAN_XLATE) {
         return of_instruction_bsn_require_vlan_xlate_OF_VERSION_1_4_dup(src);
     }
 
+    if (src->object_id == OF_INSTRUCTION_BSN_PERMIT) {
+        return of_instruction_bsn_permit_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_INSTRUCTION_BSN_ARP_OFFLOAD) {
+        return of_instruction_bsn_arp_offload_OF_VERSION_1_4_dup(src);
+    }
+
     if (src->object_id == OF_INSTRUCTION_METER) {
         return of_instruction_meter_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_INSTRUCTION_WRITE_METADATA) {
+        return of_instruction_write_metadata_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_INSTRUCTION_BSN_HASH_SELECT) {
+        return of_instruction_bsn_hash_select_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_INSTRUCTION_BSN_INTERNAL_PRIORITY) {
+        return of_instruction_bsn_internal_priority_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_INSTRUCTION_BSN_AUTO_NEGOTIATION) {
+        return of_instruction_bsn_auto_negotiation_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_INSTRUCTION_BSN_PRIORITIZE_PDUS) {
+        return of_instruction_bsn_prioritize_pdus_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_INSTRUCTION_CLEAR_ACTIONS) {
+        return of_instruction_clear_actions_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_INSTRUCTION_BSN_SPAN_DESTINATION) {
+        return of_instruction_bsn_span_destination_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_INSTRUCTION_BSN_DISABLE_L3) {
+        return of_instruction_bsn_disable_l3_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_INSTRUCTION_BSN_DENY) {
+        return of_instruction_bsn_deny_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_INSTRUCTION_BSN_PACKET_OF_DEATH) {
+        return of_instruction_bsn_packet_of_death_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_INSTRUCTION_BSN_NDP_OFFLOAD) {
         return of_instruction_bsn_ndp_offload_OF_VERSION_1_4_dup(src);
     }
 
+    if (src->object_id == OF_INSTRUCTION_WRITE_ACTIONS) {
+        return of_instruction_write_actions_OF_VERSION_1_4_dup(src);
+    }
+
     if (src->object_id == OF_INSTRUCTION_BSN_DISABLE_VLAN_COUNTERS) {
         return of_instruction_bsn_disable_vlan_counters_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_INSTRUCTION_GOTO_TABLE) {
+        return of_instruction_goto_table_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_INSTRUCTION_BSN_DISABLE_SRC_MAC_CHECK) {
         return of_instruction_bsn_disable_src_mac_check_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_INSTRUCTION_WRITE_ACTIONS) {
-        return of_instruction_write_actions_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_INSTRUCTION_APPLY_ACTIONS) {
+        return of_instruction_apply_actions_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_INSTRUCTION_BSN_DIRECTED_BROADCAST) {
+        return of_instruction_bsn_directed_broadcast_OF_VERSION_1_4_dup(src);
     }
 
     return NULL;
@@ -59542,92 +59542,92 @@ of_instruction_id_OF_VERSION_1_4_dup(
     of_object_t *src)
 {
 
-    if (src->object_id == OF_INSTRUCTION_ID_BSN_NDP_OFFLOAD) {
-        return of_instruction_id_bsn_ndp_offload_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_INSTRUCTION_ID_BSN_INTERNAL_PRIORITY) {
-        return of_instruction_id_bsn_internal_priority_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_INSTRUCTION_ID_BSN_AUTO_NEGOTIATION) {
-        return of_instruction_id_bsn_auto_negotiation_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_INSTRUCTION_ID_METER) {
-        return of_instruction_id_meter_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_INSTRUCTION_ID_BSN_DHCP_OFFLOAD) {
-        return of_instruction_id_bsn_dhcp_offload_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_INSTRUCTION_ID_BSN_REQUIRE_VLAN_XLATE) {
-        return of_instruction_id_bsn_require_vlan_xlate_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_INSTRUCTION_ID_BSN_HASH_SELECT) {
-        return of_instruction_id_bsn_hash_select_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_INSTRUCTION_ID_BSN_DISABLE_VLAN_COUNTERS) {
-        return of_instruction_id_bsn_disable_vlan_counters_OF_VERSION_1_4_dup(src);
-    }
-
     if (src->object_id == OF_INSTRUCTION_ID_WRITE_ACTIONS) {
         return of_instruction_id_write_actions_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_INSTRUCTION_ID_BSN_DISABLE_SRC_MAC_CHECK) {
-        return of_instruction_id_bsn_disable_src_mac_check_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_INSTRUCTION_ID_APPLY_ACTIONS) {
-        return of_instruction_id_apply_actions_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_INSTRUCTION_ID_BSN_PACKET_OF_DEATH) {
-        return of_instruction_id_bsn_packet_of_death_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_INSTRUCTION_ID_BSN_ARP_OFFLOAD) {
-        return of_instruction_id_bsn_arp_offload_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_INSTRUCTION_ID_BSN_PRIORITIZE_PDUS) {
-        return of_instruction_id_bsn_prioritize_pdus_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_INSTRUCTION_ID_BSN_DIRECTED_BROADCAST) {
-        return of_instruction_id_bsn_directed_broadcast_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_INSTRUCTION_ID_BSN_PERMIT) {
-        return of_instruction_id_bsn_permit_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_INSTRUCTION_ID_BSN_DENY) {
-        return of_instruction_id_bsn_deny_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_INSTRUCTION_ID_WRITE_METADATA) {
-        return of_instruction_id_write_metadata_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_INSTRUCTION_ID_CLEAR_ACTIONS) {
-        return of_instruction_id_clear_actions_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_INSTRUCTION_ID_GOTO_TABLE) {
         return of_instruction_id_goto_table_OF_VERSION_1_4_dup(src);
     }
 
+    if (src->object_id == OF_INSTRUCTION_ID_CLEAR_ACTIONS) {
+        return of_instruction_id_clear_actions_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_INSTRUCTION_ID_BSN_PERMIT) {
+        return of_instruction_id_bsn_permit_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_INSTRUCTION_ID_BSN_NDP_OFFLOAD) {
+        return of_instruction_id_bsn_ndp_offload_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_INSTRUCTION_ID_BSN_DHCP_OFFLOAD) {
+        return of_instruction_id_bsn_dhcp_offload_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_INSTRUCTION_ID_BSN_PACKET_OF_DEATH) {
+        return of_instruction_id_bsn_packet_of_death_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_INSTRUCTION_ID_BSN_DISABLE_VLAN_COUNTERS) {
+        return of_instruction_id_bsn_disable_vlan_counters_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_INSTRUCTION_ID_BSN_HASH_SELECT) {
+        return of_instruction_id_bsn_hash_select_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_INSTRUCTION_ID_WRITE_METADATA) {
+        return of_instruction_id_write_metadata_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_INSTRUCTION_ID_BSN_AUTO_NEGOTIATION) {
+        return of_instruction_id_bsn_auto_negotiation_OF_VERSION_1_4_dup(src);
+    }
+
     if (src->object_id == OF_INSTRUCTION_ID_BSN_DISABLE_L3) {
         return of_instruction_id_bsn_disable_l3_OF_VERSION_1_4_dup(src);
     }
 
+    if (src->object_id == OF_INSTRUCTION_ID_METER) {
+        return of_instruction_id_meter_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_INSTRUCTION_ID_APPLY_ACTIONS) {
+        return of_instruction_id_apply_actions_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_INSTRUCTION_ID_BSN_REQUIRE_VLAN_XLATE) {
+        return of_instruction_id_bsn_require_vlan_xlate_OF_VERSION_1_4_dup(src);
+    }
+
     if (src->object_id == OF_INSTRUCTION_ID_BSN_SPAN_DESTINATION) {
         return of_instruction_id_bsn_span_destination_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_INSTRUCTION_ID_BSN_ARP_OFFLOAD) {
+        return of_instruction_id_bsn_arp_offload_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_INSTRUCTION_ID_BSN_DISABLE_SRC_MAC_CHECK) {
+        return of_instruction_id_bsn_disable_src_mac_check_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_INSTRUCTION_ID_BSN_DIRECTED_BROADCAST) {
+        return of_instruction_id_bsn_directed_broadcast_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_INSTRUCTION_ID_BSN_DENY) {
+        return of_instruction_id_bsn_deny_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_INSTRUCTION_ID_BSN_PRIORITIZE_PDUS) {
+        return of_instruction_id_bsn_prioritize_pdus_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_INSTRUCTION_ID_BSN_INTERNAL_PRIORITY) {
+        return of_instruction_id_bsn_internal_priority_OF_VERSION_1_4_dup(src);
     }
 
     return NULL;
@@ -60340,12 +60340,12 @@ of_meter_band_OF_VERSION_1_4_dup(
     of_object_t *src)
 {
 
-    if (src->object_id == OF_METER_BAND_DROP) {
-        return of_meter_band_drop_OF_VERSION_1_4_dup(src);
-    }
-
     if (src->object_id == OF_METER_BAND_DSCP_REMARK) {
         return of_meter_band_dscp_remark_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_METER_BAND_DROP) {
+        return of_meter_band_drop_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_METER_BAND_EXPERIMENTER) {
@@ -60620,384 +60620,28 @@ of_oxm_OF_VERSION_1_4_dup(
     of_object_t *src)
 {
 
-    if (src->object_id == OF_OXM_IN_PORT_MASKED) {
-        return of_oxm_in_port_masked_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_IPV6_EXTHDR_MASKED) {
-        return of_oxm_ipv6_exthdr_masked_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_IPV6_ND_TARGET) {
-        return of_oxm_ipv6_nd_target_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_IP_FRAGMENTATION_MASKED) {
-        return of_oxm_bsn_ip_fragmentation_masked_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_VLAN_VID_MASKED) {
-        return of_oxm_vlan_vid_masked_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_MPLS_BOS_MASKED) {
-        return of_oxm_mpls_bos_masked_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_IN_PHY_PORT) {
-        return of_oxm_in_phy_port_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_SCTP_DST_MASKED) {
-        return of_oxm_sctp_dst_masked_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_EGR_PORT_GROUP_ID) {
-        return of_oxm_bsn_egr_port_group_id_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_VFI_MASKED) {
-        return of_oxm_bsn_vfi_masked_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_INNER_VLAN_VID) {
-        return of_oxm_bsn_inner_vlan_vid_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_L2_CACHE_HIT) {
-        return of_oxm_bsn_l2_cache_hit_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_ICMPV6_CODE_MASKED) {
-        return of_oxm_icmpv6_code_masked_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_IN_PHY_PORT_MASKED) {
-        return of_oxm_in_phy_port_masked_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_LAG_ID) {
-        return of_oxm_bsn_lag_id_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_ICMPV4_CODE) {
-        return of_oxm_icmpv4_code_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_UDF2_MASKED) {
-        return of_oxm_bsn_udf2_masked_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_UDF4_MASKED) {
-        return of_oxm_bsn_udf4_masked_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_IPV6_FLABEL) {
-        return of_oxm_ipv6_flabel_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_ICMPV4_TYPE) {
-        return of_oxm_icmpv4_type_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_UDP_DST) {
-        return of_oxm_udp_dst_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_CONN_TRACKING_STATE) {
-        return of_oxm_conn_tracking_state_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_L3_SRC_CLASS_ID) {
-        return of_oxm_bsn_l3_src_class_id_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_CONN_TRACKING_IPV6_SRC_MASKED) {
-        return of_oxm_conn_tracking_ipv6_src_masked_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_ETH_TYPE) {
-        return of_oxm_eth_type_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_ETH_DST) {
-        return of_oxm_eth_dst_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_VLAN_PCP) {
-        return of_oxm_vlan_pcp_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_CONN_TRACKING_NW_PROTO_MASKED) {
-        return of_oxm_conn_tracking_nw_proto_masked_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_IPV6_ND_TLL) {
-        return of_oxm_ipv6_nd_tll_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_IPV6_ND_TARGET_MASKED) {
-        return of_oxm_ipv6_nd_target_masked_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_ARP_OP) {
-        return of_oxm_arp_op_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_INGRESS_PORT_GROUP_ID) {
-        return of_oxm_bsn_ingress_port_group_id_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_CONN_TRACKING_NW_DST_MASKED) {
-        return of_oxm_conn_tracking_nw_dst_masked_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_IPV6_ND_SLL_MASKED) {
-        return of_oxm_ipv6_nd_sll_masked_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_ICMPV6_TYPE) {
-        return of_oxm_icmpv6_type_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_ARP_THA_MASKED) {
-        return of_oxm_arp_tha_masked_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_ETH_DST_MASKED) {
-        return of_oxm_eth_dst_masked_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_VLAN_PCP_MASKED) {
-        return of_oxm_vlan_pcp_masked_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_ETH_TYPE_MASKED) {
-        return of_oxm_eth_type_masked_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_ARP_SHA) {
-        return of_oxm_arp_sha_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_TCP_DST) {
-        return of_oxm_tcp_dst_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_UDF6) {
-        return of_oxm_bsn_udf6_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_IP_ECN_MASKED) {
-        return of_oxm_ip_ecn_masked_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_PBB_UCA) {
-        return of_oxm_pbb_uca_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_CONN_TRACKING_TP_DST) {
-        return of_oxm_conn_tracking_tp_dst_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_METADATA_MASKED) {
-        return of_oxm_metadata_masked_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_ICMPV6_TYPE_MASKED) {
-        return of_oxm_icmpv6_type_masked_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_SCTP_SRC) {
-        return of_oxm_sctp_src_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_IN_PORTS_512_MASKED) {
-        return of_oxm_bsn_in_ports_512_masked_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_UDP_SRC) {
-        return of_oxm_udp_src_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_L3_INTERFACE_CLASS_ID_MASKED) {
-        return of_oxm_bsn_l3_interface_class_id_masked_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_CONN_TRACKING_TP_SRC) {
-        return of_oxm_conn_tracking_tp_src_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_CONN_TRACKING_IPV6_DST_MASKED) {
-        return of_oxm_conn_tracking_ipv6_dst_masked_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_L3_INTERFACE_CLASS_ID) {
-        return of_oxm_bsn_l3_interface_class_id_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_ARP_SPA_MASKED) {
-        return of_oxm_arp_spa_masked_OF_VERSION_1_4_dup(src);
-    }
-
     if (src->object_id == OF_OXM_IP_PROTO_MASKED) {
         return of_oxm_ip_proto_masked_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_TCP_FLAGS) {
-        return of_oxm_bsn_tcp_flags_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_IFP_CLASS_ID) {
-        return of_oxm_bsn_ifp_class_id_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_ARP_SHA_MASKED) {
-        return of_oxm_arp_sha_masked_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_IN_PORTS_128) {
-        return of_oxm_bsn_in_ports_128_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_L3_SRC_CLASS_ID_MASKED) {
-        return of_oxm_bsn_l3_src_class_id_masked_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_SCTP_DST) {
-        return of_oxm_sctp_dst_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_TUNNEL_IPV4_SRC) {
-        return of_oxm_tunnel_ipv4_src_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_UDF5_MASKED) {
-        return of_oxm_bsn_udf5_masked_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_ICMPV4_TYPE_MASKED) {
-        return of_oxm_icmpv4_type_masked_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_IPV6_ND_TLL_MASKED) {
-        return of_oxm_ipv6_nd_tll_masked_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_ICMPV4_CODE_MASKED) {
-        return of_oxm_icmpv4_code_masked_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_OVS_TCP_FLAGS_MASKED) {
-        return of_oxm_ovs_tcp_flags_masked_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_CONN_TRACKING_STATE_MASKED) {
-        return of_oxm_conn_tracking_state_masked_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_CONN_TRACKING_NW_DST) {
-        return of_oxm_conn_tracking_nw_dst_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_CONN_TRACKING_MARK_MASKED) {
-        return of_oxm_conn_tracking_mark_masked_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_UDF3_MASKED) {
-        return of_oxm_bsn_udf3_masked_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_IN_PORTS_128_MASKED) {
-        return of_oxm_bsn_in_ports_128_masked_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_OXM_BSN_INNER_ETH_SRC) {
         return of_oxm_bsn_inner_eth_src_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_OXM_TUNNEL_IPV4_DST) {
-        return of_oxm_tunnel_ipv4_dst_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_OXM_PBB_UCA_MASKED) {
+        return of_oxm_pbb_uca_masked_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_OXM_IPV4_SRC_MASKED) {
-        return of_oxm_ipv4_src_masked_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_OXM_IN_PHY_PORT) {
+        return of_oxm_in_phy_port_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_OXM_BSN_VXLAN_NETWORK_ID_MASKED) {
-        return of_oxm_bsn_vxlan_network_id_masked_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_CONN_TRACKING_TP_DST_MASKED) {
-        return of_oxm_conn_tracking_tp_dst_masked_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_INNER_ETH_DST) {
-        return of_oxm_bsn_inner_eth_dst_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_IPV4_SRC) {
-        return of_oxm_ipv4_src_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_OXM_CONN_TRACKING_NW_PROTO) {
+        return of_oxm_conn_tracking_nw_proto_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_OXM_BSN_INNER_ETH_SRC_MASKED) {
         return of_oxm_bsn_inner_eth_src_masked_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_UDF5) {
-        return of_oxm_bsn_udf5_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_UDF4) {
-        return of_oxm_bsn_udf4_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_UDF7) {
-        return of_oxm_bsn_udf7_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_TCP_FLAGS_MASKED) {
-        return of_oxm_bsn_tcp_flags_masked_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_UDF1) {
-        return of_oxm_bsn_udf1_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_UDF0) {
-        return of_oxm_bsn_udf0_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_UDF3) {
-        return of_oxm_bsn_udf3_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_UDF2) {
-        return of_oxm_bsn_udf2_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_ICMPV6_CODE) {
-        return of_oxm_icmpv6_code_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_IP_DSCP_MASKED) {
-        return of_oxm_ip_dscp_masked_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_MPLS_LABEL) {
-        return of_oxm_mpls_label_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_INNER_VLAN_VID_MASKED) {
-        return of_oxm_bsn_inner_vlan_vid_masked_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_INNER_ETH_DST_MASKED) {
-        return of_oxm_bsn_inner_eth_dst_masked_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_IN_PORT) {
-        return of_oxm_in_port_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_OXM_CONN_TRACKING_ZONE_MASKED) {
@@ -61008,256 +60652,612 @@ of_oxm_OF_VERSION_1_4_dup(
         return of_oxm_bsn_udf7_masked_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_OXM_BSN_UDF1_MASKED) {
-        return of_oxm_bsn_udf1_masked_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_VRF_MASKED) {
-        return of_oxm_bsn_vrf_masked_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_TCP_SRC) {
-        return of_oxm_tcp_src_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_CONN_TRACKING_TP_SRC_MASKED) {
-        return of_oxm_conn_tracking_tp_src_masked_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_OXM_IPV6_ND_TLL_MASKED) {
+        return of_oxm_ipv6_nd_tll_masked_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_OXM_UDP_SRC_MASKED) {
         return of_oxm_udp_src_masked_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_OXM_IP_ECN) {
-        return of_oxm_ip_ecn_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_OXM_BSN_IN_PORTS_128) {
+        return of_oxm_bsn_in_ports_128_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_OXM_ETH_SRC) {
-        return of_oxm_eth_src_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_OXM_BSN_UDF4) {
+        return of_oxm_bsn_udf4_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_OXM_IPV6_DST) {
-        return of_oxm_ipv6_dst_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_ETH_SRC_MASKED) {
-        return of_oxm_eth_src_masked_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_CONN_TRACKING_LABEL) {
-        return of_oxm_conn_tracking_label_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_CONN_TRACKING_IPV6_SRC) {
-        return of_oxm_conn_tracking_ipv6_src_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_VRF) {
-        return of_oxm_bsn_vrf_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_IPV4_DST) {
-        return of_oxm_ipv4_dst_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_IP_FRAGMENTATION) {
-        return of_oxm_bsn_ip_fragmentation_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_IPV6_SRC_MASKED) {
-        return of_oxm_ipv6_src_masked_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_CONN_TRACKING_IPV6_DST) {
-        return of_oxm_conn_tracking_ipv6_dst_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_IP_DSCP) {
-        return of_oxm_ip_dscp_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_CONN_TRACKING_ZONE) {
-        return of_oxm_conn_tracking_zone_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_IPV6_ND_SLL) {
-        return of_oxm_ipv6_nd_sll_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_IPV6_FLABEL_MASKED) {
-        return of_oxm_ipv6_flabel_masked_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_CONN_TRACKING_NW_SRC_MASKED) {
-        return of_oxm_conn_tracking_nw_src_masked_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_CONN_TRACKING_NW_SRC) {
-        return of_oxm_conn_tracking_nw_src_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_MPLS_TC_MASKED) {
-        return of_oxm_mpls_tc_masked_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_CONN_TRACKING_MARK) {
-        return of_oxm_conn_tracking_mark_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_TCP_DST_MASKED) {
-        return of_oxm_tcp_dst_masked_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_OXM_BSN_UDF5) {
+        return of_oxm_bsn_udf5_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_OXM_BSN_UDF6_MASKED) {
         return of_oxm_bsn_udf6_masked_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_OXM_SCTP_SRC_MASKED) {
-        return of_oxm_sctp_src_masked_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_CONN_TRACKING_NW_PROTO) {
-        return of_oxm_conn_tracking_nw_proto_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_LAG_ID_MASKED) {
-        return of_oxm_bsn_lag_id_masked_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_L2_CACHE_HIT_MASKED) {
-        return of_oxm_bsn_l2_cache_hit_masked_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_IP_PROTO) {
-        return of_oxm_ip_proto_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_IN_PORTS_512) {
-        return of_oxm_bsn_in_ports_512_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_IPV6_SRC) {
-        return of_oxm_ipv6_src_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_UDP_DST_MASKED) {
-        return of_oxm_udp_dst_masked_OF_VERSION_1_4_dup(src);
-    }
-
     if (src->object_id == OF_OXM_BSN_VFI) {
         return of_oxm_bsn_vfi_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_OXM_ARP_SPA) {
-        return of_oxm_arp_spa_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_OXM_ICMPV4_CODE_MASKED) {
+        return of_oxm_icmpv4_code_masked_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_OXM_ARP_OP_MASKED) {
-        return of_oxm_arp_op_masked_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_OXM_MPLS_LABEL) {
+        return of_oxm_mpls_label_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_OXM_TUNNEL_ID_MASKED) {
-        return of_oxm_tunnel_id_masked_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_OXM_IPV6_DST) {
+        return of_oxm_ipv6_dst_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_OXM_TUNNEL_IPV4_SRC_MASKED) {
-        return of_oxm_tunnel_ipv4_src_masked_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_OXM_CONN_TRACKING_NW_DST) {
+        return of_oxm_conn_tracking_nw_dst_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_CONN_TRACKING_ZONE) {
+        return of_oxm_conn_tracking_zone_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_OXM_TUNNEL_IPV4_DST_MASKED) {
         return of_oxm_tunnel_ipv4_dst_masked_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_OXM_VLAN_VID) {
-        return of_oxm_vlan_vid_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_OXM_ARP_OP) {
+        return of_oxm_arp_op_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_OXM_BSN_IFP_CLASS_ID_MASKED) {
-        return of_oxm_bsn_ifp_class_id_masked_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_OXM_IP_PROTO) {
+        return of_oxm_ip_proto_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_OXM_MPLS_BOS) {
-        return of_oxm_mpls_bos_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_OXM_BSN_INGRESS_PORT_GROUP_ID) {
+        return of_oxm_bsn_ingress_port_group_id_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_OXM_BSN_EGR_PORT_GROUP_ID_MASKED) {
-        return of_oxm_bsn_egr_port_group_id_masked_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_OXM_BSN_L3_INTERFACE_CLASS_ID_MASKED) {
+        return of_oxm_bsn_l3_interface_class_id_masked_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_OXM_TCP_SRC_MASKED) {
-        return of_oxm_tcp_src_masked_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_OXM_IPV6_ND_SLL) {
+        return of_oxm_ipv6_nd_sll_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_OXM_BSN_INGRESS_PORT_GROUP_ID_MASKED) {
-        return of_oxm_bsn_ingress_port_group_id_masked_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_OXM_UDP_SRC) {
+        return of_oxm_udp_src_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_OXM_IPV6_DST_MASKED) {
-        return of_oxm_ipv6_dst_masked_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_OXM_SCTP_DST_MASKED) {
+        return of_oxm_sctp_dst_masked_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_OXM_TUNNEL_ID) {
-        return of_oxm_tunnel_id_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_OXM_UDP_DST_MASKED) {
+        return of_oxm_udp_dst_masked_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_OXM_METADATA) {
-        return of_oxm_metadata_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_OXM_CONN_TRACKING_MARK) {
+        return of_oxm_conn_tracking_mark_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_OXM_OVS_TCP_FLAGS) {
-        return of_oxm_ovs_tcp_flags_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_OXM_BSN_TCP_FLAGS) {
+        return of_oxm_bsn_tcp_flags_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_OXM_BSN_UDF0_MASKED) {
-        return of_oxm_bsn_udf0_masked_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_OXM_BSN_EGR_PORT_GROUP_ID) {
+        return of_oxm_bsn_egr_port_group_id_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_OXM_CONN_TRACKING_LABEL_MASKED) {
-        return of_oxm_conn_tracking_label_masked_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_OXM_IPV6_SRC_MASKED) {
+        return of_oxm_ipv6_src_masked_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_OXM_ARP_TPA_MASKED) {
-        return of_oxm_arp_tpa_masked_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_OXM_TCP_SRC) {
+        return of_oxm_tcp_src_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_OXM_BSN_VLAN_XLATE_PORT_GROUP_ID) {
-        return of_oxm_bsn_vlan_xlate_port_group_id_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_OXM_IPV6_ND_TLL) {
+        return of_oxm_ipv6_nd_tll_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_OXM_BSN_VLAN_XLATE_PORT_GROUP_ID_MASKED) {
-        return of_oxm_bsn_vlan_xlate_port_group_id_masked_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_OXM_IP_DSCP_MASKED) {
+        return of_oxm_ip_dscp_masked_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_OXM_PBB_UCA_MASKED) {
-        return of_oxm_pbb_uca_masked_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_OXM_ICMPV4_TYPE_MASKED) {
+        return of_oxm_icmpv4_type_masked_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_OXM_ARP_THA) {
-        return of_oxm_arp_tha_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_OXM_VLAN_PCP) {
+        return of_oxm_vlan_pcp_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_OXM_MPLS_TC) {
-        return of_oxm_mpls_tc_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_VXLAN_NETWORK_ID) {
-        return of_oxm_bsn_vxlan_network_id_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_ARP_TPA) {
-        return of_oxm_arp_tpa_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_OXM_BSN_INNER_VLAN_VID_MASKED) {
+        return of_oxm_bsn_inner_vlan_vid_masked_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_OXM_IPV4_DST_MASKED) {
         return of_oxm_ipv4_dst_masked_OF_VERSION_1_4_dup(src);
     }
 
+    if (src->object_id == OF_OXM_CONN_TRACKING_NW_SRC) {
+        return of_oxm_conn_tracking_nw_src_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_BSN_LAG_ID_MASKED) {
+        return of_oxm_bsn_lag_id_masked_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_MPLS_BOS) {
+        return of_oxm_mpls_bos_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_ARP_SHA) {
+        return of_oxm_arp_sha_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_SCTP_SRC) {
+        return of_oxm_sctp_src_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_ARP_TPA) {
+        return of_oxm_arp_tpa_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_ETH_SRC_MASKED) {
+        return of_oxm_eth_src_masked_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_BSN_IFP_CLASS_ID_MASKED) {
+        return of_oxm_bsn_ifp_class_id_masked_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_BSN_L3_SRC_CLASS_ID) {
+        return of_oxm_bsn_l3_src_class_id_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_ETH_TYPE) {
+        return of_oxm_eth_type_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_BSN_EGR_PORT_GROUP_ID_MASKED) {
+        return of_oxm_bsn_egr_port_group_id_masked_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_IPV6_SRC) {
+        return of_oxm_ipv6_src_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_IN_PORT) {
+        return of_oxm_in_port_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_BSN_LAG_ID) {
+        return of_oxm_bsn_lag_id_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_TUNNEL_ID) {
+        return of_oxm_tunnel_id_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_MPLS_BOS_MASKED) {
+        return of_oxm_mpls_bos_masked_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_OVS_TCP_FLAGS) {
+        return of_oxm_ovs_tcp_flags_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_IPV6_ND_TARGET) {
+        return of_oxm_ipv6_nd_target_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_CONN_TRACKING_TP_SRC) {
+        return of_oxm_conn_tracking_tp_src_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_ICMPV6_TYPE_MASKED) {
+        return of_oxm_icmpv6_type_masked_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_BSN_IN_PORTS_512_MASKED) {
+        return of_oxm_bsn_in_ports_512_masked_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_ICMPV6_CODE_MASKED) {
+        return of_oxm_icmpv6_code_masked_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_ETH_TYPE_MASKED) {
+        return of_oxm_eth_type_masked_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_IPV6_EXTHDR_MASKED) {
+        return of_oxm_ipv6_exthdr_masked_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_BSN_VLAN_XLATE_PORT_GROUP_ID) {
+        return of_oxm_bsn_vlan_xlate_port_group_id_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_BSN_VRF) {
+        return of_oxm_bsn_vrf_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_IPV6_ND_TARGET_MASKED) {
+        return of_oxm_ipv6_nd_target_masked_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_VLAN_VID) {
+        return of_oxm_vlan_vid_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_IP_ECN_MASKED) {
+        return of_oxm_ip_ecn_masked_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_BSN_UDF0) {
+        return of_oxm_bsn_udf0_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_ARP_SPA_MASKED) {
+        return of_oxm_arp_spa_masked_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_CONN_TRACKING_LABEL_MASKED) {
+        return of_oxm_conn_tracking_label_masked_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_ICMPV4_TYPE) {
+        return of_oxm_icmpv4_type_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_BSN_L3_SRC_CLASS_ID_MASKED) {
+        return of_oxm_bsn_l3_src_class_id_masked_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_SCTP_SRC_MASKED) {
+        return of_oxm_sctp_src_masked_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_TCP_SRC_MASKED) {
+        return of_oxm_tcp_src_masked_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_BSN_VFI_MASKED) {
+        return of_oxm_bsn_vfi_masked_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_IPV6_FLABEL_MASKED) {
+        return of_oxm_ipv6_flabel_masked_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_VLAN_VID_MASKED) {
+        return of_oxm_vlan_vid_masked_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_TCP_DST) {
+        return of_oxm_tcp_dst_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_BSN_UDF4_MASKED) {
+        return of_oxm_bsn_udf4_masked_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_BSN_VLAN_XLATE_PORT_GROUP_ID_MASKED) {
+        return of_oxm_bsn_vlan_xlate_port_group_id_masked_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_ARP_TPA_MASKED) {
+        return of_oxm_arp_tpa_masked_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_CONN_TRACKING_MARK_MASKED) {
+        return of_oxm_conn_tracking_mark_masked_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_TUNNEL_ID_MASKED) {
+        return of_oxm_tunnel_id_masked_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_ARP_OP_MASKED) {
+        return of_oxm_arp_op_masked_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_ARP_THA) {
+        return of_oxm_arp_tha_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_OVS_TCP_FLAGS_MASKED) {
+        return of_oxm_ovs_tcp_flags_masked_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_BSN_INGRESS_PORT_GROUP_ID_MASKED) {
+        return of_oxm_bsn_ingress_port_group_id_masked_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_CONN_TRACKING_IPV6_SRC) {
+        return of_oxm_conn_tracking_ipv6_src_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_CONN_TRACKING_IPV6_SRC_MASKED) {
+        return of_oxm_conn_tracking_ipv6_src_masked_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_PBB_UCA) {
+        return of_oxm_pbb_uca_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_CONN_TRACKING_IPV6_DST_MASKED) {
+        return of_oxm_conn_tracking_ipv6_dst_masked_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_BSN_L2_CACHE_HIT_MASKED) {
+        return of_oxm_bsn_l2_cache_hit_masked_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_BSN_INNER_VLAN_VID) {
+        return of_oxm_bsn_inner_vlan_vid_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_BSN_UDF5_MASKED) {
+        return of_oxm_bsn_udf5_masked_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_IPV6_DST_MASKED) {
+        return of_oxm_ipv6_dst_masked_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_BSN_UDF6) {
+        return of_oxm_bsn_udf6_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_METADATA) {
+        return of_oxm_metadata_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_ARP_THA_MASKED) {
+        return of_oxm_arp_tha_masked_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_BSN_VXLAN_NETWORK_ID) {
+        return of_oxm_bsn_vxlan_network_id_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_BSN_L3_INTERFACE_CLASS_ID) {
+        return of_oxm_bsn_l3_interface_class_id_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_ARP_SPA) {
+        return of_oxm_arp_spa_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_TUNNEL_IPV4_SRC) {
+        return of_oxm_tunnel_ipv4_src_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_ICMPV6_TYPE) {
+        return of_oxm_icmpv6_type_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_ICMPV6_CODE) {
+        return of_oxm_icmpv6_code_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_BSN_UDF3) {
+        return of_oxm_bsn_udf3_OF_VERSION_1_4_dup(src);
+    }
+
     if (src->object_id == OF_OXM_IPV6_EXTHDR) {
         return of_oxm_ipv6_exthdr_OF_VERSION_1_4_dup(src);
     }
 
+    if (src->object_id == OF_OXM_UDP_DST) {
+        return of_oxm_udp_dst_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_ETH_DST) {
+        return of_oxm_eth_dst_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_BSN_VXLAN_NETWORK_ID_MASKED) {
+        return of_oxm_bsn_vxlan_network_id_masked_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_TUNNEL_IPV4_SRC_MASKED) {
+        return of_oxm_tunnel_ipv4_src_masked_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_MPLS_TC) {
+        return of_oxm_mpls_tc_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_IPV6_ND_SLL_MASKED) {
+        return of_oxm_ipv6_nd_sll_masked_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_ARP_SHA_MASKED) {
+        return of_oxm_arp_sha_masked_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_TCP_DST_MASKED) {
+        return of_oxm_tcp_dst_masked_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_BSN_IN_PORTS_512) {
+        return of_oxm_bsn_in_ports_512_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_BSN_INNER_ETH_DST) {
+        return of_oxm_bsn_inner_eth_dst_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_BSN_IFP_CLASS_ID) {
+        return of_oxm_bsn_ifp_class_id_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_SCTP_DST) {
+        return of_oxm_sctp_dst_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_CONN_TRACKING_LABEL) {
+        return of_oxm_conn_tracking_label_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_IN_PORT_MASKED) {
+        return of_oxm_in_port_masked_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_BSN_IP_FRAGMENTATION) {
+        return of_oxm_bsn_ip_fragmentation_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_IPV4_SRC) {
+        return of_oxm_ipv4_src_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_BSN_UDF7) {
+        return of_oxm_bsn_udf7_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_IPV6_FLABEL) {
+        return of_oxm_ipv6_flabel_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_VLAN_PCP_MASKED) {
+        return of_oxm_vlan_pcp_masked_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_BSN_IP_FRAGMENTATION_MASKED) {
+        return of_oxm_bsn_ip_fragmentation_masked_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_BSN_TCP_FLAGS_MASKED) {
+        return of_oxm_bsn_tcp_flags_masked_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_BSN_L2_CACHE_HIT) {
+        return of_oxm_bsn_l2_cache_hit_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_CONN_TRACKING_TP_SRC_MASKED) {
+        return of_oxm_conn_tracking_tp_src_masked_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_IPV4_SRC_MASKED) {
+        return of_oxm_ipv4_src_masked_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_BSN_IN_PORTS_128_MASKED) {
+        return of_oxm_bsn_in_ports_128_masked_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_TUNNEL_IPV4_DST) {
+        return of_oxm_tunnel_ipv4_dst_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_BSN_UDF3_MASKED) {
+        return of_oxm_bsn_udf3_masked_OF_VERSION_1_4_dup(src);
+    }
+
     if (src->object_id == OF_OXM_MPLS_LABEL_MASKED) {
         return of_oxm_mpls_label_masked_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_METADATA_MASKED) {
+        return of_oxm_metadata_masked_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_CONN_TRACKING_STATE) {
+        return of_oxm_conn_tracking_state_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_BSN_UDF1) {
+        return of_oxm_bsn_udf1_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_BSN_UDF2_MASKED) {
+        return of_oxm_bsn_udf2_masked_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_BSN_VRF_MASKED) {
+        return of_oxm_bsn_vrf_masked_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_CONN_TRACKING_STATE_MASKED) {
+        return of_oxm_conn_tracking_state_masked_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_BSN_UDF1_MASKED) {
+        return of_oxm_bsn_udf1_masked_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_CONN_TRACKING_TP_DST_MASKED) {
+        return of_oxm_conn_tracking_tp_dst_masked_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_ETH_DST_MASKED) {
+        return of_oxm_eth_dst_masked_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_IN_PHY_PORT_MASKED) {
+        return of_oxm_in_phy_port_masked_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_CONN_TRACKING_IPV6_DST) {
+        return of_oxm_conn_tracking_ipv6_dst_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_IPV4_DST) {
+        return of_oxm_ipv4_dst_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_ETH_SRC) {
+        return of_oxm_eth_src_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_MPLS_TC_MASKED) {
+        return of_oxm_mpls_tc_masked_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_CONN_TRACKING_NW_PROTO_MASKED) {
+        return of_oxm_conn_tracking_nw_proto_masked_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_IP_DSCP) {
+        return of_oxm_ip_dscp_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_BSN_UDF0_MASKED) {
+        return of_oxm_bsn_udf0_masked_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_CONN_TRACKING_NW_DST_MASKED) {
+        return of_oxm_conn_tracking_nw_dst_masked_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_CONN_TRACKING_NW_SRC_MASKED) {
+        return of_oxm_conn_tracking_nw_src_masked_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_CONN_TRACKING_TP_DST) {
+        return of_oxm_conn_tracking_tp_dst_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_BSN_INNER_ETH_DST_MASKED) {
+        return of_oxm_bsn_inner_eth_dst_masked_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_IP_ECN) {
+        return of_oxm_ip_ecn_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_ICMPV4_CODE) {
+        return of_oxm_icmpv4_code_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_BSN_UDF2) {
+        return of_oxm_bsn_udf2_OF_VERSION_1_4_dup(src);
     }
 
     return NULL;
@@ -65622,44 +65622,44 @@ of_port_desc_prop_OF_VERSION_1_4_dup(
         return of_port_desc_prop_bsn_extended_capabilities_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_PORT_DESC_PROP_BSN_SPEED_CAPABILITIES) {
-        return of_port_desc_prop_bsn_speed_capabilities_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_PORT_DESC_PROP_ETHERNET) {
-        return of_port_desc_prop_ethernet_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_PORT_DESC_PROP_BSN_DRIVER_INFO_JSON) {
-        return of_port_desc_prop_bsn_driver_info_json_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_PORT_DESC_PROP_OPTICAL) {
-        return of_port_desc_prop_optical_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_PORT_DESC_PROP_BSN_SFF_JSON) {
-        return of_port_desc_prop_bsn_sff_json_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_PORT_DESC_PROP_BSN_BREAKOUT) {
-        return of_port_desc_prop_bsn_breakout_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_PORT_DESC_PROP_BSN_UPLINK) {
+        return of_port_desc_prop_bsn_uplink_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_PORT_DESC_PROP_BSN_MISC_CAPABILITIES) {
         return of_port_desc_prop_bsn_misc_capabilities_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_PORT_DESC_PROP_BSN_UPLINK) {
-        return of_port_desc_prop_bsn_uplink_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_PORT_DESC_PROP_ETHERNET) {
+        return of_port_desc_prop_ethernet_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_PORT_DESC_PROP_BSN_BREAKOUT) {
+        return of_port_desc_prop_bsn_breakout_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_PORT_DESC_PROP_BSN_FORWARD_ERROR_CORRECTION) {
         return of_port_desc_prop_bsn_forward_error_correction_OF_VERSION_1_4_dup(src);
     }
 
+    if (src->object_id == OF_PORT_DESC_PROP_BSN_SPEED_CAPABILITIES) {
+        return of_port_desc_prop_bsn_speed_capabilities_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_PORT_DESC_PROP_BSN_DRIVER_INFO_JSON) {
+        return of_port_desc_prop_bsn_driver_info_json_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_PORT_DESC_PROP_BSN_SFF_JSON) {
+        return of_port_desc_prop_bsn_sff_json_OF_VERSION_1_4_dup(src);
+    }
+
     if (src->object_id == OF_PORT_DESC_PROP_BSN_GENERATION_ID) {
         return of_port_desc_prop_bsn_generation_id_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_PORT_DESC_PROP_OPTICAL) {
+        return of_port_desc_prop_optical_OF_VERSION_1_4_dup(src);
     }
 
     return NULL;
@@ -66485,12 +66485,12 @@ of_queue_desc_prop_OF_VERSION_1_4_dup(
         return of_queue_desc_prop_min_rate_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_QUEUE_DESC_PROP_BSN_QUEUE_NAME) {
-        return of_queue_desc_prop_bsn_queue_name_OF_VERSION_1_4_dup(src);
-    }
-
     if (src->object_id == OF_QUEUE_DESC_PROP_MAX_RATE) {
         return of_queue_desc_prop_max_rate_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_QUEUE_DESC_PROP_BSN_QUEUE_NAME) {
+        return of_queue_desc_prop_bsn_queue_name_OF_VERSION_1_4_dup(src);
     }
 
     return NULL;
@@ -66780,48 +66780,56 @@ of_table_feature_prop_OF_VERSION_1_4_dup(
     of_object_t *src)
 {
 
-    if (src->object_id == OF_TABLE_FEATURE_PROP_WRITE_SETFIELD_MISS) {
-        return of_table_feature_prop_write_setfield_miss_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_TABLE_FEATURE_PROP_APPLY_ACTIONS) {
-        return of_table_feature_prop_apply_actions_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_TABLE_FEATURE_PROP_NEXT_TABLES) {
-        return of_table_feature_prop_next_tables_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_TABLE_FEATURE_PROP_APPLY_SETFIELD_MISS) {
-        return of_table_feature_prop_apply_setfield_miss_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_TABLE_FEATURE_PROP_WRITE_ACTIONS) {
-        return of_table_feature_prop_write_actions_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_TABLE_FEATURE_PROP_INSTRUCTIONS_MISS) {
-        return of_table_feature_prop_instructions_miss_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_TABLE_FEATURE_PROP_WILDCARDS) {
-        return of_table_feature_prop_wildcards_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_TABLE_FEATURE_PROP_INSTRUCTIONS) {
+        return of_table_feature_prop_instructions_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_TABLE_FEATURE_PROP_TABLE_SYNC_FROM) {
         return of_table_feature_prop_table_sync_from_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_TABLE_FEATURE_PROP_INSTRUCTIONS) {
-        return of_table_feature_prop_instructions_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_TABLE_FEATURE_PROP_NEXT_TABLES) {
+        return of_table_feature_prop_next_tables_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_TABLE_FEATURE_PROP_WILDCARDS) {
+        return of_table_feature_prop_wildcards_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_TABLE_FEATURE_PROP_APPLY_ACTIONS) {
+        return of_table_feature_prop_apply_actions_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_TABLE_FEATURE_PROP_WRITE_SETFIELD) {
         return of_table_feature_prop_write_setfield_OF_VERSION_1_4_dup(src);
     }
 
+    if (src->object_id == OF_TABLE_FEATURE_PROP_NEXT_TABLES_MISS) {
+        return of_table_feature_prop_next_tables_miss_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_TABLE_FEATURE_PROP_WRITE_ACTIONS) {
+        return of_table_feature_prop_write_actions_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_TABLE_FEATURE_PROP_WRITE_ACTIONS_MISS) {
+        return of_table_feature_prop_write_actions_miss_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_TABLE_FEATURE_PROP_WRITE_SETFIELD_MISS) {
+        return of_table_feature_prop_write_setfield_miss_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_TABLE_FEATURE_PROP_INSTRUCTIONS_MISS) {
+        return of_table_feature_prop_instructions_miss_OF_VERSION_1_4_dup(src);
+    }
+
     if (src->object_id == OF_TABLE_FEATURE_PROP_APPLY_SETFIELD) {
         return of_table_feature_prop_apply_setfield_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_TABLE_FEATURE_PROP_APPLY_SETFIELD_MISS) {
+        return of_table_feature_prop_apply_setfield_miss_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_TABLE_FEATURE_PROP_APPLY_ACTIONS_MISS) {
@@ -66830,14 +66838,6 @@ of_table_feature_prop_OF_VERSION_1_4_dup(
 
     if (src->object_id == OF_TABLE_FEATURE_PROP_MATCH) {
         return of_table_feature_prop_match_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_TABLE_FEATURE_PROP_NEXT_TABLES_MISS) {
-        return of_table_feature_prop_next_tables_miss_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_TABLE_FEATURE_PROP_WRITE_ACTIONS_MISS) {
-        return of_table_feature_prop_write_actions_miss_OF_VERSION_1_4_dup(src);
     }
 
     return NULL;

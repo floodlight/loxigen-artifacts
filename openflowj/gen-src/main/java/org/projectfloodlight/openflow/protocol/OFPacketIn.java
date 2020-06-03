@@ -33,13 +33,13 @@ public interface OFPacketIn extends OFObject, OFMessage {
     long getXid();
     OFBufferId getBufferId();
     int getTotalLen();
-    OFPacketInReason getReason();
-    TableId getTableId() throws UnsupportedOperationException;
-    U64 getCookie() throws UnsupportedOperationException;
-    Match getMatch() throws UnsupportedOperationException;
-    byte[] getData();
     OFPort getInPort() throws UnsupportedOperationException;
+    OFPacketInReason getReason();
+    byte[] getData();
     OFPort getInPhyPort() throws UnsupportedOperationException;
+    TableId getTableId() throws UnsupportedOperationException;
+    Match getMatch() throws UnsupportedOperationException;
+    U64 getCookie() throws UnsupportedOperationException;
 
     void writeTo(ByteBuf channelBuffer);
 
@@ -54,19 +54,19 @@ public interface OFPacketIn extends OFObject, OFMessage {
         Builder setBufferId(OFBufferId bufferId);
         int getTotalLen();
         Builder setTotalLen(int totalLen);
-        OFPacketInReason getReason();
-        Builder setReason(OFPacketInReason reason);
-        TableId getTableId() throws UnsupportedOperationException;
-        Builder setTableId(TableId tableId) throws UnsupportedOperationException;
-        U64 getCookie() throws UnsupportedOperationException;
-        Builder setCookie(U64 cookie) throws UnsupportedOperationException;
-        Match getMatch() throws UnsupportedOperationException;
-        Builder setMatch(Match match) throws UnsupportedOperationException;
-        byte[] getData();
-        Builder setData(byte[] data);
         OFPort getInPort() throws UnsupportedOperationException;
         Builder setInPort(OFPort inPort) throws UnsupportedOperationException;
+        OFPacketInReason getReason();
+        Builder setReason(OFPacketInReason reason);
+        byte[] getData();
+        Builder setData(byte[] data);
         OFPort getInPhyPort() throws UnsupportedOperationException;
         Builder setInPhyPort(OFPort inPhyPort) throws UnsupportedOperationException;
+        TableId getTableId() throws UnsupportedOperationException;
+        Builder setTableId(TableId tableId) throws UnsupportedOperationException;
+        Match getMatch() throws UnsupportedOperationException;
+        Builder setMatch(Match match) throws UnsupportedOperationException;
+        U64 getCookie() throws UnsupportedOperationException;
+        Builder setCookie(U64 cookie) throws UnsupportedOperationException;
     }
 }

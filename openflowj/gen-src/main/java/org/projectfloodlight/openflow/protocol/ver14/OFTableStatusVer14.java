@@ -79,6 +79,11 @@ class OFTableStatusVer14 implements OFTableStatus {
     }
 
     @Override
+    public long getRole() {
+        return role;
+    }
+
+    @Override
     public OFTableReason getReason() {
         return reason;
     }
@@ -86,11 +91,6 @@ class OFTableStatusVer14 implements OFTableStatus {
     @Override
     public OFTableDesc getTable() {
         return table;
-    }
-
-    @Override
-    public long getRole() {
-        return role;
     }
 
 
@@ -138,6 +138,17 @@ class OFTableStatusVer14 implements OFTableStatus {
         return this;
     }
     @Override
+    public long getRole() {
+        return role;
+    }
+
+    @Override
+    public OFTableStatus.Builder setRole(long role) {
+        this.role = role;
+        this.roleSet = true;
+        return this;
+    }
+    @Override
     public OFTableReason getReason() {
         return reason;
     }
@@ -157,17 +168,6 @@ class OFTableStatusVer14 implements OFTableStatus {
     public OFTableStatus.Builder setTable(OFTableDesc table) {
         this.table = table;
         this.tableSet = true;
-        return this;
-    }
-    @Override
-    public long getRole() {
-        return role;
-    }
-
-    @Override
-    public OFTableStatus.Builder setRole(long role) {
-        this.role = role;
-        this.roleSet = true;
         return this;
     }
 
@@ -227,6 +227,17 @@ class OFTableStatusVer14 implements OFTableStatus {
         return this;
     }
     @Override
+    public long getRole() {
+        return role;
+    }
+
+    @Override
+    public OFTableStatus.Builder setRole(long role) {
+        this.role = role;
+        this.roleSet = true;
+        return this;
+    }
+    @Override
     public OFTableReason getReason() {
         return reason;
     }
@@ -246,17 +257,6 @@ class OFTableStatusVer14 implements OFTableStatus {
     public OFTableStatus.Builder setTable(OFTableDesc table) {
         this.table = table;
         this.tableSet = true;
-        return this;
-    }
-    @Override
-    public long getRole() {
-        return role;
-    }
-
-    @Override
-    public OFTableStatus.Builder setRole(long role) {
-        this.role = role;
-        this.roleSet = true;
         return this;
     }
 //
