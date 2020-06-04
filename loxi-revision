@@ -1,1 +1,1 @@
-7ca6c8c995dc333d395ab181a41cd72c6c689b00 Merge pull request #663 from kenchiang/loxi-ordering
+cac405bf4875701b37983124bc0cb2ccc5580d48 Rework of_class.java template to be more pythonic Treat openflow_input files as utf-8 Use 0L for pack_bitmap_128 and unpack_bitmap_512 Format exception properly
