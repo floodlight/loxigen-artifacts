@@ -36,11 +36,11 @@ public interface OFFeaturesReply extends OFObject, OFMessage {
     DatapathId getDatapathId();
     long getNBuffers();
     short getNTables();
-    OFAuxId getAuxiliaryId() throws UnsupportedOperationException;
     Set<OFCapabilities> getCapabilities();
-    long getReserved() throws UnsupportedOperationException;
     Set<OFActionType> getActions() throws UnsupportedOperationException;
     List<OFPortDesc> getPorts() throws UnsupportedOperationException;
+    long getReserved() throws UnsupportedOperationException;
+    OFAuxId getAuxiliaryId() throws UnsupportedOperationException;
 
     void writeTo(ByteBuf channelBuffer);
 
@@ -57,15 +57,15 @@ public interface OFFeaturesReply extends OFObject, OFMessage {
         Builder setNBuffers(long nBuffers);
         short getNTables();
         Builder setNTables(short nTables);
-        OFAuxId getAuxiliaryId() throws UnsupportedOperationException;
-        Builder setAuxiliaryId(OFAuxId auxiliaryId) throws UnsupportedOperationException;
         Set<OFCapabilities> getCapabilities();
         Builder setCapabilities(Set<OFCapabilities> capabilities);
-        long getReserved() throws UnsupportedOperationException;
-        Builder setReserved(long reserved) throws UnsupportedOperationException;
         Set<OFActionType> getActions() throws UnsupportedOperationException;
         Builder setActions(Set<OFActionType> actions) throws UnsupportedOperationException;
         List<OFPortDesc> getPorts() throws UnsupportedOperationException;
         Builder setPorts(List<OFPortDesc> ports) throws UnsupportedOperationException;
+        long getReserved() throws UnsupportedOperationException;
+        Builder setReserved(long reserved) throws UnsupportedOperationException;
+        OFAuxId getAuxiliaryId() throws UnsupportedOperationException;
+        Builder setAuxiliaryId(OFAuxId auxiliaryId) throws UnsupportedOperationException;
     }
 }

@@ -112,6 +112,11 @@ class OFFlowStatsEntryVer12 implements OFFlowStatsEntry {
     }
 
     @Override
+    public Match getMatch() {
+        return match;
+    }
+
+    @Override
     public long getDurationSec() {
         return durationSec;
     }
@@ -137,11 +142,6 @@ class OFFlowStatsEntryVer12 implements OFFlowStatsEntry {
     }
 
     @Override
-    public Set<OFFlowModFlags> getFlags()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property flags not supported in version 1.2");
-    }
-
-    @Override
     public U64 getCookie() {
         return cookie;
     }
@@ -157,8 +157,8 @@ class OFFlowStatsEntryVer12 implements OFFlowStatsEntry {
     }
 
     @Override
-    public Match getMatch() {
-        return match;
+    public List<OFAction> getActions()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property actions not supported in version 1.2");
     }
 
     @Override
@@ -167,8 +167,8 @@ class OFFlowStatsEntryVer12 implements OFFlowStatsEntry {
     }
 
     @Override
-    public List<OFAction> getActions()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property actions not supported in version 1.2");
+    public Set<OFFlowModFlags> getFlags()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property flags not supported in version 1.2");
     }
 
     @Override
@@ -235,6 +235,17 @@ class OFFlowStatsEntryVer12 implements OFFlowStatsEntry {
         return this;
     }
     @Override
+    public Match getMatch() {
+        return match;
+    }
+
+    @Override
+    public OFFlowStatsEntry.Builder setMatch(Match match) {
+        this.match = match;
+        this.matchSet = true;
+        return this;
+    }
+    @Override
     public long getDurationSec() {
         return durationSec;
     }
@@ -290,15 +301,6 @@ class OFFlowStatsEntryVer12 implements OFFlowStatsEntry {
         return this;
     }
     @Override
-    public Set<OFFlowModFlags> getFlags()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property flags not supported in version 1.2");
-    }
-
-    @Override
-    public OFFlowStatsEntry.Builder setFlags(Set<OFFlowModFlags> flags) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property flags not supported in version 1.2");
-    }
-    @Override
     public U64 getCookie() {
         return cookie;
     }
@@ -332,15 +334,13 @@ class OFFlowStatsEntryVer12 implements OFFlowStatsEntry {
         return this;
     }
     @Override
-    public Match getMatch() {
-        return match;
+    public List<OFAction> getActions()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property actions not supported in version 1.2");
     }
 
     @Override
-    public OFFlowStatsEntry.Builder setMatch(Match match) {
-        this.match = match;
-        this.matchSet = true;
-        return this;
+    public OFFlowStatsEntry.Builder setActions(List<OFAction> actions) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property actions not supported in version 1.2");
     }
     @Override
     public List<OFInstruction> getInstructions() {
@@ -354,13 +354,13 @@ class OFFlowStatsEntryVer12 implements OFFlowStatsEntry {
         return this;
     }
     @Override
-    public List<OFAction> getActions()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property actions not supported in version 1.2");
+    public Set<OFFlowModFlags> getFlags()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property flags not supported in version 1.2");
     }
 
     @Override
-    public OFFlowStatsEntry.Builder setActions(List<OFAction> actions) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property actions not supported in version 1.2");
+    public OFFlowStatsEntry.Builder setFlags(Set<OFFlowModFlags> flags) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property flags not supported in version 1.2");
     }
     @Override
     public int getImportance()throws UnsupportedOperationException {
@@ -468,6 +468,17 @@ class OFFlowStatsEntryVer12 implements OFFlowStatsEntry {
         return this;
     }
     @Override
+    public Match getMatch() {
+        return match;
+    }
+
+    @Override
+    public OFFlowStatsEntry.Builder setMatch(Match match) {
+        this.match = match;
+        this.matchSet = true;
+        return this;
+    }
+    @Override
     public long getDurationSec() {
         return durationSec;
     }
@@ -523,15 +534,6 @@ class OFFlowStatsEntryVer12 implements OFFlowStatsEntry {
         return this;
     }
     @Override
-    public Set<OFFlowModFlags> getFlags()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property flags not supported in version 1.2");
-    }
-
-    @Override
-    public OFFlowStatsEntry.Builder setFlags(Set<OFFlowModFlags> flags) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property flags not supported in version 1.2");
-    }
-    @Override
     public U64 getCookie() {
         return cookie;
     }
@@ -565,15 +567,13 @@ class OFFlowStatsEntryVer12 implements OFFlowStatsEntry {
         return this;
     }
     @Override
-    public Match getMatch() {
-        return match;
+    public List<OFAction> getActions()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property actions not supported in version 1.2");
     }
 
     @Override
-    public OFFlowStatsEntry.Builder setMatch(Match match) {
-        this.match = match;
-        this.matchSet = true;
-        return this;
+    public OFFlowStatsEntry.Builder setActions(List<OFAction> actions) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property actions not supported in version 1.2");
     }
     @Override
     public List<OFInstruction> getInstructions() {
@@ -587,13 +587,13 @@ class OFFlowStatsEntryVer12 implements OFFlowStatsEntry {
         return this;
     }
     @Override
-    public List<OFAction> getActions()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property actions not supported in version 1.2");
+    public Set<OFFlowModFlags> getFlags()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property flags not supported in version 1.2");
     }
 
     @Override
-    public OFFlowStatsEntry.Builder setActions(List<OFAction> actions) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property actions not supported in version 1.2");
+    public OFFlowStatsEntry.Builder setFlags(Set<OFFlowModFlags> flags) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property flags not supported in version 1.2");
     }
     @Override
     public int getImportance()throws UnsupportedOperationException {

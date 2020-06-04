@@ -138,18 +138,13 @@ class OFFlowDeleteStrictVer12 implements OFFlowDeleteStrict {
     }
 
     @Override
+    public Match getMatch() {
+        return match;
+    }
+
+    @Override
     public U64 getCookie() {
         return cookie;
-    }
-
-    @Override
-    public U64 getCookieMask() {
-        return cookieMask;
-    }
-
-    @Override
-    public TableId getTableId() {
-        return tableId;
     }
 
     @Override
@@ -183,28 +178,33 @@ class OFFlowDeleteStrictVer12 implements OFFlowDeleteStrict {
     }
 
     @Override
-    public OFGroup getOutGroup() {
-        return outGroup;
-    }
-
-    @Override
     public Set<OFFlowModFlags> getFlags() {
         return flags;
     }
 
     @Override
-    public Match getMatch() {
-        return match;
+    public List<OFAction> getActions()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property actions not supported in version 1.2");
+    }
+
+    @Override
+    public U64 getCookieMask() {
+        return cookieMask;
+    }
+
+    @Override
+    public TableId getTableId() {
+        return tableId;
+    }
+
+    @Override
+    public OFGroup getOutGroup() {
+        return outGroup;
     }
 
     @Override
     public List<OFInstruction> getInstructions() {
         return instructions;
-    }
-
-    @Override
-    public List<OFAction> getActions()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property actions not supported in version 1.2");
     }
 
     @Override
@@ -275,6 +275,17 @@ class OFFlowDeleteStrictVer12 implements OFFlowDeleteStrict {
         return this;
     }
     @Override
+    public Match getMatch() {
+        return match;
+    }
+
+    @Override
+    public OFFlowDeleteStrict.Builder setMatch(Match match) {
+        this.match = match;
+        this.matchSet = true;
+        return this;
+    }
+    @Override
     public U64 getCookie() {
         return cookie;
     }
@@ -283,28 +294,6 @@ class OFFlowDeleteStrictVer12 implements OFFlowDeleteStrict {
     public OFFlowDeleteStrict.Builder setCookie(U64 cookie) {
         this.cookie = cookie;
         this.cookieSet = true;
-        return this;
-    }
-    @Override
-    public U64 getCookieMask() {
-        return cookieMask;
-    }
-
-    @Override
-    public OFFlowDeleteStrict.Builder setCookieMask(U64 cookieMask) {
-        this.cookieMask = cookieMask;
-        this.cookieMaskSet = true;
-        return this;
-    }
-    @Override
-    public TableId getTableId() {
-        return tableId;
-    }
-
-    @Override
-    public OFFlowDeleteStrict.Builder setTableId(TableId tableId) {
-        this.tableId = tableId;
-        this.tableIdSet = true;
         return this;
     }
     @Override
@@ -368,17 +357,6 @@ class OFFlowDeleteStrictVer12 implements OFFlowDeleteStrict {
         return this;
     }
     @Override
-    public OFGroup getOutGroup() {
-        return outGroup;
-    }
-
-    @Override
-    public OFFlowDeleteStrict.Builder setOutGroup(OFGroup outGroup) {
-        this.outGroup = outGroup;
-        this.outGroupSet = true;
-        return this;
-    }
-    @Override
     public Set<OFFlowModFlags> getFlags() {
         return flags;
     }
@@ -390,14 +368,45 @@ class OFFlowDeleteStrictVer12 implements OFFlowDeleteStrict {
         return this;
     }
     @Override
-    public Match getMatch() {
-        return match;
+    public List<OFAction> getActions()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property actions not supported in version 1.2");
     }
 
     @Override
-    public OFFlowDeleteStrict.Builder setMatch(Match match) {
-        this.match = match;
-        this.matchSet = true;
+    public OFFlowDeleteStrict.Builder setActions(List<OFAction> actions) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property actions not supported in version 1.2");
+    }
+    @Override
+    public U64 getCookieMask() {
+        return cookieMask;
+    }
+
+    @Override
+    public OFFlowDeleteStrict.Builder setCookieMask(U64 cookieMask) {
+        this.cookieMask = cookieMask;
+        this.cookieMaskSet = true;
+        return this;
+    }
+    @Override
+    public TableId getTableId() {
+        return tableId;
+    }
+
+    @Override
+    public OFFlowDeleteStrict.Builder setTableId(TableId tableId) {
+        this.tableId = tableId;
+        this.tableIdSet = true;
+        return this;
+    }
+    @Override
+    public OFGroup getOutGroup() {
+        return outGroup;
+    }
+
+    @Override
+    public OFFlowDeleteStrict.Builder setOutGroup(OFGroup outGroup) {
+        this.outGroup = outGroup;
+        this.outGroupSet = true;
         return this;
     }
     @Override
@@ -410,15 +419,6 @@ class OFFlowDeleteStrictVer12 implements OFFlowDeleteStrict {
         this.instructions = instructions;
         this.instructionsSet = true;
         return this;
-    }
-    @Override
-    public List<OFAction> getActions()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property actions not supported in version 1.2");
-    }
-
-    @Override
-    public OFFlowDeleteStrict.Builder setActions(List<OFAction> actions) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property actions not supported in version 1.2");
     }
     @Override
     public int getImportance()throws UnsupportedOperationException {
@@ -536,6 +536,17 @@ class OFFlowDeleteStrictVer12 implements OFFlowDeleteStrict {
         return this;
     }
     @Override
+    public Match getMatch() {
+        return match;
+    }
+
+    @Override
+    public OFFlowDeleteStrict.Builder setMatch(Match match) {
+        this.match = match;
+        this.matchSet = true;
+        return this;
+    }
+    @Override
     public U64 getCookie() {
         return cookie;
     }
@@ -544,28 +555,6 @@ class OFFlowDeleteStrictVer12 implements OFFlowDeleteStrict {
     public OFFlowDeleteStrict.Builder setCookie(U64 cookie) {
         this.cookie = cookie;
         this.cookieSet = true;
-        return this;
-    }
-    @Override
-    public U64 getCookieMask() {
-        return cookieMask;
-    }
-
-    @Override
-    public OFFlowDeleteStrict.Builder setCookieMask(U64 cookieMask) {
-        this.cookieMask = cookieMask;
-        this.cookieMaskSet = true;
-        return this;
-    }
-    @Override
-    public TableId getTableId() {
-        return tableId;
-    }
-
-    @Override
-    public OFFlowDeleteStrict.Builder setTableId(TableId tableId) {
-        this.tableId = tableId;
-        this.tableIdSet = true;
         return this;
     }
     @Override
@@ -629,17 +618,6 @@ class OFFlowDeleteStrictVer12 implements OFFlowDeleteStrict {
         return this;
     }
     @Override
-    public OFGroup getOutGroup() {
-        return outGroup;
-    }
-
-    @Override
-    public OFFlowDeleteStrict.Builder setOutGroup(OFGroup outGroup) {
-        this.outGroup = outGroup;
-        this.outGroupSet = true;
-        return this;
-    }
-    @Override
     public Set<OFFlowModFlags> getFlags() {
         return flags;
     }
@@ -651,14 +629,45 @@ class OFFlowDeleteStrictVer12 implements OFFlowDeleteStrict {
         return this;
     }
     @Override
-    public Match getMatch() {
-        return match;
+    public List<OFAction> getActions()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property actions not supported in version 1.2");
     }
 
     @Override
-    public OFFlowDeleteStrict.Builder setMatch(Match match) {
-        this.match = match;
-        this.matchSet = true;
+    public OFFlowDeleteStrict.Builder setActions(List<OFAction> actions) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property actions not supported in version 1.2");
+    }
+    @Override
+    public U64 getCookieMask() {
+        return cookieMask;
+    }
+
+    @Override
+    public OFFlowDeleteStrict.Builder setCookieMask(U64 cookieMask) {
+        this.cookieMask = cookieMask;
+        this.cookieMaskSet = true;
+        return this;
+    }
+    @Override
+    public TableId getTableId() {
+        return tableId;
+    }
+
+    @Override
+    public OFFlowDeleteStrict.Builder setTableId(TableId tableId) {
+        this.tableId = tableId;
+        this.tableIdSet = true;
+        return this;
+    }
+    @Override
+    public OFGroup getOutGroup() {
+        return outGroup;
+    }
+
+    @Override
+    public OFFlowDeleteStrict.Builder setOutGroup(OFGroup outGroup) {
+        this.outGroup = outGroup;
+        this.outGroupSet = true;
         return this;
     }
     @Override
@@ -671,15 +680,6 @@ class OFFlowDeleteStrictVer12 implements OFFlowDeleteStrict {
         this.instructions = instructions;
         this.instructionsSet = true;
         return this;
-    }
-    @Override
-    public List<OFAction> getActions()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property actions not supported in version 1.2");
-    }
-
-    @Override
-    public OFFlowDeleteStrict.Builder setActions(List<OFAction> actions) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property actions not supported in version 1.2");
     }
     @Override
     public int getImportance()throws UnsupportedOperationException {

@@ -120,18 +120,8 @@ class OFFeaturesReplyVer10 implements OFFeaturesReply {
     }
 
     @Override
-    public OFAuxId getAuxiliaryId()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property auxiliaryId not supported in version 1.0");
-    }
-
-    @Override
     public Set<OFCapabilities> getCapabilities() {
         return capabilities;
-    }
-
-    @Override
-    public long getReserved()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property reserved not supported in version 1.0");
     }
 
     @Override
@@ -142,6 +132,16 @@ class OFFeaturesReplyVer10 implements OFFeaturesReply {
     @Override
     public List<OFPortDesc> getPorts() {
         return ports;
+    }
+
+    @Override
+    public long getReserved()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property reserved not supported in version 1.0");
+    }
+
+    @Override
+    public OFAuxId getAuxiliaryId()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property auxiliaryId not supported in version 1.0");
     }
 
 
@@ -228,15 +228,6 @@ class OFFeaturesReplyVer10 implements OFFeaturesReply {
         return this;
     }
     @Override
-    public OFAuxId getAuxiliaryId()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property auxiliaryId not supported in version 1.0");
-    }
-
-    @Override
-    public OFFeaturesReply.Builder setAuxiliaryId(OFAuxId auxiliaryId) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property auxiliaryId not supported in version 1.0");
-    }
-    @Override
     public Set<OFCapabilities> getCapabilities() {
         return capabilities;
     }
@@ -246,15 +237,6 @@ class OFFeaturesReplyVer10 implements OFFeaturesReply {
         this.capabilities = capabilities;
         this.capabilitiesSet = true;
         return this;
-    }
-    @Override
-    public long getReserved()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property reserved not supported in version 1.0");
-    }
-
-    @Override
-    public OFFeaturesReply.Builder setReserved(long reserved) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property reserved not supported in version 1.0");
     }
     @Override
     public Set<OFActionType> getActions() {
@@ -277,6 +259,24 @@ class OFFeaturesReplyVer10 implements OFFeaturesReply {
         this.ports = ports;
         this.portsSet = true;
         return this;
+    }
+    @Override
+    public long getReserved()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property reserved not supported in version 1.0");
+    }
+
+    @Override
+    public OFFeaturesReply.Builder setReserved(long reserved) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property reserved not supported in version 1.0");
+    }
+    @Override
+    public OFAuxId getAuxiliaryId()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property auxiliaryId not supported in version 1.0");
+    }
+
+    @Override
+    public OFFeaturesReply.Builder setAuxiliaryId(OFAuxId auxiliaryId) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property auxiliaryId not supported in version 1.0");
     }
 
 
@@ -384,15 +384,6 @@ class OFFeaturesReplyVer10 implements OFFeaturesReply {
         return this;
     }
     @Override
-    public OFAuxId getAuxiliaryId()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property auxiliaryId not supported in version 1.0");
-    }
-
-    @Override
-    public OFFeaturesReply.Builder setAuxiliaryId(OFAuxId auxiliaryId) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property auxiliaryId not supported in version 1.0");
-    }
-    @Override
     public Set<OFCapabilities> getCapabilities() {
         return capabilities;
     }
@@ -402,15 +393,6 @@ class OFFeaturesReplyVer10 implements OFFeaturesReply {
         this.capabilities = capabilities;
         this.capabilitiesSet = true;
         return this;
-    }
-    @Override
-    public long getReserved()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property reserved not supported in version 1.0");
-    }
-
-    @Override
-    public OFFeaturesReply.Builder setReserved(long reserved) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property reserved not supported in version 1.0");
     }
     @Override
     public Set<OFActionType> getActions() {
@@ -433,6 +415,24 @@ class OFFeaturesReplyVer10 implements OFFeaturesReply {
         this.ports = ports;
         this.portsSet = true;
         return this;
+    }
+    @Override
+    public long getReserved()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property reserved not supported in version 1.0");
+    }
+
+    @Override
+    public OFFeaturesReply.Builder setReserved(long reserved) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property reserved not supported in version 1.0");
+    }
+    @Override
+    public OFAuxId getAuxiliaryId()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property auxiliaryId not supported in version 1.0");
+    }
+
+    @Override
+    public OFFeaturesReply.Builder setAuxiliaryId(OFAuxId auxiliaryId) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property auxiliaryId not supported in version 1.0");
     }
 //
         @Override

@@ -7,15 +7,15 @@
 # Do not modify
 
 import const
-import bsn_tlv
-import meter_band
-import instruction
-import oxm
-import common
-import instruction_id
 import action
-import message
 import action_id
+import oxm
+import message
+import common
+import bsn_tlv
+import instruction
+import instruction_id
+import meter_band
 from const import *
 from common import *
 from loxi import ProtocolError
