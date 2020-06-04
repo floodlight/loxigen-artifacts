@@ -123,6 +123,11 @@ class OFAggregateStatsRequestVer11 implements OFAggregateStatsRequest {
     }
 
     @Override
+    public Match getMatch() {
+        return match;
+    }
+
+    @Override
     public TableId getTableId() {
         return tableId;
     }
@@ -145,11 +150,6 @@ class OFAggregateStatsRequestVer11 implements OFAggregateStatsRequest {
     @Override
     public U64 getCookieMask() {
         return cookieMask;
-    }
-
-    @Override
-    public Match getMatch() {
-        return match;
     }
 
 
@@ -221,6 +221,17 @@ class OFAggregateStatsRequestVer11 implements OFAggregateStatsRequest {
         return this;
     }
     @Override
+    public Match getMatch() {
+        return match;
+    }
+
+    @Override
+    public OFAggregateStatsRequest.Builder setMatch(Match match) {
+        this.match = match;
+        this.matchSet = true;
+        return this;
+    }
+    @Override
     public TableId getTableId() {
         return tableId;
     }
@@ -273,17 +284,6 @@ class OFAggregateStatsRequestVer11 implements OFAggregateStatsRequest {
     public OFAggregateStatsRequest.Builder setCookieMask(U64 cookieMask) {
         this.cookieMask = cookieMask;
         this.cookieMaskSet = true;
-        return this;
-    }
-    @Override
-    public Match getMatch() {
-        return match;
-    }
-
-    @Override
-    public OFAggregateStatsRequest.Builder setMatch(Match match) {
-        this.match = match;
-        this.matchSet = true;
         return this;
     }
 
@@ -385,6 +385,17 @@ class OFAggregateStatsRequestVer11 implements OFAggregateStatsRequest {
         return this;
     }
     @Override
+    public Match getMatch() {
+        return match;
+    }
+
+    @Override
+    public OFAggregateStatsRequest.Builder setMatch(Match match) {
+        this.match = match;
+        this.matchSet = true;
+        return this;
+    }
+    @Override
     public TableId getTableId() {
         return tableId;
     }
@@ -437,17 +448,6 @@ class OFAggregateStatsRequestVer11 implements OFAggregateStatsRequest {
     public OFAggregateStatsRequest.Builder setCookieMask(U64 cookieMask) {
         this.cookieMask = cookieMask;
         this.cookieMaskSet = true;
-        return this;
-    }
-    @Override
-    public Match getMatch() {
-        return match;
-    }
-
-    @Override
-    public OFAggregateStatsRequest.Builder setMatch(Match match) {
-        this.match = match;
-        this.matchSet = true;
         return this;
     }
 //

@@ -120,18 +120,13 @@ class OFFlowDeleteVer10 implements OFFlowDelete {
     }
 
     @Override
+    public Match getMatch() {
+        return match;
+    }
+
+    @Override
     public U64 getCookie() {
         return cookie;
-    }
-
-    @Override
-    public U64 getCookieMask()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property cookieMask not supported in version 1.0");
-    }
-
-    @Override
-    public TableId getTableId()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property tableId not supported in version 1.0");
     }
 
     @Override
@@ -165,28 +160,33 @@ class OFFlowDeleteVer10 implements OFFlowDelete {
     }
 
     @Override
-    public OFGroup getOutGroup()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property outGroup not supported in version 1.0");
-    }
-
-    @Override
     public Set<OFFlowModFlags> getFlags() {
         return flags;
     }
 
     @Override
-    public Match getMatch() {
-        return match;
+    public List<OFAction> getActions() {
+        return actions;
+    }
+
+    @Override
+    public U64 getCookieMask()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property cookieMask not supported in version 1.0");
+    }
+
+    @Override
+    public TableId getTableId()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property tableId not supported in version 1.0");
+    }
+
+    @Override
+    public OFGroup getOutGroup()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property outGroup not supported in version 1.0");
     }
 
     @Override
     public List<OFInstruction> getInstructions()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property instructions not supported in version 1.0");
-    }
-
-    @Override
-    public List<OFAction> getActions() {
-        return actions;
     }
 
     @Override
@@ -251,6 +251,17 @@ class OFFlowDeleteVer10 implements OFFlowDelete {
         return this;
     }
     @Override
+    public Match getMatch() {
+        return match;
+    }
+
+    @Override
+    public OFFlowDelete.Builder setMatch(Match match) {
+        this.match = match;
+        this.matchSet = true;
+        return this;
+    }
+    @Override
     public U64 getCookie() {
         return cookie;
     }
@@ -260,24 +271,6 @@ class OFFlowDeleteVer10 implements OFFlowDelete {
         this.cookie = cookie;
         this.cookieSet = true;
         return this;
-    }
-    @Override
-    public U64 getCookieMask()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property cookieMask not supported in version 1.0");
-    }
-
-    @Override
-    public OFFlowDelete.Builder setCookieMask(U64 cookieMask) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property cookieMask not supported in version 1.0");
-    }
-    @Override
-    public TableId getTableId()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property tableId not supported in version 1.0");
-    }
-
-    @Override
-    public OFFlowDelete.Builder setTableId(TableId tableId) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property tableId not supported in version 1.0");
     }
     @Override
     public OFFlowModCommand getCommand() {
@@ -340,15 +333,6 @@ class OFFlowDeleteVer10 implements OFFlowDelete {
         return this;
     }
     @Override
-    public OFGroup getOutGroup()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property outGroup not supported in version 1.0");
-    }
-
-    @Override
-    public OFFlowDelete.Builder setOutGroup(OFGroup outGroup) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property outGroup not supported in version 1.0");
-    }
-    @Override
     public Set<OFFlowModFlags> getFlags() {
         return flags;
     }
@@ -360,26 +344,6 @@ class OFFlowDeleteVer10 implements OFFlowDelete {
         return this;
     }
     @Override
-    public Match getMatch() {
-        return match;
-    }
-
-    @Override
-    public OFFlowDelete.Builder setMatch(Match match) {
-        this.match = match;
-        this.matchSet = true;
-        return this;
-    }
-    @Override
-    public List<OFInstruction> getInstructions()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property instructions not supported in version 1.0");
-    }
-
-    @Override
-    public OFFlowDelete.Builder setInstructions(List<OFInstruction> instructions) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property instructions not supported in version 1.0");
-    }
-    @Override
     public List<OFAction> getActions() {
         return actions;
     }
@@ -389,6 +353,42 @@ class OFFlowDeleteVer10 implements OFFlowDelete {
         this.actions = actions;
         this.actionsSet = true;
         return this;
+    }
+    @Override
+    public U64 getCookieMask()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property cookieMask not supported in version 1.0");
+    }
+
+    @Override
+    public OFFlowDelete.Builder setCookieMask(U64 cookieMask) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property cookieMask not supported in version 1.0");
+    }
+    @Override
+    public TableId getTableId()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property tableId not supported in version 1.0");
+    }
+
+    @Override
+    public OFFlowDelete.Builder setTableId(TableId tableId) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property tableId not supported in version 1.0");
+    }
+    @Override
+    public OFGroup getOutGroup()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property outGroup not supported in version 1.0");
+    }
+
+    @Override
+    public OFFlowDelete.Builder setOutGroup(OFGroup outGroup) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property outGroup not supported in version 1.0");
+    }
+    @Override
+    public List<OFInstruction> getInstructions()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property instructions not supported in version 1.0");
+    }
+
+    @Override
+    public OFFlowDelete.Builder setInstructions(List<OFInstruction> instructions) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property instructions not supported in version 1.0");
     }
     @Override
     public int getImportance()throws UnsupportedOperationException {
@@ -488,6 +488,17 @@ class OFFlowDeleteVer10 implements OFFlowDelete {
         return this;
     }
     @Override
+    public Match getMatch() {
+        return match;
+    }
+
+    @Override
+    public OFFlowDelete.Builder setMatch(Match match) {
+        this.match = match;
+        this.matchSet = true;
+        return this;
+    }
+    @Override
     public U64 getCookie() {
         return cookie;
     }
@@ -497,24 +508,6 @@ class OFFlowDeleteVer10 implements OFFlowDelete {
         this.cookie = cookie;
         this.cookieSet = true;
         return this;
-    }
-    @Override
-    public U64 getCookieMask()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property cookieMask not supported in version 1.0");
-    }
-
-    @Override
-    public OFFlowDelete.Builder setCookieMask(U64 cookieMask) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property cookieMask not supported in version 1.0");
-    }
-    @Override
-    public TableId getTableId()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property tableId not supported in version 1.0");
-    }
-
-    @Override
-    public OFFlowDelete.Builder setTableId(TableId tableId) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property tableId not supported in version 1.0");
     }
     @Override
     public OFFlowModCommand getCommand() {
@@ -577,15 +570,6 @@ class OFFlowDeleteVer10 implements OFFlowDelete {
         return this;
     }
     @Override
-    public OFGroup getOutGroup()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property outGroup not supported in version 1.0");
-    }
-
-    @Override
-    public OFFlowDelete.Builder setOutGroup(OFGroup outGroup) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property outGroup not supported in version 1.0");
-    }
-    @Override
     public Set<OFFlowModFlags> getFlags() {
         return flags;
     }
@@ -597,26 +581,6 @@ class OFFlowDeleteVer10 implements OFFlowDelete {
         return this;
     }
     @Override
-    public Match getMatch() {
-        return match;
-    }
-
-    @Override
-    public OFFlowDelete.Builder setMatch(Match match) {
-        this.match = match;
-        this.matchSet = true;
-        return this;
-    }
-    @Override
-    public List<OFInstruction> getInstructions()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property instructions not supported in version 1.0");
-    }
-
-    @Override
-    public OFFlowDelete.Builder setInstructions(List<OFInstruction> instructions) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property instructions not supported in version 1.0");
-    }
-    @Override
     public List<OFAction> getActions() {
         return actions;
     }
@@ -626,6 +590,42 @@ class OFFlowDeleteVer10 implements OFFlowDelete {
         this.actions = actions;
         this.actionsSet = true;
         return this;
+    }
+    @Override
+    public U64 getCookieMask()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property cookieMask not supported in version 1.0");
+    }
+
+    @Override
+    public OFFlowDelete.Builder setCookieMask(U64 cookieMask) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property cookieMask not supported in version 1.0");
+    }
+    @Override
+    public TableId getTableId()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property tableId not supported in version 1.0");
+    }
+
+    @Override
+    public OFFlowDelete.Builder setTableId(TableId tableId) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property tableId not supported in version 1.0");
+    }
+    @Override
+    public OFGroup getOutGroup()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property outGroup not supported in version 1.0");
+    }
+
+    @Override
+    public OFFlowDelete.Builder setOutGroup(OFGroup outGroup) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property outGroup not supported in version 1.0");
+    }
+    @Override
+    public List<OFInstruction> getInstructions()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property instructions not supported in version 1.0");
+    }
+
+    @Override
+    public OFFlowDelete.Builder setInstructions(List<OFInstruction> instructions) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property instructions not supported in version 1.0");
     }
     @Override
     public int getImportance()throws UnsupportedOperationException {

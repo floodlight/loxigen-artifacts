@@ -76,13 +76,13 @@ class OFPacketQueueVer13 implements OFPacketQueue {
     }
 
     @Override
-    public OFPort getPort() {
-        return port;
+    public List<OFQueueProp> getProperties() {
+        return properties;
     }
 
     @Override
-    public List<OFQueueProp> getProperties() {
-        return properties;
+    public OFPort getPort() {
+        return port;
     }
 
     @Override
@@ -123,17 +123,6 @@ class OFPacketQueueVer13 implements OFPacketQueue {
         return this;
     }
     @Override
-    public OFPort getPort() {
-        return port;
-    }
-
-    @Override
-    public OFPacketQueue.Builder setPort(OFPort port) {
-        this.port = port;
-        this.portSet = true;
-        return this;
-    }
-    @Override
     public List<OFQueueProp> getProperties() {
         return properties;
     }
@@ -142,6 +131,17 @@ class OFPacketQueueVer13 implements OFPacketQueue {
     public OFPacketQueue.Builder setProperties(List<OFQueueProp> properties) {
         this.properties = properties;
         this.propertiesSet = true;
+        return this;
+    }
+    @Override
+    public OFPort getPort() {
+        return port;
+    }
+
+    @Override
+    public OFPacketQueue.Builder setPort(OFPort port) {
+        this.port = port;
+        this.portSet = true;
         return this;
     }
     @Override
@@ -192,17 +192,6 @@ class OFPacketQueueVer13 implements OFPacketQueue {
         return this;
     }
     @Override
-    public OFPort getPort() {
-        return port;
-    }
-
-    @Override
-    public OFPacketQueue.Builder setPort(OFPort port) {
-        this.port = port;
-        this.portSet = true;
-        return this;
-    }
-    @Override
     public List<OFQueueProp> getProperties() {
         return properties;
     }
@@ -211,6 +200,17 @@ class OFPacketQueueVer13 implements OFPacketQueue {
     public OFPacketQueue.Builder setProperties(List<OFQueueProp> properties) {
         this.properties = properties;
         this.propertiesSet = true;
+        return this;
+    }
+    @Override
+    public OFPort getPort() {
+        return port;
+    }
+
+    @Override
+    public OFPacketQueue.Builder setPort(OFPort port) {
+        this.port = port;
+        this.portSet = true;
         return this;
     }
     @Override
