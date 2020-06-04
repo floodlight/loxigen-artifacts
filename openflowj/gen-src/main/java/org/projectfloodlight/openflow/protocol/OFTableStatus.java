@@ -31,9 +31,9 @@ public interface OFTableStatus extends OFObject, OFMessage {
     OFVersion getVersion();
     OFType getType();
     long getXid();
+    long getRole() throws UnsupportedOperationException;
     OFTableReason getReason();
     OFTableDesc getTable();
-    long getRole() throws UnsupportedOperationException;
 
     void writeTo(ByteBuf channelBuffer);
 
@@ -44,11 +44,11 @@ public interface OFTableStatus extends OFObject, OFMessage {
         OFType getType();
         long getXid();
         Builder setXid(long xid);
+        long getRole() throws UnsupportedOperationException;
+        Builder setRole(long role) throws UnsupportedOperationException;
         OFTableReason getReason();
         Builder setReason(OFTableReason reason);
         OFTableDesc getTable();
         Builder setTable(OFTableDesc table);
-        long getRole() throws UnsupportedOperationException;
-        Builder setRole(long role) throws UnsupportedOperationException;
     }
 }

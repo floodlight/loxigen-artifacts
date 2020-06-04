@@ -103,6 +103,11 @@ class OFBundleAddMsgVer15 implements OFBundleAddMsg {
     }
 
     @Override
+    public OFMessage getData()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property data not supported in version 1.5");
+    }
+
+    @Override
     public OFMessage getMessage() {
         return message;
     }
@@ -110,11 +115,6 @@ class OFBundleAddMsgVer15 implements OFBundleAddMsg {
     @Override
     public List<OFBundleProp> getProperties() {
         return properties;
-    }
-
-    @Override
-    public OFMessage getData()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property data not supported in version 1.5");
     }
 
 
@@ -186,6 +186,15 @@ class OFBundleAddMsgVer15 implements OFBundleAddMsg {
         return this;
     }
     @Override
+    public OFMessage getData()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property data not supported in version 1.5");
+    }
+
+    @Override
+    public OFBundleAddMsg.Builder setData(OFMessage data) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property data not supported in version 1.5");
+    }
+    @Override
     public OFMessage getMessage() {
         return message;
     }
@@ -206,15 +215,6 @@ class OFBundleAddMsgVer15 implements OFBundleAddMsg {
         this.properties = properties;
         this.propertiesSet = true;
         return this;
-    }
-    @Override
-    public OFMessage getData()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property data not supported in version 1.5");
-    }
-
-    @Override
-    public OFBundleAddMsg.Builder setData(OFMessage data) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property data not supported in version 1.5");
     }
 
 
@@ -303,6 +303,15 @@ class OFBundleAddMsgVer15 implements OFBundleAddMsg {
         return this;
     }
     @Override
+    public OFMessage getData()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property data not supported in version 1.5");
+    }
+
+    @Override
+    public OFBundleAddMsg.Builder setData(OFMessage data) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property data not supported in version 1.5");
+    }
+    @Override
     public OFMessage getMessage() {
         return message;
     }
@@ -323,15 +332,6 @@ class OFBundleAddMsgVer15 implements OFBundleAddMsg {
         this.properties = properties;
         this.propertiesSet = true;
         return this;
-    }
-    @Override
-    public OFMessage getData()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property data not supported in version 1.5");
-    }
-
-    @Override
-    public OFBundleAddMsg.Builder setData(OFMessage data) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property data not supported in version 1.5");
     }
 //
         @Override

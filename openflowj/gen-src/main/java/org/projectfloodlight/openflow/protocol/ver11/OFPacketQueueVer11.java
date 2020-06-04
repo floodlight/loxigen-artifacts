@@ -70,13 +70,13 @@ class OFPacketQueueVer11 implements OFPacketQueue {
     }
 
     @Override
-    public OFPort getPort()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property port not supported in version 1.1");
+    public List<OFQueueProp> getProperties() {
+        return properties;
     }
 
     @Override
-    public List<OFQueueProp> getProperties() {
-        return properties;
+    public OFPort getPort()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property port not supported in version 1.1");
     }
 
     @Override
@@ -115,15 +115,6 @@ class OFPacketQueueVer11 implements OFPacketQueue {
         return this;
     }
     @Override
-    public OFPort getPort()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property port not supported in version 1.1");
-    }
-
-    @Override
-    public OFPacketQueue.Builder setPort(OFPort port) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property port not supported in version 1.1");
-    }
-    @Override
     public List<OFQueueProp> getProperties() {
         return properties;
     }
@@ -133,6 +124,15 @@ class OFPacketQueueVer11 implements OFPacketQueue {
         this.properties = properties;
         this.propertiesSet = true;
         return this;
+    }
+    @Override
+    public OFPort getPort()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property port not supported in version 1.1");
+    }
+
+    @Override
+    public OFPacketQueue.Builder setPort(OFPort port) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property port not supported in version 1.1");
     }
     @Override
     public OFVersion getVersion() {
@@ -176,15 +176,6 @@ class OFPacketQueueVer11 implements OFPacketQueue {
         return this;
     }
     @Override
-    public OFPort getPort()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property port not supported in version 1.1");
-    }
-
-    @Override
-    public OFPacketQueue.Builder setPort(OFPort port) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property port not supported in version 1.1");
-    }
-    @Override
     public List<OFQueueProp> getProperties() {
         return properties;
     }
@@ -194,6 +185,15 @@ class OFPacketQueueVer11 implements OFPacketQueue {
         this.properties = properties;
         this.propertiesSet = true;
         return this;
+    }
+    @Override
+    public OFPort getPort()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property port not supported in version 1.1");
+    }
+
+    @Override
+    public OFPacketQueue.Builder setPort(OFPort port) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property port not supported in version 1.1");
     }
     @Override
     public OFVersion getVersion() {

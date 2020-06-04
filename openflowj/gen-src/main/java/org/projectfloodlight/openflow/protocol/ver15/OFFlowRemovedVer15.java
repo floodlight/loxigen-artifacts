@@ -105,6 +105,11 @@ class OFFlowRemovedVer15 implements OFFlowRemoved {
     }
 
     @Override
+    public Match getMatch() {
+        return match;
+    }
+
+    @Override
     public U64 getCookie() {
         return cookie;
     }
@@ -117,11 +122,6 @@ class OFFlowRemovedVer15 implements OFFlowRemoved {
     @Override
     public OFFlowRemovedReason getReason() {
         return reason;
-    }
-
-    @Override
-    public TableId getTableId() {
-        return tableId;
     }
 
     @Override
@@ -140,11 +140,6 @@ class OFFlowRemovedVer15 implements OFFlowRemoved {
     }
 
     @Override
-    public int getHardTimeout() {
-        return hardTimeout;
-    }
-
-    @Override
     public U64 getPacketCount()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property packetCount not supported in version 1.5");
     }
@@ -155,8 +150,13 @@ class OFFlowRemovedVer15 implements OFFlowRemoved {
     }
 
     @Override
-    public Match getMatch() {
-        return match;
+    public TableId getTableId() {
+        return tableId;
+    }
+
+    @Override
+    public int getHardTimeout() {
+        return hardTimeout;
     }
 
     @Override
@@ -219,6 +219,17 @@ class OFFlowRemovedVer15 implements OFFlowRemoved {
         return this;
     }
     @Override
+    public Match getMatch() {
+        return match;
+    }
+
+    @Override
+    public OFFlowRemoved.Builder setMatch(Match match) {
+        this.match = match;
+        this.matchSet = true;
+        return this;
+    }
+    @Override
     public U64 getCookie() {
         return cookie;
     }
@@ -252,17 +263,6 @@ class OFFlowRemovedVer15 implements OFFlowRemoved {
         return this;
     }
     @Override
-    public TableId getTableId() {
-        return tableId;
-    }
-
-    @Override
-    public OFFlowRemoved.Builder setTableId(TableId tableId) {
-        this.tableId = tableId;
-        this.tableIdSet = true;
-        return this;
-    }
-    @Override
     public long getDurationSec()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property durationSec not supported in version 1.5");
     }
@@ -292,17 +292,6 @@ class OFFlowRemovedVer15 implements OFFlowRemoved {
         return this;
     }
     @Override
-    public int getHardTimeout() {
-        return hardTimeout;
-    }
-
-    @Override
-    public OFFlowRemoved.Builder setHardTimeout(int hardTimeout) {
-        this.hardTimeout = hardTimeout;
-        this.hardTimeoutSet = true;
-        return this;
-    }
-    @Override
     public U64 getPacketCount()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property packetCount not supported in version 1.5");
     }
@@ -321,14 +310,25 @@ class OFFlowRemovedVer15 implements OFFlowRemoved {
             throw new UnsupportedOperationException("Property byteCount not supported in version 1.5");
     }
     @Override
-    public Match getMatch() {
-        return match;
+    public TableId getTableId() {
+        return tableId;
     }
 
     @Override
-    public OFFlowRemoved.Builder setMatch(Match match) {
-        this.match = match;
-        this.matchSet = true;
+    public OFFlowRemoved.Builder setTableId(TableId tableId) {
+        this.tableId = tableId;
+        this.tableIdSet = true;
+        return this;
+    }
+    @Override
+    public int getHardTimeout() {
+        return hardTimeout;
+    }
+
+    @Override
+    public OFFlowRemoved.Builder setHardTimeout(int hardTimeout) {
+        this.hardTimeout = hardTimeout;
+        this.hardTimeoutSet = true;
         return this;
     }
     @Override
@@ -425,6 +425,17 @@ class OFFlowRemovedVer15 implements OFFlowRemoved {
         return this;
     }
     @Override
+    public Match getMatch() {
+        return match;
+    }
+
+    @Override
+    public OFFlowRemoved.Builder setMatch(Match match) {
+        this.match = match;
+        this.matchSet = true;
+        return this;
+    }
+    @Override
     public U64 getCookie() {
         return cookie;
     }
@@ -458,17 +469,6 @@ class OFFlowRemovedVer15 implements OFFlowRemoved {
         return this;
     }
     @Override
-    public TableId getTableId() {
-        return tableId;
-    }
-
-    @Override
-    public OFFlowRemoved.Builder setTableId(TableId tableId) {
-        this.tableId = tableId;
-        this.tableIdSet = true;
-        return this;
-    }
-    @Override
     public long getDurationSec()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property durationSec not supported in version 1.5");
     }
@@ -498,17 +498,6 @@ class OFFlowRemovedVer15 implements OFFlowRemoved {
         return this;
     }
     @Override
-    public int getHardTimeout() {
-        return hardTimeout;
-    }
-
-    @Override
-    public OFFlowRemoved.Builder setHardTimeout(int hardTimeout) {
-        this.hardTimeout = hardTimeout;
-        this.hardTimeoutSet = true;
-        return this;
-    }
-    @Override
     public U64 getPacketCount()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property packetCount not supported in version 1.5");
     }
@@ -527,14 +516,25 @@ class OFFlowRemovedVer15 implements OFFlowRemoved {
             throw new UnsupportedOperationException("Property byteCount not supported in version 1.5");
     }
     @Override
-    public Match getMatch() {
-        return match;
+    public TableId getTableId() {
+        return tableId;
     }
 
     @Override
-    public OFFlowRemoved.Builder setMatch(Match match) {
-        this.match = match;
-        this.matchSet = true;
+    public OFFlowRemoved.Builder setTableId(TableId tableId) {
+        this.tableId = tableId;
+        this.tableIdSet = true;
+        return this;
+    }
+    @Override
+    public int getHardTimeout() {
+        return hardTimeout;
+    }
+
+    @Override
+    public OFFlowRemoved.Builder setHardTimeout(int hardTimeout) {
+        this.hardTimeout = hardTimeout;
+        this.hardTimeoutSet = true;
         return this;
     }
     @Override

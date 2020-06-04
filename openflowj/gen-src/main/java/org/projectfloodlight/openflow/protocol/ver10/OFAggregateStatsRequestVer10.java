@@ -105,6 +105,11 @@ class OFAggregateStatsRequestVer10 implements OFAggregateStatsRequest {
     }
 
     @Override
+    public Match getMatch() {
+        return match;
+    }
+
+    @Override
     public TableId getTableId() {
         return tableId;
     }
@@ -127,11 +132,6 @@ class OFAggregateStatsRequestVer10 implements OFAggregateStatsRequest {
     @Override
     public U64 getCookieMask()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property cookieMask not supported in version 1.0");
-    }
-
-    @Override
-    public Match getMatch() {
-        return match;
     }
 
 
@@ -197,6 +197,17 @@ class OFAggregateStatsRequestVer10 implements OFAggregateStatsRequest {
         return this;
     }
     @Override
+    public Match getMatch() {
+        return match;
+    }
+
+    @Override
+    public OFAggregateStatsRequest.Builder setMatch(Match match) {
+        this.match = match;
+        this.matchSet = true;
+        return this;
+    }
+    @Override
     public TableId getTableId() {
         return tableId;
     }
@@ -244,17 +255,6 @@ class OFAggregateStatsRequestVer10 implements OFAggregateStatsRequest {
     @Override
     public OFAggregateStatsRequest.Builder setCookieMask(U64 cookieMask) throws UnsupportedOperationException {
             throw new UnsupportedOperationException("Property cookieMask not supported in version 1.0");
-    }
-    @Override
-    public Match getMatch() {
-        return match;
-    }
-
-    @Override
-    public OFAggregateStatsRequest.Builder setMatch(Match match) {
-        this.match = match;
-        this.matchSet = true;
-        return this;
     }
 
 
@@ -337,6 +337,17 @@ class OFAggregateStatsRequestVer10 implements OFAggregateStatsRequest {
         return this;
     }
     @Override
+    public Match getMatch() {
+        return match;
+    }
+
+    @Override
+    public OFAggregateStatsRequest.Builder setMatch(Match match) {
+        this.match = match;
+        this.matchSet = true;
+        return this;
+    }
+    @Override
     public TableId getTableId() {
         return tableId;
     }
@@ -384,17 +395,6 @@ class OFAggregateStatsRequestVer10 implements OFAggregateStatsRequest {
     @Override
     public OFAggregateStatsRequest.Builder setCookieMask(U64 cookieMask) throws UnsupportedOperationException {
             throw new UnsupportedOperationException("Property cookieMask not supported in version 1.0");
-    }
-    @Override
-    public Match getMatch() {
-        return match;
-    }
-
-    @Override
-    public OFAggregateStatsRequest.Builder setMatch(Match match) {
-        this.match = match;
-        this.matchSet = true;
-        return this;
     }
 //
         @Override

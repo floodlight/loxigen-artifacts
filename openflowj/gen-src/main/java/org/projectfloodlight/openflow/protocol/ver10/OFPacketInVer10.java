@@ -105,23 +105,13 @@ class OFPacketInVer10 implements OFPacketIn {
     }
 
     @Override
+    public OFPort getInPort() {
+        return inPort;
+    }
+
+    @Override
     public OFPacketInReason getReason() {
         return reason;
-    }
-
-    @Override
-    public TableId getTableId()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property tableId not supported in version 1.0");
-    }
-
-    @Override
-    public U64 getCookie()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property cookie not supported in version 1.0");
-    }
-
-    @Override
-    public Match getMatch()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property match not supported in version 1.0");
     }
 
     @Override
@@ -130,13 +120,23 @@ class OFPacketInVer10 implements OFPacketIn {
     }
 
     @Override
-    public OFPort getInPort() {
-        return inPort;
+    public OFPort getInPhyPort()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property inPhyPort not supported in version 1.0");
     }
 
     @Override
-    public OFPort getInPhyPort()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property inPhyPort not supported in version 1.0");
+    public TableId getTableId()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property tableId not supported in version 1.0");
+    }
+
+    @Override
+    public Match getMatch()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property match not supported in version 1.0");
+    }
+
+    @Override
+    public U64 getCookie()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property cookie not supported in version 1.0");
     }
 
 
@@ -210,6 +210,17 @@ class OFPacketInVer10 implements OFPacketIn {
         return this;
     }
     @Override
+    public OFPort getInPort() {
+        return inPort;
+    }
+
+    @Override
+    public OFPacketIn.Builder setInPort(OFPort inPort) {
+        this.inPort = inPort;
+        this.inPortSet = true;
+        return this;
+    }
+    @Override
     public OFPacketInReason getReason() {
         return reason;
     }
@@ -219,33 +230,6 @@ class OFPacketInVer10 implements OFPacketIn {
         this.reason = reason;
         this.reasonSet = true;
         return this;
-    }
-    @Override
-    public TableId getTableId()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property tableId not supported in version 1.0");
-    }
-
-    @Override
-    public OFPacketIn.Builder setTableId(TableId tableId) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property tableId not supported in version 1.0");
-    }
-    @Override
-    public U64 getCookie()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property cookie not supported in version 1.0");
-    }
-
-    @Override
-    public OFPacketIn.Builder setCookie(U64 cookie) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property cookie not supported in version 1.0");
-    }
-    @Override
-    public Match getMatch()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property match not supported in version 1.0");
-    }
-
-    @Override
-    public OFPacketIn.Builder setMatch(Match match) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property match not supported in version 1.0");
     }
     @Override
     public byte[] getData() {
@@ -259,17 +243,6 @@ class OFPacketInVer10 implements OFPacketIn {
         return this;
     }
     @Override
-    public OFPort getInPort() {
-        return inPort;
-    }
-
-    @Override
-    public OFPacketIn.Builder setInPort(OFPort inPort) {
-        this.inPort = inPort;
-        this.inPortSet = true;
-        return this;
-    }
-    @Override
     public OFPort getInPhyPort()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property inPhyPort not supported in version 1.0");
     }
@@ -277,6 +250,33 @@ class OFPacketInVer10 implements OFPacketIn {
     @Override
     public OFPacketIn.Builder setInPhyPort(OFPort inPhyPort) throws UnsupportedOperationException {
             throw new UnsupportedOperationException("Property inPhyPort not supported in version 1.0");
+    }
+    @Override
+    public TableId getTableId()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property tableId not supported in version 1.0");
+    }
+
+    @Override
+    public OFPacketIn.Builder setTableId(TableId tableId) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property tableId not supported in version 1.0");
+    }
+    @Override
+    public Match getMatch()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property match not supported in version 1.0");
+    }
+
+    @Override
+    public OFPacketIn.Builder setMatch(Match match) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property match not supported in version 1.0");
+    }
+    @Override
+    public U64 getCookie()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property cookie not supported in version 1.0");
+    }
+
+    @Override
+    public OFPacketIn.Builder setCookie(U64 cookie) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property cookie not supported in version 1.0");
     }
 
 
@@ -369,6 +369,17 @@ class OFPacketInVer10 implements OFPacketIn {
         return this;
     }
     @Override
+    public OFPort getInPort() {
+        return inPort;
+    }
+
+    @Override
+    public OFPacketIn.Builder setInPort(OFPort inPort) {
+        this.inPort = inPort;
+        this.inPortSet = true;
+        return this;
+    }
+    @Override
     public OFPacketInReason getReason() {
         return reason;
     }
@@ -378,33 +389,6 @@ class OFPacketInVer10 implements OFPacketIn {
         this.reason = reason;
         this.reasonSet = true;
         return this;
-    }
-    @Override
-    public TableId getTableId()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property tableId not supported in version 1.0");
-    }
-
-    @Override
-    public OFPacketIn.Builder setTableId(TableId tableId) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property tableId not supported in version 1.0");
-    }
-    @Override
-    public U64 getCookie()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property cookie not supported in version 1.0");
-    }
-
-    @Override
-    public OFPacketIn.Builder setCookie(U64 cookie) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property cookie not supported in version 1.0");
-    }
-    @Override
-    public Match getMatch()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property match not supported in version 1.0");
-    }
-
-    @Override
-    public OFPacketIn.Builder setMatch(Match match) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property match not supported in version 1.0");
     }
     @Override
     public byte[] getData() {
@@ -418,17 +402,6 @@ class OFPacketInVer10 implements OFPacketIn {
         return this;
     }
     @Override
-    public OFPort getInPort() {
-        return inPort;
-    }
-
-    @Override
-    public OFPacketIn.Builder setInPort(OFPort inPort) {
-        this.inPort = inPort;
-        this.inPortSet = true;
-        return this;
-    }
-    @Override
     public OFPort getInPhyPort()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property inPhyPort not supported in version 1.0");
     }
@@ -436,6 +409,33 @@ class OFPacketInVer10 implements OFPacketIn {
     @Override
     public OFPacketIn.Builder setInPhyPort(OFPort inPhyPort) throws UnsupportedOperationException {
             throw new UnsupportedOperationException("Property inPhyPort not supported in version 1.0");
+    }
+    @Override
+    public TableId getTableId()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property tableId not supported in version 1.0");
+    }
+
+    @Override
+    public OFPacketIn.Builder setTableId(TableId tableId) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property tableId not supported in version 1.0");
+    }
+    @Override
+    public Match getMatch()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property match not supported in version 1.0");
+    }
+
+    @Override
+    public OFPacketIn.Builder setMatch(Match match) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property match not supported in version 1.0");
+    }
+    @Override
+    public U64 getCookie()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property cookie not supported in version 1.0");
+    }
+
+    @Override
+    public OFPacketIn.Builder setCookie(U64 cookie) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property cookie not supported in version 1.0");
     }
 //
         @Override
