@@ -1,1 +1,1 @@
-eaf94124eda766ab11e2938f88384ab60fec0d27 Merge pull request #662 from kenchiang/python3
+1d30255bffe11179d74e996c9eaa8c0dbcdb4640 Sanitize standard-1.5, removing nonascii values Throw errors when parsing instead of replacing undecodable characters
