@@ -9320,6 +9320,9 @@ fields['of13.bsn_tlv_udf_anchor.value'] = ProtoField.uint32("of13.bsn_tlv_udf_an
 fields['of13.bsn_tlv_udf_capability.type'] = ProtoField.uint16("of13.bsn_tlv_udf_capability.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_udf_capability.length'] = ProtoField.uint16("of13.bsn_tlv_udf_capability.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_udf_capability.value'] = ProtoField.uint32("of13.bsn_tlv_udf_capability.value", "value", base.HEX, enum_v4_ofp_bsn_udf_mode)
+fields['of13.bsn_tlv_udf_data.type'] = ProtoField.uint16("of13.bsn_tlv_udf_data.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_udf_data.length'] = ProtoField.uint16("of13.bsn_tlv_udf_data.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_udf_data.value'] = ProtoField.uint32("of13.bsn_tlv_udf_data.value", "value", base.DEC, nil)
 fields['of13.bsn_tlv_udf_id.type'] = ProtoField.uint16("of13.bsn_tlv_udf_id.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_udf_id.length'] = ProtoField.uint16("of13.bsn_tlv_udf_id.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_udf_id.value'] = ProtoField.uint16("of13.bsn_tlv_udf_id.value", "value", base.DEC, nil)
@@ -12414,6 +12417,9 @@ fields['of14.bsn_tlv_udf_anchor.value'] = ProtoField.uint32("of14.bsn_tlv_udf_an
 fields['of14.bsn_tlv_udf_capability.type'] = ProtoField.uint16("of14.bsn_tlv_udf_capability.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_udf_capability.length'] = ProtoField.uint16("of14.bsn_tlv_udf_capability.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_udf_capability.value'] = ProtoField.uint32("of14.bsn_tlv_udf_capability.value", "value", base.HEX, enum_v5_ofp_bsn_udf_mode)
+fields['of14.bsn_tlv_udf_data.type'] = ProtoField.uint16("of14.bsn_tlv_udf_data.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_udf_data.length'] = ProtoField.uint16("of14.bsn_tlv_udf_data.length", "length", base.DEC, nil)
+fields['of14.bsn_tlv_udf_data.value'] = ProtoField.uint32("of14.bsn_tlv_udf_data.value", "value", base.DEC, nil)
 fields['of14.bsn_tlv_udf_id.type'] = ProtoField.uint16("of14.bsn_tlv_udf_id.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_udf_id.length'] = ProtoField.uint16("of14.bsn_tlv_udf_id.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_udf_id.value'] = ProtoField.uint16("of14.bsn_tlv_udf_id.value", "value", base.DEC, nil)
@@ -15794,6 +15800,9 @@ fields['of15.bsn_tlv_udf_anchor.value'] = ProtoField.uint32("of15.bsn_tlv_udf_an
 fields['of15.bsn_tlv_udf_capability.type'] = ProtoField.uint16("of15.bsn_tlv_udf_capability.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_udf_capability.length'] = ProtoField.uint16("of15.bsn_tlv_udf_capability.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_udf_capability.value'] = ProtoField.uint32("of15.bsn_tlv_udf_capability.value", "value", base.HEX, enum_v6_ofp_bsn_udf_mode)
+fields['of15.bsn_tlv_udf_data.type'] = ProtoField.uint16("of15.bsn_tlv_udf_data.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_udf_data.length'] = ProtoField.uint16("of15.bsn_tlv_udf_data.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_udf_data.value'] = ProtoField.uint32("of15.bsn_tlv_udf_data.value", "value", base.DEC, nil)
 fields['of15.bsn_tlv_udf_id.type'] = ProtoField.uint16("of15.bsn_tlv_udf_id.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_udf_id.length'] = ProtoField.uint16("of15.bsn_tlv_udf_id.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_udf_id.value'] = ProtoField.uint16("of15.bsn_tlv_udf_id.value", "value", base.DEC, nil)
@@ -22461,6 +22470,9 @@ p_of.fields = {
     fields['of13.bsn_tlv_udf_capability.type'],
     fields['of13.bsn_tlv_udf_capability.length'],
     fields['of13.bsn_tlv_udf_capability.value'],
+    fields['of13.bsn_tlv_udf_data.type'],
+    fields['of13.bsn_tlv_udf_data.length'],
+    fields['of13.bsn_tlv_udf_data.value'],
     fields['of13.bsn_tlv_udf_id.type'],
     fields['of13.bsn_tlv_udf_id.length'],
     fields['of13.bsn_tlv_udf_id.value'],
@@ -25555,6 +25567,9 @@ p_of.fields = {
     fields['of14.bsn_tlv_udf_capability.type'],
     fields['of14.bsn_tlv_udf_capability.length'],
     fields['of14.bsn_tlv_udf_capability.value'],
+    fields['of14.bsn_tlv_udf_data.type'],
+    fields['of14.bsn_tlv_udf_data.length'],
+    fields['of14.bsn_tlv_udf_data.value'],
     fields['of14.bsn_tlv_udf_id.type'],
     fields['of14.bsn_tlv_udf_id.length'],
     fields['of14.bsn_tlv_udf_id.value'],
@@ -28935,6 +28950,9 @@ p_of.fields = {
     fields['of15.bsn_tlv_udf_capability.type'],
     fields['of15.bsn_tlv_udf_capability.length'],
     fields['of15.bsn_tlv_udf_capability.value'],
+    fields['of15.bsn_tlv_udf_data.type'],
+    fields['of15.bsn_tlv_udf_data.length'],
+    fields['of15.bsn_tlv_udf_data.value'],
     fields['of15.bsn_tlv_udf_id.type'],
     fields['of15.bsn_tlv_udf_id.length'],
     fields['of15.bsn_tlv_udf_id.value'],
@@ -42373,6 +42391,16 @@ function dissect_of_bsn_tlv_udf_capability_v4(reader, subtree)
 end
 of_bsn_tlv_v4_dissectors[180] = dissect_of_bsn_tlv_udf_capability_v4
 
+-- child class of_bsn_tlv_udf_data
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_udf_data_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_udf_data.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_udf_data.length')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_tlv_udf_data.value')
+    return 'of_bsn_tlv_udf_data'
+end
+of_bsn_tlv_v4_dissectors[207] = dissect_of_bsn_tlv_udf_data_v4
+
 -- child class of_bsn_tlv_udf_id
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_udf_id_v4(reader, subtree)
@@ -50864,6 +50892,16 @@ function dissect_of_bsn_tlv_udf_capability_v5(reader, subtree)
     return 'of_bsn_tlv_udf_capability'
 end
 of_bsn_tlv_v5_dissectors[180] = dissect_of_bsn_tlv_udf_capability_v5
+
+-- child class of_bsn_tlv_udf_data
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_udf_data_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_udf_data.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_udf_data.length')
+    read_uint32_t(reader, 5, subtree, 'of14.bsn_tlv_udf_data.value')
+    return 'of_bsn_tlv_udf_data'
+end
+of_bsn_tlv_v5_dissectors[207] = dissect_of_bsn_tlv_udf_data_v5
 
 -- child class of_bsn_tlv_udf_id
 -- Child of of_bsn_tlv
@@ -60018,6 +60056,16 @@ function dissect_of_bsn_tlv_udf_capability_v6(reader, subtree)
     return 'of_bsn_tlv_udf_capability'
 end
 of_bsn_tlv_v6_dissectors[180] = dissect_of_bsn_tlv_udf_capability_v6
+
+-- child class of_bsn_tlv_udf_data
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_udf_data_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_udf_data.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_udf_data.length')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_tlv_udf_data.value')
+    return 'of_bsn_tlv_udf_data'
+end
+of_bsn_tlv_v6_dissectors[207] = dissect_of_bsn_tlv_udf_data_v6
 
 -- child class of_bsn_tlv_udf_id
 -- Child of of_bsn_tlv
