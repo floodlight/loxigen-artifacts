@@ -1459,6 +1459,15 @@ public class OFBsnTlvsVer13 implements OFBsnTlvs {
                     );
     }
 
+    public OFBsnTlvUdfData.Builder buildUdfData() {
+        return new OFBsnTlvUdfDataVer13.Builder();
+    }
+    public OFBsnTlvUdfData udfData(long value) {
+        return new OFBsnTlvUdfDataVer13(
+                value
+                    );
+    }
+
     public OFBsnTlvUdfId.Builder buildUdfId() {
         return new OFBsnTlvUdfIdVer13.Builder();
     }

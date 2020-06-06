@@ -1175,6 +1175,13 @@ public class OFBsnTlvsVer11 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvUdfCapability not supported in version 1.1");
     }
 
+    public OFBsnTlvUdfData.Builder buildUdfData() {
+        throw new UnsupportedOperationException("OFBsnTlvUdfData not supported in version 1.1");
+    }
+    public OFBsnTlvUdfData udfData(long value) {
+        throw new UnsupportedOperationException("OFBsnTlvUdfData not supported in version 1.1");
+    }
+
     public OFBsnTlvUdfId.Builder buildUdfId() {
         throw new UnsupportedOperationException("OFBsnTlvUdfId not supported in version 1.1");
     }
