@@ -494,6 +494,7 @@ const of_object_init_f of_object_init_map[] = {
     (of_object_init_f)of_bsn_tlv_tx_packets_init,
     (of_object_init_f)of_bsn_tlv_udf_anchor_init,
     (of_object_init_f)of_bsn_tlv_udf_capability_init,
+    (of_object_init_f)of_bsn_tlv_udf_data_init,
     (of_object_init_f)of_bsn_tlv_udf_id_init,
     (of_object_init_f)of_bsn_tlv_udf_length_init,
     (of_object_init_f)of_bsn_tlv_udf_offset_init,

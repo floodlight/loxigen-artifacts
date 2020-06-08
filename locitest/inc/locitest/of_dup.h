@@ -1943,6 +1943,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_udf_data_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_udf_id_dup(
         of_object_t *src);
 
@@ -7311,6 +7315,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_udf_data_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_udf_id_OF_VERSION_1_3_dup(
         of_object_t *src);
 
@@ -10348,6 +10356,10 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_tlv_udf_capability_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_udf_data_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *

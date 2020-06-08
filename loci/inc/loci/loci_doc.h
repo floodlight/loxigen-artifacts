@@ -8257,6 +8257,17 @@ typedef struct of_bsn_tlv_udf_anchor_s of_bsn_tlv_udf_anchor_t;
 typedef struct of_bsn_tlv_udf_capability_s of_bsn_tlv_udf_capability_t;
 
 /**
+ * Structure for of_bsn_tlv_udf_data object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for value, a variable of type uint32.  Functions
+ *   are of type of_bsn_tlv_udf_data_uint32_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_udf_data_s of_bsn_tlv_udf_data_t;
+
+/**
  * Structure for of_bsn_tlv_udf_id object.  Get/set
  * accessors available in all versions unless noted otherwise
  *

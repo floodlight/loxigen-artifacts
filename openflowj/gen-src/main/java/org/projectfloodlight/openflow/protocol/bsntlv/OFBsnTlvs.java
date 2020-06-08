@@ -351,6 +351,8 @@ public interface OFBsnTlvs {
     OFBsnTlvUdfAnchor udfAnchor(OFBsnUdfAnchor value);
     OFBsnTlvUdfCapability.Builder buildUdfCapability() throws UnsupportedOperationException;
     OFBsnTlvUdfCapability udfCapability(Set<OFBsnUdfMode> value);
+    OFBsnTlvUdfData.Builder buildUdfData() throws UnsupportedOperationException;
+    OFBsnTlvUdfData udfData(long value);
     OFBsnTlvUdfId.Builder buildUdfId() throws UnsupportedOperationException;
     OFBsnTlvUdfId udfId(int value);
     OFBsnTlvUdfLength.Builder buildUdfLength() throws UnsupportedOperationException;
