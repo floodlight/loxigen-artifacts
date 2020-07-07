@@ -505,6 +505,9 @@ abstract class OFBsnTlvVer14 {
                case (short) 0xbd:
                    // discriminator value 0xbd=0xbd for class OFBsnTlvRedundantMgmtVer14
                    return OFBsnTlvRedundantMgmtVer14.READER.readFrom(bb);
+               case (short) 0xd0:
+                   // discriminator value 0xd0=0xd0 for class OFBsnTlvRedundantMgmtReselectVer14
+                   return OFBsnTlvRedundantMgmtReselectVer14.READER.readFrom(bb);
                case (short) 0x3b:
                    // discriminator value 0x3b=0x3b for class OFBsnTlvReferenceVer14
                    return OFBsnTlvReferenceVer14.READER.readFrom(bb);

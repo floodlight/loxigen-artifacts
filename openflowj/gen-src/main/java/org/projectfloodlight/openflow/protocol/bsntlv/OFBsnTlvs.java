@@ -301,6 +301,7 @@ public interface OFBsnTlvs {
     OFBsnTlvRecordPackets.Builder buildRecordPackets() throws UnsupportedOperationException;
     OFBsnTlvRecordPackets recordPackets(long value);
     OFBsnTlvRedundantMgmt redundantMgmt();
+    OFBsnTlvRedundantMgmtReselect redundantMgmtReselect();
     OFBsnTlvReference.Builder buildReference() throws UnsupportedOperationException;
     OFBsnTlvReference reference(int tableId, List<OFBsnTlv> key);
     OFBsnTlvReplyPackets.Builder buildReplyPackets() throws UnsupportedOperationException;

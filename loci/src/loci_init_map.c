@@ -467,6 +467,7 @@ const of_object_init_f of_object_init_map[] = {
     (of_object_init_f)of_bsn_tlv_rate_unit_init,
     (of_object_init_f)of_bsn_tlv_record_packets_init,
     (of_object_init_f)of_bsn_tlv_redundant_mgmt_init,
+    (of_object_init_f)of_bsn_tlv_redundant_mgmt_reselect_init,
     (of_object_init_f)of_bsn_tlv_reference_init,
     (of_object_init_f)of_bsn_tlv_reply_packets_init,
     (of_object_init_f)of_bsn_tlv_request_packets_init,

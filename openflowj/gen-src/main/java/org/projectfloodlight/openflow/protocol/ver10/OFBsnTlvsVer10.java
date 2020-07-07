@@ -998,6 +998,10 @@ public class OFBsnTlvsVer10 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvRedundantMgmt not supported in version 1.0");
     }
 
+    public OFBsnTlvRedundantMgmtReselect redundantMgmtReselect() {
+        throw new UnsupportedOperationException("OFBsnTlvRedundantMgmtReselect not supported in version 1.0");
+    }
+
     public OFBsnTlvReference.Builder buildReference() {
         throw new UnsupportedOperationException("OFBsnTlvReference not supported in version 1.0");
     }

@@ -895,6 +895,7 @@ static int __attribute__((unused)) loci_validate_of_bsn_tlv_rate_limit_OF_VERSIO
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_rate_unit_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_record_packets_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_redundant_mgmt_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_bsn_tlv_redundant_mgmt_reselect_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_reference_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_reply_packets_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_request_packets_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
@@ -1629,6 +1630,7 @@ static int __attribute__((unused)) loci_validate_of_bsn_tlv_rate_limit_OF_VERSIO
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_rate_unit_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_record_packets_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_redundant_mgmt_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_bsn_tlv_redundant_mgmt_reselect_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_reference_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_reply_packets_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_request_packets_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
@@ -21349,6 +21351,8 @@ loci_validate_of_bsn_tlv_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
         return loci_validate_of_bsn_tlv_record_packets_OF_VERSION_1_3(data, len, out_len);
     case 0xbd:
         return loci_validate_of_bsn_tlv_redundant_mgmt_OF_VERSION_1_3(data, len, out_len);
+    case 0xd0:
+        return loci_validate_of_bsn_tlv_redundant_mgmt_reselect_OF_VERSION_1_3(data, len, out_len);
     case 0x3b:
         return loci_validate_of_bsn_tlv_reference_OF_VERSION_1_3(data, len, out_len);
     case 0xc:
@@ -24821,6 +24825,28 @@ loci_validate_of_bsn_tlv_record_packets_OF_VERSION_1_3(uint8_t *data, int len, i
 
 static int
 loci_validate_of_bsn_tlv_redundant_mgmt_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
+{
+    if (len < 4) {
+        return -1;
+    }
+
+    len = 4;
+
+    uint16_t wire_len;
+    buf_u16_get(data + 2, &wire_len);
+    if (wire_len > len || wire_len < 4) {
+        return -1;
+    }
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_bsn_tlv_redundant_mgmt_reselect_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
 {
     if (len < 4) {
         return -1;
@@ -39389,6 +39415,8 @@ loci_validate_of_bsn_tlv_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
         return loci_validate_of_bsn_tlv_record_packets_OF_VERSION_1_4(data, len, out_len);
     case 0xbd:
         return loci_validate_of_bsn_tlv_redundant_mgmt_OF_VERSION_1_4(data, len, out_len);
+    case 0xd0:
+        return loci_validate_of_bsn_tlv_redundant_mgmt_reselect_OF_VERSION_1_4(data, len, out_len);
     case 0x3b:
         return loci_validate_of_bsn_tlv_reference_OF_VERSION_1_4(data, len, out_len);
     case 0xc:
@@ -42861,6 +42889,28 @@ loci_validate_of_bsn_tlv_record_packets_OF_VERSION_1_4(uint8_t *data, int len, i
 
 static int
 loci_validate_of_bsn_tlv_redundant_mgmt_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
+{
+    if (len < 4) {
+        return -1;
+    }
+
+    len = 4;
+
+    uint16_t wire_len;
+    buf_u16_get(data + 2, &wire_len);
+    if (wire_len > len || wire_len < 4) {
+        return -1;
+    }
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_bsn_tlv_redundant_mgmt_reselect_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
 {
     if (len < 4) {
         return -1;

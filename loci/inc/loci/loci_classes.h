@@ -1161,6 +1161,8 @@ void of_bsn_tlv_record_packets_wire_object_id_get(of_object_t *obj, of_object_id
 void of_bsn_tlv_record_packets_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_redundant_mgmt_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_redundant_mgmt_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_redundant_mgmt_reselect_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_redundant_mgmt_reselect_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_reference_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_reference_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_reply_packets_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -2107,6 +2109,7 @@ typedef of_object_t of_bsn_tlv_rate_limit_t;
 typedef of_object_t of_bsn_tlv_rate_unit_t;
 typedef of_object_t of_bsn_tlv_record_packets_t;
 typedef of_object_t of_bsn_tlv_redundant_mgmt_t;
+typedef of_object_t of_bsn_tlv_redundant_mgmt_reselect_t;
 typedef of_object_t of_bsn_tlv_reference_t;
 typedef of_object_t of_bsn_tlv_reply_packets_t;
 typedef of_object_t of_bsn_tlv_request_packets_t;
@@ -4827,6 +4830,11 @@ extern void of_bsn_tlv_record_packets_init(
 extern of_object_t *
     of_bsn_tlv_redundant_mgmt_new(of_version_t version);
 extern void of_bsn_tlv_redundant_mgmt_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_bsn_tlv_redundant_mgmt_reselect_new(of_version_t version);
+extern void of_bsn_tlv_redundant_mgmt_reselect_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
@@ -11953,6 +11961,17 @@ of_bsn_tlv_record_packets_delete(of_object_t *obj) {
  */
 static inline void
 of_bsn_tlv_redundant_mgmt_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_redundant_mgmt_reselect_t
+ * @param obj An instance of type of_bsn_tlv_redundant_mgmt_reselect_t
+ *
+ * \ingroup of_bsn_tlv_redundant_mgmt_reselect
+ */
+static inline void
+of_bsn_tlv_redundant_mgmt_reselect_delete(of_object_t *obj) {
     of_object_delete(obj);
 }
 
@@ -25475,6 +25494,8 @@ extern void of_bsn_tlv_record_packets_value_get(
     uint32_t *value);
 
 /* Unified accessor functions for of_bsn_tlv_redundant_mgmt */
+
+/* Unified accessor functions for of_bsn_tlv_redundant_mgmt_reselect */
 
 /* Unified accessor functions for of_bsn_tlv_reference */
 

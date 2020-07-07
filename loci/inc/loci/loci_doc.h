@@ -7972,6 +7972,13 @@ typedef struct of_bsn_tlv_record_packets_s of_bsn_tlv_record_packets_t;
 typedef struct of_bsn_tlv_redundant_mgmt_s of_bsn_tlv_redundant_mgmt_t;
 
 /**
+ * Structure for of_bsn_tlv_redundant_mgmt_reselect object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ */
+typedef struct of_bsn_tlv_redundant_mgmt_reselect_s of_bsn_tlv_redundant_mgmt_reselect_t;
+
+/**
  * Structure for of_bsn_tlv_reference object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
