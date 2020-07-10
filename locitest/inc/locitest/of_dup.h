@@ -1651,6 +1651,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_mgmt_reselect_on_failure_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_miss_packets_dup(
         of_object_t *src);
 
@@ -7023,6 +7027,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_mgmt_reselect_on_failure_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_miss_packets_OF_VERSION_1_3_dup(
         of_object_t *src);
 
@@ -10064,6 +10072,10 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_tlv_mcg_type_vxlan_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_mgmt_reselect_on_failure_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *

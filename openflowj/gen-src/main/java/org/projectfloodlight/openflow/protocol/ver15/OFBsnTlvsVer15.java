@@ -886,6 +886,10 @@ public class OFBsnTlvsVer15 implements OFBsnTlvs {
         return OFBsnTlvMcgTypeVxlanVer15.INSTANCE;
     }
 
+    public OFBsnTlvMgmtReselectOnFailure mgmtReselectOnFailure() {
+        return OFBsnTlvMgmtReselectOnFailureVer15.INSTANCE;
+    }
+
     public OFBsnTlvMissPackets.Builder buildMissPackets() {
         return new OFBsnTlvMissPacketsVer15.Builder();
     }

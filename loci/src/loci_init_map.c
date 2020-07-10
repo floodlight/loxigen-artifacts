@@ -421,6 +421,7 @@ const of_object_init_f of_object_init_map[] = {
     (of_object_init_f)of_bsn_tlv_mac_init,
     (of_object_init_f)of_bsn_tlv_mac_mask_init,
     (of_object_init_f)of_bsn_tlv_mcg_type_vxlan_init,
+    (of_object_init_f)of_bsn_tlv_mgmt_reselect_on_failure_init,
     (of_object_init_f)of_bsn_tlv_miss_packets_init,
     (of_object_init_f)of_bsn_tlv_mpls_control_word_init,
     (of_object_init_f)of_bsn_tlv_mpls_label_init,

@@ -9117,6 +9117,8 @@ fields['of13.bsn_tlv_mac_mask.length'] = ProtoField.uint16("of13.bsn_tlv_mac_mas
 fields['of13.bsn_tlv_mac_mask.value'] = ProtoField.ether("of13.bsn_tlv_mac_mask.value", "value")
 fields['of13.bsn_tlv_mcg_type_vxlan.type'] = ProtoField.uint16("of13.bsn_tlv_mcg_type_vxlan.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_mcg_type_vxlan.length'] = ProtoField.uint16("of13.bsn_tlv_mcg_type_vxlan.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_mgmt_reselect_on_failure.type'] = ProtoField.uint16("of13.bsn_tlv_mgmt_reselect_on_failure.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_mgmt_reselect_on_failure.length'] = ProtoField.uint16("of13.bsn_tlv_mgmt_reselect_on_failure.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_miss_packets.type'] = ProtoField.uint16("of13.bsn_tlv_miss_packets.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_miss_packets.length'] = ProtoField.uint16("of13.bsn_tlv_miss_packets.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_miss_packets.value'] = ProtoField.uint64("of13.bsn_tlv_miss_packets.value", "value", base.DEC, nil)
@@ -12214,6 +12216,8 @@ fields['of14.bsn_tlv_mac_mask.length'] = ProtoField.uint16("of14.bsn_tlv_mac_mas
 fields['of14.bsn_tlv_mac_mask.value'] = ProtoField.ether("of14.bsn_tlv_mac_mask.value", "value")
 fields['of14.bsn_tlv_mcg_type_vxlan.type'] = ProtoField.uint16("of14.bsn_tlv_mcg_type_vxlan.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_mcg_type_vxlan.length'] = ProtoField.uint16("of14.bsn_tlv_mcg_type_vxlan.length", "length", base.DEC, nil)
+fields['of14.bsn_tlv_mgmt_reselect_on_failure.type'] = ProtoField.uint16("of14.bsn_tlv_mgmt_reselect_on_failure.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_mgmt_reselect_on_failure.length'] = ProtoField.uint16("of14.bsn_tlv_mgmt_reselect_on_failure.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_miss_packets.type'] = ProtoField.uint16("of14.bsn_tlv_miss_packets.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_miss_packets.length'] = ProtoField.uint16("of14.bsn_tlv_miss_packets.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_miss_packets.value'] = ProtoField.uint64("of14.bsn_tlv_miss_packets.value", "value", base.DEC, nil)
@@ -15597,6 +15601,8 @@ fields['of15.bsn_tlv_mac_mask.length'] = ProtoField.uint16("of15.bsn_tlv_mac_mas
 fields['of15.bsn_tlv_mac_mask.value'] = ProtoField.ether("of15.bsn_tlv_mac_mask.value", "value")
 fields['of15.bsn_tlv_mcg_type_vxlan.type'] = ProtoField.uint16("of15.bsn_tlv_mcg_type_vxlan.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_mcg_type_vxlan.length'] = ProtoField.uint16("of15.bsn_tlv_mcg_type_vxlan.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_mgmt_reselect_on_failure.type'] = ProtoField.uint16("of15.bsn_tlv_mgmt_reselect_on_failure.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_mgmt_reselect_on_failure.length'] = ProtoField.uint16("of15.bsn_tlv_mgmt_reselect_on_failure.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_miss_packets.type'] = ProtoField.uint16("of15.bsn_tlv_miss_packets.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_miss_packets.length'] = ProtoField.uint16("of15.bsn_tlv_miss_packets.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_miss_packets.value'] = ProtoField.uint64("of15.bsn_tlv_miss_packets.value", "value", base.DEC, nil)
@@ -22267,6 +22273,8 @@ p_of.fields = {
     fields['of13.bsn_tlv_mac_mask.value'],
     fields['of13.bsn_tlv_mcg_type_vxlan.type'],
     fields['of13.bsn_tlv_mcg_type_vxlan.length'],
+    fields['of13.bsn_tlv_mgmt_reselect_on_failure.type'],
+    fields['of13.bsn_tlv_mgmt_reselect_on_failure.length'],
     fields['of13.bsn_tlv_miss_packets.type'],
     fields['of13.bsn_tlv_miss_packets.length'],
     fields['of13.bsn_tlv_miss_packets.value'],
@@ -25364,6 +25372,8 @@ p_of.fields = {
     fields['of14.bsn_tlv_mac_mask.value'],
     fields['of14.bsn_tlv_mcg_type_vxlan.type'],
     fields['of14.bsn_tlv_mcg_type_vxlan.length'],
+    fields['of14.bsn_tlv_mgmt_reselect_on_failure.type'],
+    fields['of14.bsn_tlv_mgmt_reselect_on_failure.length'],
     fields['of14.bsn_tlv_miss_packets.type'],
     fields['of14.bsn_tlv_miss_packets.length'],
     fields['of14.bsn_tlv_miss_packets.value'],
@@ -28747,6 +28757,8 @@ p_of.fields = {
     fields['of15.bsn_tlv_mac_mask.value'],
     fields['of15.bsn_tlv_mcg_type_vxlan.type'],
     fields['of15.bsn_tlv_mcg_type_vxlan.length'],
+    fields['of15.bsn_tlv_mgmt_reselect_on_failure.type'],
+    fields['of15.bsn_tlv_mgmt_reselect_on_failure.length'],
     fields['of15.bsn_tlv_miss_packets.type'],
     fields['of15.bsn_tlv_miss_packets.length'],
     fields['of15.bsn_tlv_miss_packets.value'],
@@ -41668,6 +41680,15 @@ function dissect_of_bsn_tlv_mcg_type_vxlan_v4(reader, subtree)
 end
 of_bsn_tlv_v4_dissectors[87] = dissect_of_bsn_tlv_mcg_type_vxlan_v4
 
+-- child class of_bsn_tlv_mgmt_reselect_on_failure
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_mgmt_reselect_on_failure_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_mgmt_reselect_on_failure.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_mgmt_reselect_on_failure.length')
+    return 'of_bsn_tlv_mgmt_reselect_on_failure'
+end
+of_bsn_tlv_v4_dissectors[208] = dissect_of_bsn_tlv_mgmt_reselect_on_failure_v4
+
 -- child class of_bsn_tlv_miss_packets
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_miss_packets_v4(reader, subtree)
@@ -50169,6 +50190,15 @@ function dissect_of_bsn_tlv_mcg_type_vxlan_v5(reader, subtree)
     return 'of_bsn_tlv_mcg_type_vxlan'
 end
 of_bsn_tlv_v5_dissectors[87] = dissect_of_bsn_tlv_mcg_type_vxlan_v5
+
+-- child class of_bsn_tlv_mgmt_reselect_on_failure
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_mgmt_reselect_on_failure_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_mgmt_reselect_on_failure.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_mgmt_reselect_on_failure.length')
+    return 'of_bsn_tlv_mgmt_reselect_on_failure'
+end
+of_bsn_tlv_v5_dissectors[208] = dissect_of_bsn_tlv_mgmt_reselect_on_failure_v5
 
 -- child class of_bsn_tlv_miss_packets
 -- Child of of_bsn_tlv
@@ -59333,6 +59363,15 @@ function dissect_of_bsn_tlv_mcg_type_vxlan_v6(reader, subtree)
     return 'of_bsn_tlv_mcg_type_vxlan'
 end
 of_bsn_tlv_v6_dissectors[87] = dissect_of_bsn_tlv_mcg_type_vxlan_v6
+
+-- child class of_bsn_tlv_mgmt_reselect_on_failure
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_mgmt_reselect_on_failure_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_mgmt_reselect_on_failure.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_mgmt_reselect_on_failure.length')
+    return 'of_bsn_tlv_mgmt_reselect_on_failure'
+end
+of_bsn_tlv_v6_dissectors[208] = dissect_of_bsn_tlv_mgmt_reselect_on_failure_v6
 
 -- child class of_bsn_tlv_miss_packets
 -- Child of of_bsn_tlv

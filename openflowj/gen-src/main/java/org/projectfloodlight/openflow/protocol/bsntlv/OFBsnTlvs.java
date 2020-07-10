@@ -222,6 +222,7 @@ public interface OFBsnTlvs {
     OFBsnTlvMacMask.Builder buildMacMask() throws UnsupportedOperationException;
     OFBsnTlvMacMask macMask(MacAddress value);
     OFBsnTlvMcgTypeVxlan mcgTypeVxlan();
+    OFBsnTlvMgmtReselectOnFailure mgmtReselectOnFailure();
     OFBsnTlvMissPackets.Builder buildMissPackets() throws UnsupportedOperationException;
     OFBsnTlvMissPackets missPackets(U64 value);
     OFBsnTlvMplsControlWord.Builder buildMplsControlWord() throws UnsupportedOperationException;
