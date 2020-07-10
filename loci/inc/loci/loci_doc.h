@@ -7518,6 +7518,13 @@ typedef struct of_bsn_tlv_mac_mask_s of_bsn_tlv_mac_mask_t;
 typedef struct of_bsn_tlv_mcg_type_vxlan_s of_bsn_tlv_mcg_type_vxlan_t;
 
 /**
+ * Structure for of_bsn_tlv_mgmt_reselect_on_failure object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ */
+typedef struct of_bsn_tlv_mgmt_reselect_on_failure_s of_bsn_tlv_mgmt_reselect_on_failure_t;
+
+/**
  * Structure for of_bsn_tlv_miss_packets object.  Get/set
  * accessors available in all versions unless noted otherwise
  *

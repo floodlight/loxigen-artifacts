@@ -715,6 +715,10 @@ public class OFBsnTlvsVer10 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvMcgTypeVxlan not supported in version 1.0");
     }
 
+    public OFBsnTlvMgmtReselectOnFailure mgmtReselectOnFailure() {
+        throw new UnsupportedOperationException("OFBsnTlvMgmtReselectOnFailure not supported in version 1.0");
+    }
+
     public OFBsnTlvMissPackets.Builder buildMissPackets() {
         throw new UnsupportedOperationException("OFBsnTlvMissPackets not supported in version 1.0");
     }

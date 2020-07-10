@@ -1069,6 +1069,8 @@ void of_bsn_tlv_mac_mask_wire_object_id_get(of_object_t *obj, of_object_id_t *id
 void of_bsn_tlv_mac_mask_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_mcg_type_vxlan_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_mcg_type_vxlan_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_mgmt_reselect_on_failure_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_mgmt_reselect_on_failure_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_miss_packets_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_miss_packets_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_mpls_control_word_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -2061,6 +2063,7 @@ typedef of_object_t of_bsn_tlv_lr_all_enabled_t;
 typedef of_object_t of_bsn_tlv_mac_t;
 typedef of_object_t of_bsn_tlv_mac_mask_t;
 typedef of_object_t of_bsn_tlv_mcg_type_vxlan_t;
+typedef of_object_t of_bsn_tlv_mgmt_reselect_on_failure_t;
 typedef of_object_t of_bsn_tlv_miss_packets_t;
 typedef of_object_t of_bsn_tlv_mpls_control_word_t;
 typedef of_object_t of_bsn_tlv_mpls_label_t;
@@ -4597,6 +4600,11 @@ extern void of_bsn_tlv_mac_mask_init(
 extern of_object_t *
     of_bsn_tlv_mcg_type_vxlan_new(of_version_t version);
 extern void of_bsn_tlv_mcg_type_vxlan_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_bsn_tlv_mgmt_reselect_on_failure_new(of_version_t version);
+extern void of_bsn_tlv_mgmt_reselect_on_failure_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
@@ -11447,6 +11455,17 @@ of_bsn_tlv_mac_mask_delete(of_object_t *obj) {
  */
 static inline void
 of_bsn_tlv_mcg_type_vxlan_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_mgmt_reselect_on_failure_t
+ * @param obj An instance of type of_bsn_tlv_mgmt_reselect_on_failure_t
+ *
+ * \ingroup of_bsn_tlv_mgmt_reselect_on_failure
+ */
+static inline void
+of_bsn_tlv_mgmt_reselect_on_failure_delete(of_object_t *obj) {
     of_object_delete(obj);
 }
 
@@ -25152,6 +25171,8 @@ extern void of_bsn_tlv_mac_mask_value_get(
     of_mac_addr_t *value);
 
 /* Unified accessor functions for of_bsn_tlv_mcg_type_vxlan */
+
+/* Unified accessor functions for of_bsn_tlv_mgmt_reselect_on_failure */
 
 /* Unified accessor functions for of_bsn_tlv_miss_packets */
 

@@ -418,6 +418,7 @@ const char *const of_object_id_str[] = {
     "of_bsn_tlv_mac",
     "of_bsn_tlv_mac_mask",
     "of_bsn_tlv_mcg_type_vxlan",
+    "of_bsn_tlv_mgmt_reselect_on_failure",
     "of_bsn_tlv_miss_packets",
     "of_bsn_tlv_mpls_control_word",
     "of_bsn_tlv_mpls_label",

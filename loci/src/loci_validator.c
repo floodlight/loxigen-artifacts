@@ -849,6 +849,7 @@ static int __attribute__((unused)) loci_validate_of_bsn_tlv_lr_all_enabled_OF_VE
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_mac_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_mac_mask_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_mcg_type_vxlan_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_bsn_tlv_mgmt_reselect_on_failure_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_miss_packets_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_mpls_control_word_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_mpls_label_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
@@ -1583,6 +1584,7 @@ static int __attribute__((unused)) loci_validate_of_bsn_tlv_lr_all_enabled_OF_VE
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_mac_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_mac_mask_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_mcg_type_vxlan_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_bsn_tlv_mgmt_reselect_on_failure_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_miss_packets_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_mpls_control_word_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_mpls_label_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
@@ -21257,6 +21259,8 @@ loci_validate_of_bsn_tlv_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
         return loci_validate_of_bsn_tlv_mac_mask_OF_VERSION_1_3(data, len, out_len);
     case 0x57:
         return loci_validate_of_bsn_tlv_mcg_type_vxlan_OF_VERSION_1_3(data, len, out_len);
+    case 0xd0:
+        return loci_validate_of_bsn_tlv_mgmt_reselect_on_failure_OF_VERSION_1_3(data, len, out_len);
     case 0xd:
         return loci_validate_of_bsn_tlv_miss_packets_OF_VERSION_1_3(data, len, out_len);
     case 0x3e:
@@ -23807,6 +23811,28 @@ loci_validate_of_bsn_tlv_mac_mask_OF_VERSION_1_3(uint8_t *data, int len, int *ou
 
 static int
 loci_validate_of_bsn_tlv_mcg_type_vxlan_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
+{
+    if (len < 4) {
+        return -1;
+    }
+
+    len = 4;
+
+    uint16_t wire_len;
+    buf_u16_get(data + 2, &wire_len);
+    if (wire_len > len || wire_len < 4) {
+        return -1;
+    }
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_bsn_tlv_mgmt_reselect_on_failure_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
 {
     if (len < 4) {
         return -1;
@@ -39297,6 +39323,8 @@ loci_validate_of_bsn_tlv_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
         return loci_validate_of_bsn_tlv_mac_mask_OF_VERSION_1_4(data, len, out_len);
     case 0x57:
         return loci_validate_of_bsn_tlv_mcg_type_vxlan_OF_VERSION_1_4(data, len, out_len);
+    case 0xd0:
+        return loci_validate_of_bsn_tlv_mgmt_reselect_on_failure_OF_VERSION_1_4(data, len, out_len);
     case 0xd:
         return loci_validate_of_bsn_tlv_miss_packets_OF_VERSION_1_4(data, len, out_len);
     case 0x3e:
@@ -41847,6 +41875,28 @@ loci_validate_of_bsn_tlv_mac_mask_OF_VERSION_1_4(uint8_t *data, int len, int *ou
 
 static int
 loci_validate_of_bsn_tlv_mcg_type_vxlan_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
+{
+    if (len < 4) {
+        return -1;
+    }
+
+    len = 4;
+
+    uint16_t wire_len;
+    buf_u16_get(data + 2, &wire_len);
+    if (wire_len > len || wire_len < 4) {
+        return -1;
+    }
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_bsn_tlv_mgmt_reselect_on_failure_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
 {
     if (len < 4) {
         return -1;
