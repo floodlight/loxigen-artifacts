@@ -1,1 +1,1 @@
-fc4a2e8335f4850cc9125956d2445faf03dba16a Merge pull request #667 from archerhungbsn/redundant_memt_reselect
+6b2ad26fe2b4d87e98a7af6d74e620a17a15e8ce Lower test message byte count below 64kB by restricting of_octets to 64 bytes and appending only one of each possible entry subclass to a list
