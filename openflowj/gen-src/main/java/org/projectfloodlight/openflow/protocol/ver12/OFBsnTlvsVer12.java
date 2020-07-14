@@ -671,8 +671,22 @@ public class OFBsnTlvsVer12 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvLagOptions not supported in version 1.2");
     }
 
+    public OFBsnTlvLcore.Builder buildLcore() {
+        throw new UnsupportedOperationException("OFBsnTlvLcore not supported in version 1.2");
+    }
+    public OFBsnTlvLcore lcore(long value) {
+        throw new UnsupportedOperationException("OFBsnTlvLcore not supported in version 1.2");
+    }
+
     public OFBsnTlvLinkUp linkUp() {
         throw new UnsupportedOperationException("OFBsnTlvLinkUp not supported in version 1.2");
+    }
+
+    public OFBsnTlvLoad.Builder buildLoad() {
+        throw new UnsupportedOperationException("OFBsnTlvLoad not supported in version 1.2");
+    }
+    public OFBsnTlvLoad load(long value) {
+        throw new UnsupportedOperationException("OFBsnTlvLoad not supported in version 1.2");
     }
 
     public OFBsnTlvLoopbackMode.Builder buildLoopbackMode() {
@@ -713,6 +727,13 @@ public class OFBsnTlvsVer12 implements OFBsnTlvs {
 
     public OFBsnTlvMcgTypeVxlan mcgTypeVxlan() {
         throw new UnsupportedOperationException("OFBsnTlvMcgTypeVxlan not supported in version 1.2");
+    }
+
+    public OFBsnTlvMgmt.Builder buildMgmt() {
+        throw new UnsupportedOperationException("OFBsnTlvMgmt not supported in version 1.2");
+    }
+    public OFBsnTlvMgmt mgmt(long value) {
+        throw new UnsupportedOperationException("OFBsnTlvMgmt not supported in version 1.2");
     }
 
     public OFBsnTlvMgmtReselectOnFailure mgmtReselectOnFailure() {
@@ -1073,6 +1094,13 @@ public class OFBsnTlvsVer12 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvSetLoopbackMode not supported in version 1.2");
     }
 
+    public OFBsnTlvSocket.Builder buildSocket() {
+        throw new UnsupportedOperationException("OFBsnTlvSocket not supported in version 1.2");
+    }
+    public OFBsnTlvSocket socket(long value) {
+        throw new UnsupportedOperationException("OFBsnTlvSocket not supported in version 1.2");
+    }
+
     public OFBsnTlvSrcMacCml.Builder buildSrcMacCml() {
         throw new UnsupportedOperationException("OFBsnTlvSrcMacCml not supported in version 1.2");
     }
@@ -1128,6 +1156,13 @@ public class OFBsnTlvsVer12 implements OFBsnTlvs {
     }
     public OFBsnTlvTcpSrc tcpSrc(int value) {
         throw new UnsupportedOperationException("OFBsnTlvTcpSrc not supported in version 1.2");
+    }
+
+    public OFBsnTlvThread.Builder buildThread() {
+        throw new UnsupportedOperationException("OFBsnTlvThread not supported in version 1.2");
+    }
+    public OFBsnTlvThread thread(long value) {
+        throw new UnsupportedOperationException("OFBsnTlvThread not supported in version 1.2");
     }
 
     public OFBsnTlvTimestamp.Builder buildTimestamp() {

@@ -210,7 +210,11 @@ public interface OFBsnTlvs {
     OFBsnTlvL3SrcClassId l3SrcClassId(long value);
     OFBsnTlvLagOptions.Builder buildLagOptions() throws UnsupportedOperationException;
     OFBsnTlvLagOptions lagOptions(Set<OFBsnLagFlag> flags);
+    OFBsnTlvLcore.Builder buildLcore() throws UnsupportedOperationException;
+    OFBsnTlvLcore lcore(long value);
     OFBsnTlvLinkUp linkUp();
+    OFBsnTlvLoad.Builder buildLoad() throws UnsupportedOperationException;
+    OFBsnTlvLoad load(long value);
     OFBsnTlvLoopbackMode.Builder buildLoopbackMode() throws UnsupportedOperationException;
     OFBsnTlvLoopbackMode loopbackMode(OFBsnLoopbackMode value);
     OFBsnTlvLoopbackPort.Builder buildLoopbackPort() throws UnsupportedOperationException;
@@ -222,6 +226,8 @@ public interface OFBsnTlvs {
     OFBsnTlvMacMask.Builder buildMacMask() throws UnsupportedOperationException;
     OFBsnTlvMacMask macMask(MacAddress value);
     OFBsnTlvMcgTypeVxlan mcgTypeVxlan();
+    OFBsnTlvMgmt.Builder buildMgmt() throws UnsupportedOperationException;
+    OFBsnTlvMgmt mgmt(long value);
     OFBsnTlvMgmtReselectOnFailure mgmtReselectOnFailure();
     OFBsnTlvMissPackets.Builder buildMissPackets() throws UnsupportedOperationException;
     OFBsnTlvMissPackets missPackets(U64 value);
@@ -322,6 +328,8 @@ public interface OFBsnTlvs {
     OFBsnTlvSctpSrc.Builder buildSctpSrc() throws UnsupportedOperationException;
     OFBsnTlvSctpSrc sctpSrc(int value);
     OFBsnTlvSetLoopbackMode setLoopbackMode();
+    OFBsnTlvSocket.Builder buildSocket() throws UnsupportedOperationException;
+    OFBsnTlvSocket socket(long value);
     OFBsnTlvSrcMacCml.Builder buildSrcMacCml() throws UnsupportedOperationException;
     OFBsnTlvSrcMacCml srcMacCml(OFBsnCml value);
     OFBsnTlvStatus.Builder buildStatus() throws UnsupportedOperationException;
@@ -338,6 +346,8 @@ public interface OFBsnTlvs {
     OFBsnTlvTcpFlags tcpFlags(int value);
     OFBsnTlvTcpSrc.Builder buildTcpSrc() throws UnsupportedOperationException;
     OFBsnTlvTcpSrc tcpSrc(int value);
+    OFBsnTlvThread.Builder buildThread() throws UnsupportedOperationException;
+    OFBsnTlvThread thread(long value);
     OFBsnTlvTimestamp.Builder buildTimestamp() throws UnsupportedOperationException;
     OFBsnTlvTimestamp timestamp(U64 value);
     OFBsnTlvTtl.Builder buildTtl() throws UnsupportedOperationException;

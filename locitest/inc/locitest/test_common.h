@@ -7691,6 +7691,15 @@ extern int of_bsn_tlv_lag_options_OF_VERSION_1_3_populate_scalars(
 extern int of_bsn_tlv_lag_options_OF_VERSION_1_3_check_scalars(
     of_bsn_tlv_lag_options_t *obj, int value);
 
+extern int of_bsn_tlv_lcore_OF_VERSION_1_3_populate(
+    of_bsn_tlv_lcore_t *obj, int value);
+extern int of_bsn_tlv_lcore_OF_VERSION_1_3_check(
+    of_bsn_tlv_lcore_t *obj, int value);
+extern int of_bsn_tlv_lcore_OF_VERSION_1_3_populate_scalars(
+    of_bsn_tlv_lcore_t *obj, int value);
+extern int of_bsn_tlv_lcore_OF_VERSION_1_3_check_scalars(
+    of_bsn_tlv_lcore_t *obj, int value);
+
 extern int of_bsn_tlv_link_up_OF_VERSION_1_3_populate(
     of_bsn_tlv_link_up_t *obj, int value);
 extern int of_bsn_tlv_link_up_OF_VERSION_1_3_check(
@@ -7699,6 +7708,15 @@ extern int of_bsn_tlv_link_up_OF_VERSION_1_3_populate_scalars(
     of_bsn_tlv_link_up_t *obj, int value);
 extern int of_bsn_tlv_link_up_OF_VERSION_1_3_check_scalars(
     of_bsn_tlv_link_up_t *obj, int value);
+
+extern int of_bsn_tlv_load_OF_VERSION_1_3_populate(
+    of_bsn_tlv_load_t *obj, int value);
+extern int of_bsn_tlv_load_OF_VERSION_1_3_check(
+    of_bsn_tlv_load_t *obj, int value);
+extern int of_bsn_tlv_load_OF_VERSION_1_3_populate_scalars(
+    of_bsn_tlv_load_t *obj, int value);
+extern int of_bsn_tlv_load_OF_VERSION_1_3_check_scalars(
+    of_bsn_tlv_load_t *obj, int value);
 
 extern int of_bsn_tlv_loopback_mode_OF_VERSION_1_3_populate(
     of_bsn_tlv_loopback_mode_t *obj, int value);
@@ -7762,6 +7780,15 @@ extern int of_bsn_tlv_mcg_type_vxlan_OF_VERSION_1_3_populate_scalars(
     of_bsn_tlv_mcg_type_vxlan_t *obj, int value);
 extern int of_bsn_tlv_mcg_type_vxlan_OF_VERSION_1_3_check_scalars(
     of_bsn_tlv_mcg_type_vxlan_t *obj, int value);
+
+extern int of_bsn_tlv_mgmt_OF_VERSION_1_3_populate(
+    of_bsn_tlv_mgmt_t *obj, int value);
+extern int of_bsn_tlv_mgmt_OF_VERSION_1_3_check(
+    of_bsn_tlv_mgmt_t *obj, int value);
+extern int of_bsn_tlv_mgmt_OF_VERSION_1_3_populate_scalars(
+    of_bsn_tlv_mgmt_t *obj, int value);
+extern int of_bsn_tlv_mgmt_OF_VERSION_1_3_check_scalars(
+    of_bsn_tlv_mgmt_t *obj, int value);
 
 extern int of_bsn_tlv_mgmt_reselect_on_failure_OF_VERSION_1_3_populate(
     of_bsn_tlv_mgmt_reselect_on_failure_t *obj, int value);
@@ -8285,6 +8312,15 @@ extern int of_bsn_tlv_set_loopback_mode_OF_VERSION_1_3_populate_scalars(
 extern int of_bsn_tlv_set_loopback_mode_OF_VERSION_1_3_check_scalars(
     of_bsn_tlv_set_loopback_mode_t *obj, int value);
 
+extern int of_bsn_tlv_socket_OF_VERSION_1_3_populate(
+    of_bsn_tlv_socket_t *obj, int value);
+extern int of_bsn_tlv_socket_OF_VERSION_1_3_check(
+    of_bsn_tlv_socket_t *obj, int value);
+extern int of_bsn_tlv_socket_OF_VERSION_1_3_populate_scalars(
+    of_bsn_tlv_socket_t *obj, int value);
+extern int of_bsn_tlv_socket_OF_VERSION_1_3_check_scalars(
+    of_bsn_tlv_socket_t *obj, int value);
+
 extern int of_bsn_tlv_src_mac_cml_OF_VERSION_1_3_populate(
     of_bsn_tlv_src_mac_cml_t *obj, int value);
 extern int of_bsn_tlv_src_mac_cml_OF_VERSION_1_3_check(
@@ -8365,6 +8401,15 @@ extern int of_bsn_tlv_tcp_src_OF_VERSION_1_3_populate_scalars(
     of_bsn_tlv_tcp_src_t *obj, int value);
 extern int of_bsn_tlv_tcp_src_OF_VERSION_1_3_check_scalars(
     of_bsn_tlv_tcp_src_t *obj, int value);
+
+extern int of_bsn_tlv_thread_OF_VERSION_1_3_populate(
+    of_bsn_tlv_thread_t *obj, int value);
+extern int of_bsn_tlv_thread_OF_VERSION_1_3_check(
+    of_bsn_tlv_thread_t *obj, int value);
+extern int of_bsn_tlv_thread_OF_VERSION_1_3_populate_scalars(
+    of_bsn_tlv_thread_t *obj, int value);
+extern int of_bsn_tlv_thread_OF_VERSION_1_3_check_scalars(
+    of_bsn_tlv_thread_t *obj, int value);
 
 extern int of_bsn_tlv_timestamp_OF_VERSION_1_3_populate(
     of_bsn_tlv_timestamp_t *obj, int value);
@@ -14432,6 +14477,15 @@ extern int of_bsn_tlv_lag_options_OF_VERSION_1_4_populate_scalars(
 extern int of_bsn_tlv_lag_options_OF_VERSION_1_4_check_scalars(
     of_bsn_tlv_lag_options_t *obj, int value);
 
+extern int of_bsn_tlv_lcore_OF_VERSION_1_4_populate(
+    of_bsn_tlv_lcore_t *obj, int value);
+extern int of_bsn_tlv_lcore_OF_VERSION_1_4_check(
+    of_bsn_tlv_lcore_t *obj, int value);
+extern int of_bsn_tlv_lcore_OF_VERSION_1_4_populate_scalars(
+    of_bsn_tlv_lcore_t *obj, int value);
+extern int of_bsn_tlv_lcore_OF_VERSION_1_4_check_scalars(
+    of_bsn_tlv_lcore_t *obj, int value);
+
 extern int of_bsn_tlv_link_up_OF_VERSION_1_4_populate(
     of_bsn_tlv_link_up_t *obj, int value);
 extern int of_bsn_tlv_link_up_OF_VERSION_1_4_check(
@@ -14440,6 +14494,15 @@ extern int of_bsn_tlv_link_up_OF_VERSION_1_4_populate_scalars(
     of_bsn_tlv_link_up_t *obj, int value);
 extern int of_bsn_tlv_link_up_OF_VERSION_1_4_check_scalars(
     of_bsn_tlv_link_up_t *obj, int value);
+
+extern int of_bsn_tlv_load_OF_VERSION_1_4_populate(
+    of_bsn_tlv_load_t *obj, int value);
+extern int of_bsn_tlv_load_OF_VERSION_1_4_check(
+    of_bsn_tlv_load_t *obj, int value);
+extern int of_bsn_tlv_load_OF_VERSION_1_4_populate_scalars(
+    of_bsn_tlv_load_t *obj, int value);
+extern int of_bsn_tlv_load_OF_VERSION_1_4_check_scalars(
+    of_bsn_tlv_load_t *obj, int value);
 
 extern int of_bsn_tlv_loopback_mode_OF_VERSION_1_4_populate(
     of_bsn_tlv_loopback_mode_t *obj, int value);
@@ -14503,6 +14566,15 @@ extern int of_bsn_tlv_mcg_type_vxlan_OF_VERSION_1_4_populate_scalars(
     of_bsn_tlv_mcg_type_vxlan_t *obj, int value);
 extern int of_bsn_tlv_mcg_type_vxlan_OF_VERSION_1_4_check_scalars(
     of_bsn_tlv_mcg_type_vxlan_t *obj, int value);
+
+extern int of_bsn_tlv_mgmt_OF_VERSION_1_4_populate(
+    of_bsn_tlv_mgmt_t *obj, int value);
+extern int of_bsn_tlv_mgmt_OF_VERSION_1_4_check(
+    of_bsn_tlv_mgmt_t *obj, int value);
+extern int of_bsn_tlv_mgmt_OF_VERSION_1_4_populate_scalars(
+    of_bsn_tlv_mgmt_t *obj, int value);
+extern int of_bsn_tlv_mgmt_OF_VERSION_1_4_check_scalars(
+    of_bsn_tlv_mgmt_t *obj, int value);
 
 extern int of_bsn_tlv_mgmt_reselect_on_failure_OF_VERSION_1_4_populate(
     of_bsn_tlv_mgmt_reselect_on_failure_t *obj, int value);
@@ -15026,6 +15098,15 @@ extern int of_bsn_tlv_set_loopback_mode_OF_VERSION_1_4_populate_scalars(
 extern int of_bsn_tlv_set_loopback_mode_OF_VERSION_1_4_check_scalars(
     of_bsn_tlv_set_loopback_mode_t *obj, int value);
 
+extern int of_bsn_tlv_socket_OF_VERSION_1_4_populate(
+    of_bsn_tlv_socket_t *obj, int value);
+extern int of_bsn_tlv_socket_OF_VERSION_1_4_check(
+    of_bsn_tlv_socket_t *obj, int value);
+extern int of_bsn_tlv_socket_OF_VERSION_1_4_populate_scalars(
+    of_bsn_tlv_socket_t *obj, int value);
+extern int of_bsn_tlv_socket_OF_VERSION_1_4_check_scalars(
+    of_bsn_tlv_socket_t *obj, int value);
+
 extern int of_bsn_tlv_src_mac_cml_OF_VERSION_1_4_populate(
     of_bsn_tlv_src_mac_cml_t *obj, int value);
 extern int of_bsn_tlv_src_mac_cml_OF_VERSION_1_4_check(
@@ -15106,6 +15187,15 @@ extern int of_bsn_tlv_tcp_src_OF_VERSION_1_4_populate_scalars(
     of_bsn_tlv_tcp_src_t *obj, int value);
 extern int of_bsn_tlv_tcp_src_OF_VERSION_1_4_check_scalars(
     of_bsn_tlv_tcp_src_t *obj, int value);
+
+extern int of_bsn_tlv_thread_OF_VERSION_1_4_populate(
+    of_bsn_tlv_thread_t *obj, int value);
+extern int of_bsn_tlv_thread_OF_VERSION_1_4_check(
+    of_bsn_tlv_thread_t *obj, int value);
+extern int of_bsn_tlv_thread_OF_VERSION_1_4_populate_scalars(
+    of_bsn_tlv_thread_t *obj, int value);
+extern int of_bsn_tlv_thread_OF_VERSION_1_4_check_scalars(
+    of_bsn_tlv_thread_t *obj, int value);
 
 extern int of_bsn_tlv_timestamp_OF_VERSION_1_4_populate(
     of_bsn_tlv_timestamp_t *obj, int value);

@@ -9097,8 +9097,14 @@ fields['of13.bsn_tlv_l3_src_class_id.value'] = ProtoField.uint32("of13.bsn_tlv_l
 fields['of13.bsn_tlv_lag_options.type'] = ProtoField.uint16("of13.bsn_tlv_lag_options.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_lag_options.length'] = ProtoField.uint16("of13.bsn_tlv_lag_options.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_lag_options.flags'] = ProtoField.uint32("of13.bsn_tlv_lag_options.flags", "flags", base.HEX, enum_v4_ofp_bsn_lag_flag)
+fields['of13.bsn_tlv_lcore.type'] = ProtoField.uint16("of13.bsn_tlv_lcore.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_lcore.length'] = ProtoField.uint16("of13.bsn_tlv_lcore.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_lcore.value'] = ProtoField.uint32("of13.bsn_tlv_lcore.value", "value", base.DEC, nil)
 fields['of13.bsn_tlv_link_up.type'] = ProtoField.uint16("of13.bsn_tlv_link_up.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_link_up.length'] = ProtoField.uint16("of13.bsn_tlv_link_up.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_load.type'] = ProtoField.uint16("of13.bsn_tlv_load.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_load.length'] = ProtoField.uint16("of13.bsn_tlv_load.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_load.value'] = ProtoField.uint32("of13.bsn_tlv_load.value", "value", base.DEC, nil)
 fields['of13.bsn_tlv_loopback_mode.type'] = ProtoField.uint16("of13.bsn_tlv_loopback_mode.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_loopback_mode.length'] = ProtoField.uint16("of13.bsn_tlv_loopback_mode.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_loopback_mode.value'] = ProtoField.uint32("of13.bsn_tlv_loopback_mode.value", "value", base.DEC, enum_v4_ofp_bsn_loopback_mode)
@@ -9117,6 +9123,9 @@ fields['of13.bsn_tlv_mac_mask.length'] = ProtoField.uint16("of13.bsn_tlv_mac_mas
 fields['of13.bsn_tlv_mac_mask.value'] = ProtoField.ether("of13.bsn_tlv_mac_mask.value", "value")
 fields['of13.bsn_tlv_mcg_type_vxlan.type'] = ProtoField.uint16("of13.bsn_tlv_mcg_type_vxlan.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_mcg_type_vxlan.length'] = ProtoField.uint16("of13.bsn_tlv_mcg_type_vxlan.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_mgmt.type'] = ProtoField.uint16("of13.bsn_tlv_mgmt.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_mgmt.length'] = ProtoField.uint16("of13.bsn_tlv_mgmt.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_mgmt.value'] = ProtoField.uint32("of13.bsn_tlv_mgmt.value", "value", base.DEC, nil)
 fields['of13.bsn_tlv_mgmt_reselect_on_failure.type'] = ProtoField.uint16("of13.bsn_tlv_mgmt_reselect_on_failure.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_mgmt_reselect_on_failure.length'] = ProtoField.uint16("of13.bsn_tlv_mgmt_reselect_on_failure.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_miss_packets.type'] = ProtoField.uint16("of13.bsn_tlv_miss_packets.type", "type", base.DEC, nil)
@@ -9276,6 +9285,9 @@ fields['of13.bsn_tlv_sctp_src.length'] = ProtoField.uint16("of13.bsn_tlv_sctp_sr
 fields['of13.bsn_tlv_sctp_src.value'] = ProtoField.uint16("of13.bsn_tlv_sctp_src.value", "value", base.DEC, nil)
 fields['of13.bsn_tlv_set_loopback_mode.type'] = ProtoField.uint16("of13.bsn_tlv_set_loopback_mode.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_set_loopback_mode.length'] = ProtoField.uint16("of13.bsn_tlv_set_loopback_mode.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_socket.type'] = ProtoField.uint16("of13.bsn_tlv_socket.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_socket.length'] = ProtoField.uint16("of13.bsn_tlv_socket.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_socket.value'] = ProtoField.uint32("of13.bsn_tlv_socket.value", "value", base.DEC, nil)
 fields['of13.bsn_tlv_src_mac_cml.type'] = ProtoField.uint16("of13.bsn_tlv_src_mac_cml.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_src_mac_cml.length'] = ProtoField.uint16("of13.bsn_tlv_src_mac_cml.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_src_mac_cml.value'] = ProtoField.uint32("of13.bsn_tlv_src_mac_cml.value", "value", base.DEC, enum_v4_ofp_bsn_cml)
@@ -9301,6 +9313,9 @@ fields['of13.bsn_tlv_tcp_flags.value'] = ProtoField.uint16("of13.bsn_tlv_tcp_fla
 fields['of13.bsn_tlv_tcp_src.type'] = ProtoField.uint16("of13.bsn_tlv_tcp_src.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_tcp_src.length'] = ProtoField.uint16("of13.bsn_tlv_tcp_src.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_tcp_src.value'] = ProtoField.uint16("of13.bsn_tlv_tcp_src.value", "value", base.DEC, nil)
+fields['of13.bsn_tlv_thread.type'] = ProtoField.uint16("of13.bsn_tlv_thread.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_thread.length'] = ProtoField.uint16("of13.bsn_tlv_thread.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_thread.value'] = ProtoField.uint32("of13.bsn_tlv_thread.value", "value", base.DEC, nil)
 fields['of13.bsn_tlv_timestamp.type'] = ProtoField.uint16("of13.bsn_tlv_timestamp.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_timestamp.length'] = ProtoField.uint16("of13.bsn_tlv_timestamp.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_timestamp.value'] = ProtoField.uint64("of13.bsn_tlv_timestamp.value", "value", base.DEC, nil)
@@ -12196,8 +12211,14 @@ fields['of14.bsn_tlv_l3_src_class_id.value'] = ProtoField.uint32("of14.bsn_tlv_l
 fields['of14.bsn_tlv_lag_options.type'] = ProtoField.uint16("of14.bsn_tlv_lag_options.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_lag_options.length'] = ProtoField.uint16("of14.bsn_tlv_lag_options.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_lag_options.flags'] = ProtoField.uint32("of14.bsn_tlv_lag_options.flags", "flags", base.HEX, enum_v5_ofp_bsn_lag_flag)
+fields['of14.bsn_tlv_lcore.type'] = ProtoField.uint16("of14.bsn_tlv_lcore.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_lcore.length'] = ProtoField.uint16("of14.bsn_tlv_lcore.length", "length", base.DEC, nil)
+fields['of14.bsn_tlv_lcore.value'] = ProtoField.uint32("of14.bsn_tlv_lcore.value", "value", base.DEC, nil)
 fields['of14.bsn_tlv_link_up.type'] = ProtoField.uint16("of14.bsn_tlv_link_up.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_link_up.length'] = ProtoField.uint16("of14.bsn_tlv_link_up.length", "length", base.DEC, nil)
+fields['of14.bsn_tlv_load.type'] = ProtoField.uint16("of14.bsn_tlv_load.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_load.length'] = ProtoField.uint16("of14.bsn_tlv_load.length", "length", base.DEC, nil)
+fields['of14.bsn_tlv_load.value'] = ProtoField.uint32("of14.bsn_tlv_load.value", "value", base.DEC, nil)
 fields['of14.bsn_tlv_loopback_mode.type'] = ProtoField.uint16("of14.bsn_tlv_loopback_mode.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_loopback_mode.length'] = ProtoField.uint16("of14.bsn_tlv_loopback_mode.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_loopback_mode.value'] = ProtoField.uint32("of14.bsn_tlv_loopback_mode.value", "value", base.DEC, enum_v5_ofp_bsn_loopback_mode)
@@ -12216,6 +12237,9 @@ fields['of14.bsn_tlv_mac_mask.length'] = ProtoField.uint16("of14.bsn_tlv_mac_mas
 fields['of14.bsn_tlv_mac_mask.value'] = ProtoField.ether("of14.bsn_tlv_mac_mask.value", "value")
 fields['of14.bsn_tlv_mcg_type_vxlan.type'] = ProtoField.uint16("of14.bsn_tlv_mcg_type_vxlan.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_mcg_type_vxlan.length'] = ProtoField.uint16("of14.bsn_tlv_mcg_type_vxlan.length", "length", base.DEC, nil)
+fields['of14.bsn_tlv_mgmt.type'] = ProtoField.uint16("of14.bsn_tlv_mgmt.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_mgmt.length'] = ProtoField.uint16("of14.bsn_tlv_mgmt.length", "length", base.DEC, nil)
+fields['of14.bsn_tlv_mgmt.value'] = ProtoField.uint32("of14.bsn_tlv_mgmt.value", "value", base.DEC, nil)
 fields['of14.bsn_tlv_mgmt_reselect_on_failure.type'] = ProtoField.uint16("of14.bsn_tlv_mgmt_reselect_on_failure.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_mgmt_reselect_on_failure.length'] = ProtoField.uint16("of14.bsn_tlv_mgmt_reselect_on_failure.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_miss_packets.type'] = ProtoField.uint16("of14.bsn_tlv_miss_packets.type", "type", base.DEC, nil)
@@ -12375,6 +12399,9 @@ fields['of14.bsn_tlv_sctp_src.length'] = ProtoField.uint16("of14.bsn_tlv_sctp_sr
 fields['of14.bsn_tlv_sctp_src.value'] = ProtoField.uint16("of14.bsn_tlv_sctp_src.value", "value", base.DEC, nil)
 fields['of14.bsn_tlv_set_loopback_mode.type'] = ProtoField.uint16("of14.bsn_tlv_set_loopback_mode.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_set_loopback_mode.length'] = ProtoField.uint16("of14.bsn_tlv_set_loopback_mode.length", "length", base.DEC, nil)
+fields['of14.bsn_tlv_socket.type'] = ProtoField.uint16("of14.bsn_tlv_socket.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_socket.length'] = ProtoField.uint16("of14.bsn_tlv_socket.length", "length", base.DEC, nil)
+fields['of14.bsn_tlv_socket.value'] = ProtoField.uint32("of14.bsn_tlv_socket.value", "value", base.DEC, nil)
 fields['of14.bsn_tlv_src_mac_cml.type'] = ProtoField.uint16("of14.bsn_tlv_src_mac_cml.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_src_mac_cml.length'] = ProtoField.uint16("of14.bsn_tlv_src_mac_cml.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_src_mac_cml.value'] = ProtoField.uint32("of14.bsn_tlv_src_mac_cml.value", "value", base.DEC, enum_v5_ofp_bsn_cml)
@@ -12400,6 +12427,9 @@ fields['of14.bsn_tlv_tcp_flags.value'] = ProtoField.uint16("of14.bsn_tlv_tcp_fla
 fields['of14.bsn_tlv_tcp_src.type'] = ProtoField.uint16("of14.bsn_tlv_tcp_src.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_tcp_src.length'] = ProtoField.uint16("of14.bsn_tlv_tcp_src.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_tcp_src.value'] = ProtoField.uint16("of14.bsn_tlv_tcp_src.value", "value", base.DEC, nil)
+fields['of14.bsn_tlv_thread.type'] = ProtoField.uint16("of14.bsn_tlv_thread.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_thread.length'] = ProtoField.uint16("of14.bsn_tlv_thread.length", "length", base.DEC, nil)
+fields['of14.bsn_tlv_thread.value'] = ProtoField.uint32("of14.bsn_tlv_thread.value", "value", base.DEC, nil)
 fields['of14.bsn_tlv_timestamp.type'] = ProtoField.uint16("of14.bsn_tlv_timestamp.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_timestamp.length'] = ProtoField.uint16("of14.bsn_tlv_timestamp.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_timestamp.value'] = ProtoField.uint64("of14.bsn_tlv_timestamp.value", "value", base.DEC, nil)
@@ -15581,8 +15611,14 @@ fields['of15.bsn_tlv_l3_src_class_id.value'] = ProtoField.uint32("of15.bsn_tlv_l
 fields['of15.bsn_tlv_lag_options.type'] = ProtoField.uint16("of15.bsn_tlv_lag_options.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_lag_options.length'] = ProtoField.uint16("of15.bsn_tlv_lag_options.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_lag_options.flags'] = ProtoField.uint32("of15.bsn_tlv_lag_options.flags", "flags", base.HEX, enum_v6_ofp_bsn_lag_flag)
+fields['of15.bsn_tlv_lcore.type'] = ProtoField.uint16("of15.bsn_tlv_lcore.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_lcore.length'] = ProtoField.uint16("of15.bsn_tlv_lcore.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_lcore.value'] = ProtoField.uint32("of15.bsn_tlv_lcore.value", "value", base.DEC, nil)
 fields['of15.bsn_tlv_link_up.type'] = ProtoField.uint16("of15.bsn_tlv_link_up.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_link_up.length'] = ProtoField.uint16("of15.bsn_tlv_link_up.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_load.type'] = ProtoField.uint16("of15.bsn_tlv_load.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_load.length'] = ProtoField.uint16("of15.bsn_tlv_load.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_load.value'] = ProtoField.uint32("of15.bsn_tlv_load.value", "value", base.DEC, nil)
 fields['of15.bsn_tlv_loopback_mode.type'] = ProtoField.uint16("of15.bsn_tlv_loopback_mode.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_loopback_mode.length'] = ProtoField.uint16("of15.bsn_tlv_loopback_mode.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_loopback_mode.value'] = ProtoField.uint32("of15.bsn_tlv_loopback_mode.value", "value", base.DEC, enum_v6_ofp_bsn_loopback_mode)
@@ -15601,6 +15637,9 @@ fields['of15.bsn_tlv_mac_mask.length'] = ProtoField.uint16("of15.bsn_tlv_mac_mas
 fields['of15.bsn_tlv_mac_mask.value'] = ProtoField.ether("of15.bsn_tlv_mac_mask.value", "value")
 fields['of15.bsn_tlv_mcg_type_vxlan.type'] = ProtoField.uint16("of15.bsn_tlv_mcg_type_vxlan.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_mcg_type_vxlan.length'] = ProtoField.uint16("of15.bsn_tlv_mcg_type_vxlan.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_mgmt.type'] = ProtoField.uint16("of15.bsn_tlv_mgmt.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_mgmt.length'] = ProtoField.uint16("of15.bsn_tlv_mgmt.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_mgmt.value'] = ProtoField.uint32("of15.bsn_tlv_mgmt.value", "value", base.DEC, nil)
 fields['of15.bsn_tlv_mgmt_reselect_on_failure.type'] = ProtoField.uint16("of15.bsn_tlv_mgmt_reselect_on_failure.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_mgmt_reselect_on_failure.length'] = ProtoField.uint16("of15.bsn_tlv_mgmt_reselect_on_failure.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_miss_packets.type'] = ProtoField.uint16("of15.bsn_tlv_miss_packets.type", "type", base.DEC, nil)
@@ -15760,6 +15799,9 @@ fields['of15.bsn_tlv_sctp_src.length'] = ProtoField.uint16("of15.bsn_tlv_sctp_sr
 fields['of15.bsn_tlv_sctp_src.value'] = ProtoField.uint16("of15.bsn_tlv_sctp_src.value", "value", base.DEC, nil)
 fields['of15.bsn_tlv_set_loopback_mode.type'] = ProtoField.uint16("of15.bsn_tlv_set_loopback_mode.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_set_loopback_mode.length'] = ProtoField.uint16("of15.bsn_tlv_set_loopback_mode.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_socket.type'] = ProtoField.uint16("of15.bsn_tlv_socket.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_socket.length'] = ProtoField.uint16("of15.bsn_tlv_socket.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_socket.value'] = ProtoField.uint32("of15.bsn_tlv_socket.value", "value", base.DEC, nil)
 fields['of15.bsn_tlv_src_mac_cml.type'] = ProtoField.uint16("of15.bsn_tlv_src_mac_cml.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_src_mac_cml.length'] = ProtoField.uint16("of15.bsn_tlv_src_mac_cml.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_src_mac_cml.value'] = ProtoField.uint32("of15.bsn_tlv_src_mac_cml.value", "value", base.DEC, enum_v6_ofp_bsn_cml)
@@ -15785,6 +15827,9 @@ fields['of15.bsn_tlv_tcp_flags.value'] = ProtoField.uint16("of15.bsn_tlv_tcp_fla
 fields['of15.bsn_tlv_tcp_src.type'] = ProtoField.uint16("of15.bsn_tlv_tcp_src.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_tcp_src.length'] = ProtoField.uint16("of15.bsn_tlv_tcp_src.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_tcp_src.value'] = ProtoField.uint16("of15.bsn_tlv_tcp_src.value", "value", base.DEC, nil)
+fields['of15.bsn_tlv_thread.type'] = ProtoField.uint16("of15.bsn_tlv_thread.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_thread.length'] = ProtoField.uint16("of15.bsn_tlv_thread.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_thread.value'] = ProtoField.uint32("of15.bsn_tlv_thread.value", "value", base.DEC, nil)
 fields['of15.bsn_tlv_timestamp.type'] = ProtoField.uint16("of15.bsn_tlv_timestamp.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_timestamp.length'] = ProtoField.uint16("of15.bsn_tlv_timestamp.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_timestamp.value'] = ProtoField.uint64("of15.bsn_tlv_timestamp.value", "value", base.DEC, nil)
@@ -22253,8 +22298,14 @@ p_of.fields = {
     fields['of13.bsn_tlv_lag_options.type'],
     fields['of13.bsn_tlv_lag_options.length'],
     fields['of13.bsn_tlv_lag_options.flags'],
+    fields['of13.bsn_tlv_lcore.type'],
+    fields['of13.bsn_tlv_lcore.length'],
+    fields['of13.bsn_tlv_lcore.value'],
     fields['of13.bsn_tlv_link_up.type'],
     fields['of13.bsn_tlv_link_up.length'],
+    fields['of13.bsn_tlv_load.type'],
+    fields['of13.bsn_tlv_load.length'],
+    fields['of13.bsn_tlv_load.value'],
     fields['of13.bsn_tlv_loopback_mode.type'],
     fields['of13.bsn_tlv_loopback_mode.length'],
     fields['of13.bsn_tlv_loopback_mode.value'],
@@ -22273,6 +22324,9 @@ p_of.fields = {
     fields['of13.bsn_tlv_mac_mask.value'],
     fields['of13.bsn_tlv_mcg_type_vxlan.type'],
     fields['of13.bsn_tlv_mcg_type_vxlan.length'],
+    fields['of13.bsn_tlv_mgmt.type'],
+    fields['of13.bsn_tlv_mgmt.length'],
+    fields['of13.bsn_tlv_mgmt.value'],
     fields['of13.bsn_tlv_mgmt_reselect_on_failure.type'],
     fields['of13.bsn_tlv_mgmt_reselect_on_failure.length'],
     fields['of13.bsn_tlv_miss_packets.type'],
@@ -22432,6 +22486,9 @@ p_of.fields = {
     fields['of13.bsn_tlv_sctp_src.value'],
     fields['of13.bsn_tlv_set_loopback_mode.type'],
     fields['of13.bsn_tlv_set_loopback_mode.length'],
+    fields['of13.bsn_tlv_socket.type'],
+    fields['of13.bsn_tlv_socket.length'],
+    fields['of13.bsn_tlv_socket.value'],
     fields['of13.bsn_tlv_src_mac_cml.type'],
     fields['of13.bsn_tlv_src_mac_cml.length'],
     fields['of13.bsn_tlv_src_mac_cml.value'],
@@ -22457,6 +22514,9 @@ p_of.fields = {
     fields['of13.bsn_tlv_tcp_src.type'],
     fields['of13.bsn_tlv_tcp_src.length'],
     fields['of13.bsn_tlv_tcp_src.value'],
+    fields['of13.bsn_tlv_thread.type'],
+    fields['of13.bsn_tlv_thread.length'],
+    fields['of13.bsn_tlv_thread.value'],
     fields['of13.bsn_tlv_timestamp.type'],
     fields['of13.bsn_tlv_timestamp.length'],
     fields['of13.bsn_tlv_timestamp.value'],
@@ -25352,8 +25412,14 @@ p_of.fields = {
     fields['of14.bsn_tlv_lag_options.type'],
     fields['of14.bsn_tlv_lag_options.length'],
     fields['of14.bsn_tlv_lag_options.flags'],
+    fields['of14.bsn_tlv_lcore.type'],
+    fields['of14.bsn_tlv_lcore.length'],
+    fields['of14.bsn_tlv_lcore.value'],
     fields['of14.bsn_tlv_link_up.type'],
     fields['of14.bsn_tlv_link_up.length'],
+    fields['of14.bsn_tlv_load.type'],
+    fields['of14.bsn_tlv_load.length'],
+    fields['of14.bsn_tlv_load.value'],
     fields['of14.bsn_tlv_loopback_mode.type'],
     fields['of14.bsn_tlv_loopback_mode.length'],
     fields['of14.bsn_tlv_loopback_mode.value'],
@@ -25372,6 +25438,9 @@ p_of.fields = {
     fields['of14.bsn_tlv_mac_mask.value'],
     fields['of14.bsn_tlv_mcg_type_vxlan.type'],
     fields['of14.bsn_tlv_mcg_type_vxlan.length'],
+    fields['of14.bsn_tlv_mgmt.type'],
+    fields['of14.bsn_tlv_mgmt.length'],
+    fields['of14.bsn_tlv_mgmt.value'],
     fields['of14.bsn_tlv_mgmt_reselect_on_failure.type'],
     fields['of14.bsn_tlv_mgmt_reselect_on_failure.length'],
     fields['of14.bsn_tlv_miss_packets.type'],
@@ -25531,6 +25600,9 @@ p_of.fields = {
     fields['of14.bsn_tlv_sctp_src.value'],
     fields['of14.bsn_tlv_set_loopback_mode.type'],
     fields['of14.bsn_tlv_set_loopback_mode.length'],
+    fields['of14.bsn_tlv_socket.type'],
+    fields['of14.bsn_tlv_socket.length'],
+    fields['of14.bsn_tlv_socket.value'],
     fields['of14.bsn_tlv_src_mac_cml.type'],
     fields['of14.bsn_tlv_src_mac_cml.length'],
     fields['of14.bsn_tlv_src_mac_cml.value'],
@@ -25556,6 +25628,9 @@ p_of.fields = {
     fields['of14.bsn_tlv_tcp_src.type'],
     fields['of14.bsn_tlv_tcp_src.length'],
     fields['of14.bsn_tlv_tcp_src.value'],
+    fields['of14.bsn_tlv_thread.type'],
+    fields['of14.bsn_tlv_thread.length'],
+    fields['of14.bsn_tlv_thread.value'],
     fields['of14.bsn_tlv_timestamp.type'],
     fields['of14.bsn_tlv_timestamp.length'],
     fields['of14.bsn_tlv_timestamp.value'],
@@ -28737,8 +28812,14 @@ p_of.fields = {
     fields['of15.bsn_tlv_lag_options.type'],
     fields['of15.bsn_tlv_lag_options.length'],
     fields['of15.bsn_tlv_lag_options.flags'],
+    fields['of15.bsn_tlv_lcore.type'],
+    fields['of15.bsn_tlv_lcore.length'],
+    fields['of15.bsn_tlv_lcore.value'],
     fields['of15.bsn_tlv_link_up.type'],
     fields['of15.bsn_tlv_link_up.length'],
+    fields['of15.bsn_tlv_load.type'],
+    fields['of15.bsn_tlv_load.length'],
+    fields['of15.bsn_tlv_load.value'],
     fields['of15.bsn_tlv_loopback_mode.type'],
     fields['of15.bsn_tlv_loopback_mode.length'],
     fields['of15.bsn_tlv_loopback_mode.value'],
@@ -28757,6 +28838,9 @@ p_of.fields = {
     fields['of15.bsn_tlv_mac_mask.value'],
     fields['of15.bsn_tlv_mcg_type_vxlan.type'],
     fields['of15.bsn_tlv_mcg_type_vxlan.length'],
+    fields['of15.bsn_tlv_mgmt.type'],
+    fields['of15.bsn_tlv_mgmt.length'],
+    fields['of15.bsn_tlv_mgmt.value'],
     fields['of15.bsn_tlv_mgmt_reselect_on_failure.type'],
     fields['of15.bsn_tlv_mgmt_reselect_on_failure.length'],
     fields['of15.bsn_tlv_miss_packets.type'],
@@ -28916,6 +29000,9 @@ p_of.fields = {
     fields['of15.bsn_tlv_sctp_src.value'],
     fields['of15.bsn_tlv_set_loopback_mode.type'],
     fields['of15.bsn_tlv_set_loopback_mode.length'],
+    fields['of15.bsn_tlv_socket.type'],
+    fields['of15.bsn_tlv_socket.length'],
+    fields['of15.bsn_tlv_socket.value'],
     fields['of15.bsn_tlv_src_mac_cml.type'],
     fields['of15.bsn_tlv_src_mac_cml.length'],
     fields['of15.bsn_tlv_src_mac_cml.value'],
@@ -28941,6 +29028,9 @@ p_of.fields = {
     fields['of15.bsn_tlv_tcp_src.type'],
     fields['of15.bsn_tlv_tcp_src.length'],
     fields['of15.bsn_tlv_tcp_src.value'],
+    fields['of15.bsn_tlv_thread.type'],
+    fields['of15.bsn_tlv_thread.length'],
+    fields['of15.bsn_tlv_thread.value'],
     fields['of15.bsn_tlv_timestamp.type'],
     fields['of15.bsn_tlv_timestamp.length'],
     fields['of15.bsn_tlv_timestamp.value'],
@@ -41604,6 +41694,16 @@ function dissect_of_bsn_tlv_lag_options_v4(reader, subtree)
 end
 of_bsn_tlv_v4_dissectors[160] = dissect_of_bsn_tlv_lag_options_v4
 
+-- child class of_bsn_tlv_lcore
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_lcore_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_lcore.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_lcore.length')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_tlv_lcore.value')
+    return 'of_bsn_tlv_lcore'
+end
+of_bsn_tlv_v4_dissectors[209] = dissect_of_bsn_tlv_lcore_v4
+
 -- child class of_bsn_tlv_link_up
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_link_up_v4(reader, subtree)
@@ -41612,6 +41712,16 @@ function dissect_of_bsn_tlv_link_up_v4(reader, subtree)
     return 'of_bsn_tlv_link_up'
 end
 of_bsn_tlv_v4_dissectors[193] = dissect_of_bsn_tlv_link_up_v4
+
+-- child class of_bsn_tlv_load
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_load_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_load.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_load.length')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_tlv_load.value')
+    return 'of_bsn_tlv_load'
+end
+of_bsn_tlv_v4_dissectors[213] = dissect_of_bsn_tlv_load_v4
 
 -- child class of_bsn_tlv_loopback_mode
 -- Child of of_bsn_tlv
@@ -41679,6 +41789,16 @@ function dissect_of_bsn_tlv_mcg_type_vxlan_v4(reader, subtree)
     return 'of_bsn_tlv_mcg_type_vxlan'
 end
 of_bsn_tlv_v4_dissectors[87] = dissect_of_bsn_tlv_mcg_type_vxlan_v4
+
+-- child class of_bsn_tlv_mgmt
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_mgmt_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_mgmt.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_mgmt.length')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_tlv_mgmt.value')
+    return 'of_bsn_tlv_mgmt'
+end
+of_bsn_tlv_v4_dissectors[211] = dissect_of_bsn_tlv_mgmt_v4
 
 -- child class of_bsn_tlv_mgmt_reselect_on_failure
 -- Child of of_bsn_tlv
@@ -42254,6 +42374,16 @@ function dissect_of_bsn_tlv_set_loopback_mode_v4(reader, subtree)
 end
 of_bsn_tlv_v4_dissectors[74] = dissect_of_bsn_tlv_set_loopback_mode_v4
 
+-- child class of_bsn_tlv_socket
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_socket_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_socket.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_socket.length')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_tlv_socket.value')
+    return 'of_bsn_tlv_socket'
+end
+of_bsn_tlv_v4_dissectors[212] = dissect_of_bsn_tlv_socket_v4
+
 -- child class of_bsn_tlv_src_mac_cml
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_src_mac_cml_v4(reader, subtree)
@@ -42341,6 +42471,16 @@ function dissect_of_bsn_tlv_tcp_src_v4(reader, subtree)
     return 'of_bsn_tlv_tcp_src'
 end
 of_bsn_tlv_v4_dissectors[65] = dissect_of_bsn_tlv_tcp_src_v4
+
+-- child class of_bsn_tlv_thread
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_thread_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_thread.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_thread.length')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_tlv_thread.value')
+    return 'of_bsn_tlv_thread'
+end
+of_bsn_tlv_v4_dissectors[210] = dissect_of_bsn_tlv_thread_v4
 
 -- child class of_bsn_tlv_timestamp
 -- Child of of_bsn_tlv
@@ -50115,6 +50255,16 @@ function dissect_of_bsn_tlv_lag_options_v5(reader, subtree)
 end
 of_bsn_tlv_v5_dissectors[160] = dissect_of_bsn_tlv_lag_options_v5
 
+-- child class of_bsn_tlv_lcore
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_lcore_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_lcore.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_lcore.length')
+    read_uint32_t(reader, 5, subtree, 'of14.bsn_tlv_lcore.value')
+    return 'of_bsn_tlv_lcore'
+end
+of_bsn_tlv_v5_dissectors[209] = dissect_of_bsn_tlv_lcore_v5
+
 -- child class of_bsn_tlv_link_up
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_link_up_v5(reader, subtree)
@@ -50123,6 +50273,16 @@ function dissect_of_bsn_tlv_link_up_v5(reader, subtree)
     return 'of_bsn_tlv_link_up'
 end
 of_bsn_tlv_v5_dissectors[193] = dissect_of_bsn_tlv_link_up_v5
+
+-- child class of_bsn_tlv_load
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_load_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_load.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_load.length')
+    read_uint32_t(reader, 5, subtree, 'of14.bsn_tlv_load.value')
+    return 'of_bsn_tlv_load'
+end
+of_bsn_tlv_v5_dissectors[213] = dissect_of_bsn_tlv_load_v5
 
 -- child class of_bsn_tlv_loopback_mode
 -- Child of of_bsn_tlv
@@ -50190,6 +50350,16 @@ function dissect_of_bsn_tlv_mcg_type_vxlan_v5(reader, subtree)
     return 'of_bsn_tlv_mcg_type_vxlan'
 end
 of_bsn_tlv_v5_dissectors[87] = dissect_of_bsn_tlv_mcg_type_vxlan_v5
+
+-- child class of_bsn_tlv_mgmt
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_mgmt_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_mgmt.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_mgmt.length')
+    read_uint32_t(reader, 5, subtree, 'of14.bsn_tlv_mgmt.value')
+    return 'of_bsn_tlv_mgmt'
+end
+of_bsn_tlv_v5_dissectors[211] = dissect_of_bsn_tlv_mgmt_v5
 
 -- child class of_bsn_tlv_mgmt_reselect_on_failure
 -- Child of of_bsn_tlv
@@ -50765,6 +50935,16 @@ function dissect_of_bsn_tlv_set_loopback_mode_v5(reader, subtree)
 end
 of_bsn_tlv_v5_dissectors[74] = dissect_of_bsn_tlv_set_loopback_mode_v5
 
+-- child class of_bsn_tlv_socket
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_socket_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_socket.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_socket.length')
+    read_uint32_t(reader, 5, subtree, 'of14.bsn_tlv_socket.value')
+    return 'of_bsn_tlv_socket'
+end
+of_bsn_tlv_v5_dissectors[212] = dissect_of_bsn_tlv_socket_v5
+
 -- child class of_bsn_tlv_src_mac_cml
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_src_mac_cml_v5(reader, subtree)
@@ -50852,6 +51032,16 @@ function dissect_of_bsn_tlv_tcp_src_v5(reader, subtree)
     return 'of_bsn_tlv_tcp_src'
 end
 of_bsn_tlv_v5_dissectors[65] = dissect_of_bsn_tlv_tcp_src_v5
+
+-- child class of_bsn_tlv_thread
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_thread_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_thread.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_thread.length')
+    read_uint32_t(reader, 5, subtree, 'of14.bsn_tlv_thread.value')
+    return 'of_bsn_tlv_thread'
+end
+of_bsn_tlv_v5_dissectors[210] = dissect_of_bsn_tlv_thread_v5
 
 -- child class of_bsn_tlv_timestamp
 -- Child of of_bsn_tlv
@@ -59288,6 +59478,16 @@ function dissect_of_bsn_tlv_lag_options_v6(reader, subtree)
 end
 of_bsn_tlv_v6_dissectors[160] = dissect_of_bsn_tlv_lag_options_v6
 
+-- child class of_bsn_tlv_lcore
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_lcore_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_lcore.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_lcore.length')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_tlv_lcore.value')
+    return 'of_bsn_tlv_lcore'
+end
+of_bsn_tlv_v6_dissectors[209] = dissect_of_bsn_tlv_lcore_v6
+
 -- child class of_bsn_tlv_link_up
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_link_up_v6(reader, subtree)
@@ -59296,6 +59496,16 @@ function dissect_of_bsn_tlv_link_up_v6(reader, subtree)
     return 'of_bsn_tlv_link_up'
 end
 of_bsn_tlv_v6_dissectors[193] = dissect_of_bsn_tlv_link_up_v6
+
+-- child class of_bsn_tlv_load
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_load_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_load.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_load.length')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_tlv_load.value')
+    return 'of_bsn_tlv_load'
+end
+of_bsn_tlv_v6_dissectors[213] = dissect_of_bsn_tlv_load_v6
 
 -- child class of_bsn_tlv_loopback_mode
 -- Child of of_bsn_tlv
@@ -59363,6 +59573,16 @@ function dissect_of_bsn_tlv_mcg_type_vxlan_v6(reader, subtree)
     return 'of_bsn_tlv_mcg_type_vxlan'
 end
 of_bsn_tlv_v6_dissectors[87] = dissect_of_bsn_tlv_mcg_type_vxlan_v6
+
+-- child class of_bsn_tlv_mgmt
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_mgmt_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_mgmt.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_mgmt.length')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_tlv_mgmt.value')
+    return 'of_bsn_tlv_mgmt'
+end
+of_bsn_tlv_v6_dissectors[211] = dissect_of_bsn_tlv_mgmt_v6
 
 -- child class of_bsn_tlv_mgmt_reselect_on_failure
 -- Child of of_bsn_tlv
@@ -59938,6 +60158,16 @@ function dissect_of_bsn_tlv_set_loopback_mode_v6(reader, subtree)
 end
 of_bsn_tlv_v6_dissectors[74] = dissect_of_bsn_tlv_set_loopback_mode_v6
 
+-- child class of_bsn_tlv_socket
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_socket_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_socket.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_socket.length')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_tlv_socket.value')
+    return 'of_bsn_tlv_socket'
+end
+of_bsn_tlv_v6_dissectors[212] = dissect_of_bsn_tlv_socket_v6
+
 -- child class of_bsn_tlv_src_mac_cml
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_src_mac_cml_v6(reader, subtree)
@@ -60025,6 +60255,16 @@ function dissect_of_bsn_tlv_tcp_src_v6(reader, subtree)
     return 'of_bsn_tlv_tcp_src'
 end
 of_bsn_tlv_v6_dissectors[65] = dissect_of_bsn_tlv_tcp_src_v6
+
+-- child class of_bsn_tlv_thread
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_thread_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_thread.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_thread.length')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_tlv_thread.value')
+    return 'of_bsn_tlv_thread'
+end
+of_bsn_tlv_v6_dissectors[210] = dissect_of_bsn_tlv_thread_v6
 
 -- child class of_bsn_tlv_timestamp
 -- Child of of_bsn_tlv

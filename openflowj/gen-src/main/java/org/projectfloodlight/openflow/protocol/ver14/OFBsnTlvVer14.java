@@ -343,9 +343,15 @@ abstract class OFBsnTlvVer14 {
                case (short) 0xa0:
                    // discriminator value 0xa0=0xa0 for class OFBsnTlvLagOptionsVer14
                    return OFBsnTlvLagOptionsVer14.READER.readFrom(bb);
+               case (short) 0xd1:
+                   // discriminator value 0xd1=0xd1 for class OFBsnTlvLcoreVer14
+                   return OFBsnTlvLcoreVer14.READER.readFrom(bb);
                case (short) 0xc1:
                    // discriminator value 0xc1=0xc1 for class OFBsnTlvLinkUpVer14
                    return OFBsnTlvLinkUpVer14.READER.readFrom(bb);
+               case (short) 0xd5:
+                   // discriminator value 0xd5=0xd5 for class OFBsnTlvLoadVer14
+                   return OFBsnTlvLoadVer14.READER.readFrom(bb);
                case (short) 0x92:
                    // discriminator value 0x92=0x92 for class OFBsnTlvLoopbackModeVer14
                    return OFBsnTlvLoopbackModeVer14.READER.readFrom(bb);
@@ -367,6 +373,9 @@ abstract class OFBsnTlvVer14 {
                case (short) 0x57:
                    // discriminator value 0x57=0x57 for class OFBsnTlvMcgTypeVxlanVer14
                    return OFBsnTlvMcgTypeVxlanVer14.READER.readFrom(bb);
+               case (short) 0xd3:
+                   // discriminator value 0xd3=0xd3 for class OFBsnTlvMgmtVer14
+                   return OFBsnTlvMgmtVer14.READER.readFrom(bb);
                case (short) 0xd0:
                    // discriminator value 0xd0=0xd0 for class OFBsnTlvMgmtReselectOnFailureVer14
                    return OFBsnTlvMgmtReselectOnFailureVer14.READER.readFrom(bb);
@@ -541,6 +550,9 @@ abstract class OFBsnTlvVer14 {
                case (short) 0x4a:
                    // discriminator value 0x4a=0x4a for class OFBsnTlvSetLoopbackModeVer14
                    return OFBsnTlvSetLoopbackModeVer14.READER.readFrom(bb);
+               case (short) 0xd4:
+                   // discriminator value 0xd4=0xd4 for class OFBsnTlvSocketVer14
+                   return OFBsnTlvSocketVer14.READER.readFrom(bb);
                case (short) 0xbf:
                    // discriminator value 0xbf=0xbf for class OFBsnTlvSrcMacCmlVer14
                    return OFBsnTlvSrcMacCmlVer14.READER.readFrom(bb);
@@ -568,6 +580,9 @@ abstract class OFBsnTlvVer14 {
                case (short) 0x41:
                    // discriminator value 0x41=0x41 for class OFBsnTlvTcpSrcVer14
                    return OFBsnTlvTcpSrcVer14.READER.readFrom(bb);
+               case (short) 0xd2:
+                   // discriminator value 0xd2=0xd2 for class OFBsnTlvThreadVer14
+                   return OFBsnTlvThreadVer14.READER.readFrom(bb);
                case (short) 0x9a:
                    // discriminator value 0x9a=0x9a for class OFBsnTlvTimestampVer14
                    return OFBsnTlvTimestampVer14.READER.readFrom(bb);
