@@ -127,6 +127,8 @@ public interface OFBsnTlvs {
     OFBsnTlvForceLinkUp forceLinkUp();
     OFBsnTlvForwardErrorCorrection.Builder buildForwardErrorCorrection() throws UnsupportedOperationException;
     OFBsnTlvForwardErrorCorrection forwardErrorCorrection(OFBsnForwardErrorCorrectionType value);
+    OFBsnTlvFreeCount.Builder buildFreeCount() throws UnsupportedOperationException;
+    OFBsnTlvFreeCount freeCount(long value);
     OFBsnTlvGenerationId.Builder buildGenerationId() throws UnsupportedOperationException;
     OFBsnTlvGenerationId generationId(U64 value);
     OFBsnTlvHashAlgorithm.Builder buildHashAlgorithm() throws UnsupportedOperationException;
@@ -221,6 +223,8 @@ public interface OFBsnTlvs {
     OFBsnTlvMac mac(MacAddress value);
     OFBsnTlvMacMask.Builder buildMacMask() throws UnsupportedOperationException;
     OFBsnTlvMacMask macMask(MacAddress value);
+    OFBsnTlvMaxCount.Builder buildMaxCount() throws UnsupportedOperationException;
+    OFBsnTlvMaxCount maxCount(long value);
     OFBsnTlvMcgTypeVxlan mcgTypeVxlan();
     OFBsnTlvMgmtReselectOnFailure mgmtReselectOnFailure();
     OFBsnTlvMissPackets.Builder buildMissPackets() throws UnsupportedOperationException;
