@@ -1619,7 +1619,15 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_lcore_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_link_up_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_load_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -1648,6 +1656,10 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_tlv_mcg_type_vxlan_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_mgmt_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -1883,6 +1895,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_socket_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_src_mac_cml_dup(
         of_object_t *src);
 
@@ -1916,6 +1932,10 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_tlv_tcp_src_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_thread_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -6995,7 +7015,15 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_lcore_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_link_up_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_load_OF_VERSION_1_3_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -7024,6 +7052,10 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_tlv_mcg_type_vxlan_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_mgmt_OF_VERSION_1_3_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -7259,6 +7291,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_socket_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_src_mac_cml_OF_VERSION_1_3_dup(
         of_object_t *src);
 
@@ -7292,6 +7328,10 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_tlv_tcp_src_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_thread_OF_VERSION_1_3_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -10043,7 +10083,15 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_lcore_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_link_up_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_load_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -10072,6 +10120,10 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_tlv_mcg_type_vxlan_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_mgmt_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -10307,6 +10359,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_socket_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_src_mac_cml_OF_VERSION_1_4_dup(
         of_object_t *src);
 
@@ -10340,6 +10396,10 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_tlv_tcp_src_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_thread_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *

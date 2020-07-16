@@ -834,8 +834,26 @@ public class OFBsnTlvsVer15 implements OFBsnTlvs {
                     );
     }
 
+    public OFBsnTlvLcore.Builder buildLcore() {
+        return new OFBsnTlvLcoreVer15.Builder();
+    }
+    public OFBsnTlvLcore lcore(long value) {
+        return new OFBsnTlvLcoreVer15(
+                value
+                    );
+    }
+
     public OFBsnTlvLinkUp linkUp() {
         return OFBsnTlvLinkUpVer15.INSTANCE;
+    }
+
+    public OFBsnTlvLoad.Builder buildLoad() {
+        return new OFBsnTlvLoadVer15.Builder();
+    }
+    public OFBsnTlvLoad load(long value) {
+        return new OFBsnTlvLoadVer15(
+                value
+                    );
     }
 
     public OFBsnTlvLoopbackMode.Builder buildLoopbackMode() {
@@ -884,6 +902,15 @@ public class OFBsnTlvsVer15 implements OFBsnTlvs {
 
     public OFBsnTlvMcgTypeVxlan mcgTypeVxlan() {
         return OFBsnTlvMcgTypeVxlanVer15.INSTANCE;
+    }
+
+    public OFBsnTlvMgmt.Builder buildMgmt() {
+        return new OFBsnTlvMgmtVer15.Builder();
+    }
+    public OFBsnTlvMgmt mgmt(long value) {
+        return new OFBsnTlvMgmtVer15(
+                value
+                    );
     }
 
     public OFBsnTlvMgmtReselectOnFailure mgmtReselectOnFailure() {
@@ -1329,6 +1356,15 @@ public class OFBsnTlvsVer15 implements OFBsnTlvs {
         return OFBsnTlvSetLoopbackModeVer15.INSTANCE;
     }
 
+    public OFBsnTlvSocket.Builder buildSocket() {
+        return new OFBsnTlvSocketVer15.Builder();
+    }
+    public OFBsnTlvSocket socket(long value) {
+        return new OFBsnTlvSocketVer15(
+                value
+                    );
+    }
+
     public OFBsnTlvSrcMacCml.Builder buildSrcMacCml() {
         return new OFBsnTlvSrcMacCmlVer15.Builder();
     }
@@ -1396,6 +1432,15 @@ public class OFBsnTlvsVer15 implements OFBsnTlvs {
     }
     public OFBsnTlvTcpSrc tcpSrc(int value) {
         return new OFBsnTlvTcpSrcVer15(
+                value
+                    );
+    }
+
+    public OFBsnTlvThread.Builder buildThread() {
+        return new OFBsnTlvThreadVer15.Builder();
+    }
+    public OFBsnTlvThread thread(long value) {
+        return new OFBsnTlvThreadVer15(
                 value
                     );
     }

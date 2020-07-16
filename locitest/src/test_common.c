@@ -10391,7 +10391,15 @@ test_dump_objs(void)
     of_object_dump((loci_writer_f)fprintf, out, obj);
     of_object_delete(obj);
 
+    obj = (of_object_t *)of_bsn_tlv_lcore_new(OF_VERSION_1_3);
+    of_object_dump((loci_writer_f)fprintf, out, obj);
+    of_object_delete(obj);
+
     obj = (of_object_t *)of_bsn_tlv_link_up_new(OF_VERSION_1_3);
+    of_object_dump((loci_writer_f)fprintf, out, obj);
+    of_object_delete(obj);
+
+    obj = (of_object_t *)of_bsn_tlv_load_new(OF_VERSION_1_3);
     of_object_dump((loci_writer_f)fprintf, out, obj);
     of_object_delete(obj);
 
@@ -10420,6 +10428,10 @@ test_dump_objs(void)
     of_object_delete(obj);
 
     obj = (of_object_t *)of_bsn_tlv_mcg_type_vxlan_new(OF_VERSION_1_3);
+    of_object_dump((loci_writer_f)fprintf, out, obj);
+    of_object_delete(obj);
+
+    obj = (of_object_t *)of_bsn_tlv_mgmt_new(OF_VERSION_1_3);
     of_object_dump((loci_writer_f)fprintf, out, obj);
     of_object_delete(obj);
 
@@ -10655,6 +10667,10 @@ test_dump_objs(void)
     of_object_dump((loci_writer_f)fprintf, out, obj);
     of_object_delete(obj);
 
+    obj = (of_object_t *)of_bsn_tlv_socket_new(OF_VERSION_1_3);
+    of_object_dump((loci_writer_f)fprintf, out, obj);
+    of_object_delete(obj);
+
     obj = (of_object_t *)of_bsn_tlv_src_mac_cml_new(OF_VERSION_1_3);
     of_object_dump((loci_writer_f)fprintf, out, obj);
     of_object_delete(obj);
@@ -10688,6 +10704,10 @@ test_dump_objs(void)
     of_object_delete(obj);
 
     obj = (of_object_t *)of_bsn_tlv_tcp_src_new(OF_VERSION_1_3);
+    of_object_dump((loci_writer_f)fprintf, out, obj);
+    of_object_delete(obj);
+
+    obj = (of_object_t *)of_bsn_tlv_thread_new(OF_VERSION_1_3);
     of_object_dump((loci_writer_f)fprintf, out, obj);
     of_object_delete(obj);
 
@@ -13212,7 +13232,15 @@ test_dump_objs(void)
     of_object_dump((loci_writer_f)fprintf, out, obj);
     of_object_delete(obj);
 
+    obj = (of_object_t *)of_bsn_tlv_lcore_new(OF_VERSION_1_4);
+    of_object_dump((loci_writer_f)fprintf, out, obj);
+    of_object_delete(obj);
+
     obj = (of_object_t *)of_bsn_tlv_link_up_new(OF_VERSION_1_4);
+    of_object_dump((loci_writer_f)fprintf, out, obj);
+    of_object_delete(obj);
+
+    obj = (of_object_t *)of_bsn_tlv_load_new(OF_VERSION_1_4);
     of_object_dump((loci_writer_f)fprintf, out, obj);
     of_object_delete(obj);
 
@@ -13241,6 +13269,10 @@ test_dump_objs(void)
     of_object_delete(obj);
 
     obj = (of_object_t *)of_bsn_tlv_mcg_type_vxlan_new(OF_VERSION_1_4);
+    of_object_dump((loci_writer_f)fprintf, out, obj);
+    of_object_delete(obj);
+
+    obj = (of_object_t *)of_bsn_tlv_mgmt_new(OF_VERSION_1_4);
     of_object_dump((loci_writer_f)fprintf, out, obj);
     of_object_delete(obj);
 
@@ -13476,6 +13508,10 @@ test_dump_objs(void)
     of_object_dump((loci_writer_f)fprintf, out, obj);
     of_object_delete(obj);
 
+    obj = (of_object_t *)of_bsn_tlv_socket_new(OF_VERSION_1_4);
+    of_object_dump((loci_writer_f)fprintf, out, obj);
+    of_object_delete(obj);
+
     obj = (of_object_t *)of_bsn_tlv_src_mac_cml_new(OF_VERSION_1_4);
     of_object_dump((loci_writer_f)fprintf, out, obj);
     of_object_delete(obj);
@@ -13509,6 +13545,10 @@ test_dump_objs(void)
     of_object_delete(obj);
 
     obj = (of_object_t *)of_bsn_tlv_tcp_src_new(OF_VERSION_1_4);
+    of_object_dump((loci_writer_f)fprintf, out, obj);
+    of_object_delete(obj);
+
+    obj = (of_object_t *)of_bsn_tlv_thread_new(OF_VERSION_1_4);
     of_object_dump((loci_writer_f)fprintf, out, obj);
     of_object_delete(obj);
 

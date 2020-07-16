@@ -29680,6 +29680,43 @@ test_of_bsn_tlv_lag_options_OF_VERSION_1_3_scalar(void)
 }
 
 static int
+test_of_bsn_tlv_lcore_OF_VERSION_1_3_scalar(void)
+{
+    of_bsn_tlv_lcore_t *obj;
+
+    obj = of_bsn_tlv_lcore_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 8);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_TLV_LCORE);
+
+    {
+        of_object_id_t object_id;
+        of_bsn_tlv_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_BSN_TLV_LCORE);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 8);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_bsn_tlv_lcore_OF_VERSION_1_3_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_tlv_lcore_OF_VERSION_1_3_check_scalars(obj, 1) != 0);
+
+    of_bsn_tlv_lcore_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
 test_of_bsn_tlv_link_up_OF_VERSION_1_3_scalar(void)
 {
     of_bsn_tlv_link_up_t *obj;
@@ -29711,6 +29748,43 @@ test_of_bsn_tlv_link_up_OF_VERSION_1_3_scalar(void)
     TEST_ASSERT(of_bsn_tlv_link_up_OF_VERSION_1_3_check_scalars(obj, 1) != 0);
 
     of_bsn_tlv_link_up_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_tlv_load_OF_VERSION_1_3_scalar(void)
+{
+    of_bsn_tlv_load_t *obj;
+
+    obj = of_bsn_tlv_load_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 8);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_TLV_LOAD);
+
+    {
+        of_object_id_t object_id;
+        of_bsn_tlv_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_BSN_TLV_LOAD);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 8);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_bsn_tlv_load_OF_VERSION_1_3_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_tlv_load_OF_VERSION_1_3_check_scalars(obj, 1) != 0);
+
+    of_bsn_tlv_load_delete(obj);
 
     /* To do: Check memory */
     return TEST_PASS;
@@ -29970,6 +30044,43 @@ test_of_bsn_tlv_mcg_type_vxlan_OF_VERSION_1_3_scalar(void)
     TEST_ASSERT(of_bsn_tlv_mcg_type_vxlan_OF_VERSION_1_3_check_scalars(obj, 1) != 0);
 
     of_bsn_tlv_mcg_type_vxlan_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_tlv_mgmt_OF_VERSION_1_3_scalar(void)
+{
+    of_bsn_tlv_mgmt_t *obj;
+
+    obj = of_bsn_tlv_mgmt_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 8);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_TLV_MGMT);
+
+    {
+        of_object_id_t object_id;
+        of_bsn_tlv_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_BSN_TLV_MGMT);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 8);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_bsn_tlv_mgmt_OF_VERSION_1_3_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_tlv_mgmt_OF_VERSION_1_3_check_scalars(obj, 1) != 0);
+
+    of_bsn_tlv_mgmt_delete(obj);
 
     /* To do: Check memory */
     return TEST_PASS;
@@ -32122,6 +32233,43 @@ test_of_bsn_tlv_set_loopback_mode_OF_VERSION_1_3_scalar(void)
 }
 
 static int
+test_of_bsn_tlv_socket_OF_VERSION_1_3_scalar(void)
+{
+    of_bsn_tlv_socket_t *obj;
+
+    obj = of_bsn_tlv_socket_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 8);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_TLV_SOCKET);
+
+    {
+        of_object_id_t object_id;
+        of_bsn_tlv_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_BSN_TLV_SOCKET);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 8);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_bsn_tlv_socket_OF_VERSION_1_3_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_tlv_socket_OF_VERSION_1_3_check_scalars(obj, 1) != 0);
+
+    of_bsn_tlv_socket_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
 test_of_bsn_tlv_src_mac_cml_OF_VERSION_1_3_scalar(void)
 {
     of_bsn_tlv_src_mac_cml_t *obj;
@@ -32449,6 +32597,43 @@ test_of_bsn_tlv_tcp_src_OF_VERSION_1_3_scalar(void)
     TEST_ASSERT(of_bsn_tlv_tcp_src_OF_VERSION_1_3_check_scalars(obj, 1) != 0);
 
     of_bsn_tlv_tcp_src_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_tlv_thread_OF_VERSION_1_3_scalar(void)
+{
+    of_bsn_tlv_thread_t *obj;
+
+    obj = of_bsn_tlv_thread_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 8);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_TLV_THREAD);
+
+    {
+        of_object_id_t object_id;
+        of_bsn_tlv_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_BSN_TLV_THREAD);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 8);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_bsn_tlv_thread_OF_VERSION_1_3_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_tlv_thread_OF_VERSION_1_3_check_scalars(obj, 1) != 0);
+
+    of_bsn_tlv_thread_delete(obj);
 
     /* To do: Check memory */
     return TEST_PASS;
@@ -55510,6 +55695,43 @@ test_of_bsn_tlv_lag_options_OF_VERSION_1_4_scalar(void)
 }
 
 static int
+test_of_bsn_tlv_lcore_OF_VERSION_1_4_scalar(void)
+{
+    of_bsn_tlv_lcore_t *obj;
+
+    obj = of_bsn_tlv_lcore_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 8);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_TLV_LCORE);
+
+    {
+        of_object_id_t object_id;
+        of_bsn_tlv_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_BSN_TLV_LCORE);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 8);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_bsn_tlv_lcore_OF_VERSION_1_4_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_tlv_lcore_OF_VERSION_1_4_check_scalars(obj, 1) != 0);
+
+    of_bsn_tlv_lcore_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
 test_of_bsn_tlv_link_up_OF_VERSION_1_4_scalar(void)
 {
     of_bsn_tlv_link_up_t *obj;
@@ -55541,6 +55763,43 @@ test_of_bsn_tlv_link_up_OF_VERSION_1_4_scalar(void)
     TEST_ASSERT(of_bsn_tlv_link_up_OF_VERSION_1_4_check_scalars(obj, 1) != 0);
 
     of_bsn_tlv_link_up_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_tlv_load_OF_VERSION_1_4_scalar(void)
+{
+    of_bsn_tlv_load_t *obj;
+
+    obj = of_bsn_tlv_load_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 8);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_TLV_LOAD);
+
+    {
+        of_object_id_t object_id;
+        of_bsn_tlv_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_BSN_TLV_LOAD);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 8);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_bsn_tlv_load_OF_VERSION_1_4_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_tlv_load_OF_VERSION_1_4_check_scalars(obj, 1) != 0);
+
+    of_bsn_tlv_load_delete(obj);
 
     /* To do: Check memory */
     return TEST_PASS;
@@ -55800,6 +56059,43 @@ test_of_bsn_tlv_mcg_type_vxlan_OF_VERSION_1_4_scalar(void)
     TEST_ASSERT(of_bsn_tlv_mcg_type_vxlan_OF_VERSION_1_4_check_scalars(obj, 1) != 0);
 
     of_bsn_tlv_mcg_type_vxlan_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_tlv_mgmt_OF_VERSION_1_4_scalar(void)
+{
+    of_bsn_tlv_mgmt_t *obj;
+
+    obj = of_bsn_tlv_mgmt_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 8);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_TLV_MGMT);
+
+    {
+        of_object_id_t object_id;
+        of_bsn_tlv_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_BSN_TLV_MGMT);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 8);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_bsn_tlv_mgmt_OF_VERSION_1_4_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_tlv_mgmt_OF_VERSION_1_4_check_scalars(obj, 1) != 0);
+
+    of_bsn_tlv_mgmt_delete(obj);
 
     /* To do: Check memory */
     return TEST_PASS;
@@ -57952,6 +58248,43 @@ test_of_bsn_tlv_set_loopback_mode_OF_VERSION_1_4_scalar(void)
 }
 
 static int
+test_of_bsn_tlv_socket_OF_VERSION_1_4_scalar(void)
+{
+    of_bsn_tlv_socket_t *obj;
+
+    obj = of_bsn_tlv_socket_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 8);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_TLV_SOCKET);
+
+    {
+        of_object_id_t object_id;
+        of_bsn_tlv_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_BSN_TLV_SOCKET);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 8);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_bsn_tlv_socket_OF_VERSION_1_4_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_tlv_socket_OF_VERSION_1_4_check_scalars(obj, 1) != 0);
+
+    of_bsn_tlv_socket_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
 test_of_bsn_tlv_src_mac_cml_OF_VERSION_1_4_scalar(void)
 {
     of_bsn_tlv_src_mac_cml_t *obj;
@@ -58279,6 +58612,43 @@ test_of_bsn_tlv_tcp_src_OF_VERSION_1_4_scalar(void)
     TEST_ASSERT(of_bsn_tlv_tcp_src_OF_VERSION_1_4_check_scalars(obj, 1) != 0);
 
     of_bsn_tlv_tcp_src_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_tlv_thread_OF_VERSION_1_4_scalar(void)
+{
+    of_bsn_tlv_thread_t *obj;
+
+    obj = of_bsn_tlv_thread_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 8);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_TLV_THREAD);
+
+    {
+        of_object_id_t object_id;
+        of_bsn_tlv_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_BSN_TLV_THREAD);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 8);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_bsn_tlv_thread_OF_VERSION_1_4_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_tlv_thread_OF_VERSION_1_4_check_scalars(obj, 1) != 0);
+
+    of_bsn_tlv_thread_delete(obj);
 
     /* To do: Check memory */
     return TEST_PASS;
@@ -70280,7 +70650,9 @@ run_OF_VERSION_1_3_scalar_acc_tests(void)
     RUN_TEST(of_bsn_tlv_l3_interface_class_id_OF_VERSION_1_3_scalar);
     RUN_TEST(of_bsn_tlv_l3_src_class_id_OF_VERSION_1_3_scalar);
     RUN_TEST(of_bsn_tlv_lag_options_OF_VERSION_1_3_scalar);
+    RUN_TEST(of_bsn_tlv_lcore_OF_VERSION_1_3_scalar);
     RUN_TEST(of_bsn_tlv_link_up_OF_VERSION_1_3_scalar);
+    RUN_TEST(of_bsn_tlv_load_OF_VERSION_1_3_scalar);
     RUN_TEST(of_bsn_tlv_loopback_mode_OF_VERSION_1_3_scalar);
     RUN_TEST(of_bsn_tlv_loopback_port_OF_VERSION_1_3_scalar);
     RUN_TEST(of_bsn_tlv_lossless_OF_VERSION_1_3_scalar);
@@ -70288,6 +70660,7 @@ run_OF_VERSION_1_3_scalar_acc_tests(void)
     RUN_TEST(of_bsn_tlv_mac_OF_VERSION_1_3_scalar);
     RUN_TEST(of_bsn_tlv_mac_mask_OF_VERSION_1_3_scalar);
     RUN_TEST(of_bsn_tlv_mcg_type_vxlan_OF_VERSION_1_3_scalar);
+    RUN_TEST(of_bsn_tlv_mgmt_OF_VERSION_1_3_scalar);
     RUN_TEST(of_bsn_tlv_mgmt_reselect_on_failure_OF_VERSION_1_3_scalar);
     RUN_TEST(of_bsn_tlv_miss_packets_OF_VERSION_1_3_scalar);
     RUN_TEST(of_bsn_tlv_mpls_control_word_OF_VERSION_1_3_scalar);
@@ -70346,6 +70719,7 @@ run_OF_VERSION_1_3_scalar_acc_tests(void)
     RUN_TEST(of_bsn_tlv_sctp_dst_OF_VERSION_1_3_scalar);
     RUN_TEST(of_bsn_tlv_sctp_src_OF_VERSION_1_3_scalar);
     RUN_TEST(of_bsn_tlv_set_loopback_mode_OF_VERSION_1_3_scalar);
+    RUN_TEST(of_bsn_tlv_socket_OF_VERSION_1_3_scalar);
     RUN_TEST(of_bsn_tlv_src_mac_cml_OF_VERSION_1_3_scalar);
     RUN_TEST(of_bsn_tlv_status_OF_VERSION_1_3_scalar);
     RUN_TEST(of_bsn_tlv_strip_mpls_l2_on_ingress_OF_VERSION_1_3_scalar);
@@ -70355,6 +70729,7 @@ run_OF_VERSION_1_3_scalar_acc_tests(void)
     RUN_TEST(of_bsn_tlv_tcp_dst_OF_VERSION_1_3_scalar);
     RUN_TEST(of_bsn_tlv_tcp_flags_OF_VERSION_1_3_scalar);
     RUN_TEST(of_bsn_tlv_tcp_src_OF_VERSION_1_3_scalar);
+    RUN_TEST(of_bsn_tlv_thread_OF_VERSION_1_3_scalar);
     RUN_TEST(of_bsn_tlv_timestamp_OF_VERSION_1_3_scalar);
     RUN_TEST(of_bsn_tlv_ttl_OF_VERSION_1_3_scalar);
     RUN_TEST(of_bsn_tlv_tunnel_capability_OF_VERSION_1_3_scalar);
@@ -70990,7 +71365,9 @@ run_OF_VERSION_1_4_scalar_acc_tests(void)
     RUN_TEST(of_bsn_tlv_l3_interface_class_id_OF_VERSION_1_4_scalar);
     RUN_TEST(of_bsn_tlv_l3_src_class_id_OF_VERSION_1_4_scalar);
     RUN_TEST(of_bsn_tlv_lag_options_OF_VERSION_1_4_scalar);
+    RUN_TEST(of_bsn_tlv_lcore_OF_VERSION_1_4_scalar);
     RUN_TEST(of_bsn_tlv_link_up_OF_VERSION_1_4_scalar);
+    RUN_TEST(of_bsn_tlv_load_OF_VERSION_1_4_scalar);
     RUN_TEST(of_bsn_tlv_loopback_mode_OF_VERSION_1_4_scalar);
     RUN_TEST(of_bsn_tlv_loopback_port_OF_VERSION_1_4_scalar);
     RUN_TEST(of_bsn_tlv_lossless_OF_VERSION_1_4_scalar);
@@ -70998,6 +71375,7 @@ run_OF_VERSION_1_4_scalar_acc_tests(void)
     RUN_TEST(of_bsn_tlv_mac_OF_VERSION_1_4_scalar);
     RUN_TEST(of_bsn_tlv_mac_mask_OF_VERSION_1_4_scalar);
     RUN_TEST(of_bsn_tlv_mcg_type_vxlan_OF_VERSION_1_4_scalar);
+    RUN_TEST(of_bsn_tlv_mgmt_OF_VERSION_1_4_scalar);
     RUN_TEST(of_bsn_tlv_mgmt_reselect_on_failure_OF_VERSION_1_4_scalar);
     RUN_TEST(of_bsn_tlv_miss_packets_OF_VERSION_1_4_scalar);
     RUN_TEST(of_bsn_tlv_mpls_control_word_OF_VERSION_1_4_scalar);
@@ -71056,6 +71434,7 @@ run_OF_VERSION_1_4_scalar_acc_tests(void)
     RUN_TEST(of_bsn_tlv_sctp_dst_OF_VERSION_1_4_scalar);
     RUN_TEST(of_bsn_tlv_sctp_src_OF_VERSION_1_4_scalar);
     RUN_TEST(of_bsn_tlv_set_loopback_mode_OF_VERSION_1_4_scalar);
+    RUN_TEST(of_bsn_tlv_socket_OF_VERSION_1_4_scalar);
     RUN_TEST(of_bsn_tlv_src_mac_cml_OF_VERSION_1_4_scalar);
     RUN_TEST(of_bsn_tlv_status_OF_VERSION_1_4_scalar);
     RUN_TEST(of_bsn_tlv_strip_mpls_l2_on_ingress_OF_VERSION_1_4_scalar);
@@ -71065,6 +71444,7 @@ run_OF_VERSION_1_4_scalar_acc_tests(void)
     RUN_TEST(of_bsn_tlv_tcp_dst_OF_VERSION_1_4_scalar);
     RUN_TEST(of_bsn_tlv_tcp_flags_OF_VERSION_1_4_scalar);
     RUN_TEST(of_bsn_tlv_tcp_src_OF_VERSION_1_4_scalar);
+    RUN_TEST(of_bsn_tlv_thread_OF_VERSION_1_4_scalar);
     RUN_TEST(of_bsn_tlv_timestamp_OF_VERSION_1_4_scalar);
     RUN_TEST(of_bsn_tlv_ttl_OF_VERSION_1_4_scalar);
     RUN_TEST(of_bsn_tlv_tunnel_capability_OF_VERSION_1_4_scalar);

@@ -12637,6 +12637,33 @@ int of_bsn_tlv_lag_options_OF_VERSION_1_0_check_scalars(
 
 
 /**
+ * Populate the scalar values in obj of type of_bsn_tlv_lcore,
+ * version OF_VERSION_1_0
+ * @param obj Pointer to an object to populate
+ * @param value The seed value to use in populating the object
+ * @returns The value after increments for this object's values
+ */
+int of_bsn_tlv_lcore_OF_VERSION_1_0_populate_scalars(
+    of_bsn_tlv_lcore_t *obj, int value) {
+
+    return value;
+}
+
+/**
+ * Check scalar values in obj of type of_bsn_tlv_lcore,
+ * version OF_VERSION_1_0
+ * @param obj Pointer to an object to check
+ * @param value Starting value for checking
+ * @returns The value after increments for this object's values
+ */
+int of_bsn_tlv_lcore_OF_VERSION_1_0_check_scalars(
+    of_bsn_tlv_lcore_t *obj, int value) {
+
+    return value;
+}
+
+
+/**
  * Populate the scalar values in obj of type of_bsn_tlv_link_up,
  * version OF_VERSION_1_0
  * @param obj Pointer to an object to populate
@@ -12658,6 +12685,33 @@ int of_bsn_tlv_link_up_OF_VERSION_1_0_populate_scalars(
  */
 int of_bsn_tlv_link_up_OF_VERSION_1_0_check_scalars(
     of_bsn_tlv_link_up_t *obj, int value) {
+
+    return value;
+}
+
+
+/**
+ * Populate the scalar values in obj of type of_bsn_tlv_load,
+ * version OF_VERSION_1_0
+ * @param obj Pointer to an object to populate
+ * @param value The seed value to use in populating the object
+ * @returns The value after increments for this object's values
+ */
+int of_bsn_tlv_load_OF_VERSION_1_0_populate_scalars(
+    of_bsn_tlv_load_t *obj, int value) {
+
+    return value;
+}
+
+/**
+ * Check scalar values in obj of type of_bsn_tlv_load,
+ * version OF_VERSION_1_0
+ * @param obj Pointer to an object to check
+ * @param value Starting value for checking
+ * @returns The value after increments for this object's values
+ */
+int of_bsn_tlv_load_OF_VERSION_1_0_check_scalars(
+    of_bsn_tlv_load_t *obj, int value) {
 
     return value;
 }
@@ -12847,6 +12901,33 @@ int of_bsn_tlv_mcg_type_vxlan_OF_VERSION_1_0_populate_scalars(
  */
 int of_bsn_tlv_mcg_type_vxlan_OF_VERSION_1_0_check_scalars(
     of_bsn_tlv_mcg_type_vxlan_t *obj, int value) {
+
+    return value;
+}
+
+
+/**
+ * Populate the scalar values in obj of type of_bsn_tlv_mgmt,
+ * version OF_VERSION_1_0
+ * @param obj Pointer to an object to populate
+ * @param value The seed value to use in populating the object
+ * @returns The value after increments for this object's values
+ */
+int of_bsn_tlv_mgmt_OF_VERSION_1_0_populate_scalars(
+    of_bsn_tlv_mgmt_t *obj, int value) {
+
+    return value;
+}
+
+/**
+ * Check scalar values in obj of type of_bsn_tlv_mgmt,
+ * version OF_VERSION_1_0
+ * @param obj Pointer to an object to check
+ * @param value Starting value for checking
+ * @returns The value after increments for this object's values
+ */
+int of_bsn_tlv_mgmt_OF_VERSION_1_0_check_scalars(
+    of_bsn_tlv_mgmt_t *obj, int value) {
 
     return value;
 }
@@ -14419,6 +14500,33 @@ int of_bsn_tlv_set_loopback_mode_OF_VERSION_1_0_check_scalars(
 
 
 /**
+ * Populate the scalar values in obj of type of_bsn_tlv_socket,
+ * version OF_VERSION_1_0
+ * @param obj Pointer to an object to populate
+ * @param value The seed value to use in populating the object
+ * @returns The value after increments for this object's values
+ */
+int of_bsn_tlv_socket_OF_VERSION_1_0_populate_scalars(
+    of_bsn_tlv_socket_t *obj, int value) {
+
+    return value;
+}
+
+/**
+ * Check scalar values in obj of type of_bsn_tlv_socket,
+ * version OF_VERSION_1_0
+ * @param obj Pointer to an object to check
+ * @param value Starting value for checking
+ * @returns The value after increments for this object's values
+ */
+int of_bsn_tlv_socket_OF_VERSION_1_0_check_scalars(
+    of_bsn_tlv_socket_t *obj, int value) {
+
+    return value;
+}
+
+
+/**
  * Populate the scalar values in obj of type of_bsn_tlv_src_mac_cml,
  * version OF_VERSION_1_0
  * @param obj Pointer to an object to populate
@@ -14656,6 +14764,33 @@ int of_bsn_tlv_tcp_src_OF_VERSION_1_0_populate_scalars(
  */
 int of_bsn_tlv_tcp_src_OF_VERSION_1_0_check_scalars(
     of_bsn_tlv_tcp_src_t *obj, int value) {
+
+    return value;
+}
+
+
+/**
+ * Populate the scalar values in obj of type of_bsn_tlv_thread,
+ * version OF_VERSION_1_0
+ * @param obj Pointer to an object to populate
+ * @param value The seed value to use in populating the object
+ * @returns The value after increments for this object's values
+ */
+int of_bsn_tlv_thread_OF_VERSION_1_0_populate_scalars(
+    of_bsn_tlv_thread_t *obj, int value) {
+
+    return value;
+}
+
+/**
+ * Check scalar values in obj of type of_bsn_tlv_thread,
+ * version OF_VERSION_1_0
+ * @param obj Pointer to an object to check
+ * @param value Starting value for checking
+ * @returns The value after increments for this object's values
+ */
+int of_bsn_tlv_thread_OF_VERSION_1_0_check_scalars(
+    of_bsn_tlv_thread_t *obj, int value) {
 
     return value;
 }
@@ -36588,6 +36723,33 @@ int of_bsn_tlv_lag_options_OF_VERSION_1_1_check_scalars(
 
 
 /**
+ * Populate the scalar values in obj of type of_bsn_tlv_lcore,
+ * version OF_VERSION_1_1
+ * @param obj Pointer to an object to populate
+ * @param value The seed value to use in populating the object
+ * @returns The value after increments for this object's values
+ */
+int of_bsn_tlv_lcore_OF_VERSION_1_1_populate_scalars(
+    of_bsn_tlv_lcore_t *obj, int value) {
+
+    return value;
+}
+
+/**
+ * Check scalar values in obj of type of_bsn_tlv_lcore,
+ * version OF_VERSION_1_1
+ * @param obj Pointer to an object to check
+ * @param value Starting value for checking
+ * @returns The value after increments for this object's values
+ */
+int of_bsn_tlv_lcore_OF_VERSION_1_1_check_scalars(
+    of_bsn_tlv_lcore_t *obj, int value) {
+
+    return value;
+}
+
+
+/**
  * Populate the scalar values in obj of type of_bsn_tlv_link_up,
  * version OF_VERSION_1_1
  * @param obj Pointer to an object to populate
@@ -36609,6 +36771,33 @@ int of_bsn_tlv_link_up_OF_VERSION_1_1_populate_scalars(
  */
 int of_bsn_tlv_link_up_OF_VERSION_1_1_check_scalars(
     of_bsn_tlv_link_up_t *obj, int value) {
+
+    return value;
+}
+
+
+/**
+ * Populate the scalar values in obj of type of_bsn_tlv_load,
+ * version OF_VERSION_1_1
+ * @param obj Pointer to an object to populate
+ * @param value The seed value to use in populating the object
+ * @returns The value after increments for this object's values
+ */
+int of_bsn_tlv_load_OF_VERSION_1_1_populate_scalars(
+    of_bsn_tlv_load_t *obj, int value) {
+
+    return value;
+}
+
+/**
+ * Check scalar values in obj of type of_bsn_tlv_load,
+ * version OF_VERSION_1_1
+ * @param obj Pointer to an object to check
+ * @param value Starting value for checking
+ * @returns The value after increments for this object's values
+ */
+int of_bsn_tlv_load_OF_VERSION_1_1_check_scalars(
+    of_bsn_tlv_load_t *obj, int value) {
 
     return value;
 }
@@ -36798,6 +36987,33 @@ int of_bsn_tlv_mcg_type_vxlan_OF_VERSION_1_1_populate_scalars(
  */
 int of_bsn_tlv_mcg_type_vxlan_OF_VERSION_1_1_check_scalars(
     of_bsn_tlv_mcg_type_vxlan_t *obj, int value) {
+
+    return value;
+}
+
+
+/**
+ * Populate the scalar values in obj of type of_bsn_tlv_mgmt,
+ * version OF_VERSION_1_1
+ * @param obj Pointer to an object to populate
+ * @param value The seed value to use in populating the object
+ * @returns The value after increments for this object's values
+ */
+int of_bsn_tlv_mgmt_OF_VERSION_1_1_populate_scalars(
+    of_bsn_tlv_mgmt_t *obj, int value) {
+
+    return value;
+}
+
+/**
+ * Check scalar values in obj of type of_bsn_tlv_mgmt,
+ * version OF_VERSION_1_1
+ * @param obj Pointer to an object to check
+ * @param value Starting value for checking
+ * @returns The value after increments for this object's values
+ */
+int of_bsn_tlv_mgmt_OF_VERSION_1_1_check_scalars(
+    of_bsn_tlv_mgmt_t *obj, int value) {
 
     return value;
 }
@@ -38370,6 +38586,33 @@ int of_bsn_tlv_set_loopback_mode_OF_VERSION_1_1_check_scalars(
 
 
 /**
+ * Populate the scalar values in obj of type of_bsn_tlv_socket,
+ * version OF_VERSION_1_1
+ * @param obj Pointer to an object to populate
+ * @param value The seed value to use in populating the object
+ * @returns The value after increments for this object's values
+ */
+int of_bsn_tlv_socket_OF_VERSION_1_1_populate_scalars(
+    of_bsn_tlv_socket_t *obj, int value) {
+
+    return value;
+}
+
+/**
+ * Check scalar values in obj of type of_bsn_tlv_socket,
+ * version OF_VERSION_1_1
+ * @param obj Pointer to an object to check
+ * @param value Starting value for checking
+ * @returns The value after increments for this object's values
+ */
+int of_bsn_tlv_socket_OF_VERSION_1_1_check_scalars(
+    of_bsn_tlv_socket_t *obj, int value) {
+
+    return value;
+}
+
+
+/**
  * Populate the scalar values in obj of type of_bsn_tlv_src_mac_cml,
  * version OF_VERSION_1_1
  * @param obj Pointer to an object to populate
@@ -38607,6 +38850,33 @@ int of_bsn_tlv_tcp_src_OF_VERSION_1_1_populate_scalars(
  */
 int of_bsn_tlv_tcp_src_OF_VERSION_1_1_check_scalars(
     of_bsn_tlv_tcp_src_t *obj, int value) {
+
+    return value;
+}
+
+
+/**
+ * Populate the scalar values in obj of type of_bsn_tlv_thread,
+ * version OF_VERSION_1_1
+ * @param obj Pointer to an object to populate
+ * @param value The seed value to use in populating the object
+ * @returns The value after increments for this object's values
+ */
+int of_bsn_tlv_thread_OF_VERSION_1_1_populate_scalars(
+    of_bsn_tlv_thread_t *obj, int value) {
+
+    return value;
+}
+
+/**
+ * Check scalar values in obj of type of_bsn_tlv_thread,
+ * version OF_VERSION_1_1
+ * @param obj Pointer to an object to check
+ * @param value Starting value for checking
+ * @returns The value after increments for this object's values
+ */
+int of_bsn_tlv_thread_OF_VERSION_1_1_check_scalars(
+    of_bsn_tlv_thread_t *obj, int value) {
 
     return value;
 }
@@ -60863,6 +61133,33 @@ int of_bsn_tlv_lag_options_OF_VERSION_1_2_check_scalars(
 
 
 /**
+ * Populate the scalar values in obj of type of_bsn_tlv_lcore,
+ * version OF_VERSION_1_2
+ * @param obj Pointer to an object to populate
+ * @param value The seed value to use in populating the object
+ * @returns The value after increments for this object's values
+ */
+int of_bsn_tlv_lcore_OF_VERSION_1_2_populate_scalars(
+    of_bsn_tlv_lcore_t *obj, int value) {
+
+    return value;
+}
+
+/**
+ * Check scalar values in obj of type of_bsn_tlv_lcore,
+ * version OF_VERSION_1_2
+ * @param obj Pointer to an object to check
+ * @param value Starting value for checking
+ * @returns The value after increments for this object's values
+ */
+int of_bsn_tlv_lcore_OF_VERSION_1_2_check_scalars(
+    of_bsn_tlv_lcore_t *obj, int value) {
+
+    return value;
+}
+
+
+/**
  * Populate the scalar values in obj of type of_bsn_tlv_link_up,
  * version OF_VERSION_1_2
  * @param obj Pointer to an object to populate
@@ -60884,6 +61181,33 @@ int of_bsn_tlv_link_up_OF_VERSION_1_2_populate_scalars(
  */
 int of_bsn_tlv_link_up_OF_VERSION_1_2_check_scalars(
     of_bsn_tlv_link_up_t *obj, int value) {
+
+    return value;
+}
+
+
+/**
+ * Populate the scalar values in obj of type of_bsn_tlv_load,
+ * version OF_VERSION_1_2
+ * @param obj Pointer to an object to populate
+ * @param value The seed value to use in populating the object
+ * @returns The value after increments for this object's values
+ */
+int of_bsn_tlv_load_OF_VERSION_1_2_populate_scalars(
+    of_bsn_tlv_load_t *obj, int value) {
+
+    return value;
+}
+
+/**
+ * Check scalar values in obj of type of_bsn_tlv_load,
+ * version OF_VERSION_1_2
+ * @param obj Pointer to an object to check
+ * @param value Starting value for checking
+ * @returns The value after increments for this object's values
+ */
+int of_bsn_tlv_load_OF_VERSION_1_2_check_scalars(
+    of_bsn_tlv_load_t *obj, int value) {
 
     return value;
 }
@@ -61073,6 +61397,33 @@ int of_bsn_tlv_mcg_type_vxlan_OF_VERSION_1_2_populate_scalars(
  */
 int of_bsn_tlv_mcg_type_vxlan_OF_VERSION_1_2_check_scalars(
     of_bsn_tlv_mcg_type_vxlan_t *obj, int value) {
+
+    return value;
+}
+
+
+/**
+ * Populate the scalar values in obj of type of_bsn_tlv_mgmt,
+ * version OF_VERSION_1_2
+ * @param obj Pointer to an object to populate
+ * @param value The seed value to use in populating the object
+ * @returns The value after increments for this object's values
+ */
+int of_bsn_tlv_mgmt_OF_VERSION_1_2_populate_scalars(
+    of_bsn_tlv_mgmt_t *obj, int value) {
+
+    return value;
+}
+
+/**
+ * Check scalar values in obj of type of_bsn_tlv_mgmt,
+ * version OF_VERSION_1_2
+ * @param obj Pointer to an object to check
+ * @param value Starting value for checking
+ * @returns The value after increments for this object's values
+ */
+int of_bsn_tlv_mgmt_OF_VERSION_1_2_check_scalars(
+    of_bsn_tlv_mgmt_t *obj, int value) {
 
     return value;
 }
@@ -62645,6 +62996,33 @@ int of_bsn_tlv_set_loopback_mode_OF_VERSION_1_2_check_scalars(
 
 
 /**
+ * Populate the scalar values in obj of type of_bsn_tlv_socket,
+ * version OF_VERSION_1_2
+ * @param obj Pointer to an object to populate
+ * @param value The seed value to use in populating the object
+ * @returns The value after increments for this object's values
+ */
+int of_bsn_tlv_socket_OF_VERSION_1_2_populate_scalars(
+    of_bsn_tlv_socket_t *obj, int value) {
+
+    return value;
+}
+
+/**
+ * Check scalar values in obj of type of_bsn_tlv_socket,
+ * version OF_VERSION_1_2
+ * @param obj Pointer to an object to check
+ * @param value Starting value for checking
+ * @returns The value after increments for this object's values
+ */
+int of_bsn_tlv_socket_OF_VERSION_1_2_check_scalars(
+    of_bsn_tlv_socket_t *obj, int value) {
+
+    return value;
+}
+
+
+/**
  * Populate the scalar values in obj of type of_bsn_tlv_src_mac_cml,
  * version OF_VERSION_1_2
  * @param obj Pointer to an object to populate
@@ -62882,6 +63260,33 @@ int of_bsn_tlv_tcp_src_OF_VERSION_1_2_populate_scalars(
  */
 int of_bsn_tlv_tcp_src_OF_VERSION_1_2_check_scalars(
     of_bsn_tlv_tcp_src_t *obj, int value) {
+
+    return value;
+}
+
+
+/**
+ * Populate the scalar values in obj of type of_bsn_tlv_thread,
+ * version OF_VERSION_1_2
+ * @param obj Pointer to an object to populate
+ * @param value The seed value to use in populating the object
+ * @returns The value after increments for this object's values
+ */
+int of_bsn_tlv_thread_OF_VERSION_1_2_populate_scalars(
+    of_bsn_tlv_thread_t *obj, int value) {
+
+    return value;
+}
+
+/**
+ * Check scalar values in obj of type of_bsn_tlv_thread,
+ * version OF_VERSION_1_2
+ * @param obj Pointer to an object to check
+ * @param value Starting value for checking
+ * @returns The value after increments for this object's values
+ */
+int of_bsn_tlv_thread_OF_VERSION_1_2_check_scalars(
+    of_bsn_tlv_thread_t *obj, int value) {
 
     return value;
 }
@@ -90272,6 +90677,43 @@ int of_bsn_tlv_lag_options_OF_VERSION_1_3_check_scalars(
 
 
 /**
+ * Populate the scalar values in obj of type of_bsn_tlv_lcore,
+ * version OF_VERSION_1_3
+ * @param obj Pointer to an object to populate
+ * @param value The seed value to use in populating the object
+ * @returns The value after increments for this object's values
+ */
+int of_bsn_tlv_lcore_OF_VERSION_1_3_populate_scalars(
+    of_bsn_tlv_lcore_t *obj, int value) {
+    uint32_t val32;
+
+    VAR_UINT32_T_INIT(val32, value);
+    of_bsn_tlv_lcore_value_set(obj, val32);
+    value += 1;
+
+    return value;
+}
+
+/**
+ * Check scalar values in obj of type of_bsn_tlv_lcore,
+ * version OF_VERSION_1_3
+ * @param obj Pointer to an object to check
+ * @param value Starting value for checking
+ * @returns The value after increments for this object's values
+ */
+int of_bsn_tlv_lcore_OF_VERSION_1_3_check_scalars(
+    of_bsn_tlv_lcore_t *obj, int value) {
+    uint32_t val32;
+
+    of_bsn_tlv_lcore_value_get(obj, &val32);
+    TEST_ASSERT(VAR_UINT32_T_CHECK(val32, value));
+    value += 1;
+
+    return value;
+}
+
+
+/**
  * Populate the scalar values in obj of type of_bsn_tlv_link_up,
  * version OF_VERSION_1_3
  * @param obj Pointer to an object to populate
@@ -90293,6 +90735,43 @@ int of_bsn_tlv_link_up_OF_VERSION_1_3_populate_scalars(
  */
 int of_bsn_tlv_link_up_OF_VERSION_1_3_check_scalars(
     of_bsn_tlv_link_up_t *obj, int value) {
+
+    return value;
+}
+
+
+/**
+ * Populate the scalar values in obj of type of_bsn_tlv_load,
+ * version OF_VERSION_1_3
+ * @param obj Pointer to an object to populate
+ * @param value The seed value to use in populating the object
+ * @returns The value after increments for this object's values
+ */
+int of_bsn_tlv_load_OF_VERSION_1_3_populate_scalars(
+    of_bsn_tlv_load_t *obj, int value) {
+    uint32_t val32;
+
+    VAR_UINT32_T_INIT(val32, value);
+    of_bsn_tlv_load_value_set(obj, val32);
+    value += 1;
+
+    return value;
+}
+
+/**
+ * Check scalar values in obj of type of_bsn_tlv_load,
+ * version OF_VERSION_1_3
+ * @param obj Pointer to an object to check
+ * @param value Starting value for checking
+ * @returns The value after increments for this object's values
+ */
+int of_bsn_tlv_load_OF_VERSION_1_3_check_scalars(
+    of_bsn_tlv_load_t *obj, int value) {
+    uint32_t val32;
+
+    of_bsn_tlv_load_value_get(obj, &val32);
+    TEST_ASSERT(VAR_UINT32_T_CHECK(val32, value));
+    value += 1;
 
     return value;
 }
@@ -90522,6 +91001,43 @@ int of_bsn_tlv_mcg_type_vxlan_OF_VERSION_1_3_populate_scalars(
  */
 int of_bsn_tlv_mcg_type_vxlan_OF_VERSION_1_3_check_scalars(
     of_bsn_tlv_mcg_type_vxlan_t *obj, int value) {
+
+    return value;
+}
+
+
+/**
+ * Populate the scalar values in obj of type of_bsn_tlv_mgmt,
+ * version OF_VERSION_1_3
+ * @param obj Pointer to an object to populate
+ * @param value The seed value to use in populating the object
+ * @returns The value after increments for this object's values
+ */
+int of_bsn_tlv_mgmt_OF_VERSION_1_3_populate_scalars(
+    of_bsn_tlv_mgmt_t *obj, int value) {
+    uint32_t val32;
+
+    VAR_UINT32_T_INIT(val32, value);
+    of_bsn_tlv_mgmt_value_set(obj, val32);
+    value += 1;
+
+    return value;
+}
+
+/**
+ * Check scalar values in obj of type of_bsn_tlv_mgmt,
+ * version OF_VERSION_1_3
+ * @param obj Pointer to an object to check
+ * @param value Starting value for checking
+ * @returns The value after increments for this object's values
+ */
+int of_bsn_tlv_mgmt_OF_VERSION_1_3_check_scalars(
+    of_bsn_tlv_mgmt_t *obj, int value) {
+    uint32_t val32;
+
+    of_bsn_tlv_mgmt_value_get(obj, &val32);
+    TEST_ASSERT(VAR_UINT32_T_CHECK(val32, value));
+    value += 1;
 
     return value;
 }
@@ -92494,6 +93010,43 @@ int of_bsn_tlv_set_loopback_mode_OF_VERSION_1_3_check_scalars(
 
 
 /**
+ * Populate the scalar values in obj of type of_bsn_tlv_socket,
+ * version OF_VERSION_1_3
+ * @param obj Pointer to an object to populate
+ * @param value The seed value to use in populating the object
+ * @returns The value after increments for this object's values
+ */
+int of_bsn_tlv_socket_OF_VERSION_1_3_populate_scalars(
+    of_bsn_tlv_socket_t *obj, int value) {
+    uint32_t val32;
+
+    VAR_UINT32_T_INIT(val32, value);
+    of_bsn_tlv_socket_value_set(obj, val32);
+    value += 1;
+
+    return value;
+}
+
+/**
+ * Check scalar values in obj of type of_bsn_tlv_socket,
+ * version OF_VERSION_1_3
+ * @param obj Pointer to an object to check
+ * @param value Starting value for checking
+ * @returns The value after increments for this object's values
+ */
+int of_bsn_tlv_socket_OF_VERSION_1_3_check_scalars(
+    of_bsn_tlv_socket_t *obj, int value) {
+    uint32_t val32;
+
+    of_bsn_tlv_socket_value_get(obj, &val32);
+    TEST_ASSERT(VAR_UINT32_T_CHECK(val32, value));
+    value += 1;
+
+    return value;
+}
+
+
+/**
  * Populate the scalar values in obj of type of_bsn_tlv_src_mac_cml,
  * version OF_VERSION_1_3
  * @param obj Pointer to an object to populate
@@ -92800,6 +93353,43 @@ int of_bsn_tlv_tcp_src_OF_VERSION_1_3_check_scalars(
 
     of_bsn_tlv_tcp_src_value_get(obj, &val16);
     TEST_ASSERT(VAR_UINT16_T_CHECK(val16, value));
+    value += 1;
+
+    return value;
+}
+
+
+/**
+ * Populate the scalar values in obj of type of_bsn_tlv_thread,
+ * version OF_VERSION_1_3
+ * @param obj Pointer to an object to populate
+ * @param value The seed value to use in populating the object
+ * @returns The value after increments for this object's values
+ */
+int of_bsn_tlv_thread_OF_VERSION_1_3_populate_scalars(
+    of_bsn_tlv_thread_t *obj, int value) {
+    uint32_t val32;
+
+    VAR_UINT32_T_INIT(val32, value);
+    of_bsn_tlv_thread_value_set(obj, val32);
+    value += 1;
+
+    return value;
+}
+
+/**
+ * Check scalar values in obj of type of_bsn_tlv_thread,
+ * version OF_VERSION_1_3
+ * @param obj Pointer to an object to check
+ * @param value Starting value for checking
+ * @returns The value after increments for this object's values
+ */
+int of_bsn_tlv_thread_OF_VERSION_1_3_check_scalars(
+    of_bsn_tlv_thread_t *obj, int value) {
+    uint32_t val32;
+
+    of_bsn_tlv_thread_value_get(obj, &val32);
+    TEST_ASSERT(VAR_UINT32_T_CHECK(val32, value));
     value += 1;
 
     return value;
@@ -121357,6 +121947,43 @@ int of_bsn_tlv_lag_options_OF_VERSION_1_4_check_scalars(
 
 
 /**
+ * Populate the scalar values in obj of type of_bsn_tlv_lcore,
+ * version OF_VERSION_1_4
+ * @param obj Pointer to an object to populate
+ * @param value The seed value to use in populating the object
+ * @returns The value after increments for this object's values
+ */
+int of_bsn_tlv_lcore_OF_VERSION_1_4_populate_scalars(
+    of_bsn_tlv_lcore_t *obj, int value) {
+    uint32_t val32;
+
+    VAR_UINT32_T_INIT(val32, value);
+    of_bsn_tlv_lcore_value_set(obj, val32);
+    value += 1;
+
+    return value;
+}
+
+/**
+ * Check scalar values in obj of type of_bsn_tlv_lcore,
+ * version OF_VERSION_1_4
+ * @param obj Pointer to an object to check
+ * @param value Starting value for checking
+ * @returns The value after increments for this object's values
+ */
+int of_bsn_tlv_lcore_OF_VERSION_1_4_check_scalars(
+    of_bsn_tlv_lcore_t *obj, int value) {
+    uint32_t val32;
+
+    of_bsn_tlv_lcore_value_get(obj, &val32);
+    TEST_ASSERT(VAR_UINT32_T_CHECK(val32, value));
+    value += 1;
+
+    return value;
+}
+
+
+/**
  * Populate the scalar values in obj of type of_bsn_tlv_link_up,
  * version OF_VERSION_1_4
  * @param obj Pointer to an object to populate
@@ -121378,6 +122005,43 @@ int of_bsn_tlv_link_up_OF_VERSION_1_4_populate_scalars(
  */
 int of_bsn_tlv_link_up_OF_VERSION_1_4_check_scalars(
     of_bsn_tlv_link_up_t *obj, int value) {
+
+    return value;
+}
+
+
+/**
+ * Populate the scalar values in obj of type of_bsn_tlv_load,
+ * version OF_VERSION_1_4
+ * @param obj Pointer to an object to populate
+ * @param value The seed value to use in populating the object
+ * @returns The value after increments for this object's values
+ */
+int of_bsn_tlv_load_OF_VERSION_1_4_populate_scalars(
+    of_bsn_tlv_load_t *obj, int value) {
+    uint32_t val32;
+
+    VAR_UINT32_T_INIT(val32, value);
+    of_bsn_tlv_load_value_set(obj, val32);
+    value += 1;
+
+    return value;
+}
+
+/**
+ * Check scalar values in obj of type of_bsn_tlv_load,
+ * version OF_VERSION_1_4
+ * @param obj Pointer to an object to check
+ * @param value Starting value for checking
+ * @returns The value after increments for this object's values
+ */
+int of_bsn_tlv_load_OF_VERSION_1_4_check_scalars(
+    of_bsn_tlv_load_t *obj, int value) {
+    uint32_t val32;
+
+    of_bsn_tlv_load_value_get(obj, &val32);
+    TEST_ASSERT(VAR_UINT32_T_CHECK(val32, value));
+    value += 1;
 
     return value;
 }
@@ -121607,6 +122271,43 @@ int of_bsn_tlv_mcg_type_vxlan_OF_VERSION_1_4_populate_scalars(
  */
 int of_bsn_tlv_mcg_type_vxlan_OF_VERSION_1_4_check_scalars(
     of_bsn_tlv_mcg_type_vxlan_t *obj, int value) {
+
+    return value;
+}
+
+
+/**
+ * Populate the scalar values in obj of type of_bsn_tlv_mgmt,
+ * version OF_VERSION_1_4
+ * @param obj Pointer to an object to populate
+ * @param value The seed value to use in populating the object
+ * @returns The value after increments for this object's values
+ */
+int of_bsn_tlv_mgmt_OF_VERSION_1_4_populate_scalars(
+    of_bsn_tlv_mgmt_t *obj, int value) {
+    uint32_t val32;
+
+    VAR_UINT32_T_INIT(val32, value);
+    of_bsn_tlv_mgmt_value_set(obj, val32);
+    value += 1;
+
+    return value;
+}
+
+/**
+ * Check scalar values in obj of type of_bsn_tlv_mgmt,
+ * version OF_VERSION_1_4
+ * @param obj Pointer to an object to check
+ * @param value Starting value for checking
+ * @returns The value after increments for this object's values
+ */
+int of_bsn_tlv_mgmt_OF_VERSION_1_4_check_scalars(
+    of_bsn_tlv_mgmt_t *obj, int value) {
+    uint32_t val32;
+
+    of_bsn_tlv_mgmt_value_get(obj, &val32);
+    TEST_ASSERT(VAR_UINT32_T_CHECK(val32, value));
+    value += 1;
 
     return value;
 }
@@ -123579,6 +124280,43 @@ int of_bsn_tlv_set_loopback_mode_OF_VERSION_1_4_check_scalars(
 
 
 /**
+ * Populate the scalar values in obj of type of_bsn_tlv_socket,
+ * version OF_VERSION_1_4
+ * @param obj Pointer to an object to populate
+ * @param value The seed value to use in populating the object
+ * @returns The value after increments for this object's values
+ */
+int of_bsn_tlv_socket_OF_VERSION_1_4_populate_scalars(
+    of_bsn_tlv_socket_t *obj, int value) {
+    uint32_t val32;
+
+    VAR_UINT32_T_INIT(val32, value);
+    of_bsn_tlv_socket_value_set(obj, val32);
+    value += 1;
+
+    return value;
+}
+
+/**
+ * Check scalar values in obj of type of_bsn_tlv_socket,
+ * version OF_VERSION_1_4
+ * @param obj Pointer to an object to check
+ * @param value Starting value for checking
+ * @returns The value after increments for this object's values
+ */
+int of_bsn_tlv_socket_OF_VERSION_1_4_check_scalars(
+    of_bsn_tlv_socket_t *obj, int value) {
+    uint32_t val32;
+
+    of_bsn_tlv_socket_value_get(obj, &val32);
+    TEST_ASSERT(VAR_UINT32_T_CHECK(val32, value));
+    value += 1;
+
+    return value;
+}
+
+
+/**
  * Populate the scalar values in obj of type of_bsn_tlv_src_mac_cml,
  * version OF_VERSION_1_4
  * @param obj Pointer to an object to populate
@@ -123885,6 +124623,43 @@ int of_bsn_tlv_tcp_src_OF_VERSION_1_4_check_scalars(
 
     of_bsn_tlv_tcp_src_value_get(obj, &val16);
     TEST_ASSERT(VAR_UINT16_T_CHECK(val16, value));
+    value += 1;
+
+    return value;
+}
+
+
+/**
+ * Populate the scalar values in obj of type of_bsn_tlv_thread,
+ * version OF_VERSION_1_4
+ * @param obj Pointer to an object to populate
+ * @param value The seed value to use in populating the object
+ * @returns The value after increments for this object's values
+ */
+int of_bsn_tlv_thread_OF_VERSION_1_4_populate_scalars(
+    of_bsn_tlv_thread_t *obj, int value) {
+    uint32_t val32;
+
+    VAR_UINT32_T_INIT(val32, value);
+    of_bsn_tlv_thread_value_set(obj, val32);
+    value += 1;
+
+    return value;
+}
+
+/**
+ * Check scalar values in obj of type of_bsn_tlv_thread,
+ * version OF_VERSION_1_4
+ * @param obj Pointer to an object to check
+ * @param value Starting value for checking
+ * @returns The value after increments for this object's values
+ */
+int of_bsn_tlv_thread_OF_VERSION_1_4_check_scalars(
+    of_bsn_tlv_thread_t *obj, int value) {
+    uint32_t val32;
+
+    of_bsn_tlv_thread_value_get(obj, &val32);
+    TEST_ASSERT(VAR_UINT32_T_CHECK(val32, value));
     value += 1;
 
     return value;

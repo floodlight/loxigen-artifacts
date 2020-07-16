@@ -1053,8 +1053,12 @@ void of_bsn_tlv_l3_src_class_id_wire_object_id_get(of_object_t *obj, of_object_i
 void of_bsn_tlv_l3_src_class_id_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_lag_options_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_lag_options_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_lcore_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_lcore_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_link_up_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_link_up_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_load_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_load_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_loopback_mode_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_loopback_mode_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_loopback_port_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -1069,6 +1073,8 @@ void of_bsn_tlv_mac_mask_wire_object_id_get(of_object_t *obj, of_object_id_t *id
 void of_bsn_tlv_mac_mask_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_mcg_type_vxlan_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_mcg_type_vxlan_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_mgmt_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_mgmt_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_mgmt_reselect_on_failure_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_mgmt_reselect_on_failure_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_miss_packets_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -1185,6 +1191,8 @@ void of_bsn_tlv_sctp_src_wire_object_id_get(of_object_t *obj, of_object_id_t *id
 void of_bsn_tlv_sctp_src_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_set_loopback_mode_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_set_loopback_mode_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_socket_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_socket_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_src_mac_cml_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_src_mac_cml_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_status_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -1203,6 +1211,8 @@ void of_bsn_tlv_tcp_flags_wire_object_id_get(of_object_t *obj, of_object_id_t *i
 void of_bsn_tlv_tcp_flags_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_tcp_src_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_tcp_src_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_thread_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_thread_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_timestamp_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_timestamp_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_ttl_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -2055,7 +2065,9 @@ typedef of_object_t of_bsn_tlv_l3_dst_class_id_t;
 typedef of_object_t of_bsn_tlv_l3_interface_class_id_t;
 typedef of_object_t of_bsn_tlv_l3_src_class_id_t;
 typedef of_object_t of_bsn_tlv_lag_options_t;
+typedef of_object_t of_bsn_tlv_lcore_t;
 typedef of_object_t of_bsn_tlv_link_up_t;
+typedef of_object_t of_bsn_tlv_load_t;
 typedef of_object_t of_bsn_tlv_loopback_mode_t;
 typedef of_object_t of_bsn_tlv_loopback_port_t;
 typedef of_object_t of_bsn_tlv_lossless_t;
@@ -2063,6 +2075,7 @@ typedef of_object_t of_bsn_tlv_lr_all_enabled_t;
 typedef of_object_t of_bsn_tlv_mac_t;
 typedef of_object_t of_bsn_tlv_mac_mask_t;
 typedef of_object_t of_bsn_tlv_mcg_type_vxlan_t;
+typedef of_object_t of_bsn_tlv_mgmt_t;
 typedef of_object_t of_bsn_tlv_mgmt_reselect_on_failure_t;
 typedef of_object_t of_bsn_tlv_miss_packets_t;
 typedef of_object_t of_bsn_tlv_mpls_control_word_t;
@@ -2121,6 +2134,7 @@ typedef of_object_t of_bsn_tlv_sampling_rate_t;
 typedef of_object_t of_bsn_tlv_sctp_dst_t;
 typedef of_object_t of_bsn_tlv_sctp_src_t;
 typedef of_object_t of_bsn_tlv_set_loopback_mode_t;
+typedef of_object_t of_bsn_tlv_socket_t;
 typedef of_object_t of_bsn_tlv_src_mac_cml_t;
 typedef of_object_t of_bsn_tlv_status_t;
 typedef of_object_t of_bsn_tlv_strip_mpls_l2_on_ingress_t;
@@ -2130,6 +2144,7 @@ typedef of_object_t of_bsn_tlv_sub_agent_id_t;
 typedef of_object_t of_bsn_tlv_tcp_dst_t;
 typedef of_object_t of_bsn_tlv_tcp_flags_t;
 typedef of_object_t of_bsn_tlv_tcp_src_t;
+typedef of_object_t of_bsn_tlv_thread_t;
 typedef of_object_t of_bsn_tlv_timestamp_t;
 typedef of_object_t of_bsn_tlv_ttl_t;
 typedef of_object_t of_bsn_tlv_tunnel_capability_t;
@@ -4563,8 +4578,18 @@ extern void of_bsn_tlv_lag_options_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
+    of_bsn_tlv_lcore_new(of_version_t version);
+extern void of_bsn_tlv_lcore_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
     of_bsn_tlv_link_up_new(of_version_t version);
 extern void of_bsn_tlv_link_up_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_bsn_tlv_load_new(of_version_t version);
+extern void of_bsn_tlv_load_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
@@ -4600,6 +4625,11 @@ extern void of_bsn_tlv_mac_mask_init(
 extern of_object_t *
     of_bsn_tlv_mcg_type_vxlan_new(of_version_t version);
 extern void of_bsn_tlv_mcg_type_vxlan_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_bsn_tlv_mgmt_new(of_version_t version);
+extern void of_bsn_tlv_mgmt_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
@@ -4893,6 +4923,11 @@ extern void of_bsn_tlv_set_loopback_mode_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
+    of_bsn_tlv_socket_new(of_version_t version);
+extern void of_bsn_tlv_socket_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
     of_bsn_tlv_src_mac_cml_new(of_version_t version);
 extern void of_bsn_tlv_src_mac_cml_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
@@ -4935,6 +4970,11 @@ extern void of_bsn_tlv_tcp_flags_init(
 extern of_object_t *
     of_bsn_tlv_tcp_src_new(of_version_t version);
 extern void of_bsn_tlv_tcp_src_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_bsn_tlv_thread_new(of_version_t version);
+extern void of_bsn_tlv_thread_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
@@ -11371,6 +11411,17 @@ of_bsn_tlv_lag_options_delete(of_object_t *obj) {
 }
 
 /**
+ * Delete an object of type of_bsn_tlv_lcore_t
+ * @param obj An instance of type of_bsn_tlv_lcore_t
+ *
+ * \ingroup of_bsn_tlv_lcore
+ */
+static inline void
+of_bsn_tlv_lcore_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
  * Delete an object of type of_bsn_tlv_link_up_t
  * @param obj An instance of type of_bsn_tlv_link_up_t
  *
@@ -11378,6 +11429,17 @@ of_bsn_tlv_lag_options_delete(of_object_t *obj) {
  */
 static inline void
 of_bsn_tlv_link_up_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_load_t
+ * @param obj An instance of type of_bsn_tlv_load_t
+ *
+ * \ingroup of_bsn_tlv_load
+ */
+static inline void
+of_bsn_tlv_load_delete(of_object_t *obj) {
     of_object_delete(obj);
 }
 
@@ -11455,6 +11517,17 @@ of_bsn_tlv_mac_mask_delete(of_object_t *obj) {
  */
 static inline void
 of_bsn_tlv_mcg_type_vxlan_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_mgmt_t
+ * @param obj An instance of type of_bsn_tlv_mgmt_t
+ *
+ * \ingroup of_bsn_tlv_mgmt
+ */
+static inline void
+of_bsn_tlv_mgmt_delete(of_object_t *obj) {
     of_object_delete(obj);
 }
 
@@ -12097,6 +12170,17 @@ of_bsn_tlv_set_loopback_mode_delete(of_object_t *obj) {
 }
 
 /**
+ * Delete an object of type of_bsn_tlv_socket_t
+ * @param obj An instance of type of_bsn_tlv_socket_t
+ *
+ * \ingroup of_bsn_tlv_socket
+ */
+static inline void
+of_bsn_tlv_socket_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
  * Delete an object of type of_bsn_tlv_src_mac_cml_t
  * @param obj An instance of type of_bsn_tlv_src_mac_cml_t
  *
@@ -12192,6 +12276,17 @@ of_bsn_tlv_tcp_flags_delete(of_object_t *obj) {
  */
 static inline void
 of_bsn_tlv_tcp_src_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_thread_t
+ * @param obj An instance of type of_bsn_tlv_thread_t
+ *
+ * \ingroup of_bsn_tlv_thread
+ */
+static inline void
+of_bsn_tlv_thread_delete(of_object_t *obj) {
     of_object_delete(obj);
 }
 
@@ -25128,7 +25223,25 @@ extern void of_bsn_tlv_lag_options_flags_get(
     of_bsn_tlv_lag_options_t *obj,
     uint16_t *flags);
 
+/* Unified accessor functions for of_bsn_tlv_lcore */
+
+extern void of_bsn_tlv_lcore_value_set(
+    of_bsn_tlv_lcore_t *obj,
+    uint32_t value);
+extern void of_bsn_tlv_lcore_value_get(
+    of_bsn_tlv_lcore_t *obj,
+    uint32_t *value);
+
 /* Unified accessor functions for of_bsn_tlv_link_up */
+
+/* Unified accessor functions for of_bsn_tlv_load */
+
+extern void of_bsn_tlv_load_value_set(
+    of_bsn_tlv_load_t *obj,
+    uint32_t value);
+extern void of_bsn_tlv_load_value_get(
+    of_bsn_tlv_load_t *obj,
+    uint32_t *value);
 
 /* Unified accessor functions for of_bsn_tlv_loopback_mode */
 
@@ -25171,6 +25284,15 @@ extern void of_bsn_tlv_mac_mask_value_get(
     of_mac_addr_t *value);
 
 /* Unified accessor functions for of_bsn_tlv_mcg_type_vxlan */
+
+/* Unified accessor functions for of_bsn_tlv_mgmt */
+
+extern void of_bsn_tlv_mgmt_value_set(
+    of_bsn_tlv_mgmt_t *obj,
+    uint32_t value);
+extern void of_bsn_tlv_mgmt_value_get(
+    of_bsn_tlv_mgmt_t *obj,
+    uint32_t *value);
 
 /* Unified accessor functions for of_bsn_tlv_mgmt_reselect_on_failure */
 
@@ -25591,6 +25713,15 @@ extern void of_bsn_tlv_sctp_src_value_get(
 
 /* Unified accessor functions for of_bsn_tlv_set_loopback_mode */
 
+/* Unified accessor functions for of_bsn_tlv_socket */
+
+extern void of_bsn_tlv_socket_value_set(
+    of_bsn_tlv_socket_t *obj,
+    uint32_t value);
+extern void of_bsn_tlv_socket_value_get(
+    of_bsn_tlv_socket_t *obj,
+    uint32_t *value);
+
 /* Unified accessor functions for of_bsn_tlv_src_mac_cml */
 
 extern void of_bsn_tlv_src_mac_cml_value_set(
@@ -25657,6 +25788,15 @@ extern void of_bsn_tlv_tcp_src_value_set(
 extern void of_bsn_tlv_tcp_src_value_get(
     of_bsn_tlv_tcp_src_t *obj,
     uint16_t *value);
+
+/* Unified accessor functions for of_bsn_tlv_thread */
+
+extern void of_bsn_tlv_thread_value_set(
+    of_bsn_tlv_thread_t *obj,
+    uint32_t value);
+extern void of_bsn_tlv_thread_value_get(
+    of_bsn_tlv_thread_t *obj,
+    uint32_t *value);
 
 /* Unified accessor functions for of_bsn_tlv_timestamp */
 
