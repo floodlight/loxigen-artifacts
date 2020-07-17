@@ -29045,6 +29045,44 @@ test_of_bsn_tlv_forward_error_correction_OF_VERSION_1_3(void)
 }
 
 static int
+test_of_bsn_tlv_free_count_OF_VERSION_1_3(void)
+{
+    of_bsn_tlv_free_count_t *obj;
+    obj = of_bsn_tlv_free_count_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 8);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_TLV_FREE_COUNT);
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 8);
+    }
+    if (loci_class_metadata[obj->object_id].wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        loci_class_metadata[obj->object_id].wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_BSN_TLV_FREE_COUNT);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_bsn_tlv_free_count_OF_VERSION_1_3_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_tlv_free_count_OF_VERSION_1_3_check(
+        obj, 1) != 0);
+
+    of_bsn_tlv_free_count_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
 test_of_bsn_tlv_generation_id_OF_VERSION_1_3(void)
 {
     of_bsn_tlv_generation_id_t *obj;
@@ -31091,6 +31129,44 @@ test_of_bsn_tlv_mac_mask_OF_VERSION_1_3(void)
         obj, 1) != 0);
 
     of_bsn_tlv_mac_mask_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_tlv_max_count_OF_VERSION_1_3(void)
+{
+    of_bsn_tlv_max_count_t *obj;
+    obj = of_bsn_tlv_max_count_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 8);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_TLV_MAX_COUNT);
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 8);
+    }
+    if (loci_class_metadata[obj->object_id].wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        loci_class_metadata[obj->object_id].wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_BSN_TLV_MAX_COUNT);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_bsn_tlv_max_count_OF_VERSION_1_3_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_tlv_max_count_OF_VERSION_1_3_check(
+        obj, 1) != 0);
+
+    of_bsn_tlv_max_count_delete(obj);
 
     /* To do: Check memory */
     return TEST_PASS;
@@ -55987,6 +56063,44 @@ test_of_bsn_tlv_forward_error_correction_OF_VERSION_1_4(void)
 }
 
 static int
+test_of_bsn_tlv_free_count_OF_VERSION_1_4(void)
+{
+    of_bsn_tlv_free_count_t *obj;
+    obj = of_bsn_tlv_free_count_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 8);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_TLV_FREE_COUNT);
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 8);
+    }
+    if (loci_class_metadata[obj->object_id].wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        loci_class_metadata[obj->object_id].wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_BSN_TLV_FREE_COUNT);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_bsn_tlv_free_count_OF_VERSION_1_4_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_tlv_free_count_OF_VERSION_1_4_check(
+        obj, 1) != 0);
+
+    of_bsn_tlv_free_count_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
 test_of_bsn_tlv_generation_id_OF_VERSION_1_4(void)
 {
     of_bsn_tlv_generation_id_t *obj;
@@ -58033,6 +58147,44 @@ test_of_bsn_tlv_mac_mask_OF_VERSION_1_4(void)
         obj, 1) != 0);
 
     of_bsn_tlv_mac_mask_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_tlv_max_count_OF_VERSION_1_4(void)
+{
+    of_bsn_tlv_max_count_t *obj;
+    obj = of_bsn_tlv_max_count_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 8);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_TLV_MAX_COUNT);
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 8);
+    }
+    if (loci_class_metadata[obj->object_id].wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        loci_class_metadata[obj->object_id].wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_BSN_TLV_MAX_COUNT);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_bsn_tlv_max_count_OF_VERSION_1_4_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_tlv_max_count_OF_VERSION_1_4_check(
+        obj, 1) != 0);
+
+    of_bsn_tlv_max_count_delete(obj);
 
     /* To do: Check memory */
     return TEST_PASS;
@@ -73149,6 +73301,7 @@ run_OF_VERSION_1_3_unified_accessor_tests(void)
     RUN_TEST(of_bsn_tlv_flow_identifier_OF_VERSION_1_3);
     RUN_TEST(of_bsn_tlv_force_link_up_OF_VERSION_1_3);
     RUN_TEST(of_bsn_tlv_forward_error_correction_OF_VERSION_1_3);
+    RUN_TEST(of_bsn_tlv_free_count_OF_VERSION_1_3);
     RUN_TEST(of_bsn_tlv_generation_id_OF_VERSION_1_3);
     RUN_TEST(of_bsn_tlv_hash_algorithm_OF_VERSION_1_3);
     RUN_TEST(of_bsn_tlv_hash_gtp_header_match_OF_VERSION_1_3);
@@ -73203,6 +73356,7 @@ run_OF_VERSION_1_3_unified_accessor_tests(void)
     RUN_TEST(of_bsn_tlv_lr_all_enabled_OF_VERSION_1_3);
     RUN_TEST(of_bsn_tlv_mac_OF_VERSION_1_3);
     RUN_TEST(of_bsn_tlv_mac_mask_OF_VERSION_1_3);
+    RUN_TEST(of_bsn_tlv_max_count_OF_VERSION_1_3);
     RUN_TEST(of_bsn_tlv_mcg_type_vxlan_OF_VERSION_1_3);
     RUN_TEST(of_bsn_tlv_mgmt_OF_VERSION_1_3);
     RUN_TEST(of_bsn_tlv_mgmt_reselect_on_failure_OF_VERSION_1_3);
@@ -73864,6 +74018,7 @@ run_OF_VERSION_1_4_unified_accessor_tests(void)
     RUN_TEST(of_bsn_tlv_flow_identifier_OF_VERSION_1_4);
     RUN_TEST(of_bsn_tlv_force_link_up_OF_VERSION_1_4);
     RUN_TEST(of_bsn_tlv_forward_error_correction_OF_VERSION_1_4);
+    RUN_TEST(of_bsn_tlv_free_count_OF_VERSION_1_4);
     RUN_TEST(of_bsn_tlv_generation_id_OF_VERSION_1_4);
     RUN_TEST(of_bsn_tlv_hash_algorithm_OF_VERSION_1_4);
     RUN_TEST(of_bsn_tlv_hash_gtp_header_match_OF_VERSION_1_4);
@@ -73918,6 +74073,7 @@ run_OF_VERSION_1_4_unified_accessor_tests(void)
     RUN_TEST(of_bsn_tlv_lr_all_enabled_OF_VERSION_1_4);
     RUN_TEST(of_bsn_tlv_mac_OF_VERSION_1_4);
     RUN_TEST(of_bsn_tlv_mac_mask_OF_VERSION_1_4);
+    RUN_TEST(of_bsn_tlv_max_count_OF_VERSION_1_4);
     RUN_TEST(of_bsn_tlv_mcg_type_vxlan_OF_VERSION_1_4);
     RUN_TEST(of_bsn_tlv_mgmt_OF_VERSION_1_4);
     RUN_TEST(of_bsn_tlv_mgmt_reselect_on_failure_OF_VERSION_1_4);

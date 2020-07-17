@@ -5608,13 +5608,13 @@ of_bsn_tlv_forward_error_correction_value_set(
 #include "loci_int.h"
 
 void
-of_bsn_tlv_generation_id_push_wire_types(of_object_t *obj)
+of_bsn_tlv_free_count_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_3:
     case OF_VERSION_1_4:
-        *(uint16_t *)(buf + 0) = U16_HTON(0x50); /* type */
+        *(uint16_t *)(buf + 0) = U16_HTON(0xd7); /* type */
         break;
     default:
         UNREACHABLE();
@@ -5624,11 +5624,11 @@ of_bsn_tlv_generation_id_push_wire_types(of_object_t *obj)
 
 
 /**
- * \defgroup of_bsn_tlv_generation_id of_bsn_tlv_generation_id
+ * \defgroup of_bsn_tlv_free_count of_bsn_tlv_free_count
  */
 
 /**
- * Create a new of_bsn_tlv_generation_id object
+ * Create a new of_bsn_tlv_free_count object
  *
  * @param version The wire version to use for the object
  * @return Pointer to the newly create object or NULL on error
@@ -5636,30 +5636,30 @@ of_bsn_tlv_generation_id_push_wire_types(of_object_t *obj)
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * \ingroup of_bsn_tlv_generation_id
+ * \ingroup of_bsn_tlv_free_count
  */
 
 of_object_t *
-of_bsn_tlv_generation_id_new(of_version_t version)
+of_bsn_tlv_free_count_new(of_version_t version)
 {
     of_object_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_BSN_TLV_GENERATION_ID];
+    bytes = of_object_fixed_len[version][OF_BSN_TLV_FREE_COUNT];
 
     if ((obj = of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
-    of_bsn_tlv_generation_id_init(obj, version, bytes, 0);
-    of_bsn_tlv_generation_id_push_wire_types(obj);
+    of_bsn_tlv_free_count_init(obj, version, bytes, 0);
+    of_bsn_tlv_free_count_push_wire_types(obj);
     of_tlv16_wire_length_set(obj, obj->length);
 
     return obj;
 }
 
 /**
- * Initialize an object of type of_bsn_tlv_generation_id.
+ * Initialize an object of type of_bsn_tlv_free_count.
  *
  * @param obj Pointer to the object to initialize
  * @param version The wire version to use for the object
@@ -5676,19 +5676,19 @@ of_bsn_tlv_generation_id_new(of_version_t version)
  */
 
 void
-of_bsn_tlv_generation_id_init(of_object_t *obj,
+of_bsn_tlv_free_count_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-    LOCI_ASSERT(of_object_fixed_len[version][OF_BSN_TLV_GENERATION_ID] >= 0);
+    LOCI_ASSERT(of_object_fixed_len[version][OF_BSN_TLV_FREE_COUNT] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_BSN_TLV_GENERATION_ID];
+        bytes = of_object_fixed_len[version][OF_BSN_TLV_FREE_COUNT];
     }
     obj->version = version;
     obj->length = bytes;
-    obj->object_id = OF_BSN_TLV_GENERATION_ID;
+    obj->object_id = OF_BSN_TLV_FREE_COUNT;
 
     /* Grow the wire buffer */
     if (obj->wbuf != NULL) {
@@ -5700,23 +5700,23 @@ of_bsn_tlv_generation_id_init(of_object_t *obj,
 }
 
 /**
- * Get value from an object of type of_bsn_tlv_generation_id.
- * @param obj Pointer to an object of type of_bsn_tlv_generation_id.
+ * Get value from an object of type of_bsn_tlv_free_count.
+ * @param obj Pointer to an object of type of_bsn_tlv_free_count.
  * @param value Pointer to the child object of type
- * uint64_t to be filled out.
+ * uint32_t to be filled out.
  *
  */
 void
-of_bsn_tlv_generation_id_value_get(
-    of_bsn_tlv_generation_id_t *obj,
-    uint64_t *value)
+of_bsn_tlv_free_count_value_get(
+    of_bsn_tlv_free_count_t *obj,
+    uint32_t *value)
 {
     of_wire_buffer_t *wbuf;
     int offset = 0; /* Offset of value relative to the start obj */
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    LOCI_ASSERT(obj->object_id == OF_BSN_TLV_GENERATION_ID);
+    LOCI_ASSERT(obj->object_id == OF_BSN_TLV_FREE_COUNT);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
     LOCI_ASSERT(wbuf != NULL);
@@ -5733,7 +5733,7 @@ of_bsn_tlv_generation_id_value_get(
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
     LOCI_ASSERT(abs_offset >= 0);
-    of_wire_buffer_u64_get(wbuf, abs_offset, value);
+    of_wire_buffer_u32_get(wbuf, abs_offset, value);
 
     OF_LENGTH_CHECK_ASSERT(obj);
 
@@ -5741,21 +5741,21 @@ of_bsn_tlv_generation_id_value_get(
 }
 
 /**
- * Set value in an object of type of_bsn_tlv_generation_id.
- * @param obj Pointer to an object of type of_bsn_tlv_generation_id.
+ * Set value in an object of type of_bsn_tlv_free_count.
+ * @param obj Pointer to an object of type of_bsn_tlv_free_count.
  * @param value The value to write into the object
  */
 void
-of_bsn_tlv_generation_id_value_set(
-    of_bsn_tlv_generation_id_t *obj,
-    uint64_t value)
+of_bsn_tlv_free_count_value_set(
+    of_bsn_tlv_free_count_t *obj,
+    uint32_t value)
 {
     of_wire_buffer_t *wbuf;
     int offset = 0; /* Offset of value relative to the start obj */
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    LOCI_ASSERT(obj->object_id == OF_BSN_TLV_GENERATION_ID);
+    LOCI_ASSERT(obj->object_id == OF_BSN_TLV_FREE_COUNT);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
     LOCI_ASSERT(wbuf != NULL);
@@ -5772,7 +5772,7 @@ of_bsn_tlv_generation_id_value_set(
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
     LOCI_ASSERT(abs_offset >= 0);
-    of_wire_buffer_u64_set(wbuf, abs_offset, value);
+    of_wire_buffer_u32_set(wbuf, abs_offset, value);
 
     OF_LENGTH_CHECK_ASSERT(obj);
 

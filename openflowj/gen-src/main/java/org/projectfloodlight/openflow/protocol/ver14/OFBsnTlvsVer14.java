@@ -461,6 +461,15 @@ public class OFBsnTlvsVer14 implements OFBsnTlvs {
                     );
     }
 
+    public OFBsnTlvFreeCount.Builder buildFreeCount() {
+        return new OFBsnTlvFreeCountVer14.Builder();
+    }
+    public OFBsnTlvFreeCount freeCount(long value) {
+        return new OFBsnTlvFreeCountVer14(
+                value
+                    );
+    }
+
     public OFBsnTlvGenerationId.Builder buildGenerationId() {
         return new OFBsnTlvGenerationIdVer14.Builder();
     }
@@ -896,6 +905,15 @@ public class OFBsnTlvsVer14 implements OFBsnTlvs {
     }
     public OFBsnTlvMacMask macMask(MacAddress value) {
         return new OFBsnTlvMacMaskVer14(
+                value
+                    );
+    }
+
+    public OFBsnTlvMaxCount.Builder buildMaxCount() {
+        return new OFBsnTlvMaxCountVer14.Builder();
+    }
+    public OFBsnTlvMaxCount maxCount(long value) {
+        return new OFBsnTlvMaxCountVer14(
                 value
                     );
     }

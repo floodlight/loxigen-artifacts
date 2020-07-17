@@ -4350,6 +4350,12 @@ of_bsn_tlv_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
         case 0xd5:
             *id = OF_BSN_TLV_LOAD;
             break;
+        case 0xd6:
+            *id = OF_BSN_TLV_MAX_COUNT;
+            break;
+        case 0xd7:
+            *id = OF_BSN_TLV_FREE_COUNT;
+            break;
         default:
             *id = OF_BSN_TLV;
             break;
@@ -4997,6 +5003,12 @@ of_bsn_tlv_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
             break;
         case 0xd5:
             *id = OF_BSN_TLV_LOAD;
+            break;
+        case 0xd6:
+            *id = OF_BSN_TLV_MAX_COUNT;
+            break;
+        case 0xd7:
+            *id = OF_BSN_TLV_FREE_COUNT;
             break;
         default:
             *id = OF_BSN_TLV;
