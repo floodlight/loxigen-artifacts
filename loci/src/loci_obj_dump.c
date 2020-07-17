@@ -22204,6 +22204,22 @@ of_bsn_tlv_forward_error_correction_OF_VERSION_1_3_dump(loci_writer_f writer, vo
 }
 
 int
+of_bsn_tlv_free_count_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+
+    out += writer(cookie, "Object of type of_bsn_tlv_free_count\n");
+
+    of_bsn_tlv_free_count_value_get(obj, &val32);
+    out += writer(cookie, "  value (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
 of_bsn_tlv_generation_id_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
@@ -23035,6 +23051,22 @@ of_bsn_tlv_mac_mask_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_o
     of_bsn_tlv_mac_mask_value_get(obj, &mac_addr);
     out += writer(cookie, "  value (of_mac_addr_t):  ");
     out += LOCI_DUMP_mac(writer, cookie, mac_addr);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_bsn_tlv_max_count_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+
+    out += writer(cookie, "Object of type of_bsn_tlv_max_count\n");
+
+    of_bsn_tlv_max_count_value_get(obj, &val32);
+    out += writer(cookie, "  value (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
     out += writer(cookie, "\n");
 
     return out;
@@ -38278,6 +38310,22 @@ of_bsn_tlv_forward_error_correction_OF_VERSION_1_4_dump(loci_writer_f writer, vo
 }
 
 int
+of_bsn_tlv_free_count_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+
+    out += writer(cookie, "Object of type of_bsn_tlv_free_count\n");
+
+    of_bsn_tlv_free_count_value_get(obj, &val32);
+    out += writer(cookie, "  value (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
 of_bsn_tlv_generation_id_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
@@ -39109,6 +39157,22 @@ of_bsn_tlv_mac_mask_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_o
     of_bsn_tlv_mac_mask_value_get(obj, &mac_addr);
     out += writer(cookie, "  value (of_mac_addr_t):  ");
     out += LOCI_DUMP_mac(writer, cookie, mac_addr);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_bsn_tlv_max_count_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+
+    out += writer(cookie, "Object of type of_bsn_tlv_max_count\n");
+
+    of_bsn_tlv_max_count_value_get(obj, &val32);
+    out += writer(cookie, "  value (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
     out += writer(cookie, "\n");
 
     return out;
@@ -47850,6 +47914,8 @@ static const loci_obj_dump_f dump_funs_v1[OF_OBJECT_COUNT] = {
     unknown_dump,
     unknown_dump,
     unknown_dump,
+    unknown_dump,
+    unknown_dump,
     of_bsn_vport_l2gre_OF_VERSION_1_0_dump,
     of_bsn_vport_q_in_q_OF_VERSION_1_0_dump,
     unknown_dump,
@@ -48518,6 +48584,8 @@ static const loci_obj_dump_f dump_funs_v2[OF_OBJECT_COUNT] = {
     unknown_dump,
     unknown_dump,
     of_bsn_interface_OF_VERSION_1_1_dump,
+    unknown_dump,
+    unknown_dump,
     unknown_dump,
     unknown_dump,
     unknown_dump,
@@ -49628,6 +49696,8 @@ static const loci_obj_dump_f dump_funs_v3[OF_OBJECT_COUNT] = {
     unknown_dump,
     unknown_dump,
     unknown_dump,
+    unknown_dump,
+    unknown_dump,
     of_bsn_vport_l2gre_OF_VERSION_1_2_dump,
     of_bsn_vport_q_in_q_OF_VERSION_1_2_dump,
     unknown_dump,
@@ -50355,6 +50425,7 @@ static const loci_obj_dump_f dump_funs_v4[OF_OBJECT_COUNT] = {
     of_bsn_tlv_flow_identifier_OF_VERSION_1_3_dump,
     of_bsn_tlv_force_link_up_OF_VERSION_1_3_dump,
     of_bsn_tlv_forward_error_correction_OF_VERSION_1_3_dump,
+    of_bsn_tlv_free_count_OF_VERSION_1_3_dump,
     of_bsn_tlv_generation_id_OF_VERSION_1_3_dump,
     of_bsn_tlv_hash_algorithm_OF_VERSION_1_3_dump,
     of_bsn_tlv_hash_gtp_header_match_OF_VERSION_1_3_dump,
@@ -50409,6 +50480,7 @@ static const loci_obj_dump_f dump_funs_v4[OF_OBJECT_COUNT] = {
     of_bsn_tlv_lr_all_enabled_OF_VERSION_1_3_dump,
     of_bsn_tlv_mac_OF_VERSION_1_3_dump,
     of_bsn_tlv_mac_mask_OF_VERSION_1_3_dump,
+    of_bsn_tlv_max_count_OF_VERSION_1_3_dump,
     of_bsn_tlv_mcg_type_vxlan_OF_VERSION_1_3_dump,
     of_bsn_tlv_mgmt_OF_VERSION_1_3_dump,
     of_bsn_tlv_mgmt_reselect_on_failure_OF_VERSION_1_3_dump,
@@ -51244,6 +51316,7 @@ static const loci_obj_dump_f dump_funs_v5[OF_OBJECT_COUNT] = {
     of_bsn_tlv_flow_identifier_OF_VERSION_1_4_dump,
     of_bsn_tlv_force_link_up_OF_VERSION_1_4_dump,
     of_bsn_tlv_forward_error_correction_OF_VERSION_1_4_dump,
+    of_bsn_tlv_free_count_OF_VERSION_1_4_dump,
     of_bsn_tlv_generation_id_OF_VERSION_1_4_dump,
     of_bsn_tlv_hash_algorithm_OF_VERSION_1_4_dump,
     of_bsn_tlv_hash_gtp_header_match_OF_VERSION_1_4_dump,
@@ -51298,6 +51371,7 @@ static const loci_obj_dump_f dump_funs_v5[OF_OBJECT_COUNT] = {
     of_bsn_tlv_lr_all_enabled_OF_VERSION_1_4_dump,
     of_bsn_tlv_mac_OF_VERSION_1_4_dump,
     of_bsn_tlv_mac_mask_OF_VERSION_1_4_dump,
+    of_bsn_tlv_max_count_OF_VERSION_1_4_dump,
     of_bsn_tlv_mcg_type_vxlan_OF_VERSION_1_4_dump,
     of_bsn_tlv_mgmt_OF_VERSION_1_4_dump,
     of_bsn_tlv_mgmt_reselect_on_failure_OF_VERSION_1_4_dump,

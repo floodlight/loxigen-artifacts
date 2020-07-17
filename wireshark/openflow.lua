@@ -8963,6 +8963,9 @@ fields['of13.bsn_tlv_force_link_up.length'] = ProtoField.uint16("of13.bsn_tlv_fo
 fields['of13.bsn_tlv_forward_error_correction.type'] = ProtoField.uint16("of13.bsn_tlv_forward_error_correction.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_forward_error_correction.length'] = ProtoField.uint16("of13.bsn_tlv_forward_error_correction.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_forward_error_correction.value'] = ProtoField.uint32("of13.bsn_tlv_forward_error_correction.value", "value", base.DEC, enum_v4_ofp_bsn_forward_error_correction_type)
+fields['of13.bsn_tlv_free_count.type'] = ProtoField.uint16("of13.bsn_tlv_free_count.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_free_count.length'] = ProtoField.uint16("of13.bsn_tlv_free_count.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_free_count.value'] = ProtoField.uint32("of13.bsn_tlv_free_count.value", "value", base.DEC, nil)
 fields['of13.bsn_tlv_generation_id.type'] = ProtoField.uint16("of13.bsn_tlv_generation_id.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_generation_id.length'] = ProtoField.uint16("of13.bsn_tlv_generation_id.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_generation_id.value'] = ProtoField.uint64("of13.bsn_tlv_generation_id.value", "value", base.DEC, nil)
@@ -9121,6 +9124,9 @@ fields['of13.bsn_tlv_mac.value'] = ProtoField.ether("of13.bsn_tlv_mac.value", "v
 fields['of13.bsn_tlv_mac_mask.type'] = ProtoField.uint16("of13.bsn_tlv_mac_mask.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_mac_mask.length'] = ProtoField.uint16("of13.bsn_tlv_mac_mask.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_mac_mask.value'] = ProtoField.ether("of13.bsn_tlv_mac_mask.value", "value")
+fields['of13.bsn_tlv_max_count.type'] = ProtoField.uint16("of13.bsn_tlv_max_count.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_max_count.length'] = ProtoField.uint16("of13.bsn_tlv_max_count.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_max_count.value'] = ProtoField.uint32("of13.bsn_tlv_max_count.value", "value", base.DEC, nil)
 fields['of13.bsn_tlv_mcg_type_vxlan.type'] = ProtoField.uint16("of13.bsn_tlv_mcg_type_vxlan.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_mcg_type_vxlan.length'] = ProtoField.uint16("of13.bsn_tlv_mcg_type_vxlan.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_mgmt.type'] = ProtoField.uint16("of13.bsn_tlv_mgmt.type", "type", base.DEC, nil)
@@ -12077,6 +12083,9 @@ fields['of14.bsn_tlv_force_link_up.length'] = ProtoField.uint16("of14.bsn_tlv_fo
 fields['of14.bsn_tlv_forward_error_correction.type'] = ProtoField.uint16("of14.bsn_tlv_forward_error_correction.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_forward_error_correction.length'] = ProtoField.uint16("of14.bsn_tlv_forward_error_correction.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_forward_error_correction.value'] = ProtoField.uint32("of14.bsn_tlv_forward_error_correction.value", "value", base.DEC, enum_v5_ofp_bsn_forward_error_correction_type)
+fields['of14.bsn_tlv_free_count.type'] = ProtoField.uint16("of14.bsn_tlv_free_count.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_free_count.length'] = ProtoField.uint16("of14.bsn_tlv_free_count.length", "length", base.DEC, nil)
+fields['of14.bsn_tlv_free_count.value'] = ProtoField.uint32("of14.bsn_tlv_free_count.value", "value", base.DEC, nil)
 fields['of14.bsn_tlv_generation_id.type'] = ProtoField.uint16("of14.bsn_tlv_generation_id.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_generation_id.length'] = ProtoField.uint16("of14.bsn_tlv_generation_id.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_generation_id.value'] = ProtoField.uint64("of14.bsn_tlv_generation_id.value", "value", base.DEC, nil)
@@ -12235,6 +12244,9 @@ fields['of14.bsn_tlv_mac.value'] = ProtoField.ether("of14.bsn_tlv_mac.value", "v
 fields['of14.bsn_tlv_mac_mask.type'] = ProtoField.uint16("of14.bsn_tlv_mac_mask.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_mac_mask.length'] = ProtoField.uint16("of14.bsn_tlv_mac_mask.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_mac_mask.value'] = ProtoField.ether("of14.bsn_tlv_mac_mask.value", "value")
+fields['of14.bsn_tlv_max_count.type'] = ProtoField.uint16("of14.bsn_tlv_max_count.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_max_count.length'] = ProtoField.uint16("of14.bsn_tlv_max_count.length", "length", base.DEC, nil)
+fields['of14.bsn_tlv_max_count.value'] = ProtoField.uint32("of14.bsn_tlv_max_count.value", "value", base.DEC, nil)
 fields['of14.bsn_tlv_mcg_type_vxlan.type'] = ProtoField.uint16("of14.bsn_tlv_mcg_type_vxlan.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_mcg_type_vxlan.length'] = ProtoField.uint16("of14.bsn_tlv_mcg_type_vxlan.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_mgmt.type'] = ProtoField.uint16("of14.bsn_tlv_mgmt.type", "type", base.DEC, nil)
@@ -15477,6 +15489,9 @@ fields['of15.bsn_tlv_force_link_up.length'] = ProtoField.uint16("of15.bsn_tlv_fo
 fields['of15.bsn_tlv_forward_error_correction.type'] = ProtoField.uint16("of15.bsn_tlv_forward_error_correction.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_forward_error_correction.length'] = ProtoField.uint16("of15.bsn_tlv_forward_error_correction.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_forward_error_correction.value'] = ProtoField.uint32("of15.bsn_tlv_forward_error_correction.value", "value", base.DEC, enum_v6_ofp_bsn_forward_error_correction_type)
+fields['of15.bsn_tlv_free_count.type'] = ProtoField.uint16("of15.bsn_tlv_free_count.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_free_count.length'] = ProtoField.uint16("of15.bsn_tlv_free_count.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_free_count.value'] = ProtoField.uint32("of15.bsn_tlv_free_count.value", "value", base.DEC, nil)
 fields['of15.bsn_tlv_generation_id.type'] = ProtoField.uint16("of15.bsn_tlv_generation_id.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_generation_id.length'] = ProtoField.uint16("of15.bsn_tlv_generation_id.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_generation_id.value'] = ProtoField.uint64("of15.bsn_tlv_generation_id.value", "value", base.DEC, nil)
@@ -15635,6 +15650,9 @@ fields['of15.bsn_tlv_mac.value'] = ProtoField.ether("of15.bsn_tlv_mac.value", "v
 fields['of15.bsn_tlv_mac_mask.type'] = ProtoField.uint16("of15.bsn_tlv_mac_mask.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_mac_mask.length'] = ProtoField.uint16("of15.bsn_tlv_mac_mask.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_mac_mask.value'] = ProtoField.ether("of15.bsn_tlv_mac_mask.value", "value")
+fields['of15.bsn_tlv_max_count.type'] = ProtoField.uint16("of15.bsn_tlv_max_count.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_max_count.length'] = ProtoField.uint16("of15.bsn_tlv_max_count.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_max_count.value'] = ProtoField.uint32("of15.bsn_tlv_max_count.value", "value", base.DEC, nil)
 fields['of15.bsn_tlv_mcg_type_vxlan.type'] = ProtoField.uint16("of15.bsn_tlv_mcg_type_vxlan.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_mcg_type_vxlan.length'] = ProtoField.uint16("of15.bsn_tlv_mcg_type_vxlan.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_mgmt.type'] = ProtoField.uint16("of15.bsn_tlv_mgmt.type", "type", base.DEC, nil)
@@ -22164,6 +22182,9 @@ p_of.fields = {
     fields['of13.bsn_tlv_forward_error_correction.type'],
     fields['of13.bsn_tlv_forward_error_correction.length'],
     fields['of13.bsn_tlv_forward_error_correction.value'],
+    fields['of13.bsn_tlv_free_count.type'],
+    fields['of13.bsn_tlv_free_count.length'],
+    fields['of13.bsn_tlv_free_count.value'],
     fields['of13.bsn_tlv_generation_id.type'],
     fields['of13.bsn_tlv_generation_id.length'],
     fields['of13.bsn_tlv_generation_id.value'],
@@ -22322,6 +22343,9 @@ p_of.fields = {
     fields['of13.bsn_tlv_mac_mask.type'],
     fields['of13.bsn_tlv_mac_mask.length'],
     fields['of13.bsn_tlv_mac_mask.value'],
+    fields['of13.bsn_tlv_max_count.type'],
+    fields['of13.bsn_tlv_max_count.length'],
+    fields['of13.bsn_tlv_max_count.value'],
     fields['of13.bsn_tlv_mcg_type_vxlan.type'],
     fields['of13.bsn_tlv_mcg_type_vxlan.length'],
     fields['of13.bsn_tlv_mgmt.type'],
@@ -25278,6 +25302,9 @@ p_of.fields = {
     fields['of14.bsn_tlv_forward_error_correction.type'],
     fields['of14.bsn_tlv_forward_error_correction.length'],
     fields['of14.bsn_tlv_forward_error_correction.value'],
+    fields['of14.bsn_tlv_free_count.type'],
+    fields['of14.bsn_tlv_free_count.length'],
+    fields['of14.bsn_tlv_free_count.value'],
     fields['of14.bsn_tlv_generation_id.type'],
     fields['of14.bsn_tlv_generation_id.length'],
     fields['of14.bsn_tlv_generation_id.value'],
@@ -25436,6 +25463,9 @@ p_of.fields = {
     fields['of14.bsn_tlv_mac_mask.type'],
     fields['of14.bsn_tlv_mac_mask.length'],
     fields['of14.bsn_tlv_mac_mask.value'],
+    fields['of14.bsn_tlv_max_count.type'],
+    fields['of14.bsn_tlv_max_count.length'],
+    fields['of14.bsn_tlv_max_count.value'],
     fields['of14.bsn_tlv_mcg_type_vxlan.type'],
     fields['of14.bsn_tlv_mcg_type_vxlan.length'],
     fields['of14.bsn_tlv_mgmt.type'],
@@ -28678,6 +28708,9 @@ p_of.fields = {
     fields['of15.bsn_tlv_forward_error_correction.type'],
     fields['of15.bsn_tlv_forward_error_correction.length'],
     fields['of15.bsn_tlv_forward_error_correction.value'],
+    fields['of15.bsn_tlv_free_count.type'],
+    fields['of15.bsn_tlv_free_count.length'],
+    fields['of15.bsn_tlv_free_count.value'],
     fields['of15.bsn_tlv_generation_id.type'],
     fields['of15.bsn_tlv_generation_id.length'],
     fields['of15.bsn_tlv_generation_id.value'],
@@ -28836,6 +28869,9 @@ p_of.fields = {
     fields['of15.bsn_tlv_mac_mask.type'],
     fields['of15.bsn_tlv_mac_mask.length'],
     fields['of15.bsn_tlv_mac_mask.value'],
+    fields['of15.bsn_tlv_max_count.type'],
+    fields['of15.bsn_tlv_max_count.length'],
+    fields['of15.bsn_tlv_max_count.value'],
     fields['of15.bsn_tlv_mcg_type_vxlan.type'],
     fields['of15.bsn_tlv_mcg_type_vxlan.length'],
     fields['of15.bsn_tlv_mgmt.type'],
@@ -41245,6 +41281,16 @@ function dissect_of_bsn_tlv_forward_error_correction_v4(reader, subtree)
 end
 of_bsn_tlv_v4_dissectors[149] = dissect_of_bsn_tlv_forward_error_correction_v4
 
+-- child class of_bsn_tlv_free_count
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_free_count_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_free_count.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_free_count.length')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_tlv_free_count.value')
+    return 'of_bsn_tlv_free_count'
+end
+of_bsn_tlv_v4_dissectors[215] = dissect_of_bsn_tlv_free_count_v4
+
 -- child class of_bsn_tlv_generation_id
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_generation_id_v4(reader, subtree)
@@ -41780,6 +41826,16 @@ function dissect_of_bsn_tlv_mac_mask_v4(reader, subtree)
     return 'of_bsn_tlv_mac_mask'
 end
 of_bsn_tlv_v4_dissectors[56] = dissect_of_bsn_tlv_mac_mask_v4
+
+-- child class of_bsn_tlv_max_count
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_max_count_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_max_count.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_max_count.length')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_tlv_max_count.value')
+    return 'of_bsn_tlv_max_count'
+end
+of_bsn_tlv_v4_dissectors[214] = dissect_of_bsn_tlv_max_count_v4
 
 -- child class of_bsn_tlv_mcg_type_vxlan
 -- Child of of_bsn_tlv
@@ -49806,6 +49862,16 @@ function dissect_of_bsn_tlv_forward_error_correction_v5(reader, subtree)
 end
 of_bsn_tlv_v5_dissectors[149] = dissect_of_bsn_tlv_forward_error_correction_v5
 
+-- child class of_bsn_tlv_free_count
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_free_count_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_free_count.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_free_count.length')
+    read_uint32_t(reader, 5, subtree, 'of14.bsn_tlv_free_count.value')
+    return 'of_bsn_tlv_free_count'
+end
+of_bsn_tlv_v5_dissectors[215] = dissect_of_bsn_tlv_free_count_v5
+
 -- child class of_bsn_tlv_generation_id
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_generation_id_v5(reader, subtree)
@@ -50341,6 +50407,16 @@ function dissect_of_bsn_tlv_mac_mask_v5(reader, subtree)
     return 'of_bsn_tlv_mac_mask'
 end
 of_bsn_tlv_v5_dissectors[56] = dissect_of_bsn_tlv_mac_mask_v5
+
+-- child class of_bsn_tlv_max_count
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_max_count_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_max_count.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_max_count.length')
+    read_uint32_t(reader, 5, subtree, 'of14.bsn_tlv_max_count.value')
+    return 'of_bsn_tlv_max_count'
+end
+of_bsn_tlv_v5_dissectors[214] = dissect_of_bsn_tlv_max_count_v5
 
 -- child class of_bsn_tlv_mcg_type_vxlan
 -- Child of of_bsn_tlv
@@ -59029,6 +59105,16 @@ function dissect_of_bsn_tlv_forward_error_correction_v6(reader, subtree)
 end
 of_bsn_tlv_v6_dissectors[149] = dissect_of_bsn_tlv_forward_error_correction_v6
 
+-- child class of_bsn_tlv_free_count
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_free_count_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_free_count.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_free_count.length')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_tlv_free_count.value')
+    return 'of_bsn_tlv_free_count'
+end
+of_bsn_tlv_v6_dissectors[215] = dissect_of_bsn_tlv_free_count_v6
+
 -- child class of_bsn_tlv_generation_id
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_generation_id_v6(reader, subtree)
@@ -59564,6 +59650,16 @@ function dissect_of_bsn_tlv_mac_mask_v6(reader, subtree)
     return 'of_bsn_tlv_mac_mask'
 end
 of_bsn_tlv_v6_dissectors[56] = dissect_of_bsn_tlv_mac_mask_v6
+
+-- child class of_bsn_tlv_max_count
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_max_count_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_max_count.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_max_count.length')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_tlv_max_count.value')
+    return 'of_bsn_tlv_max_count'
+end
+of_bsn_tlv_v6_dissectors[214] = dissect_of_bsn_tlv_max_count_v6
 
 -- child class of_bsn_tlv_mcg_type_vxlan
 -- Child of of_bsn_tlv

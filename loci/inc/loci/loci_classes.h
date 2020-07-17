@@ -963,6 +963,8 @@ void of_bsn_tlv_force_link_up_wire_object_id_get(of_object_t *obj, of_object_id_
 void of_bsn_tlv_force_link_up_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_forward_error_correction_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_forward_error_correction_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_free_count_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_free_count_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_generation_id_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_generation_id_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_hash_algorithm_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -1071,6 +1073,8 @@ void of_bsn_tlv_mac_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_mac_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_mac_mask_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_mac_mask_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_max_count_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_max_count_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_mcg_type_vxlan_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_mcg_type_vxlan_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_mgmt_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -2020,6 +2024,7 @@ typedef of_object_t of_bsn_tlv_flow_classify_t;
 typedef of_object_t of_bsn_tlv_flow_identifier_t;
 typedef of_object_t of_bsn_tlv_force_link_up_t;
 typedef of_object_t of_bsn_tlv_forward_error_correction_t;
+typedef of_object_t of_bsn_tlv_free_count_t;
 typedef of_object_t of_bsn_tlv_generation_id_t;
 typedef of_object_t of_bsn_tlv_hash_algorithm_t;
 typedef of_object_t of_bsn_tlv_hash_gtp_header_match_t;
@@ -2074,6 +2079,7 @@ typedef of_object_t of_bsn_tlv_lossless_t;
 typedef of_object_t of_bsn_tlv_lr_all_enabled_t;
 typedef of_object_t of_bsn_tlv_mac_t;
 typedef of_object_t of_bsn_tlv_mac_mask_t;
+typedef of_object_t of_bsn_tlv_max_count_t;
 typedef of_object_t of_bsn_tlv_mcg_type_vxlan_t;
 typedef of_object_t of_bsn_tlv_mgmt_t;
 typedef of_object_t of_bsn_tlv_mgmt_reselect_on_failure_t;
@@ -4353,6 +4359,11 @@ extern void of_bsn_tlv_forward_error_correction_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
+    of_bsn_tlv_free_count_new(of_version_t version);
+extern void of_bsn_tlv_free_count_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
     of_bsn_tlv_generation_id_new(of_version_t version);
 extern void of_bsn_tlv_generation_id_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
@@ -4620,6 +4631,11 @@ extern void of_bsn_tlv_mac_init(
 extern of_object_t *
     of_bsn_tlv_mac_mask_new(of_version_t version);
 extern void of_bsn_tlv_mac_mask_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_bsn_tlv_max_count_new(of_version_t version);
+extern void of_bsn_tlv_max_count_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
@@ -10916,6 +10932,17 @@ of_bsn_tlv_forward_error_correction_delete(of_object_t *obj) {
 }
 
 /**
+ * Delete an object of type of_bsn_tlv_free_count_t
+ * @param obj An instance of type of_bsn_tlv_free_count_t
+ *
+ * \ingroup of_bsn_tlv_free_count
+ */
+static inline void
+of_bsn_tlv_free_count_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
  * Delete an object of type of_bsn_tlv_generation_id_t
  * @param obj An instance of type of_bsn_tlv_generation_id_t
  *
@@ -11506,6 +11533,17 @@ of_bsn_tlv_mac_delete(of_object_t *obj) {
  */
 static inline void
 of_bsn_tlv_mac_mask_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_max_count_t
+ * @param obj An instance of type of_bsn_tlv_max_count_t
+ *
+ * \ingroup of_bsn_tlv_max_count
+ */
+static inline void
+of_bsn_tlv_max_count_delete(of_object_t *obj) {
     of_object_delete(obj);
 }
 
@@ -24825,6 +24863,15 @@ extern void of_bsn_tlv_forward_error_correction_value_get(
     of_bsn_tlv_forward_error_correction_t *obj,
     uint8_t *value);
 
+/* Unified accessor functions for of_bsn_tlv_free_count */
+
+extern void of_bsn_tlv_free_count_value_set(
+    of_bsn_tlv_free_count_t *obj,
+    uint32_t value);
+extern void of_bsn_tlv_free_count_value_get(
+    of_bsn_tlv_free_count_t *obj,
+    uint32_t *value);
+
 /* Unified accessor functions for of_bsn_tlv_generation_id */
 
 extern void of_bsn_tlv_generation_id_value_set(
@@ -25282,6 +25329,15 @@ extern void of_bsn_tlv_mac_mask_value_set(
 extern void of_bsn_tlv_mac_mask_value_get(
     of_bsn_tlv_mac_mask_t *obj,
     of_mac_addr_t *value);
+
+/* Unified accessor functions for of_bsn_tlv_max_count */
+
+extern void of_bsn_tlv_max_count_value_set(
+    of_bsn_tlv_max_count_t *obj,
+    uint32_t value);
+extern void of_bsn_tlv_max_count_value_get(
+    of_bsn_tlv_max_count_t *obj,
+    uint32_t *value);
 
 /* Unified accessor functions for of_bsn_tlv_mcg_type_vxlan */
 

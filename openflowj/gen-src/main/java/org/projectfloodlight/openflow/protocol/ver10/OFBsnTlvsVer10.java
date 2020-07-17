@@ -377,6 +377,13 @@ public class OFBsnTlvsVer10 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvForwardErrorCorrection not supported in version 1.0");
     }
 
+    public OFBsnTlvFreeCount.Builder buildFreeCount() {
+        throw new UnsupportedOperationException("OFBsnTlvFreeCount not supported in version 1.0");
+    }
+    public OFBsnTlvFreeCount freeCount(long value) {
+        throw new UnsupportedOperationException("OFBsnTlvFreeCount not supported in version 1.0");
+    }
+
     public OFBsnTlvGenerationId.Builder buildGenerationId() {
         throw new UnsupportedOperationException("OFBsnTlvGenerationId not supported in version 1.0");
     }
@@ -723,6 +730,13 @@ public class OFBsnTlvsVer10 implements OFBsnTlvs {
     }
     public OFBsnTlvMacMask macMask(MacAddress value) {
         throw new UnsupportedOperationException("OFBsnTlvMacMask not supported in version 1.0");
+    }
+
+    public OFBsnTlvMaxCount.Builder buildMaxCount() {
+        throw new UnsupportedOperationException("OFBsnTlvMaxCount not supported in version 1.0");
+    }
+    public OFBsnTlvMaxCount maxCount(long value) {
+        throw new UnsupportedOperationException("OFBsnTlvMaxCount not supported in version 1.0");
     }
 
     public OFBsnTlvMcgTypeVxlan mcgTypeVxlan() {
