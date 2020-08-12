@@ -81,6 +81,13 @@ public class OFBsnTlvsVer11 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvActorSystemPriority not supported in version 1.1");
     }
 
+    public OFBsnTlvAdminState.Builder buildAdminState() {
+        throw new UnsupportedOperationException("OFBsnTlvAdminState not supported in version 1.1");
+    }
+    public OFBsnTlvAdminState adminState(OFBsnAdminState value) {
+        throw new UnsupportedOperationException("OFBsnTlvAdminState not supported in version 1.1");
+    }
+
     public OFBsnTlvAnalytics analytics() {
         throw new UnsupportedOperationException("OFBsnTlvAnalytics not supported in version 1.1");
     }

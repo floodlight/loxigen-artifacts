@@ -93,6 +93,15 @@ public class OFBsnTlvsVer14 implements OFBsnTlvs {
                     );
     }
 
+    public OFBsnTlvAdminState.Builder buildAdminState() {
+        return new OFBsnTlvAdminStateVer14.Builder();
+    }
+    public OFBsnTlvAdminState adminState(OFBsnAdminState value) {
+        return new OFBsnTlvAdminStateVer14(
+                value
+                    );
+    }
+
     public OFBsnTlvAnalytics analytics() {
         return OFBsnTlvAnalyticsVer14.INSTANCE;
     }

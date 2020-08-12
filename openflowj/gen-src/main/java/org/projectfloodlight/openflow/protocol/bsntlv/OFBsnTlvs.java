@@ -44,6 +44,8 @@ public interface OFBsnTlvs {
     OFBsnTlvActorSystemMac actorSystemMac(MacAddress value);
     OFBsnTlvActorSystemPriority.Builder buildActorSystemPriority() throws UnsupportedOperationException;
     OFBsnTlvActorSystemPriority actorSystemPriority(int value);
+    OFBsnTlvAdminState.Builder buildAdminState() throws UnsupportedOperationException;
+    OFBsnTlvAdminState adminState(OFBsnAdminState value);
     OFBsnTlvAnalytics analytics();
     OFBsnTlvAnchor.Builder buildAnchor() throws UnsupportedOperationException;
     OFBsnTlvAnchor anchor(OFBsnAnchor value);

@@ -321,6 +321,7 @@ const of_object_init_f of_object_init_map[] = {
     (of_object_init_f)of_bsn_tlv_actor_state_init,
     (of_object_init_f)of_bsn_tlv_actor_system_mac_init,
     (of_object_init_f)of_bsn_tlv_actor_system_priority_init,
+    (of_object_init_f)of_bsn_tlv_admin_state_init,
     (of_object_init_f)of_bsn_tlv_analytics_init,
     (of_object_init_f)of_bsn_tlv_anchor_init,
     (of_object_init_f)of_bsn_tlv_apply_bytes_init,

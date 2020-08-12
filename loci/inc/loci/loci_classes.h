@@ -869,6 +869,8 @@ void of_bsn_tlv_actor_system_mac_wire_object_id_get(of_object_t *obj, of_object_
 void of_bsn_tlv_actor_system_mac_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_actor_system_priority_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_actor_system_priority_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_admin_state_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_admin_state_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_analytics_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_analytics_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_anchor_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -1977,6 +1979,7 @@ typedef of_object_t of_bsn_tlv_actor_port_priority_t;
 typedef of_object_t of_bsn_tlv_actor_state_t;
 typedef of_object_t of_bsn_tlv_actor_system_mac_t;
 typedef of_object_t of_bsn_tlv_actor_system_priority_t;
+typedef of_object_t of_bsn_tlv_admin_state_t;
 typedef of_object_t of_bsn_tlv_analytics_t;
 typedef of_object_t of_bsn_tlv_anchor_t;
 typedef of_object_t of_bsn_tlv_apply_bytes_t;
@@ -4121,6 +4124,11 @@ extern void of_bsn_tlv_actor_system_mac_init(
 extern of_object_t *
     of_bsn_tlv_actor_system_priority_new(of_version_t version);
 extern void of_bsn_tlv_actor_system_priority_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_bsn_tlv_admin_state_new(of_version_t version);
+extern void of_bsn_tlv_admin_state_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
@@ -10411,6 +10419,17 @@ of_bsn_tlv_actor_system_mac_delete(of_object_t *obj) {
  */
 static inline void
 of_bsn_tlv_actor_system_priority_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_admin_state_t
+ * @param obj An instance of type of_bsn_tlv_admin_state_t
+ *
+ * \ingroup of_bsn_tlv_admin_state
+ */
+static inline void
+of_bsn_tlv_admin_state_delete(of_object_t *obj) {
     of_object_delete(obj);
 }
 
@@ -24514,6 +24533,15 @@ extern void of_bsn_tlv_actor_system_priority_value_set(
 extern void of_bsn_tlv_actor_system_priority_value_get(
     of_bsn_tlv_actor_system_priority_t *obj,
     uint16_t *value);
+
+/* Unified accessor functions for of_bsn_tlv_admin_state */
+
+extern void of_bsn_tlv_admin_state_value_set(
+    of_bsn_tlv_admin_state_t *obj,
+    uint8_t value);
+extern void of_bsn_tlv_admin_state_value_get(
+    of_bsn_tlv_admin_state_t *obj,
+    uint8_t *value);
 
 /* Unified accessor functions for of_bsn_tlv_analytics */
 

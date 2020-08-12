@@ -6482,6 +6482,17 @@ typedef struct of_bsn_tlv_actor_system_mac_s of_bsn_tlv_actor_system_mac_t;
 typedef struct of_bsn_tlv_actor_system_priority_s of_bsn_tlv_actor_system_priority_t;
 
 /**
+ * Structure for of_bsn_tlv_admin_state object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for value, a variable of type uint8.  Functions
+ *   are of type of_bsn_tlv_admin_state_uint8_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_admin_state_s of_bsn_tlv_admin_state_t;
+
+/**
  * Structure for of_bsn_tlv_analytics object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
