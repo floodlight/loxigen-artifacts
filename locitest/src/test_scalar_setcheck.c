@@ -10153,6 +10153,33 @@ int of_bsn_tlv_actor_system_priority_OF_VERSION_1_0_check_scalars(
 
 
 /**
+ * Populate the scalar values in obj of type of_bsn_tlv_admin_state,
+ * version OF_VERSION_1_0
+ * @param obj Pointer to an object to populate
+ * @param value The seed value to use in populating the object
+ * @returns The value after increments for this object's values
+ */
+int of_bsn_tlv_admin_state_OF_VERSION_1_0_populate_scalars(
+    of_bsn_tlv_admin_state_t *obj, int value) {
+
+    return value;
+}
+
+/**
+ * Check scalar values in obj of type of_bsn_tlv_admin_state,
+ * version OF_VERSION_1_0
+ * @param obj Pointer to an object to check
+ * @param value Starting value for checking
+ * @returns The value after increments for this object's values
+ */
+int of_bsn_tlv_admin_state_OF_VERSION_1_0_check_scalars(
+    of_bsn_tlv_admin_state_t *obj, int value) {
+
+    return value;
+}
+
+
+/**
  * Populate the scalar values in obj of type of_bsn_tlv_analytics,
  * version OF_VERSION_1_0
  * @param obj Pointer to an object to populate
@@ -34287,6 +34314,33 @@ int of_bsn_tlv_actor_system_priority_OF_VERSION_1_1_populate_scalars(
  */
 int of_bsn_tlv_actor_system_priority_OF_VERSION_1_1_check_scalars(
     of_bsn_tlv_actor_system_priority_t *obj, int value) {
+
+    return value;
+}
+
+
+/**
+ * Populate the scalar values in obj of type of_bsn_tlv_admin_state,
+ * version OF_VERSION_1_1
+ * @param obj Pointer to an object to populate
+ * @param value The seed value to use in populating the object
+ * @returns The value after increments for this object's values
+ */
+int of_bsn_tlv_admin_state_OF_VERSION_1_1_populate_scalars(
+    of_bsn_tlv_admin_state_t *obj, int value) {
+
+    return value;
+}
+
+/**
+ * Check scalar values in obj of type of_bsn_tlv_admin_state,
+ * version OF_VERSION_1_1
+ * @param obj Pointer to an object to check
+ * @param value Starting value for checking
+ * @returns The value after increments for this object's values
+ */
+int of_bsn_tlv_admin_state_OF_VERSION_1_1_check_scalars(
+    of_bsn_tlv_admin_state_t *obj, int value) {
 
     return value;
 }
@@ -58751,6 +58805,33 @@ int of_bsn_tlv_actor_system_priority_OF_VERSION_1_2_populate_scalars(
  */
 int of_bsn_tlv_actor_system_priority_OF_VERSION_1_2_check_scalars(
     of_bsn_tlv_actor_system_priority_t *obj, int value) {
+
+    return value;
+}
+
+
+/**
+ * Populate the scalar values in obj of type of_bsn_tlv_admin_state,
+ * version OF_VERSION_1_2
+ * @param obj Pointer to an object to populate
+ * @param value The seed value to use in populating the object
+ * @returns The value after increments for this object's values
+ */
+int of_bsn_tlv_admin_state_OF_VERSION_1_2_populate_scalars(
+    of_bsn_tlv_admin_state_t *obj, int value) {
+
+    return value;
+}
+
+/**
+ * Check scalar values in obj of type of_bsn_tlv_admin_state,
+ * version OF_VERSION_1_2
+ * @param obj Pointer to an object to check
+ * @param value Starting value for checking
+ * @returns The value after increments for this object's values
+ */
+int of_bsn_tlv_admin_state_OF_VERSION_1_2_check_scalars(
+    of_bsn_tlv_admin_state_t *obj, int value) {
 
     return value;
 }
@@ -87594,6 +87675,43 @@ int of_bsn_tlv_actor_system_priority_OF_VERSION_1_3_check_scalars(
 
     of_bsn_tlv_actor_system_priority_value_get(obj, &val16);
     TEST_ASSERT(VAR_UINT16_T_CHECK(val16, value));
+    value += 1;
+
+    return value;
+}
+
+
+/**
+ * Populate the scalar values in obj of type of_bsn_tlv_admin_state,
+ * version OF_VERSION_1_3
+ * @param obj Pointer to an object to populate
+ * @param value The seed value to use in populating the object
+ * @returns The value after increments for this object's values
+ */
+int of_bsn_tlv_admin_state_OF_VERSION_1_3_populate_scalars(
+    of_bsn_tlv_admin_state_t *obj, int value) {
+    uint8_t val8;
+
+    VAR_UINT8_T_INIT(val8, value);
+    of_bsn_tlv_admin_state_value_set(obj, val8);
+    value += 1;
+
+    return value;
+}
+
+/**
+ * Check scalar values in obj of type of_bsn_tlv_admin_state,
+ * version OF_VERSION_1_3
+ * @param obj Pointer to an object to check
+ * @param value Starting value for checking
+ * @returns The value after increments for this object's values
+ */
+int of_bsn_tlv_admin_state_OF_VERSION_1_3_check_scalars(
+    of_bsn_tlv_admin_state_t *obj, int value) {
+    uint8_t val8;
+
+    of_bsn_tlv_admin_state_value_get(obj, &val8);
+    TEST_ASSERT(VAR_UINT8_T_CHECK(val8, value));
     value += 1;
 
     return value;
@@ -118938,6 +119056,43 @@ int of_bsn_tlv_actor_system_priority_OF_VERSION_1_4_check_scalars(
 
     of_bsn_tlv_actor_system_priority_value_get(obj, &val16);
     TEST_ASSERT(VAR_UINT16_T_CHECK(val16, value));
+    value += 1;
+
+    return value;
+}
+
+
+/**
+ * Populate the scalar values in obj of type of_bsn_tlv_admin_state,
+ * version OF_VERSION_1_4
+ * @param obj Pointer to an object to populate
+ * @param value The seed value to use in populating the object
+ * @returns The value after increments for this object's values
+ */
+int of_bsn_tlv_admin_state_OF_VERSION_1_4_populate_scalars(
+    of_bsn_tlv_admin_state_t *obj, int value) {
+    uint8_t val8;
+
+    VAR_UINT8_T_INIT(val8, value);
+    of_bsn_tlv_admin_state_value_set(obj, val8);
+    value += 1;
+
+    return value;
+}
+
+/**
+ * Check scalar values in obj of type of_bsn_tlv_admin_state,
+ * version OF_VERSION_1_4
+ * @param obj Pointer to an object to check
+ * @param value Starting value for checking
+ * @returns The value after increments for this object's values
+ */
+int of_bsn_tlv_admin_state_OF_VERSION_1_4_check_scalars(
+    of_bsn_tlv_admin_state_t *obj, int value) {
+    uint8_t val8;
+
+    of_bsn_tlv_admin_state_value_get(obj, &val8);
+    TEST_ASSERT(VAR_UINT8_T_CHECK(val8, value));
     value += 1;
 
     return value;

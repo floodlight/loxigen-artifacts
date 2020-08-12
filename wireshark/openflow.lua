@@ -1628,6 +1628,11 @@ enum_v4_ofp_bsn_cml = {
     [3] = "OFP_BSN_CML_CPU_FORWARD",
 }
 
+enum_v4_ofp_bsn_admin_state = {
+    [0] = "OFP_BSN_ADMIN_STATE_DISABLED",
+    [1] = "OFP_BSN_ADMIN_STATE_ENABLED",
+}
+
 enum_v4_ofp_bsn_vlan_counter_constants = {
     [65535] = "OFP_BSN_VLAN_ALL",
 }
@@ -2625,6 +2630,11 @@ enum_v5_ofp_bsn_cml = {
     [1] = "OFP_BSN_CML_CPU_DROP",
     [2] = "OFP_BSN_CML_FORWARD",
     [3] = "OFP_BSN_CML_CPU_FORWARD",
+}
+
+enum_v5_ofp_bsn_admin_state = {
+    [0] = "OFP_BSN_ADMIN_STATE_DISABLED",
+    [1] = "OFP_BSN_ADMIN_STATE_ENABLED",
 }
 
 enum_v5_ofp_bsn_vlan_counter_constants = {
@@ -3746,6 +3756,11 @@ enum_v6_ofp_bsn_cml = {
     [1] = "OFP_BSN_CML_CPU_DROP",
     [2] = "OFP_BSN_CML_FORWARD",
     [3] = "OFP_BSN_CML_CPU_FORWARD",
+}
+
+enum_v6_ofp_bsn_admin_state = {
+    [0] = "OFP_BSN_ADMIN_STATE_DISABLED",
+    [1] = "OFP_BSN_ADMIN_STATE_ENABLED",
 }
 
 enum_v6_ofp_bsn_vlan_counter_constants = {
@@ -8833,6 +8848,9 @@ fields['of13.bsn_tlv_actor_system_mac.value'] = ProtoField.ether("of13.bsn_tlv_a
 fields['of13.bsn_tlv_actor_system_priority.type'] = ProtoField.uint16("of13.bsn_tlv_actor_system_priority.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_actor_system_priority.length'] = ProtoField.uint16("of13.bsn_tlv_actor_system_priority.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_actor_system_priority.value'] = ProtoField.uint16("of13.bsn_tlv_actor_system_priority.value", "value", base.DEC, nil)
+fields['of13.bsn_tlv_admin_state.type'] = ProtoField.uint16("of13.bsn_tlv_admin_state.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_admin_state.length'] = ProtoField.uint16("of13.bsn_tlv_admin_state.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_admin_state.value'] = ProtoField.uint32("of13.bsn_tlv_admin_state.value", "value", base.DEC, enum_v4_ofp_bsn_admin_state)
 fields['of13.bsn_tlv_analytics.type'] = ProtoField.uint16("of13.bsn_tlv_analytics.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_analytics.length'] = ProtoField.uint16("of13.bsn_tlv_analytics.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_anchor.type'] = ProtoField.uint16("of13.bsn_tlv_anchor.type", "type", base.DEC, nil)
@@ -11953,6 +11971,9 @@ fields['of14.bsn_tlv_actor_system_mac.value'] = ProtoField.ether("of14.bsn_tlv_a
 fields['of14.bsn_tlv_actor_system_priority.type'] = ProtoField.uint16("of14.bsn_tlv_actor_system_priority.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_actor_system_priority.length'] = ProtoField.uint16("of14.bsn_tlv_actor_system_priority.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_actor_system_priority.value'] = ProtoField.uint16("of14.bsn_tlv_actor_system_priority.value", "value", base.DEC, nil)
+fields['of14.bsn_tlv_admin_state.type'] = ProtoField.uint16("of14.bsn_tlv_admin_state.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_admin_state.length'] = ProtoField.uint16("of14.bsn_tlv_admin_state.length", "length", base.DEC, nil)
+fields['of14.bsn_tlv_admin_state.value'] = ProtoField.uint32("of14.bsn_tlv_admin_state.value", "value", base.DEC, enum_v5_ofp_bsn_admin_state)
 fields['of14.bsn_tlv_analytics.type'] = ProtoField.uint16("of14.bsn_tlv_analytics.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_analytics.length'] = ProtoField.uint16("of14.bsn_tlv_analytics.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_anchor.type'] = ProtoField.uint16("of14.bsn_tlv_anchor.type", "type", base.DEC, nil)
@@ -15359,6 +15380,9 @@ fields['of15.bsn_tlv_actor_system_mac.value'] = ProtoField.ether("of15.bsn_tlv_a
 fields['of15.bsn_tlv_actor_system_priority.type'] = ProtoField.uint16("of15.bsn_tlv_actor_system_priority.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_actor_system_priority.length'] = ProtoField.uint16("of15.bsn_tlv_actor_system_priority.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_actor_system_priority.value'] = ProtoField.uint16("of15.bsn_tlv_actor_system_priority.value", "value", base.DEC, nil)
+fields['of15.bsn_tlv_admin_state.type'] = ProtoField.uint16("of15.bsn_tlv_admin_state.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_admin_state.length'] = ProtoField.uint16("of15.bsn_tlv_admin_state.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_admin_state.value'] = ProtoField.uint32("of15.bsn_tlv_admin_state.value", "value", base.DEC, enum_v6_ofp_bsn_admin_state)
 fields['of15.bsn_tlv_analytics.type'] = ProtoField.uint16("of15.bsn_tlv_analytics.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_analytics.length'] = ProtoField.uint16("of15.bsn_tlv_analytics.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_anchor.type'] = ProtoField.uint16("of15.bsn_tlv_anchor.type", "type", base.DEC, nil)
@@ -22052,6 +22076,9 @@ p_of.fields = {
     fields['of13.bsn_tlv_actor_system_priority.type'],
     fields['of13.bsn_tlv_actor_system_priority.length'],
     fields['of13.bsn_tlv_actor_system_priority.value'],
+    fields['of13.bsn_tlv_admin_state.type'],
+    fields['of13.bsn_tlv_admin_state.length'],
+    fields['of13.bsn_tlv_admin_state.value'],
     fields['of13.bsn_tlv_analytics.type'],
     fields['of13.bsn_tlv_analytics.length'],
     fields['of13.bsn_tlv_anchor.type'],
@@ -25172,6 +25199,9 @@ p_of.fields = {
     fields['of14.bsn_tlv_actor_system_priority.type'],
     fields['of14.bsn_tlv_actor_system_priority.length'],
     fields['of14.bsn_tlv_actor_system_priority.value'],
+    fields['of14.bsn_tlv_admin_state.type'],
+    fields['of14.bsn_tlv_admin_state.length'],
+    fields['of14.bsn_tlv_admin_state.value'],
     fields['of14.bsn_tlv_analytics.type'],
     fields['of14.bsn_tlv_analytics.length'],
     fields['of14.bsn_tlv_anchor.type'],
@@ -28578,6 +28608,9 @@ p_of.fields = {
     fields['of15.bsn_tlv_actor_system_priority.type'],
     fields['of15.bsn_tlv_actor_system_priority.length'],
     fields['of15.bsn_tlv_actor_system_priority.value'],
+    fields['of15.bsn_tlv_admin_state.type'],
+    fields['of15.bsn_tlv_admin_state.length'],
+    fields['of15.bsn_tlv_admin_state.value'],
     fields['of15.bsn_tlv_analytics.type'],
     fields['of15.bsn_tlv_analytics.length'],
     fields['of15.bsn_tlv_anchor.type'],
@@ -40810,6 +40843,16 @@ function dissect_of_bsn_tlv_actor_system_priority_v4(reader, subtree)
 end
 of_bsn_tlv_v4_dissectors[40] = dissect_of_bsn_tlv_actor_system_priority_v4
 
+-- child class of_bsn_tlv_admin_state
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_admin_state_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_admin_state.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_admin_state.length')
+    read_uint8_t(reader, 4, subtree, 'of13.bsn_tlv_admin_state.value')
+    return 'of_bsn_tlv_admin_state'
+end
+of_bsn_tlv_v4_dissectors[216] = dissect_of_bsn_tlv_admin_state_v4
+
 -- child class of_bsn_tlv_analytics
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_analytics_v4(reader, subtree)
@@ -49390,6 +49433,16 @@ function dissect_of_bsn_tlv_actor_system_priority_v5(reader, subtree)
     return 'of_bsn_tlv_actor_system_priority'
 end
 of_bsn_tlv_v5_dissectors[40] = dissect_of_bsn_tlv_actor_system_priority_v5
+
+-- child class of_bsn_tlv_admin_state
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_admin_state_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_admin_state.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_admin_state.length')
+    read_uint8_t(reader, 5, subtree, 'of14.bsn_tlv_admin_state.value')
+    return 'of_bsn_tlv_admin_state'
+end
+of_bsn_tlv_v5_dissectors[216] = dissect_of_bsn_tlv_admin_state_v5
 
 -- child class of_bsn_tlv_analytics
 -- Child of of_bsn_tlv
@@ -58633,6 +58686,16 @@ function dissect_of_bsn_tlv_actor_system_priority_v6(reader, subtree)
     return 'of_bsn_tlv_actor_system_priority'
 end
 of_bsn_tlv_v6_dissectors[40] = dissect_of_bsn_tlv_actor_system_priority_v6
+
+-- child class of_bsn_tlv_admin_state
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_admin_state_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_admin_state.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_admin_state.length')
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_tlv_admin_state.value')
+    return 'of_bsn_tlv_admin_state'
+end
+of_bsn_tlv_v6_dissectors[216] = dissect_of_bsn_tlv_admin_state_v6
 
 -- child class of_bsn_tlv_analytics
 -- Child of of_bsn_tlv

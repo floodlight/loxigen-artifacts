@@ -67,6 +67,9 @@ abstract class OFBsnTlvVer13 {
                case (short) 0x28:
                    // discriminator value 0x28=0x28 for class OFBsnTlvActorSystemPriorityVer13
                    return OFBsnTlvActorSystemPriorityVer13.READER.readFrom(bb);
+               case (short) 0xd8:
+                   // discriminator value 0xd8=0xd8 for class OFBsnTlvAdminStateVer13
+                   return OFBsnTlvAdminStateVer13.READER.readFrom(bb);
                case (short) 0xce:
                    // discriminator value 0xce=0xce for class OFBsnTlvAnalyticsVer13
                    return OFBsnTlvAnalyticsVer13.READER.readFrom(bb);

@@ -1251,6 +1251,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_admin_state_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_analytics_dup(
         of_object_t *src);
 
@@ -6655,6 +6659,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_admin_state_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_analytics_OF_VERSION_1_3_dup(
         of_object_t *src);
 
@@ -9728,6 +9736,10 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_tlv_actor_system_priority_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_admin_state_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *

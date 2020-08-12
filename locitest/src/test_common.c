@@ -5671,6 +5671,18 @@ test_ident_macros(void)
     TEST_ASSERT(!OFP_BSN_CML_CPU_FORWARD_SUPPORTED(OF_VERSION_1_2));
     TEST_ASSERT(OFP_BSN_CML_CPU_FORWARD_SUPPORTED(OF_VERSION_1_3));
     TEST_ASSERT(OFP_BSN_CML_CPU_FORWARD_SUPPORTED(OF_VERSION_1_4));
+    value = OFP_BSN_ADMIN_STATE_DISABLED;
+    TEST_ASSERT(!OFP_BSN_ADMIN_STATE_DISABLED_SUPPORTED(OF_VERSION_1_0));
+    TEST_ASSERT(!OFP_BSN_ADMIN_STATE_DISABLED_SUPPORTED(OF_VERSION_1_1));
+    TEST_ASSERT(!OFP_BSN_ADMIN_STATE_DISABLED_SUPPORTED(OF_VERSION_1_2));
+    TEST_ASSERT(OFP_BSN_ADMIN_STATE_DISABLED_SUPPORTED(OF_VERSION_1_3));
+    TEST_ASSERT(OFP_BSN_ADMIN_STATE_DISABLED_SUPPORTED(OF_VERSION_1_4));
+    value = OFP_BSN_ADMIN_STATE_ENABLED;
+    TEST_ASSERT(!OFP_BSN_ADMIN_STATE_ENABLED_SUPPORTED(OF_VERSION_1_0));
+    TEST_ASSERT(!OFP_BSN_ADMIN_STATE_ENABLED_SUPPORTED(OF_VERSION_1_1));
+    TEST_ASSERT(!OFP_BSN_ADMIN_STATE_ENABLED_SUPPORTED(OF_VERSION_1_2));
+    TEST_ASSERT(OFP_BSN_ADMIN_STATE_ENABLED_SUPPORTED(OF_VERSION_1_3));
+    TEST_ASSERT(OFP_BSN_ADMIN_STATE_ENABLED_SUPPORTED(OF_VERSION_1_4));
     value = OFP_BSN_VLAN_ALL;
     TEST_ASSERT(!OFP_BSN_VLAN_ALL_SUPPORTED(OF_VERSION_1_0));
     TEST_ASSERT(!OFP_BSN_VLAN_ALL_SUPPORTED(OF_VERSION_1_1));
@@ -10023,6 +10035,10 @@ test_dump_objs(void)
     of_object_dump((loci_writer_f)fprintf, out, obj);
     of_object_delete(obj);
 
+    obj = (of_object_t *)of_bsn_tlv_admin_state_new(OF_VERSION_1_3);
+    of_object_dump((loci_writer_f)fprintf, out, obj);
+    of_object_delete(obj);
+
     obj = (of_object_t *)of_bsn_tlv_analytics_new(OF_VERSION_1_3);
     of_object_dump((loci_writer_f)fprintf, out, obj);
     of_object_delete(obj);
@@ -12869,6 +12885,10 @@ test_dump_objs(void)
     of_object_delete(obj);
 
     obj = (of_object_t *)of_bsn_tlv_actor_system_priority_new(OF_VERSION_1_4);
+    of_object_dump((loci_writer_f)fprintf, out, obj);
+    of_object_delete(obj);
+
+    obj = (of_object_t *)of_bsn_tlv_admin_state_new(OF_VERSION_1_4);
     of_object_dump((loci_writer_f)fprintf, out, obj);
     of_object_delete(obj);
 
