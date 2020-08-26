@@ -1,1 +1,1 @@
-3b6f90f52b5b5f89a76ddaccbb5d748acbd1b7c8 Merge pull request #671 from poolakiran/SWL-6104
+aeba26e7fa58b5f9c0cef5c9b56afccebd5ffd91 Generate python2 and python3 versions of connection.py Rename "python" Makefile targets to "python2" Explicitly invoke "python2" instead of relying on "python" symlink
