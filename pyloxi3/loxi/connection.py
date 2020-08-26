@@ -206,7 +206,7 @@ class Connection(Thread):
         assert not self.finished
         self.logger.debug("Stopping connection")
         self.finished = True
-        os.write(self.wakeup_wr, "x")
+        os.write(self.wakeup_wr, b"x")
         self.join()
         self.sock.close()
         os.close(self.wakeup_rd)
