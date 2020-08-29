@@ -28046,6 +28046,10 @@ of_bsn_tlv_OF_VERSION_1_3_dup(
         return of_bsn_tlv_load_OF_VERSION_1_3_dup(src);
     }
 
+    if (src->object_id == OF_BSN_TLV_LOOKUP_COUNT) {
+        return of_bsn_tlv_lookup_count_OF_VERSION_1_3_dup(src);
+    }
+
     if (src->object_id == OF_BSN_TLV_LOOPBACK_MODE) {
         return of_bsn_tlv_loopback_mode_OF_VERSION_1_3_dup(src);
     }
@@ -28068,6 +28072,10 @@ of_bsn_tlv_OF_VERSION_1_3_dup(
 
     if (src->object_id == OF_BSN_TLV_MAC_MASK) {
         return of_bsn_tlv_mac_mask_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_MATCHED_COUNT) {
+        return of_bsn_tlv_matched_count_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_BSN_TLV_MAX_COUNT) {
@@ -31048,6 +31056,31 @@ of_bsn_tlv_load_OF_VERSION_1_3_dup(
 }
 
 /**
+ * Duplicate an object of type of_bsn_tlv_lookup_count
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_lookup_count.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_lookup_count_t *
+of_bsn_tlv_lookup_count_OF_VERSION_1_3_dup(
+    of_bsn_tlv_lookup_count_t *src)
+{
+    of_bsn_tlv_lookup_count_t *dst;
+    uint64_t val64;
+
+    if ((dst = of_bsn_tlv_lookup_count_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_lookup_count_value_get(src, &val64);
+    of_bsn_tlv_lookup_count_value_set(dst, val64);
+
+    return dst;
+}
+
+/**
  * Duplicate an object of type of_bsn_tlv_loopback_mode
  * using accessor functions
  * @param src Pointer to object to be duplicated
@@ -31185,6 +31218,31 @@ of_bsn_tlv_mac_mask_OF_VERSION_1_3_dup(
 
     of_bsn_tlv_mac_mask_value_get(src, &mac_addr);
     of_bsn_tlv_mac_mask_value_set(dst, mac_addr);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_matched_count
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_matched_count.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_matched_count_t *
+of_bsn_tlv_matched_count_OF_VERSION_1_3_dup(
+    of_bsn_tlv_matched_count_t *src)
+{
+    of_bsn_tlv_matched_count_t *dst;
+    uint64_t val64;
+
+    if ((dst = of_bsn_tlv_matched_count_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_matched_count_value_get(src, &val64);
+    of_bsn_tlv_matched_count_value_set(dst, val64);
 
     return dst;
 }
@@ -53187,6 +53245,10 @@ of_bsn_tlv_OF_VERSION_1_4_dup(
         return of_bsn_tlv_load_OF_VERSION_1_4_dup(src);
     }
 
+    if (src->object_id == OF_BSN_TLV_LOOKUP_COUNT) {
+        return of_bsn_tlv_lookup_count_OF_VERSION_1_4_dup(src);
+    }
+
     if (src->object_id == OF_BSN_TLV_LOOPBACK_MODE) {
         return of_bsn_tlv_loopback_mode_OF_VERSION_1_4_dup(src);
     }
@@ -53209,6 +53271,10 @@ of_bsn_tlv_OF_VERSION_1_4_dup(
 
     if (src->object_id == OF_BSN_TLV_MAC_MASK) {
         return of_bsn_tlv_mac_mask_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_MATCHED_COUNT) {
+        return of_bsn_tlv_matched_count_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_BSN_TLV_MAX_COUNT) {
@@ -56189,6 +56255,31 @@ of_bsn_tlv_load_OF_VERSION_1_4_dup(
 }
 
 /**
+ * Duplicate an object of type of_bsn_tlv_lookup_count
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_lookup_count.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_lookup_count_t *
+of_bsn_tlv_lookup_count_OF_VERSION_1_4_dup(
+    of_bsn_tlv_lookup_count_t *src)
+{
+    of_bsn_tlv_lookup_count_t *dst;
+    uint64_t val64;
+
+    if ((dst = of_bsn_tlv_lookup_count_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_lookup_count_value_get(src, &val64);
+    of_bsn_tlv_lookup_count_value_set(dst, val64);
+
+    return dst;
+}
+
+/**
  * Duplicate an object of type of_bsn_tlv_loopback_mode
  * using accessor functions
  * @param src Pointer to object to be duplicated
@@ -56326,6 +56417,31 @@ of_bsn_tlv_mac_mask_OF_VERSION_1_4_dup(
 
     of_bsn_tlv_mac_mask_value_get(src, &mac_addr);
     of_bsn_tlv_mac_mask_value_set(dst, mac_addr);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_matched_count
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_matched_count.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_matched_count_t *
+of_bsn_tlv_matched_count_OF_VERSION_1_4_dup(
+    of_bsn_tlv_matched_count_t *src)
+{
+    of_bsn_tlv_matched_count_t *dst;
+    uint64_t val64;
+
+    if ((dst = of_bsn_tlv_matched_count_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_matched_count_value_get(src, &val64);
+    of_bsn_tlv_matched_count_value_set(dst, val64);
 
     return dst;
 }
@@ -77647,6 +77763,23 @@ of_bsn_tlv_load_dup(
 }
 
 of_object_t *
+of_bsn_tlv_lookup_count_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_tlv_lookup_count_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_bsn_tlv_lookup_count_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
 of_bsn_tlv_loopback_mode_dup(
     of_object_t *src)
 {
@@ -77742,6 +77875,23 @@ of_bsn_tlv_mac_mask_dup(
 
     if (src->version == OF_VERSION_1_4) {
         return of_bsn_tlv_mac_mask_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_bsn_tlv_matched_count_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_tlv_matched_count_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_bsn_tlv_matched_count_OF_VERSION_1_4_dup(src);
     }
 
     /* Class not supported in given version */

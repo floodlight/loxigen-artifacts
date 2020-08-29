@@ -12772,6 +12772,33 @@ int of_bsn_tlv_load_OF_VERSION_1_0_check_scalars(
 
 
 /**
+ * Populate the scalar values in obj of type of_bsn_tlv_lookup_count,
+ * version OF_VERSION_1_0
+ * @param obj Pointer to an object to populate
+ * @param value The seed value to use in populating the object
+ * @returns The value after increments for this object's values
+ */
+int of_bsn_tlv_lookup_count_OF_VERSION_1_0_populate_scalars(
+    of_bsn_tlv_lookup_count_t *obj, int value) {
+
+    return value;
+}
+
+/**
+ * Check scalar values in obj of type of_bsn_tlv_lookup_count,
+ * version OF_VERSION_1_0
+ * @param obj Pointer to an object to check
+ * @param value Starting value for checking
+ * @returns The value after increments for this object's values
+ */
+int of_bsn_tlv_lookup_count_OF_VERSION_1_0_check_scalars(
+    of_bsn_tlv_lookup_count_t *obj, int value) {
+
+    return value;
+}
+
+
+/**
  * Populate the scalar values in obj of type of_bsn_tlv_loopback_mode,
  * version OF_VERSION_1_0
  * @param obj Pointer to an object to populate
@@ -12928,6 +12955,33 @@ int of_bsn_tlv_mac_mask_OF_VERSION_1_0_populate_scalars(
  */
 int of_bsn_tlv_mac_mask_OF_VERSION_1_0_check_scalars(
     of_bsn_tlv_mac_mask_t *obj, int value) {
+
+    return value;
+}
+
+
+/**
+ * Populate the scalar values in obj of type of_bsn_tlv_matched_count,
+ * version OF_VERSION_1_0
+ * @param obj Pointer to an object to populate
+ * @param value The seed value to use in populating the object
+ * @returns The value after increments for this object's values
+ */
+int of_bsn_tlv_matched_count_OF_VERSION_1_0_populate_scalars(
+    of_bsn_tlv_matched_count_t *obj, int value) {
+
+    return value;
+}
+
+/**
+ * Check scalar values in obj of type of_bsn_tlv_matched_count,
+ * version OF_VERSION_1_0
+ * @param obj Pointer to an object to check
+ * @param value Starting value for checking
+ * @returns The value after increments for this object's values
+ */
+int of_bsn_tlv_matched_count_OF_VERSION_1_0_check_scalars(
+    of_bsn_tlv_matched_count_t *obj, int value) {
 
     return value;
 }
@@ -36939,6 +36993,33 @@ int of_bsn_tlv_load_OF_VERSION_1_1_check_scalars(
 
 
 /**
+ * Populate the scalar values in obj of type of_bsn_tlv_lookup_count,
+ * version OF_VERSION_1_1
+ * @param obj Pointer to an object to populate
+ * @param value The seed value to use in populating the object
+ * @returns The value after increments for this object's values
+ */
+int of_bsn_tlv_lookup_count_OF_VERSION_1_1_populate_scalars(
+    of_bsn_tlv_lookup_count_t *obj, int value) {
+
+    return value;
+}
+
+/**
+ * Check scalar values in obj of type of_bsn_tlv_lookup_count,
+ * version OF_VERSION_1_1
+ * @param obj Pointer to an object to check
+ * @param value Starting value for checking
+ * @returns The value after increments for this object's values
+ */
+int of_bsn_tlv_lookup_count_OF_VERSION_1_1_check_scalars(
+    of_bsn_tlv_lookup_count_t *obj, int value) {
+
+    return value;
+}
+
+
+/**
  * Populate the scalar values in obj of type of_bsn_tlv_loopback_mode,
  * version OF_VERSION_1_1
  * @param obj Pointer to an object to populate
@@ -37095,6 +37176,33 @@ int of_bsn_tlv_mac_mask_OF_VERSION_1_1_populate_scalars(
  */
 int of_bsn_tlv_mac_mask_OF_VERSION_1_1_check_scalars(
     of_bsn_tlv_mac_mask_t *obj, int value) {
+
+    return value;
+}
+
+
+/**
+ * Populate the scalar values in obj of type of_bsn_tlv_matched_count,
+ * version OF_VERSION_1_1
+ * @param obj Pointer to an object to populate
+ * @param value The seed value to use in populating the object
+ * @returns The value after increments for this object's values
+ */
+int of_bsn_tlv_matched_count_OF_VERSION_1_1_populate_scalars(
+    of_bsn_tlv_matched_count_t *obj, int value) {
+
+    return value;
+}
+
+/**
+ * Check scalar values in obj of type of_bsn_tlv_matched_count,
+ * version OF_VERSION_1_1
+ * @param obj Pointer to an object to check
+ * @param value Starting value for checking
+ * @returns The value after increments for this object's values
+ */
+int of_bsn_tlv_matched_count_OF_VERSION_1_1_check_scalars(
+    of_bsn_tlv_matched_count_t *obj, int value) {
 
     return value;
 }
@@ -61430,6 +61538,33 @@ int of_bsn_tlv_load_OF_VERSION_1_2_check_scalars(
 
 
 /**
+ * Populate the scalar values in obj of type of_bsn_tlv_lookup_count,
+ * version OF_VERSION_1_2
+ * @param obj Pointer to an object to populate
+ * @param value The seed value to use in populating the object
+ * @returns The value after increments for this object's values
+ */
+int of_bsn_tlv_lookup_count_OF_VERSION_1_2_populate_scalars(
+    of_bsn_tlv_lookup_count_t *obj, int value) {
+
+    return value;
+}
+
+/**
+ * Check scalar values in obj of type of_bsn_tlv_lookup_count,
+ * version OF_VERSION_1_2
+ * @param obj Pointer to an object to check
+ * @param value Starting value for checking
+ * @returns The value after increments for this object's values
+ */
+int of_bsn_tlv_lookup_count_OF_VERSION_1_2_check_scalars(
+    of_bsn_tlv_lookup_count_t *obj, int value) {
+
+    return value;
+}
+
+
+/**
  * Populate the scalar values in obj of type of_bsn_tlv_loopback_mode,
  * version OF_VERSION_1_2
  * @param obj Pointer to an object to populate
@@ -61586,6 +61721,33 @@ int of_bsn_tlv_mac_mask_OF_VERSION_1_2_populate_scalars(
  */
 int of_bsn_tlv_mac_mask_OF_VERSION_1_2_check_scalars(
     of_bsn_tlv_mac_mask_t *obj, int value) {
+
+    return value;
+}
+
+
+/**
+ * Populate the scalar values in obj of type of_bsn_tlv_matched_count,
+ * version OF_VERSION_1_2
+ * @param obj Pointer to an object to populate
+ * @param value The seed value to use in populating the object
+ * @returns The value after increments for this object's values
+ */
+int of_bsn_tlv_matched_count_OF_VERSION_1_2_populate_scalars(
+    of_bsn_tlv_matched_count_t *obj, int value) {
+
+    return value;
+}
+
+/**
+ * Check scalar values in obj of type of_bsn_tlv_matched_count,
+ * version OF_VERSION_1_2
+ * @param obj Pointer to an object to check
+ * @param value Starting value for checking
+ * @returns The value after increments for this object's values
+ */
+int of_bsn_tlv_matched_count_OF_VERSION_1_2_check_scalars(
+    of_bsn_tlv_matched_count_t *obj, int value) {
 
     return value;
 }
@@ -91095,6 +91257,43 @@ int of_bsn_tlv_load_OF_VERSION_1_3_check_scalars(
 
 
 /**
+ * Populate the scalar values in obj of type of_bsn_tlv_lookup_count,
+ * version OF_VERSION_1_3
+ * @param obj Pointer to an object to populate
+ * @param value The seed value to use in populating the object
+ * @returns The value after increments for this object's values
+ */
+int of_bsn_tlv_lookup_count_OF_VERSION_1_3_populate_scalars(
+    of_bsn_tlv_lookup_count_t *obj, int value) {
+    uint64_t val64;
+
+    VAR_UINT64_T_INIT(val64, value);
+    of_bsn_tlv_lookup_count_value_set(obj, val64);
+    value += 1;
+
+    return value;
+}
+
+/**
+ * Check scalar values in obj of type of_bsn_tlv_lookup_count,
+ * version OF_VERSION_1_3
+ * @param obj Pointer to an object to check
+ * @param value Starting value for checking
+ * @returns The value after increments for this object's values
+ */
+int of_bsn_tlv_lookup_count_OF_VERSION_1_3_check_scalars(
+    of_bsn_tlv_lookup_count_t *obj, int value) {
+    uint64_t val64;
+
+    of_bsn_tlv_lookup_count_value_get(obj, &val64);
+    TEST_ASSERT(VAR_UINT64_T_CHECK(val64, value));
+    value += 1;
+
+    return value;
+}
+
+
+/**
  * Populate the scalar values in obj of type of_bsn_tlv_loopback_mode,
  * version OF_VERSION_1_3
  * @param obj Pointer to an object to populate
@@ -91290,6 +91489,43 @@ int of_bsn_tlv_mac_mask_OF_VERSION_1_3_check_scalars(
 
     of_bsn_tlv_mac_mask_value_get(obj, &mac_addr);
     TEST_ASSERT(VAR_OF_MAC_ADDR_T_CHECK(mac_addr, value));
+    value += 1;
+
+    return value;
+}
+
+
+/**
+ * Populate the scalar values in obj of type of_bsn_tlv_matched_count,
+ * version OF_VERSION_1_3
+ * @param obj Pointer to an object to populate
+ * @param value The seed value to use in populating the object
+ * @returns The value after increments for this object's values
+ */
+int of_bsn_tlv_matched_count_OF_VERSION_1_3_populate_scalars(
+    of_bsn_tlv_matched_count_t *obj, int value) {
+    uint64_t val64;
+
+    VAR_UINT64_T_INIT(val64, value);
+    of_bsn_tlv_matched_count_value_set(obj, val64);
+    value += 1;
+
+    return value;
+}
+
+/**
+ * Check scalar values in obj of type of_bsn_tlv_matched_count,
+ * version OF_VERSION_1_3
+ * @param obj Pointer to an object to check
+ * @param value Starting value for checking
+ * @returns The value after increments for this object's values
+ */
+int of_bsn_tlv_matched_count_OF_VERSION_1_3_check_scalars(
+    of_bsn_tlv_matched_count_t *obj, int value) {
+    uint64_t val64;
+
+    of_bsn_tlv_matched_count_value_get(obj, &val64);
+    TEST_ASSERT(VAR_UINT64_T_CHECK(val64, value));
     value += 1;
 
     return value;
@@ -122476,6 +122712,43 @@ int of_bsn_tlv_load_OF_VERSION_1_4_check_scalars(
 
 
 /**
+ * Populate the scalar values in obj of type of_bsn_tlv_lookup_count,
+ * version OF_VERSION_1_4
+ * @param obj Pointer to an object to populate
+ * @param value The seed value to use in populating the object
+ * @returns The value after increments for this object's values
+ */
+int of_bsn_tlv_lookup_count_OF_VERSION_1_4_populate_scalars(
+    of_bsn_tlv_lookup_count_t *obj, int value) {
+    uint64_t val64;
+
+    VAR_UINT64_T_INIT(val64, value);
+    of_bsn_tlv_lookup_count_value_set(obj, val64);
+    value += 1;
+
+    return value;
+}
+
+/**
+ * Check scalar values in obj of type of_bsn_tlv_lookup_count,
+ * version OF_VERSION_1_4
+ * @param obj Pointer to an object to check
+ * @param value Starting value for checking
+ * @returns The value after increments for this object's values
+ */
+int of_bsn_tlv_lookup_count_OF_VERSION_1_4_check_scalars(
+    of_bsn_tlv_lookup_count_t *obj, int value) {
+    uint64_t val64;
+
+    of_bsn_tlv_lookup_count_value_get(obj, &val64);
+    TEST_ASSERT(VAR_UINT64_T_CHECK(val64, value));
+    value += 1;
+
+    return value;
+}
+
+
+/**
  * Populate the scalar values in obj of type of_bsn_tlv_loopback_mode,
  * version OF_VERSION_1_4
  * @param obj Pointer to an object to populate
@@ -122671,6 +122944,43 @@ int of_bsn_tlv_mac_mask_OF_VERSION_1_4_check_scalars(
 
     of_bsn_tlv_mac_mask_value_get(obj, &mac_addr);
     TEST_ASSERT(VAR_OF_MAC_ADDR_T_CHECK(mac_addr, value));
+    value += 1;
+
+    return value;
+}
+
+
+/**
+ * Populate the scalar values in obj of type of_bsn_tlv_matched_count,
+ * version OF_VERSION_1_4
+ * @param obj Pointer to an object to populate
+ * @param value The seed value to use in populating the object
+ * @returns The value after increments for this object's values
+ */
+int of_bsn_tlv_matched_count_OF_VERSION_1_4_populate_scalars(
+    of_bsn_tlv_matched_count_t *obj, int value) {
+    uint64_t val64;
+
+    VAR_UINT64_T_INIT(val64, value);
+    of_bsn_tlv_matched_count_value_set(obj, val64);
+    value += 1;
+
+    return value;
+}
+
+/**
+ * Check scalar values in obj of type of_bsn_tlv_matched_count,
+ * version OF_VERSION_1_4
+ * @param obj Pointer to an object to check
+ * @param value Starting value for checking
+ * @returns The value after increments for this object's values
+ */
+int of_bsn_tlv_matched_count_OF_VERSION_1_4_check_scalars(
+    of_bsn_tlv_matched_count_t *obj, int value) {
+    uint64_t val64;
+
+    of_bsn_tlv_matched_count_value_get(obj, &val64);
+    TEST_ASSERT(VAR_UINT64_T_CHECK(val64, value));
     value += 1;
 
     return value;

@@ -7497,6 +7497,17 @@ typedef struct of_bsn_tlv_link_up_s of_bsn_tlv_link_up_t;
 typedef struct of_bsn_tlv_load_s of_bsn_tlv_load_t;
 
 /**
+ * Structure for of_bsn_tlv_lookup_count object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for value, a variable of type uint64.  Functions
+ *   are of type of_bsn_tlv_lookup_count_uint64_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_lookup_count_s of_bsn_tlv_lookup_count_t;
+
+/**
  * Structure for of_bsn_tlv_loopback_mode object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
@@ -7553,6 +7564,17 @@ typedef struct of_bsn_tlv_mac_s of_bsn_tlv_mac_t;
  *
  */
 typedef struct of_bsn_tlv_mac_mask_s of_bsn_tlv_mac_mask_t;
+
+/**
+ * Structure for of_bsn_tlv_matched_count object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for value, a variable of type uint64.  Functions
+ *   are of type of_bsn_tlv_matched_count_uint64_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_matched_count_s of_bsn_tlv_matched_count_t;
 
 /**
  * Structure for of_bsn_tlv_max_count object.  Get/set

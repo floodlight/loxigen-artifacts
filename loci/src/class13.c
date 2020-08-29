@@ -4359,6 +4359,12 @@ of_bsn_tlv_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
         case 0xd8:
             *id = OF_BSN_TLV_ADMIN_STATE;
             break;
+        case 0xd9:
+            *id = OF_BSN_TLV_MATCHED_COUNT;
+            break;
+        case 0xda:
+            *id = OF_BSN_TLV_LOOKUP_COUNT;
+            break;
         default:
             *id = OF_BSN_TLV;
             break;
@@ -5015,6 +5021,12 @@ of_bsn_tlv_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
             break;
         case 0xd8:
             *id = OF_BSN_TLV_ADMIN_STATE;
+            break;
+        case 0xd9:
+            *id = OF_BSN_TLV_MATCHED_COUNT;
+            break;
+        case 0xda:
+            *id = OF_BSN_TLV_LOOKUP_COUNT;
             break;
         default:
             *id = OF_BSN_TLV;
