@@ -1063,6 +1063,8 @@ void of_bsn_tlv_link_up_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
 void of_bsn_tlv_link_up_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_load_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_load_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_lookup_count_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_lookup_count_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_loopback_mode_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_loopback_mode_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_loopback_port_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -1075,6 +1077,8 @@ void of_bsn_tlv_mac_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_mac_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_mac_mask_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_mac_mask_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_matched_count_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_matched_count_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_max_count_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_max_count_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_mcg_type_vxlan_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -2076,12 +2080,14 @@ typedef of_object_t of_bsn_tlv_lag_options_t;
 typedef of_object_t of_bsn_tlv_lcore_t;
 typedef of_object_t of_bsn_tlv_link_up_t;
 typedef of_object_t of_bsn_tlv_load_t;
+typedef of_object_t of_bsn_tlv_lookup_count_t;
 typedef of_object_t of_bsn_tlv_loopback_mode_t;
 typedef of_object_t of_bsn_tlv_loopback_port_t;
 typedef of_object_t of_bsn_tlv_lossless_t;
 typedef of_object_t of_bsn_tlv_lr_all_enabled_t;
 typedef of_object_t of_bsn_tlv_mac_t;
 typedef of_object_t of_bsn_tlv_mac_mask_t;
+typedef of_object_t of_bsn_tlv_matched_count_t;
 typedef of_object_t of_bsn_tlv_max_count_t;
 typedef of_object_t of_bsn_tlv_mcg_type_vxlan_t;
 typedef of_object_t of_bsn_tlv_mgmt_t;
@@ -4612,6 +4618,11 @@ extern void of_bsn_tlv_load_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
+    of_bsn_tlv_lookup_count_new(of_version_t version);
+extern void of_bsn_tlv_lookup_count_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
     of_bsn_tlv_loopback_mode_new(of_version_t version);
 extern void of_bsn_tlv_loopback_mode_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
@@ -4639,6 +4650,11 @@ extern void of_bsn_tlv_mac_init(
 extern of_object_t *
     of_bsn_tlv_mac_mask_new(of_version_t version);
 extern void of_bsn_tlv_mac_mask_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_bsn_tlv_matched_count_new(of_version_t version);
+extern void of_bsn_tlv_matched_count_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
@@ -11490,6 +11506,17 @@ of_bsn_tlv_load_delete(of_object_t *obj) {
 }
 
 /**
+ * Delete an object of type of_bsn_tlv_lookup_count_t
+ * @param obj An instance of type of_bsn_tlv_lookup_count_t
+ *
+ * \ingroup of_bsn_tlv_lookup_count
+ */
+static inline void
+of_bsn_tlv_lookup_count_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
  * Delete an object of type of_bsn_tlv_loopback_mode_t
  * @param obj An instance of type of_bsn_tlv_loopback_mode_t
  *
@@ -11552,6 +11579,17 @@ of_bsn_tlv_mac_delete(of_object_t *obj) {
  */
 static inline void
 of_bsn_tlv_mac_mask_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_matched_count_t
+ * @param obj An instance of type of_bsn_tlv_matched_count_t
+ *
+ * \ingroup of_bsn_tlv_matched_count
+ */
+static inline void
+of_bsn_tlv_matched_count_delete(of_object_t *obj) {
     of_object_delete(obj);
 }
 
@@ -25318,6 +25356,15 @@ extern void of_bsn_tlv_load_value_get(
     of_bsn_tlv_load_t *obj,
     uint32_t *value);
 
+/* Unified accessor functions for of_bsn_tlv_lookup_count */
+
+extern void of_bsn_tlv_lookup_count_value_set(
+    of_bsn_tlv_lookup_count_t *obj,
+    uint64_t value);
+extern void of_bsn_tlv_lookup_count_value_get(
+    of_bsn_tlv_lookup_count_t *obj,
+    uint64_t *value);
+
 /* Unified accessor functions for of_bsn_tlv_loopback_mode */
 
 extern void of_bsn_tlv_loopback_mode_value_set(
@@ -25357,6 +25404,15 @@ extern void of_bsn_tlv_mac_mask_value_set(
 extern void of_bsn_tlv_mac_mask_value_get(
     of_bsn_tlv_mac_mask_t *obj,
     of_mac_addr_t *value);
+
+/* Unified accessor functions for of_bsn_tlv_matched_count */
+
+extern void of_bsn_tlv_matched_count_value_set(
+    of_bsn_tlv_matched_count_t *obj,
+    uint64_t value);
+extern void of_bsn_tlv_matched_count_value_get(
+    of_bsn_tlv_matched_count_t *obj,
+    uint64_t *value);
 
 /* Unified accessor functions for of_bsn_tlv_max_count */
 

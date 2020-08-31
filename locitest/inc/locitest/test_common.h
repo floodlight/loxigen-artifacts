@@ -7736,6 +7736,15 @@ extern int of_bsn_tlv_load_OF_VERSION_1_3_populate_scalars(
 extern int of_bsn_tlv_load_OF_VERSION_1_3_check_scalars(
     of_bsn_tlv_load_t *obj, int value);
 
+extern int of_bsn_tlv_lookup_count_OF_VERSION_1_3_populate(
+    of_bsn_tlv_lookup_count_t *obj, int value);
+extern int of_bsn_tlv_lookup_count_OF_VERSION_1_3_check(
+    of_bsn_tlv_lookup_count_t *obj, int value);
+extern int of_bsn_tlv_lookup_count_OF_VERSION_1_3_populate_scalars(
+    of_bsn_tlv_lookup_count_t *obj, int value);
+extern int of_bsn_tlv_lookup_count_OF_VERSION_1_3_check_scalars(
+    of_bsn_tlv_lookup_count_t *obj, int value);
+
 extern int of_bsn_tlv_loopback_mode_OF_VERSION_1_3_populate(
     of_bsn_tlv_loopback_mode_t *obj, int value);
 extern int of_bsn_tlv_loopback_mode_OF_VERSION_1_3_check(
@@ -7789,6 +7798,15 @@ extern int of_bsn_tlv_mac_mask_OF_VERSION_1_3_populate_scalars(
     of_bsn_tlv_mac_mask_t *obj, int value);
 extern int of_bsn_tlv_mac_mask_OF_VERSION_1_3_check_scalars(
     of_bsn_tlv_mac_mask_t *obj, int value);
+
+extern int of_bsn_tlv_matched_count_OF_VERSION_1_3_populate(
+    of_bsn_tlv_matched_count_t *obj, int value);
+extern int of_bsn_tlv_matched_count_OF_VERSION_1_3_check(
+    of_bsn_tlv_matched_count_t *obj, int value);
+extern int of_bsn_tlv_matched_count_OF_VERSION_1_3_populate_scalars(
+    of_bsn_tlv_matched_count_t *obj, int value);
+extern int of_bsn_tlv_matched_count_OF_VERSION_1_3_check_scalars(
+    of_bsn_tlv_matched_count_t *obj, int value);
 
 extern int of_bsn_tlv_max_count_OF_VERSION_1_3_populate(
     of_bsn_tlv_max_count_t *obj, int value);
@@ -14549,6 +14567,15 @@ extern int of_bsn_tlv_load_OF_VERSION_1_4_populate_scalars(
 extern int of_bsn_tlv_load_OF_VERSION_1_4_check_scalars(
     of_bsn_tlv_load_t *obj, int value);
 
+extern int of_bsn_tlv_lookup_count_OF_VERSION_1_4_populate(
+    of_bsn_tlv_lookup_count_t *obj, int value);
+extern int of_bsn_tlv_lookup_count_OF_VERSION_1_4_check(
+    of_bsn_tlv_lookup_count_t *obj, int value);
+extern int of_bsn_tlv_lookup_count_OF_VERSION_1_4_populate_scalars(
+    of_bsn_tlv_lookup_count_t *obj, int value);
+extern int of_bsn_tlv_lookup_count_OF_VERSION_1_4_check_scalars(
+    of_bsn_tlv_lookup_count_t *obj, int value);
+
 extern int of_bsn_tlv_loopback_mode_OF_VERSION_1_4_populate(
     of_bsn_tlv_loopback_mode_t *obj, int value);
 extern int of_bsn_tlv_loopback_mode_OF_VERSION_1_4_check(
@@ -14602,6 +14629,15 @@ extern int of_bsn_tlv_mac_mask_OF_VERSION_1_4_populate_scalars(
     of_bsn_tlv_mac_mask_t *obj, int value);
 extern int of_bsn_tlv_mac_mask_OF_VERSION_1_4_check_scalars(
     of_bsn_tlv_mac_mask_t *obj, int value);
+
+extern int of_bsn_tlv_matched_count_OF_VERSION_1_4_populate(
+    of_bsn_tlv_matched_count_t *obj, int value);
+extern int of_bsn_tlv_matched_count_OF_VERSION_1_4_check(
+    of_bsn_tlv_matched_count_t *obj, int value);
+extern int of_bsn_tlv_matched_count_OF_VERSION_1_4_populate_scalars(
+    of_bsn_tlv_matched_count_t *obj, int value);
+extern int of_bsn_tlv_matched_count_OF_VERSION_1_4_check_scalars(
+    of_bsn_tlv_matched_count_t *obj, int value);
 
 extern int of_bsn_tlv_max_count_OF_VERSION_1_4_populate(
     of_bsn_tlv_max_count_t *obj, int value);

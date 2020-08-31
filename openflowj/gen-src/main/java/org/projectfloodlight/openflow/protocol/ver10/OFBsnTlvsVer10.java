@@ -703,6 +703,13 @@ public class OFBsnTlvsVer10 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvLoad not supported in version 1.0");
     }
 
+    public OFBsnTlvLookupCount.Builder buildLookupCount() {
+        throw new UnsupportedOperationException("OFBsnTlvLookupCount not supported in version 1.0");
+    }
+    public OFBsnTlvLookupCount lookupCount(U64 value) {
+        throw new UnsupportedOperationException("OFBsnTlvLookupCount not supported in version 1.0");
+    }
+
     public OFBsnTlvLoopbackMode.Builder buildLoopbackMode() {
         throw new UnsupportedOperationException("OFBsnTlvLoopbackMode not supported in version 1.0");
     }
@@ -737,6 +744,13 @@ public class OFBsnTlvsVer10 implements OFBsnTlvs {
     }
     public OFBsnTlvMacMask macMask(MacAddress value) {
         throw new UnsupportedOperationException("OFBsnTlvMacMask not supported in version 1.0");
+    }
+
+    public OFBsnTlvMatchedCount.Builder buildMatchedCount() {
+        throw new UnsupportedOperationException("OFBsnTlvMatchedCount not supported in version 1.0");
+    }
+    public OFBsnTlvMatchedCount matchedCount(U64 value) {
+        throw new UnsupportedOperationException("OFBsnTlvMatchedCount not supported in version 1.0");
     }
 
     public OFBsnTlvMaxCount.Builder buildMaxCount() {

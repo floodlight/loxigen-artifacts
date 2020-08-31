@@ -358,6 +358,9 @@ abstract class OFBsnTlvVer14 {
                case (short) 0xd5:
                    // discriminator value 0xd5=0xd5 for class OFBsnTlvLoadVer14
                    return OFBsnTlvLoadVer14.READER.readFrom(bb);
+               case (short) 0xda:
+                   // discriminator value 0xda=0xda for class OFBsnTlvLookupCountVer14
+                   return OFBsnTlvLookupCountVer14.READER.readFrom(bb);
                case (short) 0x92:
                    // discriminator value 0x92=0x92 for class OFBsnTlvLoopbackModeVer14
                    return OFBsnTlvLoopbackModeVer14.READER.readFrom(bb);
@@ -376,6 +379,9 @@ abstract class OFBsnTlvVer14 {
                case (short) 0x38:
                    // discriminator value 0x38=0x38 for class OFBsnTlvMacMaskVer14
                    return OFBsnTlvMacMaskVer14.READER.readFrom(bb);
+               case (short) 0xd9:
+                   // discriminator value 0xd9=0xd9 for class OFBsnTlvMatchedCountVer14
+                   return OFBsnTlvMatchedCountVer14.READER.readFrom(bb);
                case (short) 0xd6:
                    // discriminator value 0xd6=0xd6 for class OFBsnTlvMaxCountVer14
                    return OFBsnTlvMaxCountVer14.READER.readFrom(bb);

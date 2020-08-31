@@ -9126,6 +9126,9 @@ fields['of13.bsn_tlv_link_up.length'] = ProtoField.uint16("of13.bsn_tlv_link_up.
 fields['of13.bsn_tlv_load.type'] = ProtoField.uint16("of13.bsn_tlv_load.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_load.length'] = ProtoField.uint16("of13.bsn_tlv_load.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_load.value'] = ProtoField.uint32("of13.bsn_tlv_load.value", "value", base.DEC, nil)
+fields['of13.bsn_tlv_lookup_count.type'] = ProtoField.uint16("of13.bsn_tlv_lookup_count.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_lookup_count.length'] = ProtoField.uint16("of13.bsn_tlv_lookup_count.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_lookup_count.value'] = ProtoField.uint64("of13.bsn_tlv_lookup_count.value", "value", base.DEC, nil)
 fields['of13.bsn_tlv_loopback_mode.type'] = ProtoField.uint16("of13.bsn_tlv_loopback_mode.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_loopback_mode.length'] = ProtoField.uint16("of13.bsn_tlv_loopback_mode.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_loopback_mode.value'] = ProtoField.uint32("of13.bsn_tlv_loopback_mode.value", "value", base.DEC, enum_v4_ofp_bsn_loopback_mode)
@@ -9142,6 +9145,9 @@ fields['of13.bsn_tlv_mac.value'] = ProtoField.ether("of13.bsn_tlv_mac.value", "v
 fields['of13.bsn_tlv_mac_mask.type'] = ProtoField.uint16("of13.bsn_tlv_mac_mask.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_mac_mask.length'] = ProtoField.uint16("of13.bsn_tlv_mac_mask.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_mac_mask.value'] = ProtoField.ether("of13.bsn_tlv_mac_mask.value", "value")
+fields['of13.bsn_tlv_matched_count.type'] = ProtoField.uint16("of13.bsn_tlv_matched_count.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_matched_count.length'] = ProtoField.uint16("of13.bsn_tlv_matched_count.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_matched_count.value'] = ProtoField.uint64("of13.bsn_tlv_matched_count.value", "value", base.DEC, nil)
 fields['of13.bsn_tlv_max_count.type'] = ProtoField.uint16("of13.bsn_tlv_max_count.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_max_count.length'] = ProtoField.uint16("of13.bsn_tlv_max_count.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_max_count.value'] = ProtoField.uint32("of13.bsn_tlv_max_count.value", "value", base.DEC, nil)
@@ -12249,6 +12255,9 @@ fields['of14.bsn_tlv_link_up.length'] = ProtoField.uint16("of14.bsn_tlv_link_up.
 fields['of14.bsn_tlv_load.type'] = ProtoField.uint16("of14.bsn_tlv_load.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_load.length'] = ProtoField.uint16("of14.bsn_tlv_load.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_load.value'] = ProtoField.uint32("of14.bsn_tlv_load.value", "value", base.DEC, nil)
+fields['of14.bsn_tlv_lookup_count.type'] = ProtoField.uint16("of14.bsn_tlv_lookup_count.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_lookup_count.length'] = ProtoField.uint16("of14.bsn_tlv_lookup_count.length", "length", base.DEC, nil)
+fields['of14.bsn_tlv_lookup_count.value'] = ProtoField.uint64("of14.bsn_tlv_lookup_count.value", "value", base.DEC, nil)
 fields['of14.bsn_tlv_loopback_mode.type'] = ProtoField.uint16("of14.bsn_tlv_loopback_mode.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_loopback_mode.length'] = ProtoField.uint16("of14.bsn_tlv_loopback_mode.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_loopback_mode.value'] = ProtoField.uint32("of14.bsn_tlv_loopback_mode.value", "value", base.DEC, enum_v5_ofp_bsn_loopback_mode)
@@ -12265,6 +12274,9 @@ fields['of14.bsn_tlv_mac.value'] = ProtoField.ether("of14.bsn_tlv_mac.value", "v
 fields['of14.bsn_tlv_mac_mask.type'] = ProtoField.uint16("of14.bsn_tlv_mac_mask.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_mac_mask.length'] = ProtoField.uint16("of14.bsn_tlv_mac_mask.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_mac_mask.value'] = ProtoField.ether("of14.bsn_tlv_mac_mask.value", "value")
+fields['of14.bsn_tlv_matched_count.type'] = ProtoField.uint16("of14.bsn_tlv_matched_count.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_matched_count.length'] = ProtoField.uint16("of14.bsn_tlv_matched_count.length", "length", base.DEC, nil)
+fields['of14.bsn_tlv_matched_count.value'] = ProtoField.uint64("of14.bsn_tlv_matched_count.value", "value", base.DEC, nil)
 fields['of14.bsn_tlv_max_count.type'] = ProtoField.uint16("of14.bsn_tlv_max_count.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_max_count.length'] = ProtoField.uint16("of14.bsn_tlv_max_count.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_max_count.value'] = ProtoField.uint32("of14.bsn_tlv_max_count.value", "value", base.DEC, nil)
@@ -15658,6 +15670,9 @@ fields['of15.bsn_tlv_link_up.length'] = ProtoField.uint16("of15.bsn_tlv_link_up.
 fields['of15.bsn_tlv_load.type'] = ProtoField.uint16("of15.bsn_tlv_load.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_load.length'] = ProtoField.uint16("of15.bsn_tlv_load.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_load.value'] = ProtoField.uint32("of15.bsn_tlv_load.value", "value", base.DEC, nil)
+fields['of15.bsn_tlv_lookup_count.type'] = ProtoField.uint16("of15.bsn_tlv_lookup_count.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_lookup_count.length'] = ProtoField.uint16("of15.bsn_tlv_lookup_count.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_lookup_count.value'] = ProtoField.uint64("of15.bsn_tlv_lookup_count.value", "value", base.DEC, nil)
 fields['of15.bsn_tlv_loopback_mode.type'] = ProtoField.uint16("of15.bsn_tlv_loopback_mode.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_loopback_mode.length'] = ProtoField.uint16("of15.bsn_tlv_loopback_mode.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_loopback_mode.value'] = ProtoField.uint32("of15.bsn_tlv_loopback_mode.value", "value", base.DEC, enum_v6_ofp_bsn_loopback_mode)
@@ -15674,6 +15689,9 @@ fields['of15.bsn_tlv_mac.value'] = ProtoField.ether("of15.bsn_tlv_mac.value", "v
 fields['of15.bsn_tlv_mac_mask.type'] = ProtoField.uint16("of15.bsn_tlv_mac_mask.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_mac_mask.length'] = ProtoField.uint16("of15.bsn_tlv_mac_mask.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_mac_mask.value'] = ProtoField.ether("of15.bsn_tlv_mac_mask.value", "value")
+fields['of15.bsn_tlv_matched_count.type'] = ProtoField.uint16("of15.bsn_tlv_matched_count.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_matched_count.length'] = ProtoField.uint16("of15.bsn_tlv_matched_count.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_matched_count.value'] = ProtoField.uint64("of15.bsn_tlv_matched_count.value", "value", base.DEC, nil)
 fields['of15.bsn_tlv_max_count.type'] = ProtoField.uint16("of15.bsn_tlv_max_count.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_max_count.length'] = ProtoField.uint16("of15.bsn_tlv_max_count.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_max_count.value'] = ProtoField.uint32("of15.bsn_tlv_max_count.value", "value", base.DEC, nil)
@@ -22354,6 +22372,9 @@ p_of.fields = {
     fields['of13.bsn_tlv_load.type'],
     fields['of13.bsn_tlv_load.length'],
     fields['of13.bsn_tlv_load.value'],
+    fields['of13.bsn_tlv_lookup_count.type'],
+    fields['of13.bsn_tlv_lookup_count.length'],
+    fields['of13.bsn_tlv_lookup_count.value'],
     fields['of13.bsn_tlv_loopback_mode.type'],
     fields['of13.bsn_tlv_loopback_mode.length'],
     fields['of13.bsn_tlv_loopback_mode.value'],
@@ -22370,6 +22391,9 @@ p_of.fields = {
     fields['of13.bsn_tlv_mac_mask.type'],
     fields['of13.bsn_tlv_mac_mask.length'],
     fields['of13.bsn_tlv_mac_mask.value'],
+    fields['of13.bsn_tlv_matched_count.type'],
+    fields['of13.bsn_tlv_matched_count.length'],
+    fields['of13.bsn_tlv_matched_count.value'],
     fields['of13.bsn_tlv_max_count.type'],
     fields['of13.bsn_tlv_max_count.length'],
     fields['of13.bsn_tlv_max_count.value'],
@@ -25477,6 +25501,9 @@ p_of.fields = {
     fields['of14.bsn_tlv_load.type'],
     fields['of14.bsn_tlv_load.length'],
     fields['of14.bsn_tlv_load.value'],
+    fields['of14.bsn_tlv_lookup_count.type'],
+    fields['of14.bsn_tlv_lookup_count.length'],
+    fields['of14.bsn_tlv_lookup_count.value'],
     fields['of14.bsn_tlv_loopback_mode.type'],
     fields['of14.bsn_tlv_loopback_mode.length'],
     fields['of14.bsn_tlv_loopback_mode.value'],
@@ -25493,6 +25520,9 @@ p_of.fields = {
     fields['of14.bsn_tlv_mac_mask.type'],
     fields['of14.bsn_tlv_mac_mask.length'],
     fields['of14.bsn_tlv_mac_mask.value'],
+    fields['of14.bsn_tlv_matched_count.type'],
+    fields['of14.bsn_tlv_matched_count.length'],
+    fields['of14.bsn_tlv_matched_count.value'],
     fields['of14.bsn_tlv_max_count.type'],
     fields['of14.bsn_tlv_max_count.length'],
     fields['of14.bsn_tlv_max_count.value'],
@@ -28886,6 +28916,9 @@ p_of.fields = {
     fields['of15.bsn_tlv_load.type'],
     fields['of15.bsn_tlv_load.length'],
     fields['of15.bsn_tlv_load.value'],
+    fields['of15.bsn_tlv_lookup_count.type'],
+    fields['of15.bsn_tlv_lookup_count.length'],
+    fields['of15.bsn_tlv_lookup_count.value'],
     fields['of15.bsn_tlv_loopback_mode.type'],
     fields['of15.bsn_tlv_loopback_mode.length'],
     fields['of15.bsn_tlv_loopback_mode.value'],
@@ -28902,6 +28935,9 @@ p_of.fields = {
     fields['of15.bsn_tlv_mac_mask.type'],
     fields['of15.bsn_tlv_mac_mask.length'],
     fields['of15.bsn_tlv_mac_mask.value'],
+    fields['of15.bsn_tlv_matched_count.type'],
+    fields['of15.bsn_tlv_matched_count.length'],
+    fields['of15.bsn_tlv_matched_count.value'],
     fields['of15.bsn_tlv_max_count.type'],
     fields['of15.bsn_tlv_max_count.length'],
     fields['of15.bsn_tlv_max_count.value'],
@@ -41812,6 +41848,16 @@ function dissect_of_bsn_tlv_load_v4(reader, subtree)
 end
 of_bsn_tlv_v4_dissectors[213] = dissect_of_bsn_tlv_load_v4
 
+-- child class of_bsn_tlv_lookup_count
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_lookup_count_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_lookup_count.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_lookup_count.length')
+    read_uint64_t(reader, 4, subtree, 'of13.bsn_tlv_lookup_count.value')
+    return 'of_bsn_tlv_lookup_count'
+end
+of_bsn_tlv_v4_dissectors[218] = dissect_of_bsn_tlv_lookup_count_v4
+
 -- child class of_bsn_tlv_loopback_mode
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_loopback_mode_v4(reader, subtree)
@@ -41869,6 +41915,16 @@ function dissect_of_bsn_tlv_mac_mask_v4(reader, subtree)
     return 'of_bsn_tlv_mac_mask'
 end
 of_bsn_tlv_v4_dissectors[56] = dissect_of_bsn_tlv_mac_mask_v4
+
+-- child class of_bsn_tlv_matched_count
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_matched_count_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_matched_count.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_matched_count.length')
+    read_uint64_t(reader, 4, subtree, 'of13.bsn_tlv_matched_count.value')
+    return 'of_bsn_tlv_matched_count'
+end
+of_bsn_tlv_v4_dissectors[217] = dissect_of_bsn_tlv_matched_count_v4
 
 -- child class of_bsn_tlv_max_count
 -- Child of of_bsn_tlv
@@ -50403,6 +50459,16 @@ function dissect_of_bsn_tlv_load_v5(reader, subtree)
 end
 of_bsn_tlv_v5_dissectors[213] = dissect_of_bsn_tlv_load_v5
 
+-- child class of_bsn_tlv_lookup_count
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_lookup_count_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_lookup_count.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_lookup_count.length')
+    read_uint64_t(reader, 5, subtree, 'of14.bsn_tlv_lookup_count.value')
+    return 'of_bsn_tlv_lookup_count'
+end
+of_bsn_tlv_v5_dissectors[218] = dissect_of_bsn_tlv_lookup_count_v5
+
 -- child class of_bsn_tlv_loopback_mode
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_loopback_mode_v5(reader, subtree)
@@ -50460,6 +50526,16 @@ function dissect_of_bsn_tlv_mac_mask_v5(reader, subtree)
     return 'of_bsn_tlv_mac_mask'
 end
 of_bsn_tlv_v5_dissectors[56] = dissect_of_bsn_tlv_mac_mask_v5
+
+-- child class of_bsn_tlv_matched_count
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_matched_count_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_matched_count.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_matched_count.length')
+    read_uint64_t(reader, 5, subtree, 'of14.bsn_tlv_matched_count.value')
+    return 'of_bsn_tlv_matched_count'
+end
+of_bsn_tlv_v5_dissectors[217] = dissect_of_bsn_tlv_matched_count_v5
 
 -- child class of_bsn_tlv_max_count
 -- Child of of_bsn_tlv
@@ -59656,6 +59732,16 @@ function dissect_of_bsn_tlv_load_v6(reader, subtree)
 end
 of_bsn_tlv_v6_dissectors[213] = dissect_of_bsn_tlv_load_v6
 
+-- child class of_bsn_tlv_lookup_count
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_lookup_count_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_lookup_count.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_lookup_count.length')
+    read_uint64_t(reader, 6, subtree, 'of15.bsn_tlv_lookup_count.value')
+    return 'of_bsn_tlv_lookup_count'
+end
+of_bsn_tlv_v6_dissectors[218] = dissect_of_bsn_tlv_lookup_count_v6
+
 -- child class of_bsn_tlv_loopback_mode
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_loopback_mode_v6(reader, subtree)
@@ -59713,6 +59799,16 @@ function dissect_of_bsn_tlv_mac_mask_v6(reader, subtree)
     return 'of_bsn_tlv_mac_mask'
 end
 of_bsn_tlv_v6_dissectors[56] = dissect_of_bsn_tlv_mac_mask_v6
+
+-- child class of_bsn_tlv_matched_count
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_matched_count_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_matched_count.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_matched_count.length')
+    read_uint64_t(reader, 6, subtree, 'of15.bsn_tlv_matched_count.value')
+    return 'of_bsn_tlv_matched_count'
+end
+of_bsn_tlv_v6_dissectors[217] = dissect_of_bsn_tlv_matched_count_v6
 
 -- child class of_bsn_tlv_max_count
 -- Child of of_bsn_tlv

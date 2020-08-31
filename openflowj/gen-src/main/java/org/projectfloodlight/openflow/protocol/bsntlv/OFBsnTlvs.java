@@ -219,6 +219,8 @@ public interface OFBsnTlvs {
     OFBsnTlvLinkUp linkUp();
     OFBsnTlvLoad.Builder buildLoad() throws UnsupportedOperationException;
     OFBsnTlvLoad load(long value);
+    OFBsnTlvLookupCount.Builder buildLookupCount() throws UnsupportedOperationException;
+    OFBsnTlvLookupCount lookupCount(U64 value);
     OFBsnTlvLoopbackMode.Builder buildLoopbackMode() throws UnsupportedOperationException;
     OFBsnTlvLoopbackMode loopbackMode(OFBsnLoopbackMode value);
     OFBsnTlvLoopbackPort.Builder buildLoopbackPort() throws UnsupportedOperationException;
@@ -229,6 +231,8 @@ public interface OFBsnTlvs {
     OFBsnTlvMac mac(MacAddress value);
     OFBsnTlvMacMask.Builder buildMacMask() throws UnsupportedOperationException;
     OFBsnTlvMacMask macMask(MacAddress value);
+    OFBsnTlvMatchedCount.Builder buildMatchedCount() throws UnsupportedOperationException;
+    OFBsnTlvMatchedCount matchedCount(U64 value);
     OFBsnTlvMaxCount.Builder buildMaxCount() throws UnsupportedOperationException;
     OFBsnTlvMaxCount maxCount(long value);
     OFBsnTlvMcgTypeVxlan mcgTypeVxlan();

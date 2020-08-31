@@ -1639,6 +1639,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_lookup_count_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_loopback_mode_dup(
         of_object_t *src);
 
@@ -1660,6 +1664,10 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_tlv_mac_mask_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_matched_count_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -7047,6 +7055,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_lookup_count_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_loopback_mode_OF_VERSION_1_3_dup(
         of_object_t *src);
 
@@ -7068,6 +7080,10 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_tlv_mac_mask_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_matched_count_OF_VERSION_1_3_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -10127,6 +10143,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_lookup_count_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_loopback_mode_OF_VERSION_1_4_dup(
         of_object_t *src);
 
@@ -10148,6 +10168,10 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_tlv_mac_mask_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_matched_count_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *
