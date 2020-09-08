@@ -31,38 +31,48 @@ import com.google.common.hash.PrimitiveSink;
 
 public class OFBsnPortModeSerializerVer14 {
 
-    public final static short BSN_PORT_MODE_NONE_VAL = (short) 0x0;
-    public final static short BSN_PORT_MODE_4XX_VAL = (short) 0x1;
-    public final static short BSN_PORT_MODE_4X1_VAL = (short) 0x2;
-    public final static short BSN_PORT_MODE_4X10_VAL = (short) 0x3;
-    public final static short BSN_PORT_MODE_4X25_VAL = (short) 0x4;
-    public final static short BSN_PORT_MODE_2X50_VAL = (short) 0x5;
-    public final static short BSN_PORT_MODE_1X1_VAL = (short) 0x6;
-    public final static short BSN_PORT_MODE_1X10_VAL = (short) 0x7;
-    public final static short BSN_PORT_MODE_1X25_VAL = (short) 0x8;
-    public final static short BSN_PORT_MODE_1X40_VAL = (short) 0x9;
-    public final static short BSN_PORT_MODE_1X100_VAL = (short) 0xa;
+    public final static int BSN_PORT_MODE_NONE_VAL = 0x0;
+    public final static int BSN_PORT_MODE_8X25_VAL = 0x1;
+    public final static int BSN_PORT_MODE_8X50_VAL = 0x2;
+    public final static int BSN_PORT_MODE_4XX_VAL = 0x3;
+    public final static int BSN_PORT_MODE_4X1_VAL = 0x4;
+    public final static int BSN_PORT_MODE_4X10_VAL = 0x5;
+    public final static int BSN_PORT_MODE_4X25_VAL = 0x6;
+    public final static int BSN_PORT_MODE_4X50_VAL = 0x7;
+    public final static int BSN_PORT_MODE_2X50_VAL = 0x8;
+    public final static int BSN_PORT_MODE_1X1_VAL = 0x9;
+    public final static int BSN_PORT_MODE_1X10_VAL = 0xa;
+    public final static int BSN_PORT_MODE_1X25_VAL = 0xb;
+    public final static int BSN_PORT_MODE_1X40_VAL = 0xc;
+    public final static int BSN_PORT_MODE_1X50_VAL = 0xd;
+    public final static int BSN_PORT_MODE_1X100_VAL = 0xe;
+    public final static int BSN_PORT_MODE_1X200_VAL = 0xf;
+    public final static int BSN_PORT_MODE_1X400_VAL = 0x10;
 
     public static OFBsnPortMode readFrom(ByteBuf bb) throws OFParseError {
         try {
-            return ofWireValue(bb.readShort());
+            return ofWireValue(bb.readInt());
         } catch (IllegalArgumentException e) {
             throw new OFParseError(e);
         }
     }
 
     public static void writeTo(ByteBuf bb, OFBsnPortMode e) {
-        bb.writeShort(toWireValue(e));
+        bb.writeInt(toWireValue(e));
     }
 
     public static void putTo(OFBsnPortMode e, PrimitiveSink sink) {
-        sink.putShort(toWireValue(e));
+        sink.putInt(toWireValue(e));
     }
 
-    public static OFBsnPortMode ofWireValue(short val) {
+    public static OFBsnPortMode ofWireValue(int val) {
         switch(val) {
             case BSN_PORT_MODE_NONE_VAL:
                 return OFBsnPortMode.BSN_PORT_MODE_NONE;
+            case BSN_PORT_MODE_8X25_VAL:
+                return OFBsnPortMode.BSN_PORT_MODE_8X25;
+            case BSN_PORT_MODE_8X50_VAL:
+                return OFBsnPortMode.BSN_PORT_MODE_8X50;
             case BSN_PORT_MODE_4XX_VAL:
                 return OFBsnPortMode.BSN_PORT_MODE_4XX;
             case BSN_PORT_MODE_4X1_VAL:
@@ -71,6 +81,8 @@ public class OFBsnPortModeSerializerVer14 {
                 return OFBsnPortMode.BSN_PORT_MODE_4X10;
             case BSN_PORT_MODE_4X25_VAL:
                 return OFBsnPortMode.BSN_PORT_MODE_4X25;
+            case BSN_PORT_MODE_4X50_VAL:
+                return OFBsnPortMode.BSN_PORT_MODE_4X50;
             case BSN_PORT_MODE_2X50_VAL:
                 return OFBsnPortMode.BSN_PORT_MODE_2X50;
             case BSN_PORT_MODE_1X1_VAL:
@@ -81,18 +93,28 @@ public class OFBsnPortModeSerializerVer14 {
                 return OFBsnPortMode.BSN_PORT_MODE_1X25;
             case BSN_PORT_MODE_1X40_VAL:
                 return OFBsnPortMode.BSN_PORT_MODE_1X40;
+            case BSN_PORT_MODE_1X50_VAL:
+                return OFBsnPortMode.BSN_PORT_MODE_1X50;
             case BSN_PORT_MODE_1X100_VAL:
                 return OFBsnPortMode.BSN_PORT_MODE_1X100;
+            case BSN_PORT_MODE_1X200_VAL:
+                return OFBsnPortMode.BSN_PORT_MODE_1X200;
+            case BSN_PORT_MODE_1X400_VAL:
+                return OFBsnPortMode.BSN_PORT_MODE_1X400;
             default:
                 throw new IllegalArgumentException("Illegal wire value for type OFBsnPortMode in version 1.4: " + val);
         }
     }
 
 
-    public static short toWireValue(OFBsnPortMode e) {
+    public static int toWireValue(OFBsnPortMode e) {
         switch(e) {
             case BSN_PORT_MODE_NONE:
                 return BSN_PORT_MODE_NONE_VAL;
+            case BSN_PORT_MODE_8X25:
+                return BSN_PORT_MODE_8X25_VAL;
+            case BSN_PORT_MODE_8X50:
+                return BSN_PORT_MODE_8X50_VAL;
             case BSN_PORT_MODE_4XX:
                 return BSN_PORT_MODE_4XX_VAL;
             case BSN_PORT_MODE_4X1:
@@ -101,6 +123,8 @@ public class OFBsnPortModeSerializerVer14 {
                 return BSN_PORT_MODE_4X10_VAL;
             case BSN_PORT_MODE_4X25:
                 return BSN_PORT_MODE_4X25_VAL;
+            case BSN_PORT_MODE_4X50:
+                return BSN_PORT_MODE_4X50_VAL;
             case BSN_PORT_MODE_2X50:
                 return BSN_PORT_MODE_2X50_VAL;
             case BSN_PORT_MODE_1X1:
@@ -111,8 +135,14 @@ public class OFBsnPortModeSerializerVer14 {
                 return BSN_PORT_MODE_1X25_VAL;
             case BSN_PORT_MODE_1X40:
                 return BSN_PORT_MODE_1X40_VAL;
+            case BSN_PORT_MODE_1X50:
+                return BSN_PORT_MODE_1X50_VAL;
             case BSN_PORT_MODE_1X100:
                 return BSN_PORT_MODE_1X100_VAL;
+            case BSN_PORT_MODE_1X200:
+                return BSN_PORT_MODE_1X200_VAL;
+            case BSN_PORT_MODE_1X400:
+                return BSN_PORT_MODE_1X400_VAL;
             default:
                 throw new IllegalArgumentException("Illegal enum value for type OFBsnPortMode in version 1.4: " + e);
         }

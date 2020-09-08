@@ -32087,14 +32087,14 @@ of_bsn_tlv_port_mode_OF_VERSION_1_3_dup(
     of_bsn_tlv_port_mode_t *src)
 {
     of_bsn_tlv_port_mode_t *dst;
-    uint16_t val16;
+    uint32_t val32;
 
     if ((dst = of_bsn_tlv_port_mode_new(src->version)) == NULL) {
         return NULL;
     }
 
-    of_bsn_tlv_port_mode_value_get(src, &val16);
-    of_bsn_tlv_port_mode_value_set(dst, val16);
+    of_bsn_tlv_port_mode_value_get(src, &val32);
+    of_bsn_tlv_port_mode_value_set(dst, val32);
 
     return dst;
 }
@@ -57286,14 +57286,14 @@ of_bsn_tlv_port_mode_OF_VERSION_1_4_dup(
     of_bsn_tlv_port_mode_t *src)
 {
     of_bsn_tlv_port_mode_t *dst;
-    uint16_t val16;
+    uint32_t val32;
 
     if ((dst = of_bsn_tlv_port_mode_new(src->version)) == NULL) {
         return NULL;
     }
 
-    of_bsn_tlv_port_mode_value_get(src, &val16);
-    of_bsn_tlv_port_mode_value_set(dst, val16);
+    of_bsn_tlv_port_mode_value_get(src, &val32);
+    of_bsn_tlv_port_mode_value_set(dst, val32);
 
     return dst;
 }

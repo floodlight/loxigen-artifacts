@@ -5019,13 +5019,13 @@ of_bsn_tlv_port_mode_init(of_object_t *obj,
  * Get value from an object of type of_bsn_tlv_port_mode.
  * @param obj Pointer to an object of type of_bsn_tlv_port_mode.
  * @param value Pointer to the child object of type
- * uint16_t to be filled out.
+ * uint32_t to be filled out.
  *
  */
 void
 of_bsn_tlv_port_mode_value_get(
     of_bsn_tlv_port_mode_t *obj,
-    uint16_t *value)
+    uint32_t *value)
 {
     of_wire_buffer_t *wbuf;
     int offset = 0; /* Offset of value relative to the start obj */
@@ -5049,7 +5049,7 @@ of_bsn_tlv_port_mode_value_get(
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
     LOCI_ASSERT(abs_offset >= 0);
-    of_wire_buffer_u16_get(wbuf, abs_offset, value);
+    of_wire_buffer_u32_get(wbuf, abs_offset, value);
 
     OF_LENGTH_CHECK_ASSERT(obj);
 
@@ -5064,7 +5064,7 @@ of_bsn_tlv_port_mode_value_get(
 void
 of_bsn_tlv_port_mode_value_set(
     of_bsn_tlv_port_mode_t *obj,
-    uint16_t value)
+    uint32_t value)
 {
     of_wire_buffer_t *wbuf;
     int offset = 0; /* Offset of value relative to the start obj */
@@ -5088,7 +5088,7 @@ of_bsn_tlv_port_mode_value_set(
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
     LOCI_ASSERT(abs_offset >= 0);
-    of_wire_buffer_u16_set(wbuf, abs_offset, value);
+    of_wire_buffer_u32_set(wbuf, abs_offset, value);
 
     OF_LENGTH_CHECK_ASSERT(obj);
 

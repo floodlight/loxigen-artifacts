@@ -25649,10 +25649,10 @@ extern void of_bsn_tlv_port_value_get(
 
 extern void of_bsn_tlv_port_mode_value_set(
     of_bsn_tlv_port_mode_t *obj,
-    uint16_t value);
+    uint32_t value);
 extern void of_bsn_tlv_port_mode_value_get(
     of_bsn_tlv_port_mode_t *obj,
-    uint16_t *value);
+    uint32_t *value);
 
 /* Unified accessor functions for of_bsn_tlv_port_speed_gbps */
 

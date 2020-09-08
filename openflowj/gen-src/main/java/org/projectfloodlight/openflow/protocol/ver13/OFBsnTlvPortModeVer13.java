@@ -36,7 +36,7 @@ class OFBsnTlvPortModeVer13 implements OFBsnTlvPortMode {
     private static final Logger logger = LoggerFactory.getLogger(OFBsnTlvPortModeVer13.class);
     // version: 1.3
     final static byte WIRE_VERSION = 4;
-    final static int LENGTH = 6;
+    final static int LENGTH = 8;
 
 
     // OF message fields
@@ -174,8 +174,8 @@ class OFBsnTlvPortModeVer13 implements OFBsnTlvPortMode {
             if(type != (short) 0xb3)
                 throw new OFParseError("Wrong type: Expected=0xb3(0xb3), got="+type);
             int length = U16.f(bb.readShort());
-            if(length != 6)
-                throw new OFParseError("Wrong length: Expected=6(6), got="+length);
+            if(length != 8)
+                throw new OFParseError("Wrong length: Expected=8(8), got="+length);
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -205,8 +205,8 @@ class OFBsnTlvPortModeVer13 implements OFBsnTlvPortMode {
         public void funnel(OFBsnTlvPortModeVer13 message, PrimitiveSink sink) {
             // fixed value property type = 0xb3
             sink.putShort((short) 0xb3);
-            // fixed value property length = 6
-            sink.putShort((short) 0x6);
+            // fixed value property length = 8
+            sink.putShort((short) 0x8);
             OFBsnPortModeSerializerVer13.putTo(message.value, sink);
         }
     }
@@ -222,8 +222,8 @@ class OFBsnTlvPortModeVer13 implements OFBsnTlvPortMode {
         public void write(ByteBuf bb, OFBsnTlvPortModeVer13 message) {
             // fixed value property type = 0xb3
             bb.writeShort((short) 0xb3);
-            // fixed value property length = 6
-            bb.writeShort((short) 0x6);
+            // fixed value property length = 8
+            bb.writeShort((short) 0x8);
             OFBsnPortModeSerializerVer13.writeTo(bb, message.value);
 
 

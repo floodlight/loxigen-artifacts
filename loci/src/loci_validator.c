@@ -24756,15 +24756,15 @@ loci_validate_of_bsn_tlv_port_OF_VERSION_1_3(uint8_t *data, int len, int *out_le
 static int
 loci_validate_of_bsn_tlv_port_mode_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
 {
-    if (len < 6) {
+    if (len < 8) {
         return -1;
     }
 
-    len = 6;
+    len = 8;
 
     uint16_t wire_len;
     buf_u16_get(data + 2, &wire_len);
-    if (wire_len > len || wire_len < 6) {
+    if (wire_len > len || wire_len < 8) {
         return -1;
     }
 
@@ -43060,15 +43060,15 @@ loci_validate_of_bsn_tlv_port_OF_VERSION_1_4(uint8_t *data, int len, int *out_le
 static int
 loci_validate_of_bsn_tlv_port_mode_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
 {
-    if (len < 6) {
+    if (len < 8) {
         return -1;
     }
 
-    len = 6;
+    len = 8;
 
     uint16_t wire_len;
     buf_u16_get(data + 2, &wire_len);
-    if (wire_len > len || wire_len < 6) {
+    if (wire_len > len || wire_len < 8) {
         return -1;
     }
 

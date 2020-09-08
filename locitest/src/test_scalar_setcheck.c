@@ -92696,10 +92696,10 @@ int of_bsn_tlv_port_OF_VERSION_1_3_check_scalars(
  */
 int of_bsn_tlv_port_mode_OF_VERSION_1_3_populate_scalars(
     of_bsn_tlv_port_mode_t *obj, int value) {
-    uint16_t val16;
+    uint32_t val32;
 
-    VAR_UINT16_T_INIT(val16, value);
-    of_bsn_tlv_port_mode_value_set(obj, val16);
+    VAR_UINT32_T_INIT(val32, value);
+    of_bsn_tlv_port_mode_value_set(obj, val32);
     value += 1;
 
     return value;
@@ -92714,10 +92714,10 @@ int of_bsn_tlv_port_mode_OF_VERSION_1_3_populate_scalars(
  */
 int of_bsn_tlv_port_mode_OF_VERSION_1_3_check_scalars(
     of_bsn_tlv_port_mode_t *obj, int value) {
-    uint16_t val16;
+    uint32_t val32;
 
-    of_bsn_tlv_port_mode_value_get(obj, &val16);
-    TEST_ASSERT(VAR_UINT16_T_CHECK(val16, value));
+    of_bsn_tlv_port_mode_value_get(obj, &val32);
+    TEST_ASSERT(VAR_UINT32_T_CHECK(val32, value));
     value += 1;
 
     return value;
@@ -124151,10 +124151,10 @@ int of_bsn_tlv_port_OF_VERSION_1_4_check_scalars(
  */
 int of_bsn_tlv_port_mode_OF_VERSION_1_4_populate_scalars(
     of_bsn_tlv_port_mode_t *obj, int value) {
-    uint16_t val16;
+    uint32_t val32;
 
-    VAR_UINT16_T_INIT(val16, value);
-    of_bsn_tlv_port_mode_value_set(obj, val16);
+    VAR_UINT32_T_INIT(val32, value);
+    of_bsn_tlv_port_mode_value_set(obj, val32);
     value += 1;
 
     return value;
@@ -124169,10 +124169,10 @@ int of_bsn_tlv_port_mode_OF_VERSION_1_4_populate_scalars(
  */
 int of_bsn_tlv_port_mode_OF_VERSION_1_4_check_scalars(
     of_bsn_tlv_port_mode_t *obj, int value) {
-    uint16_t val16;
+    uint32_t val32;
 
-    of_bsn_tlv_port_mode_value_get(obj, &val16);
-    TEST_ASSERT(VAR_UINT16_T_CHECK(val16, value));
+    of_bsn_tlv_port_mode_value_get(obj, &val32);
+    TEST_ASSERT(VAR_UINT32_T_CHECK(val32, value));
     value += 1;
 
     return value;

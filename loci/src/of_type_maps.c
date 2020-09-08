@@ -3153,7 +3153,7 @@ of_object_fixed_len_v4[OF_OBJECT_COUNT] = {
     4,    /* 447: of_bsn_tlv_pim_dr */
     4,    /* 448: of_bsn_tlv_pim_hello_flood */
     8,    /* 449: of_bsn_tlv_port */
-    6,    /* 450: of_bsn_tlv_port_mode */
+    8,    /* 450: of_bsn_tlv_port_mode */
     8,    /* 451: of_bsn_tlv_port_speed_gbps */
     6,    /* 452: of_bsn_tlv_port_usage */
     5,    /* 453: of_bsn_tlv_port_vxlan_mode */
@@ -4047,7 +4047,7 @@ of_object_fixed_len_v5[OF_OBJECT_COUNT] = {
     4,    /* 447: of_bsn_tlv_pim_dr */
     4,    /* 448: of_bsn_tlv_pim_hello_flood */
     8,    /* 449: of_bsn_tlv_port */
-    6,    /* 450: of_bsn_tlv_port_mode */
+    8,    /* 450: of_bsn_tlv_port_mode */
     8,    /* 451: of_bsn_tlv_port_speed_gbps */
     6,    /* 452: of_bsn_tlv_port_usage */
     5,    /* 453: of_bsn_tlv_port_vxlan_mode */

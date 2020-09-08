@@ -23596,13 +23596,13 @@ int
 of_bsn_tlv_port_mode_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
-    uint16_t val16;
+    uint32_t val32;
 
     out += writer(cookie, "Object of type of_bsn_tlv_port_mode\n");
 
-    of_bsn_tlv_port_mode_value_get(obj, &val16);
-    out += writer(cookie, "  value (uint16_t):  ");
-    out += LOCI_DUMP_u16(writer, cookie, val16);
+    of_bsn_tlv_port_mode_value_get(obj, &val32);
+    out += writer(cookie, "  value (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
     out += writer(cookie, "\n");
 
     return out;
@@ -39750,13 +39750,13 @@ int
 of_bsn_tlv_port_mode_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
-    uint16_t val16;
+    uint32_t val32;
 
     out += writer(cookie, "Object of type of_bsn_tlv_port_mode\n");
 
-    of_bsn_tlv_port_mode_value_get(obj, &val16);
-    out += writer(cookie, "  value (uint16_t):  ");
-    out += LOCI_DUMP_u16(writer, cookie, val16);
+    of_bsn_tlv_port_mode_value_get(obj, &val32);
+    out += writer(cookie, "  value (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
     out += writer(cookie, "\n");
 
     return out;

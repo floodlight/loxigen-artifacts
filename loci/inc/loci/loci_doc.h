@@ -7918,8 +7918,8 @@ typedef struct of_bsn_tlv_port_s of_bsn_tlv_port_t;
  * accessors available in all versions unless noted otherwise
  *
  * @param value_get/set ( OF_1_3 OF_1_4).
- *   Accessors for value, a variable of type uint16.  Functions
- *   are of type of_bsn_tlv_port_mode_uint16_get_f and _set_f.
+ *   Accessors for value, a variable of type uint32.  Functions
+ *   are of type of_bsn_tlv_port_mode_uint32_get_f and _set_f.
  *
  */
 typedef struct of_bsn_tlv_port_mode_s of_bsn_tlv_port_mode_t;

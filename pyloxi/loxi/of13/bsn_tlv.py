@@ -6737,7 +6737,7 @@ class port_mode(bsn_tlv):
         packed = []
         packed.append(struct.pack("!H", self.type))
         packed.append(struct.pack("!H", 0)) # placeholder for length at index 1
-        packed.append(struct.pack("!H", self.value))
+        packed.append(struct.pack("!L", self.value))
         length = sum([len(x) for x in packed])
         packed[1] = struct.pack("!H", length)
         return ''.join(packed)
@@ -6750,7 +6750,7 @@ class port_mode(bsn_tlv):
         _length = reader.read("!H")[0]
         orig_reader = reader
         reader = orig_reader.slice(_length, 4)
-        obj.value = reader.read("!H")[0]
+        obj.value = reader.read("!L")[0]
         return obj
 
     def __eq__(self, other):
