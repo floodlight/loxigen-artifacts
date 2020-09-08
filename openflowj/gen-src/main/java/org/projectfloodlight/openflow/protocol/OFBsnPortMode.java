@@ -28,14 +28,18 @@ import org.projectfloodlight.openflow.exceptions.*;
 
 public enum OFBsnPortMode {
      BSN_PORT_MODE_NONE,
+     BSN_PORT_MODE_8X25,
+     BSN_PORT_MODE_8X50,
      BSN_PORT_MODE_4XX,
      BSN_PORT_MODE_4X1,
      BSN_PORT_MODE_4X10,
      BSN_PORT_MODE_4X25,
+     BSN_PORT_MODE_4X50,
      BSN_PORT_MODE_2X50,
      BSN_PORT_MODE_1X1,
      BSN_PORT_MODE_1X10,
      BSN_PORT_MODE_1X25,
      BSN_PORT_MODE_1X40,
+     BSN_PORT_MODE_1X50,
      BSN_PORT_MODE_1X100;
 }

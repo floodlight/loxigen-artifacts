@@ -1592,16 +1592,20 @@ enum_v4_ofp_bsn_bfd_endpoint_state = {
 
 enum_v4_ofp_bsn_port_mode = {
     [0] = "OFP_BSN_PORT_MODE_NONE",
-    [1] = "OFP_BSN_PORT_MODE_4XX",
-    [2] = "OFP_BSN_PORT_MODE_4X1",
-    [3] = "OFP_BSN_PORT_MODE_4X10",
-    [4] = "OFP_BSN_PORT_MODE_4X25",
-    [5] = "OFP_BSN_PORT_MODE_2X50",
-    [6] = "OFP_BSN_PORT_MODE_1X1",
-    [7] = "OFP_BSN_PORT_MODE_1X10",
-    [8] = "OFP_BSN_PORT_MODE_1X25",
-    [9] = "OFP_BSN_PORT_MODE_1X40",
-    [10] = "OFP_BSN_PORT_MODE_1X100",
+    [1] = "OFP_BSN_PORT_MODE_8X25",
+    [2] = "OPF_BSN_PORT_MODE_8X50",
+    [3] = "OFP_BSN_PORT_MODE_4XX",
+    [4] = "OFP_BSN_PORT_MODE_4X1",
+    [5] = "OFP_BSN_PORT_MODE_4X10",
+    [6] = "OFP_BSN_PORT_MODE_4X25",
+    [7] = "OFP_BSN_PORT_MODE_4X50",
+    [8] = "OFP_BSN_PORT_MODE_2X50",
+    [9] = "OFP_BSN_PORT_MODE_1X1",
+    [10] = "OFP_BSN_PORT_MODE_1X10",
+    [11] = "OFP_BSN_PORT_MODE_1X25",
+    [12] = "OFP_BSN_PORT_MODE_1X40",
+    [13] = "OFP_BSN_PORT_MODE_1X50",
+    [14] = "OFP_BSN_PORT_MODE_1X100",
 }
 
 enum_v4_ofp_bsn_udf_mode = {
@@ -2596,16 +2600,20 @@ enum_v5_ofp_bsn_bfd_endpoint_state = {
 
 enum_v5_ofp_bsn_port_mode = {
     [0] = "OFP_BSN_PORT_MODE_NONE",
-    [1] = "OFP_BSN_PORT_MODE_4XX",
-    [2] = "OFP_BSN_PORT_MODE_4X1",
-    [3] = "OFP_BSN_PORT_MODE_4X10",
-    [4] = "OFP_BSN_PORT_MODE_4X25",
-    [5] = "OFP_BSN_PORT_MODE_2X50",
-    [6] = "OFP_BSN_PORT_MODE_1X1",
-    [7] = "OFP_BSN_PORT_MODE_1X10",
-    [8] = "OFP_BSN_PORT_MODE_1X25",
-    [9] = "OFP_BSN_PORT_MODE_1X40",
-    [10] = "OFP_BSN_PORT_MODE_1X100",
+    [1] = "OFP_BSN_PORT_MODE_8X25",
+    [2] = "OPF_BSN_PORT_MODE_8X50",
+    [3] = "OFP_BSN_PORT_MODE_4XX",
+    [4] = "OFP_BSN_PORT_MODE_4X1",
+    [5] = "OFP_BSN_PORT_MODE_4X10",
+    [6] = "OFP_BSN_PORT_MODE_4X25",
+    [7] = "OFP_BSN_PORT_MODE_4X50",
+    [8] = "OFP_BSN_PORT_MODE_2X50",
+    [9] = "OFP_BSN_PORT_MODE_1X1",
+    [10] = "OFP_BSN_PORT_MODE_1X10",
+    [11] = "OFP_BSN_PORT_MODE_1X25",
+    [12] = "OFP_BSN_PORT_MODE_1X40",
+    [13] = "OFP_BSN_PORT_MODE_1X50",
+    [14] = "OFP_BSN_PORT_MODE_1X100",
 }
 
 enum_v5_ofp_bsn_udf_mode = {
@@ -3722,16 +3730,20 @@ enum_v6_ofp_bsn_bfd_endpoint_state = {
 
 enum_v6_ofp_bsn_port_mode = {
     [0] = "OFP_BSN_PORT_MODE_NONE",
-    [1] = "OFP_BSN_PORT_MODE_4XX",
-    [2] = "OFP_BSN_PORT_MODE_4X1",
-    [3] = "OFP_BSN_PORT_MODE_4X10",
-    [4] = "OFP_BSN_PORT_MODE_4X25",
-    [5] = "OFP_BSN_PORT_MODE_2X50",
-    [6] = "OFP_BSN_PORT_MODE_1X1",
-    [7] = "OFP_BSN_PORT_MODE_1X10",
-    [8] = "OFP_BSN_PORT_MODE_1X25",
-    [9] = "OFP_BSN_PORT_MODE_1X40",
-    [10] = "OFP_BSN_PORT_MODE_1X100",
+    [1] = "OFP_BSN_PORT_MODE_8X25",
+    [2] = "OPF_BSN_PORT_MODE_8X50",
+    [3] = "OFP_BSN_PORT_MODE_4XX",
+    [4] = "OFP_BSN_PORT_MODE_4X1",
+    [5] = "OFP_BSN_PORT_MODE_4X10",
+    [6] = "OFP_BSN_PORT_MODE_4X25",
+    [7] = "OFP_BSN_PORT_MODE_4X50",
+    [8] = "OFP_BSN_PORT_MODE_2X50",
+    [9] = "OFP_BSN_PORT_MODE_1X1",
+    [10] = "OFP_BSN_PORT_MODE_1X10",
+    [11] = "OFP_BSN_PORT_MODE_1X25",
+    [12] = "OFP_BSN_PORT_MODE_1X40",
+    [13] = "OFP_BSN_PORT_MODE_1X50",
+    [14] = "OFP_BSN_PORT_MODE_1X100",
 }
 
 enum_v6_ofp_bsn_udf_mode = {
