@@ -25188,6 +25188,13 @@ extern void of_bsn_tlv_interval_value_get(
 
 /* Unified accessor functions for of_bsn_tlv_ip_fragmentation */
 
+extern void of_bsn_tlv_ip_fragmentation_value_set(
+    of_bsn_tlv_ip_fragmentation_t *obj,
+    uint8_t value);
+extern void of_bsn_tlv_ip_fragmentation_value_get(
+    of_bsn_tlv_ip_fragmentation_t *obj,
+    uint8_t *value);
+
 /* Unified accessor functions for of_bsn_tlv_ip_proto */
 
 extern void of_bsn_tlv_ip_proto_value_set(

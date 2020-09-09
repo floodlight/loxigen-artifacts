@@ -29,6 +29,7 @@ import io.netty.buffer.ByteBuf;
 
 public interface OFBsnTlvIpFragmentation extends OFObject, OFBsnTlv {
     int getType();
+    OFBsnIpFragmentation getValue();
     OFVersion getVersion();
 
     void writeTo(ByteBuf channelBuffer);
@@ -37,6 +38,8 @@ public interface OFBsnTlvIpFragmentation extends OFObject, OFBsnTlv {
     public interface Builder extends OFBsnTlv.Builder {
         OFBsnTlvIpFragmentation build();
         int getType();
+        OFBsnIpFragmentation getValue();
+        Builder setValue(OFBsnIpFragmentation value);
         OFVersion getVersion();
     }
 }

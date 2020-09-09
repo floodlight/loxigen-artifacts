@@ -22664,8 +22664,14 @@ int
 of_bsn_tlv_ip_fragmentation_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
+    uint8_t val8;
 
     out += writer(cookie, "Object of type of_bsn_tlv_ip_fragmentation\n");
+
+    of_bsn_tlv_ip_fragmentation_value_get(obj, &val8);
+    out += writer(cookie, "  value (uint8_t):  ");
+    out += LOCI_DUMP_u8(writer, cookie, val8);
+    out += writer(cookie, "\n");
 
     return out;
 }
@@ -38818,8 +38824,14 @@ int
 of_bsn_tlv_ip_fragmentation_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
+    uint8_t val8;
 
     out += writer(cookie, "Object of type of_bsn_tlv_ip_fragmentation\n");
+
+    of_bsn_tlv_ip_fragmentation_value_get(obj, &val8);
+    out += writer(cookie, "  value (uint8_t):  ");
+    out += LOCI_DUMP_u8(writer, cookie, val8);
+    out += writer(cookie, "\n");
 
     return out;
 }

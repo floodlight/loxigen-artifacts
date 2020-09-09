@@ -90491,6 +90491,11 @@ int of_bsn_tlv_interval_OF_VERSION_1_3_check_scalars(
  */
 int of_bsn_tlv_ip_fragmentation_OF_VERSION_1_3_populate_scalars(
     of_bsn_tlv_ip_fragmentation_t *obj, int value) {
+    uint8_t val8;
+
+    VAR_UINT8_T_INIT(val8, value);
+    of_bsn_tlv_ip_fragmentation_value_set(obj, val8);
+    value += 1;
 
     return value;
 }
@@ -90504,6 +90509,11 @@ int of_bsn_tlv_ip_fragmentation_OF_VERSION_1_3_populate_scalars(
  */
 int of_bsn_tlv_ip_fragmentation_OF_VERSION_1_3_check_scalars(
     of_bsn_tlv_ip_fragmentation_t *obj, int value) {
+    uint8_t val8;
+
+    of_bsn_tlv_ip_fragmentation_value_get(obj, &val8);
+    TEST_ASSERT(VAR_UINT8_T_CHECK(val8, value));
+    value += 1;
 
     return value;
 }
@@ -121946,6 +121956,11 @@ int of_bsn_tlv_interval_OF_VERSION_1_4_check_scalars(
  */
 int of_bsn_tlv_ip_fragmentation_OF_VERSION_1_4_populate_scalars(
     of_bsn_tlv_ip_fragmentation_t *obj, int value) {
+    uint8_t val8;
+
+    VAR_UINT8_T_INIT(val8, value);
+    of_bsn_tlv_ip_fragmentation_value_set(obj, val8);
+    value += 1;
 
     return value;
 }
@@ -121959,6 +121974,11 @@ int of_bsn_tlv_ip_fragmentation_OF_VERSION_1_4_populate_scalars(
  */
 int of_bsn_tlv_ip_fragmentation_OF_VERSION_1_4_check_scalars(
     of_bsn_tlv_ip_fragmentation_t *obj, int value) {
+    uint8_t val8;
+
+    of_bsn_tlv_ip_fragmentation_value_get(obj, &val8);
+    TEST_ASSERT(VAR_UINT8_T_CHECK(val8, value));
+    value += 1;
 
     return value;
 }

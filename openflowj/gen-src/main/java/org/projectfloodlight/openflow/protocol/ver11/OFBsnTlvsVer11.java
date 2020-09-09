@@ -564,7 +564,10 @@ public class OFBsnTlvsVer11 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvInterval not supported in version 1.1");
     }
 
-    public OFBsnTlvIpFragmentation ipFragmentation() {
+    public OFBsnTlvIpFragmentation.Builder buildIpFragmentation() {
+        throw new UnsupportedOperationException("OFBsnTlvIpFragmentation not supported in version 1.1");
+    }
+    public OFBsnTlvIpFragmentation ipFragmentation(OFBsnIpFragmentation value) {
         throw new UnsupportedOperationException("OFBsnTlvIpFragmentation not supported in version 1.1");
     }
 

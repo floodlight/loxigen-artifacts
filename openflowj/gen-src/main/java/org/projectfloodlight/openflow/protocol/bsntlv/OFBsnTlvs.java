@@ -180,7 +180,8 @@ public interface OFBsnTlvs {
     OFBsnTlvInternalMac internalMac(MacAddress value);
     OFBsnTlvInterval.Builder buildInterval() throws UnsupportedOperationException;
     OFBsnTlvInterval interval(long value);
-    OFBsnTlvIpFragmentation ipFragmentation();
+    OFBsnTlvIpFragmentation.Builder buildIpFragmentation() throws UnsupportedOperationException;
+    OFBsnTlvIpFragmentation ipFragmentation(OFBsnIpFragmentation value);
     OFBsnTlvIpProto.Builder buildIpProto() throws UnsupportedOperationException;
     OFBsnTlvIpProto ipProto(short value);
     OFBsnTlvIpTunnelType.Builder buildIpTunnelType() throws UnsupportedOperationException;

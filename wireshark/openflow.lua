@@ -1634,6 +1634,11 @@ enum_v4_ofp_bsn_cml = {
     [3] = "OFP_BSN_CML_CPU_FORWARD",
 }
 
+enum_v4_ofp_bsn_ip_fragmentation = {
+    [1] = "OFP_BSN_IP_FRAGMENTATION_PRESENT",
+    [2] = "OFP_BSN_IP_FRAGMENTATION_NOT_PRESENT",
+}
+
 enum_v4_ofp_bsn_admin_state = {
     [0] = "OFP_BSN_ADMIN_STATE_DISABLED",
     [1] = "OFP_BSN_ADMIN_STATE_ENABLED",
@@ -2642,6 +2647,11 @@ enum_v5_ofp_bsn_cml = {
     [1] = "OFP_BSN_CML_CPU_DROP",
     [2] = "OFP_BSN_CML_FORWARD",
     [3] = "OFP_BSN_CML_CPU_FORWARD",
+}
+
+enum_v5_ofp_bsn_ip_fragmentation = {
+    [1] = "OFP_BSN_IP_FRAGMENTATION_PRESENT",
+    [2] = "OFP_BSN_IP_FRAGMENTATION_NOT_PRESENT",
 }
 
 enum_v5_ofp_bsn_admin_state = {
@@ -3774,6 +3784,11 @@ enum_v6_ofp_bsn_cml = {
     [1] = "OFP_BSN_CML_CPU_DROP",
     [2] = "OFP_BSN_CML_FORWARD",
     [3] = "OFP_BSN_CML_CPU_FORWARD",
+}
+
+enum_v6_ofp_bsn_ip_fragmentation = {
+    [1] = "OFP_BSN_IP_FRAGMENTATION_PRESENT",
+    [2] = "OFP_BSN_IP_FRAGMENTATION_NOT_PRESENT",
 }
 
 enum_v6_ofp_bsn_admin_state = {
@@ -9084,6 +9099,7 @@ fields['of13.bsn_tlv_interval.length'] = ProtoField.uint16("of13.bsn_tlv_interva
 fields['of13.bsn_tlv_interval.value'] = ProtoField.uint32("of13.bsn_tlv_interval.value", "value", base.DEC, nil)
 fields['of13.bsn_tlv_ip_fragmentation.type'] = ProtoField.uint16("of13.bsn_tlv_ip_fragmentation.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_ip_fragmentation.length'] = ProtoField.uint16("of13.bsn_tlv_ip_fragmentation.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_ip_fragmentation.value'] = ProtoField.uint32("of13.bsn_tlv_ip_fragmentation.value", "value", base.DEC, enum_v4_ofp_bsn_ip_fragmentation)
 fields['of13.bsn_tlv_ip_proto.type'] = ProtoField.uint16("of13.bsn_tlv_ip_proto.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_ip_proto.length'] = ProtoField.uint16("of13.bsn_tlv_ip_proto.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_ip_proto.value'] = ProtoField.uint8("of13.bsn_tlv_ip_proto.value", "value", base.DEC, nil)
@@ -12213,6 +12229,7 @@ fields['of14.bsn_tlv_interval.length'] = ProtoField.uint16("of14.bsn_tlv_interva
 fields['of14.bsn_tlv_interval.value'] = ProtoField.uint32("of14.bsn_tlv_interval.value", "value", base.DEC, nil)
 fields['of14.bsn_tlv_ip_fragmentation.type'] = ProtoField.uint16("of14.bsn_tlv_ip_fragmentation.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_ip_fragmentation.length'] = ProtoField.uint16("of14.bsn_tlv_ip_fragmentation.length", "length", base.DEC, nil)
+fields['of14.bsn_tlv_ip_fragmentation.value'] = ProtoField.uint32("of14.bsn_tlv_ip_fragmentation.value", "value", base.DEC, enum_v5_ofp_bsn_ip_fragmentation)
 fields['of14.bsn_tlv_ip_proto.type'] = ProtoField.uint16("of14.bsn_tlv_ip_proto.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_ip_proto.length'] = ProtoField.uint16("of14.bsn_tlv_ip_proto.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_ip_proto.value'] = ProtoField.uint8("of14.bsn_tlv_ip_proto.value", "value", base.DEC, nil)
@@ -15628,6 +15645,7 @@ fields['of15.bsn_tlv_interval.length'] = ProtoField.uint16("of15.bsn_tlv_interva
 fields['of15.bsn_tlv_interval.value'] = ProtoField.uint32("of15.bsn_tlv_interval.value", "value", base.DEC, nil)
 fields['of15.bsn_tlv_ip_fragmentation.type'] = ProtoField.uint16("of15.bsn_tlv_ip_fragmentation.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_ip_fragmentation.length'] = ProtoField.uint16("of15.bsn_tlv_ip_fragmentation.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_ip_fragmentation.value'] = ProtoField.uint32("of15.bsn_tlv_ip_fragmentation.value", "value", base.DEC, enum_v6_ofp_bsn_ip_fragmentation)
 fields['of15.bsn_tlv_ip_proto.type'] = ProtoField.uint16("of15.bsn_tlv_ip_proto.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_ip_proto.length'] = ProtoField.uint16("of15.bsn_tlv_ip_proto.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_ip_proto.value'] = ProtoField.uint8("of15.bsn_tlv_ip_proto.value", "value", base.DEC, nil)
@@ -22330,6 +22348,7 @@ p_of.fields = {
     fields['of13.bsn_tlv_interval.value'],
     fields['of13.bsn_tlv_ip_fragmentation.type'],
     fields['of13.bsn_tlv_ip_fragmentation.length'],
+    fields['of13.bsn_tlv_ip_fragmentation.value'],
     fields['of13.bsn_tlv_ip_proto.type'],
     fields['of13.bsn_tlv_ip_proto.length'],
     fields['of13.bsn_tlv_ip_proto.value'],
@@ -25459,6 +25478,7 @@ p_of.fields = {
     fields['of14.bsn_tlv_interval.value'],
     fields['of14.bsn_tlv_ip_fragmentation.type'],
     fields['of14.bsn_tlv_ip_fragmentation.length'],
+    fields['of14.bsn_tlv_ip_fragmentation.value'],
     fields['of14.bsn_tlv_ip_proto.type'],
     fields['of14.bsn_tlv_ip_proto.length'],
     fields['of14.bsn_tlv_ip_proto.value'],
@@ -28874,6 +28894,7 @@ p_of.fields = {
     fields['of15.bsn_tlv_interval.value'],
     fields['of15.bsn_tlv_ip_fragmentation.type'],
     fields['of15.bsn_tlv_ip_fragmentation.length'],
+    fields['of15.bsn_tlv_ip_fragmentation.value'],
     fields['of15.bsn_tlv_ip_proto.type'],
     fields['of15.bsn_tlv_ip_proto.length'],
     fields['of15.bsn_tlv_ip_proto.value'],
@@ -41655,6 +41676,7 @@ of_bsn_tlv_v4_dissectors[58] = dissect_of_bsn_tlv_interval_v4
 function dissect_of_bsn_tlv_ip_fragmentation_v4(reader, subtree)
     read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_ip_fragmentation.type')
     read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_ip_fragmentation.length')
+    read_uint8_t(reader, 4, subtree, 'of13.bsn_tlv_ip_fragmentation.value')
     return 'of_bsn_tlv_ip_fragmentation'
 end
 of_bsn_tlv_v4_dissectors[201] = dissect_of_bsn_tlv_ip_fragmentation_v4
@@ -50266,6 +50288,7 @@ of_bsn_tlv_v5_dissectors[58] = dissect_of_bsn_tlv_interval_v5
 function dissect_of_bsn_tlv_ip_fragmentation_v5(reader, subtree)
     read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_ip_fragmentation.type')
     read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_ip_fragmentation.length')
+    read_uint8_t(reader, 5, subtree, 'of14.bsn_tlv_ip_fragmentation.value')
     return 'of_bsn_tlv_ip_fragmentation'
 end
 of_bsn_tlv_v5_dissectors[201] = dissect_of_bsn_tlv_ip_fragmentation_v5
@@ -59539,6 +59562,7 @@ of_bsn_tlv_v6_dissectors[58] = dissect_of_bsn_tlv_interval_v6
 function dissect_of_bsn_tlv_ip_fragmentation_v6(reader, subtree)
     read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_ip_fragmentation.type')
     read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_ip_fragmentation.length')
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_tlv_ip_fragmentation.value')
     return 'of_bsn_tlv_ip_fragmentation'
 end
 of_bsn_tlv_v6_dissectors[201] = dissect_of_bsn_tlv_ip_fragmentation_v6
