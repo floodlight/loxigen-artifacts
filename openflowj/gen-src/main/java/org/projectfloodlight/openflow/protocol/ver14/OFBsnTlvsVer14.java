@@ -700,8 +700,13 @@ public class OFBsnTlvsVer14 implements OFBsnTlvs {
                     );
     }
 
-    public OFBsnTlvIpFragmentation ipFragmentation() {
-        return OFBsnTlvIpFragmentationVer14.INSTANCE;
+    public OFBsnTlvIpFragmentation.Builder buildIpFragmentation() {
+        return new OFBsnTlvIpFragmentationVer14.Builder();
+    }
+    public OFBsnTlvIpFragmentation ipFragmentation(OFBsnIpFragmentation value) {
+        return new OFBsnTlvIpFragmentationVer14(
+                value
+                    );
     }
 
     public OFBsnTlvIpProto.Builder buildIpProto() {

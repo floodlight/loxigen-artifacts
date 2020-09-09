@@ -27,6 +27,7 @@ import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import java.util.Set;
 import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
@@ -35,19 +36,19 @@ class OFBsnTlvIpFragmentationVer14 implements OFBsnTlvIpFragmentation {
     private static final Logger logger = LoggerFactory.getLogger(OFBsnTlvIpFragmentationVer14.class);
     // version: 1.4
     final static byte WIRE_VERSION = 5;
-    final static int LENGTH = 4;
+    final static int LENGTH = 5;
 
 
     // OF message fields
+    private final OFBsnIpFragmentation value;
 //
-    // Immutable default instance
-    final static OFBsnTlvIpFragmentationVer14 DEFAULT = new OFBsnTlvIpFragmentationVer14(
 
-    );
-
-    final static OFBsnTlvIpFragmentationVer14 INSTANCE = new OFBsnTlvIpFragmentationVer14();
-    // private empty constructor - use shared instance!
-    private OFBsnTlvIpFragmentationVer14() {
+    // package private constructor - used by readers, builders, and factory
+    OFBsnTlvIpFragmentationVer14(OFBsnIpFragmentation value) {
+        if(value == null) {
+            throw new NullPointerException("OFBsnTlvIpFragmentationVer14: property value cannot be null");
+        }
+        this.value = value;
     }
 
     // Accessors for OF message fields
@@ -57,15 +58,109 @@ class OFBsnTlvIpFragmentationVer14 implements OFBsnTlvIpFragmentation {
     }
 
     @Override
+    public OFBsnIpFragmentation getValue() {
+        return value;
+    }
+
+    @Override
     public OFVersion getVersion() {
         return OFVersion.OF_14;
     }
 
 
 
-    // no data members - do not support builder
     public OFBsnTlvIpFragmentation.Builder createBuilder() {
-        throw new UnsupportedOperationException("OFBsnTlvIpFragmentationVer14 has no mutable properties -- builder unneeded");
+        return new BuilderWithParent(this);
+    }
+
+    static class BuilderWithParent implements OFBsnTlvIpFragmentation.Builder {
+        final OFBsnTlvIpFragmentationVer14 parentMessage;
+
+        // OF message fields
+        private boolean valueSet;
+        private OFBsnIpFragmentation value;
+
+        BuilderWithParent(OFBsnTlvIpFragmentationVer14 parentMessage) {
+            this.parentMessage = parentMessage;
+        }
+
+    @Override
+    public int getType() {
+        return 0xc9;
+    }
+
+    @Override
+    public OFBsnIpFragmentation getValue() {
+        return value;
+    }
+
+    @Override
+    public OFBsnTlvIpFragmentation.Builder setValue(OFBsnIpFragmentation value) {
+        this.value = value;
+        this.valueSet = true;
+        return this;
+    }
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_14;
+    }
+
+
+
+        @Override
+        public OFBsnTlvIpFragmentation build() {
+                OFBsnIpFragmentation value = this.valueSet ? this.value : parentMessage.value;
+                if(value == null)
+                    throw new NullPointerException("Property value must not be null");
+
+                //
+                return new OFBsnTlvIpFragmentationVer14(
+                    value
+                );
+        }
+
+    }
+
+    static class Builder implements OFBsnTlvIpFragmentation.Builder {
+        // OF message fields
+        private boolean valueSet;
+        private OFBsnIpFragmentation value;
+
+    @Override
+    public int getType() {
+        return 0xc9;
+    }
+
+    @Override
+    public OFBsnIpFragmentation getValue() {
+        return value;
+    }
+
+    @Override
+    public OFBsnTlvIpFragmentation.Builder setValue(OFBsnIpFragmentation value) {
+        this.value = value;
+        this.valueSet = true;
+        return this;
+    }
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_14;
+    }
+
+//
+        @Override
+        public OFBsnTlvIpFragmentation build() {
+            if(!this.valueSet)
+                throw new IllegalStateException("Property value doesn't have default value -- must be set");
+            if(value == null)
+                throw new NullPointerException("Property value must not be null");
+
+
+            return new OFBsnTlvIpFragmentationVer14(
+                    value
+                );
+        }
+
     }
 
 
@@ -79,8 +174,8 @@ class OFBsnTlvIpFragmentationVer14 implements OFBsnTlvIpFragmentation {
             if(type != (short) 0xc9)
                 throw new OFParseError("Wrong type: Expected=0xc9(0xc9), got="+type);
             int length = U16.f(bb.readShort());
-            if(length != 4)
-                throw new OFParseError("Wrong length: Expected=4(4), got="+length);
+            if(length != 5)
+                throw new OFParseError("Wrong length: Expected=5(5), got="+length);
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -88,10 +183,14 @@ class OFBsnTlvIpFragmentationVer14 implements OFBsnTlvIpFragmentation {
             }
             if(logger.isTraceEnabled())
                 logger.trace("readFrom - length={}", length);
+            OFBsnIpFragmentation value = OFBsnIpFragmentationSerializerVer14.readFrom(bb);
 
+            OFBsnTlvIpFragmentationVer14 bsnTlvIpFragmentationVer14 = new OFBsnTlvIpFragmentationVer14(
+                    value
+                    );
             if(logger.isTraceEnabled())
-                logger.trace("readFrom - returning shared instance={}", INSTANCE);
-            return INSTANCE;
+                logger.trace("readFrom - read={}", bsnTlvIpFragmentationVer14);
+            return bsnTlvIpFragmentationVer14;
         }
     }
 
@@ -106,8 +205,9 @@ class OFBsnTlvIpFragmentationVer14 implements OFBsnTlvIpFragmentation {
         public void funnel(OFBsnTlvIpFragmentationVer14 message, PrimitiveSink sink) {
             // fixed value property type = 0xc9
             sink.putShort((short) 0xc9);
-            // fixed value property length = 4
-            sink.putShort((short) 0x4);
+            // fixed value property length = 5
+            sink.putShort((short) 0x5);
+            OFBsnIpFragmentationSerializerVer14.putTo(message.value, sink);
         }
     }
 
@@ -122,8 +222,9 @@ class OFBsnTlvIpFragmentationVer14 implements OFBsnTlvIpFragmentation {
         public void write(ByteBuf bb, OFBsnTlvIpFragmentationVer14 message) {
             // fixed value property type = 0xc9
             bb.writeShort((short) 0xc9);
-            // fixed value property length = 4
-            bb.writeShort((short) 0x4);
+            // fixed value property length = 5
+            bb.writeShort((short) 0x5);
+            OFBsnIpFragmentationSerializerVer14.writeTo(bb, message.value);
 
 
         }
@@ -132,6 +233,7 @@ class OFBsnTlvIpFragmentationVer14 implements OFBsnTlvIpFragmentation {
     @Override
     public String toString() {
         StringBuilder b = new StringBuilder("OFBsnTlvIpFragmentationVer14(");
+        b.append("value=").append(value);
         b.append(")");
         return b.toString();
     }
@@ -144,14 +246,22 @@ class OFBsnTlvIpFragmentationVer14 implements OFBsnTlvIpFragmentation {
             return false;
         if (getClass() != obj.getClass())
             return false;
+        OFBsnTlvIpFragmentationVer14 other = (OFBsnTlvIpFragmentationVer14) obj;
 
+        if (value == null) {
+            if (other.value != null)
+                return false;
+        } else if (!value.equals(other.value))
+            return false;
         return true;
     }
 
     @Override
     public int hashCode() {
+        final int prime = 31;
         int result = 1;
 
+        result = prime * result + ((value == null) ? 0 : value.hashCode());
         return result;
     }
 

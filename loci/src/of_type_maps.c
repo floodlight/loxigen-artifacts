@@ -3088,7 +3088,7 @@ of_object_fixed_len_v4[OF_OBJECT_COUNT] = {
     10,   /* 382: of_bsn_tlv_internal_gateway_mac */
     10,   /* 383: of_bsn_tlv_internal_mac */
     8,    /* 384: of_bsn_tlv_interval */
-    4,    /* 385: of_bsn_tlv_ip_fragmentation */
+    5,    /* 385: of_bsn_tlv_ip_fragmentation */
     5,    /* 386: of_bsn_tlv_ip_proto */
     6,    /* 387: of_bsn_tlv_ip_tunnel_type */
     8,    /* 388: of_bsn_tlv_ipv4 */
@@ -3982,7 +3982,7 @@ of_object_fixed_len_v5[OF_OBJECT_COUNT] = {
     10,   /* 382: of_bsn_tlv_internal_gateway_mac */
     10,   /* 383: of_bsn_tlv_internal_mac */
     8,    /* 384: of_bsn_tlv_interval */
-    4,    /* 385: of_bsn_tlv_ip_fragmentation */
+    5,    /* 385: of_bsn_tlv_ip_fragmentation */
     5,    /* 386: of_bsn_tlv_ip_proto */
     6,    /* 387: of_bsn_tlv_ip_tunnel_type */
     8,    /* 388: of_bsn_tlv_ipv4 */
