@@ -4482,6 +4482,17 @@
 #define OFP_BSN_PORT_MODE_8X25_GENERIC 366
 
 /*
+ * Defines for OFP_BSN_PORT_MODE_8X50
+ * Original name OFP_BSN_PORT_MODE_8X50
+ */
+#define OFP_BSN_PORT_MODE_8X50_SUPPORTED(version)      \
+    (((version) == OF_VERSION_1_3) || \
+     ((version) == OF_VERSION_1_4))
+#define OFP_BSN_PORT_MODE_8X50 (0xc)
+#define OFP_BSN_PORT_MODE_8X50_BY_VERSION(version) (0xc)
+#define OFP_BSN_PORT_MODE_8X50_GENERIC 367
+
+/*
  * Defines for OFP_BSN_PORT_MODE_NONE
  * Original name OFP_BSN_PORT_MODE_NONE
  */
@@ -4490,18 +4501,7 @@
      ((version) == OF_VERSION_1_4))
 #define OFP_BSN_PORT_MODE_NONE (0x0)
 #define OFP_BSN_PORT_MODE_NONE_BY_VERSION(version) (0x0)
-#define OFP_BSN_PORT_MODE_NONE_GENERIC 367
-
-/*
- * Defines for OPF_BSN_PORT_MODE_8X50
- * Original name OPF_BSN_PORT_MODE_8X50
- */
-#define OPF_BSN_PORT_MODE_8X50_SUPPORTED(version)      \
-    (((version) == OF_VERSION_1_3) || \
-     ((version) == OF_VERSION_1_4))
-#define OPF_BSN_PORT_MODE_8X50 (0xc)
-#define OPF_BSN_PORT_MODE_8X50_BY_VERSION(version) (0xc)
-#define OPF_BSN_PORT_MODE_8X50_GENERIC 368
+#define OFP_BSN_PORT_MODE_NONE_GENERIC 368
 
 /****************************************************************
  * Identifiers from ofp_bsn_port_speed_gbps_type
