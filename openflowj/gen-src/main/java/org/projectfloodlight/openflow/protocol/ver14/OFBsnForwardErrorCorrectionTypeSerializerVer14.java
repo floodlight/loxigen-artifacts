@@ -34,6 +34,9 @@ public class OFBsnForwardErrorCorrectionTypeSerializerVer14 {
     public final static byte BSN_FORWARD_ERROR_CORRECTION_DEFAULT_VAL = (byte) 0x0;
     public final static byte BSN_FORWARD_ERROR_CORRECTION_ENABLE_VAL = (byte) 0x1;
     public final static byte BSN_FORWARD_ERROR_CORRECTION_DISABLE_VAL = (byte) 0x2;
+    public final static byte BSN_FORWARD_ERROR_CORRECTION_ENABLE_FIRE_CODE_VAL = (byte) 0x3;
+    public final static byte BSN_FORWARD_ERROR_CORRECTION_ENABLE_REED_SOLOMON_VAL = (byte) 0x4;
+    public final static byte BSN_FORWARD_ERROR_CORRECTION_ENABLE_REED_SOLOMON544_VAL = (byte) 0x5;
 
     public static OFBsnForwardErrorCorrectionType readFrom(ByteBuf bb) throws OFParseError {
         try {
@@ -59,6 +62,12 @@ public class OFBsnForwardErrorCorrectionTypeSerializerVer14 {
                 return OFBsnForwardErrorCorrectionType.BSN_FORWARD_ERROR_CORRECTION_ENABLE;
             case BSN_FORWARD_ERROR_CORRECTION_DISABLE_VAL:
                 return OFBsnForwardErrorCorrectionType.BSN_FORWARD_ERROR_CORRECTION_DISABLE;
+            case BSN_FORWARD_ERROR_CORRECTION_ENABLE_FIRE_CODE_VAL:
+                return OFBsnForwardErrorCorrectionType.BSN_FORWARD_ERROR_CORRECTION_ENABLE_FIRE_CODE;
+            case BSN_FORWARD_ERROR_CORRECTION_ENABLE_REED_SOLOMON_VAL:
+                return OFBsnForwardErrorCorrectionType.BSN_FORWARD_ERROR_CORRECTION_ENABLE_REED_SOLOMON;
+            case BSN_FORWARD_ERROR_CORRECTION_ENABLE_REED_SOLOMON544_VAL:
+                return OFBsnForwardErrorCorrectionType.BSN_FORWARD_ERROR_CORRECTION_ENABLE_REED_SOLOMON544;
             default:
                 throw new IllegalArgumentException("Illegal wire value for type OFBsnForwardErrorCorrectionType in version 1.4: " + val);
         }
@@ -73,6 +82,12 @@ public class OFBsnForwardErrorCorrectionTypeSerializerVer14 {
                 return BSN_FORWARD_ERROR_CORRECTION_ENABLE_VAL;
             case BSN_FORWARD_ERROR_CORRECTION_DISABLE:
                 return BSN_FORWARD_ERROR_CORRECTION_DISABLE_VAL;
+            case BSN_FORWARD_ERROR_CORRECTION_ENABLE_FIRE_CODE:
+                return BSN_FORWARD_ERROR_CORRECTION_ENABLE_FIRE_CODE_VAL;
+            case BSN_FORWARD_ERROR_CORRECTION_ENABLE_REED_SOLOMON:
+                return BSN_FORWARD_ERROR_CORRECTION_ENABLE_REED_SOLOMON_VAL;
+            case BSN_FORWARD_ERROR_CORRECTION_ENABLE_REED_SOLOMON544:
+                return BSN_FORWARD_ERROR_CORRECTION_ENABLE_REED_SOLOMON544_VAL;
             default:
                 throw new IllegalArgumentException("Illegal enum value for type OFBsnForwardErrorCorrectionType in version 1.4: " + e);
         }
