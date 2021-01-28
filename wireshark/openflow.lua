@@ -1370,6 +1370,9 @@ enum_v4_ofp_bsn_udf_anchor = {
     [0] = "OFP_BSN_UDF_ANCHOR_PACKET_START",
     [1] = "OFP_BSN_UDF_ANCHOR_L3_HEADER_START",
     [2] = "OFP_BSN_UDF_ANCHOR_L4_HEADER_START",
+    [3] = "OFP_BSN_UDF_ANCHOR_TD3_L2_START",
+    [4] = "OFP_BSN_UDF_ANCHOR_TD3_L3_IPV4_START_WITHOUT_OPTIONS",
+    [5] = "OFP_BSN_UDF_ANCHOR_TD3_L3_IPV6_START",
 }
 
 enum_v4_ofp_bsn_lacp_state = {
@@ -2388,6 +2391,9 @@ enum_v5_ofp_bsn_udf_anchor = {
     [0] = "OFP_BSN_UDF_ANCHOR_PACKET_START",
     [1] = "OFP_BSN_UDF_ANCHOR_L3_HEADER_START",
     [2] = "OFP_BSN_UDF_ANCHOR_L4_HEADER_START",
+    [3] = "OFP_BSN_UDF_ANCHOR_TD3_L2_START",
+    [4] = "OFP_BSN_UDF_ANCHOR_TD3_L3_IPV4_START_WITHOUT_OPTIONS",
+    [5] = "OFP_BSN_UDF_ANCHOR_TD3_L3_IPV6_START",
 }
 
 enum_v5_ofp_bsn_lacp_state = {
@@ -3528,6 +3534,9 @@ enum_v6_ofp_bsn_udf_anchor = {
     [0] = "OFP_BSN_UDF_ANCHOR_PACKET_START",
     [1] = "OFP_BSN_UDF_ANCHOR_L3_HEADER_START",
     [2] = "OFP_BSN_UDF_ANCHOR_L4_HEADER_START",
+    [3] = "OFP_BSN_UDF_ANCHOR_TD3_L2_START",
+    [4] = "OFP_BSN_UDF_ANCHOR_TD3_L3_IPV4_START_WITHOUT_OPTIONS",
+    [5] = "OFP_BSN_UDF_ANCHOR_TD3_L3_IPV6_START",
 }
 
 enum_v6_ofp_bsn_lacp_state = {

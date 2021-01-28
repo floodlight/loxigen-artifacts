@@ -34,6 +34,9 @@ public class OFBsnUdfAnchorSerializerVer14 {
     public final static short BSN_UDF_ANCHOR_PACKET_START_VAL = (short) 0x0;
     public final static short BSN_UDF_ANCHOR_L3_HEADER_START_VAL = (short) 0x1;
     public final static short BSN_UDF_ANCHOR_L4_HEADER_START_VAL = (short) 0x2;
+    public final static short BSN_UDF_ANCHOR_TD3_L2_START_VAL = (short) 0x3;
+    public final static short BSN_UDF_ANCHOR_TD3_L3_IPV4_START_WITHOUT_OPTIONS_VAL = (short) 0x4;
+    public final static short BSN_UDF_ANCHOR_TD3_L3_IPV6_START_VAL = (short) 0x5;
 
     public static OFBsnUdfAnchor readFrom(ByteBuf bb) throws OFParseError {
         try {
@@ -59,6 +62,12 @@ public class OFBsnUdfAnchorSerializerVer14 {
                 return OFBsnUdfAnchor.BSN_UDF_ANCHOR_L3_HEADER_START;
             case BSN_UDF_ANCHOR_L4_HEADER_START_VAL:
                 return OFBsnUdfAnchor.BSN_UDF_ANCHOR_L4_HEADER_START;
+            case BSN_UDF_ANCHOR_TD3_L2_START_VAL:
+                return OFBsnUdfAnchor.BSN_UDF_ANCHOR_TD3_L2_START;
+            case BSN_UDF_ANCHOR_TD3_L3_IPV4_START_WITHOUT_OPTIONS_VAL:
+                return OFBsnUdfAnchor.BSN_UDF_ANCHOR_TD3_L3_IPV4_START_WITHOUT_OPTIONS;
+            case BSN_UDF_ANCHOR_TD3_L3_IPV6_START_VAL:
+                return OFBsnUdfAnchor.BSN_UDF_ANCHOR_TD3_L3_IPV6_START;
             default:
                 throw new IllegalArgumentException("Illegal wire value for type OFBsnUdfAnchor in version 1.4: " + val);
         }
@@ -73,6 +82,12 @@ public class OFBsnUdfAnchorSerializerVer14 {
                 return BSN_UDF_ANCHOR_L3_HEADER_START_VAL;
             case BSN_UDF_ANCHOR_L4_HEADER_START:
                 return BSN_UDF_ANCHOR_L4_HEADER_START_VAL;
+            case BSN_UDF_ANCHOR_TD3_L2_START:
+                return BSN_UDF_ANCHOR_TD3_L2_START_VAL;
+            case BSN_UDF_ANCHOR_TD3_L3_IPV4_START_WITHOUT_OPTIONS:
+                return BSN_UDF_ANCHOR_TD3_L3_IPV4_START_WITHOUT_OPTIONS_VAL;
+            case BSN_UDF_ANCHOR_TD3_L3_IPV6_START:
+                return BSN_UDF_ANCHOR_TD3_L3_IPV6_START_VAL;
             default:
                 throw new IllegalArgumentException("Illegal enum value for type OFBsnUdfAnchor in version 1.4: " + e);
         }
