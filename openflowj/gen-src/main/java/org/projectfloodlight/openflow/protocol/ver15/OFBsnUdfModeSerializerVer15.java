@@ -36,6 +36,7 @@ import java.util.Collections;
 public class OFBsnUdfModeSerializerVer15 {
 
     public final static byte BSN_UDF_8X2_BYTES_VAL = (byte) 0x1;
+    public final static byte BSN_UDF_6X2_BYTES_VAL = (byte) 0x2;
 
     public static Set<OFBsnUdfMode> readFrom(ByteBuf bb) throws OFParseError {
         try {
@@ -59,6 +60,8 @@ public class OFBsnUdfModeSerializerVer15 {
 
         if((val & BSN_UDF_8X2_BYTES_VAL) != 0)
             set.add(OFBsnUdfMode.BSN_UDF_8X2_BYTES);
+        if((val & BSN_UDF_6X2_BYTES_VAL) != 0)
+            set.add(OFBsnUdfMode.BSN_UDF_6X2_BYTES);
         return Collections.unmodifiableSet(set);
     }
 
@@ -69,6 +72,9 @@ public class OFBsnUdfModeSerializerVer15 {
             switch(e) {
                 case BSN_UDF_8X2_BYTES:
                     wireValue |= BSN_UDF_8X2_BYTES_VAL;
+                    break;
+                case BSN_UDF_6X2_BYTES:
+                    wireValue |= BSN_UDF_6X2_BYTES_VAL;
                     break;
                 default:
                     throw new IllegalArgumentException("Illegal enum value for type OFBsnUdfMode in version 1.5: " + e);

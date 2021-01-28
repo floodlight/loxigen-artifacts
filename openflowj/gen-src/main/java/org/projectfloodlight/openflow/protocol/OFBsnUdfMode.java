@@ -27,5 +27,6 @@ import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 
 public enum OFBsnUdfMode {
-     BSN_UDF_8X2_BYTES;
+     BSN_UDF_8X2_BYTES,
+     BSN_UDF_6X2_BYTES;
 }

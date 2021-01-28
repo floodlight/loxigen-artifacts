@@ -1082,9 +1082,11 @@ ofp_bsn_udf_anchor_map = {
 
 # Identifiers from group ofp_bsn_udf_mode
 OFP_BSN_UDF_8X2_BYTES = 1
+OFP_BSN_UDF_6X2_BYTES = 2
 
 ofp_bsn_udf_mode_map = {
     1: 'OFP_BSN_UDF_8X2_BYTES',
+    2: 'OFP_BSN_UDF_6X2_BYTES',
 }
 
 # Identifiers from group ofp_bsn_upgrade
