@@ -1618,6 +1618,7 @@ enum_v4_ofp_bsn_port_mode = {
 
 enum_v4_ofp_bsn_udf_mode = {
     [1] = "OFP_BSN_UDF_8X2_BYTES",
+    [2] = "OFP_BSN_UDF_6X2_BYTES",
 }
 
 enum_v4_ofp_bsn_flow_classifier = {
@@ -2639,6 +2640,7 @@ enum_v5_ofp_bsn_port_mode = {
 
 enum_v5_ofp_bsn_udf_mode = {
     [1] = "OFP_BSN_UDF_8X2_BYTES",
+    [2] = "OFP_BSN_UDF_6X2_BYTES",
 }
 
 enum_v5_ofp_bsn_flow_classifier = {
@@ -3782,6 +3784,7 @@ enum_v6_ofp_bsn_port_mode = {
 
 enum_v6_ofp_bsn_udf_mode = {
     [1] = "OFP_BSN_UDF_8X2_BYTES",
+    [2] = "OFP_BSN_UDF_6X2_BYTES",
 }
 
 enum_v6_ofp_bsn_flow_classifier = {
