@@ -1,1 +1,1 @@
-6f4a5fcab9d21023a25eef8cfca0d38825736ba5 Added new enum OFP_BSN_UDF_6X2_BYTES for TD3 UDF capability (#681)
+25cc79dccff189ec03d3b774e6a23133f48dbe43 Add additional BSN_SPEED_CAPS for 200G and 400G.

@@ -43,6 +43,8 @@ public class OFBsnSpeedCapabilitiesSerializerVer14 {
     public final static long BSN_SPEED_CAP_40GB_VAL = 0x20L;
     public final static long BSN_SPEED_CAP_50GB_VAL = 0x40L;
     public final static long BSN_SPEED_CAP_100GB_VAL = 0x80L;
+    public final static long BSN_SPEED_CAP_200GB_VAL = 0x100L;
+    public final static long BSN_SPEED_CAP_400GB_VAL = 0x200L;
 
     public static Set<OFBsnSpeedCapabilities> readFrom(ByteBuf bb) throws OFParseError {
         try {
@@ -80,6 +82,10 @@ public class OFBsnSpeedCapabilitiesSerializerVer14 {
             set.add(OFBsnSpeedCapabilities.BSN_SPEED_CAP_50GB);
         if((val & BSN_SPEED_CAP_100GB_VAL) != 0)
             set.add(OFBsnSpeedCapabilities.BSN_SPEED_CAP_100GB);
+        if((val & BSN_SPEED_CAP_200GB_VAL) != 0)
+            set.add(OFBsnSpeedCapabilities.BSN_SPEED_CAP_200GB);
+        if((val & BSN_SPEED_CAP_400GB_VAL) != 0)
+            set.add(OFBsnSpeedCapabilities.BSN_SPEED_CAP_400GB);
         return Collections.unmodifiableSet(set);
     }
 
@@ -111,6 +117,12 @@ public class OFBsnSpeedCapabilitiesSerializerVer14 {
                     break;
                 case BSN_SPEED_CAP_100GB:
                     wireValue |= BSN_SPEED_CAP_100GB_VAL;
+                    break;
+                case BSN_SPEED_CAP_200GB:
+                    wireValue |= BSN_SPEED_CAP_200GB_VAL;
+                    break;
+                case BSN_SPEED_CAP_400GB:
+                    wireValue |= BSN_SPEED_CAP_400GB_VAL;
                     break;
                 default:
                     throw new IllegalArgumentException("Illegal enum value for type OFBsnSpeedCapabilities in version 1.4: " + e);
