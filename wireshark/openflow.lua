@@ -2365,6 +2365,8 @@ enum_v5_ofp_bsn_speed_capabilities = {
     [32] = "OFP_BSN_SPEED_CAP_40GB",
     [64] = "OFP_BSN_SPEED_CAP_50GB",
     [128] = "OFP_BSN_SPEED_CAP_100GB",
+    [256] = "OFP_BSN_SPEED_CAP_200GB",
+    [512] = "OFP_BSN_SPEED_CAP_400GB",
 }
 
 enum_v5_ofp_bsn_misc_capabilities = {
@@ -3509,6 +3511,8 @@ enum_v6_ofp_bsn_speed_capabilities = {
     [32] = "OFP_BSN_SPEED_CAP_40GB",
     [64] = "OFP_BSN_SPEED_CAP_50GB",
     [128] = "OFP_BSN_SPEED_CAP_100GB",
+    [256] = "OFP_BSN_SPEED_CAP_200GB",
+    [512] = "OFP_BSN_SPEED_CAP_400GB",
 }
 
 enum_v6_ofp_bsn_misc_capabilities = {

@@ -34,5 +34,7 @@ public enum OFBsnSpeedCapabilities {
      BSN_SPEED_CAP_25GB,
      BSN_SPEED_CAP_40GB,
      BSN_SPEED_CAP_50GB,
-     BSN_SPEED_CAP_100GB;
+     BSN_SPEED_CAP_100GB,
+     BSN_SPEED_CAP_200GB,
+     BSN_SPEED_CAP_400GB;
 }

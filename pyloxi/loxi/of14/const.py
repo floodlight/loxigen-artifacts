@@ -999,6 +999,8 @@ OFP_BSN_SPEED_CAP_25GB = 16
 OFP_BSN_SPEED_CAP_40GB = 32
 OFP_BSN_SPEED_CAP_50GB = 64
 OFP_BSN_SPEED_CAP_100GB = 128
+OFP_BSN_SPEED_CAP_200GB = 256
+OFP_BSN_SPEED_CAP_400GB = 512
 
 ofp_bsn_speed_capabilities_map = {
     1: 'OFP_BSN_SPEED_CAP_10M',
@@ -1009,6 +1011,8 @@ ofp_bsn_speed_capabilities_map = {
     32: 'OFP_BSN_SPEED_CAP_40GB',
     64: 'OFP_BSN_SPEED_CAP_50GB',
     128: 'OFP_BSN_SPEED_CAP_100GB',
+    256: 'OFP_BSN_SPEED_CAP_200GB',
+    512: 'OFP_BSN_SPEED_CAP_400GB',
 }
 
 # Identifiers from group ofp_bsn_status
