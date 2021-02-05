@@ -505,6 +505,9 @@ abstract class OFBsnTlvVer13 {
                case (short) 0x39:
                    // discriminator value 0x39=0x39 for class OFBsnTlvPriorityVer13
                    return OFBsnTlvPriorityVer13.READER.readFrom(bb);
+               case (short) 0xdb:
+                   // discriminator value 0xdb=0xdb for class OFBsnTlvPushTwoTagsCapabilityVer13
+                   return OFBsnTlvPushTwoTagsCapabilityVer13.READER.readFrom(bb);
                case (short) 0xa2:
                    // discriminator value 0xa2=0xa2 for class OFBsnTlvPushVlanOnEgressVer13
                    return OFBsnTlvPushVlanOnEgressVer13.READER.readFrom(bb);

@@ -4365,6 +4365,9 @@ of_bsn_tlv_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
         case 0xda:
             *id = OF_BSN_TLV_LOOKUP_COUNT;
             break;
+        case 0xdb:
+            *id = OF_BSN_TLV_PUSH_TWO_TAGS_CAPABILITY;
+            break;
         default:
             *id = OF_BSN_TLV;
             break;
@@ -5027,6 +5030,9 @@ of_bsn_tlv_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
             break;
         case 0xda:
             *id = OF_BSN_TLV_LOOKUP_COUNT;
+            break;
+        case 0xdb:
+            *id = OF_BSN_TLV_PUSH_TWO_TAGS_CAPABILITY;
             break;
         default:
             *id = OF_BSN_TLV;

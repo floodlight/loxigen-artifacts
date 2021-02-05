@@ -953,6 +953,15 @@ ofp_bsn_port_vxlan_mode_map = {
     1: 'OFP_BSN_PORT_VXLAN_TERMINATION_ENABLE',
 }
 
+# Identifiers from group ofp_bsn_push_two_tags_mode
+OFP_BSN_PUSH_TWO_TAGS_NOT_SUPPORTED = 0
+OFP_BSN_PUSH_TWO_TAGS_SUPPORTED = 1
+
+ofp_bsn_push_two_tags_mode_map = {
+    0: 'OFP_BSN_PUSH_TWO_TAGS_NOT_SUPPORTED',
+    1: 'OFP_BSN_PUSH_TWO_TAGS_SUPPORTED',
+}
+
 # Identifiers from group ofp_bsn_push_vlan
 OFP_BSN_PUSH_VLAN_UNTAGGED = 1
 OFP_BSN_PUSH_VLAN_SINGLE_TAGGED = 2

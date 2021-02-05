@@ -1004,6 +1004,13 @@ public class OFBsnTlvsVer12 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvPriority not supported in version 1.2");
     }
 
+    public OFBsnTlvPushTwoTagsCapability.Builder buildPushTwoTagsCapability() {
+        throw new UnsupportedOperationException("OFBsnTlvPushTwoTagsCapability not supported in version 1.2");
+    }
+    public OFBsnTlvPushTwoTagsCapability pushTwoTagsCapability(Set<OFBsnPushTwoTagsMode> value) {
+        throw new UnsupportedOperationException("OFBsnTlvPushTwoTagsCapability not supported in version 1.2");
+    }
+
     public OFBsnTlvPushVlanOnEgress pushVlanOnEgress() {
         throw new UnsupportedOperationException("OFBsnTlvPushVlanOnEgress not supported in version 1.2");
     }

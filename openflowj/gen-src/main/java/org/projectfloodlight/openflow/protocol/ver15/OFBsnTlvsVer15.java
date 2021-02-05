@@ -1245,6 +1245,15 @@ public class OFBsnTlvsVer15 implements OFBsnTlvs {
                     );
     }
 
+    public OFBsnTlvPushTwoTagsCapability.Builder buildPushTwoTagsCapability() {
+        return new OFBsnTlvPushTwoTagsCapabilityVer15.Builder();
+    }
+    public OFBsnTlvPushTwoTagsCapability pushTwoTagsCapability(Set<OFBsnPushTwoTagsMode> value) {
+        return new OFBsnTlvPushTwoTagsCapabilityVer15(
+                value
+                    );
+    }
+
     public OFBsnTlvPushVlanOnEgress pushVlanOnEgress() {
         return OFBsnTlvPushVlanOnEgressVer15.INSTANCE;
     }
