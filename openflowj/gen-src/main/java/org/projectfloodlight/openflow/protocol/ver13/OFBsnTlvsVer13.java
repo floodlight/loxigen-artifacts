@@ -1245,6 +1245,19 @@ public class OFBsnTlvsVer13 implements OFBsnTlvs {
                     );
     }
 
+    public OFBsnTlvPushTwoPerPolicy pushTwoPerPolicy() {
+        return OFBsnTlvPushTwoPerPolicyVer13.INSTANCE;
+    }
+
+    public OFBsnTlvPushTwoTagsCapability.Builder buildPushTwoTagsCapability() {
+        return new OFBsnTlvPushTwoTagsCapabilityVer13.Builder();
+    }
+    public OFBsnTlvPushTwoTagsCapability pushTwoTagsCapability(Set<OFBsnPushTwoTagsMode> value) {
+        return new OFBsnTlvPushTwoTagsCapabilityVer13(
+                value
+                    );
+    }
+
     public OFBsnTlvPushVlanOnEgress pushVlanOnEgress() {
         return OFBsnTlvPushVlanOnEgressVer13.INSTANCE;
     }
