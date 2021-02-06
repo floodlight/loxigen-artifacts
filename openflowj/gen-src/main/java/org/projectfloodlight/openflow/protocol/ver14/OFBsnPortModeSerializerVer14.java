@@ -48,6 +48,11 @@ public class OFBsnPortModeSerializerVer14 {
     public final static short BSN_PORT_MODE_1X50_VAL = (short) 0xe;
     public final static short BSN_PORT_MODE_1X200_VAL = (short) 0xf;
     public final static short BSN_PORT_MODE_1X400_VAL = (short) 0x10;
+    public final static short BSN_PORT_MODE_8X10_VAL = (short) 0x11;
+    public final static short BSN_PORT_MODE_4X100_VAL = (short) 0x12;
+    public final static short BSN_PORT_MODE_2X40_VAL = (short) 0x13;
+    public final static short BSN_PORT_MODE_2X100_VAL = (short) 0x14;
+    public final static short BSN_PORT_MODE_2X200_VAL = (short) 0x15;
 
     public static OFBsnPortMode readFrom(ByteBuf bb) throws OFParseError {
         try {
@@ -101,6 +106,16 @@ public class OFBsnPortModeSerializerVer14 {
                 return OFBsnPortMode.BSN_PORT_MODE_1X200;
             case BSN_PORT_MODE_1X400_VAL:
                 return OFBsnPortMode.BSN_PORT_MODE_1X400;
+            case BSN_PORT_MODE_8X10_VAL:
+                return OFBsnPortMode.BSN_PORT_MODE_8X10;
+            case BSN_PORT_MODE_4X100_VAL:
+                return OFBsnPortMode.BSN_PORT_MODE_4X100;
+            case BSN_PORT_MODE_2X40_VAL:
+                return OFBsnPortMode.BSN_PORT_MODE_2X40;
+            case BSN_PORT_MODE_2X100_VAL:
+                return OFBsnPortMode.BSN_PORT_MODE_2X100;
+            case BSN_PORT_MODE_2X200_VAL:
+                return OFBsnPortMode.BSN_PORT_MODE_2X200;
             default:
                 throw new IllegalArgumentException("Illegal wire value for type OFBsnPortMode in version 1.4: " + val);
         }
@@ -143,6 +158,16 @@ public class OFBsnPortModeSerializerVer14 {
                 return BSN_PORT_MODE_1X200_VAL;
             case BSN_PORT_MODE_1X400:
                 return BSN_PORT_MODE_1X400_VAL;
+            case BSN_PORT_MODE_8X10:
+                return BSN_PORT_MODE_8X10_VAL;
+            case BSN_PORT_MODE_4X100:
+                return BSN_PORT_MODE_4X100_VAL;
+            case BSN_PORT_MODE_2X40:
+                return BSN_PORT_MODE_2X40_VAL;
+            case BSN_PORT_MODE_2X100:
+                return BSN_PORT_MODE_2X100_VAL;
+            case BSN_PORT_MODE_2X200:
+                return BSN_PORT_MODE_2X200_VAL;
             default:
                 throw new IllegalArgumentException("Illegal enum value for type OFBsnPortMode in version 1.4: " + e);
         }
