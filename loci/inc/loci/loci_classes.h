@@ -1161,6 +1161,10 @@ void of_bsn_tlv_preserve_vlan_wire_object_id_get(of_object_t *obj, of_object_id_
 void of_bsn_tlv_preserve_vlan_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_priority_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_priority_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_push_two_per_policy_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_push_two_per_policy_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_push_two_tags_capability_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_push_two_tags_capability_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_push_vlan_on_egress_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_push_vlan_on_egress_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_push_vlan_on_ingress_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -2129,6 +2133,8 @@ typedef of_object_t of_bsn_tlv_port_usage_t;
 typedef of_object_t of_bsn_tlv_port_vxlan_mode_t;
 typedef of_object_t of_bsn_tlv_preserve_vlan_t;
 typedef of_object_t of_bsn_tlv_priority_t;
+typedef of_object_t of_bsn_tlv_push_two_per_policy_t;
+typedef of_object_t of_bsn_tlv_push_two_tags_capability_t;
 typedef of_object_t of_bsn_tlv_push_vlan_on_egress_t;
 typedef of_object_t of_bsn_tlv_push_vlan_on_ingress_t;
 typedef of_object_t of_bsn_tlv_qos_priority_t;
@@ -4860,6 +4866,16 @@ extern void of_bsn_tlv_preserve_vlan_init(
 extern of_object_t *
     of_bsn_tlv_priority_new(of_version_t version);
 extern void of_bsn_tlv_priority_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_bsn_tlv_push_two_per_policy_new(of_version_t version);
+extern void of_bsn_tlv_push_two_per_policy_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_bsn_tlv_push_two_tags_capability_new(of_version_t version);
+extern void of_bsn_tlv_push_two_tags_capability_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
@@ -12041,6 +12057,28 @@ of_bsn_tlv_preserve_vlan_delete(of_object_t *obj) {
  */
 static inline void
 of_bsn_tlv_priority_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_push_two_per_policy_t
+ * @param obj An instance of type of_bsn_tlv_push_two_per_policy_t
+ *
+ * \ingroup of_bsn_tlv_push_two_per_policy
+ */
+static inline void
+of_bsn_tlv_push_two_per_policy_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_push_two_tags_capability_t
+ * @param obj An instance of type of_bsn_tlv_push_two_tags_capability_t
+ *
+ * \ingroup of_bsn_tlv_push_two_tags_capability
+ */
+static inline void
+of_bsn_tlv_push_two_tags_capability_delete(of_object_t *obj) {
     of_object_delete(obj);
 }
 
@@ -25698,6 +25736,17 @@ extern void of_bsn_tlv_priority_value_set(
 extern void of_bsn_tlv_priority_value_get(
     of_bsn_tlv_priority_t *obj,
     uint32_t *value);
+
+/* Unified accessor functions for of_bsn_tlv_push_two_per_policy */
+
+/* Unified accessor functions for of_bsn_tlv_push_two_tags_capability */
+
+extern void of_bsn_tlv_push_two_tags_capability_value_set(
+    of_bsn_tlv_push_two_tags_capability_t *obj,
+    uint8_t value);
+extern void of_bsn_tlv_push_two_tags_capability_value_get(
+    of_bsn_tlv_push_two_tags_capability_t *obj,
+    uint8_t *value);
 
 /* Unified accessor functions for of_bsn_tlv_push_vlan_on_egress */
 
