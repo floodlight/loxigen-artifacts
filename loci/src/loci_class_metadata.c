@@ -3483,6 +3483,18 @@ struct loci_class_metadata loci_class_metadata[OF_OBJECT_COUNT] = {
         .wire_type_get=of_bsn_tlv_wire_object_id_get,
         .wire_type_set=of_bsn_tlv_priority_push_wire_types,
     },
+    [OF_BSN_TLV_PUSH_TWO_PER_POLICY] = {
+        .wire_length_get=of_tlv16_wire_length_get,
+        .wire_length_set=of_tlv16_wire_length_set,
+        .wire_type_get=of_bsn_tlv_wire_object_id_get,
+        .wire_type_set=of_bsn_tlv_push_two_per_policy_push_wire_types,
+    },
+    [OF_BSN_TLV_PUSH_TWO_TAGS_CAPABILITY] = {
+        .wire_length_get=of_tlv16_wire_length_get,
+        .wire_length_set=of_tlv16_wire_length_set,
+        .wire_type_get=of_bsn_tlv_wire_object_id_get,
+        .wire_type_set=of_bsn_tlv_push_two_tags_capability_push_wire_types,
+    },
     [OF_BSN_TLV_PUSH_VLAN_ON_EGRESS] = {
         .wire_length_get=of_tlv16_wire_length_get,
         .wire_length_set=of_tlv16_wire_length_set,

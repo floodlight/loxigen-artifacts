@@ -467,6 +467,8 @@ const of_object_init_f of_object_init_map[] = {
     (of_object_init_f)of_bsn_tlv_port_vxlan_mode_init,
     (of_object_init_f)of_bsn_tlv_preserve_vlan_init,
     (of_object_init_f)of_bsn_tlv_priority_init,
+    (of_object_init_f)of_bsn_tlv_push_two_per_policy_init,
+    (of_object_init_f)of_bsn_tlv_push_two_tags_capability_init,
     (of_object_init_f)of_bsn_tlv_push_vlan_on_egress_init,
     (of_object_init_f)of_bsn_tlv_push_vlan_on_ingress_init,
     (of_object_init_f)of_bsn_tlv_qos_priority_init,

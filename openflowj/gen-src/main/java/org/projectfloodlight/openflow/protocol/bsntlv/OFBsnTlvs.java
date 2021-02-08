@@ -303,6 +303,9 @@ public interface OFBsnTlvs {
     OFBsnTlvPreserveVlan preserveVlan();
     OFBsnTlvPriority.Builder buildPriority() throws UnsupportedOperationException;
     OFBsnTlvPriority priority(long value);
+    OFBsnTlvPushTwoPerPolicy pushTwoPerPolicy();
+    OFBsnTlvPushTwoTagsCapability.Builder buildPushTwoTagsCapability() throws UnsupportedOperationException;
+    OFBsnTlvPushTwoTagsCapability pushTwoTagsCapability(Set<OFBsnPushTwoTagsMode> value);
     OFBsnTlvPushVlanOnEgress pushVlanOnEgress();
     OFBsnTlvPushVlanOnIngress.Builder buildPushVlanOnIngress() throws UnsupportedOperationException;
     OFBsnTlvPushVlanOnIngress pushVlanOnIngress(Set<OFBsnPushVlan> flags);

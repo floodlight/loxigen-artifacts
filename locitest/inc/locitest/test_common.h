@@ -8177,6 +8177,24 @@ extern int of_bsn_tlv_priority_OF_VERSION_1_3_populate_scalars(
 extern int of_bsn_tlv_priority_OF_VERSION_1_3_check_scalars(
     of_bsn_tlv_priority_t *obj, int value);
 
+extern int of_bsn_tlv_push_two_per_policy_OF_VERSION_1_3_populate(
+    of_bsn_tlv_push_two_per_policy_t *obj, int value);
+extern int of_bsn_tlv_push_two_per_policy_OF_VERSION_1_3_check(
+    of_bsn_tlv_push_two_per_policy_t *obj, int value);
+extern int of_bsn_tlv_push_two_per_policy_OF_VERSION_1_3_populate_scalars(
+    of_bsn_tlv_push_two_per_policy_t *obj, int value);
+extern int of_bsn_tlv_push_two_per_policy_OF_VERSION_1_3_check_scalars(
+    of_bsn_tlv_push_two_per_policy_t *obj, int value);
+
+extern int of_bsn_tlv_push_two_tags_capability_OF_VERSION_1_3_populate(
+    of_bsn_tlv_push_two_tags_capability_t *obj, int value);
+extern int of_bsn_tlv_push_two_tags_capability_OF_VERSION_1_3_check(
+    of_bsn_tlv_push_two_tags_capability_t *obj, int value);
+extern int of_bsn_tlv_push_two_tags_capability_OF_VERSION_1_3_populate_scalars(
+    of_bsn_tlv_push_two_tags_capability_t *obj, int value);
+extern int of_bsn_tlv_push_two_tags_capability_OF_VERSION_1_3_check_scalars(
+    of_bsn_tlv_push_two_tags_capability_t *obj, int value);
+
 extern int of_bsn_tlv_push_vlan_on_egress_OF_VERSION_1_3_populate(
     of_bsn_tlv_push_vlan_on_egress_t *obj, int value);
 extern int of_bsn_tlv_push_vlan_on_egress_OF_VERSION_1_3_check(
@@ -15007,6 +15025,24 @@ extern int of_bsn_tlv_priority_OF_VERSION_1_4_populate_scalars(
     of_bsn_tlv_priority_t *obj, int value);
 extern int of_bsn_tlv_priority_OF_VERSION_1_4_check_scalars(
     of_bsn_tlv_priority_t *obj, int value);
+
+extern int of_bsn_tlv_push_two_per_policy_OF_VERSION_1_4_populate(
+    of_bsn_tlv_push_two_per_policy_t *obj, int value);
+extern int of_bsn_tlv_push_two_per_policy_OF_VERSION_1_4_check(
+    of_bsn_tlv_push_two_per_policy_t *obj, int value);
+extern int of_bsn_tlv_push_two_per_policy_OF_VERSION_1_4_populate_scalars(
+    of_bsn_tlv_push_two_per_policy_t *obj, int value);
+extern int of_bsn_tlv_push_two_per_policy_OF_VERSION_1_4_check_scalars(
+    of_bsn_tlv_push_two_per_policy_t *obj, int value);
+
+extern int of_bsn_tlv_push_two_tags_capability_OF_VERSION_1_4_populate(
+    of_bsn_tlv_push_two_tags_capability_t *obj, int value);
+extern int of_bsn_tlv_push_two_tags_capability_OF_VERSION_1_4_check(
+    of_bsn_tlv_push_two_tags_capability_t *obj, int value);
+extern int of_bsn_tlv_push_two_tags_capability_OF_VERSION_1_4_populate_scalars(
+    of_bsn_tlv_push_two_tags_capability_t *obj, int value);
+extern int of_bsn_tlv_push_two_tags_capability_OF_VERSION_1_4_check_scalars(
+    of_bsn_tlv_push_two_tags_capability_t *obj, int value);
 
 extern int of_bsn_tlv_push_vlan_on_egress_OF_VERSION_1_4_populate(
     of_bsn_tlv_push_vlan_on_egress_t *obj, int value);

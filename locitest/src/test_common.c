@@ -5803,6 +5803,18 @@ test_ident_macros(void)
     TEST_ASSERT(!OFP_BSN_ADMIN_STATE_ENABLED_SUPPORTED(OF_VERSION_1_2));
     TEST_ASSERT(OFP_BSN_ADMIN_STATE_ENABLED_SUPPORTED(OF_VERSION_1_3));
     TEST_ASSERT(OFP_BSN_ADMIN_STATE_ENABLED_SUPPORTED(OF_VERSION_1_4));
+    value = OFP_BSN_PUSH_TWO_TAGS_NOT_SUPPORTED;
+    TEST_ASSERT(!OFP_BSN_PUSH_TWO_TAGS_NOT_SUPPORTED_SUPPORTED(OF_VERSION_1_0));
+    TEST_ASSERT(!OFP_BSN_PUSH_TWO_TAGS_NOT_SUPPORTED_SUPPORTED(OF_VERSION_1_1));
+    TEST_ASSERT(!OFP_BSN_PUSH_TWO_TAGS_NOT_SUPPORTED_SUPPORTED(OF_VERSION_1_2));
+    TEST_ASSERT(OFP_BSN_PUSH_TWO_TAGS_NOT_SUPPORTED_SUPPORTED(OF_VERSION_1_3));
+    TEST_ASSERT(OFP_BSN_PUSH_TWO_TAGS_NOT_SUPPORTED_SUPPORTED(OF_VERSION_1_4));
+    value = OFP_BSN_PUSH_TWO_TAGS_SUPPORTED;
+    TEST_ASSERT(!OFP_BSN_PUSH_TWO_TAGS_SUPPORTED_SUPPORTED(OF_VERSION_1_0));
+    TEST_ASSERT(!OFP_BSN_PUSH_TWO_TAGS_SUPPORTED_SUPPORTED(OF_VERSION_1_1));
+    TEST_ASSERT(!OFP_BSN_PUSH_TWO_TAGS_SUPPORTED_SUPPORTED(OF_VERSION_1_2));
+    TEST_ASSERT(OFP_BSN_PUSH_TWO_TAGS_SUPPORTED_SUPPORTED(OF_VERSION_1_3));
+    TEST_ASSERT(OFP_BSN_PUSH_TWO_TAGS_SUPPORTED_SUPPORTED(OF_VERSION_1_4));
     value = OFP_BSN_VLAN_ALL;
     TEST_ASSERT(!OFP_BSN_VLAN_ALL_SUPPORTED(OF_VERSION_1_0));
     TEST_ASSERT(!OFP_BSN_VLAN_ALL_SUPPORTED(OF_VERSION_1_1));
@@ -10751,6 +10763,14 @@ test_dump_objs(void)
     of_object_dump((loci_writer_f)fprintf, out, obj);
     of_object_delete(obj);
 
+    obj = (of_object_t *)of_bsn_tlv_push_two_per_policy_new(OF_VERSION_1_3);
+    of_object_dump((loci_writer_f)fprintf, out, obj);
+    of_object_delete(obj);
+
+    obj = (of_object_t *)of_bsn_tlv_push_two_tags_capability_new(OF_VERSION_1_3);
+    of_object_dump((loci_writer_f)fprintf, out, obj);
+    of_object_delete(obj);
+
     obj = (of_object_t *)of_bsn_tlv_push_vlan_on_egress_new(OF_VERSION_1_3);
     of_object_dump((loci_writer_f)fprintf, out, obj);
     of_object_delete(obj);
@@ -13609,6 +13629,14 @@ test_dump_objs(void)
     of_object_delete(obj);
 
     obj = (of_object_t *)of_bsn_tlv_priority_new(OF_VERSION_1_4);
+    of_object_dump((loci_writer_f)fprintf, out, obj);
+    of_object_delete(obj);
+
+    obj = (of_object_t *)of_bsn_tlv_push_two_per_policy_new(OF_VERSION_1_4);
+    of_object_dump((loci_writer_f)fprintf, out, obj);
+    of_object_delete(obj);
+
+    obj = (of_object_t *)of_bsn_tlv_push_two_tags_capability_new(OF_VERSION_1_4);
     of_object_dump((loci_writer_f)fprintf, out, obj);
     of_object_delete(obj);
 
