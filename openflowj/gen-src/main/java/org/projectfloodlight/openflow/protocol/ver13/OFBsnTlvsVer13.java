@@ -954,6 +954,15 @@ public class OFBsnTlvsVer13 implements OFBsnTlvs {
         return OFBsnTlvMcgTypeVxlanVer13.INSTANCE;
     }
 
+    public OFBsnTlvMetadata.Builder buildMetadata() {
+        return new OFBsnTlvMetadataVer13.Builder();
+    }
+    public OFBsnTlvMetadata metadata(OFBsnMetadata value) {
+        return new OFBsnTlvMetadataVer13(
+                value
+                    );
+    }
+
     public OFBsnTlvMgmt.Builder buildMgmt() {
         return new OFBsnTlvMgmtVer13.Builder();
     }
@@ -1099,6 +1108,15 @@ public class OFBsnTlvsVer13 implements OFBsnTlvs {
     }
     public OFBsnTlvOuterSrcMac outerSrcMac(MacAddress value) {
         return new OFBsnTlvOuterSrcMacVer13(
+                value
+                    );
+    }
+
+    public OFBsnTlvPacketField.Builder buildPacketField() {
+        return new OFBsnTlvPacketFieldVer13.Builder();
+    }
+    public OFBsnTlvPacketField packetField(OFBsnPacketField value) {
+        return new OFBsnTlvPacketFieldVer13(
                 value
                     );
     }

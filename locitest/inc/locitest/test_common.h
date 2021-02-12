@@ -7826,6 +7826,15 @@ extern int of_bsn_tlv_mcg_type_vxlan_OF_VERSION_1_3_populate_scalars(
 extern int of_bsn_tlv_mcg_type_vxlan_OF_VERSION_1_3_check_scalars(
     of_bsn_tlv_mcg_type_vxlan_t *obj, int value);
 
+extern int of_bsn_tlv_metadata_OF_VERSION_1_3_populate(
+    of_bsn_tlv_metadata_t *obj, int value);
+extern int of_bsn_tlv_metadata_OF_VERSION_1_3_check(
+    of_bsn_tlv_metadata_t *obj, int value);
+extern int of_bsn_tlv_metadata_OF_VERSION_1_3_populate_scalars(
+    of_bsn_tlv_metadata_t *obj, int value);
+extern int of_bsn_tlv_metadata_OF_VERSION_1_3_check_scalars(
+    of_bsn_tlv_metadata_t *obj, int value);
+
 extern int of_bsn_tlv_mgmt_OF_VERSION_1_3_populate(
     of_bsn_tlv_mgmt_t *obj, int value);
 extern int of_bsn_tlv_mgmt_OF_VERSION_1_3_check(
@@ -8014,6 +8023,15 @@ extern int of_bsn_tlv_outer_src_mac_OF_VERSION_1_3_populate_scalars(
     of_bsn_tlv_outer_src_mac_t *obj, int value);
 extern int of_bsn_tlv_outer_src_mac_OF_VERSION_1_3_check_scalars(
     of_bsn_tlv_outer_src_mac_t *obj, int value);
+
+extern int of_bsn_tlv_packet_field_OF_VERSION_1_3_populate(
+    of_bsn_tlv_packet_field_t *obj, int value);
+extern int of_bsn_tlv_packet_field_OF_VERSION_1_3_check(
+    of_bsn_tlv_packet_field_t *obj, int value);
+extern int of_bsn_tlv_packet_field_OF_VERSION_1_3_populate_scalars(
+    of_bsn_tlv_packet_field_t *obj, int value);
+extern int of_bsn_tlv_packet_field_OF_VERSION_1_3_check_scalars(
+    of_bsn_tlv_packet_field_t *obj, int value);
 
 extern int of_bsn_tlv_parent_port_OF_VERSION_1_3_populate(
     of_bsn_tlv_parent_port_t *obj, int value);
@@ -14675,6 +14693,15 @@ extern int of_bsn_tlv_mcg_type_vxlan_OF_VERSION_1_4_populate_scalars(
 extern int of_bsn_tlv_mcg_type_vxlan_OF_VERSION_1_4_check_scalars(
     of_bsn_tlv_mcg_type_vxlan_t *obj, int value);
 
+extern int of_bsn_tlv_metadata_OF_VERSION_1_4_populate(
+    of_bsn_tlv_metadata_t *obj, int value);
+extern int of_bsn_tlv_metadata_OF_VERSION_1_4_check(
+    of_bsn_tlv_metadata_t *obj, int value);
+extern int of_bsn_tlv_metadata_OF_VERSION_1_4_populate_scalars(
+    of_bsn_tlv_metadata_t *obj, int value);
+extern int of_bsn_tlv_metadata_OF_VERSION_1_4_check_scalars(
+    of_bsn_tlv_metadata_t *obj, int value);
+
 extern int of_bsn_tlv_mgmt_OF_VERSION_1_4_populate(
     of_bsn_tlv_mgmt_t *obj, int value);
 extern int of_bsn_tlv_mgmt_OF_VERSION_1_4_check(
@@ -14863,6 +14890,15 @@ extern int of_bsn_tlv_outer_src_mac_OF_VERSION_1_4_populate_scalars(
     of_bsn_tlv_outer_src_mac_t *obj, int value);
 extern int of_bsn_tlv_outer_src_mac_OF_VERSION_1_4_check_scalars(
     of_bsn_tlv_outer_src_mac_t *obj, int value);
+
+extern int of_bsn_tlv_packet_field_OF_VERSION_1_4_populate(
+    of_bsn_tlv_packet_field_t *obj, int value);
+extern int of_bsn_tlv_packet_field_OF_VERSION_1_4_check(
+    of_bsn_tlv_packet_field_t *obj, int value);
+extern int of_bsn_tlv_packet_field_OF_VERSION_1_4_populate_scalars(
+    of_bsn_tlv_packet_field_t *obj, int value);
+extern int of_bsn_tlv_packet_field_OF_VERSION_1_4_check_scalars(
+    of_bsn_tlv_packet_field_t *obj, int value);
 
 extern int of_bsn_tlv_parent_port_OF_VERSION_1_4_populate(
     of_bsn_tlv_parent_port_t *obj, int value);

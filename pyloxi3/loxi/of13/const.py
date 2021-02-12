@@ -634,6 +634,17 @@ ofp_bsn_lua_upload_flags_map = {
     2: 'OFP_BSN_LUA_UPLOAD_FORCE',
 }
 
+# Identifiers from group ofp_bsn_metadata
+OFP_BSN_METADATA_UNKNOWN = 0
+OFP_BSN_METADATA_POLICY_ID = 1
+OFP_BSN_METADATA_FILTER_ID = 2
+
+ofp_bsn_metadata_map = {
+    0: 'OFP_BSN_METADATA_UNKNOWN',
+    1: 'OFP_BSN_METADATA_POLICY_ID',
+    2: 'OFP_BSN_METADATA_FILTER_ID',
+}
+
 # Identifiers from group ofp_bsn_multicast_packet
 OFP_BSN_MULTICAST_PACKET_NONE = 0
 OFP_BSN_MULTICAST_PACKET_PIM_HELLO = 1
@@ -645,6 +656,17 @@ ofp_bsn_multicast_packet_map = {
     1: 'OFP_BSN_MULTICAST_PACKET_PIM_HELLO',
     2: 'OFP_BSN_MULTICAST_PACKET_PIM_JOIN_PRUNE',
     3: 'OFP_BSN_MULTICAST_PACKET_PIM_ASSERT',
+}
+
+# Identifiers from group ofp_bsn_packet_field
+OFP_BSN_PACKET_FIELD_UNKNOWN = 0
+OFP_BSN_PACKET_FIELD_OUTER_VLAN_TAG_1 = 1
+OFP_BSN_PACKET_FIELD_OUTER_VLAN_TAG_2 = 2
+
+ofp_bsn_packet_field_map = {
+    0: 'OFP_BSN_PACKET_FIELD_UNKNOWN',
+    1: 'OFP_BSN_PACKET_FIELD_OUTER_VLAN_TAG_1',
+    2: 'OFP_BSN_PACKET_FIELD_OUTER_VLAN_TAG_2',
 }
 
 # Identifiers from group ofp_bsn_pktin_flag

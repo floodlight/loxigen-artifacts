@@ -28086,6 +28086,10 @@ of_bsn_tlv_OF_VERSION_1_3_dup(
         return of_bsn_tlv_mcg_type_vxlan_OF_VERSION_1_3_dup(src);
     }
 
+    if (src->object_id == OF_BSN_TLV_METADATA) {
+        return of_bsn_tlv_metadata_OF_VERSION_1_3_dup(src);
+    }
+
     if (src->object_id == OF_BSN_TLV_MGMT) {
         return of_bsn_tlv_mgmt_OF_VERSION_1_3_dup(src);
     }
@@ -28168,6 +28172,10 @@ of_bsn_tlv_OF_VERSION_1_3_dup(
 
     if (src->object_id == OF_BSN_TLV_OUTER_SRC_MAC) {
         return of_bsn_tlv_outer_src_mac_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_PACKET_FIELD) {
+        return of_bsn_tlv_packet_field_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_BSN_TLV_PARENT_PORT) {
@@ -31306,6 +31314,31 @@ of_bsn_tlv_mcg_type_vxlan_OF_VERSION_1_3_dup(
 }
 
 /**
+ * Duplicate an object of type of_bsn_tlv_metadata
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_metadata.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_metadata_t *
+of_bsn_tlv_metadata_OF_VERSION_1_3_dup(
+    of_bsn_tlv_metadata_t *src)
+{
+    of_bsn_tlv_metadata_t *dst;
+    uint16_t val16;
+
+    if ((dst = of_bsn_tlv_metadata_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_metadata_value_get(src, &val16);
+    of_bsn_tlv_metadata_value_set(dst, val16);
+
+    return dst;
+}
+
+/**
  * Duplicate an object of type of_bsn_tlv_mgmt
  * using accessor functions
  * @param src Pointer to object to be duplicated
@@ -31794,6 +31827,31 @@ of_bsn_tlv_outer_src_mac_OF_VERSION_1_3_dup(
 
     of_bsn_tlv_outer_src_mac_value_get(src, &mac_addr);
     of_bsn_tlv_outer_src_mac_value_set(dst, mac_addr);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_packet_field
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_packet_field.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_packet_field_t *
+of_bsn_tlv_packet_field_OF_VERSION_1_3_dup(
+    of_bsn_tlv_packet_field_t *src)
+{
+    of_bsn_tlv_packet_field_t *dst;
+    uint16_t val16;
+
+    if ((dst = of_bsn_tlv_packet_field_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_packet_field_value_get(src, &val16);
+    of_bsn_tlv_packet_field_value_set(dst, val16);
 
     return dst;
 }
@@ -53343,6 +53401,10 @@ of_bsn_tlv_OF_VERSION_1_4_dup(
         return of_bsn_tlv_mcg_type_vxlan_OF_VERSION_1_4_dup(src);
     }
 
+    if (src->object_id == OF_BSN_TLV_METADATA) {
+        return of_bsn_tlv_metadata_OF_VERSION_1_4_dup(src);
+    }
+
     if (src->object_id == OF_BSN_TLV_MGMT) {
         return of_bsn_tlv_mgmt_OF_VERSION_1_4_dup(src);
     }
@@ -53425,6 +53487,10 @@ of_bsn_tlv_OF_VERSION_1_4_dup(
 
     if (src->object_id == OF_BSN_TLV_OUTER_SRC_MAC) {
         return of_bsn_tlv_outer_src_mac_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_PACKET_FIELD) {
+        return of_bsn_tlv_packet_field_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_BSN_TLV_PARENT_PORT) {
@@ -56563,6 +56629,31 @@ of_bsn_tlv_mcg_type_vxlan_OF_VERSION_1_4_dup(
 }
 
 /**
+ * Duplicate an object of type of_bsn_tlv_metadata
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_metadata.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_metadata_t *
+of_bsn_tlv_metadata_OF_VERSION_1_4_dup(
+    of_bsn_tlv_metadata_t *src)
+{
+    of_bsn_tlv_metadata_t *dst;
+    uint16_t val16;
+
+    if ((dst = of_bsn_tlv_metadata_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_metadata_value_get(src, &val16);
+    of_bsn_tlv_metadata_value_set(dst, val16);
+
+    return dst;
+}
+
+/**
  * Duplicate an object of type of_bsn_tlv_mgmt
  * using accessor functions
  * @param src Pointer to object to be duplicated
@@ -57051,6 +57142,31 @@ of_bsn_tlv_outer_src_mac_OF_VERSION_1_4_dup(
 
     of_bsn_tlv_outer_src_mac_value_get(src, &mac_addr);
     of_bsn_tlv_outer_src_mac_value_set(dst, mac_addr);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_packet_field
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_packet_field.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_packet_field_t *
+of_bsn_tlv_packet_field_OF_VERSION_1_4_dup(
+    of_bsn_tlv_packet_field_t *src)
+{
+    of_bsn_tlv_packet_field_t *dst;
+    uint16_t val16;
+
+    if ((dst = of_bsn_tlv_packet_field_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_packet_field_value_get(src, &val16);
+    of_bsn_tlv_packet_field_value_set(dst, val16);
 
     return dst;
 }
@@ -78049,6 +78165,23 @@ of_bsn_tlv_mcg_type_vxlan_dup(
 }
 
 of_object_t *
+of_bsn_tlv_metadata_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_tlv_metadata_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_bsn_tlv_metadata_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
 of_bsn_tlv_mgmt_dup(
     of_object_t *src)
 {
@@ -78399,6 +78532,23 @@ of_bsn_tlv_outer_src_mac_dup(
 
     if (src->version == OF_VERSION_1_4) {
         return of_bsn_tlv_outer_src_mac_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_bsn_tlv_packet_field_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_tlv_packet_field_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_bsn_tlv_packet_field_OF_VERSION_1_4_dup(src);
     }
 
     /* Class not supported in given version */

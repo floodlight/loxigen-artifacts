@@ -237,6 +237,8 @@ public interface OFBsnTlvs {
     OFBsnTlvMaxCount.Builder buildMaxCount() throws UnsupportedOperationException;
     OFBsnTlvMaxCount maxCount(long value);
     OFBsnTlvMcgTypeVxlan mcgTypeVxlan();
+    OFBsnTlvMetadata.Builder buildMetadata() throws UnsupportedOperationException;
+    OFBsnTlvMetadata metadata(OFBsnMetadata value);
     OFBsnTlvMgmt.Builder buildMgmt() throws UnsupportedOperationException;
     OFBsnTlvMgmt mgmt(long value);
     OFBsnTlvMgmtReselectOnFailure mgmtReselectOnFailure();
@@ -271,6 +273,8 @@ public interface OFBsnTlvs {
     OFBsnTlvOpticsAlwaysEnabled opticsAlwaysEnabled();
     OFBsnTlvOuterSrcMac.Builder buildOuterSrcMac() throws UnsupportedOperationException;
     OFBsnTlvOuterSrcMac outerSrcMac(MacAddress value);
+    OFBsnTlvPacketField.Builder buildPacketField() throws UnsupportedOperationException;
+    OFBsnTlvPacketField packetField(OFBsnPacketField value);
     OFBsnTlvParentPort.Builder buildParentPort() throws UnsupportedOperationException;
     OFBsnTlvParentPort parentPort(OFPort value);
     OFBsnTlvPartnerKey.Builder buildPartnerKey() throws UnsupportedOperationException;
