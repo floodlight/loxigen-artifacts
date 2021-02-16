@@ -31325,6 +31325,44 @@ test_of_bsn_tlv_mcg_type_vxlan_OF_VERSION_1_3(void)
 }
 
 static int
+test_of_bsn_tlv_metadata_OF_VERSION_1_3(void)
+{
+    of_bsn_tlv_metadata_t *obj;
+    obj = of_bsn_tlv_metadata_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 6);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_TLV_METADATA);
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 6);
+    }
+    if (loci_class_metadata[obj->object_id].wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        loci_class_metadata[obj->object_id].wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_BSN_TLV_METADATA);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_bsn_tlv_metadata_OF_VERSION_1_3_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_tlv_metadata_OF_VERSION_1_3_check(
+        obj, 1) != 0);
+
+    of_bsn_tlv_metadata_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
 test_of_bsn_tlv_mgmt_OF_VERSION_1_3(void)
 {
     of_bsn_tlv_mgmt_t *obj;
@@ -32117,6 +32155,44 @@ test_of_bsn_tlv_outer_src_mac_OF_VERSION_1_3(void)
         obj, 1) != 0);
 
     of_bsn_tlv_outer_src_mac_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_tlv_packet_field_OF_VERSION_1_3(void)
+{
+    of_bsn_tlv_packet_field_t *obj;
+    obj = of_bsn_tlv_packet_field_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 6);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_TLV_PACKET_FIELD);
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 6);
+    }
+    if (loci_class_metadata[obj->object_id].wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        loci_class_metadata[obj->object_id].wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_BSN_TLV_PACKET_FIELD);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_bsn_tlv_packet_field_OF_VERSION_1_3_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_tlv_packet_field_OF_VERSION_1_3_check(
+        obj, 1) != 0);
+
+    of_bsn_tlv_packet_field_delete(obj);
 
     /* To do: Check memory */
     return TEST_PASS;
@@ -58533,6 +58609,44 @@ test_of_bsn_tlv_mcg_type_vxlan_OF_VERSION_1_4(void)
 }
 
 static int
+test_of_bsn_tlv_metadata_OF_VERSION_1_4(void)
+{
+    of_bsn_tlv_metadata_t *obj;
+    obj = of_bsn_tlv_metadata_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 6);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_TLV_METADATA);
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 6);
+    }
+    if (loci_class_metadata[obj->object_id].wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        loci_class_metadata[obj->object_id].wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_BSN_TLV_METADATA);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_bsn_tlv_metadata_OF_VERSION_1_4_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_tlv_metadata_OF_VERSION_1_4_check(
+        obj, 1) != 0);
+
+    of_bsn_tlv_metadata_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
 test_of_bsn_tlv_mgmt_OF_VERSION_1_4(void)
 {
     of_bsn_tlv_mgmt_t *obj;
@@ -59325,6 +59439,44 @@ test_of_bsn_tlv_outer_src_mac_OF_VERSION_1_4(void)
         obj, 1) != 0);
 
     of_bsn_tlv_outer_src_mac_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_tlv_packet_field_OF_VERSION_1_4(void)
+{
+    of_bsn_tlv_packet_field_t *obj;
+    obj = of_bsn_tlv_packet_field_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 6);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_TLV_PACKET_FIELD);
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 6);
+    }
+    if (loci_class_metadata[obj->object_id].wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        loci_class_metadata[obj->object_id].wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_BSN_TLV_PACKET_FIELD);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_bsn_tlv_packet_field_OF_VERSION_1_4_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_tlv_packet_field_OF_VERSION_1_4_check(
+        obj, 1) != 0);
+
+    of_bsn_tlv_packet_field_delete(obj);
 
     /* To do: Check memory */
     return TEST_PASS;
@@ -73741,6 +73893,7 @@ run_OF_VERSION_1_3_unified_accessor_tests(void)
     RUN_TEST(of_bsn_tlv_matched_count_OF_VERSION_1_3);
     RUN_TEST(of_bsn_tlv_max_count_OF_VERSION_1_3);
     RUN_TEST(of_bsn_tlv_mcg_type_vxlan_OF_VERSION_1_3);
+    RUN_TEST(of_bsn_tlv_metadata_OF_VERSION_1_3);
     RUN_TEST(of_bsn_tlv_mgmt_OF_VERSION_1_3);
     RUN_TEST(of_bsn_tlv_mgmt_reselect_on_failure_OF_VERSION_1_3);
     RUN_TEST(of_bsn_tlv_miss_packets_OF_VERSION_1_3);
@@ -73762,6 +73915,7 @@ run_OF_VERSION_1_3_unified_accessor_tests(void)
     RUN_TEST(of_bsn_tlv_offset_OF_VERSION_1_3);
     RUN_TEST(of_bsn_tlv_optics_always_enabled_OF_VERSION_1_3);
     RUN_TEST(of_bsn_tlv_outer_src_mac_OF_VERSION_1_3);
+    RUN_TEST(of_bsn_tlv_packet_field_OF_VERSION_1_3);
     RUN_TEST(of_bsn_tlv_parent_port_OF_VERSION_1_3);
     RUN_TEST(of_bsn_tlv_partner_key_OF_VERSION_1_3);
     RUN_TEST(of_bsn_tlv_partner_port_num_OF_VERSION_1_3);
@@ -74463,6 +74617,7 @@ run_OF_VERSION_1_4_unified_accessor_tests(void)
     RUN_TEST(of_bsn_tlv_matched_count_OF_VERSION_1_4);
     RUN_TEST(of_bsn_tlv_max_count_OF_VERSION_1_4);
     RUN_TEST(of_bsn_tlv_mcg_type_vxlan_OF_VERSION_1_4);
+    RUN_TEST(of_bsn_tlv_metadata_OF_VERSION_1_4);
     RUN_TEST(of_bsn_tlv_mgmt_OF_VERSION_1_4);
     RUN_TEST(of_bsn_tlv_mgmt_reselect_on_failure_OF_VERSION_1_4);
     RUN_TEST(of_bsn_tlv_miss_packets_OF_VERSION_1_4);
@@ -74484,6 +74639,7 @@ run_OF_VERSION_1_4_unified_accessor_tests(void)
     RUN_TEST(of_bsn_tlv_offset_OF_VERSION_1_4);
     RUN_TEST(of_bsn_tlv_optics_always_enabled_OF_VERSION_1_4);
     RUN_TEST(of_bsn_tlv_outer_src_mac_OF_VERSION_1_4);
+    RUN_TEST(of_bsn_tlv_packet_field_OF_VERSION_1_4);
     RUN_TEST(of_bsn_tlv_parent_port_OF_VERSION_1_4);
     RUN_TEST(of_bsn_tlv_partner_key_OF_VERSION_1_4);
     RUN_TEST(of_bsn_tlv_partner_port_num_OF_VERSION_1_4);

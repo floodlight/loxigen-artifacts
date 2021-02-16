@@ -5815,6 +5815,42 @@ test_ident_macros(void)
     TEST_ASSERT(!OFP_BSN_PUSH_TWO_TAGS_SUPPORTED_SUPPORTED(OF_VERSION_1_2));
     TEST_ASSERT(OFP_BSN_PUSH_TWO_TAGS_SUPPORTED_SUPPORTED(OF_VERSION_1_3));
     TEST_ASSERT(OFP_BSN_PUSH_TWO_TAGS_SUPPORTED_SUPPORTED(OF_VERSION_1_4));
+    value = OFP_BSN_METADATA_UNKNOWN;
+    TEST_ASSERT(!OFP_BSN_METADATA_UNKNOWN_SUPPORTED(OF_VERSION_1_0));
+    TEST_ASSERT(!OFP_BSN_METADATA_UNKNOWN_SUPPORTED(OF_VERSION_1_1));
+    TEST_ASSERT(!OFP_BSN_METADATA_UNKNOWN_SUPPORTED(OF_VERSION_1_2));
+    TEST_ASSERT(OFP_BSN_METADATA_UNKNOWN_SUPPORTED(OF_VERSION_1_3));
+    TEST_ASSERT(OFP_BSN_METADATA_UNKNOWN_SUPPORTED(OF_VERSION_1_4));
+    value = OFP_BSN_METADATA_POLICY_ID;
+    TEST_ASSERT(!OFP_BSN_METADATA_POLICY_ID_SUPPORTED(OF_VERSION_1_0));
+    TEST_ASSERT(!OFP_BSN_METADATA_POLICY_ID_SUPPORTED(OF_VERSION_1_1));
+    TEST_ASSERT(!OFP_BSN_METADATA_POLICY_ID_SUPPORTED(OF_VERSION_1_2));
+    TEST_ASSERT(OFP_BSN_METADATA_POLICY_ID_SUPPORTED(OF_VERSION_1_3));
+    TEST_ASSERT(OFP_BSN_METADATA_POLICY_ID_SUPPORTED(OF_VERSION_1_4));
+    value = OFP_BSN_METADATA_FILTER_ID;
+    TEST_ASSERT(!OFP_BSN_METADATA_FILTER_ID_SUPPORTED(OF_VERSION_1_0));
+    TEST_ASSERT(!OFP_BSN_METADATA_FILTER_ID_SUPPORTED(OF_VERSION_1_1));
+    TEST_ASSERT(!OFP_BSN_METADATA_FILTER_ID_SUPPORTED(OF_VERSION_1_2));
+    TEST_ASSERT(OFP_BSN_METADATA_FILTER_ID_SUPPORTED(OF_VERSION_1_3));
+    TEST_ASSERT(OFP_BSN_METADATA_FILTER_ID_SUPPORTED(OF_VERSION_1_4));
+    value = OFP_BSN_PACKET_FIELD_UNKNOWN;
+    TEST_ASSERT(!OFP_BSN_PACKET_FIELD_UNKNOWN_SUPPORTED(OF_VERSION_1_0));
+    TEST_ASSERT(!OFP_BSN_PACKET_FIELD_UNKNOWN_SUPPORTED(OF_VERSION_1_1));
+    TEST_ASSERT(!OFP_BSN_PACKET_FIELD_UNKNOWN_SUPPORTED(OF_VERSION_1_2));
+    TEST_ASSERT(OFP_BSN_PACKET_FIELD_UNKNOWN_SUPPORTED(OF_VERSION_1_3));
+    TEST_ASSERT(OFP_BSN_PACKET_FIELD_UNKNOWN_SUPPORTED(OF_VERSION_1_4));
+    value = OFP_BSN_PACKET_FIELD_OUTER_VLAN_TAG_1;
+    TEST_ASSERT(!OFP_BSN_PACKET_FIELD_OUTER_VLAN_TAG_1_SUPPORTED(OF_VERSION_1_0));
+    TEST_ASSERT(!OFP_BSN_PACKET_FIELD_OUTER_VLAN_TAG_1_SUPPORTED(OF_VERSION_1_1));
+    TEST_ASSERT(!OFP_BSN_PACKET_FIELD_OUTER_VLAN_TAG_1_SUPPORTED(OF_VERSION_1_2));
+    TEST_ASSERT(OFP_BSN_PACKET_FIELD_OUTER_VLAN_TAG_1_SUPPORTED(OF_VERSION_1_3));
+    TEST_ASSERT(OFP_BSN_PACKET_FIELD_OUTER_VLAN_TAG_1_SUPPORTED(OF_VERSION_1_4));
+    value = OFP_BSN_PACKET_FIELD_OUTER_VLAN_TAG_2;
+    TEST_ASSERT(!OFP_BSN_PACKET_FIELD_OUTER_VLAN_TAG_2_SUPPORTED(OF_VERSION_1_0));
+    TEST_ASSERT(!OFP_BSN_PACKET_FIELD_OUTER_VLAN_TAG_2_SUPPORTED(OF_VERSION_1_1));
+    TEST_ASSERT(!OFP_BSN_PACKET_FIELD_OUTER_VLAN_TAG_2_SUPPORTED(OF_VERSION_1_2));
+    TEST_ASSERT(OFP_BSN_PACKET_FIELD_OUTER_VLAN_TAG_2_SUPPORTED(OF_VERSION_1_3));
+    TEST_ASSERT(OFP_BSN_PACKET_FIELD_OUTER_VLAN_TAG_2_SUPPORTED(OF_VERSION_1_4));
     value = OFP_BSN_VLAN_ALL;
     TEST_ASSERT(!OFP_BSN_VLAN_ALL_SUPPORTED(OF_VERSION_1_0));
     TEST_ASSERT(!OFP_BSN_VLAN_ALL_SUPPORTED(OF_VERSION_1_1));
@@ -10607,6 +10643,10 @@ test_dump_objs(void)
     of_object_dump((loci_writer_f)fprintf, out, obj);
     of_object_delete(obj);
 
+    obj = (of_object_t *)of_bsn_tlv_metadata_new(OF_VERSION_1_3);
+    of_object_dump((loci_writer_f)fprintf, out, obj);
+    of_object_delete(obj);
+
     obj = (of_object_t *)of_bsn_tlv_mgmt_new(OF_VERSION_1_3);
     of_object_dump((loci_writer_f)fprintf, out, obj);
     of_object_delete(obj);
@@ -10688,6 +10728,10 @@ test_dump_objs(void)
     of_object_delete(obj);
 
     obj = (of_object_t *)of_bsn_tlv_outer_src_mac_new(OF_VERSION_1_3);
+    of_object_dump((loci_writer_f)fprintf, out, obj);
+    of_object_delete(obj);
+
+    obj = (of_object_t *)of_bsn_tlv_packet_field_new(OF_VERSION_1_3);
     of_object_dump((loci_writer_f)fprintf, out, obj);
     of_object_delete(obj);
 
@@ -13476,6 +13520,10 @@ test_dump_objs(void)
     of_object_dump((loci_writer_f)fprintf, out, obj);
     of_object_delete(obj);
 
+    obj = (of_object_t *)of_bsn_tlv_metadata_new(OF_VERSION_1_4);
+    of_object_dump((loci_writer_f)fprintf, out, obj);
+    of_object_delete(obj);
+
     obj = (of_object_t *)of_bsn_tlv_mgmt_new(OF_VERSION_1_4);
     of_object_dump((loci_writer_f)fprintf, out, obj);
     of_object_delete(obj);
@@ -13557,6 +13605,10 @@ test_dump_objs(void)
     of_object_delete(obj);
 
     obj = (of_object_t *)of_bsn_tlv_outer_src_mac_new(OF_VERSION_1_4);
+    of_object_dump((loci_writer_f)fprintf, out, obj);
+    of_object_delete(obj);
+
+    obj = (of_object_t *)of_bsn_tlv_packet_field_new(OF_VERSION_1_4);
     of_object_dump((loci_writer_f)fprintf, out, obj);
     of_object_delete(obj);
 

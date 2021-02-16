@@ -4371,6 +4371,12 @@ of_bsn_tlv_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
         case 0xdc:
             *id = OF_BSN_TLV_PUSH_TWO_PER_POLICY;
             break;
+        case 0xdd:
+            *id = OF_BSN_TLV_METADATA;
+            break;
+        case 0xde:
+            *id = OF_BSN_TLV_PACKET_FIELD;
+            break;
         default:
             *id = OF_BSN_TLV;
             break;
@@ -5039,6 +5045,12 @@ of_bsn_tlv_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
             break;
         case 0xdc:
             *id = OF_BSN_TLV_PUSH_TWO_PER_POLICY;
+            break;
+        case 0xdd:
+            *id = OF_BSN_TLV_METADATA;
+            break;
+        case 0xde:
+            *id = OF_BSN_TLV_PACKET_FIELD;
             break;
         default:
             *id = OF_BSN_TLV;

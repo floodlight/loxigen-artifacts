@@ -767,6 +767,13 @@ public class OFBsnTlvsVer11 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvMcgTypeVxlan not supported in version 1.1");
     }
 
+    public OFBsnTlvMetadata.Builder buildMetadata() {
+        throw new UnsupportedOperationException("OFBsnTlvMetadata not supported in version 1.1");
+    }
+    public OFBsnTlvMetadata metadata(OFBsnMetadata value) {
+        throw new UnsupportedOperationException("OFBsnTlvMetadata not supported in version 1.1");
+    }
+
     public OFBsnTlvMgmt.Builder buildMgmt() {
         throw new UnsupportedOperationException("OFBsnTlvMgmt not supported in version 1.1");
     }
@@ -888,6 +895,13 @@ public class OFBsnTlvsVer11 implements OFBsnTlvs {
     }
     public OFBsnTlvOuterSrcMac outerSrcMac(MacAddress value) {
         throw new UnsupportedOperationException("OFBsnTlvOuterSrcMac not supported in version 1.1");
+    }
+
+    public OFBsnTlvPacketField.Builder buildPacketField() {
+        throw new UnsupportedOperationException("OFBsnTlvPacketField not supported in version 1.1");
+    }
+    public OFBsnTlvPacketField packetField(OFBsnPacketField value) {
+        throw new UnsupportedOperationException("OFBsnTlvPacketField not supported in version 1.1");
     }
 
     public OFBsnTlvParentPort.Builder buildParentPort() {

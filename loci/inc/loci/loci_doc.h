@@ -7599,6 +7599,17 @@ typedef struct of_bsn_tlv_max_count_s of_bsn_tlv_max_count_t;
 typedef struct of_bsn_tlv_mcg_type_vxlan_s of_bsn_tlv_mcg_type_vxlan_t;
 
 /**
+ * Structure for of_bsn_tlv_metadata object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for value, a variable of type uint16.  Functions
+ *   are of type of_bsn_tlv_metadata_uint16_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_metadata_s of_bsn_tlv_metadata_t;
+
+/**
  * Structure for of_bsn_tlv_mgmt object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
@@ -7796,6 +7807,17 @@ typedef struct of_bsn_tlv_optics_always_enabled_s of_bsn_tlv_optics_always_enabl
  *
  */
 typedef struct of_bsn_tlv_outer_src_mac_s of_bsn_tlv_outer_src_mac_t;
+
+/**
+ * Structure for of_bsn_tlv_packet_field object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for value, a variable of type uint16.  Functions
+ *   are of type of_bsn_tlv_packet_field_uint16_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_packet_field_s of_bsn_tlv_packet_field_t;
 
 /**
  * Structure for of_bsn_tlv_parent_port object.  Get/set

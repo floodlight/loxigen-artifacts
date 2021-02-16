@@ -1083,6 +1083,8 @@ void of_bsn_tlv_max_count_wire_object_id_get(of_object_t *obj, of_object_id_t *i
 void of_bsn_tlv_max_count_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_mcg_type_vxlan_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_mcg_type_vxlan_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_metadata_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_metadata_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_mgmt_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_mgmt_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_mgmt_reselect_on_failure_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -1125,6 +1127,8 @@ void of_bsn_tlv_optics_always_enabled_wire_object_id_get(of_object_t *obj, of_ob
 void of_bsn_tlv_optics_always_enabled_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_outer_src_mac_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_outer_src_mac_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_packet_field_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_packet_field_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_parent_port_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_parent_port_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_partner_key_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -2094,6 +2098,7 @@ typedef of_object_t of_bsn_tlv_mac_mask_t;
 typedef of_object_t of_bsn_tlv_matched_count_t;
 typedef of_object_t of_bsn_tlv_max_count_t;
 typedef of_object_t of_bsn_tlv_mcg_type_vxlan_t;
+typedef of_object_t of_bsn_tlv_metadata_t;
 typedef of_object_t of_bsn_tlv_mgmt_t;
 typedef of_object_t of_bsn_tlv_mgmt_reselect_on_failure_t;
 typedef of_object_t of_bsn_tlv_miss_packets_t;
@@ -2115,6 +2120,7 @@ typedef of_object_t of_bsn_tlv_no_ns_response_t;
 typedef of_object_t of_bsn_tlv_offset_t;
 typedef of_object_t of_bsn_tlv_optics_always_enabled_t;
 typedef of_object_t of_bsn_tlv_outer_src_mac_t;
+typedef of_object_t of_bsn_tlv_packet_field_t;
 typedef of_object_t of_bsn_tlv_parent_port_t;
 typedef of_object_t of_bsn_tlv_partner_key_t;
 typedef of_object_t of_bsn_tlv_partner_port_num_t;
@@ -4674,6 +4680,11 @@ extern void of_bsn_tlv_mcg_type_vxlan_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
+    of_bsn_tlv_metadata_new(of_version_t version);
+extern void of_bsn_tlv_metadata_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
     of_bsn_tlv_mgmt_new(of_version_t version);
 extern void of_bsn_tlv_mgmt_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
@@ -4776,6 +4787,11 @@ extern void of_bsn_tlv_optics_always_enabled_init(
 extern of_object_t *
     of_bsn_tlv_outer_src_mac_new(of_version_t version);
 extern void of_bsn_tlv_outer_src_mac_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_bsn_tlv_packet_field_new(of_version_t version);
+extern void of_bsn_tlv_packet_field_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
@@ -11632,6 +11648,17 @@ of_bsn_tlv_mcg_type_vxlan_delete(of_object_t *obj) {
 }
 
 /**
+ * Delete an object of type of_bsn_tlv_metadata_t
+ * @param obj An instance of type of_bsn_tlv_metadata_t
+ *
+ * \ingroup of_bsn_tlv_metadata
+ */
+static inline void
+of_bsn_tlv_metadata_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
  * Delete an object of type of_bsn_tlv_mgmt_t
  * @param obj An instance of type of_bsn_tlv_mgmt_t
  *
@@ -11859,6 +11886,17 @@ of_bsn_tlv_optics_always_enabled_delete(of_object_t *obj) {
  */
 static inline void
 of_bsn_tlv_outer_src_mac_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_packet_field_t
+ * @param obj An instance of type of_bsn_tlv_packet_field_t
+ *
+ * \ingroup of_bsn_tlv_packet_field
+ */
+static inline void
+of_bsn_tlv_packet_field_delete(of_object_t *obj) {
     of_object_delete(obj);
 }
 
@@ -25470,6 +25508,15 @@ extern void of_bsn_tlv_max_count_value_get(
 
 /* Unified accessor functions for of_bsn_tlv_mcg_type_vxlan */
 
+/* Unified accessor functions for of_bsn_tlv_metadata */
+
+extern void of_bsn_tlv_metadata_value_set(
+    of_bsn_tlv_metadata_t *obj,
+    uint16_t value);
+extern void of_bsn_tlv_metadata_value_get(
+    of_bsn_tlv_metadata_t *obj,
+    uint16_t *value);
+
 /* Unified accessor functions for of_bsn_tlv_mgmt */
 
 extern void of_bsn_tlv_mgmt_value_set(
@@ -25602,6 +25649,15 @@ extern void of_bsn_tlv_outer_src_mac_value_set(
 extern void of_bsn_tlv_outer_src_mac_value_get(
     of_bsn_tlv_outer_src_mac_t *obj,
     of_mac_addr_t *value);
+
+/* Unified accessor functions for of_bsn_tlv_packet_field */
+
+extern void of_bsn_tlv_packet_field_value_set(
+    of_bsn_tlv_packet_field_t *obj,
+    uint16_t value);
+extern void of_bsn_tlv_packet_field_value_get(
+    of_bsn_tlv_packet_field_t *obj,
+    uint16_t *value);
 
 /* Unified accessor functions for of_bsn_tlv_parent_port */
 
