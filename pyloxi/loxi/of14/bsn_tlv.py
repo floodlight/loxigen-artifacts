@@ -281,7 +281,8 @@ class actor_state(bsn_tlv):
             with q.indent(2):
                 q.breakable()
                 q.text("value = ");
-                q.text("%#x" % self.value)
+                value_name_map = {1: 'OFP_BSN_LACP_STATE_ACTIVITY', 2: 'OFP_BSN_LACP_STATE_TIMEOUT', 4: 'OFP_BSN_LACP_STATE_AGGREGATION', 8: 'OFP_BSN_LACP_STATE_SYNCHRONIZATION', 16: 'OFP_BSN_LACP_STATE_COLLECTING', 32: 'OFP_BSN_LACP_STATE_DISTRIBUTING', 64: 'OFP_BSN_LACP_STATE_DEFAULTED', 128: 'OFP_BSN_LACP_STATE_EXPIRED'}
+                q.text(util.pretty_flags(self.value, value_name_map.values()))
             q.breakable()
         q.text('}')
 
@@ -422,7 +423,11 @@ class admin_state(bsn_tlv):
             with q.indent(2):
                 q.breakable()
                 q.text("value = ");
-                q.text("%#x" % self.value)
+                value_name_map = {0: 'OFP_BSN_ADMIN_STATE_DISABLED', 1: 'OFP_BSN_ADMIN_STATE_ENABLED'}
+                if self.value in value_name_map:
+                    q.text("%s(%d)" % (value_name_map[self.value], self.value))
+                else:
+                    q.text("%#x" % self.value)
             q.breakable()
         q.text('}')
 
@@ -507,7 +512,11 @@ class anchor(bsn_tlv):
             with q.indent(2):
                 q.breakable()
                 q.text("value = ");
-                q.text("%#x" % self.value)
+                value_name_map = {0: 'OFP_BSN_ANCHOR_PACKET_START', 1: 'OFP_BSN_ANCHOR_L3_HEADER_START', 2: 'OFP_BSN_ANCHOR_L4_HEADER_START', 3: 'OFP_BSN_ANCHOR_L4_PAYLOAD_START'}
+                if self.value in value_name_map:
+                    q.text("%s(%d)" % (value_name_map[self.value], self.value))
+                else:
+                    q.text("%#x" % self.value)
             q.breakable()
         q.text('}')
 
@@ -742,7 +751,11 @@ class auto_negotiation(bsn_tlv):
             with q.indent(2):
                 q.breakable()
                 q.text("value = ");
-                q.text("%#x" % self.value)
+                value_name_map = {0: 'OFP_BSN_AUTO_NEGOTIATION_DEFAULT', 1: 'OFP_BSN_AUTO_NEGOTIATION_ENABLE', 2: 'OFP_BSN_AUTO_NEGOTIATION_DISABLE'}
+                if self.value in value_name_map:
+                    q.text("%s(%d)" % (value_name_map[self.value], self.value))
+                else:
+                    q.text("%#x" % self.value)
             q.breakable()
         q.text('}')
 
@@ -789,7 +802,11 @@ class bfd_endpoint(bsn_tlv):
             with q.indent(2):
                 q.breakable()
                 q.text("value = ");
-                q.text("%#x" % self.value)
+                value_name_map = {0: 'OFP_BSN_BFD_UNUSED', 1: 'OFP_BSN_BFD_MICRO', 2: 'OFP_BSN_BFD_1_HOP', 3: 'OFP_BSN_BFD_MULTI_HOP'}
+                if self.value in value_name_map:
+                    q.text("%s(%d)" % (value_name_map[self.value], self.value))
+                else:
+                    q.text("%#x" % self.value)
             q.breakable()
         q.text('}')
 
@@ -836,7 +853,11 @@ class bfd_state(bsn_tlv):
             with q.indent(2):
                 q.breakable()
                 q.text("value = ");
-                q.text("%#x" % self.value)
+                value_name_map = {0: 'OFP_BSN_BFD_ENDPOINT_STATE_ADMINDOWN', 1: 'OFP_BSN_BFD_ENDPOINT_STATE_DOWN', 2: 'OFP_BSN_BFD_ENDPOINT_STATE_INIT', 3: 'OFP_BSN_BFD_ENDPOINT_STATE_UP', 4: 'OFP_BSN_BFD_ENDPOINT_SESSION_ERROR', 5: 'OFP_BSN_BFD_ENDPOINT_REMOTE_ADMINDOWN', 6: 'OFP_BSN_BFD_ENDPOINT_PARAMS_CHANGE'}
+                if self.value in value_name_map:
+                    q.text("%s(%d)" % (value_name_map[self.value], self.value))
+                else:
+                    q.text("%#x" % self.value)
             q.breakable()
         q.text('}')
 
@@ -1297,7 +1318,11 @@ class decap(bsn_tlv):
             with q.indent(2):
                 q.breakable()
                 q.text("value = ");
-                q.text("%#x" % self.value)
+                value_name_map = {0: 'OFP_BSN_DECAP_VXLAN', 1: 'OFP_BSN_DECAP_ERSPAN', 2: 'OFP_BSN_DECAP_L2_GRE', 3: 'OFP_BSN_DECAP_NVGRE', 4: 'OFP_BSN_DECAP_CAPWAP', 5: 'OFP_BSN_DECAP_L2_MPLS', 6: 'OFP_BSN_DECAP_L3_GRE', 7: 'OFP_BSN_DECAP_GTP', 8: 'OFP_BSN_DECAP_L3_MPLS'}
+                if self.value in value_name_map:
+                    q.text("%s(%d)" % (value_name_map[self.value], self.value))
+                else:
+                    q.text("%#x" % self.value)
             q.breakable()
         q.text('}')
 
@@ -1760,7 +1785,11 @@ class encap(bsn_tlv):
             with q.indent(2):
                 q.breakable()
                 q.text("value = ");
-                q.text("%#x" % self.value)
+                value_name_map = {0: 'OFP_BSN_ENCAP_UNUSED', 1: 'OFP_BSN_ENCAP_IPV4_UDP', 2: 'OFP_BSN_ENCAP_IPV6_UDP'}
+                if self.value in value_name_map:
+                    q.text("%s(%d)" % (value_name_map[self.value], self.value))
+                else:
+                    q.text("%#x" % self.value)
             q.breakable()
         q.text('}')
 
@@ -1807,7 +1836,8 @@ class enhanced_hash_capability(bsn_tlv):
             with q.indent(2):
                 q.breakable()
                 q.text("value = ");
-                q.text("%#x" % self.value)
+                value_name_map = {1: 'OFP_BSN_ENHANCED_HASH_L2', 2: 'OFP_BSN_ENHANCED_HASH_L3', 4: 'OFP_BSN_ENHANCED_HASH_L2GRE', 8: 'OFP_BSN_ENHANCED_HASH_MPLS', 16: 'OFP_BSN_ENHANCED_HASH_GTP', 32: 'OFP_BSN_ENHANCED_HASH_SYMMETRIC'}
+                q.text(util.pretty_flags(self.value, value_name_map.values()))
             q.breakable()
         q.text('}')
 
@@ -2230,7 +2260,11 @@ class fabric_port_role(bsn_tlv):
             with q.indent(2):
                 q.breakable()
                 q.text("value = ");
-                q.text("%#x" % self.value)
+                value_name_map = {1: 'OFP_BSN_FABRIC_PORT_ROLE_PARTITIONED_SPINE'}
+                if self.value in value_name_map:
+                    q.text("%s(%d)" % (value_name_map[self.value], self.value))
+                else:
+                    q.text("%#x" % self.value)
             q.breakable()
         q.text('}')
 
@@ -2362,7 +2396,11 @@ class flow_classifier(bsn_tlv):
             with q.indent(2):
                 q.breakable()
                 q.text("value = ");
-                q.text("%#x" % self.value)
+                value_name_map = {0: 'OFP_BSN_FLOW_CLASSIFIER_NONE', 1: 'OFP_BSN_FLOW_CLASSIFIER_L2BC', 2: 'OFP_BSN_FLOW_CLASSIFIER_L2UC', 3: 'OFP_BSN_FLOW_CLASSIFIER_L2UNKNOWN', 4: 'OFP_BSN_FLOW_CLASSIFIER_L2MCKNOWN', 5: 'OFP_BSN_FLOW_CLASSIFIER_L2MCUNKNOWN', 6: 'OFP_BSN_FLOW_CLASSIFIER_L3MCUNKNOWN', 7: 'OFP_BSN_FLOW_CLASSIFIER_L3MCKNOWN', 8: 'OFP_BSN_FLOW_CLASSIFIER_L3UCKNOWN', 9: 'OFP_BSN_FLOW_CLASSIFIER_L3UCUNKNOWN'}
+                if self.value in value_name_map:
+                    q.text("%s(%d)" % (value_name_map[self.value], self.value))
+                else:
+                    q.text("%#x" % self.value)
             q.breakable()
         q.text('}')
 
@@ -2532,7 +2570,11 @@ class forward_error_correction(bsn_tlv):
             with q.indent(2):
                 q.breakable()
                 q.text("value = ");
-                q.text("%#x" % self.value)
+                value_name_map = {0: 'OFP_BSN_FORWARD_ERROR_CORRECTION_DEFAULT', 1: 'OFP_BSN_FORWARD_ERROR_CORRECTION_ENABLE', 2: 'OFP_BSN_FORWARD_ERROR_CORRECTION_DISABLE', 3: 'OFP_BSN_FORWARD_ERROR_CORRECTION_ENABLE_FIRE_CODE', 4: 'OFP_BSN_FORWARD_ERROR_CORRECTION_ENABLE_REED_SOLOMON', 5: 'OFP_BSN_FORWARD_ERROR_CORRECTION_ENABLE_REED_SOLOMON544'}
+                if self.value in value_name_map:
+                    q.text("%s(%d)" % (value_name_map[self.value], self.value))
+                else:
+                    q.text("%#x" % self.value)
             q.breakable()
         q.text('}')
 
@@ -2673,7 +2715,11 @@ class hash_algorithm(bsn_tlv):
             with q.indent(2):
                 q.breakable()
                 q.text("value = ");
-                q.text("%#x" % self.value)
+                value_name_map = {0: 'OFP_BSN_HASH_ALGORITHM_CRC16XOR8', 1: 'OFP_BSN_HASH_ALGORITHM_CRC16XOR4', 2: 'OFP_BSN_HASH_ALGORITHM_CRC16XOR2', 3: 'OFP_BSN_HASH_ALGORITHM_CRC16XOR1', 4: 'OFP_BSN_HASH_ALGORITHM_CRC16', 5: 'OFP_BSN_HASH_ALGORITHM_XOR16', 6: 'OFP_BSN_HASH_ALGORITHM_CRC16CCITT', 7: 'OFP_BSN_HASH_ALGORITHM_CRC32LO', 8: 'OFP_BSN_HASH_ALGORITHM_CRC32HI'}
+                if self.value in value_name_map:
+                    q.text("%s(%d)" % (value_name_map[self.value], self.value))
+                else:
+                    q.text("%#x" % self.value)
             q.breakable()
         q.text('}')
 
@@ -2791,7 +2837,11 @@ class hash_gtp_port_match(bsn_tlv):
             with q.indent(2):
                 q.breakable()
                 q.text("match = ");
-                q.text("%#x" % self.match)
+                value_name_map = {1: 'OF_BSN_HASH_GTP_PORT_MATCH_SRC', 2: 'OF_BSN_HASH_GTP_PORT_MATCH_DST', 3: 'OF_BSN_HASH_GTP_PORT_MATCH_SRC_OR_DST', 4: 'OF_BSN_HASH_GTP_PORT_MATCH_SRC_AND_DST'}
+                if self.match in value_name_map:
+                    q.text("%s(%d)" % (value_name_map[self.match], self.match))
+                else:
+                    q.text("%#x" % self.match)
                 q.text(","); q.breakable()
                 q.text("src_port = ");
                 q.text("%#x" % self.src_port)
@@ -2844,7 +2894,8 @@ class hash_packet_field(bsn_tlv):
             with q.indent(2):
                 q.breakable()
                 q.text("value = ");
-                q.text("%#x" % self.value)
+                value_name_map = {2: 'OFP_BSN_HASH_FIELD_DST_MAC', 4: 'OFP_BSN_HASH_FIELD_SRC_MAC', 8: 'OFP_BSN_HASH_FIELD_ETH_TYPE', 16: 'OFP_BSN_HASH_FIELD_VLAN_ID', 32: 'OFP_BSN_HASH_FIELD_INNER_L2', 64: 'OFP_BSN_HASH_FIELD_INNER_L3', 128: 'OFP_BSN_HASH_FIELD_SRC_IP', 256: 'OFP_BSN_HASH_FIELD_DST_IP', 512: 'OFP_BSN_HASH_FIELD_IP_PROTO', 1024: 'OFP_BSN_HASH_FIELD_SRC_L4_PORT', 2048: 'OFP_BSN_HASH_FIELD_DST_L4_PORT', 4096: 'OFP_BSN_HASH_FIELD_MPLS_LABEL1', 8192: 'OFP_BSN_HASH_FIELD_MPLS_LABEL2', 16384: 'OFP_BSN_HASH_FIELD_MPLS_LABEL3', 32768: 'OFP_BSN_HASH_FIELD_MPLS_LABEL_HI_BITS', 65536: 'OFP_BSN_HASH_FIELD_MPLS_PAYLOAD_SRC_IP', 131072: 'OFP_BSN_HASH_FIELD_MPLS_PAYLOAD_DST_IP', 262144: 'OFP_BSN_HASH_FIELD_SYMMETRIC'}
+                q.text(util.pretty_flags(self.value, value_name_map.values()))
             q.breakable()
         q.text('}')
 
@@ -2891,7 +2942,11 @@ class hash_packet_type(bsn_tlv):
             with q.indent(2):
                 q.breakable()
                 q.text("value = ");
-                q.text("%#x" % self.value)
+                value_name_map = {0: 'OF_BSN_HASH_PACKET_L2', 1: 'OF_BSN_HASH_PACKET_L2GRE', 3: 'OF_BSN_HASH_PACKET_IPV4', 4: 'OF_BSN_HASH_PACKET_IPV6', 5: 'OF_BSN_HASH_PACKET_MPLS', 6: 'OF_BSN_HASH_PACKET_SYMMETRIC'}
+                if self.value in value_name_map:
+                    q.text("%s(%d)" % (value_name_map[self.value], self.value))
+                else:
+                    q.text("%#x" % self.value)
             q.breakable()
         q.text('}')
 
@@ -2995,7 +3050,11 @@ class hash_type(bsn_tlv):
             with q.indent(2):
                 q.breakable()
                 q.text("value = ");
-                q.text("%#x" % self.value)
+                value_name_map = {0: 'OFP_BSN_HASH_TYPE_L2', 1: 'OFP_BSN_HASH_TYPE_L3', 2: 'OFP_BSN_HASH_TYPE_ENHANCED'}
+                if self.value in value_name_map:
+                    q.text("%s(%d)" % (value_name_map[self.value], self.value))
+                else:
+                    q.text("%#x" % self.value)
             q.breakable()
         q.text('}')
 
@@ -3870,7 +3929,11 @@ class ip_fragmentation(bsn_tlv):
             with q.indent(2):
                 q.breakable()
                 q.text("value = ");
-                q.text("%#x" % self.value)
+                value_name_map = {1: 'OFP_BSN_IP_FRAGMENTATION_PRESENT', 2: 'OFP_BSN_IP_FRAGMENTATION_NOT_PRESENT'}
+                if self.value in value_name_map:
+                    q.text("%s(%d)" % (value_name_map[self.value], self.value))
+                else:
+                    q.text("%#x" % self.value)
             q.breakable()
         q.text('}')
 
@@ -3964,7 +4027,11 @@ class ip_tunnel_type(bsn_tlv):
             with q.indent(2):
                 q.breakable()
                 q.text("value = ");
-                q.text("%#x" % self.value)
+                value_name_map = {0: 'OFP_BSN_IP_TUNNEL_TYPE_NONE', 1: 'OFP_BSN_IP_TUNNEL_TYPE_PIM'}
+                if self.value in value_name_map:
+                    q.text("%s(%d)" % (value_name_map[self.value], self.value))
+                else:
+                    q.text("%#x" % self.value)
             q.breakable()
         q.text('}')
 
@@ -4699,7 +4766,8 @@ class lag_options(bsn_tlv):
             with q.indent(2):
                 q.breakable()
                 q.text("flags = ");
-                q.text("%#x" % self.flags)
+                value_name_map = {1: 'OFP_BSN_LAG_FLAG_AUTO_RECOVERY'}
+                q.text(util.pretty_flags(self.flags, value_name_map.values()))
             q.breakable()
         q.text('}')
 
@@ -4925,7 +4993,11 @@ class loopback_mode(bsn_tlv):
             with q.indent(2):
                 q.breakable()
                 q.text("value = ");
-                q.text("%#x" % self.value)
+                value_name_map = {0: 'OFP_BSN_LOOPBACK_MODE_NONE', 1: 'OFP_BSN_LOOPBACK_MODE_MAC', 2: 'OFP_BSN_LOOPBACK_MODE_PHY', 3: 'OFP_BSN_LOOPBACK_MODE_PHY_REMOTE'}
+                if self.value in value_name_map:
+                    q.text("%s(%d)" % (value_name_map[self.value], self.value))
+                else:
+                    q.text("%#x" % self.value)
             q.breakable()
         q.text('}')
 
@@ -5321,7 +5393,11 @@ class metadata(bsn_tlv):
             with q.indent(2):
                 q.breakable()
                 q.text("value = ");
-                q.text("%#x" % self.value)
+                value_name_map = {0: 'OFP_BSN_METADATA_UNKNOWN', 1: 'OFP_BSN_METADATA_POLICY_ID', 2: 'OFP_BSN_METADATA_FILTER_ID'}
+                if self.value in value_name_map:
+                    q.text("%s(%d)" % (value_name_map[self.value], self.value))
+                else:
+                    q.text("%#x" % self.value)
             q.breakable()
         q.text('}')
 
@@ -5688,7 +5764,11 @@ class multicast_packet(bsn_tlv):
             with q.indent(2):
                 q.breakable()
                 q.text("value = ");
-                q.text("%#x" % self.value)
+                value_name_map = {0: 'OFP_BSN_MULTICAST_PACKET_NONE', 1: 'OFP_BSN_MULTICAST_PACKET_PIM_HELLO', 2: 'OFP_BSN_MULTICAST_PACKET_PIM_JOIN_PRUNE', 3: 'OFP_BSN_MULTICAST_PACKET_PIM_ASSERT'}
+                if self.value in value_name_map:
+                    q.text("%s(%d)" % (value_name_map[self.value], self.value))
+                else:
+                    q.text("%#x" % self.value)
             q.breakable()
         q.text('}')
 
@@ -6283,7 +6363,11 @@ class packet_field(bsn_tlv):
             with q.indent(2):
                 q.breakable()
                 q.text("value = ");
-                q.text("%#x" % self.value)
+                value_name_map = {0: 'OFP_BSN_PACKET_FIELD_UNKNOWN', 1: 'OFP_BSN_PACKET_FIELD_OUTER_VLAN_TAG_1', 2: 'OFP_BSN_PACKET_FIELD_OUTER_VLAN_TAG_2'}
+                if self.value in value_name_map:
+                    q.text("%s(%d)" % (value_name_map[self.value], self.value))
+                else:
+                    q.text("%#x" % self.value)
             q.breakable()
         q.text('}')
 
@@ -6518,7 +6602,8 @@ class partner_state(bsn_tlv):
             with q.indent(2):
                 q.breakable()
                 q.text("value = ");
-                q.text("%#x" % self.value)
+                value_name_map = {1: 'OFP_BSN_LACP_STATE_ACTIVITY', 2: 'OFP_BSN_LACP_STATE_TIMEOUT', 4: 'OFP_BSN_LACP_STATE_AGGREGATION', 8: 'OFP_BSN_LACP_STATE_SYNCHRONIZATION', 16: 'OFP_BSN_LACP_STATE_COLLECTING', 32: 'OFP_BSN_LACP_STATE_DISTRIBUTING', 64: 'OFP_BSN_LACP_STATE_DEFAULTED', 128: 'OFP_BSN_LACP_STATE_EXPIRED'}
+                q.text(util.pretty_flags(self.value, value_name_map.values()))
             q.breakable()
         q.text('}')
 
@@ -6867,7 +6952,11 @@ class port_mode(bsn_tlv):
             with q.indent(2):
                 q.breakable()
                 q.text("value = ");
-                q.text("%#x" % self.value)
+                value_name_map = {0: 'OFP_BSN_PORT_MODE_NONE', 1: 'OFP_BSN_PORT_MODE_4XX', 2: 'OFP_BSN_PORT_MODE_4X1', 3: 'OFP_BSN_PORT_MODE_4X10', 4: 'OFP_BSN_PORT_MODE_4X25', 5: 'OFP_BSN_PORT_MODE_2X50', 6: 'OFP_BSN_PORT_MODE_1X1', 7: 'OFP_BSN_PORT_MODE_1X10', 8: 'OFP_BSN_PORT_MODE_1X25', 9: 'OFP_BSN_PORT_MODE_1X40', 10: 'OFP_BSN_PORT_MODE_1X100', 11: 'OFP_BSN_PORT_MODE_8X25', 12: 'OFP_BSN_PORT_MODE_8X50', 13: 'OFP_BSN_PORT_MODE_4X50', 14: 'OFP_BSN_PORT_MODE_1X50', 15: 'OFP_BSN_PORT_MODE_1X200', 16: 'OFP_BSN_PORT_MODE_1X400', 17: 'OFP_BSN_PORT_MODE_8X10', 18: 'OFP_BSN_PORT_MODE_4X100', 19: 'OFP_BSN_PORT_MODE_2X40', 20: 'OFP_BSN_PORT_MODE_2X100', 21: 'OFP_BSN_PORT_MODE_2X200'}
+                if self.value in value_name_map:
+                    q.text("%s(%d)" % (value_name_map[self.value], self.value))
+                else:
+                    q.text("%#x" % self.value)
             q.breakable()
         q.text('}')
 
@@ -6961,7 +7050,11 @@ class port_usage(bsn_tlv):
             with q.indent(2):
                 q.breakable()
                 q.text("value = ");
-                q.text("%#x" % self.value)
+                value_name_map = {0: 'OFP_BSN_PORT_UNUSED', 1: 'OFP_BSN_PORT_TRANSMIT_ONLY', 2: 'OFP_BSN_PORT_RECEIVE_ONLY', 3: 'OFP_BSN_PORT_BIDIRECTION'}
+                if self.value in value_name_map:
+                    q.text("%s(%d)" % (value_name_map[self.value], self.value))
+                else:
+                    q.text("%#x" % self.value)
             q.breakable()
         q.text('}')
 
@@ -7008,7 +7101,11 @@ class port_vxlan_mode(bsn_tlv):
             with q.indent(2):
                 q.breakable()
                 q.text("value = ");
-                q.text("%#x" % self.value)
+                value_name_map = {0: 'OFP_BSN_PORT_VXLAN_RECIRCULATION_ENABLE', 1: 'OFP_BSN_PORT_VXLAN_TERMINATION_ENABLE'}
+                if self.value in value_name_map:
+                    q.text("%s(%d)" % (value_name_map[self.value], self.value))
+                else:
+                    q.text("%#x" % self.value)
             q.breakable()
         q.text('}')
 
@@ -7178,7 +7275,8 @@ class push_two_tags_capability(bsn_tlv):
             with q.indent(2):
                 q.breakable()
                 q.text("value = ");
-                q.text("%#x" % self.value)
+                value_name_map = {0: 'OFP_BSN_PUSH_TWO_TAGS_NOT_SUPPORTED', 1: 'OFP_BSN_PUSH_TWO_TAGS_SUPPORTED'}
+                q.text(util.pretty_flags(self.value, value_name_map.values()))
             q.breakable()
         q.text('}')
 
@@ -7263,7 +7361,8 @@ class push_vlan_on_ingress(bsn_tlv):
             with q.indent(2):
                 q.breakable()
                 q.text("flags = ");
-                q.text("%#x" % self.flags)
+                value_name_map = {1: 'OFP_BSN_PUSH_VLAN_UNTAGGED', 2: 'OFP_BSN_PUSH_VLAN_SINGLE_TAGGED', 4: 'OFP_BSN_PUSH_VLAN_DOUBLE_TAGGED'}
+                q.text(util.pretty_flags(self.flags, value_name_map.values()))
             q.breakable()
         q.text('}')
 
@@ -7498,7 +7597,11 @@ class rate_unit(bsn_tlv):
             with q.indent(2):
                 q.breakable()
                 q.text("value = ");
-                q.text("%#x" % self.value)
+                value_name_map = {0: 'OFP_BSN_RATE_UNIT_PPS', 1: 'OFP_BSN_RATE_UNIT_KBITPS'}
+                if self.value in value_name_map:
+                    q.text("%s(%d)" % (value_name_map[self.value], self.value))
+                else:
+                    q.text("%#x" % self.value)
             q.breakable()
         q.text('}')
 
@@ -7819,7 +7922,11 @@ class routing_param(bsn_tlv):
             with q.indent(2):
                 q.breakable()
                 q.text("value = ");
-                q.text("%#x" % self.value)
+                value_name_map = {1: 'OFP_BSN_ROUTING_PARAM_OSPF_UCAST', 2: 'OFP_BSN_ROUTING_PARAM_OSPF_MCAST', 3: 'OFP_BSN_ROUTING_PARAM_ARP_FRR', 4: 'OFP_BSN_ROUTING_PARAM_IPV6_OSPF_UCAST', 5: 'OFP_BSN_ROUTING_PARAM_IPV6_OSPF_MCAST', 6: 'OFP_BSN_ROUTING_PARAM_IPV6_NDP_FRR'}
+                if self.value in value_name_map:
+                    q.text("%s(%d)" % (value_name_map[self.value], self.value))
+                else:
+                    q.text("%#x" % self.value)
             q.breakable()
         q.text('}')
 
@@ -8186,7 +8293,11 @@ class src_mac_cml(bsn_tlv):
             with q.indent(2):
                 q.breakable()
                 q.text("value = ");
-                q.text("%#x" % self.value)
+                value_name_map = {0: 'OFP_BSN_CML_NONE', 1: 'OFP_BSN_CML_CPU_DROP', 2: 'OFP_BSN_CML_FORWARD', 3: 'OFP_BSN_CML_CPU_FORWARD'}
+                if self.value in value_name_map:
+                    q.text("%s(%d)" % (value_name_map[self.value], self.value))
+                else:
+                    q.text("%#x" % self.value)
             q.breakable()
         q.text('}')
 
@@ -8233,7 +8344,11 @@ class status(bsn_tlv):
             with q.indent(2):
                 q.breakable()
                 q.text("value = ");
-                q.text("%#x" % self.value)
+                value_name_map = {0: 'OFP_BSN_STATUS_DISABLE', 1: 'OFP_BSN_STATUS_ENABLE'}
+                if self.value in value_name_map:
+                    q.text("%s(%d)" % (value_name_map[self.value], self.value))
+                else:
+                    q.text("%#x" % self.value)
             q.breakable()
         q.text('}')
 
@@ -8356,7 +8471,8 @@ class strip_vlan_on_egress(bsn_tlv):
             with q.indent(2):
                 q.breakable()
                 q.text("flags = ");
-                q.text("%#x" % self.flags)
+                value_name_map = {1: 'OFP_BSN_STRIP_VLAN_FIRST', 2: 'OFP_BSN_STRIP_VLAN_SECOND', 4: 'OFP_BSN_STRIP_VLAN_THIRD'}
+                q.text(util.pretty_flags(self.flags, value_name_map.values()))
             q.breakable()
         q.text('}')
 
@@ -8732,7 +8848,8 @@ class tunnel_capability(bsn_tlv):
             with q.indent(2):
                 q.breakable()
                 q.text("value = ");
-                q.text("%#x" % self.value)
+                value_name_map = {1: 'OFP_BSN_TUNNEL_L2GRE', 2: 'OFP_BSN_TUNNEL_VXLAN'}
+                q.text(util.pretty_flags(self.value, value_name_map.values()))
             q.breakable()
         q.text('}')
 
@@ -8873,7 +8990,11 @@ class udf_anchor(bsn_tlv):
             with q.indent(2):
                 q.breakable()
                 q.text("value = ");
-                q.text("%#x" % self.value)
+                value_name_map = {0: 'OFP_BSN_UDF_ANCHOR_PACKET_START', 1: 'OFP_BSN_UDF_ANCHOR_L3_HEADER_START', 2: 'OFP_BSN_UDF_ANCHOR_L4_HEADER_START', 3: 'OFP_BSN_UDF_ANCHOR_TD3_L2_START', 4: 'OFP_BSN_UDF_ANCHOR_TD3_L3_IPV4_START_WITHOUT_OPTIONS', 5: 'OFP_BSN_UDF_ANCHOR_TD3_L3_IPV6_START'}
+                if self.value in value_name_map:
+                    q.text("%s(%d)" % (value_name_map[self.value], self.value))
+                else:
+                    q.text("%#x" % self.value)
             q.breakable()
         q.text('}')
 
@@ -8920,7 +9041,8 @@ class udf_capability(bsn_tlv):
             with q.indent(2):
                 q.breakable()
                 q.text("value = ");
-                q.text("%#x" % self.value)
+                value_name_map = {1: 'OFP_BSN_UDF_8X2_BYTES', 2: 'OFP_BSN_UDF_6X2_BYTES'}
+                q.text(util.pretty_flags(self.value, value_name_map.values()))
             q.breakable()
         q.text('}')
 
@@ -9522,7 +9644,11 @@ class upgrade(bsn_tlv):
             with q.indent(2):
                 q.breakable()
                 q.text("value = ");
-                q.text("%#x" % self.value)
+                value_name_map = {0: 'OFP_BSN_UPGRADE_INVALID', 1: 'OFP_BSN_UPGRADE_IN_PROGRESS'}
+                if self.value in value_name_map:
+                    q.text("%s(%d)" % (value_name_map[self.value], self.value))
+                else:
+                    q.text("%#x" % self.value)
             q.breakable()
         q.text('}')
 
