@@ -60,6 +60,8 @@ public class OFBsnPktinFlagSerializerVer13 {
     public final static long BSN_PKTIN_FLAG_IPMC_RPF_FAILED_VAL = 0x400000L;
     public final static long BSN_PKTIN_FLAG_BFD_SLOWPATH_VAL = 0x800000L;
     public final static long BSN_PKTIN_FLAG_SFLOW_EGRESS_VAL = 0x1000000L;
+    public final static long BSN_PKTIN_FLAG_DHCPV6_AGNET_VAL = 0x2000000L;
+    public final static long BSN_PKTIN_FLAG_DHCPV6_VAL = 0x4000000L;
 
     public static Set<OFBsnPktinFlag> readFrom(ByteBuf bb) throws OFParseError {
         try {
@@ -131,6 +133,10 @@ public class OFBsnPktinFlagSerializerVer13 {
             set.add(OFBsnPktinFlag.BSN_PKTIN_FLAG_BFD_SLOWPATH);
         if((val & BSN_PKTIN_FLAG_SFLOW_EGRESS_VAL) != 0)
             set.add(OFBsnPktinFlag.BSN_PKTIN_FLAG_SFLOW_EGRESS);
+        if((val & BSN_PKTIN_FLAG_DHCPV6_AGNET_VAL) != 0)
+            set.add(OFBsnPktinFlag.BSN_PKTIN_FLAG_DHCPV6_AGNET);
+        if((val & BSN_PKTIN_FLAG_DHCPV6_VAL) != 0)
+            set.add(OFBsnPktinFlag.BSN_PKTIN_FLAG_DHCPV6);
         return Collections.unmodifiableSet(set);
     }
 
@@ -213,6 +219,12 @@ public class OFBsnPktinFlagSerializerVer13 {
                     break;
                 case BSN_PKTIN_FLAG_SFLOW_EGRESS:
                     wireValue |= BSN_PKTIN_FLAG_SFLOW_EGRESS_VAL;
+                    break;
+                case BSN_PKTIN_FLAG_DHCPV6_AGNET:
+                    wireValue |= BSN_PKTIN_FLAG_DHCPV6_AGNET_VAL;
+                    break;
+                case BSN_PKTIN_FLAG_DHCPV6:
+                    wireValue |= BSN_PKTIN_FLAG_DHCPV6_VAL;
                     break;
                 default:
                     throw new IllegalArgumentException("Illegal enum value for type OFBsnPktinFlag in version 1.3: " + e);
