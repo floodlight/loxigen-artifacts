@@ -13528,6 +13528,33 @@ int of_bsn_tlv_no_arp_response_OF_VERSION_1_0_check_scalars(
 
 
 /**
+ * Populate the scalar values in obj of type of_bsn_tlv_no_drop,
+ * version OF_VERSION_1_0
+ * @param obj Pointer to an object to populate
+ * @param value The seed value to use in populating the object
+ * @returns The value after increments for this object's values
+ */
+int of_bsn_tlv_no_drop_OF_VERSION_1_0_populate_scalars(
+    of_bsn_tlv_no_drop_t *obj, int value) {
+
+    return value;
+}
+
+/**
+ * Check scalar values in obj of type of_bsn_tlv_no_drop,
+ * version OF_VERSION_1_0
+ * @param obj Pointer to an object to check
+ * @param value Starting value for checking
+ * @returns The value after increments for this object's values
+ */
+int of_bsn_tlv_no_drop_OF_VERSION_1_0_check_scalars(
+    of_bsn_tlv_no_drop_t *obj, int value) {
+
+    return value;
+}
+
+
+/**
  * Populate the scalar values in obj of type of_bsn_tlv_no_ns_response,
  * version OF_VERSION_1_0
  * @param obj Pointer to an object to populate
@@ -37851,6 +37878,33 @@ int of_bsn_tlv_no_arp_response_OF_VERSION_1_1_populate_scalars(
  */
 int of_bsn_tlv_no_arp_response_OF_VERSION_1_1_check_scalars(
     of_bsn_tlv_no_arp_response_t *obj, int value) {
+
+    return value;
+}
+
+
+/**
+ * Populate the scalar values in obj of type of_bsn_tlv_no_drop,
+ * version OF_VERSION_1_1
+ * @param obj Pointer to an object to populate
+ * @param value The seed value to use in populating the object
+ * @returns The value after increments for this object's values
+ */
+int of_bsn_tlv_no_drop_OF_VERSION_1_1_populate_scalars(
+    of_bsn_tlv_no_drop_t *obj, int value) {
+
+    return value;
+}
+
+/**
+ * Check scalar values in obj of type of_bsn_tlv_no_drop,
+ * version OF_VERSION_1_1
+ * @param obj Pointer to an object to check
+ * @param value Starting value for checking
+ * @returns The value after increments for this object's values
+ */
+int of_bsn_tlv_no_drop_OF_VERSION_1_1_check_scalars(
+    of_bsn_tlv_no_drop_t *obj, int value) {
 
     return value;
 }
@@ -62504,6 +62558,33 @@ int of_bsn_tlv_no_arp_response_OF_VERSION_1_2_populate_scalars(
  */
 int of_bsn_tlv_no_arp_response_OF_VERSION_1_2_check_scalars(
     of_bsn_tlv_no_arp_response_t *obj, int value) {
+
+    return value;
+}
+
+
+/**
+ * Populate the scalar values in obj of type of_bsn_tlv_no_drop,
+ * version OF_VERSION_1_2
+ * @param obj Pointer to an object to populate
+ * @param value The seed value to use in populating the object
+ * @returns The value after increments for this object's values
+ */
+int of_bsn_tlv_no_drop_OF_VERSION_1_2_populate_scalars(
+    of_bsn_tlv_no_drop_t *obj, int value) {
+
+    return value;
+}
+
+/**
+ * Check scalar values in obj of type of_bsn_tlv_no_drop,
+ * version OF_VERSION_1_2
+ * @param obj Pointer to an object to check
+ * @param value Starting value for checking
+ * @returns The value after increments for this object's values
+ */
+int of_bsn_tlv_no_drop_OF_VERSION_1_2_check_scalars(
+    of_bsn_tlv_no_drop_t *obj, int value) {
 
     return value;
 }
@@ -92521,6 +92602,33 @@ int of_bsn_tlv_no_arp_response_OF_VERSION_1_3_populate_scalars(
  */
 int of_bsn_tlv_no_arp_response_OF_VERSION_1_3_check_scalars(
     of_bsn_tlv_no_arp_response_t *obj, int value) {
+
+    return value;
+}
+
+
+/**
+ * Populate the scalar values in obj of type of_bsn_tlv_no_drop,
+ * version OF_VERSION_1_3
+ * @param obj Pointer to an object to populate
+ * @param value The seed value to use in populating the object
+ * @returns The value after increments for this object's values
+ */
+int of_bsn_tlv_no_drop_OF_VERSION_1_3_populate_scalars(
+    of_bsn_tlv_no_drop_t *obj, int value) {
+
+    return value;
+}
+
+/**
+ * Check scalar values in obj of type of_bsn_tlv_no_drop,
+ * version OF_VERSION_1_3
+ * @param obj Pointer to an object to check
+ * @param value Starting value for checking
+ * @returns The value after increments for this object's values
+ */
+int of_bsn_tlv_no_drop_OF_VERSION_1_3_check_scalars(
+    of_bsn_tlv_no_drop_t *obj, int value) {
 
     return value;
 }
@@ -124124,6 +124232,33 @@ int of_bsn_tlv_no_arp_response_OF_VERSION_1_4_populate_scalars(
  */
 int of_bsn_tlv_no_arp_response_OF_VERSION_1_4_check_scalars(
     of_bsn_tlv_no_arp_response_t *obj, int value) {
+
+    return value;
+}
+
+
+/**
+ * Populate the scalar values in obj of type of_bsn_tlv_no_drop,
+ * version OF_VERSION_1_4
+ * @param obj Pointer to an object to populate
+ * @param value The seed value to use in populating the object
+ * @returns The value after increments for this object's values
+ */
+int of_bsn_tlv_no_drop_OF_VERSION_1_4_populate_scalars(
+    of_bsn_tlv_no_drop_t *obj, int value) {
+
+    return value;
+}
+
+/**
+ * Check scalar values in obj of type of_bsn_tlv_no_drop,
+ * version OF_VERSION_1_4
+ * @param obj Pointer to an object to check
+ * @param value Starting value for checking
+ * @returns The value after increments for this object's values
+ */
+int of_bsn_tlv_no_drop_OF_VERSION_1_4_check_scalars(
+    of_bsn_tlv_no_drop_t *obj, int value) {
 
     return value;
 }
