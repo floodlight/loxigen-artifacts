@@ -267,6 +267,7 @@ public interface OFBsnTlvs {
     OFBsnTlvNextHopMac nextHopMac(MacAddress value);
     OFBsnTlvNexthopTypeVxlan nexthopTypeVxlan();
     OFBsnTlvNoArpResponse noArpResponse();
+    OFBsnTlvNoDrop noDrop();
     OFBsnTlvNoNsResponse noNsResponse();
     OFBsnTlvOffset.Builder buildOffset() throws UnsupportedOperationException;
     OFBsnTlvOffset offset(int value);

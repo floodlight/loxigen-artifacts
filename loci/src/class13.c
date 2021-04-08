@@ -4377,6 +4377,9 @@ of_bsn_tlv_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
         case 0xde:
             *id = OF_BSN_TLV_PACKET_FIELD;
             break;
+        case 0xdf:
+            *id = OF_BSN_TLV_NO_DROP;
+            break;
         default:
             *id = OF_BSN_TLV;
             break;
@@ -5051,6 +5054,9 @@ of_bsn_tlv_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
             break;
         case 0xde:
             *id = OF_BSN_TLV_PACKET_FIELD;
+            break;
+        case 0xdf:
+            *id = OF_BSN_TLV_NO_DROP;
             break;
         default:
             *id = OF_BSN_TLV;

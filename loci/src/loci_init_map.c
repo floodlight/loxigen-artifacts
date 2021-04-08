@@ -446,6 +446,7 @@ const of_object_init_f of_object_init_map[] = {
     (of_object_init_f)of_bsn_tlv_next_hop_mac_init,
     (of_object_init_f)of_bsn_tlv_nexthop_type_vxlan_init,
     (of_object_init_f)of_bsn_tlv_no_arp_response_init,
+    (of_object_init_f)of_bsn_tlv_no_drop_init,
     (of_object_init_f)of_bsn_tlv_no_ns_response_init,
     (of_object_init_f)of_bsn_tlv_offset_init,
     (of_object_init_f)of_bsn_tlv_optics_always_enabled_init,
