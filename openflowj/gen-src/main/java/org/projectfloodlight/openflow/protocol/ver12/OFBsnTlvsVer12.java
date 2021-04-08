@@ -875,6 +875,10 @@ public class OFBsnTlvsVer12 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvNoArpResponse not supported in version 1.2");
     }
 
+    public OFBsnTlvNoDrop noDrop() {
+        throw new UnsupportedOperationException("OFBsnTlvNoDrop not supported in version 1.2");
+    }
+
     public OFBsnTlvNoNsResponse noNsResponse() {
         throw new UnsupportedOperationException("OFBsnTlvNoNsResponse not supported in version 1.2");
     }

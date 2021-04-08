@@ -442,6 +442,9 @@ abstract class OFBsnTlvVer14 {
                case (short) 0x93:
                    // discriminator value 0x93=0x93 for class OFBsnTlvNoArpResponseVer14
                    return OFBsnTlvNoArpResponseVer14.READER.readFrom(bb);
+               case (short) 0xdf:
+                   // discriminator value 0xdf=0xdf for class OFBsnTlvNoDropVer14
+                   return OFBsnTlvNoDropVer14.READER.readFrom(bb);
                case (short) 0x94:
                    // discriminator value 0x94=0x94 for class OFBsnTlvNoNsResponseVer14
                    return OFBsnTlvNoNsResponseVer14.READER.readFrom(bb);
