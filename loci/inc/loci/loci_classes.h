@@ -1119,6 +1119,8 @@ void of_bsn_tlv_nexthop_type_vxlan_wire_object_id_get(of_object_t *obj, of_objec
 void of_bsn_tlv_nexthop_type_vxlan_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_no_arp_response_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_no_arp_response_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_no_drop_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_no_drop_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_no_ns_response_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_no_ns_response_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_offset_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -2116,6 +2118,7 @@ typedef of_object_t of_bsn_tlv_next_hop_ipv4_t;
 typedef of_object_t of_bsn_tlv_next_hop_mac_t;
 typedef of_object_t of_bsn_tlv_nexthop_type_vxlan_t;
 typedef of_object_t of_bsn_tlv_no_arp_response_t;
+typedef of_object_t of_bsn_tlv_no_drop_t;
 typedef of_object_t of_bsn_tlv_no_ns_response_t;
 typedef of_object_t of_bsn_tlv_offset_t;
 typedef of_object_t of_bsn_tlv_optics_always_enabled_t;
@@ -4767,6 +4770,11 @@ extern void of_bsn_tlv_nexthop_type_vxlan_init(
 extern of_object_t *
     of_bsn_tlv_no_arp_response_new(of_version_t version);
 extern void of_bsn_tlv_no_arp_response_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_bsn_tlv_no_drop_new(of_version_t version);
+extern void of_bsn_tlv_no_drop_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
@@ -11842,6 +11850,17 @@ of_bsn_tlv_nexthop_type_vxlan_delete(of_object_t *obj) {
  */
 static inline void
 of_bsn_tlv_no_arp_response_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_no_drop_t
+ * @param obj An instance of type of_bsn_tlv_no_drop_t
+ *
+ * \ingroup of_bsn_tlv_no_drop
+ */
+static inline void
+of_bsn_tlv_no_drop_delete(of_object_t *obj) {
     of_object_delete(obj);
 }
 
@@ -25627,6 +25646,8 @@ extern void of_bsn_tlv_next_hop_mac_value_get(
 /* Unified accessor functions for of_bsn_tlv_nexthop_type_vxlan */
 
 /* Unified accessor functions for of_bsn_tlv_no_arp_response */
+
+/* Unified accessor functions for of_bsn_tlv_no_drop */
 
 /* Unified accessor functions for of_bsn_tlv_no_ns_response */
 

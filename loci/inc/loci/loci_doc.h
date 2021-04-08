@@ -7773,6 +7773,13 @@ typedef struct of_bsn_tlv_nexthop_type_vxlan_s of_bsn_tlv_nexthop_type_vxlan_t;
 typedef struct of_bsn_tlv_no_arp_response_s of_bsn_tlv_no_arp_response_t;
 
 /**
+ * Structure for of_bsn_tlv_no_drop object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ */
+typedef struct of_bsn_tlv_no_drop_s of_bsn_tlv_no_drop_t;
+
+/**
  * Structure for of_bsn_tlv_no_ns_response object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
