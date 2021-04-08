@@ -30,6 +30,208 @@
 #include "loci_int.h"
 
 void
+of_bsn_tlv_port_speed_gbps_push_wire_types(of_object_t *obj)
+{
+    unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
+    switch (obj->version) {
+    case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
+        *(uint16_t *)(buf + 0) = U16_HTON(0x9c); /* type */
+        break;
+    default:
+        UNREACHABLE();
+    }
+}
+
+
+
+/**
+ * \defgroup of_bsn_tlv_port_speed_gbps of_bsn_tlv_port_speed_gbps
+ */
+
+/**
+ * Create a new of_bsn_tlv_port_speed_gbps object
+ *
+ * @param version The wire version to use for the object
+ * @return Pointer to the newly create object or NULL on error
+ *
+ * Initializes the new object with it's default fixed length associating
+ * a new underlying wire buffer.
+ *
+ * \ingroup of_bsn_tlv_port_speed_gbps
+ */
+
+of_object_t *
+of_bsn_tlv_port_speed_gbps_new(of_version_t version)
+{
+    of_object_t *obj;
+    int bytes;
+
+    bytes = of_object_fixed_len[version][OF_BSN_TLV_PORT_SPEED_GBPS];
+
+    if ((obj = of_object_new(bytes)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_port_speed_gbps_init(obj, version, bytes, 0);
+    of_bsn_tlv_port_speed_gbps_push_wire_types(obj);
+    of_tlv16_wire_length_set(obj, obj->length);
+
+    return obj;
+}
+
+/**
+ * Initialize an object of type of_bsn_tlv_port_speed_gbps.
+ *
+ * @param obj Pointer to the object to initialize
+ * @param version The wire version to use for the object
+ * @param bytes How many bytes in the object
+ * @param clean_wire Boolean: If true, clear the wire object control struct
+ *
+ * If bytes < 0, then the default fixed length is used for the object
+ *
+ * This is a "coerce" function that sets up the pointers for the
+ * accessors properly.
+ *
+ * If anything other than 0 is passed in for the buffer size, the underlying
+ * wire buffer will have 'grow' called.
+ */
+
+void
+of_bsn_tlv_port_speed_gbps_init(of_object_t *obj,
+    of_version_t version, int bytes, int clean_wire)
+{
+    LOCI_ASSERT(of_object_fixed_len[version][OF_BSN_TLV_PORT_SPEED_GBPS] >= 0);
+    if (clean_wire) {
+        MEMSET(obj, 0, sizeof(*obj));
+    }
+    if (bytes < 0) {
+        bytes = of_object_fixed_len[version][OF_BSN_TLV_PORT_SPEED_GBPS];
+    }
+    obj->version = version;
+    obj->length = bytes;
+    obj->object_id = OF_BSN_TLV_PORT_SPEED_GBPS;
+
+    /* Grow the wire buffer */
+    if (obj->wbuf != NULL) {
+        int tot_bytes;
+
+        tot_bytes = bytes + obj->obj_offset;
+        of_wire_buffer_grow(obj->wbuf, tot_bytes);
+    }
+}
+
+/**
+ * Get value from an object of type of_bsn_tlv_port_speed_gbps.
+ * @param obj Pointer to an object of type of_bsn_tlv_port_speed_gbps.
+ * @param value Pointer to the child object of type
+ * uint32_t to be filled out.
+ *
+ */
+void
+of_bsn_tlv_port_speed_gbps_value_get(
+    of_bsn_tlv_port_speed_gbps_t *obj,
+    uint32_t *value)
+{
+    of_wire_buffer_t *wbuf;
+    int offset = 0; /* Offset of value relative to the start obj */
+    int abs_offset; /* Offset of value relative to start of wbuf */
+    of_version_t ver;
+
+    LOCI_ASSERT(obj->object_id == OF_BSN_TLV_PORT_SPEED_GBPS);
+    ver = obj->version;
+    wbuf = OF_OBJECT_TO_WBUF(obj);
+    LOCI_ASSERT(wbuf != NULL);
+
+    /* By version, determine offset and current length (where needed) */
+    switch (ver) {
+    case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
+        offset = 4;
+        break;
+    default:
+        LOCI_ASSERT(0);
+    }
+
+    abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
+    LOCI_ASSERT(abs_offset >= 0);
+    of_wire_buffer_u32_get(wbuf, abs_offset, value);
+
+    OF_LENGTH_CHECK_ASSERT(obj);
+
+    return ;
+}
+
+/**
+ * Set value in an object of type of_bsn_tlv_port_speed_gbps.
+ * @param obj Pointer to an object of type of_bsn_tlv_port_speed_gbps.
+ * @param value The value to write into the object
+ */
+void
+of_bsn_tlv_port_speed_gbps_value_set(
+    of_bsn_tlv_port_speed_gbps_t *obj,
+    uint32_t value)
+{
+    of_wire_buffer_t *wbuf;
+    int offset = 0; /* Offset of value relative to the start obj */
+    int abs_offset; /* Offset of value relative to start of wbuf */
+    of_version_t ver;
+
+    LOCI_ASSERT(obj->object_id == OF_BSN_TLV_PORT_SPEED_GBPS);
+    ver = obj->version;
+    wbuf = OF_OBJECT_TO_WBUF(obj);
+    LOCI_ASSERT(wbuf != NULL);
+
+    /* By version, determine offset and current length (where needed) */
+    switch (ver) {
+    case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
+        offset = 4;
+        break;
+    default:
+        LOCI_ASSERT(0);
+    }
+
+    abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
+    LOCI_ASSERT(abs_offset >= 0);
+    of_wire_buffer_u32_set(wbuf, abs_offset, value);
+
+    OF_LENGTH_CHECK_ASSERT(obj);
+
+    return ;
+}
+/* Copyright (c) 2008 The Board of Trustees of The Leland Stanford Junior University */
+/* Copyright (c) 2011, 2012 Open Networking Foundation */
+/* Copyright (c) 2012, 2013 Big Switch Networks, Inc. */
+/* See the file LICENSE.loci which should have been included in the source distribution */
+#ifdef __GNUC__
+
+#ifdef __linux__
+/* glibc */
+#include <features.h>
+#else
+/* NetBSD etc */
+#include <sys/cdefs.h>
+#ifdef __GNUC_PREREQ__
+#define __GNUC_PREREQ __GNUC_PREREQ__
+#endif
+#endif
+
+#ifndef __GNUC_PREREQ
+/* fallback */
+#define __GNUC_PREREQ(maj, min) 0
+#endif
+
+#if __GNUC_PREREQ(4,6)
+#pragma GCC diagnostic ignored "-Wunused-but-set-variable"
+#endif
+
+#endif
+
+#include "loci_log.h"
+#include "loci_int.h"
+
+void
 of_bsn_tlv_port_usage_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
@@ -5763,206 +5965,4 @@ of_bsn_tlv_strip_mpls_l3_on_ingress_init(of_object_t *obj,
         tot_bytes = bytes + obj->obj_offset;
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
-}
-/* Copyright (c) 2008 The Board of Trustees of The Leland Stanford Junior University */
-/* Copyright (c) 2011, 2012 Open Networking Foundation */
-/* Copyright (c) 2012, 2013 Big Switch Networks, Inc. */
-/* See the file LICENSE.loci which should have been included in the source distribution */
-#ifdef __GNUC__
-
-#ifdef __linux__
-/* glibc */
-#include <features.h>
-#else
-/* NetBSD etc */
-#include <sys/cdefs.h>
-#ifdef __GNUC_PREREQ__
-#define __GNUC_PREREQ __GNUC_PREREQ__
-#endif
-#endif
-
-#ifndef __GNUC_PREREQ
-/* fallback */
-#define __GNUC_PREREQ(maj, min) 0
-#endif
-
-#if __GNUC_PREREQ(4,6)
-#pragma GCC diagnostic ignored "-Wunused-but-set-variable"
-#endif
-
-#endif
-
-#include "loci_log.h"
-#include "loci_int.h"
-
-void
-of_bsn_tlv_strip_vlan_on_egress_push_wire_types(of_object_t *obj)
-{
-    unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
-    switch (obj->version) {
-    case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
-        *(uint16_t *)(buf + 0) = U16_HTON(0x49); /* type */
-        break;
-    default:
-        UNREACHABLE();
-    }
-}
-
-
-
-/**
- * \defgroup of_bsn_tlv_strip_vlan_on_egress of_bsn_tlv_strip_vlan_on_egress
- */
-
-/**
- * Create a new of_bsn_tlv_strip_vlan_on_egress object
- *
- * @param version The wire version to use for the object
- * @return Pointer to the newly create object or NULL on error
- *
- * Initializes the new object with it's default fixed length associating
- * a new underlying wire buffer.
- *
- * \ingroup of_bsn_tlv_strip_vlan_on_egress
- */
-
-of_object_t *
-of_bsn_tlv_strip_vlan_on_egress_new(of_version_t version)
-{
-    of_object_t *obj;
-    int bytes;
-
-    bytes = of_object_fixed_len[version][OF_BSN_TLV_STRIP_VLAN_ON_EGRESS];
-
-    if ((obj = of_object_new(bytes)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_strip_vlan_on_egress_init(obj, version, bytes, 0);
-    of_bsn_tlv_strip_vlan_on_egress_push_wire_types(obj);
-    of_tlv16_wire_length_set(obj, obj->length);
-
-    return obj;
-}
-
-/**
- * Initialize an object of type of_bsn_tlv_strip_vlan_on_egress.
- *
- * @param obj Pointer to the object to initialize
- * @param version The wire version to use for the object
- * @param bytes How many bytes in the object
- * @param clean_wire Boolean: If true, clear the wire object control struct
- *
- * If bytes < 0, then the default fixed length is used for the object
- *
- * This is a "coerce" function that sets up the pointers for the
- * accessors properly.
- *
- * If anything other than 0 is passed in for the buffer size, the underlying
- * wire buffer will have 'grow' called.
- */
-
-void
-of_bsn_tlv_strip_vlan_on_egress_init(of_object_t *obj,
-    of_version_t version, int bytes, int clean_wire)
-{
-    LOCI_ASSERT(of_object_fixed_len[version][OF_BSN_TLV_STRIP_VLAN_ON_EGRESS] >= 0);
-    if (clean_wire) {
-        MEMSET(obj, 0, sizeof(*obj));
-    }
-    if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_BSN_TLV_STRIP_VLAN_ON_EGRESS];
-    }
-    obj->version = version;
-    obj->length = bytes;
-    obj->object_id = OF_BSN_TLV_STRIP_VLAN_ON_EGRESS;
-
-    /* Grow the wire buffer */
-    if (obj->wbuf != NULL) {
-        int tot_bytes;
-
-        tot_bytes = bytes + obj->obj_offset;
-        of_wire_buffer_grow(obj->wbuf, tot_bytes);
-    }
-}
-
-/**
- * Get flags from an object of type of_bsn_tlv_strip_vlan_on_egress.
- * @param obj Pointer to an object of type of_bsn_tlv_strip_vlan_on_egress.
- * @param flags Pointer to the child object of type
- * uint8_t to be filled out.
- *
- */
-void
-of_bsn_tlv_strip_vlan_on_egress_flags_get(
-    of_bsn_tlv_strip_vlan_on_egress_t *obj,
-    uint8_t *flags)
-{
-    of_wire_buffer_t *wbuf;
-    int offset = 0; /* Offset of value relative to the start obj */
-    int abs_offset; /* Offset of value relative to start of wbuf */
-    of_version_t ver;
-
-    LOCI_ASSERT(obj->object_id == OF_BSN_TLV_STRIP_VLAN_ON_EGRESS);
-    ver = obj->version;
-    wbuf = OF_OBJECT_TO_WBUF(obj);
-    LOCI_ASSERT(wbuf != NULL);
-
-    /* By version, determine offset and current length (where needed) */
-    switch (ver) {
-    case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
-        offset = 4;
-        break;
-    default:
-        LOCI_ASSERT(0);
-    }
-
-    abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    LOCI_ASSERT(abs_offset >= 0);
-    of_wire_buffer_u8_get(wbuf, abs_offset, flags);
-
-    OF_LENGTH_CHECK_ASSERT(obj);
-
-    return ;
-}
-
-/**
- * Set flags in an object of type of_bsn_tlv_strip_vlan_on_egress.
- * @param obj Pointer to an object of type of_bsn_tlv_strip_vlan_on_egress.
- * @param flags The value to write into the object
- */
-void
-of_bsn_tlv_strip_vlan_on_egress_flags_set(
-    of_bsn_tlv_strip_vlan_on_egress_t *obj,
-    uint8_t flags)
-{
-    of_wire_buffer_t *wbuf;
-    int offset = 0; /* Offset of value relative to the start obj */
-    int abs_offset; /* Offset of value relative to start of wbuf */
-    of_version_t ver;
-
-    LOCI_ASSERT(obj->object_id == OF_BSN_TLV_STRIP_VLAN_ON_EGRESS);
-    ver = obj->version;
-    wbuf = OF_OBJECT_TO_WBUF(obj);
-    LOCI_ASSERT(wbuf != NULL);
-
-    /* By version, determine offset and current length (where needed) */
-    switch (ver) {
-    case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
-        offset = 4;
-        break;
-    default:
-        LOCI_ASSERT(0);
-    }
-
-    abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    LOCI_ASSERT(abs_offset >= 0);
-    of_wire_buffer_u8_set(wbuf, abs_offset, flags);
-
-    OF_LENGTH_CHECK_ASSERT(obj);
-
-    return ;
 }
