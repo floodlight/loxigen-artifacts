@@ -215,6 +215,20 @@ public class OFBsnTlvsVer11 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvDecap not supported in version 1.1");
     }
 
+    public OFBsnTlvDhcpv6OptFmt.Builder buildDhcpv6OptFmt() {
+        throw new UnsupportedOperationException("OFBsnTlvDhcpv6OptFmt not supported in version 1.1");
+    }
+    public OFBsnTlvDhcpv6OptFmt dhcpv6OptFmt(OFBsnDhcpv6OptFmt fmt) {
+        throw new UnsupportedOperationException("OFBsnTlvDhcpv6OptFmt not supported in version 1.1");
+    }
+
+    public OFBsnTlvDhcpv6Option.Builder buildDhcpv6Option() {
+        throw new UnsupportedOperationException("OFBsnTlvDhcpv6Option not supported in version 1.1");
+    }
+    public OFBsnTlvDhcpv6Option dhcpv6Option(int optCode) {
+        throw new UnsupportedOperationException("OFBsnTlvDhcpv6Option not supported in version 1.1");
+    }
+
     public OFBsnTlvDisableSrcMacCheck disableSrcMacCheck() {
         throw new UnsupportedOperationException("OFBsnTlvDisableSrcMacCheck not supported in version 1.1");
     }

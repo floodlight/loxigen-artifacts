@@ -341,6 +341,8 @@ const of_object_init_f of_object_init_map[] = {
     (of_object_init_f)of_bsn_tlv_data_init,
     (of_object_init_f)of_bsn_tlv_data_mask_init,
     (of_object_init_f)of_bsn_tlv_decap_init,
+    (of_object_init_f)of_bsn_tlv_dhcpv6_opt_fmt_init,
+    (of_object_init_f)of_bsn_tlv_dhcpv6_option_init,
     (of_object_init_f)of_bsn_tlv_disable_src_mac_check_init,
     (of_object_init_f)of_bsn_tlv_disable_xmit_init,
     (of_object_init_f)of_bsn_tlv_dns_analytics_init,

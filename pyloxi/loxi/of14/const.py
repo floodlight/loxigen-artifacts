@@ -469,6 +469,17 @@ ofp_bsn_decap_map = {
     8: 'OFP_BSN_DECAP_L3_MPLS',
 }
 
+# Identifiers from group ofp_bsn_dhcpv6_opt_fmt
+OFP_BSN_DHCPV6_OPT_FMT_OPAQUE_DATA = 1
+OFP_BSN_DHCPV6_OPT_FMT_AGENT_DATA = 2
+OFP_BSN_DHCPV6_OPT_FMT_PREFIX_OPAQUE_AND_AGENT_DATA = 3
+
+ofp_bsn_dhcpv6_opt_fmt_map = {
+    1: 'OFP_BSN_DHCPV6_OPT_FMT_OPAQUE_DATA',
+    2: 'OFP_BSN_DHCPV6_OPT_FMT_AGENT_DATA',
+    3: 'OFP_BSN_DHCPV6_OPT_FMT_PREFIX_OPAQUE_AND_AGENT_DATA',
+}
+
 # Identifiers from group ofp_bsn_encap
 OFP_BSN_ENCAP_UNUSED = 0
 OFP_BSN_ENCAP_IPV4_UDP = 1

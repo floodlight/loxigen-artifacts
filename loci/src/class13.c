@@ -4380,6 +4380,12 @@ of_bsn_tlv_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
         case 0xdf:
             *id = OF_BSN_TLV_NO_DROP;
             break;
+        case 0xe0:
+            *id = OF_BSN_TLV_DHCPV6_OPTION;
+            break;
+        case 0xe1:
+            *id = OF_BSN_TLV_DHCPV6_OPT_FMT;
+            break;
         default:
             *id = OF_BSN_TLV;
             break;
@@ -5057,6 +5063,12 @@ of_bsn_tlv_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
             break;
         case 0xdf:
             *id = OF_BSN_TLV_NO_DROP;
+            break;
+        case 0xe0:
+            *id = OF_BSN_TLV_DHCPV6_OPTION;
+            break;
+        case 0xe1:
+            *id = OF_BSN_TLV_DHCPV6_OPT_FMT;
             break;
         default:
             *id = OF_BSN_TLV;

@@ -263,6 +263,24 @@ public class OFBsnTlvsVer15 implements OFBsnTlvs {
                     );
     }
 
+    public OFBsnTlvDhcpv6OptFmt.Builder buildDhcpv6OptFmt() {
+        return new OFBsnTlvDhcpv6OptFmtVer15.Builder();
+    }
+    public OFBsnTlvDhcpv6OptFmt dhcpv6OptFmt(OFBsnDhcpv6OptFmt fmt) {
+        return new OFBsnTlvDhcpv6OptFmtVer15(
+                fmt
+                    );
+    }
+
+    public OFBsnTlvDhcpv6Option.Builder buildDhcpv6Option() {
+        return new OFBsnTlvDhcpv6OptionVer15.Builder();
+    }
+    public OFBsnTlvDhcpv6Option dhcpv6Option(int optCode) {
+        return new OFBsnTlvDhcpv6OptionVer15(
+                optCode
+                    );
+    }
+
     public OFBsnTlvDisableSrcMacCheck disableSrcMacCheck() {
         return OFBsnTlvDisableSrcMacCheckVer15.INSTANCE;
     }
