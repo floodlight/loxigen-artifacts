@@ -1331,6 +1331,14 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_dhcpv6_opt_fmt_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_dhcpv6_option_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_disable_src_mac_check_dup(
         of_object_t *src);
 
@@ -6767,6 +6775,14 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_dhcpv6_opt_fmt_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_dhcpv6_option_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_disable_src_mac_check_OF_VERSION_1_3_dup(
         of_object_t *src);
 
@@ -9872,6 +9888,14 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_tlv_decap_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_dhcpv6_opt_fmt_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_dhcpv6_option_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *

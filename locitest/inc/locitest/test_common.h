@@ -7043,6 +7043,24 @@ extern int of_bsn_tlv_decap_OF_VERSION_1_3_populate_scalars(
 extern int of_bsn_tlv_decap_OF_VERSION_1_3_check_scalars(
     of_bsn_tlv_decap_t *obj, int value);
 
+extern int of_bsn_tlv_dhcpv6_opt_fmt_OF_VERSION_1_3_populate(
+    of_bsn_tlv_dhcpv6_opt_fmt_t *obj, int value);
+extern int of_bsn_tlv_dhcpv6_opt_fmt_OF_VERSION_1_3_check(
+    of_bsn_tlv_dhcpv6_opt_fmt_t *obj, int value);
+extern int of_bsn_tlv_dhcpv6_opt_fmt_OF_VERSION_1_3_populate_scalars(
+    of_bsn_tlv_dhcpv6_opt_fmt_t *obj, int value);
+extern int of_bsn_tlv_dhcpv6_opt_fmt_OF_VERSION_1_3_check_scalars(
+    of_bsn_tlv_dhcpv6_opt_fmt_t *obj, int value);
+
+extern int of_bsn_tlv_dhcpv6_option_OF_VERSION_1_3_populate(
+    of_bsn_tlv_dhcpv6_option_t *obj, int value);
+extern int of_bsn_tlv_dhcpv6_option_OF_VERSION_1_3_check(
+    of_bsn_tlv_dhcpv6_option_t *obj, int value);
+extern int of_bsn_tlv_dhcpv6_option_OF_VERSION_1_3_populate_scalars(
+    of_bsn_tlv_dhcpv6_option_t *obj, int value);
+extern int of_bsn_tlv_dhcpv6_option_OF_VERSION_1_3_check_scalars(
+    of_bsn_tlv_dhcpv6_option_t *obj, int value);
+
 extern int of_bsn_tlv_disable_src_mac_check_OF_VERSION_1_3_populate(
     of_bsn_tlv_disable_src_mac_check_t *obj, int value);
 extern int of_bsn_tlv_disable_src_mac_check_OF_VERSION_1_3_check(
@@ -13918,6 +13936,24 @@ extern int of_bsn_tlv_decap_OF_VERSION_1_4_populate_scalars(
     of_bsn_tlv_decap_t *obj, int value);
 extern int of_bsn_tlv_decap_OF_VERSION_1_4_check_scalars(
     of_bsn_tlv_decap_t *obj, int value);
+
+extern int of_bsn_tlv_dhcpv6_opt_fmt_OF_VERSION_1_4_populate(
+    of_bsn_tlv_dhcpv6_opt_fmt_t *obj, int value);
+extern int of_bsn_tlv_dhcpv6_opt_fmt_OF_VERSION_1_4_check(
+    of_bsn_tlv_dhcpv6_opt_fmt_t *obj, int value);
+extern int of_bsn_tlv_dhcpv6_opt_fmt_OF_VERSION_1_4_populate_scalars(
+    of_bsn_tlv_dhcpv6_opt_fmt_t *obj, int value);
+extern int of_bsn_tlv_dhcpv6_opt_fmt_OF_VERSION_1_4_check_scalars(
+    of_bsn_tlv_dhcpv6_opt_fmt_t *obj, int value);
+
+extern int of_bsn_tlv_dhcpv6_option_OF_VERSION_1_4_populate(
+    of_bsn_tlv_dhcpv6_option_t *obj, int value);
+extern int of_bsn_tlv_dhcpv6_option_OF_VERSION_1_4_check(
+    of_bsn_tlv_dhcpv6_option_t *obj, int value);
+extern int of_bsn_tlv_dhcpv6_option_OF_VERSION_1_4_populate_scalars(
+    of_bsn_tlv_dhcpv6_option_t *obj, int value);
+extern int of_bsn_tlv_dhcpv6_option_OF_VERSION_1_4_check_scalars(
+    of_bsn_tlv_dhcpv6_option_t *obj, int value);
 
 extern int of_bsn_tlv_disable_src_mac_check_OF_VERSION_1_4_populate(
     of_bsn_tlv_disable_src_mac_check_t *obj, int value);

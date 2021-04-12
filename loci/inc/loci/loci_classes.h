@@ -909,6 +909,10 @@ void of_bsn_tlv_data_mask_wire_object_id_get(of_object_t *obj, of_object_id_t *i
 void of_bsn_tlv_data_mask_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_decap_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_decap_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_dhcpv6_opt_fmt_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_dhcpv6_opt_fmt_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_dhcpv6_option_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_dhcpv6_option_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_disable_src_mac_check_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_disable_src_mac_check_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_disable_xmit_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -2013,6 +2017,8 @@ typedef of_object_t of_bsn_tlv_crc_enabled_t;
 typedef of_object_t of_bsn_tlv_data_t;
 typedef of_object_t of_bsn_tlv_data_mask_t;
 typedef of_object_t of_bsn_tlv_decap_t;
+typedef of_object_t of_bsn_tlv_dhcpv6_opt_fmt_t;
+typedef of_object_t of_bsn_tlv_dhcpv6_option_t;
 typedef of_object_t of_bsn_tlv_disable_src_mac_check_t;
 typedef of_object_t of_bsn_tlv_disable_xmit_t;
 typedef of_object_t of_bsn_tlv_dns_analytics_t;
@@ -4245,6 +4251,16 @@ extern void of_bsn_tlv_data_mask_init(
 extern of_object_t *
     of_bsn_tlv_decap_new(of_version_t version);
 extern void of_bsn_tlv_decap_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_bsn_tlv_dhcpv6_opt_fmt_new(of_version_t version);
+extern void of_bsn_tlv_dhcpv6_opt_fmt_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_bsn_tlv_dhcpv6_option_new(of_version_t version);
+extern void of_bsn_tlv_dhcpv6_option_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
@@ -10695,6 +10711,28 @@ of_bsn_tlv_data_mask_delete(of_object_t *obj) {
  */
 static inline void
 of_bsn_tlv_decap_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_dhcpv6_opt_fmt_t
+ * @param obj An instance of type of_bsn_tlv_dhcpv6_opt_fmt_t
+ *
+ * \ingroup of_bsn_tlv_dhcpv6_opt_fmt
+ */
+static inline void
+of_bsn_tlv_dhcpv6_opt_fmt_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_dhcpv6_option_t
+ * @param obj An instance of type of_bsn_tlv_dhcpv6_option_t
+ *
+ * \ingroup of_bsn_tlv_dhcpv6_option
+ */
+static inline void
+of_bsn_tlv_dhcpv6_option_delete(of_object_t *obj) {
     of_object_delete(obj);
 }
 
@@ -24834,6 +24872,24 @@ extern void of_bsn_tlv_decap_value_set(
 extern void of_bsn_tlv_decap_value_get(
     of_bsn_tlv_decap_t *obj,
     uint16_t *value);
+
+/* Unified accessor functions for of_bsn_tlv_dhcpv6_opt_fmt */
+
+extern void of_bsn_tlv_dhcpv6_opt_fmt_fmt_set(
+    of_bsn_tlv_dhcpv6_opt_fmt_t *obj,
+    uint16_t fmt);
+extern void of_bsn_tlv_dhcpv6_opt_fmt_fmt_get(
+    of_bsn_tlv_dhcpv6_opt_fmt_t *obj,
+    uint16_t *fmt);
+
+/* Unified accessor functions for of_bsn_tlv_dhcpv6_option */
+
+extern void of_bsn_tlv_dhcpv6_option_opt_code_set(
+    of_bsn_tlv_dhcpv6_option_t *obj,
+    uint16_t opt_code);
+extern void of_bsn_tlv_dhcpv6_option_opt_code_get(
+    of_bsn_tlv_dhcpv6_option_t *obj,
+    uint16_t *opt_code);
 
 /* Unified accessor functions for of_bsn_tlv_disable_src_mac_check */
 

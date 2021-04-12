@@ -769,6 +769,8 @@ static int __attribute__((unused)) loci_validate_of_bsn_tlv_crc_enabled_OF_VERSI
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_data_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_data_mask_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_decap_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_bsn_tlv_dhcpv6_opt_fmt_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_bsn_tlv_dhcpv6_option_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_disable_src_mac_check_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_disable_xmit_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_dns_analytics_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
@@ -1519,6 +1521,8 @@ static int __attribute__((unused)) loci_validate_of_bsn_tlv_crc_enabled_OF_VERSI
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_data_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_data_mask_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_decap_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_bsn_tlv_dhcpv6_opt_fmt_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_bsn_tlv_dhcpv6_option_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_disable_src_mac_check_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_disable_xmit_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_dns_analytics_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
@@ -21129,6 +21133,10 @@ loci_validate_of_bsn_tlv_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
         return loci_validate_of_bsn_tlv_data_mask_OF_VERSION_1_3(data, len, out_len);
     case 0x55:
         return loci_validate_of_bsn_tlv_decap_OF_VERSION_1_3(data, len, out_len);
+    case 0xe1:
+        return loci_validate_of_bsn_tlv_dhcpv6_opt_fmt_OF_VERSION_1_3(data, len, out_len);
+    case 0xe0:
+        return loci_validate_of_bsn_tlv_dhcpv6_option_OF_VERSION_1_3(data, len, out_len);
     case 0x78:
         return loci_validate_of_bsn_tlv_disable_src_mac_check_OF_VERSION_1_3(data, len, out_len);
     case 0xb9:
@@ -22111,6 +22119,50 @@ loci_validate_of_bsn_tlv_data_mask_OF_VERSION_1_3(uint8_t *data, int len, int *o
 
 static int
 loci_validate_of_bsn_tlv_decap_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
+{
+    if (len < 6) {
+        return -1;
+    }
+
+    len = 6;
+
+    uint16_t wire_len;
+    buf_u16_get(data + 2, &wire_len);
+    if (wire_len > len || wire_len < 6) {
+        return -1;
+    }
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_bsn_tlv_dhcpv6_opt_fmt_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
+{
+    if (len < 6) {
+        return -1;
+    }
+
+    len = 6;
+
+    uint16_t wire_len;
+    buf_u16_get(data + 2, &wire_len);
+    if (wire_len > len || wire_len < 6) {
+        return -1;
+    }
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_bsn_tlv_dhcpv6_option_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
 {
     if (len < 6) {
         return -1;
@@ -39553,6 +39605,10 @@ loci_validate_of_bsn_tlv_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
         return loci_validate_of_bsn_tlv_data_mask_OF_VERSION_1_4(data, len, out_len);
     case 0x55:
         return loci_validate_of_bsn_tlv_decap_OF_VERSION_1_4(data, len, out_len);
+    case 0xe1:
+        return loci_validate_of_bsn_tlv_dhcpv6_opt_fmt_OF_VERSION_1_4(data, len, out_len);
+    case 0xe0:
+        return loci_validate_of_bsn_tlv_dhcpv6_option_OF_VERSION_1_4(data, len, out_len);
     case 0x78:
         return loci_validate_of_bsn_tlv_disable_src_mac_check_OF_VERSION_1_4(data, len, out_len);
     case 0xb9:
@@ -40535,6 +40591,50 @@ loci_validate_of_bsn_tlv_data_mask_OF_VERSION_1_4(uint8_t *data, int len, int *o
 
 static int
 loci_validate_of_bsn_tlv_decap_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
+{
+    if (len < 6) {
+        return -1;
+    }
+
+    len = 6;
+
+    uint16_t wire_len;
+    buf_u16_get(data + 2, &wire_len);
+    if (wire_len > len || wire_len < 6) {
+        return -1;
+    }
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_bsn_tlv_dhcpv6_opt_fmt_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
+{
+    if (len < 6) {
+        return -1;
+    }
+
+    len = 6;
+
+    uint16_t wire_len;
+    buf_u16_get(data + 2, &wire_len);
+    if (wire_len > len || wire_len < 6) {
+        return -1;
+    }
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_bsn_tlv_dhcpv6_option_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
 {
     if (len < 6) {
         return -1;

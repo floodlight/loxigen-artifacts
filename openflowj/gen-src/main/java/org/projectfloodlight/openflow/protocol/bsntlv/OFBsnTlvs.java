@@ -82,6 +82,10 @@ public interface OFBsnTlvs {
     OFBsnTlvDataMask dataMask(byte[] value);
     OFBsnTlvDecap.Builder buildDecap() throws UnsupportedOperationException;
     OFBsnTlvDecap decap(OFBsnDecap value);
+    OFBsnTlvDhcpv6OptFmt.Builder buildDhcpv6OptFmt() throws UnsupportedOperationException;
+    OFBsnTlvDhcpv6OptFmt dhcpv6OptFmt(OFBsnDhcpv6OptFmt fmt);
+    OFBsnTlvDhcpv6Option.Builder buildDhcpv6Option() throws UnsupportedOperationException;
+    OFBsnTlvDhcpv6Option dhcpv6Option(int optCode);
     OFBsnTlvDisableSrcMacCheck disableSrcMacCheck();
     OFBsnTlvDisableXmit disableXmit();
     OFBsnTlvDnsAnalytics dnsAnalytics();
