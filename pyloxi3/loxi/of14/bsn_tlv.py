@@ -1329,103 +1329,90 @@ class decap(bsn_tlv):
 
 bsn_tlv.subtypes[85] = decap
 
-class dhcpv6_opt_fmt(bsn_tlv):
+class dhcpv6_opt_client_ll_addr(bsn_tlv):
     type = 225
 
-    def __init__(self, fmt=None):
-        if fmt != None:
-            self.fmt = fmt
-        else:
-            self.fmt = 0
+    def __init__(self):
         return
 
     def pack(self):
         packed = []
         packed.append(struct.pack("!H", self.type))
         packed.append(struct.pack("!H", 0)) # placeholder for length at index 1
-        packed.append(struct.pack("!H", self.fmt))
         length = sum([len(x) for x in packed])
         packed[1] = struct.pack("!H", length)
         return functools.reduce(lambda x,y: x+y, packed)
 
     @staticmethod
     def unpack(reader):
-        obj = dhcpv6_opt_fmt()
+        obj = dhcpv6_opt_client_ll_addr()
         _type = reader.read("!H")[0]
         assert(_type == 225)
         _length = reader.read("!H")[0]
         orig_reader = reader
         reader = orig_reader.slice(_length, 4)
-        obj.fmt = reader.read("!H")[0]
         return obj
 
     def __eq__(self, other):
         if type(self) != type(other): return False
-        if self.fmt != other.fmt: return False
         return True
 
     def pretty_print(self, q):
-        q.text("dhcpv6_opt_fmt {")
+        q.text("dhcpv6_opt_client_ll_addr {")
         with q.group():
             with q.indent(2):
                 q.breakable()
-                q.text("fmt = ");
-                value_name_map = {1: 'OFP_BSN_DHCPV6_OPT_FMT_OPAQUE_DATA', 2: 'OFP_BSN_DHCPV6_OPT_FMT_AGENT_DATA', 3: 'OFP_BSN_DHCPV6_OPT_FMT_PREFIX_OPAQUE_AND_AGENT_DATA'}
-                if self.fmt in value_name_map:
-                    q.text("%s(%d)" % (value_name_map[self.fmt], self.fmt))
-                else:
-                    q.text("%#x" % self.fmt)
             q.breakable()
         q.text('}')
 
-bsn_tlv.subtypes[225] = dhcpv6_opt_fmt
+bsn_tlv.subtypes[225] = dhcpv6_opt_client_ll_addr
 
-class dhcpv6_option(bsn_tlv):
+class dhcpv6_opt_remote_id(bsn_tlv):
     type = 224
 
-    def __init__(self, opt_code=None):
-        if opt_code != None:
-            self.opt_code = opt_code
+    def __init__(self, value=None):
+        if value != None:
+            self.value = value
         else:
-            self.opt_code = 0
+            self.value = b''
         return
 
     def pack(self):
         packed = []
         packed.append(struct.pack("!H", self.type))
         packed.append(struct.pack("!H", 0)) # placeholder for length at index 1
-        packed.append(struct.pack("!H", self.opt_code))
+        packed.append(self.value)
         length = sum([len(x) for x in packed])
         packed[1] = struct.pack("!H", length)
         return functools.reduce(lambda x,y: x+y, packed)
 
     @staticmethod
     def unpack(reader):
-        obj = dhcpv6_option()
+        obj = dhcpv6_opt_remote_id()
         _type = reader.read("!H")[0]
         assert(_type == 224)
         _length = reader.read("!H")[0]
         orig_reader = reader
         reader = orig_reader.slice(_length, 4)
-        obj.opt_code = reader.read("!H")[0]
+        obj.value = reader.read_all()
         return obj
 
     def __eq__(self, other):
         if type(self) != type(other): return False
-        if self.opt_code != other.opt_code: return False
+        if self.value != other.value: return False
         return True
 
     def pretty_print(self, q):
-        q.text("dhcpv6_option {")
+        q.text("dhcpv6_opt_remote_id {")
         with q.group():
             with q.indent(2):
                 q.breakable()
-                q.text("opt_code = ");
-                q.text("%#x" % self.opt_code)
+                q.text("value = ");
+                q.pp(self.value)
             q.breakable()
         q.text('}')
 
-bsn_tlv.subtypes[224] = dhcpv6_option
+bsn_tlv.subtypes[224] = dhcpv6_opt_remote_id
 
 class disable_src_mac_check(bsn_tlv):
     type = 120

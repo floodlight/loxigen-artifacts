@@ -351,8 +351,8 @@ of_object_fixed_len_v1[OF_OBJECT_COUNT] = {
     -1,   /* 327: of_bsn_tlv_data */
     -1,   /* 328: of_bsn_tlv_data_mask */
     -1,   /* 329: of_bsn_tlv_decap */
-    -1,   /* 330: of_bsn_tlv_dhcpv6_opt_fmt */
-    -1,   /* 331: of_bsn_tlv_dhcpv6_option */
+    -1,   /* 330: of_bsn_tlv_dhcpv6_opt_client_ll_addr */
+    -1,   /* 331: of_bsn_tlv_dhcpv6_opt_remote_id */
     -1,   /* 332: of_bsn_tlv_disable_src_mac_check */
     -1,   /* 333: of_bsn_tlv_disable_xmit */
     -1,   /* 334: of_bsn_tlv_dns_analytics */
@@ -1252,8 +1252,8 @@ of_object_fixed_len_v2[OF_OBJECT_COUNT] = {
     -1,   /* 327: of_bsn_tlv_data */
     -1,   /* 328: of_bsn_tlv_data_mask */
     -1,   /* 329: of_bsn_tlv_decap */
-    -1,   /* 330: of_bsn_tlv_dhcpv6_opt_fmt */
-    -1,   /* 331: of_bsn_tlv_dhcpv6_option */
+    -1,   /* 330: of_bsn_tlv_dhcpv6_opt_client_ll_addr */
+    -1,   /* 331: of_bsn_tlv_dhcpv6_opt_remote_id */
     -1,   /* 332: of_bsn_tlv_disable_src_mac_check */
     -1,   /* 333: of_bsn_tlv_disable_xmit */
     -1,   /* 334: of_bsn_tlv_dns_analytics */
@@ -2153,8 +2153,8 @@ of_object_fixed_len_v3[OF_OBJECT_COUNT] = {
     -1,   /* 327: of_bsn_tlv_data */
     -1,   /* 328: of_bsn_tlv_data_mask */
     -1,   /* 329: of_bsn_tlv_decap */
-    -1,   /* 330: of_bsn_tlv_dhcpv6_opt_fmt */
-    -1,   /* 331: of_bsn_tlv_dhcpv6_option */
+    -1,   /* 330: of_bsn_tlv_dhcpv6_opt_client_ll_addr */
+    -1,   /* 331: of_bsn_tlv_dhcpv6_opt_remote_id */
     -1,   /* 332: of_bsn_tlv_disable_src_mac_check */
     -1,   /* 333: of_bsn_tlv_disable_xmit */
     -1,   /* 334: of_bsn_tlv_dns_analytics */
@@ -3054,8 +3054,8 @@ of_object_fixed_len_v4[OF_OBJECT_COUNT] = {
     4,    /* 327: of_bsn_tlv_data */
     4,    /* 328: of_bsn_tlv_data_mask */
     6,    /* 329: of_bsn_tlv_decap */
-    6,    /* 330: of_bsn_tlv_dhcpv6_opt_fmt */
-    6,    /* 331: of_bsn_tlv_dhcpv6_option */
+    4,    /* 330: of_bsn_tlv_dhcpv6_opt_client_ll_addr */
+    4,    /* 331: of_bsn_tlv_dhcpv6_opt_remote_id */
     4,    /* 332: of_bsn_tlv_disable_src_mac_check */
     4,    /* 333: of_bsn_tlv_disable_xmit */
     4,    /* 334: of_bsn_tlv_dns_analytics */
@@ -3955,8 +3955,8 @@ of_object_fixed_len_v5[OF_OBJECT_COUNT] = {
     4,    /* 327: of_bsn_tlv_data */
     4,    /* 328: of_bsn_tlv_data_mask */
     6,    /* 329: of_bsn_tlv_decap */
-    6,    /* 330: of_bsn_tlv_dhcpv6_opt_fmt */
-    6,    /* 331: of_bsn_tlv_dhcpv6_option */
+    4,    /* 330: of_bsn_tlv_dhcpv6_opt_client_ll_addr */
+    4,    /* 331: of_bsn_tlv_dhcpv6_opt_remote_id */
     4,    /* 332: of_bsn_tlv_disable_src_mac_check */
     4,    /* 333: of_bsn_tlv_disable_xmit */
     4,    /* 334: of_bsn_tlv_dns_analytics */

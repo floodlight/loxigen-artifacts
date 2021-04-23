@@ -263,21 +263,16 @@ public class OFBsnTlvsVer14 implements OFBsnTlvs {
                     );
     }
 
-    public OFBsnTlvDhcpv6OptFmt.Builder buildDhcpv6OptFmt() {
-        return new OFBsnTlvDhcpv6OptFmtVer14.Builder();
-    }
-    public OFBsnTlvDhcpv6OptFmt dhcpv6OptFmt(OFBsnDhcpv6OptFmt fmt) {
-        return new OFBsnTlvDhcpv6OptFmtVer14(
-                fmt
-                    );
+    public OFBsnTlvDhcpv6OptClientLlAddr dhcpv6OptClientLlAddr() {
+        return OFBsnTlvDhcpv6OptClientLlAddrVer14.INSTANCE;
     }
 
-    public OFBsnTlvDhcpv6Option.Builder buildDhcpv6Option() {
-        return new OFBsnTlvDhcpv6OptionVer14.Builder();
+    public OFBsnTlvDhcpv6OptRemoteId.Builder buildDhcpv6OptRemoteId() {
+        return new OFBsnTlvDhcpv6OptRemoteIdVer14.Builder();
     }
-    public OFBsnTlvDhcpv6Option dhcpv6Option(int optCode) {
-        return new OFBsnTlvDhcpv6OptionVer14(
-                optCode
+    public OFBsnTlvDhcpv6OptRemoteId dhcpv6OptRemoteId(byte[] value) {
+        return new OFBsnTlvDhcpv6OptRemoteIdVer14(
+                value
                     );
     }
 

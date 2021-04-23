@@ -10693,54 +10693,54 @@ int of_bsn_tlv_decap_OF_VERSION_1_0_check_scalars(
 
 
 /**
- * Populate the scalar values in obj of type of_bsn_tlv_dhcpv6_opt_fmt,
+ * Populate the scalar values in obj of type of_bsn_tlv_dhcpv6_opt_client_ll_addr,
  * version OF_VERSION_1_0
  * @param obj Pointer to an object to populate
  * @param value The seed value to use in populating the object
  * @returns The value after increments for this object's values
  */
-int of_bsn_tlv_dhcpv6_opt_fmt_OF_VERSION_1_0_populate_scalars(
-    of_bsn_tlv_dhcpv6_opt_fmt_t *obj, int value) {
+int of_bsn_tlv_dhcpv6_opt_client_ll_addr_OF_VERSION_1_0_populate_scalars(
+    of_bsn_tlv_dhcpv6_opt_client_ll_addr_t *obj, int value) {
 
     return value;
 }
 
 /**
- * Check scalar values in obj of type of_bsn_tlv_dhcpv6_opt_fmt,
+ * Check scalar values in obj of type of_bsn_tlv_dhcpv6_opt_client_ll_addr,
  * version OF_VERSION_1_0
  * @param obj Pointer to an object to check
  * @param value Starting value for checking
  * @returns The value after increments for this object's values
  */
-int of_bsn_tlv_dhcpv6_opt_fmt_OF_VERSION_1_0_check_scalars(
-    of_bsn_tlv_dhcpv6_opt_fmt_t *obj, int value) {
+int of_bsn_tlv_dhcpv6_opt_client_ll_addr_OF_VERSION_1_0_check_scalars(
+    of_bsn_tlv_dhcpv6_opt_client_ll_addr_t *obj, int value) {
 
     return value;
 }
 
 
 /**
- * Populate the scalar values in obj of type of_bsn_tlv_dhcpv6_option,
+ * Populate the scalar values in obj of type of_bsn_tlv_dhcpv6_opt_remote_id,
  * version OF_VERSION_1_0
  * @param obj Pointer to an object to populate
  * @param value The seed value to use in populating the object
  * @returns The value after increments for this object's values
  */
-int of_bsn_tlv_dhcpv6_option_OF_VERSION_1_0_populate_scalars(
-    of_bsn_tlv_dhcpv6_option_t *obj, int value) {
+int of_bsn_tlv_dhcpv6_opt_remote_id_OF_VERSION_1_0_populate_scalars(
+    of_bsn_tlv_dhcpv6_opt_remote_id_t *obj, int value) {
 
     return value;
 }
 
 /**
- * Check scalar values in obj of type of_bsn_tlv_dhcpv6_option,
+ * Check scalar values in obj of type of_bsn_tlv_dhcpv6_opt_remote_id,
  * version OF_VERSION_1_0
  * @param obj Pointer to an object to check
  * @param value Starting value for checking
  * @returns The value after increments for this object's values
  */
-int of_bsn_tlv_dhcpv6_option_OF_VERSION_1_0_check_scalars(
-    of_bsn_tlv_dhcpv6_option_t *obj, int value) {
+int of_bsn_tlv_dhcpv6_opt_remote_id_OF_VERSION_1_0_check_scalars(
+    of_bsn_tlv_dhcpv6_opt_remote_id_t *obj, int value) {
 
     return value;
 }
@@ -35103,54 +35103,54 @@ int of_bsn_tlv_decap_OF_VERSION_1_1_check_scalars(
 
 
 /**
- * Populate the scalar values in obj of type of_bsn_tlv_dhcpv6_opt_fmt,
+ * Populate the scalar values in obj of type of_bsn_tlv_dhcpv6_opt_client_ll_addr,
  * version OF_VERSION_1_1
  * @param obj Pointer to an object to populate
  * @param value The seed value to use in populating the object
  * @returns The value after increments for this object's values
  */
-int of_bsn_tlv_dhcpv6_opt_fmt_OF_VERSION_1_1_populate_scalars(
-    of_bsn_tlv_dhcpv6_opt_fmt_t *obj, int value) {
+int of_bsn_tlv_dhcpv6_opt_client_ll_addr_OF_VERSION_1_1_populate_scalars(
+    of_bsn_tlv_dhcpv6_opt_client_ll_addr_t *obj, int value) {
 
     return value;
 }
 
 /**
- * Check scalar values in obj of type of_bsn_tlv_dhcpv6_opt_fmt,
+ * Check scalar values in obj of type of_bsn_tlv_dhcpv6_opt_client_ll_addr,
  * version OF_VERSION_1_1
  * @param obj Pointer to an object to check
  * @param value Starting value for checking
  * @returns The value after increments for this object's values
  */
-int of_bsn_tlv_dhcpv6_opt_fmt_OF_VERSION_1_1_check_scalars(
-    of_bsn_tlv_dhcpv6_opt_fmt_t *obj, int value) {
+int of_bsn_tlv_dhcpv6_opt_client_ll_addr_OF_VERSION_1_1_check_scalars(
+    of_bsn_tlv_dhcpv6_opt_client_ll_addr_t *obj, int value) {
 
     return value;
 }
 
 
 /**
- * Populate the scalar values in obj of type of_bsn_tlv_dhcpv6_option,
+ * Populate the scalar values in obj of type of_bsn_tlv_dhcpv6_opt_remote_id,
  * version OF_VERSION_1_1
  * @param obj Pointer to an object to populate
  * @param value The seed value to use in populating the object
  * @returns The value after increments for this object's values
  */
-int of_bsn_tlv_dhcpv6_option_OF_VERSION_1_1_populate_scalars(
-    of_bsn_tlv_dhcpv6_option_t *obj, int value) {
+int of_bsn_tlv_dhcpv6_opt_remote_id_OF_VERSION_1_1_populate_scalars(
+    of_bsn_tlv_dhcpv6_opt_remote_id_t *obj, int value) {
 
     return value;
 }
 
 /**
- * Check scalar values in obj of type of_bsn_tlv_dhcpv6_option,
+ * Check scalar values in obj of type of_bsn_tlv_dhcpv6_opt_remote_id,
  * version OF_VERSION_1_1
  * @param obj Pointer to an object to check
  * @param value Starting value for checking
  * @returns The value after increments for this object's values
  */
-int of_bsn_tlv_dhcpv6_option_OF_VERSION_1_1_check_scalars(
-    of_bsn_tlv_dhcpv6_option_t *obj, int value) {
+int of_bsn_tlv_dhcpv6_opt_remote_id_OF_VERSION_1_1_check_scalars(
+    of_bsn_tlv_dhcpv6_opt_remote_id_t *obj, int value) {
 
     return value;
 }
@@ -59837,54 +59837,54 @@ int of_bsn_tlv_decap_OF_VERSION_1_2_check_scalars(
 
 
 /**
- * Populate the scalar values in obj of type of_bsn_tlv_dhcpv6_opt_fmt,
+ * Populate the scalar values in obj of type of_bsn_tlv_dhcpv6_opt_client_ll_addr,
  * version OF_VERSION_1_2
  * @param obj Pointer to an object to populate
  * @param value The seed value to use in populating the object
  * @returns The value after increments for this object's values
  */
-int of_bsn_tlv_dhcpv6_opt_fmt_OF_VERSION_1_2_populate_scalars(
-    of_bsn_tlv_dhcpv6_opt_fmt_t *obj, int value) {
+int of_bsn_tlv_dhcpv6_opt_client_ll_addr_OF_VERSION_1_2_populate_scalars(
+    of_bsn_tlv_dhcpv6_opt_client_ll_addr_t *obj, int value) {
 
     return value;
 }
 
 /**
- * Check scalar values in obj of type of_bsn_tlv_dhcpv6_opt_fmt,
+ * Check scalar values in obj of type of_bsn_tlv_dhcpv6_opt_client_ll_addr,
  * version OF_VERSION_1_2
  * @param obj Pointer to an object to check
  * @param value Starting value for checking
  * @returns The value after increments for this object's values
  */
-int of_bsn_tlv_dhcpv6_opt_fmt_OF_VERSION_1_2_check_scalars(
-    of_bsn_tlv_dhcpv6_opt_fmt_t *obj, int value) {
+int of_bsn_tlv_dhcpv6_opt_client_ll_addr_OF_VERSION_1_2_check_scalars(
+    of_bsn_tlv_dhcpv6_opt_client_ll_addr_t *obj, int value) {
 
     return value;
 }
 
 
 /**
- * Populate the scalar values in obj of type of_bsn_tlv_dhcpv6_option,
+ * Populate the scalar values in obj of type of_bsn_tlv_dhcpv6_opt_remote_id,
  * version OF_VERSION_1_2
  * @param obj Pointer to an object to populate
  * @param value The seed value to use in populating the object
  * @returns The value after increments for this object's values
  */
-int of_bsn_tlv_dhcpv6_option_OF_VERSION_1_2_populate_scalars(
-    of_bsn_tlv_dhcpv6_option_t *obj, int value) {
+int of_bsn_tlv_dhcpv6_opt_remote_id_OF_VERSION_1_2_populate_scalars(
+    of_bsn_tlv_dhcpv6_opt_remote_id_t *obj, int value) {
 
     return value;
 }
 
 /**
- * Check scalar values in obj of type of_bsn_tlv_dhcpv6_option,
+ * Check scalar values in obj of type of_bsn_tlv_dhcpv6_opt_remote_id,
  * version OF_VERSION_1_2
  * @param obj Pointer to an object to check
  * @param value Starting value for checking
  * @returns The value after increments for this object's values
  */
-int of_bsn_tlv_dhcpv6_option_OF_VERSION_1_2_check_scalars(
-    of_bsn_tlv_dhcpv6_option_t *obj, int value) {
+int of_bsn_tlv_dhcpv6_opt_remote_id_OF_VERSION_1_2_check_scalars(
+    of_bsn_tlv_dhcpv6_opt_remote_id_t *obj, int value) {
 
     return value;
 }
@@ -89091,74 +89091,54 @@ int of_bsn_tlv_decap_OF_VERSION_1_3_check_scalars(
 
 
 /**
- * Populate the scalar values in obj of type of_bsn_tlv_dhcpv6_opt_fmt,
+ * Populate the scalar values in obj of type of_bsn_tlv_dhcpv6_opt_client_ll_addr,
  * version OF_VERSION_1_3
  * @param obj Pointer to an object to populate
  * @param value The seed value to use in populating the object
  * @returns The value after increments for this object's values
  */
-int of_bsn_tlv_dhcpv6_opt_fmt_OF_VERSION_1_3_populate_scalars(
-    of_bsn_tlv_dhcpv6_opt_fmt_t *obj, int value) {
-    uint16_t val16;
-
-    VAR_UINT16_T_INIT(val16, value);
-    of_bsn_tlv_dhcpv6_opt_fmt_fmt_set(obj, val16);
-    value += 1;
+int of_bsn_tlv_dhcpv6_opt_client_ll_addr_OF_VERSION_1_3_populate_scalars(
+    of_bsn_tlv_dhcpv6_opt_client_ll_addr_t *obj, int value) {
 
     return value;
 }
 
 /**
- * Check scalar values in obj of type of_bsn_tlv_dhcpv6_opt_fmt,
+ * Check scalar values in obj of type of_bsn_tlv_dhcpv6_opt_client_ll_addr,
  * version OF_VERSION_1_3
  * @param obj Pointer to an object to check
  * @param value Starting value for checking
  * @returns The value after increments for this object's values
  */
-int of_bsn_tlv_dhcpv6_opt_fmt_OF_VERSION_1_3_check_scalars(
-    of_bsn_tlv_dhcpv6_opt_fmt_t *obj, int value) {
-    uint16_t val16;
-
-    of_bsn_tlv_dhcpv6_opt_fmt_fmt_get(obj, &val16);
-    TEST_ASSERT(VAR_UINT16_T_CHECK(val16, value));
-    value += 1;
+int of_bsn_tlv_dhcpv6_opt_client_ll_addr_OF_VERSION_1_3_check_scalars(
+    of_bsn_tlv_dhcpv6_opt_client_ll_addr_t *obj, int value) {
 
     return value;
 }
 
 
 /**
- * Populate the scalar values in obj of type of_bsn_tlv_dhcpv6_option,
+ * Populate the scalar values in obj of type of_bsn_tlv_dhcpv6_opt_remote_id,
  * version OF_VERSION_1_3
  * @param obj Pointer to an object to populate
  * @param value The seed value to use in populating the object
  * @returns The value after increments for this object's values
  */
-int of_bsn_tlv_dhcpv6_option_OF_VERSION_1_3_populate_scalars(
-    of_bsn_tlv_dhcpv6_option_t *obj, int value) {
-    uint16_t val16;
-
-    VAR_UINT16_T_INIT(val16, value);
-    of_bsn_tlv_dhcpv6_option_opt_code_set(obj, val16);
-    value += 1;
+int of_bsn_tlv_dhcpv6_opt_remote_id_OF_VERSION_1_3_populate_scalars(
+    of_bsn_tlv_dhcpv6_opt_remote_id_t *obj, int value) {
 
     return value;
 }
 
 /**
- * Check scalar values in obj of type of_bsn_tlv_dhcpv6_option,
+ * Check scalar values in obj of type of_bsn_tlv_dhcpv6_opt_remote_id,
  * version OF_VERSION_1_3
  * @param obj Pointer to an object to check
  * @param value Starting value for checking
  * @returns The value after increments for this object's values
  */
-int of_bsn_tlv_dhcpv6_option_OF_VERSION_1_3_check_scalars(
-    of_bsn_tlv_dhcpv6_option_t *obj, int value) {
-    uint16_t val16;
-
-    of_bsn_tlv_dhcpv6_option_opt_code_get(obj, &val16);
-    TEST_ASSERT(VAR_UINT16_T_CHECK(val16, value));
-    value += 1;
+int of_bsn_tlv_dhcpv6_opt_remote_id_OF_VERSION_1_3_check_scalars(
+    of_bsn_tlv_dhcpv6_opt_remote_id_t *obj, int value) {
 
     return value;
 }
@@ -120795,74 +120775,54 @@ int of_bsn_tlv_decap_OF_VERSION_1_4_check_scalars(
 
 
 /**
- * Populate the scalar values in obj of type of_bsn_tlv_dhcpv6_opt_fmt,
+ * Populate the scalar values in obj of type of_bsn_tlv_dhcpv6_opt_client_ll_addr,
  * version OF_VERSION_1_4
  * @param obj Pointer to an object to populate
  * @param value The seed value to use in populating the object
  * @returns The value after increments for this object's values
  */
-int of_bsn_tlv_dhcpv6_opt_fmt_OF_VERSION_1_4_populate_scalars(
-    of_bsn_tlv_dhcpv6_opt_fmt_t *obj, int value) {
-    uint16_t val16;
-
-    VAR_UINT16_T_INIT(val16, value);
-    of_bsn_tlv_dhcpv6_opt_fmt_fmt_set(obj, val16);
-    value += 1;
+int of_bsn_tlv_dhcpv6_opt_client_ll_addr_OF_VERSION_1_4_populate_scalars(
+    of_bsn_tlv_dhcpv6_opt_client_ll_addr_t *obj, int value) {
 
     return value;
 }
 
 /**
- * Check scalar values in obj of type of_bsn_tlv_dhcpv6_opt_fmt,
+ * Check scalar values in obj of type of_bsn_tlv_dhcpv6_opt_client_ll_addr,
  * version OF_VERSION_1_4
  * @param obj Pointer to an object to check
  * @param value Starting value for checking
  * @returns The value after increments for this object's values
  */
-int of_bsn_tlv_dhcpv6_opt_fmt_OF_VERSION_1_4_check_scalars(
-    of_bsn_tlv_dhcpv6_opt_fmt_t *obj, int value) {
-    uint16_t val16;
-
-    of_bsn_tlv_dhcpv6_opt_fmt_fmt_get(obj, &val16);
-    TEST_ASSERT(VAR_UINT16_T_CHECK(val16, value));
-    value += 1;
+int of_bsn_tlv_dhcpv6_opt_client_ll_addr_OF_VERSION_1_4_check_scalars(
+    of_bsn_tlv_dhcpv6_opt_client_ll_addr_t *obj, int value) {
 
     return value;
 }
 
 
 /**
- * Populate the scalar values in obj of type of_bsn_tlv_dhcpv6_option,
+ * Populate the scalar values in obj of type of_bsn_tlv_dhcpv6_opt_remote_id,
  * version OF_VERSION_1_4
  * @param obj Pointer to an object to populate
  * @param value The seed value to use in populating the object
  * @returns The value after increments for this object's values
  */
-int of_bsn_tlv_dhcpv6_option_OF_VERSION_1_4_populate_scalars(
-    of_bsn_tlv_dhcpv6_option_t *obj, int value) {
-    uint16_t val16;
-
-    VAR_UINT16_T_INIT(val16, value);
-    of_bsn_tlv_dhcpv6_option_opt_code_set(obj, val16);
-    value += 1;
+int of_bsn_tlv_dhcpv6_opt_remote_id_OF_VERSION_1_4_populate_scalars(
+    of_bsn_tlv_dhcpv6_opt_remote_id_t *obj, int value) {
 
     return value;
 }
 
 /**
- * Check scalar values in obj of type of_bsn_tlv_dhcpv6_option,
+ * Check scalar values in obj of type of_bsn_tlv_dhcpv6_opt_remote_id,
  * version OF_VERSION_1_4
  * @param obj Pointer to an object to check
  * @param value Starting value for checking
  * @returns The value after increments for this object's values
  */
-int of_bsn_tlv_dhcpv6_option_OF_VERSION_1_4_check_scalars(
-    of_bsn_tlv_dhcpv6_option_t *obj, int value) {
-    uint16_t val16;
-
-    of_bsn_tlv_dhcpv6_option_opt_code_get(obj, &val16);
-    TEST_ASSERT(VAR_UINT16_T_CHECK(val16, value));
-    value += 1;
+int of_bsn_tlv_dhcpv6_opt_remote_id_OF_VERSION_1_4_check_scalars(
+    of_bsn_tlv_dhcpv6_opt_remote_id_t *obj, int value) {
 
     return value;
 }

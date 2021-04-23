@@ -27738,12 +27738,12 @@ of_bsn_tlv_OF_VERSION_1_3_dup(
         return of_bsn_tlv_decap_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_BSN_TLV_DHCPV6_OPT_FMT) {
-        return of_bsn_tlv_dhcpv6_opt_fmt_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_BSN_TLV_DHCPV6_OPT_CLIENT_LL_ADDR) {
+        return of_bsn_tlv_dhcpv6_opt_client_ll_addr_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_BSN_TLV_DHCPV6_OPTION) {
-        return of_bsn_tlv_dhcpv6_option_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_BSN_TLV_DHCPV6_OPT_REMOTE_ID) {
+        return of_bsn_tlv_dhcpv6_opt_remote_id_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_BSN_TLV_DISABLE_SRC_MAC_CHECK) {
@@ -29206,51 +29206,47 @@ of_bsn_tlv_decap_OF_VERSION_1_3_dup(
 }
 
 /**
- * Duplicate an object of type of_bsn_tlv_dhcpv6_opt_fmt
+ * Duplicate an object of type of_bsn_tlv_dhcpv6_opt_client_ll_addr
  * using accessor functions
  * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_dhcpv6_opt_fmt.
+ * @returns A new object of type of_bsn_tlv_dhcpv6_opt_client_ll_addr.
  *
  * The caller is responsible for deleting the returned value
  */
-of_bsn_tlv_dhcpv6_opt_fmt_t *
-of_bsn_tlv_dhcpv6_opt_fmt_OF_VERSION_1_3_dup(
-    of_bsn_tlv_dhcpv6_opt_fmt_t *src)
+of_bsn_tlv_dhcpv6_opt_client_ll_addr_t *
+of_bsn_tlv_dhcpv6_opt_client_ll_addr_OF_VERSION_1_3_dup(
+    of_bsn_tlv_dhcpv6_opt_client_ll_addr_t *src)
 {
-    of_bsn_tlv_dhcpv6_opt_fmt_t *dst;
-    uint16_t val16;
+    of_bsn_tlv_dhcpv6_opt_client_ll_addr_t *dst;
 
-    if ((dst = of_bsn_tlv_dhcpv6_opt_fmt_new(src->version)) == NULL) {
+    if ((dst = of_bsn_tlv_dhcpv6_opt_client_ll_addr_new(src->version)) == NULL) {
         return NULL;
     }
-
-    of_bsn_tlv_dhcpv6_opt_fmt_fmt_get(src, &val16);
-    of_bsn_tlv_dhcpv6_opt_fmt_fmt_set(dst, val16);
 
     return dst;
 }
 
 /**
- * Duplicate an object of type of_bsn_tlv_dhcpv6_option
+ * Duplicate an object of type of_bsn_tlv_dhcpv6_opt_remote_id
  * using accessor functions
  * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_dhcpv6_option.
+ * @returns A new object of type of_bsn_tlv_dhcpv6_opt_remote_id.
  *
  * The caller is responsible for deleting the returned value
  */
-of_bsn_tlv_dhcpv6_option_t *
-of_bsn_tlv_dhcpv6_option_OF_VERSION_1_3_dup(
-    of_bsn_tlv_dhcpv6_option_t *src)
+of_bsn_tlv_dhcpv6_opt_remote_id_t *
+of_bsn_tlv_dhcpv6_opt_remote_id_OF_VERSION_1_3_dup(
+    of_bsn_tlv_dhcpv6_opt_remote_id_t *src)
 {
-    of_bsn_tlv_dhcpv6_option_t *dst;
-    uint16_t val16;
+    of_bsn_tlv_dhcpv6_opt_remote_id_t *dst;
+    of_octets_t octets;
 
-    if ((dst = of_bsn_tlv_dhcpv6_option_new(src->version)) == NULL) {
+    if ((dst = of_bsn_tlv_dhcpv6_opt_remote_id_new(src->version)) == NULL) {
         return NULL;
     }
 
-    of_bsn_tlv_dhcpv6_option_opt_code_get(src, &val16);
-    of_bsn_tlv_dhcpv6_option_opt_code_set(dst, val16);
+    of_bsn_tlv_dhcpv6_opt_remote_id_value_get(src, &octets);
+    of_bsn_tlv_dhcpv6_opt_remote_id_value_set(dst, &octets);
 
     return dst;
 }
@@ -53136,12 +53132,12 @@ of_bsn_tlv_OF_VERSION_1_4_dup(
         return of_bsn_tlv_decap_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_BSN_TLV_DHCPV6_OPT_FMT) {
-        return of_bsn_tlv_dhcpv6_opt_fmt_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_BSN_TLV_DHCPV6_OPT_CLIENT_LL_ADDR) {
+        return of_bsn_tlv_dhcpv6_opt_client_ll_addr_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_BSN_TLV_DHCPV6_OPTION) {
-        return of_bsn_tlv_dhcpv6_option_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_BSN_TLV_DHCPV6_OPT_REMOTE_ID) {
+        return of_bsn_tlv_dhcpv6_opt_remote_id_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_BSN_TLV_DISABLE_SRC_MAC_CHECK) {
@@ -54604,51 +54600,47 @@ of_bsn_tlv_decap_OF_VERSION_1_4_dup(
 }
 
 /**
- * Duplicate an object of type of_bsn_tlv_dhcpv6_opt_fmt
+ * Duplicate an object of type of_bsn_tlv_dhcpv6_opt_client_ll_addr
  * using accessor functions
  * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_dhcpv6_opt_fmt.
+ * @returns A new object of type of_bsn_tlv_dhcpv6_opt_client_ll_addr.
  *
  * The caller is responsible for deleting the returned value
  */
-of_bsn_tlv_dhcpv6_opt_fmt_t *
-of_bsn_tlv_dhcpv6_opt_fmt_OF_VERSION_1_4_dup(
-    of_bsn_tlv_dhcpv6_opt_fmt_t *src)
+of_bsn_tlv_dhcpv6_opt_client_ll_addr_t *
+of_bsn_tlv_dhcpv6_opt_client_ll_addr_OF_VERSION_1_4_dup(
+    of_bsn_tlv_dhcpv6_opt_client_ll_addr_t *src)
 {
-    of_bsn_tlv_dhcpv6_opt_fmt_t *dst;
-    uint16_t val16;
+    of_bsn_tlv_dhcpv6_opt_client_ll_addr_t *dst;
 
-    if ((dst = of_bsn_tlv_dhcpv6_opt_fmt_new(src->version)) == NULL) {
+    if ((dst = of_bsn_tlv_dhcpv6_opt_client_ll_addr_new(src->version)) == NULL) {
         return NULL;
     }
-
-    of_bsn_tlv_dhcpv6_opt_fmt_fmt_get(src, &val16);
-    of_bsn_tlv_dhcpv6_opt_fmt_fmt_set(dst, val16);
 
     return dst;
 }
 
 /**
- * Duplicate an object of type of_bsn_tlv_dhcpv6_option
+ * Duplicate an object of type of_bsn_tlv_dhcpv6_opt_remote_id
  * using accessor functions
  * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_dhcpv6_option.
+ * @returns A new object of type of_bsn_tlv_dhcpv6_opt_remote_id.
  *
  * The caller is responsible for deleting the returned value
  */
-of_bsn_tlv_dhcpv6_option_t *
-of_bsn_tlv_dhcpv6_option_OF_VERSION_1_4_dup(
-    of_bsn_tlv_dhcpv6_option_t *src)
+of_bsn_tlv_dhcpv6_opt_remote_id_t *
+of_bsn_tlv_dhcpv6_opt_remote_id_OF_VERSION_1_4_dup(
+    of_bsn_tlv_dhcpv6_opt_remote_id_t *src)
 {
-    of_bsn_tlv_dhcpv6_option_t *dst;
-    uint16_t val16;
+    of_bsn_tlv_dhcpv6_opt_remote_id_t *dst;
+    of_octets_t octets;
 
-    if ((dst = of_bsn_tlv_dhcpv6_option_new(src->version)) == NULL) {
+    if ((dst = of_bsn_tlv_dhcpv6_opt_remote_id_new(src->version)) == NULL) {
         return NULL;
     }
 
-    of_bsn_tlv_dhcpv6_option_opt_code_get(src, &val16);
-    of_bsn_tlv_dhcpv6_option_opt_code_set(dst, val16);
+    of_bsn_tlv_dhcpv6_opt_remote_id_value_get(src, &octets);
+    of_bsn_tlv_dhcpv6_opt_remote_id_value_set(dst, &octets);
 
     return dst;
 }
@@ -76852,16 +76844,16 @@ of_bsn_tlv_decap_dup(
 }
 
 of_object_t *
-of_bsn_tlv_dhcpv6_opt_fmt_dup(
+of_bsn_tlv_dhcpv6_opt_client_ll_addr_dup(
     of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
-        return of_bsn_tlv_dhcpv6_opt_fmt_OF_VERSION_1_3_dup(src);
+        return of_bsn_tlv_dhcpv6_opt_client_ll_addr_OF_VERSION_1_3_dup(src);
     }
 
     if (src->version == OF_VERSION_1_4) {
-        return of_bsn_tlv_dhcpv6_opt_fmt_OF_VERSION_1_4_dup(src);
+        return of_bsn_tlv_dhcpv6_opt_client_ll_addr_OF_VERSION_1_4_dup(src);
     }
 
     /* Class not supported in given version */
@@ -76869,16 +76861,16 @@ of_bsn_tlv_dhcpv6_opt_fmt_dup(
 }
 
 of_object_t *
-of_bsn_tlv_dhcpv6_option_dup(
+of_bsn_tlv_dhcpv6_opt_remote_id_dup(
     of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
-        return of_bsn_tlv_dhcpv6_option_OF_VERSION_1_3_dup(src);
+        return of_bsn_tlv_dhcpv6_opt_remote_id_OF_VERSION_1_3_dup(src);
     }
 
     if (src->version == OF_VERSION_1_4) {
-        return of_bsn_tlv_dhcpv6_option_OF_VERSION_1_4_dup(src);
+        return of_bsn_tlv_dhcpv6_opt_remote_id_OF_VERSION_1_4_dup(src);
     }
 
     /* Class not supported in given version */

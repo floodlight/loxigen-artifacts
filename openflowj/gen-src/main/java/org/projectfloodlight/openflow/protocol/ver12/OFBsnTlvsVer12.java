@@ -215,18 +215,15 @@ public class OFBsnTlvsVer12 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvDecap not supported in version 1.2");
     }
 
-    public OFBsnTlvDhcpv6OptFmt.Builder buildDhcpv6OptFmt() {
-        throw new UnsupportedOperationException("OFBsnTlvDhcpv6OptFmt not supported in version 1.2");
-    }
-    public OFBsnTlvDhcpv6OptFmt dhcpv6OptFmt(OFBsnDhcpv6OptFmt fmt) {
-        throw new UnsupportedOperationException("OFBsnTlvDhcpv6OptFmt not supported in version 1.2");
+    public OFBsnTlvDhcpv6OptClientLlAddr dhcpv6OptClientLlAddr() {
+        throw new UnsupportedOperationException("OFBsnTlvDhcpv6OptClientLlAddr not supported in version 1.2");
     }
 
-    public OFBsnTlvDhcpv6Option.Builder buildDhcpv6Option() {
-        throw new UnsupportedOperationException("OFBsnTlvDhcpv6Option not supported in version 1.2");
+    public OFBsnTlvDhcpv6OptRemoteId.Builder buildDhcpv6OptRemoteId() {
+        throw new UnsupportedOperationException("OFBsnTlvDhcpv6OptRemoteId not supported in version 1.2");
     }
-    public OFBsnTlvDhcpv6Option dhcpv6Option(int optCode) {
-        throw new UnsupportedOperationException("OFBsnTlvDhcpv6Option not supported in version 1.2");
+    public OFBsnTlvDhcpv6OptRemoteId dhcpv6OptRemoteId(byte[] value) {
+        throw new UnsupportedOperationException("OFBsnTlvDhcpv6OptRemoteId not supported in version 1.2");
     }
 
     public OFBsnTlvDisableSrcMacCheck disableSrcMacCheck() {

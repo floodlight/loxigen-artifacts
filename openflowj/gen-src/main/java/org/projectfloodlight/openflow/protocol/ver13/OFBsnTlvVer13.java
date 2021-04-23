@@ -128,11 +128,11 @@ abstract class OFBsnTlvVer13 {
                    // discriminator value 0x55=0x55 for class OFBsnTlvDecapVer13
                    return OFBsnTlvDecapVer13.READER.readFrom(bb);
                case (short) 0xe1:
-                   // discriminator value 0xe1=0xe1 for class OFBsnTlvDhcpv6OptFmtVer13
-                   return OFBsnTlvDhcpv6OptFmtVer13.READER.readFrom(bb);
+                   // discriminator value 0xe1=0xe1 for class OFBsnTlvDhcpv6OptClientLlAddrVer13
+                   return OFBsnTlvDhcpv6OptClientLlAddrVer13.READER.readFrom(bb);
                case (short) 0xe0:
-                   // discriminator value 0xe0=0xe0 for class OFBsnTlvDhcpv6OptionVer13
-                   return OFBsnTlvDhcpv6OptionVer13.READER.readFrom(bb);
+                   // discriminator value 0xe0=0xe0 for class OFBsnTlvDhcpv6OptRemoteIdVer13
+                   return OFBsnTlvDhcpv6OptRemoteIdVer13.READER.readFrom(bb);
                case (short) 0x78:
                    // discriminator value 0x78=0x78 for class OFBsnTlvDisableSrcMacCheckVer13
                    return OFBsnTlvDisableSrcMacCheckVer13.READER.readFrom(bb);

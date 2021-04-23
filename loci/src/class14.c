@@ -874,7 +874,7 @@ of_bsn_tlv_decap_value_set(
 #include "loci_int.h"
 
 void
-of_bsn_tlv_dhcpv6_opt_fmt_push_wire_types(of_object_t *obj)
+of_bsn_tlv_dhcpv6_opt_client_ll_addr_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
@@ -890,11 +890,11 @@ of_bsn_tlv_dhcpv6_opt_fmt_push_wire_types(of_object_t *obj)
 
 
 /**
- * \defgroup of_bsn_tlv_dhcpv6_opt_fmt of_bsn_tlv_dhcpv6_opt_fmt
+ * \defgroup of_bsn_tlv_dhcpv6_opt_client_ll_addr of_bsn_tlv_dhcpv6_opt_client_ll_addr
  */
 
 /**
- * Create a new of_bsn_tlv_dhcpv6_opt_fmt object
+ * Create a new of_bsn_tlv_dhcpv6_opt_client_ll_addr object
  *
  * @param version The wire version to use for the object
  * @return Pointer to the newly create object or NULL on error
@@ -902,30 +902,30 @@ of_bsn_tlv_dhcpv6_opt_fmt_push_wire_types(of_object_t *obj)
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * \ingroup of_bsn_tlv_dhcpv6_opt_fmt
+ * \ingroup of_bsn_tlv_dhcpv6_opt_client_ll_addr
  */
 
 of_object_t *
-of_bsn_tlv_dhcpv6_opt_fmt_new(of_version_t version)
+of_bsn_tlv_dhcpv6_opt_client_ll_addr_new(of_version_t version)
 {
     of_object_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_BSN_TLV_DHCPV6_OPT_FMT];
+    bytes = of_object_fixed_len[version][OF_BSN_TLV_DHCPV6_OPT_CLIENT_LL_ADDR];
 
     if ((obj = of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
-    of_bsn_tlv_dhcpv6_opt_fmt_init(obj, version, bytes, 0);
-    of_bsn_tlv_dhcpv6_opt_fmt_push_wire_types(obj);
+    of_bsn_tlv_dhcpv6_opt_client_ll_addr_init(obj, version, bytes, 0);
+    of_bsn_tlv_dhcpv6_opt_client_ll_addr_push_wire_types(obj);
     of_tlv16_wire_length_set(obj, obj->length);
 
     return obj;
 }
 
 /**
- * Initialize an object of type of_bsn_tlv_dhcpv6_opt_fmt.
+ * Initialize an object of type of_bsn_tlv_dhcpv6_opt_client_ll_addr.
  *
  * @param obj Pointer to the object to initialize
  * @param version The wire version to use for the object
@@ -942,19 +942,19 @@ of_bsn_tlv_dhcpv6_opt_fmt_new(of_version_t version)
  */
 
 void
-of_bsn_tlv_dhcpv6_opt_fmt_init(of_object_t *obj,
+of_bsn_tlv_dhcpv6_opt_client_ll_addr_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-    LOCI_ASSERT(of_object_fixed_len[version][OF_BSN_TLV_DHCPV6_OPT_FMT] >= 0);
+    LOCI_ASSERT(of_object_fixed_len[version][OF_BSN_TLV_DHCPV6_OPT_CLIENT_LL_ADDR] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_BSN_TLV_DHCPV6_OPT_FMT];
+        bytes = of_object_fixed_len[version][OF_BSN_TLV_DHCPV6_OPT_CLIENT_LL_ADDR];
     }
     obj->version = version;
     obj->length = bytes;
-    obj->object_id = OF_BSN_TLV_DHCPV6_OPT_FMT;
+    obj->object_id = OF_BSN_TLV_DHCPV6_OPT_CLIENT_LL_ADDR;
 
     /* Grow the wire buffer */
     if (obj->wbuf != NULL) {
@@ -963,86 +963,6 @@ of_bsn_tlv_dhcpv6_opt_fmt_init(of_object_t *obj,
         tot_bytes = bytes + obj->obj_offset;
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
-}
-
-/**
- * Get fmt from an object of type of_bsn_tlv_dhcpv6_opt_fmt.
- * @param obj Pointer to an object of type of_bsn_tlv_dhcpv6_opt_fmt.
- * @param fmt Pointer to the child object of type
- * uint16_t to be filled out.
- *
- */
-void
-of_bsn_tlv_dhcpv6_opt_fmt_fmt_get(
-    of_bsn_tlv_dhcpv6_opt_fmt_t *obj,
-    uint16_t *fmt)
-{
-    of_wire_buffer_t *wbuf;
-    int offset = 0; /* Offset of value relative to the start obj */
-    int abs_offset; /* Offset of value relative to start of wbuf */
-    of_version_t ver;
-
-    LOCI_ASSERT(obj->object_id == OF_BSN_TLV_DHCPV6_OPT_FMT);
-    ver = obj->version;
-    wbuf = OF_OBJECT_TO_WBUF(obj);
-    LOCI_ASSERT(wbuf != NULL);
-
-    /* By version, determine offset and current length (where needed) */
-    switch (ver) {
-    case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
-        offset = 4;
-        break;
-    default:
-        LOCI_ASSERT(0);
-    }
-
-    abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    LOCI_ASSERT(abs_offset >= 0);
-    of_wire_buffer_u16_get(wbuf, abs_offset, fmt);
-
-    OF_LENGTH_CHECK_ASSERT(obj);
-
-    return ;
-}
-
-/**
- * Set fmt in an object of type of_bsn_tlv_dhcpv6_opt_fmt.
- * @param obj Pointer to an object of type of_bsn_tlv_dhcpv6_opt_fmt.
- * @param fmt The value to write into the object
- */
-void
-of_bsn_tlv_dhcpv6_opt_fmt_fmt_set(
-    of_bsn_tlv_dhcpv6_opt_fmt_t *obj,
-    uint16_t fmt)
-{
-    of_wire_buffer_t *wbuf;
-    int offset = 0; /* Offset of value relative to the start obj */
-    int abs_offset; /* Offset of value relative to start of wbuf */
-    of_version_t ver;
-
-    LOCI_ASSERT(obj->object_id == OF_BSN_TLV_DHCPV6_OPT_FMT);
-    ver = obj->version;
-    wbuf = OF_OBJECT_TO_WBUF(obj);
-    LOCI_ASSERT(wbuf != NULL);
-
-    /* By version, determine offset and current length (where needed) */
-    switch (ver) {
-    case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
-        offset = 4;
-        break;
-    default:
-        LOCI_ASSERT(0);
-    }
-
-    abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    LOCI_ASSERT(abs_offset >= 0);
-    of_wire_buffer_u16_set(wbuf, abs_offset, fmt);
-
-    OF_LENGTH_CHECK_ASSERT(obj);
-
-    return ;
 }
 /* Copyright (c) 2008 The Board of Trustees of The Leland Stanford Junior University */
 /* Copyright (c) 2011, 2012 Open Networking Foundation */
@@ -1076,7 +996,7 @@ of_bsn_tlv_dhcpv6_opt_fmt_fmt_set(
 #include "loci_int.h"
 
 void
-of_bsn_tlv_dhcpv6_option_push_wire_types(of_object_t *obj)
+of_bsn_tlv_dhcpv6_opt_remote_id_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
@@ -1092,11 +1012,11 @@ of_bsn_tlv_dhcpv6_option_push_wire_types(of_object_t *obj)
 
 
 /**
- * \defgroup of_bsn_tlv_dhcpv6_option of_bsn_tlv_dhcpv6_option
+ * \defgroup of_bsn_tlv_dhcpv6_opt_remote_id of_bsn_tlv_dhcpv6_opt_remote_id
  */
 
 /**
- * Create a new of_bsn_tlv_dhcpv6_option object
+ * Create a new of_bsn_tlv_dhcpv6_opt_remote_id object
  *
  * @param version The wire version to use for the object
  * @return Pointer to the newly create object or NULL on error
@@ -1104,30 +1024,30 @@ of_bsn_tlv_dhcpv6_option_push_wire_types(of_object_t *obj)
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * \ingroup of_bsn_tlv_dhcpv6_option
+ * \ingroup of_bsn_tlv_dhcpv6_opt_remote_id
  */
 
 of_object_t *
-of_bsn_tlv_dhcpv6_option_new(of_version_t version)
+of_bsn_tlv_dhcpv6_opt_remote_id_new(of_version_t version)
 {
     of_object_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_BSN_TLV_DHCPV6_OPTION];
+    bytes = of_object_fixed_len[version][OF_BSN_TLV_DHCPV6_OPT_REMOTE_ID];
 
-    if ((obj = of_object_new(bytes)) == NULL) {
+    if ((obj = of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
 
-    of_bsn_tlv_dhcpv6_option_init(obj, version, bytes, 0);
-    of_bsn_tlv_dhcpv6_option_push_wire_types(obj);
+    of_bsn_tlv_dhcpv6_opt_remote_id_init(obj, version, bytes, 0);
+    of_bsn_tlv_dhcpv6_opt_remote_id_push_wire_types(obj);
     of_tlv16_wire_length_set(obj, obj->length);
 
     return obj;
 }
 
 /**
- * Initialize an object of type of_bsn_tlv_dhcpv6_option.
+ * Initialize an object of type of_bsn_tlv_dhcpv6_opt_remote_id.
  *
  * @param obj Pointer to the object to initialize
  * @param version The wire version to use for the object
@@ -1144,19 +1064,19 @@ of_bsn_tlv_dhcpv6_option_new(of_version_t version)
  */
 
 void
-of_bsn_tlv_dhcpv6_option_init(of_object_t *obj,
+of_bsn_tlv_dhcpv6_opt_remote_id_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-    LOCI_ASSERT(of_object_fixed_len[version][OF_BSN_TLV_DHCPV6_OPTION] >= 0);
+    LOCI_ASSERT(of_object_fixed_len[version][OF_BSN_TLV_DHCPV6_OPT_REMOTE_ID] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_BSN_TLV_DHCPV6_OPTION];
+        bytes = of_object_fixed_len[version][OF_BSN_TLV_DHCPV6_OPT_REMOTE_ID];
     }
     obj->version = version;
     obj->length = bytes;
-    obj->object_id = OF_BSN_TLV_DHCPV6_OPTION;
+    obj->object_id = OF_BSN_TLV_DHCPV6_OPT_REMOTE_ID;
 
     /* Grow the wire buffer */
     if (obj->wbuf != NULL) {
@@ -1168,23 +1088,24 @@ of_bsn_tlv_dhcpv6_option_init(of_object_t *obj,
 }
 
 /**
- * Get opt_code from an object of type of_bsn_tlv_dhcpv6_option.
- * @param obj Pointer to an object of type of_bsn_tlv_dhcpv6_option.
- * @param opt_code Pointer to the child object of type
- * uint16_t to be filled out.
+ * Get value from an object of type of_bsn_tlv_dhcpv6_opt_remote_id.
+ * @param obj Pointer to an object of type of_bsn_tlv_dhcpv6_opt_remote_id.
+ * @param value Pointer to the child object of type
+ * of_octets_t to be filled out.
  *
  */
 void
-of_bsn_tlv_dhcpv6_option_opt_code_get(
-    of_bsn_tlv_dhcpv6_option_t *obj,
-    uint16_t *opt_code)
+of_bsn_tlv_dhcpv6_opt_remote_id_value_get(
+    of_bsn_tlv_dhcpv6_opt_remote_id_t *obj,
+    of_octets_t *value)
 {
     of_wire_buffer_t *wbuf;
     int offset = 0; /* Offset of value relative to the start obj */
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
+    int cur_len = 0; /* Current length of object data */
 
-    LOCI_ASSERT(obj->object_id == OF_BSN_TLV_DHCPV6_OPTION);
+    LOCI_ASSERT(obj->object_id == OF_BSN_TLV_DHCPV6_OPT_REMOTE_ID);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
     LOCI_ASSERT(wbuf != NULL);
@@ -1194,6 +1115,7 @@ of_bsn_tlv_dhcpv6_option_opt_code_get(
     case OF_VERSION_1_3:
     case OF_VERSION_1_4:
         offset = 4;
+        cur_len = _END_LEN(obj, offset);
         break;
     default:
         LOCI_ASSERT(0);
@@ -1201,7 +1123,10 @@ of_bsn_tlv_dhcpv6_option_opt_code_get(
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
     LOCI_ASSERT(abs_offset >= 0);
-    of_wire_buffer_u16_get(wbuf, abs_offset, opt_code);
+    LOCI_ASSERT(cur_len >= 0 && cur_len < 64 * 1024);
+    LOCI_ASSERT(cur_len + abs_offset <= WBUF_CURRENT_BYTES(wbuf));
+    value->bytes = cur_len;
+    value->data = OF_WIRE_BUFFER_INDEX(wbuf, abs_offset);
 
     OF_LENGTH_CHECK_ASSERT(obj);
 
@@ -1209,21 +1134,23 @@ of_bsn_tlv_dhcpv6_option_opt_code_get(
 }
 
 /**
- * Set opt_code in an object of type of_bsn_tlv_dhcpv6_option.
- * @param obj Pointer to an object of type of_bsn_tlv_dhcpv6_option.
- * @param opt_code The value to write into the object
+ * Set value in an object of type of_bsn_tlv_dhcpv6_opt_remote_id.
+ * @param obj Pointer to an object of type of_bsn_tlv_dhcpv6_opt_remote_id.
+ * @param value The value to write into the object
  */
-void
-of_bsn_tlv_dhcpv6_option_opt_code_set(
-    of_bsn_tlv_dhcpv6_option_t *obj,
-    uint16_t opt_code)
+int WARN_UNUSED_RESULT
+of_bsn_tlv_dhcpv6_opt_remote_id_value_set(
+    of_bsn_tlv_dhcpv6_opt_remote_id_t *obj,
+    of_octets_t *value)
 {
     of_wire_buffer_t *wbuf;
     int offset = 0; /* Offset of value relative to the start obj */
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
+    int cur_len = 0; /* Current length of object data */
+    int new_len, delta; /* For set, need new length and delta */
 
-    LOCI_ASSERT(obj->object_id == OF_BSN_TLV_DHCPV6_OPTION);
+    LOCI_ASSERT(obj->object_id == OF_BSN_TLV_DHCPV6_OPT_REMOTE_ID);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
     LOCI_ASSERT(wbuf != NULL);
@@ -1233,6 +1160,7 @@ of_bsn_tlv_dhcpv6_option_opt_code_set(
     case OF_VERSION_1_3:
     case OF_VERSION_1_4:
         offset = 4;
+        cur_len = _END_LEN(obj, offset);
         break;
     default:
         LOCI_ASSERT(0);
@@ -1240,11 +1168,21 @@ of_bsn_tlv_dhcpv6_option_opt_code_set(
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
     LOCI_ASSERT(abs_offset >= 0);
-    of_wire_buffer_u16_set(wbuf, abs_offset, opt_code);
+    LOCI_ASSERT(cur_len >= 0 && cur_len < 64 * 1024);
+    new_len = value->bytes;
+    of_wire_buffer_grow(wbuf, abs_offset + (new_len - cur_len));
+    of_wire_buffer_octets_data_set(wbuf, abs_offset, value, cur_len);
+
+    /* Not scalar, update lengths if needed */
+    delta = new_len - cur_len;
+    if (delta != 0) {
+        /* Update parent(s) */
+        of_object_parent_length_update((of_object_t *)obj, delta);
+    }
 
     OF_LENGTH_CHECK_ASSERT(obj);
 
-    return ;
+    return OF_ERROR_NONE;
 }
 /* Copyright (c) 2008 The Board of Trustees of The Leland Stanford Junior University */
 /* Copyright (c) 2011, 2012 Open Networking Foundation */
