@@ -20392,6 +20392,14 @@ of_bsn_tlv_circuit_id_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of
 }
 
 int
+of_bsn_tlv_client_ll_addr_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+
+    return out;
+}
+
+int
 of_bsn_tlv_convergence_status_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
@@ -20463,34 +20471,6 @@ of_bsn_tlv_decap_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_obje
 
     of_bsn_tlv_decap_value_get(obj, &val16);
     out += writer(cookie, "value=");
-    out += LOCI_SHOW_u16(writer, cookie, val16);
-    out += writer(cookie, " ");
-
-    return out;
-}
-
-int
-of_bsn_tlv_dhcpv6_opt_fmt_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
-{
-    int out = 0;
-    uint16_t val16;
-
-    of_bsn_tlv_dhcpv6_opt_fmt_fmt_get(obj, &val16);
-    out += writer(cookie, "fmt=");
-    out += LOCI_SHOW_u16(writer, cookie, val16);
-    out += writer(cookie, " ");
-
-    return out;
-}
-
-int
-of_bsn_tlv_dhcpv6_option_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
-{
-    int out = 0;
-    uint16_t val16;
-
-    of_bsn_tlv_dhcpv6_option_opt_code_get(obj, &val16);
-    out += writer(cookie, "opt_code=");
     out += LOCI_SHOW_u16(writer, cookie, val16);
     out += writer(cookie, " ");
 
@@ -22301,6 +22281,20 @@ of_bsn_tlv_reference_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_
         of_object_show(writer, cookie, (of_object_t *)&elt);
     }
     out += writer(cookie, "} ");
+
+    return out;
+}
+
+int
+of_bsn_tlv_remote_id_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    of_octets_t octets;
+
+    of_bsn_tlv_remote_id_value_get(obj, &octets);
+    out += writer(cookie, "value=");
+    out += LOCI_SHOW_octets(writer, cookie, octets);
+    out += writer(cookie, " ");
 
     return out;
 }
@@ -35303,6 +35297,14 @@ of_bsn_tlv_circuit_id_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of
 }
 
 int
+of_bsn_tlv_client_ll_addr_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+
+    return out;
+}
+
+int
 of_bsn_tlv_convergence_status_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
@@ -35374,34 +35376,6 @@ of_bsn_tlv_decap_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_obje
 
     of_bsn_tlv_decap_value_get(obj, &val16);
     out += writer(cookie, "value=");
-    out += LOCI_SHOW_u16(writer, cookie, val16);
-    out += writer(cookie, " ");
-
-    return out;
-}
-
-int
-of_bsn_tlv_dhcpv6_opt_fmt_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
-{
-    int out = 0;
-    uint16_t val16;
-
-    of_bsn_tlv_dhcpv6_opt_fmt_fmt_get(obj, &val16);
-    out += writer(cookie, "fmt=");
-    out += LOCI_SHOW_u16(writer, cookie, val16);
-    out += writer(cookie, " ");
-
-    return out;
-}
-
-int
-of_bsn_tlv_dhcpv6_option_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
-{
-    int out = 0;
-    uint16_t val16;
-
-    of_bsn_tlv_dhcpv6_option_opt_code_get(obj, &val16);
-    out += writer(cookie, "opt_code=");
     out += LOCI_SHOW_u16(writer, cookie, val16);
     out += writer(cookie, " ");
 
@@ -37212,6 +37186,20 @@ of_bsn_tlv_reference_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_
         of_object_show(writer, cookie, (of_object_t *)&elt);
     }
     out += writer(cookie, "} ");
+
+    return out;
+}
+
+int
+of_bsn_tlv_remote_id_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    of_octets_t octets;
+
+    of_bsn_tlv_remote_id_value_get(obj, &octets);
+    out += writer(cookie, "value=");
+    out += LOCI_SHOW_octets(writer, cookie, octets);
+    out += writer(cookie, " ");
 
     return out;
 }
@@ -47119,14 +47107,13 @@ static const loci_obj_show_f show_funs_v4[OF_OBJECT_COUNT] = {
     of_bsn_tlv_broadcast_rate_OF_VERSION_1_3_show,
     of_bsn_tlv_bucket_OF_VERSION_1_3_show,
     of_bsn_tlv_circuit_id_OF_VERSION_1_3_show,
+    of_bsn_tlv_client_ll_addr_OF_VERSION_1_3_show,
     of_bsn_tlv_convergence_status_OF_VERSION_1_3_show,
     of_bsn_tlv_cpu_lag_OF_VERSION_1_3_show,
     of_bsn_tlv_crc_enabled_OF_VERSION_1_3_show,
     of_bsn_tlv_data_OF_VERSION_1_3_show,
     of_bsn_tlv_data_mask_OF_VERSION_1_3_show,
     of_bsn_tlv_decap_OF_VERSION_1_3_show,
-    of_bsn_tlv_dhcpv6_opt_fmt_OF_VERSION_1_3_show,
-    of_bsn_tlv_dhcpv6_option_OF_VERSION_1_3_show,
     of_bsn_tlv_disable_src_mac_check_OF_VERSION_1_3_show,
     of_bsn_tlv_disable_xmit_OF_VERSION_1_3_show,
     of_bsn_tlv_dns_analytics_OF_VERSION_1_3_show,
@@ -47268,6 +47255,7 @@ static const loci_obj_show_f show_funs_v4[OF_OBJECT_COUNT] = {
     of_bsn_tlv_record_packets_OF_VERSION_1_3_show,
     of_bsn_tlv_redundant_mgmt_OF_VERSION_1_3_show,
     of_bsn_tlv_reference_OF_VERSION_1_3_show,
+    of_bsn_tlv_remote_id_OF_VERSION_1_3_show,
     of_bsn_tlv_reply_packets_OF_VERSION_1_3_show,
     of_bsn_tlv_request_packets_OF_VERSION_1_3_show,
     of_bsn_tlv_rest_server_OF_VERSION_1_3_show,
@@ -48020,14 +48008,13 @@ static const loci_obj_show_f show_funs_v5[OF_OBJECT_COUNT] = {
     of_bsn_tlv_broadcast_rate_OF_VERSION_1_4_show,
     of_bsn_tlv_bucket_OF_VERSION_1_4_show,
     of_bsn_tlv_circuit_id_OF_VERSION_1_4_show,
+    of_bsn_tlv_client_ll_addr_OF_VERSION_1_4_show,
     of_bsn_tlv_convergence_status_OF_VERSION_1_4_show,
     of_bsn_tlv_cpu_lag_OF_VERSION_1_4_show,
     of_bsn_tlv_crc_enabled_OF_VERSION_1_4_show,
     of_bsn_tlv_data_OF_VERSION_1_4_show,
     of_bsn_tlv_data_mask_OF_VERSION_1_4_show,
     of_bsn_tlv_decap_OF_VERSION_1_4_show,
-    of_bsn_tlv_dhcpv6_opt_fmt_OF_VERSION_1_4_show,
-    of_bsn_tlv_dhcpv6_option_OF_VERSION_1_4_show,
     of_bsn_tlv_disable_src_mac_check_OF_VERSION_1_4_show,
     of_bsn_tlv_disable_xmit_OF_VERSION_1_4_show,
     of_bsn_tlv_dns_analytics_OF_VERSION_1_4_show,
@@ -48169,6 +48156,7 @@ static const loci_obj_show_f show_funs_v5[OF_OBJECT_COUNT] = {
     of_bsn_tlv_record_packets_OF_VERSION_1_4_show,
     of_bsn_tlv_redundant_mgmt_OF_VERSION_1_4_show,
     of_bsn_tlv_reference_OF_VERSION_1_4_show,
+    of_bsn_tlv_remote_id_OF_VERSION_1_4_show,
     of_bsn_tlv_reply_packets_OF_VERSION_1_4_show,
     of_bsn_tlv_request_packets_OF_VERSION_1_4_show,
     of_bsn_tlv_rest_server_OF_VERSION_1_4_show,

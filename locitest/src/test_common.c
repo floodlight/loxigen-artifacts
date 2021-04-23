@@ -5865,24 +5865,6 @@ test_ident_macros(void)
     TEST_ASSERT(!OFP_BSN_PACKET_FIELD_OUTER_VLAN_TAG_2_SUPPORTED(OF_VERSION_1_2));
     TEST_ASSERT(OFP_BSN_PACKET_FIELD_OUTER_VLAN_TAG_2_SUPPORTED(OF_VERSION_1_3));
     TEST_ASSERT(OFP_BSN_PACKET_FIELD_OUTER_VLAN_TAG_2_SUPPORTED(OF_VERSION_1_4));
-    value = OFP_BSN_DHCPV6_OPT_FMT_OPAQUE_DATA;
-    TEST_ASSERT(!OFP_BSN_DHCPV6_OPT_FMT_OPAQUE_DATA_SUPPORTED(OF_VERSION_1_0));
-    TEST_ASSERT(!OFP_BSN_DHCPV6_OPT_FMT_OPAQUE_DATA_SUPPORTED(OF_VERSION_1_1));
-    TEST_ASSERT(!OFP_BSN_DHCPV6_OPT_FMT_OPAQUE_DATA_SUPPORTED(OF_VERSION_1_2));
-    TEST_ASSERT(OFP_BSN_DHCPV6_OPT_FMT_OPAQUE_DATA_SUPPORTED(OF_VERSION_1_3));
-    TEST_ASSERT(OFP_BSN_DHCPV6_OPT_FMT_OPAQUE_DATA_SUPPORTED(OF_VERSION_1_4));
-    value = OFP_BSN_DHCPV6_OPT_FMT_AGENT_DATA;
-    TEST_ASSERT(!OFP_BSN_DHCPV6_OPT_FMT_AGENT_DATA_SUPPORTED(OF_VERSION_1_0));
-    TEST_ASSERT(!OFP_BSN_DHCPV6_OPT_FMT_AGENT_DATA_SUPPORTED(OF_VERSION_1_1));
-    TEST_ASSERT(!OFP_BSN_DHCPV6_OPT_FMT_AGENT_DATA_SUPPORTED(OF_VERSION_1_2));
-    TEST_ASSERT(OFP_BSN_DHCPV6_OPT_FMT_AGENT_DATA_SUPPORTED(OF_VERSION_1_3));
-    TEST_ASSERT(OFP_BSN_DHCPV6_OPT_FMT_AGENT_DATA_SUPPORTED(OF_VERSION_1_4));
-    value = OFP_BSN_DHCPV6_OPT_FMT_PREFIX_OPAQUE_AND_AGENT_DATA;
-    TEST_ASSERT(!OFP_BSN_DHCPV6_OPT_FMT_PREFIX_OPAQUE_AND_AGENT_DATA_SUPPORTED(OF_VERSION_1_0));
-    TEST_ASSERT(!OFP_BSN_DHCPV6_OPT_FMT_PREFIX_OPAQUE_AND_AGENT_DATA_SUPPORTED(OF_VERSION_1_1));
-    TEST_ASSERT(!OFP_BSN_DHCPV6_OPT_FMT_PREFIX_OPAQUE_AND_AGENT_DATA_SUPPORTED(OF_VERSION_1_2));
-    TEST_ASSERT(OFP_BSN_DHCPV6_OPT_FMT_PREFIX_OPAQUE_AND_AGENT_DATA_SUPPORTED(OF_VERSION_1_3));
-    TEST_ASSERT(OFP_BSN_DHCPV6_OPT_FMT_PREFIX_OPAQUE_AND_AGENT_DATA_SUPPORTED(OF_VERSION_1_4));
     value = OFP_BSN_VLAN_ALL;
     TEST_ASSERT(!OFP_BSN_VLAN_ALL_SUPPORTED(OF_VERSION_1_0));
     TEST_ASSERT(!OFP_BSN_VLAN_ALL_SUPPORTED(OF_VERSION_1_1));
@@ -10303,6 +10285,10 @@ test_dump_objs(void)
     of_object_dump((loci_writer_f)fprintf, out, obj);
     of_object_delete(obj);
 
+    obj = (of_object_t *)of_bsn_tlv_client_ll_addr_new(OF_VERSION_1_3);
+    of_object_dump((loci_writer_f)fprintf, out, obj);
+    of_object_delete(obj);
+
     obj = (of_object_t *)of_bsn_tlv_convergence_status_new(OF_VERSION_1_3);
     of_object_dump((loci_writer_f)fprintf, out, obj);
     of_object_delete(obj);
@@ -10324,14 +10310,6 @@ test_dump_objs(void)
     of_object_delete(obj);
 
     obj = (of_object_t *)of_bsn_tlv_decap_new(OF_VERSION_1_3);
-    of_object_dump((loci_writer_f)fprintf, out, obj);
-    of_object_delete(obj);
-
-    obj = (of_object_t *)of_bsn_tlv_dhcpv6_opt_fmt_new(OF_VERSION_1_3);
-    of_object_dump((loci_writer_f)fprintf, out, obj);
-    of_object_delete(obj);
-
-    obj = (of_object_t *)of_bsn_tlv_dhcpv6_option_new(OF_VERSION_1_3);
     of_object_dump((loci_writer_f)fprintf, out, obj);
     of_object_delete(obj);
 
@@ -10896,6 +10874,10 @@ test_dump_objs(void)
     of_object_delete(obj);
 
     obj = (of_object_t *)of_bsn_tlv_reference_new(OF_VERSION_1_3);
+    of_object_dump((loci_writer_f)fprintf, out, obj);
+    of_object_delete(obj);
+
+    obj = (of_object_t *)of_bsn_tlv_remote_id_new(OF_VERSION_1_3);
     of_object_dump((loci_writer_f)fprintf, out, obj);
     of_object_delete(obj);
 
@@ -13192,6 +13174,10 @@ test_dump_objs(void)
     of_object_dump((loci_writer_f)fprintf, out, obj);
     of_object_delete(obj);
 
+    obj = (of_object_t *)of_bsn_tlv_client_ll_addr_new(OF_VERSION_1_4);
+    of_object_dump((loci_writer_f)fprintf, out, obj);
+    of_object_delete(obj);
+
     obj = (of_object_t *)of_bsn_tlv_convergence_status_new(OF_VERSION_1_4);
     of_object_dump((loci_writer_f)fprintf, out, obj);
     of_object_delete(obj);
@@ -13213,14 +13199,6 @@ test_dump_objs(void)
     of_object_delete(obj);
 
     obj = (of_object_t *)of_bsn_tlv_decap_new(OF_VERSION_1_4);
-    of_object_dump((loci_writer_f)fprintf, out, obj);
-    of_object_delete(obj);
-
-    obj = (of_object_t *)of_bsn_tlv_dhcpv6_opt_fmt_new(OF_VERSION_1_4);
-    of_object_dump((loci_writer_f)fprintf, out, obj);
-    of_object_delete(obj);
-
-    obj = (of_object_t *)of_bsn_tlv_dhcpv6_option_new(OF_VERSION_1_4);
     of_object_dump((loci_writer_f)fprintf, out, obj);
     of_object_delete(obj);
 
@@ -13785,6 +13763,10 @@ test_dump_objs(void)
     of_object_delete(obj);
 
     obj = (of_object_t *)of_bsn_tlv_reference_new(OF_VERSION_1_4);
+    of_object_dump((loci_writer_f)fprintf, out, obj);
+    of_object_delete(obj);
+
+    obj = (of_object_t *)of_bsn_tlv_remote_id_new(OF_VERSION_1_4);
     of_object_dump((loci_writer_f)fprintf, out, obj);
     of_object_delete(obj);
 

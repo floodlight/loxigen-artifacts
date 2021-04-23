@@ -109,6 +109,9 @@ abstract class OFBsnTlvVer15 {
                case (short) 0xe:
                    // discriminator value 0xe=0xe for class OFBsnTlvCircuitIdVer15
                    return OFBsnTlvCircuitIdVer15.READER.readFrom(bb);
+               case (short) 0xe1:
+                   // discriminator value 0xe1=0xe1 for class OFBsnTlvClientLlAddrVer15
+                   return OFBsnTlvClientLlAddrVer15.READER.readFrom(bb);
                case (short) 0x2d:
                    // discriminator value 0x2d=0x2d for class OFBsnTlvConvergenceStatusVer15
                    return OFBsnTlvConvergenceStatusVer15.READER.readFrom(bb);
@@ -127,12 +130,6 @@ abstract class OFBsnTlvVer15 {
                case (short) 0x55:
                    // discriminator value 0x55=0x55 for class OFBsnTlvDecapVer15
                    return OFBsnTlvDecapVer15.READER.readFrom(bb);
-               case (short) 0xe1:
-                   // discriminator value 0xe1=0xe1 for class OFBsnTlvDhcpv6OptFmtVer15
-                   return OFBsnTlvDhcpv6OptFmtVer15.READER.readFrom(bb);
-               case (short) 0xe0:
-                   // discriminator value 0xe0=0xe0 for class OFBsnTlvDhcpv6OptionVer15
-                   return OFBsnTlvDhcpv6OptionVer15.READER.readFrom(bb);
                case (short) 0x78:
                    // discriminator value 0x78=0x78 for class OFBsnTlvDisableSrcMacCheckVer15
                    return OFBsnTlvDisableSrcMacCheckVer15.READER.readFrom(bb);
@@ -556,6 +553,9 @@ abstract class OFBsnTlvVer15 {
                case (short) 0x3b:
                    // discriminator value 0x3b=0x3b for class OFBsnTlvReferenceVer15
                    return OFBsnTlvReferenceVer15.READER.readFrom(bb);
+               case (short) 0xe0:
+                   // discriminator value 0xe0=0xe0 for class OFBsnTlvRemoteIdVer15
+                   return OFBsnTlvRemoteIdVer15.READER.readFrom(bb);
                case (short) 0xc:
                    // discriminator value 0xc=0xc for class OFBsnTlvReplyPacketsVer15
                    return OFBsnTlvReplyPacketsVer15.READER.readFrom(bb);
