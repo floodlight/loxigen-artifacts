@@ -6632,6 +6632,13 @@ typedef struct of_bsn_tlv_bucket_s of_bsn_tlv_bucket_t;
 typedef struct of_bsn_tlv_circuit_id_s of_bsn_tlv_circuit_id_t;
 
 /**
+ * Structure for of_bsn_tlv_client_ll_addr object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ */
+typedef struct of_bsn_tlv_client_ll_addr_s of_bsn_tlv_client_ll_addr_t;
+
+/**
  * Structure for of_bsn_tlv_convergence_status object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
@@ -6692,28 +6699,6 @@ typedef struct of_bsn_tlv_data_mask_s of_bsn_tlv_data_mask_t;
  *
  */
 typedef struct of_bsn_tlv_decap_s of_bsn_tlv_decap_t;
-
-/**
- * Structure for of_bsn_tlv_dhcpv6_opt_fmt object.  Get/set
- * accessors available in all versions unless noted otherwise
- *
- * @param fmt_get/set ( OF_1_3 OF_1_4).
- *   Accessors for fmt, a variable of type uint16.  Functions
- *   are of type of_bsn_tlv_dhcpv6_opt_fmt_uint16_get_f and _set_f.
- *
- */
-typedef struct of_bsn_tlv_dhcpv6_opt_fmt_s of_bsn_tlv_dhcpv6_opt_fmt_t;
-
-/**
- * Structure for of_bsn_tlv_dhcpv6_option object.  Get/set
- * accessors available in all versions unless noted otherwise
- *
- * @param opt_code_get/set ( OF_1_3 OF_1_4).
- *   Accessors for opt_code, a variable of type uint16.  Functions
- *   are of type of_bsn_tlv_dhcpv6_option_uint16_get_f and _set_f.
- *
- */
-typedef struct of_bsn_tlv_dhcpv6_option_s of_bsn_tlv_dhcpv6_option_t;
 
 /**
  * Structure for of_bsn_tlv_disable_src_mac_check object.  Get/set
@@ -8153,6 +8138,17 @@ typedef struct of_bsn_tlv_redundant_mgmt_s of_bsn_tlv_redundant_mgmt_t;
  *
  */
 typedef struct of_bsn_tlv_reference_s of_bsn_tlv_reference_t;
+
+/**
+ * Structure for of_bsn_tlv_remote_id object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for value, a variable of type of_octets.  Functions
+ *   are of type of_bsn_tlv_remote_id_of_octets_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_remote_id_s of_bsn_tlv_remote_id_t;
 
 /**
  * Structure for of_bsn_tlv_reply_packets object.  Get/set

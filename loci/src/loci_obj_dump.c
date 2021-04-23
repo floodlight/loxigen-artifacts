@@ -21736,6 +21736,16 @@ of_bsn_tlv_circuit_id_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of
 }
 
 int
+of_bsn_tlv_client_ll_addr_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+
+    out += writer(cookie, "Object of type of_bsn_tlv_client_ll_addr\n");
+
+    return out;
+}
+
+int
 of_bsn_tlv_convergence_status_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
@@ -21819,38 +21829,6 @@ of_bsn_tlv_decap_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_obje
 
     of_bsn_tlv_decap_value_get(obj, &val16);
     out += writer(cookie, "  value (uint16_t):  ");
-    out += LOCI_DUMP_u16(writer, cookie, val16);
-    out += writer(cookie, "\n");
-
-    return out;
-}
-
-int
-of_bsn_tlv_dhcpv6_opt_fmt_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
-{
-    int out = 0;
-    uint16_t val16;
-
-    out += writer(cookie, "Object of type of_bsn_tlv_dhcpv6_opt_fmt\n");
-
-    of_bsn_tlv_dhcpv6_opt_fmt_fmt_get(obj, &val16);
-    out += writer(cookie, "  fmt (uint16_t):  ");
-    out += LOCI_DUMP_u16(writer, cookie, val16);
-    out += writer(cookie, "\n");
-
-    return out;
-}
-
-int
-of_bsn_tlv_dhcpv6_option_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
-{
-    int out = 0;
-    uint16_t val16;
-
-    out += writer(cookie, "Object of type of_bsn_tlv_dhcpv6_option\n");
-
-    of_bsn_tlv_dhcpv6_option_opt_code_get(obj, &val16);
-    out += writer(cookie, "  opt_code (uint16_t):  ");
     out += LOCI_DUMP_u16(writer, cookie, val16);
     out += writer(cookie, "\n");
 
@@ -23942,6 +23920,22 @@ of_bsn_tlv_reference_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_
     OF_LIST_BSN_TLV_ITER(&list, &elt, rv) {
         of_object_dump(writer, cookie, (of_object_t *)&elt);
     }
+
+    return out;
+}
+
+int
+of_bsn_tlv_remote_id_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    of_octets_t octets;
+
+    out += writer(cookie, "Object of type of_bsn_tlv_remote_id\n");
+
+    of_bsn_tlv_remote_id_value_get(obj, &octets);
+    out += writer(cookie, "  value (of_octets_t):  ");
+    out += LOCI_DUMP_octets(writer, cookie, octets);
+    out += writer(cookie, "\n");
 
     return out;
 }
@@ -37996,6 +37990,16 @@ of_bsn_tlv_circuit_id_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of
 }
 
 int
+of_bsn_tlv_client_ll_addr_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+
+    out += writer(cookie, "Object of type of_bsn_tlv_client_ll_addr\n");
+
+    return out;
+}
+
+int
 of_bsn_tlv_convergence_status_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
@@ -38079,38 +38083,6 @@ of_bsn_tlv_decap_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_obje
 
     of_bsn_tlv_decap_value_get(obj, &val16);
     out += writer(cookie, "  value (uint16_t):  ");
-    out += LOCI_DUMP_u16(writer, cookie, val16);
-    out += writer(cookie, "\n");
-
-    return out;
-}
-
-int
-of_bsn_tlv_dhcpv6_opt_fmt_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
-{
-    int out = 0;
-    uint16_t val16;
-
-    out += writer(cookie, "Object of type of_bsn_tlv_dhcpv6_opt_fmt\n");
-
-    of_bsn_tlv_dhcpv6_opt_fmt_fmt_get(obj, &val16);
-    out += writer(cookie, "  fmt (uint16_t):  ");
-    out += LOCI_DUMP_u16(writer, cookie, val16);
-    out += writer(cookie, "\n");
-
-    return out;
-}
-
-int
-of_bsn_tlv_dhcpv6_option_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
-{
-    int out = 0;
-    uint16_t val16;
-
-    out += writer(cookie, "Object of type of_bsn_tlv_dhcpv6_option\n");
-
-    of_bsn_tlv_dhcpv6_option_opt_code_get(obj, &val16);
-    out += writer(cookie, "  opt_code (uint16_t):  ");
     out += LOCI_DUMP_u16(writer, cookie, val16);
     out += writer(cookie, "\n");
 
@@ -40202,6 +40174,22 @@ of_bsn_tlv_reference_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_
     OF_LIST_BSN_TLV_ITER(&list, &elt, rv) {
         of_object_dump(writer, cookie, (of_object_t *)&elt);
     }
+
+    return out;
+}
+
+int
+of_bsn_tlv_remote_id_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    of_octets_t octets;
+
+    out += writer(cookie, "Object of type of_bsn_tlv_remote_id\n");
+
+    of_bsn_tlv_remote_id_value_get(obj, &octets);
+    out += writer(cookie, "  value (of_octets_t):  ");
+    out += LOCI_DUMP_octets(writer, cookie, octets);
+    out += writer(cookie, "\n");
 
     return out;
 }
@@ -50730,14 +50718,13 @@ static const loci_obj_dump_f dump_funs_v4[OF_OBJECT_COUNT] = {
     of_bsn_tlv_broadcast_rate_OF_VERSION_1_3_dump,
     of_bsn_tlv_bucket_OF_VERSION_1_3_dump,
     of_bsn_tlv_circuit_id_OF_VERSION_1_3_dump,
+    of_bsn_tlv_client_ll_addr_OF_VERSION_1_3_dump,
     of_bsn_tlv_convergence_status_OF_VERSION_1_3_dump,
     of_bsn_tlv_cpu_lag_OF_VERSION_1_3_dump,
     of_bsn_tlv_crc_enabled_OF_VERSION_1_3_dump,
     of_bsn_tlv_data_OF_VERSION_1_3_dump,
     of_bsn_tlv_data_mask_OF_VERSION_1_3_dump,
     of_bsn_tlv_decap_OF_VERSION_1_3_dump,
-    of_bsn_tlv_dhcpv6_opt_fmt_OF_VERSION_1_3_dump,
-    of_bsn_tlv_dhcpv6_option_OF_VERSION_1_3_dump,
     of_bsn_tlv_disable_src_mac_check_OF_VERSION_1_3_dump,
     of_bsn_tlv_disable_xmit_OF_VERSION_1_3_dump,
     of_bsn_tlv_dns_analytics_OF_VERSION_1_3_dump,
@@ -50879,6 +50866,7 @@ static const loci_obj_dump_f dump_funs_v4[OF_OBJECT_COUNT] = {
     of_bsn_tlv_record_packets_OF_VERSION_1_3_dump,
     of_bsn_tlv_redundant_mgmt_OF_VERSION_1_3_dump,
     of_bsn_tlv_reference_OF_VERSION_1_3_dump,
+    of_bsn_tlv_remote_id_OF_VERSION_1_3_dump,
     of_bsn_tlv_reply_packets_OF_VERSION_1_3_dump,
     of_bsn_tlv_request_packets_OF_VERSION_1_3_dump,
     of_bsn_tlv_rest_server_OF_VERSION_1_3_dump,
@@ -51631,14 +51619,13 @@ static const loci_obj_dump_f dump_funs_v5[OF_OBJECT_COUNT] = {
     of_bsn_tlv_broadcast_rate_OF_VERSION_1_4_dump,
     of_bsn_tlv_bucket_OF_VERSION_1_4_dump,
     of_bsn_tlv_circuit_id_OF_VERSION_1_4_dump,
+    of_bsn_tlv_client_ll_addr_OF_VERSION_1_4_dump,
     of_bsn_tlv_convergence_status_OF_VERSION_1_4_dump,
     of_bsn_tlv_cpu_lag_OF_VERSION_1_4_dump,
     of_bsn_tlv_crc_enabled_OF_VERSION_1_4_dump,
     of_bsn_tlv_data_OF_VERSION_1_4_dump,
     of_bsn_tlv_data_mask_OF_VERSION_1_4_dump,
     of_bsn_tlv_decap_OF_VERSION_1_4_dump,
-    of_bsn_tlv_dhcpv6_opt_fmt_OF_VERSION_1_4_dump,
-    of_bsn_tlv_dhcpv6_option_OF_VERSION_1_4_dump,
     of_bsn_tlv_disable_src_mac_check_OF_VERSION_1_4_dump,
     of_bsn_tlv_disable_xmit_OF_VERSION_1_4_dump,
     of_bsn_tlv_dns_analytics_OF_VERSION_1_4_dump,
@@ -51780,6 +51767,7 @@ static const loci_obj_dump_f dump_funs_v5[OF_OBJECT_COUNT] = {
     of_bsn_tlv_record_packets_OF_VERSION_1_4_dump,
     of_bsn_tlv_redundant_mgmt_OF_VERSION_1_4_dump,
     of_bsn_tlv_reference_OF_VERSION_1_4_dump,
+    of_bsn_tlv_remote_id_OF_VERSION_1_4_dump,
     of_bsn_tlv_reply_packets_OF_VERSION_1_4_dump,
     of_bsn_tlv_request_packets_OF_VERSION_1_4_dump,
     of_bsn_tlv_rest_server_OF_VERSION_1_4_dump,

@@ -214,6 +214,10 @@ public class OFBsnTlvsVer13 implements OFBsnTlvs {
                     );
     }
 
+    public OFBsnTlvClientLlAddr clientLlAddr() {
+        return OFBsnTlvClientLlAddrVer13.INSTANCE;
+    }
+
     public OFBsnTlvConvergenceStatus.Builder buildConvergenceStatus() {
         return new OFBsnTlvConvergenceStatusVer13.Builder();
     }
@@ -260,24 +264,6 @@ public class OFBsnTlvsVer13 implements OFBsnTlvs {
     public OFBsnTlvDecap decap(OFBsnDecap value) {
         return new OFBsnTlvDecapVer13(
                 value
-                    );
-    }
-
-    public OFBsnTlvDhcpv6OptFmt.Builder buildDhcpv6OptFmt() {
-        return new OFBsnTlvDhcpv6OptFmtVer13.Builder();
-    }
-    public OFBsnTlvDhcpv6OptFmt dhcpv6OptFmt(OFBsnDhcpv6OptFmt fmt) {
-        return new OFBsnTlvDhcpv6OptFmtVer13(
-                fmt
-                    );
-    }
-
-    public OFBsnTlvDhcpv6Option.Builder buildDhcpv6Option() {
-        return new OFBsnTlvDhcpv6OptionVer13.Builder();
-    }
-    public OFBsnTlvDhcpv6Option dhcpv6Option(int optCode) {
-        return new OFBsnTlvDhcpv6OptionVer13(
-                optCode
                     );
     }
 
@@ -1376,6 +1362,15 @@ public class OFBsnTlvsVer13 implements OFBsnTlvs {
         return new OFBsnTlvReferenceVer13(
                 tableId,
                       key
+                    );
+    }
+
+    public OFBsnTlvRemoteId.Builder buildRemoteId() {
+        return new OFBsnTlvRemoteIdVer13.Builder();
+    }
+    public OFBsnTlvRemoteId remoteId(byte[] value) {
+        return new OFBsnTlvRemoteIdVer13(
+                value
                     );
     }
 

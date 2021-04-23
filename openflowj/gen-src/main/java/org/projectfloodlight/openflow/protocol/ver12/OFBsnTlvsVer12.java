@@ -176,6 +176,10 @@ public class OFBsnTlvsVer12 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvCircuitId not supported in version 1.2");
     }
 
+    public OFBsnTlvClientLlAddr clientLlAddr() {
+        throw new UnsupportedOperationException("OFBsnTlvClientLlAddr not supported in version 1.2");
+    }
+
     public OFBsnTlvConvergenceStatus.Builder buildConvergenceStatus() {
         throw new UnsupportedOperationException("OFBsnTlvConvergenceStatus not supported in version 1.2");
     }
@@ -213,20 +217,6 @@ public class OFBsnTlvsVer12 implements OFBsnTlvs {
     }
     public OFBsnTlvDecap decap(OFBsnDecap value) {
         throw new UnsupportedOperationException("OFBsnTlvDecap not supported in version 1.2");
-    }
-
-    public OFBsnTlvDhcpv6OptFmt.Builder buildDhcpv6OptFmt() {
-        throw new UnsupportedOperationException("OFBsnTlvDhcpv6OptFmt not supported in version 1.2");
-    }
-    public OFBsnTlvDhcpv6OptFmt dhcpv6OptFmt(OFBsnDhcpv6OptFmt fmt) {
-        throw new UnsupportedOperationException("OFBsnTlvDhcpv6OptFmt not supported in version 1.2");
-    }
-
-    public OFBsnTlvDhcpv6Option.Builder buildDhcpv6Option() {
-        throw new UnsupportedOperationException("OFBsnTlvDhcpv6Option not supported in version 1.2");
-    }
-    public OFBsnTlvDhcpv6Option dhcpv6Option(int optCode) {
-        throw new UnsupportedOperationException("OFBsnTlvDhcpv6Option not supported in version 1.2");
     }
 
     public OFBsnTlvDisableSrcMacCheck disableSrcMacCheck() {
@@ -1109,6 +1099,13 @@ public class OFBsnTlvsVer12 implements OFBsnTlvs {
     }
     public OFBsnTlvReference reference(int tableId, List<OFBsnTlv> key) {
         throw new UnsupportedOperationException("OFBsnTlvReference not supported in version 1.2");
+    }
+
+    public OFBsnTlvRemoteId.Builder buildRemoteId() {
+        throw new UnsupportedOperationException("OFBsnTlvRemoteId not supported in version 1.2");
+    }
+    public OFBsnTlvRemoteId remoteId(byte[] value) {
+        throw new UnsupportedOperationException("OFBsnTlvRemoteId not supported in version 1.2");
     }
 
     public OFBsnTlvReplyPackets.Builder buildReplyPackets() {

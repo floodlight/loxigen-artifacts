@@ -1307,6 +1307,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_client_ll_addr_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_convergence_status_dup(
         of_object_t *src);
 
@@ -1328,14 +1332,6 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_tlv_decap_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_dhcpv6_opt_fmt_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_dhcpv6_option_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -1900,6 +1896,10 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_tlv_reference_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_remote_id_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -6751,6 +6751,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_client_ll_addr_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_convergence_status_OF_VERSION_1_3_dup(
         of_object_t *src);
 
@@ -6772,14 +6776,6 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_tlv_decap_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_dhcpv6_opt_fmt_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_dhcpv6_option_OF_VERSION_1_3_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -7344,6 +7340,10 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_tlv_reference_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_remote_id_OF_VERSION_1_3_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -9867,6 +9867,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_client_ll_addr_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_convergence_status_OF_VERSION_1_4_dup(
         of_object_t *src);
 
@@ -9888,14 +9892,6 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_tlv_decap_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_dhcpv6_opt_fmt_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_dhcpv6_option_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -10460,6 +10456,10 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_tlv_reference_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_remote_id_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *

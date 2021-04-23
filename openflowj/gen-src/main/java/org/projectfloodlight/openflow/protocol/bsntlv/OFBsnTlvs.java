@@ -71,6 +71,7 @@ public interface OFBsnTlvs {
     OFBsnTlvBucket bucket(List<OFBsnTlv> value);
     OFBsnTlvCircuitId.Builder buildCircuitId() throws UnsupportedOperationException;
     OFBsnTlvCircuitId circuitId(byte[] value);
+    OFBsnTlvClientLlAddr clientLlAddr();
     OFBsnTlvConvergenceStatus.Builder buildConvergenceStatus() throws UnsupportedOperationException;
     OFBsnTlvConvergenceStatus convergenceStatus(short value);
     OFBsnTlvCpuLag cpuLag();
@@ -82,10 +83,6 @@ public interface OFBsnTlvs {
     OFBsnTlvDataMask dataMask(byte[] value);
     OFBsnTlvDecap.Builder buildDecap() throws UnsupportedOperationException;
     OFBsnTlvDecap decap(OFBsnDecap value);
-    OFBsnTlvDhcpv6OptFmt.Builder buildDhcpv6OptFmt() throws UnsupportedOperationException;
-    OFBsnTlvDhcpv6OptFmt dhcpv6OptFmt(OFBsnDhcpv6OptFmt fmt);
-    OFBsnTlvDhcpv6Option.Builder buildDhcpv6Option() throws UnsupportedOperationException;
-    OFBsnTlvDhcpv6Option dhcpv6Option(int optCode);
     OFBsnTlvDisableSrcMacCheck disableSrcMacCheck();
     OFBsnTlvDisableXmit disableXmit();
     OFBsnTlvDnsAnalytics dnsAnalytics();
@@ -333,6 +330,8 @@ public interface OFBsnTlvs {
     OFBsnTlvRedundantMgmt redundantMgmt();
     OFBsnTlvReference.Builder buildReference() throws UnsupportedOperationException;
     OFBsnTlvReference reference(int tableId, List<OFBsnTlv> key);
+    OFBsnTlvRemoteId.Builder buildRemoteId() throws UnsupportedOperationException;
+    OFBsnTlvRemoteId remoteId(byte[] value);
     OFBsnTlvReplyPackets.Builder buildReplyPackets() throws UnsupportedOperationException;
     OFBsnTlvReplyPackets replyPackets(U64 value);
     OFBsnTlvRequestPackets.Builder buildRequestPackets() throws UnsupportedOperationException;
