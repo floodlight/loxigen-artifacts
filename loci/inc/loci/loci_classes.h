@@ -1569,6 +1569,8 @@ void of_bsn_generic_async_wire_object_id_get(of_object_t *obj, of_object_id_t *i
 void of_bsn_generic_async_push_wire_types(of_object_t *obj);
 void of_bsn_generic_command_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_generic_command_push_wire_types(of_object_t *obj);
+void of_bsn_generic_command_reply_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_generic_command_reply_push_wire_types(of_object_t *obj);
 void of_bsn_takeover_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_takeover_push_wire_types(of_object_t *obj);
 void of_bundle_add_msg_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -1725,6 +1727,7 @@ typedef of_object_t of_bsn_flow_idle_enable_set_reply_t;
 typedef of_object_t of_bsn_flow_idle_enable_set_request_t;
 typedef of_object_t of_bsn_generic_async_t;
 typedef of_object_t of_bsn_generic_command_t;
+typedef of_object_t of_bsn_generic_command_reply_t;
 typedef of_object_t of_bsn_generic_stats_reply_t;
 typedef of_object_t of_bsn_generic_stats_request_t;
 typedef of_object_t of_bsn_gentable_bucket_stats_reply_t;
@@ -2791,6 +2794,11 @@ extern void of_bsn_generic_async_init(
 extern of_object_t *
     of_bsn_generic_command_new(of_version_t version);
 extern void of_bsn_generic_command_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_bsn_generic_command_reply_new(of_version_t version);
+extern void of_bsn_generic_command_reply_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
@@ -7499,6 +7507,17 @@ of_bsn_generic_async_delete(of_object_t *obj) {
  */
 static inline void
 of_bsn_generic_command_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_bsn_generic_command_reply_t
+ * @param obj An instance of type of_bsn_generic_command_reply_t
+ *
+ * \ingroup of_bsn_generic_command_reply
+ */
+static inline void
+of_bsn_generic_command_reply_delete(of_object_t *obj) {
     of_object_delete(obj);
 }
 
@@ -18121,6 +18140,45 @@ extern void of_bsn_generic_command_tlvs_bind(
     of_list_bsn_tlv_t *tlvs);
 extern of_list_bsn_tlv_t *of_bsn_generic_command_tlvs_get(
     of_bsn_generic_command_t *obj);
+
+/* Unified accessor functions for of_bsn_generic_command_reply */
+
+extern void of_bsn_generic_command_reply_xid_set(
+    of_bsn_generic_command_reply_t *obj,
+    uint32_t xid);
+extern void of_bsn_generic_command_reply_xid_get(
+    of_bsn_generic_command_reply_t *obj,
+    uint32_t *xid);
+
+extern void of_bsn_generic_command_reply_experimenter_set(
+    of_bsn_generic_command_reply_t *obj,
+    uint32_t experimenter);
+extern void of_bsn_generic_command_reply_experimenter_get(
+    of_bsn_generic_command_reply_t *obj,
+    uint32_t *experimenter);
+
+extern void of_bsn_generic_command_reply_subtype_set(
+    of_bsn_generic_command_reply_t *obj,
+    uint32_t subtype);
+extern void of_bsn_generic_command_reply_subtype_get(
+    of_bsn_generic_command_reply_t *obj,
+    uint32_t *subtype);
+
+extern void of_bsn_generic_command_reply_status_set(
+    of_bsn_generic_command_reply_t *obj,
+    uint32_t status);
+extern void of_bsn_generic_command_reply_status_get(
+    of_bsn_generic_command_reply_t *obj,
+    uint32_t *status);
+
+extern int WARN_UNUSED_RESULT of_bsn_generic_command_reply_tlvs_set(
+    of_bsn_generic_command_reply_t *obj,
+    of_list_bsn_tlv_t *tlvs);
+extern void of_bsn_generic_command_reply_tlvs_bind(
+    of_bsn_generic_command_reply_t *obj,
+    of_list_bsn_tlv_t *tlvs);
+extern of_list_bsn_tlv_t *of_bsn_generic_command_reply_tlvs_get(
+    of_bsn_generic_command_reply_t *obj);
 
 /* Unified accessor functions for of_bsn_generic_stats_reply */
 

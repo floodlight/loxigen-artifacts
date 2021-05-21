@@ -11804,6 +11804,15 @@ extern int of_bsn_generic_command_OF_VERSION_1_4_populate_scalars(
 extern int of_bsn_generic_command_OF_VERSION_1_4_check_scalars(
     of_bsn_generic_command_t *obj, int value);
 
+extern int of_bsn_generic_command_reply_OF_VERSION_1_4_populate(
+    of_bsn_generic_command_reply_t *obj, int value);
+extern int of_bsn_generic_command_reply_OF_VERSION_1_4_check(
+    of_bsn_generic_command_reply_t *obj, int value);
+extern int of_bsn_generic_command_reply_OF_VERSION_1_4_populate_scalars(
+    of_bsn_generic_command_reply_t *obj, int value);
+extern int of_bsn_generic_command_reply_OF_VERSION_1_4_check_scalars(
+    of_bsn_generic_command_reply_t *obj, int value);
+
 extern int of_bsn_generic_stats_reply_OF_VERSION_1_4_populate(
     of_bsn_generic_stats_reply_t *obj, int value);
 extern int of_bsn_generic_stats_reply_OF_VERSION_1_4_check(

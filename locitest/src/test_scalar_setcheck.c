@@ -1337,6 +1337,33 @@ int of_bsn_generic_command_OF_VERSION_1_0_check_scalars(
 
 
 /**
+ * Populate the scalar values in obj of type of_bsn_generic_command_reply,
+ * version OF_VERSION_1_0
+ * @param obj Pointer to an object to populate
+ * @param value The seed value to use in populating the object
+ * @returns The value after increments for this object's values
+ */
+int of_bsn_generic_command_reply_OF_VERSION_1_0_populate_scalars(
+    of_bsn_generic_command_reply_t *obj, int value) {
+
+    return value;
+}
+
+/**
+ * Check scalar values in obj of type of_bsn_generic_command_reply,
+ * version OF_VERSION_1_0
+ * @param obj Pointer to an object to check
+ * @param value Starting value for checking
+ * @returns The value after increments for this object's values
+ */
+int of_bsn_generic_command_reply_OF_VERSION_1_0_check_scalars(
+    of_bsn_generic_command_reply_t *obj, int value) {
+
+    return value;
+}
+
+
+/**
  * Populate the scalar values in obj of type of_bsn_generic_stats_reply,
  * version OF_VERSION_1_0
  * @param obj Pointer to an object to populate
@@ -25555,6 +25582,33 @@ int of_bsn_generic_command_OF_VERSION_1_1_populate_scalars(
  */
 int of_bsn_generic_command_OF_VERSION_1_1_check_scalars(
     of_bsn_generic_command_t *obj, int value) {
+
+    return value;
+}
+
+
+/**
+ * Populate the scalar values in obj of type of_bsn_generic_command_reply,
+ * version OF_VERSION_1_1
+ * @param obj Pointer to an object to populate
+ * @param value The seed value to use in populating the object
+ * @returns The value after increments for this object's values
+ */
+int of_bsn_generic_command_reply_OF_VERSION_1_1_populate_scalars(
+    of_bsn_generic_command_reply_t *obj, int value) {
+
+    return value;
+}
+
+/**
+ * Check scalar values in obj of type of_bsn_generic_command_reply,
+ * version OF_VERSION_1_1
+ * @param obj Pointer to an object to check
+ * @param value Starting value for checking
+ * @returns The value after increments for this object's values
+ */
+int of_bsn_generic_command_reply_OF_VERSION_1_1_check_scalars(
+    of_bsn_generic_command_reply_t *obj, int value) {
 
     return value;
 }
@@ -50223,6 +50277,33 @@ int of_bsn_generic_command_OF_VERSION_1_2_populate_scalars(
  */
 int of_bsn_generic_command_OF_VERSION_1_2_check_scalars(
     of_bsn_generic_command_t *obj, int value) {
+
+    return value;
+}
+
+
+/**
+ * Populate the scalar values in obj of type of_bsn_generic_command_reply,
+ * version OF_VERSION_1_2
+ * @param obj Pointer to an object to populate
+ * @param value The seed value to use in populating the object
+ * @returns The value after increments for this object's values
+ */
+int of_bsn_generic_command_reply_OF_VERSION_1_2_populate_scalars(
+    of_bsn_generic_command_reply_t *obj, int value) {
+
+    return value;
+}
+
+/**
+ * Check scalar values in obj of type of_bsn_generic_command_reply,
+ * version OF_VERSION_1_2
+ * @param obj Pointer to an object to check
+ * @param value Starting value for checking
+ * @returns The value after increments for this object's values
+ */
+int of_bsn_generic_command_reply_OF_VERSION_1_2_check_scalars(
+    of_bsn_generic_command_reply_t *obj, int value) {
 
     return value;
 }
@@ -77279,6 +77360,33 @@ int of_bsn_generic_command_OF_VERSION_1_3_populate_scalars(
  */
 int of_bsn_generic_command_OF_VERSION_1_3_check_scalars(
     of_bsn_generic_command_t *obj, int value) {
+
+    return value;
+}
+
+
+/**
+ * Populate the scalar values in obj of type of_bsn_generic_command_reply,
+ * version OF_VERSION_1_3
+ * @param obj Pointer to an object to populate
+ * @param value The seed value to use in populating the object
+ * @returns The value after increments for this object's values
+ */
+int of_bsn_generic_command_reply_OF_VERSION_1_3_populate_scalars(
+    of_bsn_generic_command_reply_t *obj, int value) {
+
+    return value;
+}
+
+/**
+ * Check scalar values in obj of type of_bsn_generic_command_reply,
+ * version OF_VERSION_1_3
+ * @param obj Pointer to an object to check
+ * @param value Starting value for checking
+ * @returns The value after increments for this object's values
+ */
+int of_bsn_generic_command_reply_OF_VERSION_1_3_check_scalars(
+    of_bsn_generic_command_reply_t *obj, int value) {
 
     return value;
 }
@@ -108592,6 +108700,51 @@ int of_bsn_generic_command_OF_VERSION_1_4_check_scalars(
 
     of_bsn_generic_command_name_get(obj, &str64);
     TEST_ASSERT(VAR_OF_STR64_T_CHECK(str64, value));
+    value += 1;
+
+    return value;
+}
+
+
+/**
+ * Populate the scalar values in obj of type of_bsn_generic_command_reply,
+ * version OF_VERSION_1_4
+ * @param obj Pointer to an object to populate
+ * @param value The seed value to use in populating the object
+ * @returns The value after increments for this object's values
+ */
+int of_bsn_generic_command_reply_OF_VERSION_1_4_populate_scalars(
+    of_bsn_generic_command_reply_t *obj, int value) {
+    uint32_t val32;
+
+    VAR_UINT32_T_INIT(val32, value);
+    of_bsn_generic_command_reply_xid_set(obj, val32);
+    value += 1;
+
+    VAR_UINT32_T_INIT(val32, value);
+    of_bsn_generic_command_reply_status_set(obj, val32);
+    value += 1;
+
+    return value;
+}
+
+/**
+ * Check scalar values in obj of type of_bsn_generic_command_reply,
+ * version OF_VERSION_1_4
+ * @param obj Pointer to an object to check
+ * @param value Starting value for checking
+ * @returns The value after increments for this object's values
+ */
+int of_bsn_generic_command_reply_OF_VERSION_1_4_check_scalars(
+    of_bsn_generic_command_reply_t *obj, int value) {
+    uint32_t val32;
+
+    of_bsn_generic_command_reply_xid_get(obj, &val32);
+    TEST_ASSERT(VAR_UINT32_T_CHECK(val32, value));
+    value += 1;
+
+    of_bsn_generic_command_reply_status_get(obj, &val32);
+    TEST_ASSERT(VAR_UINT32_T_CHECK(val32, value));
     value += 1;
 
     return value;
