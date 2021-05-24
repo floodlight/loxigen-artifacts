@@ -1379,6 +1379,10 @@ public class OFFactoryVer10 implements OFFactory {
         throw new UnsupportedOperationException("OFBsnGenericCommand not supported in version 1.0");
     }
 
+    public OFBsnGenericCommandReply.Builder buildBsnGenericCommandReply() {
+        throw new UnsupportedOperationException("OFBsnGenericCommandReply not supported in version 1.0");
+    }
+
     public OFBsnTakeover.Builder buildBsnTakeover() {
         throw new UnsupportedOperationException("OFBsnTakeover not supported in version 1.0");
     }

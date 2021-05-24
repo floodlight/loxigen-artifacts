@@ -46,6 +46,7 @@ const char *const of_object_id_str[] = {
     "of_bsn_flow_idle_enable_set_request",
     "of_bsn_generic_async",
     "of_bsn_generic_command",
+    "of_bsn_generic_command_reply",
     "of_bsn_generic_stats_reply",
     "of_bsn_generic_stats_request",
     "of_bsn_gentable_bucket_stats_reply",

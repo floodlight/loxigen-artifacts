@@ -226,6 +226,9 @@ abstract class OFBsnHeaderVer15 {
                case 0x47:
                    // discriminator value 0x47L=0x47L for class OFBsnGenericCommandVer15
                    return OFBsnGenericCommandVer15.READER.readFrom(bb);
+               case 0x48:
+                   // discriminator value 0x48L=0x48L for class OFBsnGenericCommandReplyVer15
+                   return OFBsnGenericCommandReplyVer15.READER.readFrom(bb);
                case 0x45:
                    // discriminator value 0x45L=0x45L for class OFBsnTakeoverVer15
                    return OFBsnTakeoverVer15.READER.readFrom(bb);

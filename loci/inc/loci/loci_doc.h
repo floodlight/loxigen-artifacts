@@ -906,6 +906,33 @@ typedef struct of_bsn_generic_async_s of_bsn_generic_async_t;
 typedef struct of_bsn_generic_command_s of_bsn_generic_command_t;
 
 /**
+ * Structure for of_bsn_generic_command_reply object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param xid_get/set ( OF_1_4).
+ *   Accessors for xid, a variable of type uint32.  Functions
+ *   are of type of_bsn_generic_command_reply_uint32_get_f and _set_f.
+ *
+ * @param experimenter_get/set ( OF_1_4).
+ *   Accessors for experimenter, a variable of type uint32.  Functions
+ *   are of type of_bsn_generic_command_reply_uint32_get_f and _set_f.
+ *
+ * @param subtype_get/set ( OF_1_4).
+ *   Accessors for subtype, a variable of type uint32.  Functions
+ *   are of type of_bsn_generic_command_reply_uint32_get_f and _set_f.
+ *
+ * @param status_get/set ( OF_1_4).
+ *   Accessors for status, a variable of type uint32.  Functions
+ *   are of type of_bsn_generic_command_reply_uint32_get_f and _set_f.
+ *
+ * @param tlvs_get/set ( OF_1_4).
+ *   Accessors for tlvs, a variable of type of_list_bsn_tlv.  Functions
+ *   are of type of_bsn_generic_command_reply_of_list_bsn_tlv_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_generic_command_reply_s of_bsn_generic_command_reply_t;
+
+/**
  * Structure for of_bsn_generic_stats_reply object.  Get/set
  * accessors available in all versions unless noted otherwise
  *

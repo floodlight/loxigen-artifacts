@@ -163,6 +163,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_generic_command_reply_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_generic_stats_reply_dup(
         of_object_t *src);
 
@@ -8920,6 +8924,10 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_generic_command_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_generic_command_reply_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *

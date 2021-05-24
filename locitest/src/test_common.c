@@ -12259,6 +12259,10 @@ test_dump_objs(void)
     of_object_dump((loci_writer_f)fprintf, out, obj);
     of_object_delete(obj);
 
+    obj = (of_object_t *)of_bsn_generic_command_reply_new(OF_VERSION_1_4);
+    of_object_dump((loci_writer_f)fprintf, out, obj);
+    of_object_delete(obj);
+
     obj = (of_object_t *)of_bsn_generic_stats_reply_new(OF_VERSION_1_4);
     of_object_dump((loci_writer_f)fprintf, out, obj);
     of_object_delete(obj);
