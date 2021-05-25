@@ -1528,6 +1528,10 @@ public class OFFactoryVer15 implements OFFactory {
         return new OFBsnGenericCommandVer15.Builder().setXid(nextXid());
     }
 
+    public OFBsnGenericCommandReply.Builder buildBsnGenericCommandReply() {
+        return new OFBsnGenericCommandReplyVer15.Builder().setXid(nextXid());
+    }
+
     public OFBsnTakeover.Builder buildBsnTakeover() {
         return new OFBsnTakeoverVer15.Builder().setXid(nextXid());
     }

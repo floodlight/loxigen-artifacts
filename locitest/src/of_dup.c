@@ -45112,6 +45112,53 @@ of_bsn_generic_command_OF_VERSION_1_4_dup(
 }
 
 /**
+ * Duplicate an object of type of_bsn_generic_command_reply
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_generic_command_reply.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_generic_command_reply_t *
+of_bsn_generic_command_reply_OF_VERSION_1_4_dup(
+    of_bsn_generic_command_reply_t *src)
+{
+    of_bsn_generic_command_reply_t *dst;
+    uint32_t val32;
+
+    of_list_bsn_tlv_t src_list;
+    of_list_bsn_tlv_t *dst_list;
+
+    if ((dst = of_bsn_generic_command_reply_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_generic_command_reply_xid_get(src, &val32);
+    of_bsn_generic_command_reply_xid_set(dst, val32);
+
+    of_bsn_generic_command_reply_experimenter_get(src, &val32);
+    of_bsn_generic_command_reply_experimenter_set(dst, val32);
+
+    of_bsn_generic_command_reply_subtype_get(src, &val32);
+    of_bsn_generic_command_reply_subtype_set(dst, val32);
+
+    of_bsn_generic_command_reply_status_get(src, &val32);
+    of_bsn_generic_command_reply_status_set(dst, val32);
+
+    of_bsn_generic_command_reply_tlvs_bind(
+        src, &src_list);
+    dst_list = of_list_bsn_tlv_OF_VERSION_1_4_dup(&src_list);
+    if (dst_list == NULL) {
+        of_bsn_generic_command_reply_delete(dst);
+        return NULL;
+    }
+    of_bsn_generic_command_reply_tlvs_set(dst, dst_list);
+    of_list_bsn_tlv_delete(dst_list);
+
+    return dst;
+}
+
+/**
  * Duplicate an object of type of_bsn_generic_stats_reply
  * using accessor functions
  * @param src Pointer to object to be duplicated
@@ -71313,6 +71360,19 @@ of_bsn_generic_command_dup(
 
     if (src->version == OF_VERSION_1_4) {
         return of_bsn_generic_command_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_bsn_generic_command_reply_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_bsn_generic_command_reply_OF_VERSION_1_4_dup(src);
     }
 
     /* Class not supported in given version */
