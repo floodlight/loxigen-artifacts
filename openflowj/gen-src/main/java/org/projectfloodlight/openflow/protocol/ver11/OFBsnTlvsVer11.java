@@ -35,6 +35,13 @@ public class OFBsnTlvsVer11 implements OFBsnTlvs {
 
 
 
+    public OFBsnTlvActionState.Builder buildActionState() {
+        throw new UnsupportedOperationException("OFBsnTlvActionState not supported in version 1.1");
+    }
+    public OFBsnTlvActionState actionState(OFBsnActionState value) {
+        throw new UnsupportedOperationException("OFBsnTlvActionState not supported in version 1.1");
+    }
+
     public OFBsnTlvActive active() {
         throw new UnsupportedOperationException("OFBsnTlvActive not supported in version 1.1");
     }

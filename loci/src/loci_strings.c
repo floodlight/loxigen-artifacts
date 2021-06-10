@@ -312,6 +312,7 @@ const char *const of_object_id_str[] = {
     "of_bsn_switch_pipeline_stats_entry",
     "of_bsn_table_checksum_stats_entry",
     "of_bsn_tlv",
+    "of_bsn_tlv_action_state",
     "of_bsn_tlv_active",
     "of_bsn_tlv_actor_key",
     "of_bsn_tlv_actor_port_num",

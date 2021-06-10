@@ -855,6 +855,8 @@ void of_bsn_time_request_wire_object_id_get(of_object_t *obj, of_object_id_t *id
 void of_bsn_time_request_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_action_state_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_action_state_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_active_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_active_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_actor_key_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -1993,6 +1995,7 @@ typedef of_object_t of_bsn_port_counter_stats_entry_t;
 typedef of_object_t of_bsn_switch_pipeline_stats_entry_t;
 typedef of_object_t of_bsn_table_checksum_stats_entry_t;
 typedef of_object_t of_bsn_tlv_t;
+typedef of_object_t of_bsn_tlv_action_state_t;
 typedef of_object_t of_bsn_tlv_active_t;
 typedef of_object_t of_bsn_tlv_actor_key_t;
 typedef of_object_t of_bsn_tlv_actor_port_num_t;
@@ -4124,6 +4127,11 @@ extern void of_bsn_table_checksum_stats_entry_init(
 extern of_object_t *
     of_bsn_tlv_new(of_version_t version);
 extern void of_bsn_tlv_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_bsn_tlv_action_state_new(of_version_t version);
+extern void of_bsn_tlv_action_state_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
@@ -10433,6 +10441,17 @@ of_bsn_table_checksum_stats_entry_delete(of_object_t *obj) {
  */
 static inline void
 of_bsn_tlv_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_action_state_t
+ * @param obj An instance of type of_bsn_tlv_action_state_t
+ *
+ * \ingroup of_bsn_tlv_action_state
+ */
+static inline void
+of_bsn_tlv_action_state_delete(of_object_t *obj) {
     of_object_delete(obj);
 }
 
@@ -24706,6 +24725,15 @@ extern void of_bsn_table_checksum_stats_entry_checksum_set(
 extern void of_bsn_table_checksum_stats_entry_checksum_get(
     of_bsn_table_checksum_stats_entry_t *obj,
     uint64_t *checksum);
+
+/* Unified accessor functions for of_bsn_tlv_action_state */
+
+extern void of_bsn_tlv_action_state_value_set(
+    of_bsn_tlv_action_state_t *obj,
+    uint16_t value);
+extern void of_bsn_tlv_action_state_value_get(
+    of_bsn_tlv_action_state_t *obj,
+    uint16_t *value);
 
 /* Unified accessor functions for of_bsn_tlv_active */
 

@@ -319,6 +319,17 @@ ofp_bad_request_code_map = {
     13: 'OFPBRC_MULTIPART_BUFFER_OVERFLOW',
 }
 
+# Identifiers from group ofp_bsn_action_state
+OFP_BSN_ACTION_STATE_COMPLETED = 0
+OFP_BSN_ACTION_STATE_ACTIVE = 1
+OFP_BSN_ACTION_STATE_WAITING = 2
+
+ofp_bsn_action_state_map = {
+    0: 'OFP_BSN_ACTION_STATE_COMPLETED',
+    1: 'OFP_BSN_ACTION_STATE_ACTIVE',
+    2: 'OFP_BSN_ACTION_STATE_WAITING',
+}
+
 # Identifiers from group ofp_bsn_admin_state
 OFP_BSN_ADMIN_STATE_DISABLED = 0
 OFP_BSN_ADMIN_STATE_ENABLED = 1

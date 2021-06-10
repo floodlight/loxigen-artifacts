@@ -752,6 +752,7 @@ int of_bsn_lacp_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cook
 int of_bsn_port_counter_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_switch_pipeline_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_table_checksum_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj);
+int of_bsn_tlv_action_state_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_active_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_actor_key_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_actor_port_num_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj);
@@ -1474,6 +1475,7 @@ int of_bsn_lacp_stats_entry_OF_VERSION_1_4_show(loci_writer_f writer, void* cook
 int of_bsn_port_counter_stats_entry_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_switch_pipeline_stats_entry_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_table_checksum_stats_entry_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj);
+int of_bsn_tlv_action_state_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_active_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_actor_key_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_actor_port_num_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj);

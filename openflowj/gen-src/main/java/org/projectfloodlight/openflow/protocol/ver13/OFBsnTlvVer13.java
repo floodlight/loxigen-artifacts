@@ -46,6 +46,9 @@ abstract class OFBsnTlvVer13 {
             short type = bb.readShort();
             bb.readerIndex(start);
             switch(type) {
+               case (short) 0xe2:
+                   // discriminator value 0xe2=0xe2 for class OFBsnTlvActionStateVer13
+                   return OFBsnTlvActionStateVer13.READER.readFrom(bb);
                case (short) 0xc0:
                    // discriminator value 0xc0=0xc0 for class OFBsnTlvActiveVer13
                    return OFBsnTlvActiveVer13.READER.readFrom(bb);
