@@ -315,6 +315,7 @@ const of_object_init_f of_object_init_map[] = {
     (of_object_init_f)of_bsn_switch_pipeline_stats_entry_init,
     (of_object_init_f)of_bsn_table_checksum_stats_entry_init,
     (of_object_init_f)of_bsn_tlv_init,
+    (of_object_init_f)of_bsn_tlv_action_state_init,
     (of_object_init_f)of_bsn_tlv_active_init,
     (of_object_init_f)of_bsn_tlv_actor_key_init,
     (of_object_init_f)of_bsn_tlv_actor_port_num_init,

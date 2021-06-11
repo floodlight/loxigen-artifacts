@@ -62,6 +62,57 @@ class bsn_tlv(loxi.OFObject):
         q.text('}')
 
 
+class action_state(bsn_tlv):
+    type = 226
+
+    def __init__(self, value=None):
+        if value != None:
+            self.value = value
+        else:
+            self.value = 0
+        return
+
+    def pack(self):
+        packed = []
+        packed.append(struct.pack("!H", self.type))
+        packed.append(struct.pack("!H", 0)) # placeholder for length at index 1
+        packed.append(struct.pack("!H", self.value))
+        length = sum([len(x) for x in packed])
+        packed[1] = struct.pack("!H", length)
+        return functools.reduce(lambda x,y: x+y, packed)
+
+    @staticmethod
+    def unpack(reader):
+        obj = action_state()
+        _type = reader.read("!H")[0]
+        assert(_type == 226)
+        _length = reader.read("!H")[0]
+        orig_reader = reader
+        reader = orig_reader.slice(_length, 4)
+        obj.value = reader.read("!H")[0]
+        return obj
+
+    def __eq__(self, other):
+        if type(self) != type(other): return False
+        if self.value != other.value: return False
+        return True
+
+    def pretty_print(self, q):
+        q.text("action_state {")
+        with q.group():
+            with q.indent(2):
+                q.breakable()
+                q.text("value = ");
+                value_name_map = {0: 'OFP_BSN_ACTION_STATE_COMPLETED', 1: 'OFP_BSN_ACTION_STATE_ACTIVE', 2: 'OFP_BSN_ACTION_STATE_WAITING'}
+                if self.value in value_name_map:
+                    q.text("%s(%d)" % (value_name_map[self.value], self.value))
+                else:
+                    q.text("%#x" % self.value)
+            q.breakable()
+        q.text('}')
+
+bsn_tlv.subtypes[226] = action_state
+
 class active(bsn_tlv):
     type = 192
 

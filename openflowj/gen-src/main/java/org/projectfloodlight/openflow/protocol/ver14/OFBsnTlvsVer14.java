@@ -35,6 +35,15 @@ public class OFBsnTlvsVer14 implements OFBsnTlvs {
 
 
 
+    public OFBsnTlvActionState.Builder buildActionState() {
+        return new OFBsnTlvActionStateVer14.Builder();
+    }
+    public OFBsnTlvActionState actionState(OFBsnActionState value) {
+        return new OFBsnTlvActionStateVer14(
+                value
+                    );
+    }
+
     public OFBsnTlvActive active() {
         return OFBsnTlvActiveVer14.INSTANCE;
     }

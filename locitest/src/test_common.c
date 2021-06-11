@@ -5879,6 +5879,24 @@ test_ident_macros(void)
     TEST_ASSERT(!OFP_BSN_PACKET_FIELD_OUTER_VLAN_TAG_2_SUPPORTED(OF_VERSION_1_2));
     TEST_ASSERT(OFP_BSN_PACKET_FIELD_OUTER_VLAN_TAG_2_SUPPORTED(OF_VERSION_1_3));
     TEST_ASSERT(OFP_BSN_PACKET_FIELD_OUTER_VLAN_TAG_2_SUPPORTED(OF_VERSION_1_4));
+    value = OFP_BSN_ACTION_STATE_COMPLETED;
+    TEST_ASSERT(!OFP_BSN_ACTION_STATE_COMPLETED_SUPPORTED(OF_VERSION_1_0));
+    TEST_ASSERT(!OFP_BSN_ACTION_STATE_COMPLETED_SUPPORTED(OF_VERSION_1_1));
+    TEST_ASSERT(!OFP_BSN_ACTION_STATE_COMPLETED_SUPPORTED(OF_VERSION_1_2));
+    TEST_ASSERT(OFP_BSN_ACTION_STATE_COMPLETED_SUPPORTED(OF_VERSION_1_3));
+    TEST_ASSERT(OFP_BSN_ACTION_STATE_COMPLETED_SUPPORTED(OF_VERSION_1_4));
+    value = OFP_BSN_ACTION_STATE_ACTIVE;
+    TEST_ASSERT(!OFP_BSN_ACTION_STATE_ACTIVE_SUPPORTED(OF_VERSION_1_0));
+    TEST_ASSERT(!OFP_BSN_ACTION_STATE_ACTIVE_SUPPORTED(OF_VERSION_1_1));
+    TEST_ASSERT(!OFP_BSN_ACTION_STATE_ACTIVE_SUPPORTED(OF_VERSION_1_2));
+    TEST_ASSERT(OFP_BSN_ACTION_STATE_ACTIVE_SUPPORTED(OF_VERSION_1_3));
+    TEST_ASSERT(OFP_BSN_ACTION_STATE_ACTIVE_SUPPORTED(OF_VERSION_1_4));
+    value = OFP_BSN_ACTION_STATE_WAITING;
+    TEST_ASSERT(!OFP_BSN_ACTION_STATE_WAITING_SUPPORTED(OF_VERSION_1_0));
+    TEST_ASSERT(!OFP_BSN_ACTION_STATE_WAITING_SUPPORTED(OF_VERSION_1_1));
+    TEST_ASSERT(!OFP_BSN_ACTION_STATE_WAITING_SUPPORTED(OF_VERSION_1_2));
+    TEST_ASSERT(OFP_BSN_ACTION_STATE_WAITING_SUPPORTED(OF_VERSION_1_3));
+    TEST_ASSERT(OFP_BSN_ACTION_STATE_WAITING_SUPPORTED(OF_VERSION_1_4));
     value = OFP_BSN_VLAN_ALL;
     TEST_ASSERT(!OFP_BSN_VLAN_ALL_SUPPORTED(OF_VERSION_1_0));
     TEST_ASSERT(!OFP_BSN_VLAN_ALL_SUPPORTED(OF_VERSION_1_1));
@@ -10215,6 +10233,10 @@ test_dump_objs(void)
     of_object_dump((loci_writer_f)fprintf, out, obj);
     of_object_delete(obj);
 
+    obj = (of_object_t *)of_bsn_tlv_action_state_new(OF_VERSION_1_3);
+    of_object_dump((loci_writer_f)fprintf, out, obj);
+    of_object_delete(obj);
+
     obj = (of_object_t *)of_bsn_tlv_active_new(OF_VERSION_1_3);
     of_object_dump((loci_writer_f)fprintf, out, obj);
     of_object_delete(obj);
@@ -13105,6 +13127,10 @@ test_dump_objs(void)
     of_object_delete(obj);
 
     obj = (of_object_t *)of_bsn_table_checksum_stats_entry_new(OF_VERSION_1_4);
+    of_object_dump((loci_writer_f)fprintf, out, obj);
+    of_object_delete(obj);
+
+    obj = (of_object_t *)of_bsn_tlv_action_state_new(OF_VERSION_1_4);
     of_object_dump((loci_writer_f)fprintf, out, obj);
     of_object_delete(obj);
 

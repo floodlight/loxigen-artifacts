@@ -31,6 +31,8 @@ import java.util.List;
 public interface OFBsnTlvs {
     // Subfactories
 
+    OFBsnTlvActionState.Builder buildActionState() throws UnsupportedOperationException;
+    OFBsnTlvActionState actionState(OFBsnActionState value);
     OFBsnTlvActive active();
     OFBsnTlvActorKey.Builder buildActorKey() throws UnsupportedOperationException;
     OFBsnTlvActorKey actorKey(int value);
