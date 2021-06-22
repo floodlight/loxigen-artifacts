@@ -27,5 +27,6 @@ import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 
 public enum OFBsnLagFlag {
-     BSN_LAG_FLAG_AUTO_RECOVERY;
+     BSN_LAG_FLAG_AUTO_RECOVERY,
+     BSN_LAG_FLAG_ADD_PEER_ON_EMPTY;
 }

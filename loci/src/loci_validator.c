@@ -845,6 +845,7 @@ static int __attribute__((unused)) loci_validate_of_bsn_tlv_l3_dst_class_id_OF_V
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_l3_interface_class_id_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_l3_src_class_id_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_lag_options_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_bsn_tlv_lag_type_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_lcore_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_link_up_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_load_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
@@ -1599,6 +1600,7 @@ static int __attribute__((unused)) loci_validate_of_bsn_tlv_l3_dst_class_id_OF_V
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_l3_interface_class_id_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_l3_src_class_id_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_lag_options_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_bsn_tlv_lag_type_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_lcore_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_link_up_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_load_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
@@ -21288,6 +21290,8 @@ loci_validate_of_bsn_tlv_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
         return loci_validate_of_bsn_tlv_l3_src_class_id_OF_VERSION_1_3(data, len, out_len);
     case 0xa0:
         return loci_validate_of_bsn_tlv_lag_options_OF_VERSION_1_3(data, len, out_len);
+    case 0xe3:
+        return loci_validate_of_bsn_tlv_lag_type_OF_VERSION_1_3(data, len, out_len);
     case 0xd1:
         return loci_validate_of_bsn_tlv_lcore_OF_VERSION_1_3(data, len, out_len);
     case 0xc1:
@@ -23796,6 +23800,28 @@ loci_validate_of_bsn_tlv_l3_src_class_id_OF_VERSION_1_3(uint8_t *data, int len, 
 
 static int
 loci_validate_of_bsn_tlv_lag_options_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
+{
+    if (len < 6) {
+        return -1;
+    }
+
+    len = 6;
+
+    uint16_t wire_len;
+    buf_u16_get(data + 2, &wire_len);
+    if (wire_len > len || wire_len < 6) {
+        return -1;
+    }
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_bsn_tlv_lag_type_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
 {
     if (len < 6) {
         return -1;
@@ -39815,6 +39841,8 @@ loci_validate_of_bsn_tlv_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
         return loci_validate_of_bsn_tlv_l3_src_class_id_OF_VERSION_1_4(data, len, out_len);
     case 0xa0:
         return loci_validate_of_bsn_tlv_lag_options_OF_VERSION_1_4(data, len, out_len);
+    case 0xe3:
+        return loci_validate_of_bsn_tlv_lag_type_OF_VERSION_1_4(data, len, out_len);
     case 0xd1:
         return loci_validate_of_bsn_tlv_lcore_OF_VERSION_1_4(data, len, out_len);
     case 0xc1:
@@ -42323,6 +42351,28 @@ loci_validate_of_bsn_tlv_l3_src_class_id_OF_VERSION_1_4(uint8_t *data, int len, 
 
 static int
 loci_validate_of_bsn_tlv_lag_options_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
+{
+    if (len < 6) {
+        return -1;
+    }
+
+    len = 6;
+
+    uint16_t wire_len;
+    buf_u16_get(data + 2, &wire_len);
+    if (wire_len > len || wire_len < 6) {
+        return -1;
+    }
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_bsn_tlv_lag_type_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
 {
     if (len < 6) {
         return -1;

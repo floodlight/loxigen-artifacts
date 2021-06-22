@@ -870,6 +870,15 @@ public class OFBsnTlvsVer14 implements OFBsnTlvs {
                     );
     }
 
+    public OFBsnTlvLagType.Builder buildLagType() {
+        return new OFBsnTlvLagTypeVer14.Builder();
+    }
+    public OFBsnTlvLagType lagType(OFBsnLagType value) {
+        return new OFBsnTlvLagTypeVer14(
+                value
+                    );
+    }
+
     public OFBsnTlvLcore.Builder buildLcore() {
         return new OFBsnTlvLcoreVer14.Builder();
     }

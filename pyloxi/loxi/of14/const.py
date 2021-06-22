@@ -650,9 +650,22 @@ ofp_bsn_lacp_state_map = {
 
 # Identifiers from group ofp_bsn_lag_flag
 OFP_BSN_LAG_FLAG_AUTO_RECOVERY = 1
+OFP_BSN_LAG_FLAG_ADD_PEER_ON_EMPTY = 2
 
 ofp_bsn_lag_flag_map = {
     1: 'OFP_BSN_LAG_FLAG_AUTO_RECOVERY',
+    2: 'OFP_BSN_LAG_FLAG_ADD_PEER_ON_EMPTY',
+}
+
+# Identifiers from group ofp_bsn_lag_type
+OFP_BSN_LAG_TYPE_OTHER = 0
+OFP_BSN_LAG_TYPE_PEER = 1
+OFP_BSN_LAG_TYPE_SPINE = 2
+
+ofp_bsn_lag_type_map = {
+    0: 'OFP_BSN_LAG_TYPE_OTHER',
+    1: 'OFP_BSN_LAG_TYPE_PEER',
+    2: 'OFP_BSN_LAG_TYPE_SPINE',
 }
 
 # Identifiers from group ofp_bsn_loglevel

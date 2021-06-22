@@ -218,6 +218,8 @@ public interface OFBsnTlvs {
     OFBsnTlvL3SrcClassId l3SrcClassId(long value);
     OFBsnTlvLagOptions.Builder buildLagOptions() throws UnsupportedOperationException;
     OFBsnTlvLagOptions lagOptions(Set<OFBsnLagFlag> flags);
+    OFBsnTlvLagType.Builder buildLagType() throws UnsupportedOperationException;
+    OFBsnTlvLagType lagType(OFBsnLagType value);
     OFBsnTlvLcore.Builder buildLcore() throws UnsupportedOperationException;
     OFBsnTlvLcore lcore(long value);
     OFBsnTlvLinkUp linkUp();

@@ -7727,6 +7727,15 @@ extern int of_bsn_tlv_lag_options_OF_VERSION_1_3_populate_scalars(
 extern int of_bsn_tlv_lag_options_OF_VERSION_1_3_check_scalars(
     of_bsn_tlv_lag_options_t *obj, int value);
 
+extern int of_bsn_tlv_lag_type_OF_VERSION_1_3_populate(
+    of_bsn_tlv_lag_type_t *obj, int value);
+extern int of_bsn_tlv_lag_type_OF_VERSION_1_3_check(
+    of_bsn_tlv_lag_type_t *obj, int value);
+extern int of_bsn_tlv_lag_type_OF_VERSION_1_3_populate_scalars(
+    of_bsn_tlv_lag_type_t *obj, int value);
+extern int of_bsn_tlv_lag_type_OF_VERSION_1_3_check_scalars(
+    of_bsn_tlv_lag_type_t *obj, int value);
+
 extern int of_bsn_tlv_lcore_OF_VERSION_1_3_populate(
     of_bsn_tlv_lcore_t *obj, int value);
 extern int of_bsn_tlv_lcore_OF_VERSION_1_3_check(
@@ -14638,6 +14647,15 @@ extern int of_bsn_tlv_lag_options_OF_VERSION_1_4_populate_scalars(
     of_bsn_tlv_lag_options_t *obj, int value);
 extern int of_bsn_tlv_lag_options_OF_VERSION_1_4_check_scalars(
     of_bsn_tlv_lag_options_t *obj, int value);
+
+extern int of_bsn_tlv_lag_type_OF_VERSION_1_4_populate(
+    of_bsn_tlv_lag_type_t *obj, int value);
+extern int of_bsn_tlv_lag_type_OF_VERSION_1_4_check(
+    of_bsn_tlv_lag_type_t *obj, int value);
+extern int of_bsn_tlv_lag_type_OF_VERSION_1_4_populate_scalars(
+    of_bsn_tlv_lag_type_t *obj, int value);
+extern int of_bsn_tlv_lag_type_OF_VERSION_1_4_check_scalars(
+    of_bsn_tlv_lag_type_t *obj, int value);
 
 extern int of_bsn_tlv_lcore_OF_VERSION_1_4_populate(
     of_bsn_tlv_lcore_t *obj, int value);

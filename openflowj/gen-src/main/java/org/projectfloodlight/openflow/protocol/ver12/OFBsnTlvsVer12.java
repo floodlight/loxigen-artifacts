@@ -699,6 +699,13 @@ public class OFBsnTlvsVer12 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvLagOptions not supported in version 1.2");
     }
 
+    public OFBsnTlvLagType.Builder buildLagType() {
+        throw new UnsupportedOperationException("OFBsnTlvLagType not supported in version 1.2");
+    }
+    public OFBsnTlvLagType lagType(OFBsnLagType value) {
+        throw new UnsupportedOperationException("OFBsnTlvLagType not supported in version 1.2");
+    }
+
     public OFBsnTlvLcore.Builder buildLcore() {
         throw new UnsupportedOperationException("OFBsnTlvLcore not supported in version 1.2");
     }
