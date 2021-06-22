@@ -36,6 +36,7 @@ import java.util.Collections;
 public class OFBsnLagFlagSerializerVer13 {
 
     public final static short BSN_LAG_FLAG_AUTO_RECOVERY_VAL = (short) 0x1;
+    public final static short BSN_LAG_FLAG_ADD_PEER_ON_EMPTY_VAL = (short) 0x2;
 
     public static Set<OFBsnLagFlag> readFrom(ByteBuf bb) throws OFParseError {
         try {
@@ -59,6 +60,8 @@ public class OFBsnLagFlagSerializerVer13 {
 
         if((val & BSN_LAG_FLAG_AUTO_RECOVERY_VAL) != 0)
             set.add(OFBsnLagFlag.BSN_LAG_FLAG_AUTO_RECOVERY);
+        if((val & BSN_LAG_FLAG_ADD_PEER_ON_EMPTY_VAL) != 0)
+            set.add(OFBsnLagFlag.BSN_LAG_FLAG_ADD_PEER_ON_EMPTY);
         return Collections.unmodifiableSet(set);
     }
 
@@ -69,6 +72,9 @@ public class OFBsnLagFlagSerializerVer13 {
             switch(e) {
                 case BSN_LAG_FLAG_AUTO_RECOVERY:
                     wireValue |= BSN_LAG_FLAG_AUTO_RECOVERY_VAL;
+                    break;
+                case BSN_LAG_FLAG_ADD_PEER_ON_EMPTY:
+                    wireValue |= BSN_LAG_FLAG_ADD_PEER_ON_EMPTY_VAL;
                     break;
                 default:
                     throw new IllegalArgumentException("Illegal enum value for type OFBsnLagFlag in version 1.3: " + e);

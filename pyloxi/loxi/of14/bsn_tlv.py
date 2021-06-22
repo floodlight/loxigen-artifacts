@@ -4855,12 +4855,63 @@ class lag_options(bsn_tlv):
             with q.indent(2):
                 q.breakable()
                 q.text("flags = ");
-                value_name_map = {1: 'OFP_BSN_LAG_FLAG_AUTO_RECOVERY'}
+                value_name_map = {1: 'OFP_BSN_LAG_FLAG_AUTO_RECOVERY', 2: 'OFP_BSN_LAG_FLAG_ADD_PEER_ON_EMPTY'}
                 q.text(util.pretty_flags(self.flags, value_name_map.values()))
             q.breakable()
         q.text('}')
 
 bsn_tlv.subtypes[160] = lag_options
+
+class lag_type(bsn_tlv):
+    type = 227
+
+    def __init__(self, value=None):
+        if value != None:
+            self.value = value
+        else:
+            self.value = 0
+        return
+
+    def pack(self):
+        packed = []
+        packed.append(struct.pack("!H", self.type))
+        packed.append(struct.pack("!H", 0)) # placeholder for length at index 1
+        packed.append(struct.pack("!H", self.value))
+        length = sum([len(x) for x in packed])
+        packed[1] = struct.pack("!H", length)
+        return ''.join(packed)
+
+    @staticmethod
+    def unpack(reader):
+        obj = lag_type()
+        _type = reader.read("!H")[0]
+        assert(_type == 227)
+        _length = reader.read("!H")[0]
+        orig_reader = reader
+        reader = orig_reader.slice(_length, 4)
+        obj.value = reader.read("!H")[0]
+        return obj
+
+    def __eq__(self, other):
+        if type(self) != type(other): return False
+        if self.value != other.value: return False
+        return True
+
+    def pretty_print(self, q):
+        q.text("lag_type {")
+        with q.group():
+            with q.indent(2):
+                q.breakable()
+                q.text("value = ");
+                value_name_map = {0: 'OFP_BSN_LAG_TYPE_OTHER', 1: 'OFP_BSN_LAG_TYPE_PEER', 2: 'OFP_BSN_LAG_TYPE_SPINE'}
+                if self.value in value_name_map:
+                    q.text("%s(%d)" % (value_name_map[self.value], self.value))
+                else:
+                    q.text("%#x" % self.value)
+            q.breakable()
+        q.text('}')
+
+bsn_tlv.subtypes[227] = lag_type
 
 class lcore(bsn_tlv):
     type = 209

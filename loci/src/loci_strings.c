@@ -415,6 +415,7 @@ const char *const of_object_id_str[] = {
     "of_bsn_tlv_l3_interface_class_id",
     "of_bsn_tlv_l3_src_class_id",
     "of_bsn_tlv_lag_options",
+    "of_bsn_tlv_lag_type",
     "of_bsn_tlv_lcore",
     "of_bsn_tlv_link_up",
     "of_bsn_tlv_load",

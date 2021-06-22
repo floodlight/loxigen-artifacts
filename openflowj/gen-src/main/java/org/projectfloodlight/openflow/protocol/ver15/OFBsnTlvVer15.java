@@ -355,6 +355,9 @@ abstract class OFBsnTlvVer15 {
                case (short) 0xa0:
                    // discriminator value 0xa0=0xa0 for class OFBsnTlvLagOptionsVer15
                    return OFBsnTlvLagOptionsVer15.READER.readFrom(bb);
+               case (short) 0xe3:
+                   // discriminator value 0xe3=0xe3 for class OFBsnTlvLagTypeVer15
+                   return OFBsnTlvLagTypeVer15.READER.readFrom(bb);
                case (short) 0xd1:
                    // discriminator value 0xd1=0xd1 for class OFBsnTlvLcoreVer15
                    return OFBsnTlvLcoreVer15.READER.readFrom(bb);

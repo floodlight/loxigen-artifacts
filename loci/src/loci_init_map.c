@@ -418,6 +418,7 @@ const of_object_init_f of_object_init_map[] = {
     (of_object_init_f)of_bsn_tlv_l3_interface_class_id_init,
     (of_object_init_f)of_bsn_tlv_l3_src_class_id_init,
     (of_object_init_f)of_bsn_tlv_lag_options_init,
+    (of_object_init_f)of_bsn_tlv_lag_type_init,
     (of_object_init_f)of_bsn_tlv_lcore_init,
     (of_object_init_f)of_bsn_tlv_link_up_init,
     (of_object_init_f)of_bsn_tlv_load_init,

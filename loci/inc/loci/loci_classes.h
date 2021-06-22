@@ -1061,6 +1061,8 @@ void of_bsn_tlv_l3_src_class_id_wire_object_id_get(of_object_t *obj, of_object_i
 void of_bsn_tlv_l3_src_class_id_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_lag_options_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_lag_options_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_lag_type_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_lag_type_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_lcore_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_lcore_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_link_up_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -2098,6 +2100,7 @@ typedef of_object_t of_bsn_tlv_l3_dst_class_id_t;
 typedef of_object_t of_bsn_tlv_l3_interface_class_id_t;
 typedef of_object_t of_bsn_tlv_l3_src_class_id_t;
 typedef of_object_t of_bsn_tlv_lag_options_t;
+typedef of_object_t of_bsn_tlv_lag_type_t;
 typedef of_object_t of_bsn_tlv_lcore_t;
 typedef of_object_t of_bsn_tlv_link_up_t;
 typedef of_object_t of_bsn_tlv_load_t;
@@ -4642,6 +4645,11 @@ extern void of_bsn_tlv_l3_src_class_id_init(
 extern of_object_t *
     of_bsn_tlv_lag_options_new(of_version_t version);
 extern void of_bsn_tlv_lag_options_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_bsn_tlv_lag_type_new(of_version_t version);
+extern void of_bsn_tlv_lag_type_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
@@ -11574,6 +11582,17 @@ of_bsn_tlv_l3_src_class_id_delete(of_object_t *obj) {
  */
 static inline void
 of_bsn_tlv_lag_options_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_lag_type_t
+ * @param obj An instance of type of_bsn_tlv_lag_type_t
+ *
+ * \ingroup of_bsn_tlv_lag_type
+ */
+static inline void
+of_bsn_tlv_lag_type_delete(of_object_t *obj) {
     of_object_delete(obj);
 }
 
@@ -25563,6 +25582,15 @@ extern void of_bsn_tlv_lag_options_flags_set(
 extern void of_bsn_tlv_lag_options_flags_get(
     of_bsn_tlv_lag_options_t *obj,
     uint16_t *flags);
+
+/* Unified accessor functions for of_bsn_tlv_lag_type */
+
+extern void of_bsn_tlv_lag_type_value_set(
+    of_bsn_tlv_lag_type_t *obj,
+    uint16_t value);
+extern void of_bsn_tlv_lag_type_value_get(
+    of_bsn_tlv_lag_type_t *obj,
+    uint16_t *value);
 
 /* Unified accessor functions for of_bsn_tlv_lcore */
 
