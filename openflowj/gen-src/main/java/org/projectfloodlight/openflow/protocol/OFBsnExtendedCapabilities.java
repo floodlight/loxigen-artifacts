@@ -28,5 +28,8 @@ import org.projectfloodlight.openflow.exceptions.*;
 
 public enum OFBsnExtendedCapabilities {
      BSN_EXT_CAP_AN,
-     BSN_EXT_CAP_FEC;
+     BSN_EXT_CAP_FEC,
+     BSN_EXT_CAP_FEC_FIRE_CODE,
+     BSN_EXT_CAP_FEC_REED_SOLOMAN,
+     BSN_EXT_CAP_FEC_REED_SOLOMAN544;
 }

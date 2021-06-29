@@ -37,6 +37,9 @@ public class OFBsnExtendedCapabilitiesSerializerVer14 {
 
     public final static long BSN_EXT_CAP_AN_VAL = 0x1L;
     public final static long BSN_EXT_CAP_FEC_VAL = 0x2L;
+    public final static long BSN_EXT_CAP_FEC_FIRE_CODE_VAL = 0x4L;
+    public final static long BSN_EXT_CAP_FEC_REED_SOLOMAN_VAL = 0x8L;
+    public final static long BSN_EXT_CAP_FEC_REED_SOLOMAN544_VAL = 0x10L;
 
     public static Set<OFBsnExtendedCapabilities> readFrom(ByteBuf bb) throws OFParseError {
         try {
@@ -62,6 +65,12 @@ public class OFBsnExtendedCapabilitiesSerializerVer14 {
             set.add(OFBsnExtendedCapabilities.BSN_EXT_CAP_AN);
         if((val & BSN_EXT_CAP_FEC_VAL) != 0)
             set.add(OFBsnExtendedCapabilities.BSN_EXT_CAP_FEC);
+        if((val & BSN_EXT_CAP_FEC_FIRE_CODE_VAL) != 0)
+            set.add(OFBsnExtendedCapabilities.BSN_EXT_CAP_FEC_FIRE_CODE);
+        if((val & BSN_EXT_CAP_FEC_REED_SOLOMAN_VAL) != 0)
+            set.add(OFBsnExtendedCapabilities.BSN_EXT_CAP_FEC_REED_SOLOMAN);
+        if((val & BSN_EXT_CAP_FEC_REED_SOLOMAN544_VAL) != 0)
+            set.add(OFBsnExtendedCapabilities.BSN_EXT_CAP_FEC_REED_SOLOMAN544);
         return Collections.unmodifiableSet(set);
     }
 
@@ -75,6 +84,15 @@ public class OFBsnExtendedCapabilitiesSerializerVer14 {
                     break;
                 case BSN_EXT_CAP_FEC:
                     wireValue |= BSN_EXT_CAP_FEC_VAL;
+                    break;
+                case BSN_EXT_CAP_FEC_FIRE_CODE:
+                    wireValue |= BSN_EXT_CAP_FEC_FIRE_CODE_VAL;
+                    break;
+                case BSN_EXT_CAP_FEC_REED_SOLOMAN:
+                    wireValue |= BSN_EXT_CAP_FEC_REED_SOLOMAN_VAL;
+                    break;
+                case BSN_EXT_CAP_FEC_REED_SOLOMAN544:
+                    wireValue |= BSN_EXT_CAP_FEC_REED_SOLOMAN544_VAL;
                     break;
                 default:
                     throw new IllegalArgumentException("Illegal enum value for type OFBsnExtendedCapabilities in version 1.4: " + e);
