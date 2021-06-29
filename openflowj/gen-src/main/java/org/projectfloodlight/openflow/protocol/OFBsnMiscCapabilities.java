@@ -27,5 +27,8 @@ import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 
 public enum OFBsnMiscCapabilities {
-     BSN_MISC_CAP_FEC;
+     BSN_MISC_CAP_FEC,
+     BSN_MISC_CAP_FEC_FIRE_CODE,
+     BSN_MISC_CAP_FEC_REED_SOLOMAN,
+     BSN_MISC_CAP_FEC_REED_SOLOMAN544;
 }

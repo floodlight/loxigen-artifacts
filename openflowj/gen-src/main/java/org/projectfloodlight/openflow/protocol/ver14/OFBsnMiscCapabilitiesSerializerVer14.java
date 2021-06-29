@@ -36,6 +36,9 @@ import java.util.Collections;
 public class OFBsnMiscCapabilitiesSerializerVer14 {
 
     public final static long BSN_MISC_CAP_FEC_VAL = 0x1L;
+    public final static long BSN_MISC_CAP_FEC_FIRE_CODE_VAL = 0x2L;
+    public final static long BSN_MISC_CAP_FEC_REED_SOLOMAN_VAL = 0x4L;
+    public final static long BSN_MISC_CAP_FEC_REED_SOLOMAN544_VAL = 0x8L;
 
     public static Set<OFBsnMiscCapabilities> readFrom(ByteBuf bb) throws OFParseError {
         try {
@@ -59,6 +62,12 @@ public class OFBsnMiscCapabilitiesSerializerVer14 {
 
         if((val & BSN_MISC_CAP_FEC_VAL) != 0)
             set.add(OFBsnMiscCapabilities.BSN_MISC_CAP_FEC);
+        if((val & BSN_MISC_CAP_FEC_FIRE_CODE_VAL) != 0)
+            set.add(OFBsnMiscCapabilities.BSN_MISC_CAP_FEC_FIRE_CODE);
+        if((val & BSN_MISC_CAP_FEC_REED_SOLOMAN_VAL) != 0)
+            set.add(OFBsnMiscCapabilities.BSN_MISC_CAP_FEC_REED_SOLOMAN);
+        if((val & BSN_MISC_CAP_FEC_REED_SOLOMAN544_VAL) != 0)
+            set.add(OFBsnMiscCapabilities.BSN_MISC_CAP_FEC_REED_SOLOMAN544);
         return Collections.unmodifiableSet(set);
     }
 
@@ -69,6 +78,15 @@ public class OFBsnMiscCapabilitiesSerializerVer14 {
             switch(e) {
                 case BSN_MISC_CAP_FEC:
                     wireValue |= BSN_MISC_CAP_FEC_VAL;
+                    break;
+                case BSN_MISC_CAP_FEC_FIRE_CODE:
+                    wireValue |= BSN_MISC_CAP_FEC_FIRE_CODE_VAL;
+                    break;
+                case BSN_MISC_CAP_FEC_REED_SOLOMAN:
+                    wireValue |= BSN_MISC_CAP_FEC_REED_SOLOMAN_VAL;
+                    break;
+                case BSN_MISC_CAP_FEC_REED_SOLOMAN544:
+                    wireValue |= BSN_MISC_CAP_FEC_REED_SOLOMAN544_VAL;
                     break;
                 default:
                     throw new IllegalArgumentException("Illegal enum value for type OFBsnMiscCapabilities in version 1.4: " + e);

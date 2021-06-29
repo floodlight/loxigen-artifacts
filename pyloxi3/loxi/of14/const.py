@@ -511,10 +511,16 @@ ofp_bsn_enhanced_hash_type_map = {
 # Identifiers from group ofp_bsn_extended_capabilities
 OFP_BSN_EXT_CAP_AN = 1
 OFP_BSN_EXT_CAP_FEC = 2
+OFP_BSN_EXT_CAP_FEC_FIRE_CODE = 4
+OFP_BSN_EXT_CAP_FEC_REED_SOLOMAN = 8
+OFP_BSN_EXT_CAP_FEC_REED_SOLOMAN544 = 16
 
 ofp_bsn_extended_capabilities_map = {
     1: 'OFP_BSN_EXT_CAP_AN',
     2: 'OFP_BSN_EXT_CAP_FEC',
+    4: 'OFP_BSN_EXT_CAP_FEC_FIRE_CODE',
+    8: 'OFP_BSN_EXT_CAP_FEC_REED_SOLOMAN',
+    16: 'OFP_BSN_EXT_CAP_FEC_REED_SOLOMAN544',
 }
 
 # Identifiers from group ofp_bsn_fabric_port_role
@@ -720,9 +726,15 @@ ofp_bsn_metadata_map = {
 
 # Identifiers from group ofp_bsn_misc_capabilities
 OFP_BSN_MISC_CAP_FEC = 1
+OFP_BSN_MISC_CAP_FEC_FIRE_CODE = 2
+OFP_BSN_MISC_CAP_FEC_REED_SOLOMAN = 4
+OFP_BSN_MISC_CAP_FEC_REED_SOLOMAN544 = 8
 
 ofp_bsn_misc_capabilities_map = {
     1: 'OFP_BSN_MISC_CAP_FEC',
+    2: 'OFP_BSN_MISC_CAP_FEC_FIRE_CODE',
+    4: 'OFP_BSN_MISC_CAP_FEC_REED_SOLOMAN',
+    8: 'OFP_BSN_MISC_CAP_FEC_REED_SOLOMAN544',
 }
 
 # Identifiers from group ofp_bsn_multicast_packet
