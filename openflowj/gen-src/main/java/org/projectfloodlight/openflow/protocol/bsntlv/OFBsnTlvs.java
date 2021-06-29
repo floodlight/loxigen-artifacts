@@ -71,6 +71,8 @@ public interface OFBsnTlvs {
     OFBsnTlvBroadcastRate broadcastRate(long value);
     OFBsnTlvBucket.Builder buildBucket() throws UnsupportedOperationException;
     OFBsnTlvBucket bucket(List<OFBsnTlv> value);
+    OFBsnTlvCcfFeature.Builder buildCcfFeature() throws UnsupportedOperationException;
+    OFBsnTlvCcfFeature ccfFeature(OFBsnCcfFeature value);
     OFBsnTlvCircuitId.Builder buildCircuitId() throws UnsupportedOperationException;
     OFBsnTlvCircuitId circuitId(byte[] value);
     OFBsnTlvClientLlAddr clientLlAddr();

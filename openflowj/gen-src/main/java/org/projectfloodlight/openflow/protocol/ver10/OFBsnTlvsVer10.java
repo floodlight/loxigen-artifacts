@@ -176,6 +176,13 @@ public class OFBsnTlvsVer10 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvBucket not supported in version 1.0");
     }
 
+    public OFBsnTlvCcfFeature.Builder buildCcfFeature() {
+        throw new UnsupportedOperationException("OFBsnTlvCcfFeature not supported in version 1.0");
+    }
+    public OFBsnTlvCcfFeature ccfFeature(OFBsnCcfFeature value) {
+        throw new UnsupportedOperationException("OFBsnTlvCcfFeature not supported in version 1.0");
+    }
+
     public OFBsnTlvCircuitId.Builder buildCircuitId() {
         throw new UnsupportedOperationException("OFBsnTlvCircuitId not supported in version 1.0");
     }

@@ -336,6 +336,7 @@ const of_object_init_f of_object_init_map[] = {
     (of_object_init_f)of_bsn_tlv_broadcast_query_timeout_init,
     (of_object_init_f)of_bsn_tlv_broadcast_rate_init,
     (of_object_init_f)of_bsn_tlv_bucket_init,
+    (of_object_init_f)of_bsn_tlv_ccf_feature_init,
     (of_object_init_f)of_bsn_tlv_circuit_id_init,
     (of_object_init_f)of_bsn_tlv_client_ll_addr_init,
     (of_object_init_f)of_bsn_tlv_convergence_status_init,

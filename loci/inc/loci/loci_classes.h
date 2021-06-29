@@ -897,6 +897,8 @@ void of_bsn_tlv_broadcast_rate_wire_object_id_get(of_object_t *obj, of_object_id
 void of_bsn_tlv_broadcast_rate_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_bucket_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_bucket_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_ccf_feature_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_ccf_feature_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_circuit_id_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_circuit_id_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_client_ll_addr_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -2018,6 +2020,7 @@ typedef of_object_t of_bsn_tlv_bfd_state_t;
 typedef of_object_t of_bsn_tlv_broadcast_query_timeout_t;
 typedef of_object_t of_bsn_tlv_broadcast_rate_t;
 typedef of_object_t of_bsn_tlv_bucket_t;
+typedef of_object_t of_bsn_tlv_ccf_feature_t;
 typedef of_object_t of_bsn_tlv_circuit_id_t;
 typedef of_object_t of_bsn_tlv_client_ll_addr_t;
 typedef of_object_t of_bsn_tlv_convergence_status_t;
@@ -4235,6 +4238,11 @@ extern void of_bsn_tlv_broadcast_rate_init(
 extern of_object_t *
     of_bsn_tlv_bucket_new(of_version_t version);
 extern void of_bsn_tlv_bucket_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_bsn_tlv_ccf_feature_new(of_version_t version);
+extern void of_bsn_tlv_ccf_feature_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
@@ -10680,6 +10688,17 @@ of_bsn_tlv_broadcast_rate_delete(of_object_t *obj) {
  */
 static inline void
 of_bsn_tlv_bucket_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_ccf_feature_t
+ * @param obj An instance of type of_bsn_tlv_ccf_feature_t
+ *
+ * \ingroup of_bsn_tlv_ccf_feature
+ */
+static inline void
+of_bsn_tlv_ccf_feature_delete(of_object_t *obj) {
     of_object_delete(obj);
 }
 
@@ -24921,6 +24940,15 @@ extern void of_bsn_tlv_bucket_value_bind(
     of_list_bsn_tlv_t *value);
 extern of_list_bsn_tlv_t *of_bsn_tlv_bucket_value_get(
     of_bsn_tlv_bucket_t *obj);
+
+/* Unified accessor functions for of_bsn_tlv_ccf_feature */
+
+extern void of_bsn_tlv_ccf_feature_value_set(
+    of_bsn_tlv_ccf_feature_t *obj,
+    uint16_t value);
+extern void of_bsn_tlv_ccf_feature_value_get(
+    of_bsn_tlv_ccf_feature_t *obj,
+    uint16_t *value);
 
 /* Unified accessor functions for of_bsn_tlv_circuit_id */
 
