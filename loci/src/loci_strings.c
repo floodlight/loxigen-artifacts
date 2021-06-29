@@ -333,6 +333,7 @@ const char *const of_object_id_str[] = {
     "of_bsn_tlv_broadcast_query_timeout",
     "of_bsn_tlv_broadcast_rate",
     "of_bsn_tlv_bucket",
+    "of_bsn_tlv_ccf_feature",
     "of_bsn_tlv_circuit_id",
     "of_bsn_tlv_client_ll_addr",
     "of_bsn_tlv_convergence_status",
