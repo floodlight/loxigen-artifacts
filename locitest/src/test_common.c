@@ -5929,6 +5929,24 @@ test_ident_macros(void)
     TEST_ASSERT(!OFP_BSN_LAG_TYPE_SPINE_SUPPORTED(OF_VERSION_1_2));
     TEST_ASSERT(OFP_BSN_LAG_TYPE_SPINE_SUPPORTED(OF_VERSION_1_3));
     TEST_ASSERT(OFP_BSN_LAG_TYPE_SPINE_SUPPORTED(OF_VERSION_1_4));
+    value = OFP_BSN_CCF_FEATURE_ADD_PEER_ON_EMPTY;
+    TEST_ASSERT(!OFP_BSN_CCF_FEATURE_ADD_PEER_ON_EMPTY_SUPPORTED(OF_VERSION_1_0));
+    TEST_ASSERT(!OFP_BSN_CCF_FEATURE_ADD_PEER_ON_EMPTY_SUPPORTED(OF_VERSION_1_1));
+    TEST_ASSERT(!OFP_BSN_CCF_FEATURE_ADD_PEER_ON_EMPTY_SUPPORTED(OF_VERSION_1_2));
+    TEST_ASSERT(OFP_BSN_CCF_FEATURE_ADD_PEER_ON_EMPTY_SUPPORTED(OF_VERSION_1_3));
+    TEST_ASSERT(OFP_BSN_CCF_FEATURE_ADD_PEER_ON_EMPTY_SUPPORTED(OF_VERSION_1_4));
+    value = OFP_BSN_CCF_FEATURE_DROP_DUPLICATE_L3CPU;
+    TEST_ASSERT(!OFP_BSN_CCF_FEATURE_DROP_DUPLICATE_L3CPU_SUPPORTED(OF_VERSION_1_0));
+    TEST_ASSERT(!OFP_BSN_CCF_FEATURE_DROP_DUPLICATE_L3CPU_SUPPORTED(OF_VERSION_1_1));
+    TEST_ASSERT(!OFP_BSN_CCF_FEATURE_DROP_DUPLICATE_L3CPU_SUPPORTED(OF_VERSION_1_2));
+    TEST_ASSERT(OFP_BSN_CCF_FEATURE_DROP_DUPLICATE_L3CPU_SUPPORTED(OF_VERSION_1_3));
+    TEST_ASSERT(OFP_BSN_CCF_FEATURE_DROP_DUPLICATE_L3CPU_SUPPORTED(OF_VERSION_1_4));
+    value = OFP_BSN_CCF_FEATURE_COUNT;
+    TEST_ASSERT(!OFP_BSN_CCF_FEATURE_COUNT_SUPPORTED(OF_VERSION_1_0));
+    TEST_ASSERT(!OFP_BSN_CCF_FEATURE_COUNT_SUPPORTED(OF_VERSION_1_1));
+    TEST_ASSERT(!OFP_BSN_CCF_FEATURE_COUNT_SUPPORTED(OF_VERSION_1_2));
+    TEST_ASSERT(OFP_BSN_CCF_FEATURE_COUNT_SUPPORTED(OF_VERSION_1_3));
+    TEST_ASSERT(OFP_BSN_CCF_FEATURE_COUNT_SUPPORTED(OF_VERSION_1_4));
     value = OFP_BSN_VLAN_ALL;
     TEST_ASSERT(!OFP_BSN_VLAN_ALL_SUPPORTED(OF_VERSION_1_0));
     TEST_ASSERT(!OFP_BSN_VLAN_ALL_SUPPORTED(OF_VERSION_1_1));
@@ -10385,6 +10403,10 @@ test_dump_objs(void)
     of_object_dump((loci_writer_f)fprintf, out, obj);
     of_object_delete(obj);
 
+    obj = (of_object_t *)of_bsn_tlv_ccf_feature_new(OF_VERSION_1_3);
+    of_object_dump((loci_writer_f)fprintf, out, obj);
+    of_object_delete(obj);
+
     obj = (of_object_t *)of_bsn_tlv_circuit_id_new(OF_VERSION_1_3);
     of_object_dump((loci_writer_f)fprintf, out, obj);
     of_object_delete(obj);
@@ -13283,6 +13305,10 @@ test_dump_objs(void)
     of_object_delete(obj);
 
     obj = (of_object_t *)of_bsn_tlv_bucket_new(OF_VERSION_1_4);
+    of_object_dump((loci_writer_f)fprintf, out, obj);
+    of_object_delete(obj);
+
+    obj = (of_object_t *)of_bsn_tlv_ccf_feature_new(OF_VERSION_1_4);
     of_object_dump((loci_writer_f)fprintf, out, obj);
     of_object_delete(obj);
 
