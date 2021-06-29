@@ -6659,6 +6659,17 @@ typedef struct of_bsn_tlv_broadcast_rate_s of_bsn_tlv_broadcast_rate_t;
 typedef struct of_bsn_tlv_bucket_s of_bsn_tlv_bucket_t;
 
 /**
+ * Structure for of_bsn_tlv_ccf_feature object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for value, a variable of type uint16.  Functions
+ *   are of type of_bsn_tlv_ccf_feature_uint16_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_ccf_feature_s of_bsn_tlv_ccf_feature_t;
+
+/**
  * Structure for of_bsn_tlv_circuit_id object.  Get/set
  * accessors available in all versions unless noted otherwise
  *

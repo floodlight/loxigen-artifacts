@@ -214,6 +214,15 @@ public class OFBsnTlvsVer14 implements OFBsnTlvs {
                     );
     }
 
+    public OFBsnTlvCcfFeature.Builder buildCcfFeature() {
+        return new OFBsnTlvCcfFeatureVer14.Builder();
+    }
+    public OFBsnTlvCcfFeature ccfFeature(OFBsnCcfFeature value) {
+        return new OFBsnTlvCcfFeatureVer14(
+                value
+                    );
+    }
+
     public OFBsnTlvCircuitId.Builder buildCircuitId() {
         return new OFBsnTlvCircuitIdVer14.Builder();
     }
