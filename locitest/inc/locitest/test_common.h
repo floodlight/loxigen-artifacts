@@ -6989,15 +6989,6 @@ extern int of_bsn_tlv_bucket_OF_VERSION_1_3_populate_scalars(
 extern int of_bsn_tlv_bucket_OF_VERSION_1_3_check_scalars(
     of_bsn_tlv_bucket_t *obj, int value);
 
-extern int of_bsn_tlv_ccf_feature_OF_VERSION_1_3_populate(
-    of_bsn_tlv_ccf_feature_t *obj, int value);
-extern int of_bsn_tlv_ccf_feature_OF_VERSION_1_3_check(
-    of_bsn_tlv_ccf_feature_t *obj, int value);
-extern int of_bsn_tlv_ccf_feature_OF_VERSION_1_3_populate_scalars(
-    of_bsn_tlv_ccf_feature_t *obj, int value);
-extern int of_bsn_tlv_ccf_feature_OF_VERSION_1_3_check_scalars(
-    of_bsn_tlv_ccf_feature_t *obj, int value);
-
 extern int of_bsn_tlv_circuit_id_OF_VERSION_1_3_populate(
     of_bsn_tlv_circuit_id_t *obj, int value);
 extern int of_bsn_tlv_circuit_id_OF_VERSION_1_3_check(
@@ -8509,6 +8500,15 @@ extern int of_bsn_tlv_sub_agent_id_OF_VERSION_1_3_populate_scalars(
     of_bsn_tlv_sub_agent_id_t *obj, int value);
 extern int of_bsn_tlv_sub_agent_id_OF_VERSION_1_3_check_scalars(
     of_bsn_tlv_sub_agent_id_t *obj, int value);
+
+extern int of_bsn_tlv_swl_feature_OF_VERSION_1_3_populate(
+    of_bsn_tlv_swl_feature_t *obj, int value);
+extern int of_bsn_tlv_swl_feature_OF_VERSION_1_3_check(
+    of_bsn_tlv_swl_feature_t *obj, int value);
+extern int of_bsn_tlv_swl_feature_OF_VERSION_1_3_populate_scalars(
+    of_bsn_tlv_swl_feature_t *obj, int value);
+extern int of_bsn_tlv_swl_feature_OF_VERSION_1_3_check_scalars(
+    of_bsn_tlv_swl_feature_t *obj, int value);
 
 extern int of_bsn_tlv_tcp_dst_OF_VERSION_1_3_populate(
     of_bsn_tlv_tcp_dst_t *obj, int value);
@@ -13919,15 +13919,6 @@ extern int of_bsn_tlv_bucket_OF_VERSION_1_4_populate_scalars(
 extern int of_bsn_tlv_bucket_OF_VERSION_1_4_check_scalars(
     of_bsn_tlv_bucket_t *obj, int value);
 
-extern int of_bsn_tlv_ccf_feature_OF_VERSION_1_4_populate(
-    of_bsn_tlv_ccf_feature_t *obj, int value);
-extern int of_bsn_tlv_ccf_feature_OF_VERSION_1_4_check(
-    of_bsn_tlv_ccf_feature_t *obj, int value);
-extern int of_bsn_tlv_ccf_feature_OF_VERSION_1_4_populate_scalars(
-    of_bsn_tlv_ccf_feature_t *obj, int value);
-extern int of_bsn_tlv_ccf_feature_OF_VERSION_1_4_check_scalars(
-    of_bsn_tlv_ccf_feature_t *obj, int value);
-
 extern int of_bsn_tlv_circuit_id_OF_VERSION_1_4_populate(
     of_bsn_tlv_circuit_id_t *obj, int value);
 extern int of_bsn_tlv_circuit_id_OF_VERSION_1_4_check(
@@ -15439,6 +15430,15 @@ extern int of_bsn_tlv_sub_agent_id_OF_VERSION_1_4_populate_scalars(
     of_bsn_tlv_sub_agent_id_t *obj, int value);
 extern int of_bsn_tlv_sub_agent_id_OF_VERSION_1_4_check_scalars(
     of_bsn_tlv_sub_agent_id_t *obj, int value);
+
+extern int of_bsn_tlv_swl_feature_OF_VERSION_1_4_populate(
+    of_bsn_tlv_swl_feature_t *obj, int value);
+extern int of_bsn_tlv_swl_feature_OF_VERSION_1_4_check(
+    of_bsn_tlv_swl_feature_t *obj, int value);
+extern int of_bsn_tlv_swl_feature_OF_VERSION_1_4_populate_scalars(
+    of_bsn_tlv_swl_feature_t *obj, int value);
+extern int of_bsn_tlv_swl_feature_OF_VERSION_1_4_check_scalars(
+    of_bsn_tlv_swl_feature_t *obj, int value);
 
 extern int of_bsn_tlv_tcp_dst_OF_VERSION_1_4_populate(
     of_bsn_tlv_tcp_dst_t *obj, int value);

@@ -109,9 +109,6 @@ abstract class OFBsnTlvVer13 {
                case (short) 0x40:
                    // discriminator value 0x40=0x40 for class OFBsnTlvBucketVer13
                    return OFBsnTlvBucketVer13.READER.readFrom(bb);
-               case (short) 0xe4:
-                   // discriminator value 0xe4=0xe4 for class OFBsnTlvCcfFeatureVer13
-                   return OFBsnTlvCcfFeatureVer13.READER.readFrom(bb);
                case (short) 0xe:
                    // discriminator value 0xe=0xe for class OFBsnTlvCircuitIdVer13
                    return OFBsnTlvCircuitIdVer13.READER.readFrom(bb);
@@ -616,6 +613,9 @@ abstract class OFBsnTlvVer13 {
                case (short) 0x26:
                    // discriminator value 0x26=0x26 for class OFBsnTlvSubAgentIdVer13
                    return OFBsnTlvSubAgentIdVer13.READER.readFrom(bb);
+               case (short) 0xe4:
+                   // discriminator value 0xe4=0xe4 for class OFBsnTlvSwlFeatureVer13
+                   return OFBsnTlvSwlFeatureVer13.READER.readFrom(bb);
                case (short) 0x42:
                    // discriminator value 0x42=0x42 for class OFBsnTlvTcpDstVer13
                    return OFBsnTlvTcpDstVer13.READER.readFrom(bb);

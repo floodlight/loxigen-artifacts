@@ -71,8 +71,6 @@ public interface OFBsnTlvs {
     OFBsnTlvBroadcastRate broadcastRate(long value);
     OFBsnTlvBucket.Builder buildBucket() throws UnsupportedOperationException;
     OFBsnTlvBucket bucket(List<OFBsnTlv> value);
-    OFBsnTlvCcfFeature.Builder buildCcfFeature() throws UnsupportedOperationException;
-    OFBsnTlvCcfFeature ccfFeature(OFBsnCcfFeature value);
     OFBsnTlvCircuitId.Builder buildCircuitId() throws UnsupportedOperationException;
     OFBsnTlvCircuitId circuitId(byte[] value);
     OFBsnTlvClientLlAddr clientLlAddr();
@@ -368,6 +366,8 @@ public interface OFBsnTlvs {
     OFBsnTlvStripVlanOnEgress stripVlanOnEgress(Set<OFBsnStripVlan> flags);
     OFBsnTlvSubAgentId.Builder buildSubAgentId() throws UnsupportedOperationException;
     OFBsnTlvSubAgentId subAgentId(long value);
+    OFBsnTlvSwlFeature.Builder buildSwlFeature() throws UnsupportedOperationException;
+    OFBsnTlvSwlFeature swlFeature(OFBsnSwlFeature value);
     OFBsnTlvTcpDst.Builder buildTcpDst() throws UnsupportedOperationException;
     OFBsnTlvTcpDst tcpDst(int value);
     OFBsnTlvTcpFlags.Builder buildTcpFlags() throws UnsupportedOperationException;

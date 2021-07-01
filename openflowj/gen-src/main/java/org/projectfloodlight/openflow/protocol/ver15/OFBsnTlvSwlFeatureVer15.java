@@ -32,21 +32,21 @@ import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
-class OFBsnTlvCcfFeatureVer15 implements OFBsnTlvCcfFeature {
-    private static final Logger logger = LoggerFactory.getLogger(OFBsnTlvCcfFeatureVer15.class);
+class OFBsnTlvSwlFeatureVer15 implements OFBsnTlvSwlFeature {
+    private static final Logger logger = LoggerFactory.getLogger(OFBsnTlvSwlFeatureVer15.class);
     // version: 1.5
     final static byte WIRE_VERSION = 6;
     final static int LENGTH = 6;
 
 
     // OF message fields
-    private final OFBsnCcfFeature value;
+    private final OFBsnSwlFeature value;
 //
 
     // package private constructor - used by readers, builders, and factory
-    OFBsnTlvCcfFeatureVer15(OFBsnCcfFeature value) {
+    OFBsnTlvSwlFeatureVer15(OFBsnSwlFeature value) {
         if(value == null) {
-            throw new NullPointerException("OFBsnTlvCcfFeatureVer15: property value cannot be null");
+            throw new NullPointerException("OFBsnTlvSwlFeatureVer15: property value cannot be null");
         }
         this.value = value;
     }
@@ -58,7 +58,7 @@ class OFBsnTlvCcfFeatureVer15 implements OFBsnTlvCcfFeature {
     }
 
     @Override
-    public OFBsnCcfFeature getValue() {
+    public OFBsnSwlFeature getValue() {
         return value;
     }
 
@@ -69,18 +69,18 @@ class OFBsnTlvCcfFeatureVer15 implements OFBsnTlvCcfFeature {
 
 
 
-    public OFBsnTlvCcfFeature.Builder createBuilder() {
+    public OFBsnTlvSwlFeature.Builder createBuilder() {
         return new BuilderWithParent(this);
     }
 
-    static class BuilderWithParent implements OFBsnTlvCcfFeature.Builder {
-        final OFBsnTlvCcfFeatureVer15 parentMessage;
+    static class BuilderWithParent implements OFBsnTlvSwlFeature.Builder {
+        final OFBsnTlvSwlFeatureVer15 parentMessage;
 
         // OF message fields
         private boolean valueSet;
-        private OFBsnCcfFeature value;
+        private OFBsnSwlFeature value;
 
-        BuilderWithParent(OFBsnTlvCcfFeatureVer15 parentMessage) {
+        BuilderWithParent(OFBsnTlvSwlFeatureVer15 parentMessage) {
             this.parentMessage = parentMessage;
         }
 
@@ -90,12 +90,12 @@ class OFBsnTlvCcfFeatureVer15 implements OFBsnTlvCcfFeature {
     }
 
     @Override
-    public OFBsnCcfFeature getValue() {
+    public OFBsnSwlFeature getValue() {
         return value;
     }
 
     @Override
-    public OFBsnTlvCcfFeature.Builder setValue(OFBsnCcfFeature value) {
+    public OFBsnTlvSwlFeature.Builder setValue(OFBsnSwlFeature value) {
         this.value = value;
         this.valueSet = true;
         return this;
@@ -108,23 +108,23 @@ class OFBsnTlvCcfFeatureVer15 implements OFBsnTlvCcfFeature {
 
 
         @Override
-        public OFBsnTlvCcfFeature build() {
-                OFBsnCcfFeature value = this.valueSet ? this.value : parentMessage.value;
+        public OFBsnTlvSwlFeature build() {
+                OFBsnSwlFeature value = this.valueSet ? this.value : parentMessage.value;
                 if(value == null)
                     throw new NullPointerException("Property value must not be null");
 
                 //
-                return new OFBsnTlvCcfFeatureVer15(
+                return new OFBsnTlvSwlFeatureVer15(
                     value
                 );
         }
 
     }
 
-    static class Builder implements OFBsnTlvCcfFeature.Builder {
+    static class Builder implements OFBsnTlvSwlFeature.Builder {
         // OF message fields
         private boolean valueSet;
-        private OFBsnCcfFeature value;
+        private OFBsnSwlFeature value;
 
     @Override
     public int getType() {
@@ -132,12 +132,12 @@ class OFBsnTlvCcfFeatureVer15 implements OFBsnTlvCcfFeature {
     }
 
     @Override
-    public OFBsnCcfFeature getValue() {
+    public OFBsnSwlFeature getValue() {
         return value;
     }
 
     @Override
-    public OFBsnTlvCcfFeature.Builder setValue(OFBsnCcfFeature value) {
+    public OFBsnTlvSwlFeature.Builder setValue(OFBsnSwlFeature value) {
         this.value = value;
         this.valueSet = true;
         return this;
@@ -149,14 +149,14 @@ class OFBsnTlvCcfFeatureVer15 implements OFBsnTlvCcfFeature {
 
 //
         @Override
-        public OFBsnTlvCcfFeature build() {
+        public OFBsnTlvSwlFeature build() {
             if(!this.valueSet)
                 throw new IllegalStateException("Property value doesn't have default value -- must be set");
             if(value == null)
                 throw new NullPointerException("Property value must not be null");
 
 
-            return new OFBsnTlvCcfFeatureVer15(
+            return new OFBsnTlvSwlFeatureVer15(
                     value
                 );
         }
@@ -165,9 +165,9 @@ class OFBsnTlvCcfFeatureVer15 implements OFBsnTlvCcfFeature {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFBsnTlvCcfFeature> {
+    static class Reader implements OFMessageReader<OFBsnTlvSwlFeature> {
         @Override
-        public OFBsnTlvCcfFeature readFrom(ByteBuf bb) throws OFParseError {
+        public OFBsnTlvSwlFeature readFrom(ByteBuf bb) throws OFParseError {
             int start = bb.readerIndex();
             // fixed value property type == 0xe4
             short type = bb.readShort();
@@ -183,14 +183,14 @@ class OFBsnTlvCcfFeatureVer15 implements OFBsnTlvCcfFeature {
             }
             if(logger.isTraceEnabled())
                 logger.trace("readFrom - length={}", length);
-            OFBsnCcfFeature value = OFBsnCcfFeatureSerializerVer15.readFrom(bb);
+            OFBsnSwlFeature value = OFBsnSwlFeatureSerializerVer15.readFrom(bb);
 
-            OFBsnTlvCcfFeatureVer15 bsnTlvCcfFeatureVer15 = new OFBsnTlvCcfFeatureVer15(
+            OFBsnTlvSwlFeatureVer15 bsnTlvSwlFeatureVer15 = new OFBsnTlvSwlFeatureVer15(
                     value
                     );
             if(logger.isTraceEnabled())
-                logger.trace("readFrom - read={}", bsnTlvCcfFeatureVer15);
-            return bsnTlvCcfFeatureVer15;
+                logger.trace("readFrom - read={}", bsnTlvSwlFeatureVer15);
+            return bsnTlvSwlFeatureVer15;
         }
     }
 
@@ -198,16 +198,16 @@ class OFBsnTlvCcfFeatureVer15 implements OFBsnTlvCcfFeature {
         FUNNEL.funnel(this, sink);
     }
 
-    final static OFBsnTlvCcfFeatureVer15Funnel FUNNEL = new OFBsnTlvCcfFeatureVer15Funnel();
-    static class OFBsnTlvCcfFeatureVer15Funnel implements Funnel<OFBsnTlvCcfFeatureVer15> {
+    final static OFBsnTlvSwlFeatureVer15Funnel FUNNEL = new OFBsnTlvSwlFeatureVer15Funnel();
+    static class OFBsnTlvSwlFeatureVer15Funnel implements Funnel<OFBsnTlvSwlFeatureVer15> {
         private static final long serialVersionUID = 1L;
         @Override
-        public void funnel(OFBsnTlvCcfFeatureVer15 message, PrimitiveSink sink) {
+        public void funnel(OFBsnTlvSwlFeatureVer15 message, PrimitiveSink sink) {
             // fixed value property type = 0xe4
             sink.putShort((short) 0xe4);
             // fixed value property length = 6
             sink.putShort((short) 0x6);
-            OFBsnCcfFeatureSerializerVer15.putTo(message.value, sink);
+            OFBsnSwlFeatureSerializerVer15.putTo(message.value, sink);
         }
     }
 
@@ -217,14 +217,14 @@ class OFBsnTlvCcfFeatureVer15 implements OFBsnTlvCcfFeature {
     }
 
     final static Writer WRITER = new Writer();
-    static class Writer implements OFMessageWriter<OFBsnTlvCcfFeatureVer15> {
+    static class Writer implements OFMessageWriter<OFBsnTlvSwlFeatureVer15> {
         @Override
-        public void write(ByteBuf bb, OFBsnTlvCcfFeatureVer15 message) {
+        public void write(ByteBuf bb, OFBsnTlvSwlFeatureVer15 message) {
             // fixed value property type = 0xe4
             bb.writeShort((short) 0xe4);
             // fixed value property length = 6
             bb.writeShort((short) 0x6);
-            OFBsnCcfFeatureSerializerVer15.writeTo(bb, message.value);
+            OFBsnSwlFeatureSerializerVer15.writeTo(bb, message.value);
 
 
         }
@@ -232,7 +232,7 @@ class OFBsnTlvCcfFeatureVer15 implements OFBsnTlvCcfFeature {
 
     @Override
     public String toString() {
-        StringBuilder b = new StringBuilder("OFBsnTlvCcfFeatureVer15(");
+        StringBuilder b = new StringBuilder("OFBsnTlvSwlFeatureVer15(");
         b.append("value=").append(value);
         b.append(")");
         return b.toString();
@@ -246,7 +246,7 @@ class OFBsnTlvCcfFeatureVer15 implements OFBsnTlvCcfFeature {
             return false;
         if (getClass() != obj.getClass())
             return false;
-        OFBsnTlvCcfFeatureVer15 other = (OFBsnTlvCcfFeatureVer15) obj;
+        OFBsnTlvSwlFeatureVer15 other = (OFBsnTlvSwlFeatureVer15) obj;
 
         if (value == null) {
             if (other.value != null)

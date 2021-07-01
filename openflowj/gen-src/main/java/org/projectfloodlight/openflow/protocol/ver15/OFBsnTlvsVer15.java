@@ -214,15 +214,6 @@ public class OFBsnTlvsVer15 implements OFBsnTlvs {
                     );
     }
 
-    public OFBsnTlvCcfFeature.Builder buildCcfFeature() {
-        return new OFBsnTlvCcfFeatureVer15.Builder();
-    }
-    public OFBsnTlvCcfFeature ccfFeature(OFBsnCcfFeature value) {
-        return new OFBsnTlvCcfFeatureVer15(
-                value
-                    );
-    }
-
     public OFBsnTlvCircuitId.Builder buildCircuitId() {
         return new OFBsnTlvCircuitIdVer15.Builder();
     }
@@ -1530,6 +1521,15 @@ public class OFBsnTlvsVer15 implements OFBsnTlvs {
     }
     public OFBsnTlvSubAgentId subAgentId(long value) {
         return new OFBsnTlvSubAgentIdVer15(
+                value
+                    );
+    }
+
+    public OFBsnTlvSwlFeature.Builder buildSwlFeature() {
+        return new OFBsnTlvSwlFeatureVer15.Builder();
+    }
+    public OFBsnTlvSwlFeature swlFeature(OFBsnSwlFeature value) {
+        return new OFBsnTlvSwlFeatureVer15(
                 value
                     );
     }
