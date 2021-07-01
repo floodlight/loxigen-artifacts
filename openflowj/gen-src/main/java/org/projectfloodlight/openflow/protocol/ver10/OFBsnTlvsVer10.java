@@ -176,13 +176,6 @@ public class OFBsnTlvsVer10 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvBucket not supported in version 1.0");
     }
 
-    public OFBsnTlvCcfFeature.Builder buildCcfFeature() {
-        throw new UnsupportedOperationException("OFBsnTlvCcfFeature not supported in version 1.0");
-    }
-    public OFBsnTlvCcfFeature ccfFeature(OFBsnCcfFeature value) {
-        throw new UnsupportedOperationException("OFBsnTlvCcfFeature not supported in version 1.0");
-    }
-
     public OFBsnTlvCircuitId.Builder buildCircuitId() {
         throw new UnsupportedOperationException("OFBsnTlvCircuitId not supported in version 1.0");
     }
@@ -1234,6 +1227,13 @@ public class OFBsnTlvsVer10 implements OFBsnTlvs {
     }
     public OFBsnTlvSubAgentId subAgentId(long value) {
         throw new UnsupportedOperationException("OFBsnTlvSubAgentId not supported in version 1.0");
+    }
+
+    public OFBsnTlvSwlFeature.Builder buildSwlFeature() {
+        throw new UnsupportedOperationException("OFBsnTlvSwlFeature not supported in version 1.0");
+    }
+    public OFBsnTlvSwlFeature swlFeature(OFBsnSwlFeature value) {
+        throw new UnsupportedOperationException("OFBsnTlvSwlFeature not supported in version 1.0");
     }
 
     public OFBsnTlvTcpDst.Builder buildTcpDst() {

@@ -490,17 +490,6 @@ ofp_bsn_bfd_endpoint_state_map = {
     6: 'OFP_BSN_BFD_ENDPOINT_PARAMS_CHANGE',
 }
 
-# Identifiers from group ofp_bsn_ccf_feature
-OFP_BSN_CCF_FEATURE_ALLOW_PEER_TO_EDGE_UNICAST = 0
-OFP_BSN_CCF_FEATURE_DROP_DUPLICATE_L3CPU = 1
-OFP_BSN_CCF_FEATURE_COUNT = 2
-
-ofp_bsn_ccf_feature_map = {
-    0: 'OFP_BSN_CCF_FEATURE_ALLOW_PEER_TO_EDGE_UNICAST',
-    1: 'OFP_BSN_CCF_FEATURE_DROP_DUPLICATE_L3CPU',
-    2: 'OFP_BSN_CCF_FEATURE_COUNT',
-}
-
 # Identifiers from group ofp_bsn_cml
 OFP_BSN_CML_NONE = 0
 OFP_BSN_CML_CPU_DROP = 1
@@ -1180,6 +1169,17 @@ ofp_bsn_strip_vlan_map = {
     1: 'OFP_BSN_STRIP_VLAN_FIRST',
     2: 'OFP_BSN_STRIP_VLAN_SECOND',
     4: 'OFP_BSN_STRIP_VLAN_THIRD',
+}
+
+# Identifiers from group ofp_bsn_swl_feature
+OFP_BSN_SWL_FEATURE_ALLOW_PEER_TO_EDGE_UNICAST = 0
+OFP_BSN_SWL_FEATURE_DROP_DUPLICATE_L3CPU = 1
+OFP_BSN_SWL_FEATURE_COUNT = 2
+
+ofp_bsn_swl_feature_map = {
+    0: 'OFP_BSN_SWL_FEATURE_ALLOW_PEER_TO_EDGE_UNICAST',
+    1: 'OFP_BSN_SWL_FEATURE_DROP_DUPLICATE_L3CPU',
+    2: 'OFP_BSN_SWL_FEATURE_COUNT',
 }
 
 # Identifiers from group ofp_bsn_tcp_flag

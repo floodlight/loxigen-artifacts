@@ -27,19 +27,19 @@ import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 import io.netty.buffer.ByteBuf;
 
-public interface OFBsnTlvCcfFeature extends OFObject, OFBsnTlv {
+public interface OFBsnTlvSwlFeature extends OFObject, OFBsnTlv {
     int getType();
-    OFBsnCcfFeature getValue();
+    OFBsnSwlFeature getValue();
     OFVersion getVersion();
 
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();
     public interface Builder extends OFBsnTlv.Builder {
-        OFBsnTlvCcfFeature build();
+        OFBsnTlvSwlFeature build();
         int getType();
-        OFBsnCcfFeature getValue();
-        Builder setValue(OFBsnCcfFeature value);
+        OFBsnSwlFeature getValue();
+        Builder setValue(OFBsnSwlFeature value);
         OFVersion getVersion();
     }
 }

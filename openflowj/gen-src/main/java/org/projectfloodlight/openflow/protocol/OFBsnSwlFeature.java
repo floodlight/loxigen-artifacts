@@ -26,8 +26,8 @@ import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 
-public enum OFBsnCcfFeature {
-     BSN_CCF_FEATURE_ALLOW_PEER_TO_EDGE_UNICAST,
-     BSN_CCF_FEATURE_DROP_DUPLICATE_L3CPU,
-     BSN_CCF_FEATURE_COUNT;
+public enum OFBsnSwlFeature {
+     BSN_SWL_FEATURE_ALLOW_PEER_TO_EDGE_UNICAST,
+     BSN_SWL_FEATURE_DROP_DUPLICATE_L3CPU,
+     BSN_SWL_FEATURE_COUNT;
 }

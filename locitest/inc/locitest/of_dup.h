@@ -1311,10 +1311,6 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_bsn_tlv_ccf_feature_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_bsn_tlv_circuit_id_dup(
         of_object_t *src);
 
@@ -1984,6 +1980,10 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_tlv_sub_agent_id_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_swl_feature_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -6767,10 +6767,6 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_bsn_tlv_ccf_feature_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_bsn_tlv_circuit_id_OF_VERSION_1_3_dup(
         of_object_t *src);
 
@@ -7440,6 +7436,10 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_tlv_sub_agent_id_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_swl_feature_OF_VERSION_1_3_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -9899,10 +9899,6 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_bsn_tlv_ccf_feature_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_bsn_tlv_circuit_id_OF_VERSION_1_4_dup(
         of_object_t *src);
 
@@ -10572,6 +10568,10 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_tlv_sub_agent_id_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_swl_feature_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *
