@@ -37,8 +37,9 @@ public class OFBsnMiscCapabilitiesSerializerVer14 {
 
     public final static long BSN_MISC_CAP_FEC_VAL = 0x1L;
     public final static long BSN_MISC_CAP_FEC_FIRE_CODE_VAL = 0x2L;
-    public final static long BSN_MISC_CAP_FEC_REED_SOLOMAN_VAL = 0x4L;
-    public final static long BSN_MISC_CAP_FEC_REED_SOLOMAN544_VAL = 0x8L;
+    public final static long BSN_MISC_CAP_FEC_REED_SOLOMON_VAL = 0x4L;
+    public final static long BSN_MISC_CAP_FEC_REED_SOLOMON544_VAL = 0x8L;
+    public final static long BSN_MISC_CAP_FEC_DISABLE_VAL = 0x10L;
 
     public static Set<OFBsnMiscCapabilities> readFrom(ByteBuf bb) throws OFParseError {
         try {
@@ -64,10 +65,12 @@ public class OFBsnMiscCapabilitiesSerializerVer14 {
             set.add(OFBsnMiscCapabilities.BSN_MISC_CAP_FEC);
         if((val & BSN_MISC_CAP_FEC_FIRE_CODE_VAL) != 0)
             set.add(OFBsnMiscCapabilities.BSN_MISC_CAP_FEC_FIRE_CODE);
-        if((val & BSN_MISC_CAP_FEC_REED_SOLOMAN_VAL) != 0)
-            set.add(OFBsnMiscCapabilities.BSN_MISC_CAP_FEC_REED_SOLOMAN);
-        if((val & BSN_MISC_CAP_FEC_REED_SOLOMAN544_VAL) != 0)
-            set.add(OFBsnMiscCapabilities.BSN_MISC_CAP_FEC_REED_SOLOMAN544);
+        if((val & BSN_MISC_CAP_FEC_REED_SOLOMON_VAL) != 0)
+            set.add(OFBsnMiscCapabilities.BSN_MISC_CAP_FEC_REED_SOLOMON);
+        if((val & BSN_MISC_CAP_FEC_REED_SOLOMON544_VAL) != 0)
+            set.add(OFBsnMiscCapabilities.BSN_MISC_CAP_FEC_REED_SOLOMON544);
+        if((val & BSN_MISC_CAP_FEC_DISABLE_VAL) != 0)
+            set.add(OFBsnMiscCapabilities.BSN_MISC_CAP_FEC_DISABLE);
         return Collections.unmodifiableSet(set);
     }
 
@@ -82,11 +85,14 @@ public class OFBsnMiscCapabilitiesSerializerVer14 {
                 case BSN_MISC_CAP_FEC_FIRE_CODE:
                     wireValue |= BSN_MISC_CAP_FEC_FIRE_CODE_VAL;
                     break;
-                case BSN_MISC_CAP_FEC_REED_SOLOMAN:
-                    wireValue |= BSN_MISC_CAP_FEC_REED_SOLOMAN_VAL;
+                case BSN_MISC_CAP_FEC_REED_SOLOMON:
+                    wireValue |= BSN_MISC_CAP_FEC_REED_SOLOMON_VAL;
                     break;
-                case BSN_MISC_CAP_FEC_REED_SOLOMAN544:
-                    wireValue |= BSN_MISC_CAP_FEC_REED_SOLOMAN544_VAL;
+                case BSN_MISC_CAP_FEC_REED_SOLOMON544:
+                    wireValue |= BSN_MISC_CAP_FEC_REED_SOLOMON544_VAL;
+                    break;
+                case BSN_MISC_CAP_FEC_DISABLE:
+                    wireValue |= BSN_MISC_CAP_FEC_DISABLE_VAL;
                     break;
                 default:
                     throw new IllegalArgumentException("Illegal enum value for type OFBsnMiscCapabilities in version 1.4: " + e);
