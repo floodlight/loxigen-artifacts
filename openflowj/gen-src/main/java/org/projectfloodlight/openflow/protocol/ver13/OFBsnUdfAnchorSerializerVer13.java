@@ -37,6 +37,7 @@ public class OFBsnUdfAnchorSerializerVer13 {
     public final static short BSN_UDF_ANCHOR_TD3_L2_START_VAL = (short) 0x3;
     public final static short BSN_UDF_ANCHOR_TD3_L3_IPV4_START_WITHOUT_OPTIONS_VAL = (short) 0x4;
     public final static short BSN_UDF_ANCHOR_TD3_L3_IPV6_START_VAL = (short) 0x5;
+    public final static short BSN_UDF_ANCHOR_TD3_UDP_UNKNOWN_L5_START_VAL = (short) 0x6;
 
     public static OFBsnUdfAnchor readFrom(ByteBuf bb) throws OFParseError {
         try {
@@ -68,6 +69,8 @@ public class OFBsnUdfAnchorSerializerVer13 {
                 return OFBsnUdfAnchor.BSN_UDF_ANCHOR_TD3_L3_IPV4_START_WITHOUT_OPTIONS;
             case BSN_UDF_ANCHOR_TD3_L3_IPV6_START_VAL:
                 return OFBsnUdfAnchor.BSN_UDF_ANCHOR_TD3_L3_IPV6_START;
+            case BSN_UDF_ANCHOR_TD3_UDP_UNKNOWN_L5_START_VAL:
+                return OFBsnUdfAnchor.BSN_UDF_ANCHOR_TD3_UDP_UNKNOWN_L5_START;
             default:
                 throw new IllegalArgumentException("Illegal wire value for type OFBsnUdfAnchor in version 1.3: " + val);
         }
@@ -88,6 +91,8 @@ public class OFBsnUdfAnchorSerializerVer13 {
                 return BSN_UDF_ANCHOR_TD3_L3_IPV4_START_WITHOUT_OPTIONS_VAL;
             case BSN_UDF_ANCHOR_TD3_L3_IPV6_START:
                 return BSN_UDF_ANCHOR_TD3_L3_IPV6_START_VAL;
+            case BSN_UDF_ANCHOR_TD3_UDP_UNKNOWN_L5_START:
+                return BSN_UDF_ANCHOR_TD3_UDP_UNKNOWN_L5_START_VAL;
             default:
                 throw new IllegalArgumentException("Illegal enum value for type OFBsnUdfAnchor in version 1.3: " + e);
         }

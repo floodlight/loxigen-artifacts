@@ -9266,7 +9266,7 @@ class udf_anchor(bsn_tlv):
             with q.indent(2):
                 q.breakable()
                 q.text("value = ");
-                value_name_map = {0: 'OFP_BSN_UDF_ANCHOR_PACKET_START', 1: 'OFP_BSN_UDF_ANCHOR_L3_HEADER_START', 2: 'OFP_BSN_UDF_ANCHOR_L4_HEADER_START', 3: 'OFP_BSN_UDF_ANCHOR_TD3_L2_START', 4: 'OFP_BSN_UDF_ANCHOR_TD3_L3_IPV4_START_WITHOUT_OPTIONS', 5: 'OFP_BSN_UDF_ANCHOR_TD3_L3_IPV6_START'}
+                value_name_map = {0: 'OFP_BSN_UDF_ANCHOR_PACKET_START', 1: 'OFP_BSN_UDF_ANCHOR_L3_HEADER_START', 2: 'OFP_BSN_UDF_ANCHOR_L4_HEADER_START', 3: 'OFP_BSN_UDF_ANCHOR_TD3_L2_START', 4: 'OFP_BSN_UDF_ANCHOR_TD3_L3_IPV4_START_WITHOUT_OPTIONS', 5: 'OFP_BSN_UDF_ANCHOR_TD3_L3_IPV6_START', 6: 'OFP_BSN_UDF_ANCHOR_TD3_UDP_UNKNOWN_L5_START'}
                 if self.value in value_name_map:
                     q.text("%s(%d)" % (value_name_map[self.value], self.value))
                 else:
