@@ -686,11 +686,13 @@ ofp_bsn_multicast_packet_map = {
 OFP_BSN_PACKET_FIELD_UNKNOWN = 0
 OFP_BSN_PACKET_FIELD_OUTER_VLAN_TAG_1 = 1
 OFP_BSN_PACKET_FIELD_OUTER_VLAN_TAG_2 = 2
+OFP_BSN_PACKET_FIELD_SRC_MAC = 3
 
 ofp_bsn_packet_field_map = {
     0: 'OFP_BSN_PACKET_FIELD_UNKNOWN',
     1: 'OFP_BSN_PACKET_FIELD_OUTER_VLAN_TAG_1',
     2: 'OFP_BSN_PACKET_FIELD_OUTER_VLAN_TAG_2',
+    3: 'OFP_BSN_PACKET_FIELD_SRC_MAC',
 }
 
 # Identifiers from group ofp_bsn_pktin_flag

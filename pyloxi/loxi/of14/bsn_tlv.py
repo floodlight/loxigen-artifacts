@@ -6541,7 +6541,7 @@ class packet_field(bsn_tlv):
             with q.indent(2):
                 q.breakable()
                 q.text("value = ");
-                value_name_map = {0: 'OFP_BSN_PACKET_FIELD_UNKNOWN', 1: 'OFP_BSN_PACKET_FIELD_OUTER_VLAN_TAG_1', 2: 'OFP_BSN_PACKET_FIELD_OUTER_VLAN_TAG_2'}
+                value_name_map = {0: 'OFP_BSN_PACKET_FIELD_UNKNOWN', 1: 'OFP_BSN_PACKET_FIELD_OUTER_VLAN_TAG_1', 2: 'OFP_BSN_PACKET_FIELD_OUTER_VLAN_TAG_2', 3: 'OFP_BSN_PACKET_FIELD_SRC_MAC'}
                 if self.value in value_name_map:
                     q.text("%s(%d)" % (value_name_map[self.value], self.value))
                 else:

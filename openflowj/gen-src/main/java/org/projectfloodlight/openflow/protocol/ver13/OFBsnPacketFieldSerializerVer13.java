@@ -34,6 +34,7 @@ public class OFBsnPacketFieldSerializerVer13 {
     public final static short BSN_PACKET_FIELD_UNKNOWN_VAL = (short) 0x0;
     public final static short BSN_PACKET_FIELD_OUTER_VLAN_TAG_1_VAL = (short) 0x1;
     public final static short BSN_PACKET_FIELD_OUTER_VLAN_TAG_2_VAL = (short) 0x2;
+    public final static short BSN_PACKET_FIELD_SRC_MAC_VAL = (short) 0x3;
 
     public static OFBsnPacketField readFrom(ByteBuf bb) throws OFParseError {
         try {
@@ -59,6 +60,8 @@ public class OFBsnPacketFieldSerializerVer13 {
                 return OFBsnPacketField.BSN_PACKET_FIELD_OUTER_VLAN_TAG_1;
             case BSN_PACKET_FIELD_OUTER_VLAN_TAG_2_VAL:
                 return OFBsnPacketField.BSN_PACKET_FIELD_OUTER_VLAN_TAG_2;
+            case BSN_PACKET_FIELD_SRC_MAC_VAL:
+                return OFBsnPacketField.BSN_PACKET_FIELD_SRC_MAC;
             default:
                 throw new IllegalArgumentException("Illegal wire value for type OFBsnPacketField in version 1.3: " + val);
         }
@@ -73,6 +76,8 @@ public class OFBsnPacketFieldSerializerVer13 {
                 return BSN_PACKET_FIELD_OUTER_VLAN_TAG_1_VAL;
             case BSN_PACKET_FIELD_OUTER_VLAN_TAG_2:
                 return BSN_PACKET_FIELD_OUTER_VLAN_TAG_2_VAL;
+            case BSN_PACKET_FIELD_SRC_MAC:
+                return BSN_PACKET_FIELD_SRC_MAC_VAL;
             default:
                 throw new IllegalArgumentException("Illegal enum value for type OFBsnPacketField in version 1.3: " + e);
         }

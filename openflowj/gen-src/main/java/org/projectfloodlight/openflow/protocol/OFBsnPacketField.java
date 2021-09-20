@@ -29,5 +29,6 @@ import org.projectfloodlight.openflow.exceptions.*;
 public enum OFBsnPacketField {
      BSN_PACKET_FIELD_UNKNOWN,
      BSN_PACKET_FIELD_OUTER_VLAN_TAG_1,
-     BSN_PACKET_FIELD_OUTER_VLAN_TAG_2;
+     BSN_PACKET_FIELD_OUTER_VLAN_TAG_2,
+     BSN_PACKET_FIELD_SRC_MAC;
 }
