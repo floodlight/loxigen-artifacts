@@ -3261,6 +3261,18 @@ struct loci_class_metadata loci_class_metadata[OF_OBJECT_COUNT] = {
         .wire_type_get=of_bsn_tlv_wire_object_id_get,
         .wire_type_set=of_bsn_tlv_max_count_push_wire_types,
     },
+    [OF_BSN_TLV_MAX_MULTICAST_REPLICATION_GROUPS] = {
+        .wire_length_get=of_tlv16_wire_length_get,
+        .wire_length_set=of_tlv16_wire_length_set,
+        .wire_type_get=of_bsn_tlv_wire_object_id_get,
+        .wire_type_set=of_bsn_tlv_max_multicast_replication_groups_push_wire_types,
+    },
+    [OF_BSN_TLV_MAX_MULTICAST_REPLICATIONS] = {
+        .wire_length_get=of_tlv16_wire_length_get,
+        .wire_length_set=of_tlv16_wire_length_set,
+        .wire_type_get=of_bsn_tlv_wire_object_id_get,
+        .wire_type_set=of_bsn_tlv_max_multicast_replications_push_wire_types,
+    },
     [OF_BSN_TLV_MCG_TYPE_VXLAN] = {
         .wire_length_get=of_tlv16_wire_length_get,
         .wire_length_set=of_tlv16_wire_length_set,

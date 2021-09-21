@@ -7844,6 +7844,24 @@ extern int of_bsn_tlv_max_count_OF_VERSION_1_3_populate_scalars(
 extern int of_bsn_tlv_max_count_OF_VERSION_1_3_check_scalars(
     of_bsn_tlv_max_count_t *obj, int value);
 
+extern int of_bsn_tlv_max_multicast_replication_groups_OF_VERSION_1_3_populate(
+    of_bsn_tlv_max_multicast_replication_groups_t *obj, int value);
+extern int of_bsn_tlv_max_multicast_replication_groups_OF_VERSION_1_3_check(
+    of_bsn_tlv_max_multicast_replication_groups_t *obj, int value);
+extern int of_bsn_tlv_max_multicast_replication_groups_OF_VERSION_1_3_populate_scalars(
+    of_bsn_tlv_max_multicast_replication_groups_t *obj, int value);
+extern int of_bsn_tlv_max_multicast_replication_groups_OF_VERSION_1_3_check_scalars(
+    of_bsn_tlv_max_multicast_replication_groups_t *obj, int value);
+
+extern int of_bsn_tlv_max_multicast_replications_OF_VERSION_1_3_populate(
+    of_bsn_tlv_max_multicast_replications_t *obj, int value);
+extern int of_bsn_tlv_max_multicast_replications_OF_VERSION_1_3_check(
+    of_bsn_tlv_max_multicast_replications_t *obj, int value);
+extern int of_bsn_tlv_max_multicast_replications_OF_VERSION_1_3_populate_scalars(
+    of_bsn_tlv_max_multicast_replications_t *obj, int value);
+extern int of_bsn_tlv_max_multicast_replications_OF_VERSION_1_3_check_scalars(
+    of_bsn_tlv_max_multicast_replications_t *obj, int value);
+
 extern int of_bsn_tlv_mcg_type_vxlan_OF_VERSION_1_3_populate(
     of_bsn_tlv_mcg_type_vxlan_t *obj, int value);
 extern int of_bsn_tlv_mcg_type_vxlan_OF_VERSION_1_3_check(
@@ -14773,6 +14791,24 @@ extern int of_bsn_tlv_max_count_OF_VERSION_1_4_populate_scalars(
     of_bsn_tlv_max_count_t *obj, int value);
 extern int of_bsn_tlv_max_count_OF_VERSION_1_4_check_scalars(
     of_bsn_tlv_max_count_t *obj, int value);
+
+extern int of_bsn_tlv_max_multicast_replication_groups_OF_VERSION_1_4_populate(
+    of_bsn_tlv_max_multicast_replication_groups_t *obj, int value);
+extern int of_bsn_tlv_max_multicast_replication_groups_OF_VERSION_1_4_check(
+    of_bsn_tlv_max_multicast_replication_groups_t *obj, int value);
+extern int of_bsn_tlv_max_multicast_replication_groups_OF_VERSION_1_4_populate_scalars(
+    of_bsn_tlv_max_multicast_replication_groups_t *obj, int value);
+extern int of_bsn_tlv_max_multicast_replication_groups_OF_VERSION_1_4_check_scalars(
+    of_bsn_tlv_max_multicast_replication_groups_t *obj, int value);
+
+extern int of_bsn_tlv_max_multicast_replications_OF_VERSION_1_4_populate(
+    of_bsn_tlv_max_multicast_replications_t *obj, int value);
+extern int of_bsn_tlv_max_multicast_replications_OF_VERSION_1_4_check(
+    of_bsn_tlv_max_multicast_replications_t *obj, int value);
+extern int of_bsn_tlv_max_multicast_replications_OF_VERSION_1_4_populate_scalars(
+    of_bsn_tlv_max_multicast_replications_t *obj, int value);
+extern int of_bsn_tlv_max_multicast_replications_OF_VERSION_1_4_check_scalars(
+    of_bsn_tlv_max_multicast_replications_t *obj, int value);
 
 extern int of_bsn_tlv_mcg_type_vxlan_OF_VERSION_1_4_populate(
     of_bsn_tlv_mcg_type_vxlan_t *obj, int value);

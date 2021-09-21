@@ -431,6 +431,8 @@ const of_object_init_f of_object_init_map[] = {
     (of_object_init_f)of_bsn_tlv_mac_mask_init,
     (of_object_init_f)of_bsn_tlv_matched_count_init,
     (of_object_init_f)of_bsn_tlv_max_count_init,
+    (of_object_init_f)of_bsn_tlv_max_multicast_replication_groups_init,
+    (of_object_init_f)of_bsn_tlv_max_multicast_replications_init,
     (of_object_init_f)of_bsn_tlv_mcg_type_vxlan_init,
     (of_object_init_f)of_bsn_tlv_metadata_init,
     (of_object_init_f)of_bsn_tlv_mgmt_init,

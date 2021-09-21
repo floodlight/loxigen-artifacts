@@ -5455,6 +5455,100 @@ class max_count(bsn_tlv):
 
 bsn_tlv.subtypes[214] = max_count
 
+class max_multicast_replication_groups(bsn_tlv):
+    type = 229
+
+    def __init__(self, value=None):
+        if value != None:
+            self.value = value
+        else:
+            self.value = 0
+        return
+
+    def pack(self):
+        packed = []
+        packed.append(struct.pack("!H", self.type))
+        packed.append(struct.pack("!H", 0)) # placeholder for length at index 1
+        packed.append(struct.pack("!L", self.value))
+        length = sum([len(x) for x in packed])
+        packed[1] = struct.pack("!H", length)
+        return functools.reduce(lambda x,y: x+y, packed)
+
+    @staticmethod
+    def unpack(reader):
+        obj = max_multicast_replication_groups()
+        _type = reader.read("!H")[0]
+        assert(_type == 229)
+        _length = reader.read("!H")[0]
+        orig_reader = reader
+        reader = orig_reader.slice(_length, 4)
+        obj.value = reader.read("!L")[0]
+        return obj
+
+    def __eq__(self, other):
+        if type(self) != type(other): return False
+        if self.value != other.value: return False
+        return True
+
+    def pretty_print(self, q):
+        q.text("max_multicast_replication_groups {")
+        with q.group():
+            with q.indent(2):
+                q.breakable()
+                q.text("value = ");
+                q.text("%#x" % self.value)
+            q.breakable()
+        q.text('}')
+
+bsn_tlv.subtypes[229] = max_multicast_replication_groups
+
+class max_multicast_replications(bsn_tlv):
+    type = 230
+
+    def __init__(self, value=None):
+        if value != None:
+            self.value = value
+        else:
+            self.value = 0
+        return
+
+    def pack(self):
+        packed = []
+        packed.append(struct.pack("!H", self.type))
+        packed.append(struct.pack("!H", 0)) # placeholder for length at index 1
+        packed.append(struct.pack("!L", self.value))
+        length = sum([len(x) for x in packed])
+        packed[1] = struct.pack("!H", length)
+        return functools.reduce(lambda x,y: x+y, packed)
+
+    @staticmethod
+    def unpack(reader):
+        obj = max_multicast_replications()
+        _type = reader.read("!H")[0]
+        assert(_type == 230)
+        _length = reader.read("!H")[0]
+        orig_reader = reader
+        reader = orig_reader.slice(_length, 4)
+        obj.value = reader.read("!L")[0]
+        return obj
+
+    def __eq__(self, other):
+        if type(self) != type(other): return False
+        if self.value != other.value: return False
+        return True
+
+    def pretty_print(self, q):
+        q.text("max_multicast_replications {")
+        with q.group():
+            with q.indent(2):
+                q.breakable()
+                q.text("value = ");
+                q.text("%#x" % self.value)
+            q.breakable()
+        q.text('}')
+
+bsn_tlv.subtypes[230] = max_multicast_replications
+
 class mcg_type_vxlan(bsn_tlv):
     type = 87
 

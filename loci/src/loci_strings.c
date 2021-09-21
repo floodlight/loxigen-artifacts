@@ -428,6 +428,8 @@ const char *const of_object_id_str[] = {
     "of_bsn_tlv_mac_mask",
     "of_bsn_tlv_matched_count",
     "of_bsn_tlv_max_count",
+    "of_bsn_tlv_max_multicast_replication_groups",
+    "of_bsn_tlv_max_multicast_replications",
     "of_bsn_tlv_mcg_type_vxlan",
     "of_bsn_tlv_metadata",
     "of_bsn_tlv_mgmt",

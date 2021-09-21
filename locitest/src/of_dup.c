@@ -28094,6 +28094,14 @@ of_bsn_tlv_OF_VERSION_1_3_dup(
         return of_bsn_tlv_max_count_OF_VERSION_1_3_dup(src);
     }
 
+    if (src->object_id == OF_BSN_TLV_MAX_MULTICAST_REPLICATION_GROUPS) {
+        return of_bsn_tlv_max_multicast_replication_groups_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_MAX_MULTICAST_REPLICATIONS) {
+        return of_bsn_tlv_max_multicast_replications_OF_VERSION_1_3_dup(src);
+    }
+
     if (src->object_id == OF_BSN_TLV_MCG_TYPE_VXLAN) {
         return of_bsn_tlv_mcg_type_vxlan_OF_VERSION_1_3_dup(src);
     }
@@ -31383,6 +31391,56 @@ of_bsn_tlv_max_count_OF_VERSION_1_3_dup(
 
     of_bsn_tlv_max_count_value_get(src, &val32);
     of_bsn_tlv_max_count_value_set(dst, val32);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_max_multicast_replication_groups
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_max_multicast_replication_groups.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_max_multicast_replication_groups_t *
+of_bsn_tlv_max_multicast_replication_groups_OF_VERSION_1_3_dup(
+    of_bsn_tlv_max_multicast_replication_groups_t *src)
+{
+    of_bsn_tlv_max_multicast_replication_groups_t *dst;
+    uint32_t val32;
+
+    if ((dst = of_bsn_tlv_max_multicast_replication_groups_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_max_multicast_replication_groups_value_get(src, &val32);
+    of_bsn_tlv_max_multicast_replication_groups_value_set(dst, val32);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_max_multicast_replications
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_max_multicast_replications.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_max_multicast_replications_t *
+of_bsn_tlv_max_multicast_replications_OF_VERSION_1_3_dup(
+    of_bsn_tlv_max_multicast_replications_t *src)
+{
+    of_bsn_tlv_max_multicast_replications_t *dst;
+    uint32_t val32;
+
+    if ((dst = of_bsn_tlv_max_multicast_replications_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_max_multicast_replications_value_get(src, &val32);
+    of_bsn_tlv_max_multicast_replications_value_set(dst, val32);
 
     return dst;
 }
@@ -53622,6 +53680,14 @@ of_bsn_tlv_OF_VERSION_1_4_dup(
         return of_bsn_tlv_max_count_OF_VERSION_1_4_dup(src);
     }
 
+    if (src->object_id == OF_BSN_TLV_MAX_MULTICAST_REPLICATION_GROUPS) {
+        return of_bsn_tlv_max_multicast_replication_groups_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_MAX_MULTICAST_REPLICATIONS) {
+        return of_bsn_tlv_max_multicast_replications_OF_VERSION_1_4_dup(src);
+    }
+
     if (src->object_id == OF_BSN_TLV_MCG_TYPE_VXLAN) {
         return of_bsn_tlv_mcg_type_vxlan_OF_VERSION_1_4_dup(src);
     }
@@ -56911,6 +56977,56 @@ of_bsn_tlv_max_count_OF_VERSION_1_4_dup(
 
     of_bsn_tlv_max_count_value_get(src, &val32);
     of_bsn_tlv_max_count_value_set(dst, val32);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_max_multicast_replication_groups
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_max_multicast_replication_groups.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_max_multicast_replication_groups_t *
+of_bsn_tlv_max_multicast_replication_groups_OF_VERSION_1_4_dup(
+    of_bsn_tlv_max_multicast_replication_groups_t *src)
+{
+    of_bsn_tlv_max_multicast_replication_groups_t *dst;
+    uint32_t val32;
+
+    if ((dst = of_bsn_tlv_max_multicast_replication_groups_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_max_multicast_replication_groups_value_get(src, &val32);
+    of_bsn_tlv_max_multicast_replication_groups_value_set(dst, val32);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_max_multicast_replications
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_max_multicast_replications.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_max_multicast_replications_t *
+of_bsn_tlv_max_multicast_replications_OF_VERSION_1_4_dup(
+    of_bsn_tlv_max_multicast_replications_t *src)
+{
+    of_bsn_tlv_max_multicast_replications_t *dst;
+    uint32_t val32;
+
+    if ((dst = of_bsn_tlv_max_multicast_replications_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_max_multicast_replications_value_get(src, &val32);
+    of_bsn_tlv_max_multicast_replications_value_set(dst, val32);
 
     return dst;
 }
@@ -78584,6 +78700,40 @@ of_bsn_tlv_max_count_dup(
 
     if (src->version == OF_VERSION_1_4) {
         return of_bsn_tlv_max_count_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_bsn_tlv_max_multicast_replication_groups_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_tlv_max_multicast_replication_groups_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_bsn_tlv_max_multicast_replication_groups_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_bsn_tlv_max_multicast_replications_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_tlv_max_multicast_replications_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_bsn_tlv_max_multicast_replications_OF_VERSION_1_4_dup(src);
     }
 
     /* Class not supported in given version */

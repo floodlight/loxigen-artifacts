@@ -781,6 +781,20 @@ public class OFBsnTlvsVer10 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvMaxCount not supported in version 1.0");
     }
 
+    public OFBsnTlvMaxMulticastReplicationGroups.Builder buildMaxMulticastReplicationGroups() {
+        throw new UnsupportedOperationException("OFBsnTlvMaxMulticastReplicationGroups not supported in version 1.0");
+    }
+    public OFBsnTlvMaxMulticastReplicationGroups maxMulticastReplicationGroups(long value) {
+        throw new UnsupportedOperationException("OFBsnTlvMaxMulticastReplicationGroups not supported in version 1.0");
+    }
+
+    public OFBsnTlvMaxMulticastReplications.Builder buildMaxMulticastReplications() {
+        throw new UnsupportedOperationException("OFBsnTlvMaxMulticastReplications not supported in version 1.0");
+    }
+    public OFBsnTlvMaxMulticastReplications maxMulticastReplications(long value) {
+        throw new UnsupportedOperationException("OFBsnTlvMaxMulticastReplications not supported in version 1.0");
+    }
+
     public OFBsnTlvMcgTypeVxlan mcgTypeVxlan() {
         throw new UnsupportedOperationException("OFBsnTlvMcgTypeVxlan not supported in version 1.0");
     }
