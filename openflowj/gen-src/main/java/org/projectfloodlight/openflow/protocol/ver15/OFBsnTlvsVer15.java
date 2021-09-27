@@ -972,24 +972,6 @@ public class OFBsnTlvsVer15 implements OFBsnTlvs {
                     );
     }
 
-    public OFBsnTlvMaxMulticastReplicationGroups.Builder buildMaxMulticastReplicationGroups() {
-        return new OFBsnTlvMaxMulticastReplicationGroupsVer15.Builder();
-    }
-    public OFBsnTlvMaxMulticastReplicationGroups maxMulticastReplicationGroups(long value) {
-        return new OFBsnTlvMaxMulticastReplicationGroupsVer15(
-                value
-                    );
-    }
-
-    public OFBsnTlvMaxMulticastReplications.Builder buildMaxMulticastReplications() {
-        return new OFBsnTlvMaxMulticastReplicationsVer15.Builder();
-    }
-    public OFBsnTlvMaxMulticastReplications maxMulticastReplications(long value) {
-        return new OFBsnTlvMaxMulticastReplicationsVer15(
-                value
-                    );
-    }
-
     public OFBsnTlvMcgTypeVxlan mcgTypeVxlan() {
         return OFBsnTlvMcgTypeVxlanVer15.INSTANCE;
     }

@@ -13123,60 +13123,6 @@ int of_bsn_tlv_max_count_OF_VERSION_1_0_check_scalars(
 
 
 /**
- * Populate the scalar values in obj of type of_bsn_tlv_max_multicast_replication_groups,
- * version OF_VERSION_1_0
- * @param obj Pointer to an object to populate
- * @param value The seed value to use in populating the object
- * @returns The value after increments for this object's values
- */
-int of_bsn_tlv_max_multicast_replication_groups_OF_VERSION_1_0_populate_scalars(
-    of_bsn_tlv_max_multicast_replication_groups_t *obj, int value) {
-
-    return value;
-}
-
-/**
- * Check scalar values in obj of type of_bsn_tlv_max_multicast_replication_groups,
- * version OF_VERSION_1_0
- * @param obj Pointer to an object to check
- * @param value Starting value for checking
- * @returns The value after increments for this object's values
- */
-int of_bsn_tlv_max_multicast_replication_groups_OF_VERSION_1_0_check_scalars(
-    of_bsn_tlv_max_multicast_replication_groups_t *obj, int value) {
-
-    return value;
-}
-
-
-/**
- * Populate the scalar values in obj of type of_bsn_tlv_max_multicast_replications,
- * version OF_VERSION_1_0
- * @param obj Pointer to an object to populate
- * @param value The seed value to use in populating the object
- * @returns The value after increments for this object's values
- */
-int of_bsn_tlv_max_multicast_replications_OF_VERSION_1_0_populate_scalars(
-    of_bsn_tlv_max_multicast_replications_t *obj, int value) {
-
-    return value;
-}
-
-/**
- * Check scalar values in obj of type of_bsn_tlv_max_multicast_replications,
- * version OF_VERSION_1_0
- * @param obj Pointer to an object to check
- * @param value Starting value for checking
- * @returns The value after increments for this object's values
- */
-int of_bsn_tlv_max_multicast_replications_OF_VERSION_1_0_check_scalars(
-    of_bsn_tlv_max_multicast_replications_t *obj, int value) {
-
-    return value;
-}
-
-
-/**
  * Populate the scalar values in obj of type of_bsn_tlv_mcg_type_vxlan,
  * version OF_VERSION_1_0
  * @param obj Pointer to an object to populate
@@ -37689,60 +37635,6 @@ int of_bsn_tlv_max_count_OF_VERSION_1_1_populate_scalars(
  */
 int of_bsn_tlv_max_count_OF_VERSION_1_1_check_scalars(
     of_bsn_tlv_max_count_t *obj, int value) {
-
-    return value;
-}
-
-
-/**
- * Populate the scalar values in obj of type of_bsn_tlv_max_multicast_replication_groups,
- * version OF_VERSION_1_1
- * @param obj Pointer to an object to populate
- * @param value The seed value to use in populating the object
- * @returns The value after increments for this object's values
- */
-int of_bsn_tlv_max_multicast_replication_groups_OF_VERSION_1_1_populate_scalars(
-    of_bsn_tlv_max_multicast_replication_groups_t *obj, int value) {
-
-    return value;
-}
-
-/**
- * Check scalar values in obj of type of_bsn_tlv_max_multicast_replication_groups,
- * version OF_VERSION_1_1
- * @param obj Pointer to an object to check
- * @param value Starting value for checking
- * @returns The value after increments for this object's values
- */
-int of_bsn_tlv_max_multicast_replication_groups_OF_VERSION_1_1_check_scalars(
-    of_bsn_tlv_max_multicast_replication_groups_t *obj, int value) {
-
-    return value;
-}
-
-
-/**
- * Populate the scalar values in obj of type of_bsn_tlv_max_multicast_replications,
- * version OF_VERSION_1_1
- * @param obj Pointer to an object to populate
- * @param value The seed value to use in populating the object
- * @returns The value after increments for this object's values
- */
-int of_bsn_tlv_max_multicast_replications_OF_VERSION_1_1_populate_scalars(
-    of_bsn_tlv_max_multicast_replications_t *obj, int value) {
-
-    return value;
-}
-
-/**
- * Check scalar values in obj of type of_bsn_tlv_max_multicast_replications,
- * version OF_VERSION_1_1
- * @param obj Pointer to an object to check
- * @param value Starting value for checking
- * @returns The value after increments for this object's values
- */
-int of_bsn_tlv_max_multicast_replications_OF_VERSION_1_1_check_scalars(
-    of_bsn_tlv_max_multicast_replications_t *obj, int value) {
 
     return value;
 }
@@ -62585,60 +62477,6 @@ int of_bsn_tlv_max_count_OF_VERSION_1_2_populate_scalars(
  */
 int of_bsn_tlv_max_count_OF_VERSION_1_2_check_scalars(
     of_bsn_tlv_max_count_t *obj, int value) {
-
-    return value;
-}
-
-
-/**
- * Populate the scalar values in obj of type of_bsn_tlv_max_multicast_replication_groups,
- * version OF_VERSION_1_2
- * @param obj Pointer to an object to populate
- * @param value The seed value to use in populating the object
- * @returns The value after increments for this object's values
- */
-int of_bsn_tlv_max_multicast_replication_groups_OF_VERSION_1_2_populate_scalars(
-    of_bsn_tlv_max_multicast_replication_groups_t *obj, int value) {
-
-    return value;
-}
-
-/**
- * Check scalar values in obj of type of_bsn_tlv_max_multicast_replication_groups,
- * version OF_VERSION_1_2
- * @param obj Pointer to an object to check
- * @param value Starting value for checking
- * @returns The value after increments for this object's values
- */
-int of_bsn_tlv_max_multicast_replication_groups_OF_VERSION_1_2_check_scalars(
-    of_bsn_tlv_max_multicast_replication_groups_t *obj, int value) {
-
-    return value;
-}
-
-
-/**
- * Populate the scalar values in obj of type of_bsn_tlv_max_multicast_replications,
- * version OF_VERSION_1_2
- * @param obj Pointer to an object to populate
- * @param value The seed value to use in populating the object
- * @returns The value after increments for this object's values
- */
-int of_bsn_tlv_max_multicast_replications_OF_VERSION_1_2_populate_scalars(
-    of_bsn_tlv_max_multicast_replications_t *obj, int value) {
-
-    return value;
-}
-
-/**
- * Check scalar values in obj of type of_bsn_tlv_max_multicast_replications,
- * version OF_VERSION_1_2
- * @param obj Pointer to an object to check
- * @param value Starting value for checking
- * @returns The value after increments for this object's values
- */
-int of_bsn_tlv_max_multicast_replications_OF_VERSION_1_2_check_scalars(
-    of_bsn_tlv_max_multicast_replications_t *obj, int value) {
 
     return value;
 }
@@ -92753,80 +92591,6 @@ int of_bsn_tlv_max_count_OF_VERSION_1_3_check_scalars(
     uint32_t val32;
 
     of_bsn_tlv_max_count_value_get(obj, &val32);
-    TEST_ASSERT(VAR_UINT32_T_CHECK(val32, value));
-    value += 1;
-
-    return value;
-}
-
-
-/**
- * Populate the scalar values in obj of type of_bsn_tlv_max_multicast_replication_groups,
- * version OF_VERSION_1_3
- * @param obj Pointer to an object to populate
- * @param value The seed value to use in populating the object
- * @returns The value after increments for this object's values
- */
-int of_bsn_tlv_max_multicast_replication_groups_OF_VERSION_1_3_populate_scalars(
-    of_bsn_tlv_max_multicast_replication_groups_t *obj, int value) {
-    uint32_t val32;
-
-    VAR_UINT32_T_INIT(val32, value);
-    of_bsn_tlv_max_multicast_replication_groups_value_set(obj, val32);
-    value += 1;
-
-    return value;
-}
-
-/**
- * Check scalar values in obj of type of_bsn_tlv_max_multicast_replication_groups,
- * version OF_VERSION_1_3
- * @param obj Pointer to an object to check
- * @param value Starting value for checking
- * @returns The value after increments for this object's values
- */
-int of_bsn_tlv_max_multicast_replication_groups_OF_VERSION_1_3_check_scalars(
-    of_bsn_tlv_max_multicast_replication_groups_t *obj, int value) {
-    uint32_t val32;
-
-    of_bsn_tlv_max_multicast_replication_groups_value_get(obj, &val32);
-    TEST_ASSERT(VAR_UINT32_T_CHECK(val32, value));
-    value += 1;
-
-    return value;
-}
-
-
-/**
- * Populate the scalar values in obj of type of_bsn_tlv_max_multicast_replications,
- * version OF_VERSION_1_3
- * @param obj Pointer to an object to populate
- * @param value The seed value to use in populating the object
- * @returns The value after increments for this object's values
- */
-int of_bsn_tlv_max_multicast_replications_OF_VERSION_1_3_populate_scalars(
-    of_bsn_tlv_max_multicast_replications_t *obj, int value) {
-    uint32_t val32;
-
-    VAR_UINT32_T_INIT(val32, value);
-    of_bsn_tlv_max_multicast_replications_value_set(obj, val32);
-    value += 1;
-
-    return value;
-}
-
-/**
- * Check scalar values in obj of type of_bsn_tlv_max_multicast_replications,
- * version OF_VERSION_1_3
- * @param obj Pointer to an object to check
- * @param value Starting value for checking
- * @returns The value after increments for this object's values
- */
-int of_bsn_tlv_max_multicast_replications_OF_VERSION_1_3_check_scalars(
-    of_bsn_tlv_max_multicast_replications_t *obj, int value) {
-    uint32_t val32;
-
-    of_bsn_tlv_max_multicast_replications_value_get(obj, &val32);
     TEST_ASSERT(VAR_UINT32_T_CHECK(val32, value));
     value += 1;
 
@@ -124667,80 +124431,6 @@ int of_bsn_tlv_max_count_OF_VERSION_1_4_check_scalars(
     uint32_t val32;
 
     of_bsn_tlv_max_count_value_get(obj, &val32);
-    TEST_ASSERT(VAR_UINT32_T_CHECK(val32, value));
-    value += 1;
-
-    return value;
-}
-
-
-/**
- * Populate the scalar values in obj of type of_bsn_tlv_max_multicast_replication_groups,
- * version OF_VERSION_1_4
- * @param obj Pointer to an object to populate
- * @param value The seed value to use in populating the object
- * @returns The value after increments for this object's values
- */
-int of_bsn_tlv_max_multicast_replication_groups_OF_VERSION_1_4_populate_scalars(
-    of_bsn_tlv_max_multicast_replication_groups_t *obj, int value) {
-    uint32_t val32;
-
-    VAR_UINT32_T_INIT(val32, value);
-    of_bsn_tlv_max_multicast_replication_groups_value_set(obj, val32);
-    value += 1;
-
-    return value;
-}
-
-/**
- * Check scalar values in obj of type of_bsn_tlv_max_multicast_replication_groups,
- * version OF_VERSION_1_4
- * @param obj Pointer to an object to check
- * @param value Starting value for checking
- * @returns The value after increments for this object's values
- */
-int of_bsn_tlv_max_multicast_replication_groups_OF_VERSION_1_4_check_scalars(
-    of_bsn_tlv_max_multicast_replication_groups_t *obj, int value) {
-    uint32_t val32;
-
-    of_bsn_tlv_max_multicast_replication_groups_value_get(obj, &val32);
-    TEST_ASSERT(VAR_UINT32_T_CHECK(val32, value));
-    value += 1;
-
-    return value;
-}
-
-
-/**
- * Populate the scalar values in obj of type of_bsn_tlv_max_multicast_replications,
- * version OF_VERSION_1_4
- * @param obj Pointer to an object to populate
- * @param value The seed value to use in populating the object
- * @returns The value after increments for this object's values
- */
-int of_bsn_tlv_max_multicast_replications_OF_VERSION_1_4_populate_scalars(
-    of_bsn_tlv_max_multicast_replications_t *obj, int value) {
-    uint32_t val32;
-
-    VAR_UINT32_T_INIT(val32, value);
-    of_bsn_tlv_max_multicast_replications_value_set(obj, val32);
-    value += 1;
-
-    return value;
-}
-
-/**
- * Check scalar values in obj of type of_bsn_tlv_max_multicast_replications,
- * version OF_VERSION_1_4
- * @param obj Pointer to an object to check
- * @param value Starting value for checking
- * @returns The value after increments for this object's values
- */
-int of_bsn_tlv_max_multicast_replications_OF_VERSION_1_4_check_scalars(
-    of_bsn_tlv_max_multicast_replications_t *obj, int value) {
-    uint32_t val32;
-
-    of_bsn_tlv_max_multicast_replications_value_get(obj, &val32);
     TEST_ASSERT(VAR_UINT32_T_CHECK(val32, value));
     value += 1;
 

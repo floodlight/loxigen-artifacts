@@ -7648,28 +7648,6 @@ typedef struct of_bsn_tlv_matched_count_s of_bsn_tlv_matched_count_t;
 typedef struct of_bsn_tlv_max_count_s of_bsn_tlv_max_count_t;
 
 /**
- * Structure for of_bsn_tlv_max_multicast_replication_groups object.  Get/set
- * accessors available in all versions unless noted otherwise
- *
- * @param value_get/set ( OF_1_3 OF_1_4).
- *   Accessors for value, a variable of type uint32.  Functions
- *   are of type of_bsn_tlv_max_multicast_replication_groups_uint32_get_f and _set_f.
- *
- */
-typedef struct of_bsn_tlv_max_multicast_replication_groups_s of_bsn_tlv_max_multicast_replication_groups_t;
-
-/**
- * Structure for of_bsn_tlv_max_multicast_replications object.  Get/set
- * accessors available in all versions unless noted otherwise
- *
- * @param value_get/set ( OF_1_3 OF_1_4).
- *   Accessors for value, a variable of type uint32.  Functions
- *   are of type of_bsn_tlv_max_multicast_replications_uint32_get_f and _set_f.
- *
- */
-typedef struct of_bsn_tlv_max_multicast_replications_s of_bsn_tlv_max_multicast_replications_t;
-
-/**
  * Structure for of_bsn_tlv_mcg_type_vxlan object.  Get/set
  * accessors available in all versions unless noted otherwise
  *

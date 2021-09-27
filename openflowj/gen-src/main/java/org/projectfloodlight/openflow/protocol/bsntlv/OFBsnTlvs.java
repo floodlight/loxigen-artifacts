@@ -241,10 +241,6 @@ public interface OFBsnTlvs {
     OFBsnTlvMatchedCount matchedCount(U64 value);
     OFBsnTlvMaxCount.Builder buildMaxCount() throws UnsupportedOperationException;
     OFBsnTlvMaxCount maxCount(long value);
-    OFBsnTlvMaxMulticastReplicationGroups.Builder buildMaxMulticastReplicationGroups() throws UnsupportedOperationException;
-    OFBsnTlvMaxMulticastReplicationGroups maxMulticastReplicationGroups(long value);
-    OFBsnTlvMaxMulticastReplications.Builder buildMaxMulticastReplications() throws UnsupportedOperationException;
-    OFBsnTlvMaxMulticastReplications maxMulticastReplications(long value);
     OFBsnTlvMcgTypeVxlan mcgTypeVxlan();
     OFBsnTlvMetadata.Builder buildMetadata() throws UnsupportedOperationException;
     OFBsnTlvMetadata metadata(OFBsnMetadata value);

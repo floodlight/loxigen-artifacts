@@ -394,12 +394,6 @@ abstract class OFBsnTlvVer14 {
                case (short) 0xd6:
                    // discriminator value 0xd6=0xd6 for class OFBsnTlvMaxCountVer14
                    return OFBsnTlvMaxCountVer14.READER.readFrom(bb);
-               case (short) 0xe5:
-                   // discriminator value 0xe5=0xe5 for class OFBsnTlvMaxMulticastReplicationGroupsVer14
-                   return OFBsnTlvMaxMulticastReplicationGroupsVer14.READER.readFrom(bb);
-               case (short) 0xe6:
-                   // discriminator value 0xe6=0xe6 for class OFBsnTlvMaxMulticastReplicationsVer14
-                   return OFBsnTlvMaxMulticastReplicationsVer14.READER.readFrom(bb);
                case (short) 0x57:
                    // discriminator value 0x57=0x57 for class OFBsnTlvMcgTypeVxlanVer14
                    return OFBsnTlvMcgTypeVxlanVer14.READER.readFrom(bb);
