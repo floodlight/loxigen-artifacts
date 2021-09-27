@@ -1691,6 +1691,14 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_max_multicast_replication_groups_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_max_multicast_replications_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_mcg_type_vxlan_dup(
         of_object_t *src);
 
@@ -7147,6 +7155,14 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_max_multicast_replication_groups_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_max_multicast_replications_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_mcg_type_vxlan_OF_VERSION_1_3_dup(
         of_object_t *src);
 
@@ -10276,6 +10292,14 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_tlv_max_count_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_max_multicast_replication_groups_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_max_multicast_replications_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *

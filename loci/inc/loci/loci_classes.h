@@ -1087,6 +1087,10 @@ void of_bsn_tlv_matched_count_wire_object_id_get(of_object_t *obj, of_object_id_
 void of_bsn_tlv_matched_count_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_max_count_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_max_count_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_max_multicast_replication_groups_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_max_multicast_replication_groups_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_max_multicast_replications_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_max_multicast_replications_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_mcg_type_vxlan_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_mcg_type_vxlan_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_metadata_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -2115,6 +2119,8 @@ typedef of_object_t of_bsn_tlv_mac_t;
 typedef of_object_t of_bsn_tlv_mac_mask_t;
 typedef of_object_t of_bsn_tlv_matched_count_t;
 typedef of_object_t of_bsn_tlv_max_count_t;
+typedef of_object_t of_bsn_tlv_max_multicast_replication_groups_t;
+typedef of_object_t of_bsn_tlv_max_multicast_replications_t;
 typedef of_object_t of_bsn_tlv_mcg_type_vxlan_t;
 typedef of_object_t of_bsn_tlv_metadata_t;
 typedef of_object_t of_bsn_tlv_mgmt_t;
@@ -4713,6 +4719,16 @@ extern void of_bsn_tlv_matched_count_init(
 extern of_object_t *
     of_bsn_tlv_max_count_new(of_version_t version);
 extern void of_bsn_tlv_max_count_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_bsn_tlv_max_multicast_replication_groups_new(of_version_t version);
+extern void of_bsn_tlv_max_multicast_replication_groups_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_bsn_tlv_max_multicast_replications_new(of_version_t version);
+extern void of_bsn_tlv_max_multicast_replications_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
@@ -11733,6 +11749,28 @@ of_bsn_tlv_matched_count_delete(of_object_t *obj) {
  */
 static inline void
 of_bsn_tlv_max_count_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_max_multicast_replication_groups_t
+ * @param obj An instance of type of_bsn_tlv_max_multicast_replication_groups_t
+ *
+ * \ingroup of_bsn_tlv_max_multicast_replication_groups
+ */
+static inline void
+of_bsn_tlv_max_multicast_replication_groups_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_max_multicast_replications_t
+ * @param obj An instance of type of_bsn_tlv_max_multicast_replications_t
+ *
+ * \ingroup of_bsn_tlv_max_multicast_replications
+ */
+static inline void
+of_bsn_tlv_max_multicast_replications_delete(of_object_t *obj) {
     of_object_delete(obj);
 }
 
@@ -25696,6 +25734,24 @@ extern void of_bsn_tlv_max_count_value_set(
     uint32_t value);
 extern void of_bsn_tlv_max_count_value_get(
     of_bsn_tlv_max_count_t *obj,
+    uint32_t *value);
+
+/* Unified accessor functions for of_bsn_tlv_max_multicast_replication_groups */
+
+extern void of_bsn_tlv_max_multicast_replication_groups_value_set(
+    of_bsn_tlv_max_multicast_replication_groups_t *obj,
+    uint32_t value);
+extern void of_bsn_tlv_max_multicast_replication_groups_value_get(
+    of_bsn_tlv_max_multicast_replication_groups_t *obj,
+    uint32_t *value);
+
+/* Unified accessor functions for of_bsn_tlv_max_multicast_replications */
+
+extern void of_bsn_tlv_max_multicast_replications_value_set(
+    of_bsn_tlv_max_multicast_replications_t *obj,
+    uint32_t value);
+extern void of_bsn_tlv_max_multicast_replications_value_get(
+    of_bsn_tlv_max_multicast_replications_t *obj,
     uint32_t *value);
 
 /* Unified accessor functions for of_bsn_tlv_mcg_type_vxlan */
